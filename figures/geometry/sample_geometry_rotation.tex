@@ -17,10 +17,8 @@
   case0/xs/.style={purple, thick, <->, opacity=0.35},
   case0/xsDash/.style={purple, thick, dashed, opacity=0.35},
   case0/thetaArc/.style={black, thick, opacity=0.35},
-    % Change this line in your tikzset:
-    case0/caseLabel/.style={black, opacity=0.5, font=\scriptsize, xshift=-15mm, yshift = -6mm},
-
-
+  % Change this line in your tikzset:
+  case0/caseLabel/.style={black, opacity=0.5, font=\scriptsize, xshift=-15mm, yshift=-6mm},
   case35/sample/.style={green!60!black, thick},
   case35/axis/.style={orange, thick, dashed},
   case35/beam/.style={red, thick, ->},
@@ -81,7 +79,6 @@
   % numerical helpers
   \pgfmathsetmacro{\epsVal}{0.00001}
   \pgfmathsetmacro{\sentinel}{10000}
-
   % Hide theta_i and X_s when rotAng ~ 0
   \pgfmathsetmacro{\vInc}{abs(\rotAng) < 0.0001 ? 0 : 1}
   \pgfmathsetmacro{\incOpacity}{\vInc}
@@ -126,30 +123,78 @@
   %---------------------------
   % Edge AB
   \pgfmathsetmacro{\denBeamAB}{\yB-\yA}
-  \pgfmathsetmacro{\tBeamAB}{abs(\denBeamAB)<\epsVal ? -1 : (\beamY-\yA)/\denBeamAB}
-  \pgfmathsetmacro{\xIntAB}{\xA + \tBeamAB*(\xB-\xA)}
-  \pgfmathsetmacro{\vBeamAB}{(\tBeamAB>=0 ? (\tBeamAB<=1 ? 1 : 0) : 0)}
+  \ifdim\denBeamAB pt<\epsVal pt
+    \ifdim\denBeamAB pt>-\epsVal pt
+      \pgfmathsetmacro{\tBeamAB}{0}
+      \pgfmathsetmacro{\xIntAB}{\sentinel}
+      \pgfmathsetmacro{\vBeamAB}{0}
+    \else
+      \pgfmathsetmacro{\tBeamAB}{(\beamY-\yA)/\denBeamAB}
+      \pgfmathsetmacro{\xIntAB}{\xA + \tBeamAB*(\xB-\xA)}
+      \pgfmathsetmacro{\vBeamAB}{(\tBeamAB>=0 ? (\tBeamAB<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\tBeamAB}{(\beamY-\yA)/\denBeamAB}
+    \pgfmathsetmacro{\xIntAB}{\xA + \tBeamAB*(\xB-\xA)}
+    \pgfmathsetmacro{\vBeamAB}{(\tBeamAB>=0 ? (\tBeamAB<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\xHitAB}{\vBeamAB>0 ? \xIntAB : \sentinel}
 
   % Edge BC
   \pgfmathsetmacro{\denBeamBC}{\yC-\yB}
-  \pgfmathsetmacro{\tBeamBC}{abs(\denBeamBC)<\epsVal ? -1 : (\beamY-\yB)/\denBeamBC}
-  \pgfmathsetmacro{\xIntBC}{\xB + \tBeamBC*(\xC-\xB)}
-  \pgfmathsetmacro{\vBeamBC}{(\tBeamBC>=0 ? (\tBeamBC<=1 ? 1 : 0) : 0)}
+  \ifdim\denBeamBC pt<\epsVal pt
+    \ifdim\denBeamBC pt>-\epsVal pt
+      \pgfmathsetmacro{\tBeamBC}{0}
+      \pgfmathsetmacro{\xIntBC}{\sentinel}
+      \pgfmathsetmacro{\vBeamBC}{0}
+    \else
+      \pgfmathsetmacro{\tBeamBC}{(\beamY-\yB)/\denBeamBC}
+      \pgfmathsetmacro{\xIntBC}{\xB + \tBeamBC*(\xC-\xB)}
+      \pgfmathsetmacro{\vBeamBC}{(\tBeamBC>=0 ? (\tBeamBC<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\tBeamBC}{(\beamY-\yB)/\denBeamBC}
+    \pgfmathsetmacro{\xIntBC}{\xB + \tBeamBC*(\xC-\xB)}
+    \pgfmathsetmacro{\vBeamBC}{(\tBeamBC>=0 ? (\tBeamBC<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\xHitBC}{\vBeamBC>0 ? \xIntBC : \sentinel}
 
   % Edge CD
   \pgfmathsetmacro{\denBeamCD}{\yD-\yC}
-  \pgfmathsetmacro{\tBeamCD}{abs(\denBeamCD)<\epsVal ? -1 : (\beamY-\yC)/\denBeamCD}
-  \pgfmathsetmacro{\xIntCD}{\xC + \tBeamCD*(\xD-\xC)}
-  \pgfmathsetmacro{\vBeamCD}{(\tBeamCD>=0 ? (\tBeamCD<=1 ? 1 : 0) : 0)}
+  \ifdim\denBeamCD pt<\epsVal pt
+    \ifdim\denBeamCD pt>-\epsVal pt
+      \pgfmathsetmacro{\tBeamCD}{0}
+      \pgfmathsetmacro{\xIntCD}{\sentinel}
+      \pgfmathsetmacro{\vBeamCD}{0}
+    \else
+      \pgfmathsetmacro{\tBeamCD}{(\beamY-\yC)/\denBeamCD}
+      \pgfmathsetmacro{\xIntCD}{\xC + \tBeamCD*(\xD-\xC)}
+      \pgfmathsetmacro{\vBeamCD}{(\tBeamCD>=0 ? (\tBeamCD<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\tBeamCD}{(\beamY-\yC)/\denBeamCD}
+    \pgfmathsetmacro{\xIntCD}{\xC + \tBeamCD*(\xD-\xC)}
+    \pgfmathsetmacro{\vBeamCD}{(\tBeamCD>=0 ? (\tBeamCD<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\xHitCD}{\vBeamCD>0 ? \xIntCD : \sentinel}
 
   % Edge DA
   \pgfmathsetmacro{\denBeamDA}{\yA-\yD}
-  \pgfmathsetmacro{\tBeamDA}{abs(\denBeamDA)<\epsVal ? -1 : (\beamY-\yD)/\denBeamDA}
-  \pgfmathsetmacro{\xIntDA}{\xD + \tBeamDA*(\xA-\xD)}
-  \pgfmathsetmacro{\vBeamDA}{(\tBeamDA>=0 ? (\tBeamDA<=1 ? 1 : 0) : 0)}
+  \ifdim\denBeamDA pt<\epsVal pt
+    \ifdim\denBeamDA pt>-\epsVal pt
+      \pgfmathsetmacro{\tBeamDA}{0}
+      \pgfmathsetmacro{\xIntDA}{\sentinel}
+      \pgfmathsetmacro{\vBeamDA}{0}
+    \else
+      \pgfmathsetmacro{\tBeamDA}{(\beamY-\yD)/\denBeamDA}
+      \pgfmathsetmacro{\xIntDA}{\xD + \tBeamDA*(\xA-\xD)}
+      \pgfmathsetmacro{\vBeamDA}{(\tBeamDA>=0 ? (\tBeamDA<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\tBeamDA}{(\beamY-\yD)/\denBeamDA}
+    \pgfmathsetmacro{\xIntDA}{\xD + \tBeamDA*(\xA-\xD)}
+    \pgfmathsetmacro{\vBeamDA}{(\tBeamDA>=0 ? (\tBeamDA<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\xHitDA}{\vBeamDA>0 ? \xIntDA : \sentinel}
 
   \pgfmathsetmacro{\xHitFirst}{min(\xHitAB,\xHitBC)}
@@ -171,33 +216,81 @@
   %---------------------------
   % Edge AB
   \pgfmathsetmacro{\denZBAB}{\xB-\xA}
-  \pgfmathsetmacro{\uZBAB}{abs(\denZBAB)<\epsVal ? -1 : (\zBx-\xA)/\denZBAB}
-  \pgfmathsetmacro{\yZBAB}{\yA + \uZBAB*(\yB-\yA)}
-  \pgfmathsetmacro{\wZBAB}{(\uZBAB>=0 ? (\uZBAB<=1 ? 1 : 0) : 0)}
+  \ifdim\denZBAB pt<\epsVal pt
+    \ifdim\denZBAB pt>-\epsVal pt
+      \pgfmathsetmacro{\uZBAB}{0}
+      \pgfmathsetmacro{\yZBAB}{0}
+      \pgfmathsetmacro{\wZBAB}{0}
+    \else
+      \pgfmathsetmacro{\uZBAB}{(\zBx-\xA)/\denZBAB}
+      \pgfmathsetmacro{\yZBAB}{\yA + \uZBAB*(\yB-\yA)}
+      \pgfmathsetmacro{\wZBAB}{(\uZBAB>=0 ? (\uZBAB<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uZBAB}{(\zBx-\xA)/\denZBAB}
+    \pgfmathsetmacro{\yZBAB}{\yA + \uZBAB*(\yB-\yA)}
+    \pgfmathsetmacro{\wZBAB}{(\uZBAB>=0 ? (\uZBAB<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wZBAB}{\wZBAB * (\yZBAB<=0 ? 1 : 0) * (\yZBAB>=\beamY ? 1 : 0)}
   \pgfmathsetmacro{\yHitZBAB}{\wZBAB>0 ? \yZBAB : -\sentinel}
 
   % Edge BC
   \pgfmathsetmacro{\denZBBC}{\xC-\xB}
-  \pgfmathsetmacro{\uZBBC}{abs(\denZBBC)<\epsVal ? -1 : (\zBx-\xB)/\denZBBC}
-  \pgfmathsetmacro{\yZBBC}{\yB + \uZBBC*(\yC-\yB)}
-  \pgfmathsetmacro{\wZBBC}{(\uZBBC>=0 ? (\uZBBC<=1 ? 1 : 0) : 0)}
+  \ifdim\denZBBC pt<\epsVal pt
+    \ifdim\denZBBC pt>-\epsVal pt
+      \pgfmathsetmacro{\uZBBC}{0}
+      \pgfmathsetmacro{\yZBBC}{0}
+      \pgfmathsetmacro{\wZBBC}{0}
+    \else
+      \pgfmathsetmacro{\uZBBC}{(\zBx-\xB)/\denZBBC}
+      \pgfmathsetmacro{\yZBBC}{\yB + \uZBBC*(\yC-\yB)}
+      \pgfmathsetmacro{\wZBBC}{(\uZBBC>=0 ? (\uZBBC<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uZBBC}{(\zBx-\xB)/\denZBBC}
+    \pgfmathsetmacro{\yZBBC}{\yB + \uZBBC*(\yC-\yB)}
+    \pgfmathsetmacro{\wZBBC}{(\uZBBC>=0 ? (\uZBBC<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wZBBC}{\wZBBC * (\yZBBC<=0 ? 1 : 0) * (\yZBBC>=\beamY ? 1 : 0)}
   \pgfmathsetmacro{\yHitZBBC}{\wZBBC>0 ? \yZBBC : -\sentinel}
 
   % Edge CD
   \pgfmathsetmacro{\denZBCD}{\xD-\xC}
-  \pgfmathsetmacro{\uZBCD}{abs(\denZBCD)<\epsVal ? -1 : (\zBx-\xC)/\denZBCD}
-  \pgfmathsetmacro{\yZBCD}{\yC + \uZBCD*(\yD-\yC)}
-  \pgfmathsetmacro{\wZBCD}{(\uZBCD>=0 ? (\uZBCD<=1 ? 1 : 0) : 0)}
+  \ifdim\denZBCD pt<\epsVal pt
+    \ifdim\denZBCD pt>-\epsVal pt
+      \pgfmathsetmacro{\uZBCD}{0}
+      \pgfmathsetmacro{\yZBCD}{0}
+      \pgfmathsetmacro{\wZBCD}{0}
+    \else
+      \pgfmathsetmacro{\uZBCD}{(\zBx-\xC)/\denZBCD}
+      \pgfmathsetmacro{\yZBCD}{\yC + \uZBCD*(\yD-\yC)}
+      \pgfmathsetmacro{\wZBCD}{(\uZBCD>=0 ? (\uZBCD<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uZBCD}{(\zBx-\xC)/\denZBCD}
+    \pgfmathsetmacro{\yZBCD}{\yC + \uZBCD*(\yD-\yC)}
+    \pgfmathsetmacro{\wZBCD}{(\uZBCD>=0 ? (\uZBCD<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wZBCD}{\wZBCD * (\yZBCD<=0 ? 1 : 0) * (\yZBCD>=\beamY ? 1 : 0)}
   \pgfmathsetmacro{\yHitZBCD}{\wZBCD>0 ? \yZBCD : -\sentinel}
 
   % Edge DA
   \pgfmathsetmacro{\denZBDA}{\xA-\xD}
-  \pgfmathsetmacro{\uZBDA}{abs(\denZBDA)<\epsVal ? -1 : (\zBx-\xD)/\denZBDA}
-  \pgfmathsetmacro{\yZBDA}{\yD + \uZBDA*(\yA-\yD)}
-  \pgfmathsetmacro{\wZBDA}{(\uZBDA>=0 ? (\uZBDA<=1 ? 1 : 0) : 0)}
+  \ifdim\denZBDA pt<\epsVal pt
+    \ifdim\denZBDA pt>-\epsVal pt
+      \pgfmathsetmacro{\uZBDA}{0}
+      \pgfmathsetmacro{\yZBDA}{0}
+      \pgfmathsetmacro{\wZBDA}{0}
+    \else
+      \pgfmathsetmacro{\uZBDA}{(\zBx-\xD)/\denZBDA}
+      \pgfmathsetmacro{\yZBDA}{\yD + \uZBDA*(\yA-\yD)}
+      \pgfmathsetmacro{\wZBDA}{(\uZBDA>=0 ? (\uZBDA<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uZBDA}{(\zBx-\xD)/\denZBDA}
+    \pgfmathsetmacro{\yZBDA}{\yD + \uZBDA*(\yA-\yD)}
+    \pgfmathsetmacro{\wZBDA}{(\uZBDA>=0 ? (\uZBDA<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wZBDA}{\wZBDA * (\yZBDA<=0 ? 1 : 0) * (\yZBDA>=\beamY ? 1 : 0)}
   \pgfmathsetmacro{\yHitZBDA}{\wZBDA>0 ? \yZBDA : -\sentinel}
 
@@ -217,33 +310,81 @@
 
   % Edge AB
   \pgfmathsetmacro{\denAxisAB}{\xB-\xA}
-  \pgfmathsetmacro{\uAxisAB}{abs(\denAxisAB)<\epsVal ? -1 : (\xAxisVal-\xA)/\denAxisAB}
-  \pgfmathsetmacro{\yAxisAB}{\yA + \uAxisAB*(\yB-\yA)}
-  \pgfmathsetmacro{\wAxisAB}{(\uAxisAB>=0 ? (\uAxisAB<=1 ? 1 : 0) : 0)}
+  \ifdim\denAxisAB pt<\epsVal pt
+    \ifdim\denAxisAB pt>-\epsVal pt
+      \pgfmathsetmacro{\uAxisAB}{0}
+      \pgfmathsetmacro{\yAxisAB}{0}
+      \pgfmathsetmacro{\wAxisAB}{0}
+    \else
+      \pgfmathsetmacro{\uAxisAB}{(\xAxisVal-\xA)/\denAxisAB}
+      \pgfmathsetmacro{\yAxisAB}{\yA + \uAxisAB*(\yB-\yA)}
+      \pgfmathsetmacro{\wAxisAB}{(\uAxisAB>=0 ? (\uAxisAB<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uAxisAB}{(\xAxisVal-\xA)/\denAxisAB}
+    \pgfmathsetmacro{\yAxisAB}{\yA + \uAxisAB*(\yB-\yA)}
+    \pgfmathsetmacro{\wAxisAB}{(\uAxisAB>=0 ? (\uAxisAB<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wAxisAB}{\wAxisAB * (\yAxisAB<=0 ? 1 : 0)}
   \pgfmathsetmacro{\yHitAxisAB}{\wAxisAB>0 ? \yAxisAB : -\sentinel}
 
   % Edge BC
   \pgfmathsetmacro{\denAxisBC}{\xC-\xB}
-  \pgfmathsetmacro{\uAxisBC}{abs(\denAxisBC)<\epsVal ? -1 : (\xAxisVal-\xB)/\denAxisBC}
-  \pgfmathsetmacro{\yAxisBC}{\yB + \uAxisBC*(\yC-\yB)}
-  \pgfmathsetmacro{\wAxisBC}{(\uAxisBC>=0 ? (\uAxisBC<=1 ? 1 : 0) : 0)}
+  \ifdim\denAxisBC pt<\epsVal pt
+    \ifdim\denAxisBC pt>-\epsVal pt
+      \pgfmathsetmacro{\uAxisBC}{0}
+      \pgfmathsetmacro{\yAxisBC}{0}
+      \pgfmathsetmacro{\wAxisBC}{0}
+    \else
+      \pgfmathsetmacro{\uAxisBC}{(\xAxisVal-\xB)/\denAxisBC}
+      \pgfmathsetmacro{\yAxisBC}{\yB + \uAxisBC*(\yC-\yB)}
+      \pgfmathsetmacro{\wAxisBC}{(\uAxisBC>=0 ? (\uAxisBC<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uAxisBC}{(\xAxisVal-\xB)/\denAxisBC}
+    \pgfmathsetmacro{\yAxisBC}{\yB + \uAxisBC*(\yC-\yB)}
+    \pgfmathsetmacro{\wAxisBC}{(\uAxisBC>=0 ? (\uAxisBC<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wAxisBC}{\wAxisBC * (\yAxisBC<=0 ? 1 : 0)}
   \pgfmathsetmacro{\yHitAxisBC}{\wAxisBC>0 ? \yAxisBC : -\sentinel}
 
   % Edge CD
   \pgfmathsetmacro{\denAxisCD}{\xD-\xC}
-  \pgfmathsetmacro{\uAxisCD}{abs(\denAxisCD)<\epsVal ? -1 : (\xAxisVal-\xC)/\denAxisCD}
-  \pgfmathsetmacro{\yAxisCD}{\yC + \uAxisCD*(\yD-\yC)}
-  \pgfmathsetmacro{\wAxisCD}{(\uAxisCD>=0 ? (\uAxisCD<=1 ? 1 : 0) : 0)}
+  \ifdim\denAxisCD pt<\epsVal pt
+    \ifdim\denAxisCD pt>-\epsVal pt
+      \pgfmathsetmacro{\uAxisCD}{0}
+      \pgfmathsetmacro{\yAxisCD}{0}
+      \pgfmathsetmacro{\wAxisCD}{0}
+    \else
+      \pgfmathsetmacro{\uAxisCD}{(\xAxisVal-\xC)/\denAxisCD}
+      \pgfmathsetmacro{\yAxisCD}{\yC + \uAxisCD*(\yD-\yC)}
+      \pgfmathsetmacro{\wAxisCD}{(\uAxisCD>=0 ? (\uAxisCD<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uAxisCD}{(\xAxisVal-\xC)/\denAxisCD}
+    \pgfmathsetmacro{\yAxisCD}{\yC + \uAxisCD*(\yD-\yC)}
+    \pgfmathsetmacro{\wAxisCD}{(\uAxisCD>=0 ? (\uAxisCD<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wAxisCD}{\wAxisCD * (\yAxisCD<=0 ? 1 : 0)}
   \pgfmathsetmacro{\yHitAxisCD}{\wAxisCD>0 ? \yAxisCD : -\sentinel}
 
   % Edge DA
   \pgfmathsetmacro{\denAxisDA}{\xA-\xD}
-  \pgfmathsetmacro{\uAxisDA}{abs(\denAxisDA)<\epsVal ? -1 : (\xAxisVal-\xD)/\denAxisDA}
-  \pgfmathsetmacro{\yAxisDA}{\yD + \uAxisDA*(\yA-\yD)}
-  \pgfmathsetmacro{\wAxisDA}{(\uAxisDA>=0 ? (\uAxisDA<=1 ? 1 : 0) : 0)}
+  \ifdim\denAxisDA pt<\epsVal pt
+    \ifdim\denAxisDA pt>-\epsVal pt
+      \pgfmathsetmacro{\uAxisDA}{0}
+      \pgfmathsetmacro{\yAxisDA}{0}
+      \pgfmathsetmacro{\wAxisDA}{0}
+    \else
+      \pgfmathsetmacro{\uAxisDA}{(\xAxisVal-\xD)/\denAxisDA}
+      \pgfmathsetmacro{\yAxisDA}{\yD + \uAxisDA*(\yA-\yD)}
+      \pgfmathsetmacro{\wAxisDA}{(\uAxisDA>=0 ? (\uAxisDA<=1 ? 1 : 0) : 0)}
+    \fi
+  \else
+    \pgfmathsetmacro{\uAxisDA}{(\xAxisVal-\xD)/\denAxisDA}
+    \pgfmathsetmacro{\yAxisDA}{\yD + \uAxisDA*(\yA-\yD)}
+    \pgfmathsetmacro{\wAxisDA}{(\uAxisDA>=0 ? (\uAxisDA<=1 ? 1 : 0) : 0)}
+  \fi
   \pgfmathsetmacro{\wAxisDA}{\wAxisDA * (\yAxisDA<=0 ? 1 : 0)}
   \pgfmathsetmacro{\yHitAxisDA}{\wAxisDA>0 ? \yAxisDA : -\sentinel}
 
