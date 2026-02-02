@@ -5,7 +5,7 @@ Refinement is staged to decouple the pixel-to-$\mathbf{Q}$ mapping from intensit
 
 \begin{table}[!ht]
   \centering
-  \caption{Parameter 9 and their primary signatures in area detector images.}
+  \caption{Parameters and their primary signatures in area detector images.}
   \label{tab:param_effects}
   \footnotesize
   \setlength{\tabcolsep}{5pt}
@@ -34,5 +34,4 @@ Refinement is staged to decouple the pixel-to-$\mathbf{Q}$ mapping from intensit
 With detector parameters held fixed, we refine sample alignment by matching the locations of a small set of strong features spanning the specular and off-specular region. The incidence angle $\theta_i$, the beam and sample height offsets $(z_b,z_s)$, and the residual tilt $\chi$ are refined by minimizing positional residuals between measured and simulated features. Mosaicity is then determined from line shapes rather than absolute intensities by fitting, with a shared kernel, the widths and tails of multiple arcs and caps after normalizing an overall scale. The specular region is especially constraining because intensity observed far from the nominal condition is controlled by the kernel tails.
 
 Finally, with geometry and mosaicity fixed, we refine the intensity model against the full 2D image, including the near-specular region. An overall scale, absorption and footprint weighting, and the structure-factor terms in Eq.~\eqref{eq:structure_factor} are refined by adjusting occupancies, anisotropic Debye--Waller parameters, and static displacements to reproduce reflection-to-reflection intensity ratios. For disordered films, stacking-disorder parameters are introduced only after the ordered model converges and are refined against the specular and near-specular diffuse intensity and its $Q_z$ dependence.
-
 
