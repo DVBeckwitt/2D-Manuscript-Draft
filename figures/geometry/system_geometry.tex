@@ -1,0 +1,254 @@
+% Detector geometry TikZ figure (to be \input into main document)
+
+\tdplotsetmaincoords{70}{120}
+\begin{tikzpicture}[tdplot_main_coords, scale=1.5]
+
+    %=========================
+    % Parameters
+    %=========================
+    % Geometry angles (keep detector unrotated)
+    \pgfmathsetmacro{\alpha}{0}         % detector tilt about x (deg)
+    \pgfmathsetmacro{\betaang}{0}       % detector rotation about z (deg)
+
+    % Display-only angles (nonzero annotations)
+    \pgfmathsetmacro{\betaVis}{-20}      % shown beta angle (deg)
+    \pgfmathsetmacro{\gammaVis}{20}     % shown gamma angle (deg)
+
+    \pgfmathsetmacro{\detW}{2}           % detector width
+    \pgfmathsetmacro{\detH}{2}           % detector height
+    \pgfmathsetmacro{\detT}{0.2}         % detector thickness
+
+    \pgfmathsetmacro{\detHw}{0.5*\detW}  % half-width
+    \pgfmathsetmacro{\detHh}{0.5*\detH}  % half-height
+
+    % Geometry sines and cosines
+    \pgfmathsetmacro{\sina}{sin(\alpha)}
+    \pgfmathsetmacro{\cosa}{cos(\alpha)}
+    \pgfmathsetmacro{\sinb}{sin(\betaang)}
+    \pgfmathsetmacro{\cosb}{cos(\betaang)}
+
+    % Display trig
+    \pgfmathsetmacro{\sinBetaVis}{sin(\betaVis)}
+    \pgfmathsetmacro{\cosBetaVis}{cos(\betaVis)}
+    \pgfmathsetmacro{\sinGammaVis}{sin(\gammaVis)}
+    \pgfmathsetmacro{\cosGammaVis}{cos(\gammaVis)}
+
+    % Detector center (front face)
+    \coordinate (detCenter) at (-3,0,0);
+
+    %=========================
+    % Detector local basis (tilt about x then rotation about z)
+    %=========================
+    % Horizontal (width) direction
+    \coordinate (detU) at ({-\detHw*\sinb},{\detHw*\cosb},0);
+
+    % Vertical (height) direction
+    \coordinate (detV) at ({\detHh*\sina*\cosb},
+                           {\detHh*\sina*\sinb},
+                           {\detHh*\cosa});
+
+    % Thickness direction (front to back)
+    \coordinate (detTvec) at ({-\detT*\cosa*\cosb},
+                              {-\detT*\cosa*\sinb},
+                              {\detT*\sina});
+
+    % Components of detV for use in arc centers
+    \pgfmathsetmacro{\Vx}{\detHh*\sina*\cosb}
+    \pgfmathsetmacro{\Vy}{\detHh*\sina*\sinb}
+    \pgfmathsetmacro{\Vz}{\detHh*\cosa}
+
+    % Bottom center coordinates: detFBC = detCenter - detV
+    \pgfmathsetmacro{\FBCx}{-3 - \Vx}
+    \pgfmathsetmacro{\FBCy}{0  - \Vy}
+    \pgfmathsetmacro{\FBCz}{0  - \Vz}
+
+    % Bottom right coordinates: detFBR = detCenter + detU - detV
+    \pgfmathsetmacro{\FBRx}{-3 - \detHw*\sinb - \Vx}
+    \pgfmathsetmacro{\FBRy}{    \detHw*\cosb - \Vy}
+    \pgfmathsetmacro{\FBRz}{          0      - \Vz}
+
+    % Top right coordinates: detFTR = detFBR + 2*detV
+    \pgfmathsetmacro{\FTRx}{\FBRx + 2*\Vx}
+    \pgfmathsetmacro{\FTRy}{\FBRy + 2*\Vy}
+    \pgfmathsetmacro{\FTRz}{\FBRz + 2*\Vz}
+
+    %=========================
+    % Detector bottom-center point
+    %=========================
+    \coordinate (detFBC) at ({\FBCx},{\FBCy},{\FBCz});
+
+    %=========================
+    % Detector geometry
+    %=========================
+    % Front face corners
+    \coordinate (detFBL) at ($ (detCenter) - (detU) - (detV) $); % bottom left
+    \coordinate (detFBR) at ($ (detCenter) + (detU) - (detV) $); % bottom right
+    \coordinate (detFTL) at ($ (detCenter) - (detU) + (detV) $); % top left
+    \coordinate (detFTR) at ($ (detCenter) + (detU) + (detV) $); % top right
+
+    % Back face corners
+    \coordinate (detBBL) at ($ (detFBL) + (detTvec) $);
+    \coordinate (detBBR) at ($ (detFBR) + (detTvec) $);
+    \coordinate (detBTL) at ($ (detFTL) + (detTvec) $);
+    \coordinate (detBTR) at ($ (detFTR) + (detTvec) $);
+
+    % Draw partial back face
+    \draw[very thick]
+      (detBBR) -- (detBTR) -- (detBTL);
+    % Bottom back edge
+    \draw[very thick] (detBBL) -- (detBBR);
+
+    % Draw front face
+    \draw[very thick]
+      (detFBL) -- (detFBR) -- (detFTR) -- (detFTL) -- cycle;
+
+    % Connector edges (thickness)
+    \draw[very thick] (detFBR) -- (detBBR);
+    \draw[very thick] (detFTR) -- (detBTR);
+    \draw[very thick] (detFTL) -- (detBTL);
+    \draw[very thick] (detFBL) -- (detBBL);
+
+    % Detector label
+    \node at ($(detCenter)+(0,0,1.3)$) {\tiny Detector Screen};
+
+    %=========================
+    % Beta arc, line, and label at top-right (display-only)
+    %=========================
+    \pgfmathsetmacro{\rBetaArc}{0.3}
+    \pgfmathsetmacro{\betastart}{min(0,\betaVis)}
+    \pgfmathsetmacro{\betaend}{max(0,\betaVis)}
+    \pgfmathsetmacro{\betamid}{0.5*(\betastart+\betaend)}
+
+    % Dashed line for beta from top-right in a local xz plane
+    \coordinate (betaBase) at ({\FTRx},{\FTRy},{\FTRz});
+    \coordinate (betaDet) at ({\FTRx + \rBetaArc*\sinBetaVis},
+                              {\FTRy},
+                              {\FTRz + \rBetaArc*\cosBetaVis});
+    \draw[orange, dash pattern=on 1pt off 0.7pt] (betaBase) -- (betaDet);
+
+    % Vertical z bar at top-right
+    \coordinate (detFTRzBar) at ($ (detFTR) + (0,0,0.3) $);
+    \draw[orange,thick] (detFTR) -- (detFTRzBar);
+
+    % Arc for beta at top-right
+    \draw[orange, dash pattern=on 1pt off 0.7pt, line width=0.1mm] 
+      plot[domain=\betastart:\betaend, samples=30, variable=\t]
+        ({\FTRx + \rBetaArc*sin(\t)},
+         {\FTRy},
+         {\FTRz + \rBetaArc*cos(\t)});
+
+    % Label for beta at top-right
+    \coordinate (betaLabel) at ({\FTRx + 1.1*\rBetaArc*sin(\betamid)},
+                                {\FTRy},
+                                {\FTRz + 1.1*\rBetaArc*cos(\betamid)});
+    \node[orange, scale=0.6, anchor=south east,
+          xshift=6pt, yshift=-5pt] at (betaLabel) {$\beta$};
+
+    %=========================
+    % Gamma arc, lines, and label at top-right (display-only)
+    %=========================
+    \pgfmathsetmacro{\rArc}{0.4}
+    \pgfmathsetmacro{\alphab}{90+\gammaVis}   % rotated edge direction (display)
+    \pgfmathsetmacro{\alphax}{90}             % reference +y
+    \pgfmathsetmacro{\alphastart}{min(\alphab,\alphax)}
+    \pgfmathsetmacro{\alphaend}{max(\alphab,\alphax)}
+    \pgfmathsetmacro{\alphamid}{0.5*(\alphastart+\alphaend)}
+
+    \coordinate (gammaBase) at ({\FTRx},{\FTRy},{\FTRz});
+    % display edge direction using (-sin, cos)
+    \coordinate (gammaWidthEnd) at ({\FTRx - 0.4*\sinGammaVis},
+                                    {\FTRy + 0.4*\cosGammaVis},
+                                    {\FTRz});
+    % reference +y direction
+    \coordinate (gammaXEnd) at ({\FTRx},
+                                {\FTRy + 0.4},
+                                {\FTRz});
+    \draw[oiPurple,thick] (gammaBase) -- (gammaWidthEnd);
+    \draw[oiPurple,thin]  (gammaBase) -- (gammaXEnd);
+
+    % Gamma arc centered at top-right
+    \draw[oiPurple, line width=0.1mm, dash pattern=on 1pt off 0.7pt]
+      plot[domain=\alphastart:\alphaend, samples=30, variable=\t]
+        ({\FTRx + \rArc*cos(\t)},
+         {\FTRy + \rArc*sin(\t)},
+         {\FTRz});
+
+    % Label for gamma
+    \coordinate (gammaLabel) at ({\FTRx + 0.7*cos(\alphamid)},
+                                 {\FTRy + 0.7*sin(\alphamid)},
+                                 {\FTRz});
+    \node[oiPurple, scale=0.6, anchor=south west,
+          xshift=-18pt, yshift=-5pt] at (gammaLabel) {$\gamma$};
+
+    %=========================
+    % Sample and beams
+    %=========================
+    % Incident beam from sample to detector center
+    \draw[black, dash dot] (-0.5,0,0) -- (detCenter);
+
+    % Sample plane
+    \draw[fill=gray]
+      (-0.312, -0.2, -0.068) --
+      (-0.312,  0.2, -0.068) --
+      (-0.688,  0.2,  0.068) --
+      (-0.688, -0.2,  0.068) -- cycle;
+
+    \node[scale=0.7, xshift = -15, yshift = 25] at (-0.212, 0.3, -0.088) {\tiny Sample};
+
+    % Incident beam from source to sample
+    \draw[black, dash dot] (0.5,0,0) -- (-0.5,0,0);
+
+    % Line related to phi, aligned with detector vertical
+    \coordinate (phiLineEnd) at ($ (detCenter) +
+        ( {0.6*\sina*\cosb}, {0.6*\sina*\sinb}, {0.6*\cosa}+0.2 ) $);
+    \draw[cyan, dashed] (detCenter) -- (phiLineEnd);
+
+    %=========================
+    % Scattered point and components
+    %=========================
+    \pgfmathsetmacro{\offY}{0.8}  % along U0 (width)
+    \pgfmathsetmacro{\offZ}{0.3}  % along V0 (height)
+
+    \coordinate (scatP) at ({-3 + \offZ*\sina*\cosb - \offY*\sinb},
+                            {\offZ*\sina*\sinb + \offY*\cosb},
+                            {\offZ*\cosa});
+
+    % Width-component point: detCenter + offY * u_hat, u_hat = (-sinb, cosb, 0)
+    \coordinate (scatPwidth) at ({-3 - \offY*\sinb},
+                                 {0  + \offY*\cosb},
+                                 {0});
+
+    \draw[dash pattern=on 2pt off 1pt, green] (detCenter) -- (scatP);
+    \draw[dash pattern=on 2pt off 1pt,green] (detCenter) -- (scatPwidth);
+    \draw[dash pattern=on 2pt off 1pt,green] (scatPwidth) -- (scatP);
+
+    % Scattered beam vector r
+    \draw[red,->] (-0.5,0,0) -- (scatP);
+    \node[scale=0.7, red, xshift=12pt, yshift=-2pt]
+      at ($ (-0.5,0,0)!0.6!(scatP) $) {\tiny $\vec{k}_f$};
+
+    % Incident vector k_i
+    \draw[blue,->] (0.5,0,0) -- (-0.5,0,0);
+    \node[scale=0.7, blue] at (0.0,0.12,-0.01) {\tiny $\vec{k}_i$};
+
+    %=========================
+    % Angle arcs for phi and theta
+    %=========================
+    \tdplotsetrotatedcoords{0}{90}{90}
+    \tdplotdrawarc[dashed,tdplot_rotated_coords, cyan]
+      {(0,0,-3)}{0.8}{20}{90}{anchor=north west}{\tiny $\phi$}
+
+    \tdplotsetrotatedcoords{90}{-20.56}{0}
+    \tdplotdrawarc[dashed, green,tdplot_rotated_coords, line width=0.1mm]
+      {(0,1.4,0)}{0.5}{15}{90}
+      {anchor=south east}{\scriptsize $\theta$}
+
+    %=========================
+    % Axes legend
+    %=========================
+    \draw[->] (.5,0,0) -- (0.3,0,0)
+      node[anchor=south west, xshift=-1.5mm, yshift=-0.8mm] {\tiny $y$};
+    \draw[->] (.5,0,0) -- (.5,0.2,0) node[anchor=west] {\scriptsize $x$};
+    \draw[->] (.5,0,0) -- (.5,0,0.2) node[anchor=south] {\scriptsize $z$};
+
+\end{tikzpicture}

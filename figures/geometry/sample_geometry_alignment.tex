@@ -1,0 +1,355 @@
+% Sample geometry TikZ figure (to be \input into main document)
+% Requires in preamble:
+%   \usepackage{tikz}
+%   \usepackage{tikz-3dplot}
+%   \usetikzlibrary{calc}
+
+%=========================
+% View (orthographic projection) parameters
+%=========================
+\pgfmathsetmacro{\viewElev}{55}   % deg
+\pgfmathsetmacro{\viewAzim}{55}   % deg
+\pgfmathsetmacro{\viewRoll}{0}    % deg
+\tdplotsetmaincoords{\viewElev}{\viewAzim}
+
+\begin{tikzpicture}[tdplot_main_coords, scale=1.5,
+    >=stealth,
+    line cap=round,
+    line join=round
+]
+
+%=========================
+% Sample orientation parameters
+%=========================
+\pgfmathsetmacro{\thetadeg}{-15}     % theta_i: rotation about x (deg)
+\pgfmathsetmacro{\phideg}{20}        % chi:      rotation about y (deg)
+
+\pgfmathsetmacro{\cost}{cos(\thetadeg)}
+\pgfmathsetmacro{\sint}{sin(\thetadeg)}
+\pgfmathsetmacro{\cosp}{cos(\phideg)}
+\pgfmathsetmacro{\sinp}{sin(\phideg)}
+
+\pgfmathsetmacro{\sampleX}{1.0}     % local x extent
+\pgfmathsetmacro{\sampleY}{1.0}     % local y extent
+\pgfmathsetmacro{\sampleT}{0.15}    % local thickness (along normal)
+
+\pgfmathsetmacro{\halfX}{0.5*\sampleX}
+\pgfmathsetmacro{\halfY}{0.5*\sampleY}
+\pgfmathsetmacro{\halfT}{0.5*\sampleT}
+
+% Sample normal after Ry(phi) then Rx(-theta):
+% e3 -> n = (sinp, sint*cosp, cost*cosp)
+\pgfmathsetmacro{\nx}{\sinp}
+\pgfmathsetmacro{\ny}{\sint*\cosp}
+\pgfmathsetmacro{\nz}{\cost*\cosp}
+
+% Combined rotation: R = Rx(-theta) * Ry(phi)
+% Local point r = a e1 + b e2 + c e3
+% After rotation:
+%   x = a*cosp + c*sinp
+%   y = -a*sinp*sint + b*cost + c*sint*cosp
+%   z = -a*sinp*cost - b*sint + c*cosp*cost
+\newcommand{\samplecorner}[4]{%
+  \coordinate (#1) at ({
+      #2*\halfX*\cosp               + #4*\halfT*\sinp
+  }, {
+      -#2*\halfX*\sinp*\sint + #3*\halfY*\cost + #4*\halfT*\sint*\cosp
+  }, {
+      -#2*\halfX*\sinp*\cost - #3*\halfY*\sint + #4*\halfT*\cosp*\cost
+  });
+}
+
+%=========================
+% Sample corners
+%=========================
+\samplecorner{FBL}{-1}{-1}{+1}
+\samplecorner{FBR}{+1}{-1}{+1}
+\samplecorner{FTL}{-1}{+1}{+1}
+\samplecorner{FTR}{+1}{+1}{+1}
+
+\samplecorner{BBL}{-1}{-1}{-1}
+\samplecorner{BBR}{+1}{-1}{-1}
+\samplecorner{BTL}{-1}{+1}{-1}
+\samplecorner{BTR}{+1}{+1}{-1}
+
+\coordinate (sampleCenter) at (0,0,0);
+
+%=========================
+% Draw sample (thin slab)
+%=========================
+\fill[gray!15] (BBL) -- (BBR) -- (BTR) -- (BTL) -- cycle;
+\draw[black, thick] (BBL) -- (BBR) -- (BTR) -- (BTL) -- cycle;
+
+\draw[black, thick] (FBL) -- (BBL);
+\draw[black, thick] (FBR) -- (BBR);
+\draw[black, thick] (FTR) -- (BTR);
+\draw[black, thick] (FTL) -- (BTL);
+
+\fill[gray!40] (FBL) -- (FBR) -- (FTR) -- (FTL) -- cycle;
+\draw[black, thick] (FBL) -- (FBR) -- (FTR) -- (FTL) -- cycle;
+
+\node[scale=0.7, anchor=north, xshift=-25, yshift=45]
+  at ($(FTR)+(0.15,0.1,0)$) {\tiny Sample};
+
+%-------------------------
+% Thickness arrow t
+%-------------------------
+\pgfmathsetmacro{\tFrac}{2}
+\coordinate (tMid) at ($ (FTR)!0.5!(BTR) $);
+\coordinate (tTop) at ($ (tMid)!-\tFrac!(BTR) + (0.08,0,0) $);
+\coordinate (tBot) at ($ (tMid)!\tFrac!(BTR) + (0.08,0,0) $);
+
+\draw[black,<->] (tTop) -- (tBot)
+  node[midway,anchor=west,scale=0.7,xshift=1pt] {$t$};
+
+%=========================
+% Incident wavevector k_i (along +y at z=zKi)
+%=========================
+\pgfmathsetmacro{\zKi}{0.02}
+% Intersect r=(0,y,zKi) with front face n·r = +halfT:
+% ny*y + nz*zKi = halfT  => y_end = (halfT - nz*zKi)/ny
+\pgfmathsetmacro{\yKiEnd}{(\halfT - \nz*\zKi)/\ny}
+\pgfmathsetmacro{\kiLen}{0.8}
+
+\coordinate (kiEnd)   at (0,\yKiEnd,\zKi);
+\coordinate (kiStart) at (0,\yKiEnd-\kiLen,\zKi);
+
+%-------------------------
+% “Old” -y on sample surface (carried with sample), from kiEnd
+% dSurf = (0, -cos(theta), sin(theta))
+%-------------------------
+\pgfmathsetmacro{\dSurfX}{0}
+\pgfmathsetmacro{\dSurfY}{-\cost}
+\pgfmathsetmacro{\dSurfZ}{\sint}
+\pgfmathsetmacro{\ySurfLen}{(-\kiLen)/\dSurfY}
+
+\coordinate (yOnSurface) at (0,
+  {\yKiEnd + \ySurfLen*\dSurfY},
+  {\zKi   + \ySurfLen*\dSurfZ}
+);
+\draw[black!70] (kiEnd) -- (yOnSurface);
+
+%-------------------------
+% Sample surface +x direction (projected), from kiEnd
+% e1' = (cosp, -sinp*sint, -sinp*cost)
+%-------------------------
+\pgfmathsetmacro{\dxSurfX}{\cosp}
+\pgfmathsetmacro{\dxSurfY}{-\sinp*\sint}
+\pgfmathsetmacro{\dxSurfZ}{-\sinp*\cost}
+
+% Local a-coordinate of kiEnd on front face:
+% x = a*cosp + halfT*sinp, with x=0 => a0 = -halfT*sinp/cosp
+\pgfmathsetmacro{\aZero}{(-\halfT*\sinp)/\cosp}
+\pgfmathsetmacro{\xSurfLen}{\halfX - \aZero}
+
+\coordinate (xOnSurface) at ({
+    0       + \xSurfLen*\dxSurfX
+  }, {
+    \yKiEnd + \xSurfLen*\dxSurfY
+  }, {
+    \zKi    + \xSurfLen*\dxSurfZ
+});
+\draw[black!70] (kiEnd) -- (xOnSurface);
+
+%=========================
+% Incidence angle arc theta_i (local y-z plane through kiEnd)
+%=========================
+\pgfmathsetmacro{\thetaArc}{abs(\thetadeg)}
+\pgfmathsetmacro{\rArc}{0.81}
+
+\draw[orange!85!black, line width=0.3mm]
+  plot[domain=0:\thetaArc, samples=60, variable=\t]
+    ({0},
+     {\yKiEnd - \rArc*cos(\t)},
+     {\zKi    - \rArc*sin(\t)});
+
+\pgfmathsetmacro{\tMidTheta}{0.5*\thetaArc}
+\coordinate (thetaLabel) at (0,
+  {\yKiEnd - 1.35*\rArc*cos(\tMidTheta)},
+  {\zKi    + 1.10*\rArc*sin(\tMidTheta)}
+);
+\node[scale=0.4, text=orange!85!black, anchor=west, xshift=23pt, yshift=-5pt]
+  at (thetaLabel) {$\theta_i$};
+
+%=========================
+% Chi angle arc (x-z plane, centered at kiEnd, y=yKiEnd)
+%=========================
+\pgfmathsetmacro{\dxChi}{\xSurfLen*\dxSurfX}
+\pgfmathsetmacro{\dzChi}{\xSurfLen*\dxSurfZ}
+\pgfmathsetmacro{\rChi}{sqrt(\dxChi*\dxChi + \dzChi*\dzChi)}
+\pgfmathsetmacro{\chiEndDeg}{atan2(\dzChi,\dxChi)}
+
+\draw[magenta!80!black, line width=0.3mm]
+  plot[domain=0:\chiEndDeg+8, samples=60, variable=\t]
+    ({ \rChi*cos(\t) },
+     { \yKiEnd },
+     { \zKi + \rChi*sin(\t) });
+
+\pgfmathsetmacro{\tChiMid}{0.5*\chiEndDeg}
+\coordinate (chiLabel) at ({
+    1.2*\rChi*cos(\tChiMid)
+  }, {
+    \yKiEnd
+  }, {
+    \zKi + 1.2*\rChi*sin(\tChiMid)
+});
+\node[scale=0.55, text=magenta!80!black, anchor=west, xshift=-8pt, yshift=16pt]
+  at (chiLabel) {$\chi$};
+
+%=========================
+% +y axis: dashed then solid
+%=========================
+\pgfmathsetmacro{\yMax}{1.0}
+\pgfmathsetmacro{\ySplit}{0.81}
+
+\coordinate (yDashEnd) at ($(kiEnd) + (0,\ySplit,0)$);
+\coordinate (yMaxPt)   at ($(kiEnd) + (0,\yMax,0)$);
+
+\draw[black, dash pattern=on 1pt off 0.6pt, opacity=0.7] (kiEnd) -- (yDashEnd);
+\draw[black, ->] (yDashEnd) -- (yMaxPt)
+  node[anchor=west,scale=0.8] {$y$};
+
+%=========================
+% Goniometer arm: dashed (0 deg) and solid (Ry then Rx)
+%=========================
+\pgfmathsetmacro{\zGoni}{0.5}
+\pgfmathsetmacro{\xGoni}{0.8}   % half-length
+\pgfmathsetmacro{\yGoni}{0.0}
+
+% Dashed (0 deg) arm along x at (y=0, z=zGoni)
+\coordinate (goniStart0) at (-\xGoni,\yGoni,\zGoni);
+\coordinate (goniEnd0)   at ( \xGoni,\yGoni,\zGoni);
+
+% Rotations: first about global y by psi, then about global x by alpha
+\pgfmathsetmacro{\psideg}{10}
+\pgfmathsetmacro{\psiCos}{cos(\psideg)}
+\pgfmathsetmacro{\psiSin}{sin(\psideg)}
+
+\pgfmathsetmacro{\alphadeg}{-20}
+\pgfmathsetmacro{\alphaCos}{cos(\alphadeg)}
+\pgfmathsetmacro{\alphaSin}{sin(\alphadeg)}
+
+% Pivot point (arm center)
+\coordinate (goniPivot)  at (0,\yGoni,\zGoni);
+\coordinate (goniCenter) at (goniPivot);
+
+% Final direction after Ry(psi) then Rx(alpha):
+% d = (cos psi, -sin psi*sin alpha, sin psi*cos alpha)
+\pgfmathsetmacro{\gdx}{\psiCos}
+\pgfmathsetmacro{\gdy}{-\psiSin*\alphaSin}
+\pgfmathsetmacro{\gdz}{\psiSin*\alphaCos}
+
+\coordinate (goniStart) at ({-\xGoni*\gdx}, {\yGoni - \xGoni*\gdy}, {\zGoni - \xGoni*\gdz});
+\coordinate (goniEnd)   at ({ \xGoni*\gdx}, {\yGoni + \xGoni*\gdy}, {\zGoni + \xGoni*\gdz});
+
+% Draw arms
+\draw[red!70!black, thick, dash pattern=on 2pt off 2pt] (goniStart0) -- (goniEnd0);
+\draw[red!70!black, thick] (goniStart) -- (goniEnd);
+\fill[red!70!black] (goniCenter) circle (0.5pt);
+
+% Vertical (global z) drop line from solid +x end to z=zGoni
+\coordinate (goniEndAtZgoni) at ({\xGoni*\gdx}, {\yGoni + \xGoni*\gdy}, {\zGoni});
+\draw[red!70!black, line width=0.25mm] (goniEnd) -- (goniEndAtZgoni);
+
+% psi label on the drop line
+\coordinate (psiLabel) at ($ (goniEnd)!0.5!(goniEndAtZgoni) $);
+\node[scale=0.6, text=red!70!black, anchor=west, xshift=0pt]
+  at (psiLabel) {$\psi$};
+
+% Arm labels at the -x ends
+\node[scale=0.5, text=red!70!black, anchor=east, xshift=2pt, yshift=4pt]
+  at (goniStart0) {$\vec{G}$};
+\node[scale=0.5, text=red!70!black, anchor=east, xshift=0pt, yshift=-2pt]
+  at (goniStart) {$\vec{G}'$};
+
+%=========================
+% Alpha arc: from dashed +x end (goniEnd0) to bottom of solid +x end (goniEndAtZgoni)
+% Drawn in the plane z=zGoni
+%=========================
+\pgfmathsetmacro{\xA}{\xGoni}
+\pgfmathsetmacro{\xB}{\xGoni*\gdx}
+\pgfmathsetmacro{\yBrel}{\xGoni*\gdy}   % since yArel=0
+
+\pgfmathsetmacro{\denAlpha}{(\xB-\xA)}
+\pgfmathsetmacro{\hAlpha}{ifthenelse(abs(\denAlpha)<0.000001, 0,
+  (\xB*\xB + \yBrel*\yBrel - \xA*\xA) / (2*\denAlpha)
+)}
+\pgfmathsetmacro{\rAlphaArc}{abs(\xA - \hAlpha)}
+
+\pgfmathsetmacro{\tAalpha}{atan2(0, \xA-\hAlpha)}
+\pgfmathsetmacro{\tBalpha}{atan2(\yBrel, \xB-\hAlpha)}
+\pgfmathsetmacro{\tAlphaStart}{min(\tAalpha,\tBalpha)}
+\pgfmathsetmacro{\tAlphaEnd}{max(\tAalpha,\tBalpha)}
+
+\draw[red!70!black, line width=0.22mm]
+  plot[domain=\tAlphaStart:\tAlphaEnd, samples=70, variable=\t]
+    ({\hAlpha + \rAlphaArc*cos(\t)},
+     {\yGoni + \rAlphaArc*sin(\t)},
+     {\zGoni});
+
+\pgfmathsetmacro{\tMalpha}{0.5*(\tAlphaStart+\tAlphaEnd)}
+\coordinate (alphaLabel) at ({
+    \hAlpha + 1.2*\rAlphaArc*cos(\tMalpha)
+  }, {
+    \yGoni + 1.2*\rAlphaArc*sin(\tMalpha)
+  }, {
+    \zGoni
+});
+\node[scale=0.6, text=red!70!black, anchor=west, xshift=-15pt, yshift=-2pt]
+  at (alphaLabel) {$\alpha$};
+
+%=========================
+% Moment (torque) arrow about the solid goniometer arm
+% Plane perpendicular to d=(gdx,gdy,gdz), centered on the arm
+%=========================
+\pgfmathsetmacro{\rMom}{0.11}
+\pgfmathsetmacro{\momStart}{20}
+\pgfmathsetmacro{\momEnd}{275}
+
+% Center point along the arm (fraction of half-length)
+\pgfmathsetmacro{\xMomBase}{0.5}
+\pgfmathsetmacro{\xMom}{\xMomBase*\gdx}
+\pgfmathsetmacro{\yMom}{\yGoni + \xMomBase*\gdy}
+\pgfmathsetmacro{\zMom}{\zGoni + \xMomBase*\gdz}
+
+% Orthonormal basis spanning plane perpendicular to d
+% Use ref=(0,1,0): u_raw = d x ref = (-d_z, 0, d_x)
+\pgfmathsetmacro{\uNorm}{sqrt(\gdz*\gdz + \gdx*\gdx)}
+\pgfmathsetmacro{\ux}{-\gdz/\uNorm}
+\pgfmathsetmacro{\uy}{0}
+\pgfmathsetmacro{\uz}{\gdx/\uNorm}
+
+% v_hat = normalize(d x u_hat)
+\pgfmathsetmacro{\vRawX}{\gdy*\uz - \gdz*\uy}
+\pgfmathsetmacro{\vRawY}{\gdz*\ux - \gdx*\uz}
+\pgfmathsetmacro{\vRawZ}{\gdx*\uy - \gdy*\ux}
+\pgfmathsetmacro{\vNorm}{sqrt(\vRawX*\vRawX + \vRawY*\vRawY + \vRawZ*\vRawZ)}
+\pgfmathsetmacro{\vx}{\vRawX/\vNorm}
+\pgfmathsetmacro{\vy}{\vRawY/\vNorm}
+\pgfmathsetmacro{\vz}{\vRawZ/\vNorm}
+
+\draw[red!70!black, line width=0.1mm, ->]
+  plot[domain=\momStart:\momEnd, samples=100, variable=\t]
+    ({
+      \xMom + \rMom*(\ux*cos(\t) + \vx*sin(\t))
+    },{
+      \yMom + \rMom*(\uy*cos(\t) + \vy*sin(\t))
+    },{
+      \zMom + \rMom*(\uz*cos(\t) + \vz*sin(\t))
+    });
+
+%=========================
+% Draw k_i vector (last)
+%=========================
+\draw[blue!65!black, ->] (kiStart) -- (kiEnd);
+\node[scale=0.7, text=blue!65!black, xshift=-15, yshift=-10]
+  at ($ (kiStart)!0.55!(kiEnd) + (0,0,0.18) $) {\tiny $\vec{k}_i$};
+
+%=========================
+% Global x axis at kiEnd (last)
+%=========================
+\coordinate (xPlus) at ($(kiEnd) + (1.0,0,0)$);
+\draw[->, black] (kiEnd) -- (xPlus)
+  node[anchor=west,scale=0.8] {$x$};
+
+\end{tikzpicture}

@@ -1,0 +1,290 @@
+% Preamble:
+% \usepackage{tikz}
+% \usetikzlibrary{calc}
+
+\begin{tikzpicture}[line cap=round, line join=round]
+
+%---------------------------
+% Center of rotation
+%---------------------------
+\coordinate (COR) at (0,0);
+
+%---------------------------
+% User parameters
+%---------------------------
+\def\rotAng{0}        % adjustable CCW rotation angle (deg) about COR
+\def\ZsLen{2.6}        % |Z_s| distance from COR to sample surface midpoint
+\def\sampleHalfW{1.8}  % half width of sample surface
+\def\sampleThick{0.5}  % sample thickness (drawn below the surface)
+
+\def\beamY{-1.6}       % beam height relative to COR
+\def\zBx{-3.2}         % x location for z_B marker
+
+\def\leftSolid{-2.0}
+\def\leftDash{-4.8}
+\def\rightShort{0.9}
+
+\def\beamStartX{-4.8}
+\def\beamEndX{4}
+
+%---------------------------
+% Derived geometry
+%---------------------------
+\pgfmathsetmacro{\epsVal}{0.00001}
+\pgfmathsetmacro{\sentinel}{10000}
+
+% Hide theta_i and X_s when rotAng ~ 0
+\pgfmathsetmacro{\vInc}{abs(\rotAng) < 0.0001 ? 0 : 1}
+\pgfmathsetmacro{\incOpacity}{\vInc}
+
+% Sample surface normal direction
+\pgfmathsetmacro{\nAngle}{\rotAng-90}
+
+% Surface midpoint coordinates
+\pgfmathsetmacro{\Sx}{\ZsLen*cos(\nAngle)}
+\pgfmathsetmacro{\Sy}{\ZsLen*sin(\nAngle)}
+\coordinate (Ssurf) at (\Sx,\Sy);
+
+% Trig
+\pgfmathsetmacro{\ct}{cos(\rotAng)}
+\pgfmathsetmacro{\st}{sin(\rotAng)}
+
+% Local size
+\pgfmathsetmacro{\halfW}{\sampleHalfW}
+\pgfmathsetmacro{\thickS}{\sampleThick}
+
+% Rotated rectangle corners in lab frame
+% Local corners relative to Ssurf:
+% A(-halfW,0), B(halfW,0), C(halfW,-thickS), D(-halfW,-thickS)
+\pgfmathsetmacro{\xA}{\Sx + (-\halfW)*\ct}
+\pgfmathsetmacro{\yA}{\Sy + (-\halfW)*\st}
+\pgfmathsetmacro{\xB}{\Sx + (\halfW)*\ct}
+\pgfmathsetmacro{\yB}{\Sy + (\halfW)*\st}
+
+\pgfmathsetmacro{\xC}{\Sx + (\halfW)*\ct + \thickS*\st}
+\pgfmathsetmacro{\yC}{\Sy + (\halfW)*\st - \thickS*\ct}
+\pgfmathsetmacro{\xD}{\Sx + (-\halfW)*\ct + \thickS*\st}
+\pgfmathsetmacro{\yD}{\Sy + (-\halfW)*\st - \thickS*\ct}
+
+\coordinate (A) at (\xA,\yA);
+\coordinate (B) at (\xB,\yB);
+\coordinate (C) at (\xC,\yC);
+\coordinate (D) at (\xD,\yD);
+
+%---------------------------
+% Beam clamp at y = beamY
+% Intersect with edges AB, BC, CD, DA
+% Choose smallest x among valid intersections
+%---------------------------
+
+% Edge AB
+\pgfmathsetmacro{\denBeamAB}{\yB-\yA}
+\pgfmathsetmacro{\tBeamAB}{abs(\denBeamAB)<\epsVal ? -1 : (\beamY-\yA)/\denBeamAB}
+\pgfmathsetmacro{\xIntAB}{\xA + \tBeamAB*(\xB-\xA)}
+\pgfmathsetmacro{\vBeamAB}{(\tBeamAB>=0 ? (\tBeamAB<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\xHitAB}{\vBeamAB>0 ? \xIntAB : \sentinel}
+
+% Edge BC
+\pgfmathsetmacro{\denBeamBC}{\yC-\yB}
+\pgfmathsetmacro{\tBeamBC}{abs(\denBeamBC)<\epsVal ? -1 : (\beamY-\yB)/\denBeamBC}
+\pgfmathsetmacro{\xIntBC}{\xB + \tBeamBC*(\xC-\xB)}
+\pgfmathsetmacro{\vBeamBC}{(\tBeamBC>=0 ? (\tBeamBC<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\xHitBC}{\vBeamBC>0 ? \xIntBC : \sentinel}
+
+% Edge CD
+\pgfmathsetmacro{\denBeamCD}{\yD-\yC}
+\pgfmathsetmacro{\tBeamCD}{abs(\denBeamCD)<\epsVal ? -1 : (\beamY-\yC)/\denBeamCD}
+\pgfmathsetmacro{\xIntCD}{\xC + \tBeamCD*(\xD-\xC)}
+\pgfmathsetmacro{\vBeamCD}{(\tBeamCD>=0 ? (\tBeamCD<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\xHitCD}{\vBeamCD>0 ? \xIntCD : \sentinel}
+
+% Edge DA
+\pgfmathsetmacro{\denBeamDA}{\yA-\yD}
+\pgfmathsetmacro{\tBeamDA}{abs(\denBeamDA)<\epsVal ? -1 : (\beamY-\yD)/\denBeamDA}
+\pgfmathsetmacro{\xIntDA}{\xD + \tBeamDA*(\xA-\xD)}
+\pgfmathsetmacro{\vBeamDA}{(\tBeamDA>=0 ? (\tBeamDA<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\xHitDA}{\vBeamDA>0 ? \xIntDA : \sentinel}
+
+\pgfmathsetmacro{\xHitFirst}{min(\xHitAB,\xHitBC)}
+\pgfmathsetmacro{\xHitSecond}{min(\xHitCD,\xHitDA)}
+\pgfmathsetmacro{\xHit}{min(\xHitFirst,\xHitSecond)}
+
+\pgfmathsetmacro{\vAnyBeam}{(\vBeamAB+\vBeamBC+\vBeamCD+\vBeamDA) > 0 ? 1 : 0}
+
+\pgfmathsetmacro{\vBeamSeg}{
+  \vAnyBeam *
+  (\xHit >= \beamStartX ? 1 : 0) *
+  (\xHit <= \beamEndX ? 1 : 0)
+}
+
+\pgfmathsetmacro{\beamEndEff}{\vBeamSeg*\xHit + (1-\vBeamSeg)*\beamEndX}
+\coordinate (BeamHit) at (\beamEndEff,\beamY);
+
+%---------------------------
+% z_B clamp at x = zBx
+% Intersect with edges AB, BC, CD, DA
+% Choose largest y within [beamY, 0]
+%---------------------------
+
+% Edge AB
+\pgfmathsetmacro{\denZBAB}{\xB-\xA}
+\pgfmathsetmacro{\uZBAB}{abs(\denZBAB)<\epsVal ? -1 : (\zBx-\xA)/\denZBAB}
+\pgfmathsetmacro{\yZBAB}{\yA + \uZBAB*(\yB-\yA)}
+\pgfmathsetmacro{\wZBAB}{(\uZBAB>=0 ? (\uZBAB<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wZBAB}{\wZBAB * (\yZBAB<=0 ? 1 : 0) * (\yZBAB>=\beamY ? 1 : 0)}
+\pgfmathsetmacro{\yHitZBAB}{\wZBAB>0 ? \yZBAB : -\sentinel}
+
+% Edge BC
+\pgfmathsetmacro{\denZBBC}{\xC-\xB}
+\pgfmathsetmacro{\uZBBC}{abs(\denZBBC)<\epsVal ? -1 : (\zBx-\xB)/\denZBBC}
+\pgfmathsetmacro{\yZBBC}{\yB + \uZBBC*(\yC-\yB)}
+\pgfmathsetmacro{\wZBBC}{(\uZBBC>=0 ? (\uZBBC<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wZBBC}{\wZBBC * (\yZBBC<=0 ? 1 : 0) * (\yZBBC>=\beamY ? 1 : 0)}
+\pgfmathsetmacro{\yHitZBBC}{\wZBBC>0 ? \yZBBC : -\sentinel}
+
+% Edge CD
+\pgfmathsetmacro{\denZBCD}{\xD-\xC}
+\pgfmathsetmacro{\uZBCD}{abs(\denZBCD)<\epsVal ? -1 : (\zBx-\xC)/\denZBCD}
+\pgfmathsetmacro{\yZBCD}{\yC + \uZBCD*(\yD-\yC)}
+\pgfmathsetmacro{\wZBCD}{(\uZBCD>=0 ? (\uZBCD<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wZBCD}{\wZBCD * (\yZBCD<=0 ? 1 : 0) * (\yZBCD>=\beamY ? 1 : 0)}
+\pgfmathsetmacro{\yHitZBCD}{\wZBCD>0 ? \yZBCD : -\sentinel}
+
+% Edge DA
+\pgfmathsetmacro{\denZBDA}{\xA-\xD}
+\pgfmathsetmacro{\uZBDA}{abs(\denZBDA)<\epsVal ? -1 : (\zBx-\xD)/\denZBDA}
+\pgfmathsetmacro{\yZBDA}{\yD + \uZBDA*(\yA-\yD)}
+\pgfmathsetmacro{\wZBDA}{(\uZBDA>=0 ? (\uZBDA<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wZBDA}{\wZBDA * (\yZBDA<=0 ? 1 : 0) * (\yZBDA>=\beamY ? 1 : 0)}
+\pgfmathsetmacro{\yHitZBDA}{\wZBDA>0 ? \yZBDA : -\sentinel}
+
+\pgfmathsetmacro{\yHitZBFirst}{max(\yHitZBAB,\yHitZBBC)}
+\pgfmathsetmacro{\yHitZBSecond}{max(\yHitZBCD,\yHitZBDA)}
+\pgfmathsetmacro{\yHitZB}{max(\yHitZBFirst,\yHitZBSecond)}
+
+\pgfmathsetmacro{\vAnyZB}{(\wZBAB+\wZBBC+\wZBCD+\wZBDA) > 0 ? 1 : 0}
+\pgfmathsetmacro{\zBendY}{\vAnyZB*\yHitZB + (1-\vAnyZB)*\beamY}
+\coordinate (ZBend) at (\zBx,\zBendY);
+
+%---------------------------
+% Vertical dashed axis at x = 0, clamped to sample
+%---------------------------
+\def\axisDefaultY{-3.6}
+
+\pgfmathsetmacro{\xAxisVal}{0}
+
+% Edge AB
+\pgfmathsetmacro{\denAxisAB}{\xB-\xA}
+\pgfmathsetmacro{\uAxisAB}{abs(\denAxisAB)<\epsVal ? -1 : (\xAxisVal-\xA)/\denAxisAB}
+\pgfmathsetmacro{\yAxisAB}{\yA + \uAxisAB*(\yB-\yA)}
+\pgfmathsetmacro{\wAxisAB}{(\uAxisAB>=0 ? (\uAxisAB<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wAxisAB}{\wAxisAB * (\yAxisAB<=0 ? 1 : 0)}
+\pgfmathsetmacro{\yHitAxisAB}{\wAxisAB>0 ? \yAxisAB : -\sentinel}
+
+% Edge BC
+\pgfmathsetmacro{\denAxisBC}{\xC-\xB}
+\pgfmathsetmacro{\uAxisBC}{abs(\denAxisBC)<\epsVal ? -1 : (\xAxisVal-\xB)/\denAxisBC}
+\pgfmathsetmacro{\yAxisBC}{\yB + \uAxisBC*(\yC-\yB)}
+\pgfmathsetmacro{\wAxisBC}{(\uAxisBC>=0 ? (\uAxisBC<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wAxisBC}{\wAxisBC * (\yAxisBC<=0 ? 1 : 0)}
+\pgfmathsetmacro{\yHitAxisBC}{\wAxisBC>0 ? \yAxisBC : -\sentinel}
+
+% Edge CD
+\pgfmathsetmacro{\denAxisCD}{\xD-\xC}
+\pgfmathsetmacro{\uAxisCD}{abs(\denAxisCD)<\epsVal ? -1 : (\xAxisVal-\xC)/\denAxisCD}
+\pgfmathsetmacro{\yAxisCD}{\yC + \uAxisCD*(\yD-\yC)}
+\pgfmathsetmacro{\wAxisCD}{(\uAxisCD>=0 ? (\uAxisCD<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wAxisCD}{\wAxisCD * (\yAxisCD<=0 ? 1 : 0)}
+\pgfmathsetmacro{\yHitAxisCD}{\wAxisCD>0 ? \yAxisCD : -\sentinel}
+
+% Edge DA
+\pgfmathsetmacro{\denAxisDA}{\xA-\xD}
+\pgfmathsetmacro{\uAxisDA}{abs(\denAxisDA)<\epsVal ? -1 : (\xAxisVal-\xD)/\denAxisDA}
+\pgfmathsetmacro{\yAxisDA}{\yD + \uAxisDA*(\yA-\yD)}
+\pgfmathsetmacro{\wAxisDA}{(\uAxisDA>=0 ? (\uAxisDA<=1 ? 1 : 0) : 0)}
+\pgfmathsetmacro{\wAxisDA}{\wAxisDA * (\yAxisDA<=0 ? 1 : 0)}
+\pgfmathsetmacro{\yHitAxisDA}{\wAxisDA>0 ? \yAxisDA : -\sentinel}
+
+\pgfmathsetmacro{\yHitAxisFirst}{max(\yHitAxisAB,\yHitAxisBC)}
+\pgfmathsetmacro{\yHitAxisSecond}{max(\yHitAxisCD,\yHitAxisDA)}
+\pgfmathsetmacro{\yHitAxis}{max(\yHitAxisFirst,\yHitAxisSecond)}
+
+\pgfmathsetmacro{\vAnyAxis}{(\wAxisAB+\wAxisBC+\wAxisCD+\wAxisDA) > 0 ? 1 : 0}
+\pgfmathsetmacro{\axisEndY}{\vAnyAxis*\yHitAxis + (1-\vAnyAxis)*\axisDefaultY}
+\coordinate (AxisEnd) at (0,\axisEndY);
+
+%---------------------------
+% Arc between vertical axis and Z_s, CCW
+%---------------------------
+\pgfmathsetmacro{\axisAngle}{-90}
+\pgfmathsetmacro{\zsAngle}{\nAngle}
+\def\arcR{0.7}
+
+%---------------------------
+% Purple X_s along +x to the beam-sample touch
+%---------------------------
+\pgfmathsetmacro{\xTouch}{\beamEndEff}
+\pgfmathsetmacro{\vPurple}{\vBeamSeg * (\xTouch > 0 ? 1 : 0)}
+\pgfmathsetmacro{\purpleOpacity}{\incOpacity*\vPurple}
+
+\pgfmathsetmacro{\purpleEndX}{\vPurple*\xTouch}
+\coordinate (PurpleEnd) at (\purpleEndX,0);
+
+\pgfmathsetmacro{\purpleDashEndY}{\vPurple*\beamY}
+\coordinate (PurpleDashEnd) at (\purpleEndX,\purpleDashEndY);
+
+%---------------------------
+% Center of rotation marker
+%---------------------------
+\draw[black, thick] (0,0.7) -- (0,-0.7);
+\draw[black, thick] (COR) -- (\rightShort,0);
+\draw[black, thick] (COR) -- (\leftSolid,0);
+
+% Blue dashed reference extension
+\draw[blue, dashed, thick] (\leftSolid,0) -- (\leftDash,0);
+
+%---------------------------
+% Sample
+%---------------------------
+\draw[green!60!black, thick] (A) -- (B) -- (C) -- (D) -- cycle;
+
+% Vertical dashed line at x=0 down to the sample
+\draw[orange, thick, dashed] (0,0) -- (AxisEnd);
+
+% Arc label for incident angle
+\draw[black, thick, opacity=\incOpacity]
+  (COR) ++(\axisAngle:\arcR)
+  arc (\axisAngle:\zsAngle:\arcR)
+  node[pos=0.55, below, opacity=\incOpacity] {$\theta_i$};
+
+%---------------------------
+% Beam clamped and dashed continuation
+%---------------------------
+\draw[red, thick, ->] (\beamStartX,\beamY) -- (BeamHit);
+\node[below, text=red] at (\zBx,\beamY) {beam};
+\draw[red, thick, dashed] (BeamHit) -- (\beamEndX,\beamY);
+
+%---------------------------
+% z_B vector clamped
+%---------------------------
+\draw[red, thick, <->] (\zBx,0) -- (ZBend) node[midway, right] {$z_B$};
+
+%---------------------------
+% Z_s vector
+%---------------------------
+\draw[green!60!black, thick, <->] (COR) -- (Ssurf) node[midway, right] {$Z_s$};
+
+%---------------------------
+% Purple X_s and connector (hidden if rotAng=0 or no +x hit)
+%---------------------------
+\draw[purple, thick, <->, opacity=\purpleOpacity] (0,0) -- (PurpleEnd)
+  node[midway, above, opacity=\purpleOpacity] {$X_s$};
+\draw[purple, thick, dashed, opacity=\purpleOpacity] (PurpleEnd) -- (PurpleDashEnd);
+
+%---------------------------
+% Center of rotation label moved upper left
+%---------------------------
+\node[align=left] (corlabel) at (-2.8,0.9) {Center of\\Rotation};
+\draw[->, black] (corlabel.east) to[bend right=10] (COR);
+
+\end{tikzpicture}
