@@ -1,0 +1,48 @@
+% ewald_single_tikz.tex
+\begin{tikzpicture}[scale=1.4,>=stealth]
+
+  % Coordinates
+  \coordinate (O)     at (0,0);          % reciprocal-space origin
+  \coordinate (C)     at (-1.7,0.6);     % Ewald circle center (tail of k_i)
+  \coordinate (Q002)  at (0,2.0);        % (002) reciprocal-lattice point
+  \coordinate (Q001)  at (0,1.0);        % (001) reciprocal-lattice point
+
+  % Ewald circle radius = |C -> O| = sqrt(1.5^2 + 1.0^2) = sqrt(3.25)
+  \pgfmathsetmacro{\rEwald}{sqrt(3.25)}
+
+  % Axes L, H
+  \draw[thick,->,gray!60] (-3.5,0) -- (2.0,0) node[right] {$L$};
+  \draw[thick,->,gray!60] (0,-1.5) -- (0,3.0) node[above] {$H$};
+
+  % Background lattice
+  \foreach \L in {-3,-2,-1,0,1} {
+    \foreach \H in {-1,0,1,2,3} {
+      \fill[gray!50] (\L,\H) circle (0.8pt);
+    }
+  }
+
+  % Ewald circle
+  \draw[oiOrange,thick] (C) circle[radius=\rEwald];
+  \node[oiOrange,anchor=north] at (-1.5,1.0+\rEwald-0.1) {Ewald sphere};
+
+  % k_i
+  \draw[very thick,->,oiOrange] (C) -- (O);
+  \node[oiOrange,anchor=north east,xshift=4pt,yshift=17pt] at (C) {$\vec{k}_i$};
+
+  % k_f
+  \draw[red,very thick,->] (O) -- (1.7,0.6);
+  \node[red,anchor=north east,xshift=4pt,yshift=16pt] at (1.7,0.6) {$\vec{k}_f$};
+
+  % theta_i
+  \draw[->,oiOrange,thick]
+    (-1.7,0) arc[start angle=180, end angle=161.91, radius=1.7]
+    node[pos=0.55,above,xshift=-7pt,yshift=-8pt] {$\theta_i$};
+
+  % (002) and (001)
+  \fill (Q002) circle (1.6pt);
+  \node[anchor=south west,xshift=2pt,yshift=2pt] at (Q002) {$(002)$};
+
+  \fill (Q001) circle (1.6pt);
+  \node[anchor=south west,xshift=2pt,yshift=2pt] at (Q001) {$(001)$};
+
+\end{tikzpicture}

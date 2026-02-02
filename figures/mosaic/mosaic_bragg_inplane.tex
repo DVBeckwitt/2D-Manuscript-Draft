@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=2,>=stealth]
+  \def\R{1.2}        % Bragg-sphere radius
+  \def\Raxis{1.6}    % axis length
+  \def\angleMid{50}  % midpoint angle of mosaic arc (degrees)
+
+  % Bragg sphere (2D slice)
+  \draw[dashed,blue] (0,0) circle (\R);
+
+  % reciprocal-space axes
+  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
+  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
+
+  % radius vector at midpoint of mosaic arc, label closer to tip
+  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)});
+  \draw[thick,->] (0,0) -- (Gvec)
+       node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{HKL}|$};
+
+  % polar angle theta from G_r to |G|
+  \draw[red,thick] (0,0) ++(0:0.45) arc (0:\angleMid:0.45);
+  \node[red] at (0.32,0.10) {\scriptsize $\theta_0$};
+
+  % mosaic arc on the Bragg sphere, labeled with omega(theta)
+  \draw[very thick,orange]
+    ({\R*cos(20)},{\R*sin(20)}) arc (20:80:\R)
+    node[pos=0.6, above right] {\scriptsize $\omega(\theta)$};
+
+  % projection onto G_r axis, labeled |G_{r,HKL}|
+  \coordinate (Gr) at ({\R*cos(\angleMid)},0);
+  \draw[densely dashed] (Gvec) -- (Gr);
+  \node[below] at ({0.5*\R*cos(\angleMid)},0) {\scriptsize $|\mathbf G_{r,HKL}|$};
+
+\end{tikzpicture}

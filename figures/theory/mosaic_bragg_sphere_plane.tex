@@ -1,0 +1,198 @@
+% mosaic_3D_Plane.tex
+% Preamble (main .tex file):
+%   \usepackage{pgfplots}
+%   \pgfplotsset{compat=1.18}
+%   \usepgfplotslibrary{colormaps}
+
+\begin{tikzpicture}
+  % --------- global resolution knob ----------
+  % Change this single integer to tune resolution everywhere
+  \pgfmathtruncatemacro{\NsampBase}{16}   % e.g. 8 (coarse), 16 (medium), 32 (fine)
+
+  % Derived resolutions
+  \pgfmathtruncatemacro{\Nsamp}{\NsampBase}          % angular resolution on spheres
+  \pgfmathtruncatemacro{\NsampY}{0.75*\NsampBase}    % polar samples on spheres
+  \pgfmathtruncatemacro{\NsampArc}{7.5*\NsampBase}   % samples along intersection arcs
+
+  % Mosaic kernel parameters (same as pv_arc)
+  \pgfmathsetmacro{\sigmaG}{0.2964692365} % Gaussian sigma [rad]
+  \pgfmathsetmacro{\gammaL}{0.3490658504} % Lorentzian HWHM [rad]
+  \pgfmathsetmacro{\eta}{0.3}             % Lorentzian weight in ω
+  \pgfmathsetmacro{\thetaZero}{60}        % Bragg-circle polar angle θ0 (deg)
+
+  % Sphere geometry
+  \pgfmathsetmacro{\R}{1.0}               % Bragg-sphere radius
+  \pgfmathsetmacro{\Rext}{1.3}            % Axis length
+  \pgfmathsetmacro{\eps}{0.03}            % Small z-offset for G_y arrow
+  \pgfmathsetmacro{\Rdiag}{\R/sqrt(2)}    % |(+Gz - Gy)| projected on (x,z)
+
+  % Intersection circle of two equal spheres (both radius R):
+  % Centers S1 = (0,0,0) and S2 = (-R/√2, 0, R/√2)
+  % Circle center C and radius r_circ:
+  \pgfmathsetmacro{\cx}{-0.5*\R/sqrt(2)}      % circle center x  (Gy)
+  \pgfmathsetmacro{\cz}{ 0.5*\R/sqrt(2)}      % circle center z  (Gz)
+  \pgfmathsetmacro{\rcirc}{0.5*sqrt(3)*\R}    % circle radius
+
+  % One-color colormap for auxiliary sphere (grey)
+  \pgfplotsset{
+    colormap={auxGrayMap}{
+      rgb255(0pt)   =(160,160,160);
+      rgb255(1000pt)=(160,160,160)
+    }
+  }
+
+  \begin{axis}[
+    view={-35}{20},
+    axis equal image,
+    hide axis,
+    shader=interp,
+    colormap/viridis,
+    point meta rel=per plot,
+    title={Surface density $\sigma(\theta)$ on the Bragg sphere},
+    title style={yshift=8pt},
+    unbounded coords=jump,     % break curves when points are out of range
+  ]
+
+    % ---------------- MAIN BRAGG SPHERE, BACK HALF (x + y > 0) ----------------
+    \addplot3[
+      surf,
+      domain=0:360,      % azimuth φ
+      y domain=0:90,     % polar angle θ (from +z)
+      samples=\Nsamp,
+      samples y=\NsampY,
+      variable=\u,
+      variable y=\v,
+      opacity=0.8,
+      draw=none,
+      point meta={
+        (
+          \eta * (1/pi * \gammaL /
+                  (((mod(\v-\thetaZero+180,360)-180)*pi/180)^2 + \gammaL^2))
+        )
+        +
+        (
+          (1-\eta) * (1/(sqrt(2*pi)*\sigmaG) *
+            exp(-0.5*(((mod(\v-\thetaZero+180,360)-180)*pi/180)/\sigmaG)^2))
+        )
+      },
+      restrict expr to domain={x + y}{0:10},  % x + y > 0  -> back half
+    ]
+    ({cos(\u)*sin(\v)}, {sin(\u)*sin(\v)}, {cos(\v)});
+
+    % ---------------- FULL AUXILIARY SPHERE (grey) ----------------
+    % Center: (-Rdiag, 0, Rdiag), radius = R
+    \addplot3[
+      surf,
+      domain=0:360,
+      y domain=0:180,    % full sphere
+      samples=\Nsamp,
+      samples y=\NsampY,
+      variable=\U,
+      variable y=\V,
+      shader=interp,
+      draw=none,
+      opacity=0.6,
+      point meta=0,
+      colormap name=auxGrayMap,
+    ]
+    ({- \Rdiag + \R * cos(\U)*sin(\V)},
+     {0        + \R * sin(\U)*sin(\V)},
+     {  \Rdiag + \R * cos(\V)});
+
+    % ---------------- MAIN BRAGG SPHERE, FRONT HALF (x + y < 0) ----------------
+    \addplot3[
+      surf,
+      domain=0:360,      % azimuth φ
+      y domain=0:90,     % polar angle θ (from +z)
+      samples=\Nsamp,
+      samples y=\NsampY,
+      variable=\u,
+      variable y=\v,
+      opacity=0.8,
+      draw=none,
+      point meta={
+        (
+          \eta * (1/pi * \gammaL /
+                  (((mod(\v-\thetaZero+180,360)-180)*pi/180)^2 + \gammaL^2))
+        )
+        +
+        (
+          (1-\eta) * (1/(sqrt(2*pi)*\sigmaG) *
+            exp(-0.5*(((mod(\v-\thetaZero+180,360)-180)*pi/180)/\sigmaG)^2))
+        )
+      },
+      restrict expr to domain={x + y}{-10:0}, % x + y < 0  -> front half
+    ]
+    ({cos(\u)*sin(\v)}, {sin(\u)*sin(\v)}, {cos(\v)});
+
+    % ---------------- RECIPROCAL-SPACE AXES ----------------
+    % G_z
+    \addplot3[->,thick] coordinates {(0,0,0) (0,0,\Rext)};
+    \node[anchor=south] at (axis cs:0,0,\Rext+0.05) {$G_z$};
+
+    % G_x: along negative y (dashed inside, solid outside)
+    \addplot3[thick,dashed] coordinates {(0,0,0) (0,-\R,0)};
+    \addplot3[->,thick]      coordinates {(0,-\R,0) (0,-\Rext,0)};
+    \node[anchor=north] at (axis cs:0,-\Rext-0.05,0) {$G_x$};
+
+    % G_y: along positive x (dashed inside, solid outside, slightly lifted in z)
+    \addplot3[thick,dashed] coordinates {(0,0,\eps) (\R,0,\eps)};
+    \addplot3[<-,thick]      coordinates {(\R,0,\eps) (\Rext,0,\eps)};
+    \node[anchor=west] at (axis cs:\Rext+0.05,0,\eps) {$G_y$};
+
+    % +G_z - G_y vector
+    \addplot3[<-,thick,oiOrange]
+      coordinates {(0,0,0) (-\Rdiag,0,\Rdiag)};
+    \node[anchor=south east]
+      at (axis cs:-\Rdiag-0.05,0,\Rdiag+0.05)
+      {$+G_z - G_y$};
+
+    % ---------------- INTERSECTION CIRCLE PARAMETERISATION ----------------
+    % x(t) = cx + rcirc*(1/√2)*sin t   (Gy)
+    % y(t) = rcirc*cos t               (−Gx)
+    % z(t) = cz + rcirc*(1/√2)*sin t   (Gz)
+    % So:  G_x > 0  ⇔  y < 0,   G_x < 0 ⇔ y > 0.
+
+    % BACK ARC: G_x < 0 (y > 0), G_z >= 0
+    \addplot3[
+      thick,
+      color=red,
+      opacity=0.6,
+      samples=\NsampArc,
+      domain=0:360,
+      variable=\t,
+      restrict expr to domain={z}{0:10},    % G_z >= 0
+      restrict expr to domain={y}{0:10},    % G_x < 0  (y > 0)
+    ]
+    ({
+       \cx + \rcirc*( 1/sqrt(2) * sin(\t) )
+     },
+     {
+       0   + \rcirc*(            cos(\t) )
+     },
+     {
+       \cz + \rcirc*( 1/sqrt(2) * sin(\t) )
+     });
+
+    % FRONT ARC: G_x > 0 (y < 0), G_z >= 0
+    \addplot3[
+      very thick,
+      color=red,
+      samples=\NsampArc,
+      domain=0:360,
+      variable=\t,
+      restrict expr to domain={z}{0:10},     % G_z >= 0
+      restrict expr to domain={y}{-10:0},    % G_x > 0  (y < 0)
+    ]
+    ({
+       \cx + \rcirc*( 1/sqrt(2) * sin(\t) )
+     },
+     {
+       0   + \rcirc*(            cos(\t) )
+     },
+     {
+       \cz + \rcirc*( 1/sqrt(2) * sin(\t) )
+     });
+
+  \end{axis}
+\end{tikzpicture}

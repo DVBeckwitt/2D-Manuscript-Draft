@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{{../figures/}}
+\setstretch{1.1}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgf}
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepgfplotslibrary{fillbetween}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usetikzlibrary{calc}
+\definecolor{oiPurple}{RGB}{204,121,167}
+\definecolor{oiOrange}{RGB}{230,159,0}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\usepackage[numbers,sort&compress]{natbib}
+% if you want PRB-like superscripts instead:
+\setcitestyle{super,comma,numbers,sort&compress}
+
+% ------------ figure toggles (all OFF by default) ------------
+\newif\ifshowIntroGridFigure      % intro 2x3 figure
+\newif\ifshowGeometryFigures      % system + sample geometry
+\newif\ifshowMosaicTwoDFigure     % mosaic_2d cross-section
+\newif\ifshowPvArcFigure          % pv_arc kernel
+\newif\ifshowMosaicThreeDFigure   % 3D Bragg-sphere mosaics
+
+\showIntroGridFiguretrue
+\showGeometryFigurestrue
+\showMosaicTwoDFiguretrue
+\showPvArcFiguretrue
+\showMosaicThreeDFigurefalse
+
+% To enable one figure, change its line to ...true
+% e.g. \showPvArcFiguretrue
+% ------------------------------------------------------------
+
+\begin{document}
+
+\title{Two-dimensional powder diffraction in layered van der Waals films:\\
+quantitative X-ray area-detector modeling}
+\author{Draft outline}
+\maketitle
+
+\input{sections/introduction}
+\input{sections/modelling_methods}
+\input{sections/mosaicity_texture}
+\input{sections/refinement_workflow}
+\input{sections/results_ordered}
+\input{sections/results_diffuse_pbi2}
