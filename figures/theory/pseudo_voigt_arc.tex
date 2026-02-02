@@ -1,0 +1,89 @@
+% pv_arc.tex
+%
+% In the main preamble:
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.18}
+% \usepgfplotslibrary{fillbetween}
+
+\begin{tikzpicture}
+  % --- Parameters you can change ---
+  \pgfmathsetmacro{\sigmaG}{0.2964692365} % Gaussian sigma [rad]
+  \pgfmathsetmacro{\gammaL}{0.3490658504} % Lorentzian gamma [rad]
+  \pgfmathsetmacro{\eta}{0.3}             % Lorentzian weight in ω
+
+  % Values on the curves for arrow heads
+  \pgfmathsetmacro{\Gzero}{1/(sqrt(2*pi)*\sigmaG)} % G_w at θ = 0°
+  \pgfmathsetmacro{\Ltail}{1/pi * \gammaL / ((140*pi/180)^2 + \gammaL^2)} % L_w at θ = 140°
+
+  \begin{axis}[
+    width=\textwidth,
+    height=0.35\textwidth,
+    xmin=-180, xmax=180,
+    ymin=0,
+    xlabel={$\theta\;(\mathrm{degrees})$},
+    ylabel={Density},
+    axis lines=left,
+    tick align=outside,
+    grid=both,
+    grid style={gray!25},
+    set layers=standard,
+    legend style={
+      draw=none,
+      font=\scriptsize,
+      at={(0.5,1.05)},
+      anchor=south,
+      legend columns=3,
+      /tikz/every even column/.append style={column sep=4pt},
+    },
+  ]
+
+    % Wrapped Gaussian G_w(θ)
+    \addplot[thick,blue,domain=-180:180,samples=401,name path=G]
+      { 1/(sqrt(2*pi)*\sigmaG)
+        * exp(-0.5*((x*pi/180)/\sigmaG)^2) };
+    \addlegendentry{$G_{\mathrm w}(\theta)$}
+
+    % Wrapped Lorentzian L_w(θ)
+    \addplot[thick,orange,domain=-180:180,samples=401,name path=L]
+      { 1/pi * \gammaL / ( (x*pi/180)^2 + \gammaL^2 ) };
+    \addlegendentry{$L_{\mathrm w}(\theta)$}
+
+    % Pseudo-Voigt mosaic kernel ω(θ) = η L_w + (1−η) G_w
+    \addplot[thick,red,domain=-180:180,samples=401,name path=omega]
+      { \eta  * (1/pi * \gammaL / ( (x*pi/180)^2 + \gammaL^2 ))
+        + (1-\eta) * (1/(sqrt(2*pi)*\sigmaG)
+                      * exp(-0.5*((x*pi/180)/\sigmaG)^2)) };
+    \addlegendentry{$\omega(\theta)$}
+
+    % Highlight regions where L > ω (tails)
+    \addplot[forget plot,draw=none,fill=orange!25]
+      fill between[
+        of=L and omega,
+        split,
+        every even segment/.style={fill=orange!25}, % L > ω
+        every odd segment/.style={fill=none},        % ω > L
+      ];
+
+    % Highlight region where G > ω (center)
+    \addplot[forget plot,draw=none,fill=blue!25]
+      fill between[
+        of=G and omega,
+        split,
+        every odd segment/.style={fill=blue!25},     % G > ω
+        every even segment/.style={fill=none},       % ω > G
+      ];
+
+    % --- Annotations with arrows ---
+
+    % Gaussian-dominated central region -> in-plane rings
+    \node[anchor=east,font=\footnotesize,align=right] (gausslabel)
+      at (rel axis cs:0.25,0.55) {In-Plane Rings\\(Gaussian Dominated)};
+    \draw[->] (gausslabel.east) -- (axis cs:0,\Gzero);
+
+    % Lorentzian-dominated tail region -> out-of-plane caps
+    \node[anchor=west,font=\footnotesize,align=left] (lorlabel)
+      at (rel axis cs:0.75,0.55) {Out-of-Plane Caps\\(Lorentzian Dominated)};
+    \draw[->] (lorlabel.west) -- (axis cs:140,\Ltail);
+
+  \end{axis}
+\end{tikzpicture}

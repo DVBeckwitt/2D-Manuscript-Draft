@@ -1,0 +1,38 @@
+\section{Refinement workflow}
+
+
+Refinement is staged to decouple the pixel-to-$\mathbf{Q}$ mapping from intensity-bearing parameters and to limit covariance (Table~\ref{tab:param_effects}). We first fix the incident-beam profile and divergence from direct-beam measurements at several detector distances, which determines $(w_x,w_z,\Delta\theta_x,\Delta\theta_z)$ and the instrument-limited broadening. We then calibrate the detector geometry with a 3D powder standard (hBN) by fitting several rings in detector coordinates and refining $(\beta,\gamma)$, the in-plane rotation, and the beam center $(x_0,y_0)$ so the rings project to concentric circles under the forward model.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Parameter 9 and their primary signatures in area detector images.}
+  \label{tab:param_effects}
+  \footnotesize
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\linewidth}{@{}l L L@{}}
+    \toprule
+    Group & Parameters & What they control \\
+    \midrule
+    Instrument and beam &
+    Detector geometry $D,\beta,\gamma,\phi,x_0,y_0$; beam widths $w_x,w_z$ and divergences $\Delta\theta_x,\Delta\theta_z$ &
+    Fix the pixel-to-$\mathbf{Q}$ mapping and arc orientation, and set the instrument-limited radial width. \\
+    Sample alignment &
+    $\theta_i,\chi,z_b,z_s$; sample dimensions $W,H,t$; goniometer misset $\alpha,\psi$ &
+    Set footprint and absorption weighting, shift features across the detector, and bias near-specular arc curvature. \\
+    Texture and stacking &
+    Mosaic kernel $(\eta,\gamma)$; stacking-disorder parameter $f$ &
+    Set tangential arc and cap widths and the persistence of specular intensity off condition; $f$ broadens along $Q_z$ and shapes near-specular diffuse scattering. \\
+    Structure factors &
+    $\mathbf{r}_a,o_a,\Delta\mathbf{r}_a$; anisotropic Debye--Waller tensor $\mathbf{U}$ &
+    Set reflection-to-reflection intensity ratios, suppress high-$Q$ intensity, and modulate the $L$ dependence along $Q_z$. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+
+With detector parameters held fixed, we refine sample alignment by matching the locations of a small set of strong features spanning the specular and off-specular region. The incidence angle $\theta_i$, the beam and sample height offsets $(z_b,z_s)$, and the residual tilt $\chi$ are refined by minimizing positional residuals between measured and simulated features. Mosaicity is then determined from line shapes rather than absolute intensities by fitting, with a shared kernel, the widths and tails of multiple arcs and caps after normalizing an overall scale. The specular region is especially constraining because intensity observed far from the nominal condition is controlled by the kernel tails.
+
+Finally, with geometry and mosaicity fixed, we refine the intensity model against the full 2D image, including the near-specular region. An overall scale, absorption and footprint weighting, and the structure-factor terms in Eq.~\eqref{eq:structure_factor} are refined by adjusting occupancies, anisotropic Debye--Waller parameters, and static displacements to reproduce reflection-to-reflection intensity ratios. For disordered films, stacking-disorder parameters are introduced only after the ordered model converges and are refined against the specular and near-specular diffuse intensity and its $Q_z$ dependence.
+
+

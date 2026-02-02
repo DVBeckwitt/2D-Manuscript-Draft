@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=2,>=stealth]
+  \def\R{1.2}        % Bragg-sphere radius
+  \def\Raxis{1.6}    % axis length
+  \def\angleMid{90}  % theta_0 = 90 deg so G_r component is zero
+  \def\angStart{60}  % 60° span -> same arclength as old (20:80)
+  \def\angEnd{120}
+
+  % Bragg sphere (2D slice)
+  \draw[dashed,blue] (0,0) circle (\R);
+
+  % reciprocal-space axes
+  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
+  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
+
+  % |G_HKL| at theta_0 = 90 degrees: purely along G_z
+  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)}); % = (0,\R)
+  \draw[thick,->] (0,0) -- (Gvec)
+       node[pos=0.75, right] {\scriptsize $|\mathbf G_{HKL}|$};
+
+  % theta_0 marker as a right-angle corner (not an arc)
+  \def\c{0.18}
+  \draw[red,thick] (\c,0) -- (\c,\c) -- (0,\c);
+  \node[red] at (0.23,0.23) {\scriptsize $\theta_0=90^\circ$};
+
+  % mosaic arc on the Bragg sphere, same arclength as old (60° at radius R)
+  \draw[very thick,orange]
+    ({\R*cos(\angStart)},{\R*sin(\angStart)}) arc (\angStart:\angEnd:\R)
+    node[pos=0.6, above right] {\scriptsize $\omega(\theta)$};
+\end{tikzpicture}

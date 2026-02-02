@@ -1,0 +1,82 @@
+\section{Modelling Methods}
+
+\subsection{Structure Factor}
+
+Quantitative refinement of two-dimensional X-ray diffraction images requires a crystal structure model, which determines the structure factors $F_{\mathbf{G}}$ and the associated set of reciprocal-lattice vectors $\mathbf{G}$. For a given reflection, the magnitude $\lvert F_{\mathbf{G}}\rvert$ governs the scattered intensity, while $\mathbf{G}$ sets the diffraction condition through the intersection of the Ewald sphere with reciprocal space. We therefore enumerate all $\mathbf{G}$ whose scattering angle $2\theta$ falls within the detector acceptance. Standard approaches reduce cost by grouping symmetry-equivalent reflections via a multiplicity factor and scaling the intensity accordingly. For two-dimensional powders, where the experimental geometry and texture can make multiplicity nontrivial and structure-dependent, we instead evaluate every allowed $\mathbf{G}$ explicitly. For each $\mathbf{G}$ we compute $\lvert F_{\mathbf{G}}\rvert^{2}$ together with the corresponding exit wavevector $\mathbf{k}_f$, so that multiplicity and texture emerge naturally within the forward model.
+
+For each reflection with reciprocal-lattice vector
+\[
+\mathbf{G}=h\mathbf{a}^{*}+k\mathbf{b}^{*}+l\mathbf{c}^{*},
+\]
+we compute the structure factor as
+\begin{equation}
+  F_{\mathbf{G}}
+  =
+  \sum_{a} o_{a}\,f_{a}(Q)\,
+  \exp\!\Bigl[ 2\pi i\,\mathbf{G}\cdot\bigl(\mathbf{r}_{a}+\Delta\mathbf{r}_{a}\bigr) \Bigr]\,
+  \exp\!\Bigl[ -2\pi^{2}\bigl(U_{r,a} G_{r}^{2}+U_{z,a} G_{z}^{2}\bigr) \Bigr],
+  \label{eq:structure_factor}
+\end{equation}
+where the sum runs over atoms $a$ in the unit cell, $o_a$ is the site occupancy,
+$f_a(Q)$ is the atomic form factor with $Q=\lvert\mathbf{G}\rvert$,
+$\mathbf{r}_a$ is the ideal atomic position, and $\Delta\mathbf{r}_a$ is a refined static displacement.
+The anisotropic Debye--Waller term uses mean-square displacements $U_{r,a}$ and $U_{z,a}$ for the in-plane and out-of-plane components of $\mathbf{G}$, denoted $G_r$ and $G_z$ and defined relative to the layer normal.
+
+
+\subsection{Diffraction Geometry}
+
+In the lab frame the incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis with a product of two Gaussian profiles in the $x$ and $z$ directions, as sketched in Fig.~\ref{fig:waxs_geometry_system}. A Markov approach draws rays from this beam distribution with a similar Gaussian divergence and propagates each ray to the sample and subsequently to the detector.
+
+The goniometer defines a rotation axis about which the sample normal rotates, shown in Fig.~\ref{fig:waxs_geometry_sample_full}. In the aligned configuration a rectangular film of in plane width $W$ and height $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane and the incident beam is parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice the beam and sample can be displaced from the goniometer axis by distances $z_b$ and $z_s$, respectively. Rotating the sample about this axis then sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as indicated in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane (for example, it does not sit flush against the sample holder) the sample normal can also be tilted by an additional angle $\chi$. For each trial ray we compute its intersection with the sample plane. Rays that intersect outside the finite footprint set by $W$ and $H$ miss the sample and are discarded. For rays that hit the film the thickness $t$ sets the path length through the material and the corresponding absorption weighting.
+
+The 2D area detector is positioned a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at an azimuthal angle $\phi$ measured in the detector plane from the in plane $y'$ axis that defines the detector frame.
+\ifshowGeometryFigures
+
+%------------------------------
+% Figure 1: System only
+%------------------------------
+\begin{figure}[htbp]
+  \centering
+  \resizebox{0.6\linewidth}{!}{\input{../figures/geometry/system_geometry}}
+  \caption{
+  Overall lab-frame geometry.
+  The incident beam $\mathbf{k}_i$ propagates along $y$ with widths $w_x,w_z$ and divergences
+  $\Delta\theta_x,\Delta\theta_z$.
+  The detector at distance $D$ is tilted by $\beta$ and $\gamma$, rotated in plane by $\phi$,
+  and referenced to offsets $(x_0,y_0)$.
+  }
+  \label{fig:waxs_geometry_system}
+\end{figure}
+%------------------------------
+% Figure 2: Two-stage sample progression (side by side)
+%------------------------------
+\begin{figure}[htbp]
+  \centering
+
+  % |1|2|  (old 2nd and 3rd panels)
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \resizebox{\linewidth}{!}{\input{../figures/geometry/sample_geometry_rotation}}
+    \caption{
+    The sample rotates about the goniometer center with offset $Z_s$, and the beam is offset by $Z_b$ below that center. $\theta_i$ is the angle between the beam and the sample normal.
+    }
+    \label{fig:waxs_geometry_sample_rot}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \resizebox{\linewidth}{!}{\input{../figures/geometry/sample_geometry_alignment}}
+    \caption{
+    Full alignment including the additional tilt $\chi$ and the resulting footprint length $X_s$. $\vec{G}$ denotes the goniometer arm (perpendicular to $\hat{y}$) offset by $z_B$. $\vec{G}'$ denotes the misaligned goniometer, rotated by $\alpha$, with an additional rotation $\psi$ about its local $z$ and $y$ axes.
+    }
+    \label{fig:waxs_geometry_sample_full}
+  \end{subfigure}
+
+  \caption{
+  Parameters $W,H,t,\theta_i,\chi,z_b,z_s$ control the illuminated region and path length.
+  }
+  \label{fig:waxs_geometry_sample_triptych}
+\end{figure}
+
+
+\pagebreak 
