@@ -28,6 +28,15 @@
 \usepackage[numbers,sort&compress]{natbib}
 % if you want PRB-like superscripts instead:
 \setcitestyle{super,comma,numbers,sort&compress}
+% Assumes: graphicx, subcaption are loaded.
+% Optional: keep this helper so the PDF shows visible placeholders before images exist.
+\newcommand{\maybeinclude}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\begin{minipage}[c][0.22\textheight][c]{0.95\linewidth}
+      \centering\small PLACEHOLDER\\\texttt{#2}
+    \end{minipage}}%
+  }%
+}
 
 % ------------ figure toggles (all OFF by default) ------------
 \newif\ifshowIntroGridFigure      % intro 2x3 figure
