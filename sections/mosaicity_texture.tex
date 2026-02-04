@@ -1,34 +1,29 @@
 \section{Mosaicity and texture}
-Imperfect 2D powders exhibit out-of-plane texture, with crystallite \(c\) axes
-distributed about the substrate normal (Fig.~\ref{fig:mosaic}). 
-
-
+Imperfect 2D powders exhibit out-of-plane mosaicity, with crystallite layer-normals (van der Waals crystal normals) distributed about the substrate normal (Fig.~\ref{fig:mosaic}). 
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.45\linewidth]{mosaic/mosaic_schematic.png}
-  \caption{Schematic of crystallite $c$-axis misorientation (mosaicity). A distribution of crystallite orientations may form in a thin-film.}
+  \caption{Schematic of crystallite layer-normal misorientation (mosaicity). A distribution of crystallite orientations may form in a thin film.}
   \label{fig:mosaic}
 \end{figure}
-We describe out-of-plane texture by a misorientation density \(\omega(\Delta\theta)\),
+We describe out-of-plane mosaicity by a misorientation density \(\omega(\Delta\theta)\),
 where \(\Delta\theta\) is the tilt relative to the mean \(\theta_0\). We take \(\omega\) to be a
-unit-normalized Lorentzian--Gaussian mixture,
+unit-normalized sum of a Lorentzian and a Gaussian:
 \[
 \omega(\Delta\theta)=\eta\,\frac{1}{\pi}\frac{\gamma}{\Delta\theta^{2}+\gamma^{2}}
 +(1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^{2}}{2\sigma^{2}}\right),
 \qquad 0\le\eta\le 1,
 \]
-with Lorentzian HWHM \(\gamma\) and Gaussian standard deviation \(\sigma\).
+with Lorentzian full-width at half maximum \(\gamma\) and Gaussian standard deviation \(\sigma\).
+The inclusion of the Lorentzian component is not immediately intuitive and will be explained in more detail later in the discussion.
+
 Because \(\Delta\theta\) is defined modulo \(2\pi\), we use the \(2\pi\)-periodic wrapped form
-(normalized on \((-\pi,\pi]\); see SI).
+(normalized on \((-\pi,\pi]\); see SI). This ensures that the distribution is periodic and avoids overcounting orientations on the sphere, especially in the 2D case, where crystallites are confined to the plane.
 
-For a reflection \(\bm G_{HKL}\) we work in the meridional section \((G_r,G_z)\) with
-\(G_r=\sqrt{H^2+K^2}\), \(G_z=L\), and \(R=|\bm G|\). At fixed \(R\), orientations lie on the
-Bragg circle \(G_r=R\cos\theta\), \(G_z=R\sin\theta\), with the ideal condition at \(\theta_0\).
-Mosaicity redistributes intensity along the circle with line density \(I_0\,\omega(\Delta \theta)\).
+For a reflection, we work in the meridional section (\(G_r, G_z\)) of reciprocal space, where \(G_r\) is the projection of the reciprocal vector onto the plane of the substrate, and \(G_z\) is the component along the surface normal. These components are related to the full reciprocal vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. 
 
-
-% requires: \usepackage{subcaption}
+The analysis is motivated by considering rotations about the substrate surface normal, allowing for a description of mosaicity without tying directly to \(H, K, L\) coordinates, but rather focusing on the resulting distribution in reciprocal space with line density \(I_0 \omega(\Delta\theta)\).
 
 \begin{figure}[!ht]
   \centering
@@ -37,13 +32,11 @@ Mosaicity redistributes intensity along the circle with line density \(I_0\,\ome
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \input{figures/mosaic/mosaic_bragg_inplane}
-    \caption{In-plane Bragg-circle ($G_r\neq 0$).}
     \label{fig:mosaic_combo:schem_inplane}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \input{figures/mosaic/mosaic_bragg_specular}
-    \caption{Specular Bragg-circle ($G_r=0$).}
     \label{fig:mosaic_combo:schem_specular}
   \end{subfigure}
 
@@ -53,19 +46,19 @@ Mosaicity redistributes intensity along the circle with line density \(I_0\,\ome
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \includegraphics[width=0.85\linewidth]{mosaic/inplane_detector_band.png}
-    \caption{In-plane $\omega(\Delta\theta)$ smears into a band upon azimuthal rotation of $\omega(\theta)$.}
     \label{fig:mosaic_combo:img_inplane}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \includegraphics[width=0.85\linewidth]{mosaic/specular_detector_cap.png}
-    \caption{Specular $\omega(\Delta\theta)$ rotates to form a cap upon applying $\omega(\theta)$.}
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{Mosaic broadening viewed in the $\{G_r,G_z\}$ plane (top) and its detector-space manifestation (bottom). Intensity is redistributed along the Bragg circle with line density $I_0\,\omega(\Delta\theta)$: (left) an in-plane condition with $G_r\neq 0$ yields two arcs of reflection, and (right) a specular reflection with $G_r=0$ concentrates intensity near the polar cap, producing a single arc.}
+  \caption{Mosaic broadening viewed in the $\{G_r,G_z\}$ plane (top) and its detector-space manifestation (bottom). Intensity is redistributed along the Bragg circle with line density $I_0\,\omega(\Delta\theta)$. The in-plane condition with $G_r\neq 0$ (left) yields two arcs of reflection, while the specular reflection with $G_r=0$ (right) concentrates intensity near the polar cap, forming a single arc.}
   \label{fig:mosaic_combo}
 \end{figure}
+
+
 
 Random in-plane rotations about the film normal revolve the meridional line density
 about the \(G_z\) axis, generating an axially symmetric distribution on the Bragg sphere.
@@ -78,12 +71,10 @@ intensity conservation \(I_0\,\omega(\theta-\theta_0)\,d\theta=\sigma(\theta)\,d
   \label{eq:mosaic_sigma_maintext}
 \end{equation}
 
-Equation~\eqref{eq:mosaic_sigma_maintext} defines the mosaic kernel used to broaden
-ideal Bragg points into caps and rings on the Bragg sphere prior to detector projection.
-
+Equation~\eqref{eq:mosaic_sigma_maintext} defines the mosaic function that normalizes the intensity distribution across the sphere at each orientation, broadening ideal Bragg points into caps and rings on the Bragg sphere before projection onto the detector.
 
 The reciprocal-space consequences appear on an area detector in
-Fig.~\ref{fig:mosaic_pbi2}. Strong out-of-plane texture concentrates specular
+Fig.~\ref{fig:mosaic_pbi2}. Strong out-of-plane mosaicity concentrates specular
 intensity near discrete $G_z$ values at $G_r=0$ (region A), while random
 in-plane orientation distributes in-plane reflections uniformly in azimuth
 about $G_z$, producing ring-like features (region B).

@@ -3,7 +3,6 @@ Layered van der Waals solids and related two-dimensional materials are commonly 
 
 A common thin-film texture in these systems is a two-dimensional (2D) oriented powder where plate-like crystallites lie flat with aligned layer normals but remain azimuthally randomized in-plane, as sketched in Fig.~\ref{fig:intro_realspace_2d}.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} This texture is neither a single crystal nor a fully isotropic three-dimensional (3D) powder. As a result, analysis strategies that assume discrete reciprocal-lattice points (single crystals) or spherical powder averaging (3D powders) can fail or become ambiguous for layered films in the intermediate regime.\cite{Kaganer1999}
 
-
 \begin{figure}[!ht]
   \centering
 
@@ -11,7 +10,6 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
   \begin{subfigure}{0.3\textwidth}
     \centering
     \resizebox{\linewidth}{!}{\includegraphics{intro/reciprocal_single_crystal.png}}
-    \caption{Single crystals have discrete reciprocal points that the Ewald sphere rarely hits, so no image forms unless the incidence angle is tuned precisely.}
     \label{fig:intro_single_recip}
   \end{subfigure}
   \hfill
@@ -20,7 +18,6 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
     \resizebox{\linewidth}{!}{%
       \includegraphics{intro/reciprocal_3d_powder.png}%
     }
-    \caption{3D powders form concentric reciprocal shells that the Ewald sphere cuts over many incidence angles, so reflections appear without fine tuning $\theta_i$.}
     \label{fig:intro_3d_recip}
   \end{subfigure}
   \hfill
@@ -29,7 +26,6 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
     \resizebox{\linewidth}{!}{%
       \includegraphics{intro/reciprocal_2d_powder.png}%
     }
-    \caption{2D powders give specular \((00L)\) points and cylindrical shells about the film normal. The Ewald sphere easily hits the shells but only rarely a \((00L)\) point.}
     \label{fig:intro_2d_recip}
   \end{subfigure}
 
@@ -41,7 +37,6 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
     \resizebox{\linewidth}{!}{%
       \includegraphics{intro/realspace_2d_powder.png}%
     }
-    \caption{Real space 2D powder of plate like crystallites lying flat on a substrate, with aligned layer normals and random in plane orientations.}
     \label{fig:intro_realspace_2d}
   \end{subfigure}
   \hfill
@@ -50,7 +45,6 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
     \resizebox{\linewidth}{!}{%
       \includegraphics{intro/detector_3d_powder_hbn.png}%
     }
-    \caption{3D powder 2D detector image (e.g.\ hBN): nearly uniform Debye--Scherrer rings.}
     \label{fig:intro_3d_image}
   \end{subfigure}
   \hfill
@@ -59,13 +53,15 @@ A common thin-film texture in these systems is a two-dimensional (2D) oriented p
     \resizebox{\linewidth}{!}{%
       \includegraphics{intro/detector_2d_powder_example.png}%
     }
-    \caption{2D powder detector image (e.g.\ Bi\textsubscript{2}Se\textsubscript{3}).}
     \label{fig:intro_2d_image}
   \end{subfigure}
 
-  \caption{Overview of the single crystal, 3D powder, and 2D powder diffraction limits in reciprocal space (top row) and on the 2D detector (bottom row).}
+  \caption{
+  Overview of the single crystal, 3D powder, and 2D powder diffraction limits in reciprocal space (top row) and on the 2D detector (bottom row). Single crystals have discrete reciprocal points that the Ewald sphere rarely hits. 3D powders form concentric reciprocal shells that the Ewald sphere cuts over many incidence angles. 2D powders give specular \((00L)\) points and cylindrical shells about the film normal. In real space, 2D powders consist of plate-like crystallites lying flat on a substrate. The 3D powder detector image shows nearly uniform Debye--Scherrer rings, while the 2D powder detector image shows a characteristic pattern for materials like Bi\textsubscript{2}Se\textsubscript{3}.
+  }
   \label{fig:intro_2x3}
 \end{figure}
+
 
 Despite this hybrid information content, many WAXS workflows reduce the area-detector image to 1D profiles
 by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020}
