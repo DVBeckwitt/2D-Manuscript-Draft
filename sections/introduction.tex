@@ -1,73 +1,59 @@
 \section{Introduction}
-Layered van der Waals solids and related two-dimensional materials are commonly characterized by wide-angle x-ray scattering (WAXS) with area detectors, because a single exposure maps a large reciprocal-space volume and directly reports both structure and orientation.\cite{SmilgiesBlasini2007,Smilgies2009,Hexemer2015,Smilgies2025Crystals,Savikhin2020} Orientation is often the primary performance variable in these anisotropic films.\cite{Novoselov2004,GeimGrigorieva2013,Fischer2023MOFGIWAXS} In layered halides such as PbI$_2$, transport and device response can depend strongly on whether the layers lie parallel to the substrate.\cite{Arendse2023} In topological bismuth chalcogenides, strong $c$-axis texture is needed to preserve the desired electronic response.\cite{Jerng2013} In transition-metal dichalcogenides, catalytic activity increases when orientation exposes platelet edges.\cite{Li2011}
+Layered van der Waals solids and related two-dimensional materials are commonly characterized by wide-angle x-ray scattering (WAXS) with area detectors, because a single exposure maps a large reciprocal-space volume and directly reports both structure and orientation.\cite{SmilgiesBlasini2007,Smilgies2009,Hexemer2015,Smilgies2025Crystals,Savikhin2020} Orientation is often the primary performance variable in these anisotropic films.\cite{Novoselov2004,GeimGrigorieva2013,Fischer2023MOFGIWAXS} In layered halides such as PbI$_2$, transport and device response can depend strongly on whether the layers lie parallel to the substrate.\cite{Arendse2023} In topological bismuth chalcogenides, strong $c$-axis texture is needed to preserve the desired electronic response.\cite{Jerng2013} In layered halides such as PbI$_2$, transport and device response can depend strongly on whether the layers lie parallel to the substrate.\cite{Arendse2023} In topological bismuth chalcogenides, strong $c$-axis texture is needed to preserve the desired electronic response.\cite{Jerng2013} In transition-metal dichalcogenides, catalytic activity increases when orientation exposes platelet edges.\cite{Li2011} Comparable 2D oriented-powder textures also occur across a wider set of layered thin-film families, including telluride chalcogenides (e.g., Bi$_2$Te$_3$, Sb$_2$Te$_3$), dichalcogenides (e.g., MoS$_2$, NbS$_2$), layered halides and oxyhalides (e.g., BiI$_3$, BiOI), and laminated 2D-flake films (e.g., Ti$_3$C$_2$T$_x$ MXenes and graphene-oxide papers).\cite{Zhang2022Bi2Te3, Zhang2023Sb2Te3, Shaji2021MoS2GIWAXS, Henshaw2017NbS2, Williamson2018BiI3, Jagt2020BiOI, Natu2018MXene, Liao2025GOWAXS}
 
 A common thin-film texture in these systems is a two-dimensional (2D) oriented powder where plate-like crystallites lie flat with aligned layer normals but remain azimuthally randomized in-plane, as sketched in Fig.~\ref{fig:intro_realspace_2d}.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} This texture is neither a single crystal nor a fully isotropic three-dimensional (3D) powder. As a result, analysis strategies that assume discrete reciprocal-lattice points (single crystals) or spherical powder averaging (3D powders) can fail or become ambiguous for layered films in the intermediate regime.\cite{Kaganer1999}
+
 
 \begin{figure}[!ht]
   \centering
 
-  % Row 1: reciprocal space + Ewald sphere
-  \begin{subfigure}{0.3\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{\includegraphics{intro/reciprocal_single_crystal.png}}
-    \caption{Single crystal}
-    \label{fig:intro_single_recip}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.3\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{%
-      \includegraphics{intro/reciprocal_3d_powder.png}%
-    }
-    \caption{3D powder}
-    \label{fig:intro_3d_recip}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.3\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{%
-      \includegraphics{intro/reciprocal_2d_powder.png}%
-    }
-    \caption{2D powder}
-    \label{fig:intro_2d_recip}
-  \end{subfigure}
+  % Row 1
+  \noindent\makebox[\textwidth][l]{%
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_single_recip}
+      \panelin{(a)}{intro/reciprocal_single_crystal.png}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_3d_recip}
+      \panelin{(b)}{intro/reciprocal_3d_powder.png}
+    \end{subfigure}%
+  }
 
-  \vspace{1em}
+  \vspace{0.7em}
 
-  % Row 2: real-space + example detector images
-  \begin{subfigure}{0.3\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{%
-      \includegraphics{intro/realspace_2d_powder.png}%
-    }
-    \caption{2D real space}
-    \label{fig:intro_realspace_2d}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.2\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{%
-      \includegraphics{intro/detector_3d_powder_hbn.png}%
-    }
-    \caption{3D detector}
-    \label{fig:intro_3d_image}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.2\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{%
-      \includegraphics{intro/detector_2d_powder_example.png}%
-    }
-    \caption{2D detector}
-    \label{fig:intro_2d_image}
-  \end{subfigure}
+  % Row 2
+  \noindent\makebox[\textwidth][l]{%
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_2d_recip}
+      \panelin{(c)}{intro/reciprocal_2d_powder.png}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_realspace_2d}
+      \panelin{(d)}{intro/realspace_2d_powder.png}
+    \end{subfigure}%
+  }
+
+  \vspace{0.7em}
+
+  % Row 3
+  \noindent\makebox[\textwidth][l]{%
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_3d_image}
+      \panelin{(e)}{intro/detector_3d_powder_hbn.png}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\panelw}\centering
+      \phantomsubcaption\label{fig:intro_2d_image}
+      \panelin{(f)}{intro/detector_2d_powder_example.png}
+    \end{subfigure}%
+  }
 
   \caption{
-  Overview of the single crystal, 3D powder, and 2D powder diffraction limits in reciprocal space (top row) and on the 2D detector (bottom row). Single crystals have discrete reciprocal points that the Ewald sphere rarely hits. 3D powders form concentric reciprocal shells that the Ewald sphere cuts over many incidence angles. 2D powders give specular \((00L)\) points and cylindrical shells about the film normal. In real space, 2D powders consist of plate-like crystallites lying flat on a substrate. The 3D powder detector image shows nearly uniform Debye--Scherrer rings, while the 2D powder detector image shows a characteristic pattern for materials like Bi\textsubscript{2}Se\textsubscript{3}.
+  Diffraction limits for single crystals and powders.
+  Top: reciprocal-space intersection with the Ewald sphere. In (a) discrete reciprocal points are rarely intersected without tuning. In (b) spherical shells yield Debye--Scherrer rings. In (c) specular \((00L)\) points coexist with cylindrical shells about the film normal.
+  Bottom: real-space texture and detector signatures. In (d) plate-like crystallites generate the 2D-powder geometry in (c). In (e,f) representative detector images for (b,c), respectively.
   }
   \label{fig:intro_2x3}
 \end{figure}
-
 
 Despite this hybrid information content, many WAXS workflows reduce the area-detector image to 1D profiles
 by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020}

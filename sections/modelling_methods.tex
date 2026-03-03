@@ -1,45 +1,34 @@
-\section{Modelling Methods}
+\section{Diffraction Model}
 
-\subsection{Structure Factor}
+\subsection{Model overview}
+We compute full area-detector images by forward modelling the measured WAXS geometry.
+For each trial parameter set, we (i) enumerate the allowed reciprocal-lattice vectors $\mathbf{G}$ within the detector acceptance, (ii) sample incident rays from a finite beam with widths $(w_x,w_z)$ and angular divergences $(\Delta\theta_x,\Delta\theta_z)$, (iii) propagate each ray through the sample alignment and footprint to obtain the exit wavevector $\mathbf{k}_f$, (iv) map $\mathbf{k}_f$ to detector coordinates using the calibrated detector geometry, and (v) sum contributions to predict per-pixel intensities.
+Geometry parameters control the pixel-to-$\mathbf{Q}$ mapping, while mosaicity and structure factors control line shapes and reflection-to-reflection intensity ratios.
 
-Quantitative refinement of two-dimensional X-ray diffraction images requires a crystal structure model, which determines the structure factors $F_{\mathbf{G}}$ and the associated set of reciprocal-lattice vectors $\mathbf{G}$. For a given reflection, the magnitude $\lvert F_{\mathbf{G}}\rvert$ governs the scattered intensity, while $\mathbf{G}$ sets the diffraction condition through the intersection of the Ewald sphere with reciprocal space. We therefore enumerate all $\mathbf{G}$ whose scattering angle $2\theta$ falls within the detector acceptance. Standard approaches reduce cost by grouping symmetry-equivalent reflections via a multiplicity factor and scaling the intensity accordingly. For two-dimensional powders, where the experimental geometry and texture can make multiplicity nontrivial and structure-dependent, we instead evaluate every allowed $\mathbf{G}$ explicitly. For each $\mathbf{G}$ we compute $\lvert F_{\mathbf{G}}\rvert^{2}$ together with the corresponding exit wavevector $\mathbf{k}_f$, so that multiplicity and texture emerge naturally within the forward model.
+\subsection{Diffraction geometry}
+In the lab frame, the incident wavevector $\mathbf{k}_i$ propagates along $\hat{y}$ with a separable Gaussian profile in $x$ and $z$ (widths $w_x,w_z$) and Gaussian angular divergence about $\hat{y}$ (standard deviations $\Delta\theta_x,\Delta\theta_z$), as shown in Fig.~\ref{fig:waxs_geometry_system}.
+A Monte Carlo approach samples rays from this distribution, propagates them to the sample, and then propagates diffracted rays to the detector.
 
-For each reflection with reciprocal-lattice vector
-\[
-\mathbf G = h\mathbf a^{*} + k\mathbf b^{*} + l\mathbf c^{*},
-\]
-we compute the structure factor as
-\begin{equation}
-F_{\mathbf G} =
-\sum_{a}
-o_a\, f_a(Q)\,
-\exp\!\left[2\pi i\, \mathbf G \cdot \mathbf r_a\right]\,
-\exp\!\left[-2\pi^{2}\left(U_{r,a}G_r^{2}+U_{z,a}G_z^{2}\right)\right],
-\tag{1}
-\end{equation}
-where the sum runs over atoms $a$ in the unit cell, $o_a$ is the site occupancy, $f_a(Q)$ is the
-atomic form factor with $Q=|\mathbf G|$, and $\mathbf r_a$ is the fractional atomic position
-set by the space-group symmetry (Wyckoff site). If we refine positions, we vary only the free
-parameters of the occupied Wyckoff sites, not independent per-atom shifts. The Debye--Waller
-factor uses mean-square displacements $U_{r,a}$ and $U_{z,a}$ for in-plane and out-of-plane
-motion, applied to the corresponding components of $\mathbf G$ ($G_r$ and $G_z$) defined
-relative to the layer normal. This reduced form is an approximation chosen because the data do
-not reliably constrain a more detailed parameterization.
+The goniometer defines a rotation axis about which the sample normal rotates (Fig.~\ref{fig:waxs_geometry_sample_triptych}).
+In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$--$y$ plane with thickness $t$ along the sample normal.
+In practice, the beam and sample may be displaced from the goniometer axis by distances $z_b$ and $z_s$, respectively.
+Rotating the sample about this axis sets the incidence angle $\theta_i$ between $\mathbf{k}_i$ and the sample surface.
+If the substrate is not perfectly parallel to the $x$--$y$ plane (e.g., not flush against the holder), the sample normal can be tilted by an additional small angle (shown as $\chi$ in Fig.~\ref{fig:waxs_geometry_sample_triptych}).
 
-\subsection{Diffraction Geometry}
+For each sampled incident ray, we compute its intersection with the sample plane.
+Rays that fall outside the finite footprint set by $W$ and $H$ are discarded.
+Rays that intersect the film are weighted by (i) footprint and thickness, and (ii) absorption along the ray path through the film.
+When needed at grazing incidence, refraction can be incorporated by computing the transmitted wavevector inside the film from the complex refractive index and applying the corresponding transmission and attenuation factors to the ray weight.
 
-In the lab frame, the incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, with a product of two Gaussian profiles in the $x$ and $z$ directions, as shown in Fig.~\ref{fig:waxs_geometry_system}. A Markov approach samples rays from this beam distribution, accounting for Gaussian divergence, and propagates each ray to the sample and then to the detector.
-
-The goniometer defines a rotation axis about which the sample normal rotates, as shown in Fig.~\ref{fig:waxs_geometry_sample_full}. In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane, with the incident beam parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice, the beam and sample may be displaced from the goniometer axis by distances $z_b$ and $z_s$, respectively. Rotating the sample about this axis sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as shown in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane (e.g., it is not flush against the sample holder), the sample normal can also be tilted by an additional angle $\chi$. For each trial ray, we compute its intersection with the sample plane. Rays that fall outside the finite footprint set by $W$ and $H$ miss the sample and are discarded. Rays that intersect the film are weighted by their path length through the material, with absorption determined by thickness $t$.
-
-The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at an azimuthal angle $\phi$, measured in the detector plane from the in-plane $y'$ axis that defines the detector frame.
+The 2D area detector is positioned at distance $D$ along $\hat{y}$, with tilts about $\hat{x}$ and $\hat{z}$ denoted $\beta$ and $\gamma$ (Fig.~\ref{fig:waxs_geometry_system}).
+A diffracted ray with exit wavevector $\mathbf{k}_f$ intersects the detector at scattering angle $2\theta$ (angle between $\mathbf{k}_f$ and $\hat{y}$) and azimuth $\phi$ measured in the detector plane from the detector $y'$ axis.
 
 %------------------------------
 % Figure 1: System only
 %------------------------------
 \begin{figure}[htbp]
   \centering
-  \resizebox{0.6\linewidth}{!}{\input{figures/geometry/system_geometry}}
+  \resizebox{0.75\linewidth}{!}{\input{figures/geometry/system_geometry}}
   \caption{
   Overall lab-frame geometry.
   The incident beam $\mathbf{k}_i$ propagates along $y$ with widths $w_x,w_z$ and divergences
@@ -49,29 +38,63 @@ The 2D area detector is positioned at a distance $D$ from the sample along the l
   }
   \label{fig:waxs_geometry_system}
 \end{figure}
+
 %------------------------------
 % Figure 2: Two-stage sample progression (side by side)
 %------------------------------
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}{0.48\linewidth}
+  \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \resizebox{\linewidth}{!}{\input{figures/geometry/sample_geometry_rotation}}
     \caption{}
     \label{fig:waxs_geometry_sample_rot}
   \end{subfigure}
   \hfill
-  \begin{subfigure}{0.48\linewidth}
+  \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \resizebox{\linewidth}{!}{\input{figures/geometry/sample_geometry_alignment}}
     \caption{}
     \label{fig:waxs_geometry_sample_full}
   \end{subfigure}
-  \caption{
-  The sample rotates about the goniometer center with offset $Z_s$, and the beam is offset by $Z_b$ below that center. $\theta_i$ is the angle between the beam and the sample normal. Full alignment includes the additional tilt $\chi$ and the resulting footprint length $X_s$. $\vec{G}$ denotes the goniometer arm (perpendicular to $\hat{y}$) offset by $z_B$, and $\vec{G}'$ represents the misaligned goniometer, rotated by $\alpha$, with an additional rotation $\psi$ about its local $z$ and $y$ axes. The parameters $W,H,t,\theta_i,\chi,z_b,z_s$ control the illuminated region and path length.
-  }
+\caption{
+Two-stage sample geometry.
+Left: rotation about the goniometer center with sample offset $z_s$ and beam offset $z_b$; $\theta_i$ is the incidence angle.
+Right: full alignment adds the residual tilt (shown as $\chi$) and footprint length $X_s$ within an illuminated window $(W,H)$ on a film of thickness $t$.
+$\vec{G}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{G}'$ is the misaligned arm obtained by rotations $\alpha$ and $\psi$.
+}
   \label{fig:waxs_geometry_sample_triptych}
 \end{figure}
 
+\subsection{Mosaicity}
+Imperfect 2D powders exhibit out-of-plane mosaicity, with crystallite layer normals distributed about the substrate normal.
+We parameterize this by a misorientation density $\omega(\Delta\theta)$, where $\Delta\theta$ is the polar tilt angle between a crystallite layer normal and the substrate normal.
+We take $\omega$ to be a unit-normalized mixture of a Lorentzian and a Gaussian:
+\begin{equation}
+\omega(\Delta\theta) =
+\eta\,\frac{1}{\pi}\frac{\gamma}{\Delta\theta^{2}+\gamma^{2}}
++ (1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^{2}}{2\sigma^{2}}\right),
+\qquad 0 \le \eta \le 1,
+\label{eq:mosaic_kernel}
+\end{equation}
+with Lorentzian half-width $\gamma$ and Gaussian standard deviation $\sigma$.
+Because $\Delta\theta$ is defined modulo $2\pi$, we use the wrapped, $2\pi$-periodic form (see SI) to avoid overcounting.
 
+\subsection{Structure factors}
+Quantitative refinement requires a crystal structure model that determines structure factors $F_{\mathbf{G}}$ and the associated reciprocal-lattice vectors $\mathbf{G}$.
+For each allowed $\mathbf{G}$ within the detector acceptance, we compute $\lvert F_{\mathbf{G}}\rvert^2$ together with the corresponding exit wavevector $\mathbf{k}_f$ so that multiplicity emerges from the explicit enumeration rather than an external correction.
 
+For each reflection with reciprocal-lattice vector
+\[
+\mathbf{G}=h\mathbf{a}^{*}+k\mathbf{b}^{*}+l\mathbf{c}^{*},
+\]
+we compute
+\begin{equation}
+F_{\mathbf{G}} =
+\sum_{a} o_a\, f_a(Q)\,
+\exp\!\left(2\pi i\,\mathbf{G}\cdot\mathbf{r}_a\right)\,
+\exp\!\left[-2\pi^{2}\,\mathbf{G}^{\mathsf{T}}\mathbf{U}_a\,\mathbf{G}\right],
+\label{eq:structure_factor}
+\end{equation}
+where the sum runs over atoms $a$ in the unit cell, $o_a$ is the site occupancy, $f_a(Q)$ is the atomic form factor with $Q=\lvert\mathbf{G}\rvert$, $\mathbf{r}_a$ is the fractional atomic position fixed by the occupied Wyckoff site, and $\mathbf{U}_a$ is the anisotropic Debye--Waller displacement tensor.
+In refinements where the data do not constrain a full tensor, we impose axial symmetry about the layer normal, $\mathbf{U}_a=\mathrm{diag}(U_{r,a},U_{r,a},U_{z,a})$ in a basis aligned with the layer normal, which reduces the exponent to $-2\pi^2(U_{r,a}G_r^2+U_{z,a}G_z^2)$ with $G_r^2=G_x^2+G_y^2$.

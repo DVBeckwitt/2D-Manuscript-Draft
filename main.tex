@@ -38,6 +38,30 @@
   }%
 }
 
+% preamble (once)
+\usepackage{subcaption}
+\usepackage{tikz}
+
+% fixed panel geometry (tune \panelh if needed)
+\newlength{\panelw}
+\newlength{\panelh}
+\setlength{\panelw}{0.30\textwidth}
+\setlength{\panelh}{6cm} % all six panels get the same height
+
+% helper (once): same-size box + label inside bottom-right
+\newcommand{\panelin}[2]{% #1=(a)... #2=file
+  \begin{tikzpicture}
+    \node[inner sep=0, outer sep=0] (box) {%
+      \begin{minipage}[c][\panelh][c]{\linewidth}
+        \centering
+        \includegraphics[width=\linewidth,height=\panelh,keepaspectratio]{#2}%
+      \end{minipage}%
+    };
+    \node[anchor=south east, xshift=-1.2mm, yshift=1.2mm] at (box.south east)
+      {\footnotesize\textbf{#1}};
+  \end{tikzpicture}%
+}
+
 % ------------ figure toggles (all OFF by default) ------------
 \newif\ifshowIntroGridFigure      % intro 2x3 figure
 \newif\ifshowGeometryFigures      % system + sample geometry
