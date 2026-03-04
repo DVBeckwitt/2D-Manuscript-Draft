@@ -130,3 +130,13 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 ### What changed (and why)
 
 - Reserved $\chi$ for the detector in-plane rotation (a fixed detector-geometry degree of freedom) and denoted the detector-plane azimuth of a diffracted ray by $\phi$, removing an ambiguity where $\chi$ previously referred to both a refined geometry parameter and a per-ray coordinate (`sections/modelling_methods.tex`, `figures/geometry/system_geometry.tex`).
+
+## 2026-03-04 — Revert Fig.~3(b) generator (.tex) to pre-edit state
+
+### Advisor requests impacted
+
+- This reopens the Fig.~3(b) clarity improvements that were previously made to explicitly show detector orientation relative to the goniometer arm (requested on Page~6).
+
+### What changed (and why)
+
+- Restored `figures/geometry/sample_geometry_alignment.tex` to its pre-edit version (from the baseline `main` branch) at the author’s request, undoing the detector-orientation patch and reverting labels within that schematic. This provides a clean starting point for an alternative redraw without preserving intermediate layout experiments in the tracked figure source.
