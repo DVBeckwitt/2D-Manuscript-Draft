@@ -3,7 +3,6 @@
 *.blg
 *.log
 *.out
-*.pdf
 *.synctex.gz
 *.fdb_latexmk
 *.fls
@@ -17,3 +16,15 @@
 *.ind
 *.idx
 *.dvi
+
+# PDFs: keep rendered outputs for review, ignore everything else.
+*.pdf
+!main.pdf
+!2D_Supplemental/SI_failure_modes.pdf
+
+# Editor / OS temporary files.
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo

@@ -47,7 +47,7 @@ and provides expanded workflow notes and supplemental derivations.
   \item \textbf{Detector geometry calibration (3D powder standard).}
   Measure a polycrystalline calibrant (e.g., hBN).
   Fit multiple Debye--Scherrer rings in detector coordinates and refine detector tilts
-  $(\beta,\gamma)$, in-plane detector rotation $\phi$, and beam center $(x_0,y_0)$ so the rings
+  $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center $(x_0,y_0)$ so the rings
   forward-project to concentric circles (equivalently, ellipses in the raw detector frame are
   corrected to circles).
 
@@ -56,7 +56,7 @@ and provides expanded workflow notes and supplemental derivations.
   features) to seed alignment.
   With detector parameters fixed, refine sample alignment by minimizing positional residuals
   between measured and simulated features spanning specular and off-specular regions.
-  Refine $(\theta_i,\delta,z_B,z_S,\chi)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
+  Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
   include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity from line shapes (two $\theta_i$ images).}
@@ -68,7 +68,7 @@ and provides expanded workflow notes and supplemental derivations.
     (1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^2}{2\sigma^2}\right),
     \qquad 0\le \eta \le 1,
   \]
-  (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$ if implemented).
+  (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$; see Sec.~S1.1).
   Determine parameters from arc/cap widths and specular off-condition tails after normalizing
   an overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$,
   and mixing factor $\eta$.
@@ -88,6 +88,54 @@ and provides expanded workflow notes and supplemental derivations.
   (diffuse intensity along specular / Bragg rods and its $Q_z$-dependence), e.g., with an
   Hendricks--Teller-type model when appropriate.
 \end{enumerate}
+
+\subsection{Wrapped mosaic distribution}
+\label{subsec:si_wrapped_mosaic}
+
+In the main text we describe out-of-plane mosaicity by a misorientation density
+$\omega(\Delta\theta)$ in the crystallite tilt angle $\Delta\theta$ relative to the substrate
+normal. Since $\Delta\theta$ is an orientation angle, $\Delta\theta$ and $\Delta\theta+2\pi$
+represent the same physical state; accordingly, $\omega$ is most naturally treated as a
+$2\pi$-periodic (``wrapped'') probability density on $\Delta\theta\in(-\pi,\pi]$.
+Without wrapping, an otherwise smooth kernel on the real line produces an artificial seam at
+$\pm\pi$ and assigns different weights to physically equivalent orientations separated by $2\pi$,
+which can bias the weak tail intensity used to constrain mosaicity.
+
+We use a wrapped pseudo-Voigt kernel,
+\[
+  \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
+  =\eta\,L_{\mathrm w}(\Delta\theta;\Gamma)+(1-\eta)\,G_{\mathrm w}(\Delta\theta;\sigma),
+  \qquad 0\le \eta \le 1,
+\]
+where the wrapped Lorentzian and wrapped Gaussian may be written by periodic summation (equivalently,
+in closed form) as
+\[
+  L_{\mathrm w}(\Delta\theta;\Gamma)=
+  \sum_{m=-\infty}^{\infty}\frac{1}{\pi}\frac{\Gamma}{(\Delta\theta+2\pi m)^2+\Gamma^2}
+  =\frac{1}{2\pi}\,\frac{\sinh\Gamma}{\cosh\Gamma-\cos\Delta\theta},
+\]
+\[
+  G_{\mathrm w}(\Delta\theta;\sigma)=
+  \sum_{m=-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma}
+  \exp\!\left[-\frac{(\Delta\theta+2\pi m)^2}{2\sigma^2}\right]
+  =\frac{1}{2\pi}\!\left[1+2\sum_{n=1}^{\infty}e^{-n^2\sigma^2/2}\cos(n\Delta\theta)\right]
+  =\frac{1}{2\pi}\,\theta_{3}\!\left(\frac{\Delta\theta}{2},e^{-\sigma^2/2}\right).
+\]
+Both integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. In the
+narrow-width regime relevant here ($\Gamma,\sigma\ll\pi$), $\omega_{\mathrm w}$ reduces locally
+near $\Delta\theta=0$ to the familiar unwrapped Lorentzian/Gaussian used in the main text, and we
+report Lorentzian FWHM $=2\Gamma$ and Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$.
+
+For a reflection of Bragg-sphere radius $R$, mosaicity redistributes intensity in polar angle
+$\vartheta$ with meridional line density $I_0\,\omega(\vartheta)\,d\vartheta$. Random in-plane
+rotations about the film normal revolve this line density about the $G_z$ axis, yielding an axially
+symmetric surface density $\sigma(\vartheta)$. With area element
+$dA=2\pi R^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
+\[
+  \sigma(\vartheta)=\frac{I_0}{2\pi R^2\sin\vartheta}\,\omega(\vartheta),
+  \qquad 0<\vartheta<\pi,
+\]
+as used in the main text.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1  Material background and stacking‑fault model

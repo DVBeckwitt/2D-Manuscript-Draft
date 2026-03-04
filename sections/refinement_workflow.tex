@@ -1,38 +1,38 @@
 \section{Refinement workflow}
 
-Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple detector/sample geometry from physical scattering parameters, reducing correlations and improving identifiability. Additional workflow detail is provided in the supporting information (Sec.~S1).
+Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple detector/sample geometry from physical scattering parameters, reducing correlations and improving identifiability. Table~\ref{tab:param_effects} summarizes the dominant image signatures that constrain each parameter group, while the steps below describe the acquisition and fitting procedure. Additional workflow detail is provided in the supporting information (Sec.~S1).
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement steps and the parameters they primarily constrain from area-detector images.}
+  \caption{Staged refinement workflow. For each step we list the primary parameter group and the dominant image signatures used to constrain it from area-detector images.}
   \label{tab:param_effects}
-  \footnotesize
-  \setlength{\tabcolsep}{5pt}
-  \renewcommand{\arraystretch}{1.15}
+  \scriptsize
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.05}
   \begin{tabularx}{\linewidth}{@{}c l L L@{}}
     \toprule
-    Step & Stage & Parameters & What they control \\
+    Step & Stage & Parameters & Dominant image signatures \\
     \midrule
     1 &
     Beam characterization (direct beam) &
-    Beam widths $w_x,w_z$; divergences $\Delta\theta_x,\Delta\theta_z$ &
-    Set the incident-beam phase space and instrument-limited broadening used by the diffraction model. \\
+    Beam widths $w_{x,z}$; divergences $\Delta\theta_{x,z}$ &
+    Spot centroid/width versus detector distance (instrument broadening). \\
     2 &
     Detector geometry calibration (3D powder standard) &
-    Detector distance $D$; tilts $(\beta,\gamma)$; in-plane detector rotation $\phi$; beam center $(x_0,y_0)$ &
-    Fix the detector-to-reciprocal-space geometry (distance, angles, rotation, beam center) and the orientation of features on the detector. \\
+    Detector distance $D$; tilts $(\beta,\gamma)$; in-plane rotation $\chi$; beam center $(x_0,y_0)$ &
+    Ring center/ellipticity and orientation (pixel-to-$\mathbf{Q}$ mapping). \\
     3 &
     Sample alignment and goniometer misalignment (2D powder film) &
-    $\theta_i,\delta,z_B,z_S,\chi$; film dimensions $W,H,t$; goniometer misalignment $(\alpha,\psi)$ &
-    Place specular and off-specular features, and set footprint and absorption weighting. \\
+    Sample geometry $(\theta_i,\delta,z_B,z_S)$; goniometer misalignment $(\alpha,\psi)$; film $(W,H,t)$ &
+    Specular/off-specular positions; footprint truncation; absorption weighting. \\
     4 &
     Mosaicity from Bragg-peak shapes (two $\theta_i$ images) &
-    Mosaic parameters $(\eta,\Gamma,\sigma)$ &
-    Set Bragg-peak arc and cap widths and the persistence of specular intensity off condition. \\
+    Mosaic kernel $(\eta,\Gamma,\sigma)$ &
+    Arc/cap widths and specular off-condition tails. \\
     5 &
     Refinement of structure (Bragg + diffuse) &
-    Overall scale; $\mathbf{r}_a,o_a,\Delta\mathbf{r}_a$; anisotropic Debye--Waller tensor $\mathbf{U}$; disorder parameters (if present) &
-    Match reflection-to-reflection intensity ratios and the $Q_z$ dependence along specular (Bragg rods), including diffuse intensity between Bragg peaks when disorder is present. \\
+    Scale; structure-factor parameters ($o_a$, $\mathbf{r}_a$, $\Delta\mathbf{r}_a$, $\mathbf{U}$); disorder (if present) &
+    Relative Bragg intensities; diffuse along specular (Bragg rods) and between peaks along $Q_z$. \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -49,7 +49,7 @@ Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple d
   in-plane rotation, and beam center so the rings forward-project to concentric circles.
 
   \item \textbf{Sample alignment and goniometer misalignment (2D powder film).}
-  Use the 2D-powder signature (paired symmetric in-plane features and a specular feature) to seed alignment.
+  Use a 2D powder film to seed alignment.
   With detector parameters fixed, refine sample alignment and goniometer misalignment by minimizing positional residuals
   between measured and simulated features spanning specular and off-specular regions.
   Include finite-footprint and absorption weighting using the film dimensions and thickness
@@ -58,15 +58,12 @@ Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple d
   \item \textbf{Mosaicity from Bragg-peak shapes.}
   Acquire two images at different $\theta_i$ and fit them simultaneously using shared mosaic parameters in
   the misorientation model of Sec.~\ref{sec:mosaicity}.
-  Determine parameters from Bragg-peak arc/cap widths and specular off-condition tails after normalizing a
-  single overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and
-  mixing factor $\eta$.
+  Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and mixing factor $\eta$.
 
   \item \textbf{Refinement of structure (Bragg + diffuse).}
   With geometry and mosaicity fixed, refine an overall scale and structural parameters (occupancies,
   anisotropic Debye--Waller terms, and allowed static displacements) in the structure-factor intensity model
-  (Eq.~\eqref{eq:structure_factor}) against the full 2D images (including specular), matching
-  reflection-to-reflection intensity ratios across both images.
+  (Eq.~\eqref{eq:structure_factor}) against the full 2D images (including specular).
   When disorder is present, include disorder parameters and constrain them primarily using the diffuse
   intensity along specular (Bragg rods) and between Bragg peaks along $Q_z$.
 \end{enumerate}
