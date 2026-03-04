@@ -1,23 +1,17 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
 
-We model the measured area-detector intensity by combining a calibrated instrument geometry with a crystallographic scattering model and a low-dimensional mosaicity kernel appropriate to two-dimensional powders. The forward calculation enumerates allowed reciprocal-lattice vectors $\mathbf{G}$, samples rays from the finite-divergence incident beam, applies the diffraction condition, and propagates diffracted rays to the detector so that simulated images can be compared to experiment on a pixel-by-pixel basis. The essential elements are introduced below: (i) the beam, sample, and detector geometry that defines the pixel-to-$\mathbf{Q}$ mapping; (ii) the crystallographic structure factors that set reflection intensities; and (iii) the mosaicity model that redistributes intensity about each ideal Bragg condition.
+We model the measured area-detector intensity by combining a calibrated instrument geometry with a crystallographic scattering model and a low-dimensional mosaicity spread appropriate to two-dimensional powders. The forward calculation enumerates allowed reciprocal-lattice vectors $\mathbf{G}$, samples rays from the finite-divergence incident beam, applies the diffraction condition, and propagates diffracted rays to the detector so that simulated images can be compared to experiment on a pixel-by-pixel basis. The essential elements are introduced below: (i) the beam, sample, and detector geometry that defines the pixel-to-$\mathbf{Q}$ mapping; (ii) the crystallographic structure factors that set reflection intensities; and (iii) the mosaicity model that redistributes intensity about each ideal Bragg condition.
 
 \subsection{Diffraction Geometry}
 
-In the lab frame, the incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, with a product of two Gaussian profiles in the $x$ and $z$ directions, as shown in Fig.~\ref{fig:waxs_geometry_system}. We treat the incident beam as a distribution in transverse position (widths $w_x,w_z$) and direction (rms divergences $\Delta\theta_x,\Delta\theta_z$). A Monte Carlo ray-tracing approach samples rays from this beam phase space and propagates each ray to the sample and then to the detector; simulated detector images are formed by averaging over these rays (see Supplementary Information (SI), Secs.~S1--S3).
+In the lab frame, the incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, with a product of two Gaussian profiles in the $x$ and $z$ directions, as shown in Fig.~\ref{fig:waxs_geometry_system}. We treat the incident beam as a distribution in transverse position (widths $w_x,w_z$) and direction (rms divergences $\Delta\theta_x,\Delta\theta_z$). A Monte Carlo ray-tracing approach samples rays from this beam phase space and propagates each ray to the sample and then to the detector; simulated detector images are formed by accumulation over these rays (see Supplementary Information (SI), Secs.~S1--S3).
 
 The goniometer defines a rotation axis about which the sample normal rotates, as shown in Fig.~\ref{fig:waxs_geometry_sample_triptych}. In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane, with the incident beam parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice, the beam center and sample center may be displaced from the goniometer axis by vertical offsets $z_B$ and $z_S$, respectively. Rotating the sample about this axis sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as shown in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane (e.g., it is not flush against the sample holder), the sample normal can also be tilted by a residual angle $\delta$. For each trial ray, we compute its intersection with the sample plane. The finite beam size at grazing incidence produces an elongated footprint of length $X_s$ (Fig.~\ref{fig:waxs_geometry_sample_triptych}); rays that fall outside the finite illuminated window set by $W$ and $H$ miss the sample and are discarded. Because rays are sampled from the spatial beam profile, partial illumination and footprint truncation are naturally captured (SI, Sec.~S2).
 
-For rays that intersect the film, we include absorption and refraction corrections appropriate to grazing incidence. Assuming uniform scattering through the film thickness $t$ and exponential attenuation along the incident and exit paths, the absorption weight is
-\begin{equation}
-  A(\theta_i,\theta_f)=\int_{0}^{t}\exp\!\left[-\mu z\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)\right]\,dz
-  =\frac{1-\exp\!\left[-\mu t\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)\right]}{\mu\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)},
-  \label{eq:absorption_weight}
-\end{equation}
-where $\theta_f$ is the grazing-exit angle of $\mathbf{k}_f$ relative to the sample surface and $\mu$ is the linear absorption coefficient (taken from tabulated X-ray constants at the photon energy). Refraction is accounted for by computing effective internal angles and Fresnel transmission factors at the interfaces; the expressions used here are summarized in SI, Sec.~S3.
+For rays that intersect the film, we include absorption and refraction corrections appropriate to grazing incidence. Assuming uniform scattering through the film thickness $t$ and exponential attenuation along the incident and exit paths, the absorption weight is where $\theta_f$ is the grazing-exit angle of $\mathbf{k}_f$ relative to the sample surface and $\mu$ is the linear absorption coefficient (taken from tabulated X-ray constants at the photon energy). Refraction is accounted for by computing effective internal angles and Fresnel transmission factors at the interfaces; the expressions used here are summarized in SI, Sec.~S3.
 
-The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. An additional in-plane rotation of the detector frame about its normal is denoted $\chi$. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at a detector-plane azimuth $\phi$, measured from the detector $x'$ axis.
+The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at a detector-plane azimuth $\phi$, measured from the detector $x'$ axis.
 
 %------------------------------
 % Figure 1: System only
@@ -29,7 +23,7 @@ The 2D area detector is positioned at a distance $D$ from the sample along the l
   Overall lab-frame geometry.
   The incident beam $\mathbf{k}_i$ propagates along $y$ with widths $w_x,w_z$ and divergences
   $\Delta\theta_x,\Delta\theta_z$.
-  The detector at distance $D$ is tilted by $\beta$ and $\gamma$, rotated in-plane by $\chi$,
+  The detector at distance $D$ is tilted by $\beta$ and $\gamma$,
   and referenced to offsets $(x_0,y_0)$. A representative $\mathbf{k}_f$ defines the scattering angle $2\theta$ and detector-plane azimuth $\phi$.
   }
   \label{fig:waxs_geometry_system}
@@ -57,7 +51,7 @@ The 2D area detector is positioned at a distance $D$ from the sample along the l
 Two-stage sample geometry.
 Left: rotation about the goniometer center with sample offset $z_S$ and beam offset $z_B$. $\theta_i$ is the incidence angle.
 Right: full alignment adds tilt $\delta$ and footprint length $X_s$ within an illuminated window $(W,H)$ on a film of thickness $t$.
-$\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the misaligned arm obtained by rotations $\alpha$ and $\psi$. A schematic detector patch at the end of $\vec{g}'$ indicates the detector plane and its normal $\hat{n}_{\mathrm{det}}$.}
+$\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the misaligned arm obtained by rotations $\alpha$ and $\psi$.}
 
   \label{fig:waxs_geometry_sample_triptych}
 \end{figure}
