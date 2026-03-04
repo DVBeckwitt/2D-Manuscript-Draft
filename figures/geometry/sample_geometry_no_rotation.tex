@@ -13,7 +13,7 @@
 % User parameters
 %---------------------------
 \def\rotAng{0}        % adjustable CCW rotation angle (deg) about COR
-\def\ZsLen{2.6}        % |Z_s| distance from COR to sample surface midpoint
+\def\ZsLen{2.6}        % |z_S| distance from COR to sample surface midpoint
 \def\sampleHalfW{1.8}  % half width of sample surface
 \def\sampleThick{0.5}  % sample thickness (drawn below the surface)
 
@@ -214,7 +214,7 @@
 \coordinate (AxisEnd) at (0,\axisEndY);
 
 %---------------------------
-% Arc between vertical axis and Z_s, CCW
+% Arc between vertical axis and z_S, CCW
 %---------------------------
 \pgfmathsetmacro{\axisAngle}{-90}
 \pgfmathsetmacro{\zsAngle}{\nAngle}
@@ -270,9 +270,9 @@
 \draw[red, thick, <->] (\zBx,0) -- (ZBend) node[midway, right] {$z_B$};
 
 %---------------------------
-% Z_s vector
+% z_S vector
 %---------------------------
-\draw[green!60!black, thick, <->] (COR) -- (Ssurf) node[midway, right] {$Z_s$};
+\draw[green!60!black, thick, <->] (COR) -- (Ssurf) node[midway, right] {$z_S$};
 
 %---------------------------
 % Purple X_s and connector (hidden if rotAng=0 or no +x hit)

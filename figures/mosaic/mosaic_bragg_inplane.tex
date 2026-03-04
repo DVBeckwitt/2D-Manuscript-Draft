@@ -15,14 +15,14 @@
   \draw[thick,->] (0,0) -- (Gvec)
        node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{HKL}|$};
 
-  % polar angle theta from G_r to |G|
+  % polar angle vartheta from G_r to |G|
   \draw[red,thick] (0,0) ++(0:0.45) arc (0:\angleMid:0.45);
-  \node[red] at (0.32,0.10) {\scriptsize $\theta_0$};
+  \node[red] at (0.32,0.10) {\scriptsize $\vartheta$};
 
   % mosaic arc on the Bragg sphere, labeled with omega(theta)
   \draw[very thick,orange]
     ({\R*cos(20)},{\R*sin(20)}) arc (20:80:\R)
-    node[pos=0.6, above right] {\scriptsize $\omega(\theta)$};
+    node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
 
   % projection onto G_r axis, labeled |G_{r,HKL}|
   \coordinate (Gr) at ({\R*cos(\angleMid)},0);

@@ -17,18 +17,15 @@
   case0/xs/.style={purple, thick, <->, opacity=0.35},
   case0/xsDash/.style={purple, thick, dashed, opacity=0.35},
   case0/thetaArc/.style={black, thick, opacity=0.35},
-  % Change this line in your tikzset:
-  case0/caseLabel/.style={black, opacity=0.5, font=\scriptsize, xshift=-15mm, yshift=-6mm},
-  case35/sample/.style={green!60!black, thick},
-  case35/axis/.style={orange, thick, dashed},
-  case35/beam/.style={red, thick, ->},
-  case35/beamDash/.style={red, thick, dashed},
-  case35/zb/.style={red, thick, <->},
-  case35/zs/.style={green!60!black, thick, <->},
-  case35/xs/.style={purple, thick, <->},
-  case35/xsDash/.style={purple, thick, dashed},
-  case35/thetaArc/.style={black, thick},
-  case35/caseLabel/.style={black, font=\scriptsize}
+  case5/sample/.style={green!60!black, thick},
+  case5/axis/.style={orange, thick, dashed},
+  case5/beam/.style={red, thick, ->},
+  case5/beamDash/.style={red, thick, dashed},
+  case5/zb/.style={red, thick, <->},
+  case5/zs/.style={green!60!black, thick, <->},
+  case5/xs/.style={purple, thick, <->},
+  case5/xsDash/.style={purple, thick, dashed},
+  case5/thetaArc/.style={black, thick}
 }
 
 %===========================
@@ -39,7 +36,7 @@
 %===========================
 % Shared parameters
 %===========================
-\def\ZsLen{2.6}        % |Z_s| distance from COR to sample surface midpoint
+\def\ZsLen{2.6}        % |z_S| distance from COR to sample surface midpoint
 \def\sampleHalfW{1.8} % half width of sample surface
 \def\sampleThick{0.5} % sample thickness (drawn below the surface)
 
@@ -69,9 +66,9 @@
 
 %===========================
 % Macro to draw one case
-%   #1 = rotAng in deg
-%   #2 = style prefix: case0 or case35
-%===========================
+ %   #1 = rotAng in deg
+ %   #2 = style prefix: case0 or case5
+ %===========================
 \newcommand{\DrawCase}[2]{%
 
   \def\rotAng{#1}
@@ -83,7 +80,7 @@
   \pgfmathsetmacro{\vInc}{abs(\rotAng) < 0.0001 ? 0 : 1}
   \pgfmathsetmacro{\incOpacity}{\vInc}
 
-  % NEW: Hide Z_s line + label when rotAng ~ 0
+  % NEW: Hide z_S line + label when rotAng ~ 0
   \pgfmathsetmacro{\zsOpacity}{\vInc}
 
   % Sample surface normal direction
@@ -397,7 +394,7 @@
   \coordinate (AxisEnd) at (0,\axisEndY);
 
   %---------------------------
-  % Arc between vertical axis and Z_s
+  % Arc between vertical axis and z_S
   %---------------------------
   \pgfmathsetmacro{\axisAngle}{-90}
   \pgfmathsetmacro{\zsAngle}{\nAngle}
@@ -431,21 +428,20 @@
 
   \draw[#2/zb] (\zBx,0) -- (ZBend) node[midway, right] {$z_B$};
 
-  % Z_s suppressed when theta_i = 0
+  % z_S suppressed when theta_i = 0
   \draw[#2/zs, opacity=\zsOpacity] (COR) -- (Ssurf)
-    node[midway, right, opacity=\zsOpacity] {$Z_s$};
+    node[midway, right, opacity=\zsOpacity] {$z_S$};
 
   \draw[#2/xs, opacity=\purpleOpacity] (0,0) -- (PurpleEnd)
     node[midway, above, opacity=\purpleOpacity] {$X_s$};
   \draw[#2/xsDash, opacity=\purpleOpacity] (PurpleEnd) -- (PurpleDashEnd);
 
-  \node[#2/caseLabel] at ($ (Ssurf) + (0.35,0.35) $) {$\theta_i = #1^\circ$};
 }
 
 %===========================
 % Overlay order
 %===========================
 \DrawCase{0}{case0}
-\DrawCase{35}{case35}
+\DrawCase{5}{case5}
 
 \end{tikzpicture}

@@ -22,7 +22,7 @@
 % Sample orientation parameters
 %=========================
 \pgfmathsetmacro{\thetadeg}{-15}     % theta_i: rotation about x (deg)
-\pgfmathsetmacro{\phideg}{20}        % chi:      rotation about y (deg)
+\pgfmathsetmacro{\phideg}{20}        % delta:    rotation about y (deg)
 
 \pgfmathsetmacro{\cost}{cos(\thetadeg)}
 \pgfmathsetmacro{\sint}{sin(\thetadeg)}
@@ -172,7 +172,7 @@
   at (thetaLabel) {$\theta_i$};
 
 %=========================
-% Chi angle arc (x-z plane, centered at kiEnd, y=yKiEnd)
+% Residual tilt angle arc (x-z plane, centered at kiEnd, y=yKiEnd)
 %=========================
 \pgfmathsetmacro{\dxChi}{\xSurfLen*\dxSurfX}
 \pgfmathsetmacro{\dzChi}{\xSurfLen*\dxSurfZ}
@@ -194,7 +194,7 @@
     \zKi + 1.2*\rChi*sin(\tChiMid)
 });
 \node[scale=0.55, text=magenta!80!black, anchor=west, xshift=-8pt, yshift=16pt]
-  at (chiLabel) {$\chi$};
+  at (chiLabel) {$\delta$};
 
 %=========================
 % +y axis: dashed then solid
@@ -258,9 +258,9 @@
 
 % Arm labels at the -x ends
 \node[scale=0.5, text=red!70!black, anchor=east, xshift=2pt, yshift=4pt]
-  at (goniStart0) {$\vec{G}$};
+  at (goniStart0) {$\vec{g}$};
 \node[scale=0.5, text=red!70!black, anchor=east, xshift=0pt, yshift=-2pt]
-  at (goniStart) {$\vec{G}'$};
+  at (goniStart) {$\vec{g}'$};
 
 %=========================
 % Alpha arc: from dashed +x end (goniEnd0) to bottom of solid +x end (goniEndAtZgoni)
@@ -299,20 +299,13 @@
   at (alphaLabel) {$\alpha$};
 
 %=========================
-% Moment (torque) arrow about the solid goniometer arm
-% Plane perpendicular to d=(gdx,gdy,gdz), centered on the arm
+% Detector orientation relative to the goniometer arm (schematic)
 %=========================
-\pgfmathsetmacro{\rMom}{0.11}
-\pgfmathsetmacro{\momStart}{20}
-\pgfmathsetmacro{\momEnd}{275}
+\pgfmathsetmacro{\detHalf}{0.14}
+\pgfmathsetmacro{\detAxisLen}{0.22}
+\pgfmathsetmacro{\detNormLen}{0.25}
 
-% Center point along the arm (fraction of half-length)
-\pgfmathsetmacro{\xMomBase}{0.5}
-\pgfmathsetmacro{\xMom}{\xMomBase*\gdx}
-\pgfmathsetmacro{\yMom}{\yGoni + \xMomBase*\gdy}
-\pgfmathsetmacro{\zMom}{\zGoni + \xMomBase*\gdz}
-
-% Orthonormal basis spanning plane perpendicular to d
+% Orthonormal basis spanning a plane perpendicular to d=(gdx,gdy,gdz).
 % Use ref=(0,1,0): u_raw = d x ref = (-d_z, 0, d_x)
 \pgfmathsetmacro{\uNorm}{sqrt(\gdz*\gdz + \gdx*\gdx)}
 \pgfmathsetmacro{\ux}{-\gdz/\uNorm}
@@ -328,15 +321,44 @@
 \pgfmathsetmacro{\vy}{\vRawY/\vNorm}
 \pgfmathsetmacro{\vz}{\vRawZ/\vNorm}
 
-\draw[red!70!black, line width=0.1mm, ->]
-  plot[domain=\momStart:\momEnd, samples=100, variable=\t]
-    ({
-      \xMom + \rMom*(\ux*cos(\t) + \vx*sin(\t))
-    },{
-      \yMom + \rMom*(\uy*cos(\t) + \vy*sin(\t))
-    },{
-      \zMom + \rMom*(\uz*cos(\t) + \vz*sin(\t))
-    });
+% Detector plane at the + end of the misaligned arm.
+\coordinate (detC) at (goniEnd);
+\coordinate (detA) at ({\xGoni*\gdx + \detHalf*(\ux+\vx)},
+                       {\yGoni + \xGoni*\gdy + \detHalf*(\uy+\vy)},
+                       {\zGoni + \xGoni*\gdz + \detHalf*(\uz+\vz)});
+\coordinate (detB) at ({\xGoni*\gdx + \detHalf*(\ux-\vx)},
+                       {\yGoni + \xGoni*\gdy + \detHalf*(\uy-\vy)},
+                       {\zGoni + \xGoni*\gdz + \detHalf*(\uz-\vz)});
+\coordinate (detD) at ({\xGoni*\gdx - \detHalf*(\ux+\vx)},
+                       {\yGoni + \xGoni*\gdy - \detHalf*(\uy+\vy)},
+                       {\zGoni + \xGoni*\gdz - \detHalf*(\uz+\vz)});
+\coordinate (detE) at ({\xGoni*\gdx - \detHalf*(\ux-\vx)},
+                       {\yGoni + \xGoni*\gdy - \detHalf*(\uy-\vy)},
+                       {\zGoni + \xGoni*\gdz - \detHalf*(\uz-\vz)});
+
+\fill[gray!12] (detA) -- (detB) -- (detE) -- (detD) -- cycle;
+\draw[black, line width=0.25mm] (detA) -- (detB) -- (detE) -- (detD) -- cycle;
+
+% Local detector axes (in-plane) and normal (colinear with arm direction).
+\coordinate (detUaxis) at ({\xGoni*\gdx + \detAxisLen*\ux},
+                           {\yGoni + \xGoni*\gdy + \detAxisLen*\uy},
+                           {\zGoni + \xGoni*\gdz + \detAxisLen*\uz});
+\coordinate (detVaxis) at ({\xGoni*\gdx + \detAxisLen*\vx},
+                           {\yGoni + \xGoni*\gdy + \detAxisLen*\vy},
+                           {\zGoni + \xGoni*\gdz + \detAxisLen*\vz});
+\coordinate (detNaxis) at ({\xGoni*\gdx + \detNormLen*\gdx},
+                           {\yGoni + \xGoni*\gdy + \detNormLen*\gdy},
+                           {\zGoni + \xGoni*\gdz + \detNormLen*\gdz});
+
+\draw[->, black, line width=0.2mm] (detC) -- (detUaxis)
+  node[scale=0.6, anchor=west, xshift=-1pt] {$x'$};
+\draw[->, black, line width=0.2mm] (detC) -- (detVaxis)
+  node[scale=0.6, anchor=west, xshift=-1pt, yshift=-1pt] {$z'$};
+\draw[->, black, line width=0.2mm] (detC) -- (detNaxis)
+  node[scale=0.55, anchor=west, xshift=0pt, yshift=-2pt] {$\hat{n}_{\mathrm{det}}$};
+
+\node[scale=0.55, anchor=west, xshift=2pt, yshift=4pt]
+  at (detC) {Detector};
 
 %=========================
 % Draw k_i vector (last)

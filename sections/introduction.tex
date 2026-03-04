@@ -1,73 +1,83 @@
 \section{Introduction}
 Layered van der Waals solids and related two-dimensional materials are commonly characterized by wide-angle x-ray scattering (WAXS) with area detectors, because a single exposure maps a large reciprocal-space volume and directly reports both structure and orientation.\cite{SmilgiesBlasini2007,Smilgies2009,Hexemer2015,Smilgies2025Crystals,Savikhin2020} Orientation is often the primary performance variable in these anisotropic films.\cite{Novoselov2004,GeimGrigorieva2013,Fischer2023MOFGIWAXS} In layered halides such as PbI$_2$, transport and device response can depend strongly on whether the layers lie parallel to the substrate.\cite{Arendse2023} In topological bismuth chalcogenides, strong $c$-axis texture is needed to preserve the desired electronic response.\cite{Jerng2013} In layered halides such as PbI$_2$, transport and device response can depend strongly on whether the layers lie parallel to the substrate.\cite{Arendse2023} In topological bismuth chalcogenides, strong $c$-axis texture is needed to preserve the desired electronic response.\cite{Jerng2013} In transition-metal dichalcogenides, catalytic activity increases when orientation exposes platelet edges.\cite{Li2011} Comparable 2D oriented-powder textures also occur across a wider set of layered thin-film families, including telluride chalcogenides (e.g., Bi$_2$Te$_3$, Sb$_2$Te$_3$), dichalcogenides (e.g., MoS$_2$, NbS$_2$), layered halides and oxyhalides (e.g., BiI$_3$, BiOI), and laminated 2D-flake films (e.g., Ti$_3$C$_2$T$_x$ MXenes and graphene-oxide papers).\cite{Zhang2022Bi2Te3, Zhang2023Sb2Te3, Shaji2021MoS2GIWAXS, Henshaw2017NbS2, Williamson2018BiI3, Jagt2020BiOI, Natu2018MXene, Liao2025GOWAXS}
 
-A common thin-film texture in these systems is a two-dimensional (2D) oriented powder where plate-like crystallites lie flat with aligned layer normals but remain azimuthally randomized in-plane, as sketched in Fig.~\ref{fig:intro_realspace_2d}.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} This texture is neither a single crystal nor a fully isotropic three-dimensional (3D) powder. As a result, analysis strategies that assume discrete reciprocal-lattice points (single crystals) or spherical powder averaging (3D powders) can fail or become ambiguous for layered films in the intermediate regime.\cite{Kaganer1999}
-
-
-\begin{figure}[!ht]
+A common thin-film preferred orientation in these systems is a two-dimensional (2D) oriented powder where plate-like crystallites lie flat with aligned layer normals but remain azimuthally randomized in-plane.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} This orientational state is neither a single crystal nor a fully isotropic three-dimensional (3D) powder. As a result, analysis strategies that assume discrete reciprocal-lattice points (single crystals) or spherical powder averaging (3D powders) can fail or become ambiguous for layered films in the intermediate regime.\cite{Kaganer1999}
+\begin{figure}[H]
   \centering
 
-  % Row 1
-  \noindent\makebox[\textwidth][l]{%
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_single_recip}
-      \panelin{(a)}{intro/reciprocal_single_crystal.png}
-    \end{subfigure}\hfill
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_3d_recip}
-      \panelin{(b)}{intro/reciprocal_3d_powder.png}
-    \end{subfigure}%
-  }
+  % Row 1: reciprocal-space limits (schematics)
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/reciprocal_2d_powder.png}
+    \caption{}
+    \label{fig:intro_2d_recip}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/reciprocal_single_crystal.png}
+    \caption{}
+    \label{fig:intro_single_recip}
+  \end{subfigure}
 
-  \vspace{0.7em}
+  \vspace{0.0em}
 
-  % Row 2
-  \noindent\makebox[\textwidth][l]{%
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_2d_recip}
-      \panelin{(c)}{intro/reciprocal_2d_powder.png}
-    \end{subfigure}\hfill
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_realspace_2d}
-      \panelin{(d)}{intro/realspace_2d_powder.png}
-    \end{subfigure}%
-  }
+  % Row 2: 3D powder schematic + detector rings
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/reciprocal_3d_powder.png}
+    \caption{}
+    \label{fig:intro_3d_recip}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/detector_3d_powder_hbn.png}
+    \caption{}
+    \label{fig:intro_3d_image}
+  \end{subfigure}
 
-  \vspace{0.7em}
+  \vspace{0.0em}
 
-  % Row 3
-  \noindent\makebox[\textwidth][l]{%
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_3d_image}
-      \panelin{(e)}{intro/detector_3d_powder_hbn.png}
-    \end{subfigure}\hfill
-    \begin{subfigure}[t]{\panelw}\centering
-      \phantomsubcaption\label{fig:intro_2d_image}
-      \panelin{(f)}{intro/detector_2d_powder_example.png}
-    \end{subfigure}%
-  }
+  % Row 3: detector signatures (2D powder vs single crystal)
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/detector_2d_powder_example.png}
+    \caption{}
+    \label{fig:intro_2d_image}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.374\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/mono_single_crystal.png}
+    \caption{}
+    \label{fig:intro_single_image}
+  \end{subfigure}
 
-  \caption{
+  \caption{\footnotesize
   Diffraction limits for single crystals and powders.
-  Top: reciprocal-space intersection with the Ewald sphere. In (a) discrete reciprocal points are rarely intersected without tuning. In (b) spherical shells yield Debye--Scherrer rings. In (c) specular \((00L)\) points coexist with cylindrical shells about the film normal.
-  Bottom: real-space texture and detector signatures. In (d) plate-like crystallites generate the 2D-powder geometry in (c). In (e,f) representative detector images for (b,c), respectively.
+  (a) 2D powder: cylindrical shells about the film normal (including specular \((00L)\));
+  (b) single crystal: discrete points;
+  (c) 3D powder: spherical shells.
+  Detector signatures: (d) Debye--Scherrer rings;
+  (e) specular caps and off-specular arcs;
+  (f) discrete Bragg spots.
   }
-  \label{fig:intro_2x3}
+\label{fig:intro_2x3}
 \end{figure}
+
+
 
 Despite this hybrid information content, many WAXS workflows reduce the area-detector image to 1D profiles
 by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020}
 These steps are well suited to nearly isotropic powders, but for 2D powders they deweight or remove the arcs
-and near-specular caps that are most sensitive to out-of-plane correlations, stacking, and mosaic tails.\cite{SmilgiesBlasini2007,Hexemer2015}
+and specular caps that are most sensitive to out-of-plane correlations, stacking, and mosaic tails.\cite{SmilgiesBlasini2007,Hexemer2015}
 Stacking disorder is also commonly inferred from 1D interference models and refinements,\cite{HendricksTeller1942,Treacy1991,CasasCabanas2016}
 which do not directly exploit the full two-dimensional anisotropy of oriented-film scattering.
-More general intermediate textures can be treated with ODF-based refinements or preferred-orientation corrections.\cite{March1932,Dollase1986,MatthiesVinel1982,Pawlik1986,VonDreele1997,LutterottiVasinWenk2014}
+More general intermediate orientation distributions can be treated with ODF-based refinements or preferred-orientation corrections.\cite{March1932,Dollase1986,MatthiesVinel1982,Pawlik1986,VonDreele1997,LutterottiVasinWenk2014}
 In WAXS, recovering a flexible ODF typically requires extensive reorientation data and added degrees of freedom.\cite{Sinha1988,Renaud2009}
-We therefore assume the physically motivated 2D-powder texture a priori (axial symmetry with a low-dimensional
-tilt kernel) and refine its parameters by forward-modeling the full 2D detector image, so that the arc and
-near-specular line shapes in Fig.~\ref{fig:intro_2x3} act as direct constraints to reduce computational resources while improving fit precision.\cite{SmilgiesBlasini2007,Hexemer2015}
+We therefore assume the physically motivated 2D-powder orientation distribution a priori (axial symmetry with a low-dimensional
+mosaicity kernel) and refine its parameters by forward-modeling the full 2D detector image, so that the arc and
+specular (Bragg-rod) line shapes in Fig.~\ref{fig:intro_2x3} act as direct constraints to reduce computational resources while improving fit precision.\cite{SmilgiesBlasini2007,Hexemer2015}
 
-Figure~\ref{fig:intro_2x3} summarizes the associated reciprocal-space and detector-space limits. In the Ewald construction (top row), elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001}  For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations.\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
+Figure~\ref{fig:intro_2x3} summarizes the associated reciprocal-space and detector-space limits. In the Ewald construction (Fig.~\ref{fig:intro_2x3}(a--c)), elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations (Fig.~\ref{fig:intro_single_image}).\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
 Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain
 localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2d_recip}).\cite{Kaganer1999,SmilgiesBlasini2007}
 When the Ewald sphere intersects these features, the detector records hybrid signatures:
@@ -78,7 +88,7 @@ arcs and spreading the \((00L)\) spots into cap-like features near the specular 
 
 
 
-Here we present a quantitative forward model for WAXS from two-dimensional powders that predicts full area-detector images and refines them pixel by pixel against measured data.\cite{Sinha1988,Renaud2009,Breiby2008,Nikolaev2025} The model embeds calibrated detector geometry and grazing-incidence wave propagation within the forward calculation, and it parameterizes texture and disorder explicitly so that reflection profiles in Fig.~\ref{fig:intro_2x3} act as direct constraints.\cite{Sinha1988,Renaud2009,SmilgiesBlasini2007,Savikhin2020} We validate the ordered 2D powder limit using MBE-grown Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films, and we then apply the same framework to disordered PbI$_2$ to extract stacking-fault parameters from crystal truncation rods along $G_z$ that are typically masked in 1D-integrated analyses.\cite{Arendse2023,Jerng2013,Treacy1991,CasasCabanas2016} By embedding geometric and sample effects within a single self-consistent forward model, we reduce correction-induced bias and enable joint refinement of geometry, texture, and disorder directly from the raw images.\cite{Hexemer2015,Reus2024,Nikolaev2025}
+Here we present a quantitative forward model for WAXS from two-dimensional powders that predicts full area-detector images and refines them pixel by pixel against measured data.\cite{Sinha1988,Renaud2009,Breiby2008,Nikolaev2025} The model embeds calibrated detector geometry and grazing-incidence wave propagation within the forward calculation, and it parameterizes mosaicity and disorder explicitly so that reflection profiles in Fig.~\ref{fig:intro_2x3} act as direct constraints.\cite{Sinha1988,Renaud2009,SmilgiesBlasini2007,Savikhin2020} We validate the ordered 2D powder limit using MBE-grown Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films, and we then apply the same framework to disordered PbI$_2$ to extract stacking-fault parameters from crystal truncation rods along $G_z$ that are typically masked in 1D-integrated analyses.\cite{Arendse2023,Jerng2013,Treacy1991,CasasCabanas2016} By embedding geometric and sample effects within a single self-consistent forward model, we reduce correction-induced bias and enable joint refinement of geometry, mosaicity, and disorder directly from the raw images.\cite{Hexemer2015,Reus2024,Nikolaev2025}
 
 
 

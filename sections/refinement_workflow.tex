@@ -1,40 +1,34 @@
 \section{Refinement workflow}
 
-Our forward model predicts the full 2D detector intensity by combining (i) a calibrated pixel-to-$\mathbf{Q}$ mapping (detector geometry and beam phase space), (ii) sample footprint and absorption weighting, (iii) an out-of-plane mosaic kernel that redistributes intensity on the Bragg sphere before projection, and (iv) structure-factor and disorder terms that set reflection-to-reflection intensity ratios and diffuse line shapes. Sections 2--3 define these terms; here we describe the staged estimation strategy used to reduce covariance between mapping and intensity-bearing parameters.
 
-Refinement is staged so that parameters controlling the pixel-to-$\mathbf{Q}$ mapping are determined before intensity-bearing terms. Table~\ref{tab:param_effects} summarizes the stage order and the dominant detector signatures used to constrain each parameter group.
-
-We first fix the incident-beam profile and divergence from direct-beam measurements at several detector distances, which determines $(w_x,w_z,\Delta\theta_x,\Delta\theta_z)$ and the instrument-limited broadening. We then calibrate detector geometry with a 3D powder standard (hBN) by fitting multiple rings in detector coordinates and refining $(D,\beta,\gamma,\phi)$ and the beam center $(x_0,y_0)$ so the rings project to concentric circles under the forward model.
+With the diffraction model defined in Sec.~\ref{sec:diffraction_model}, we employ a staged refinement strategy to decouple the pixel-to-$\mathbf{Q}$ mapping from intensity-bearing parameters and to limit covariance (Table~\ref{tab:param_effects}). Instrument and beam parameters are established from calibration measurements, and the detector geometry is refined using a powder standard.
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement groups, dominant detector signatures, and stage order.}
+  \caption{Parameters and their primary signatures in area detector images.}
   \label{tab:param_effects}
   \footnotesize
-  \setlength{\tabcolsep}{4pt}
+  \setlength{\tabcolsep}{5pt}
   \renewcommand{\arraystretch}{1.15}
-  \begin{tabularx}{\linewidth}{@{}c l L L@{}}
+  \begin{tabularx}{\linewidth}{@{}l L L@{}}
     \toprule
-    Stage & Group & Parameters & Dominant detector signature \\
+    Group & Parameters & What they control \\
     \midrule
-    1 & Instrument and beam &
-    $D,\beta,\gamma,\phi,x_0,y_0$; $w_x,w_z,\Delta\theta_x,\Delta\theta_z$ &
-    Pixel-to-$\mathbf{Q}$ mapping, arc orientation, instrument-limited radial width. \\
-    2 & Sample alignment &
-    $\theta_i,\chi,z_b,z_s$; $W,H,t$; goniometer misalignment $\alpha,\psi$ &
-    Feature locations and footprint weighting, especially specular-stripe curvature and offsets. \\
-    3 & Mosaicity and stacking &
-    Mosaic kernel $(\eta,\gamma)$; stacking-disorder parameter $f$ (if needed) &
-    Tangential arc/cap widths and off-condition specular persistence; $f$ broadening along $Q_z$ and near-axis diffuse line shape. \\
-    4 & Structure factors &
+    Instrument and beam &
+    Detector geometry $D,\beta,\gamma,\chi,x_0,y_0$; beam widths $w_x,w_z$ and divergences $\Delta\theta_x,\Delta\theta_z$ &
+    Fix the pixel-to-$\mathbf{Q}$ mapping and arc orientation, and set the instrument-limited radial width. \\
+    Sample alignment &
+    $\theta_i,\delta,z_B,z_S$; sample dimensions $W,H,t$; goniometer misalignment $\alpha,\psi$ &
+    Set footprint and absorption weighting, shift features across the detector, and bias specular arc curvature. \\
+    Mosaicity and stacking &
+    Mosaic kernel $(\eta,\Gamma)$; stacking-disorder parameter $f$ &
+    Set tangential arc and cap widths and the persistence of specular intensity off condition; $f$ broadens along $Q_z$ and shapes Bragg-rod diffuse scattering. \\
+    Structure factors &
     $\mathbf{r}_a,o_a,\Delta\mathbf{r}_a$; anisotropic Debye--Waller tensor $\mathbf{U}$ &
-    Reflection-to-reflection intensity ratios and $L$ dependence; suppression at high $Q$. \\
+    Set reflection-to-reflection intensity ratios, suppress high-$Q$ intensity, and modulate the $L$ dependence along $Q_z$. \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-With instrument parameters held fixed, we refine sample alignment by matching the locations of a small set of strong features spanning the specular stripe and selected off-specular arcs. The incidence angle $\theta_i$, beam and sample height offsets $(z_b,z_s)$, and residual tilt $\chi$ are refined by minimizing positional residuals between measured and simulated features.
 
-We then determine mosaicity primarily from line shapes rather than absolute intensities by fitting, with a shared kernel, the widths and tails of multiple arcs and caps after normalizing an overall scale. The specular stripe is especially constraining because intensity observed far from the nominal condition is controlled by the kernel tails.
-
-Finally, with geometry and mosaicity fixed, we refine intensity-bearing terms against the full 2D image, including the specular stripe and adjacent diffuse scattering. An overall scale, absorption/footprint weighting, and the structure-factor terms in Eq.~\eqref{eq:structure_factor} are adjusted (occupancies, anisotropic Debye--Waller parameters, and static displacements) to reproduce reflection-to-reflection intensity ratios. For disordered films, stacking-disorder parameters are introduced only after the ordered model converges and are refined against the specular stripe and near-axis diffuse intensity and its $Q_z$ dependence.
+With instrument parameters held fixed, we refine sample alignment from the positions of representative specular and off-specular features and determine mosaicity from the corresponding arc and cap line shapes. Finally, with geometry and mosaicity fixed, we refine intensity-bearing parameters against the full 2D image; for disordered films, stacking-disorder parameters are refined primarily against the specular Bragg rods and their $Q_z$ dependence.

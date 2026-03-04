@@ -1,39 +1,30 @@
-\section{Mosaicity}
+\subsection{Mosaicity}
 \label{sec:mosaicity}
+Imperfect 2D powders exhibit out-of-plane mosaicity, with crystallite layer-normals (van der Waals crystal normals) distributed about the substrate normal (Fig.~\ref{fig:mosaic}). 
 
-Imperfect 2D powders exhibit out-of-plane mosaicity: crystallite layer normals are distributed about the substrate normal (Fig.~\ref{fig:mosaic}).
-
-\begin{figure}[!ht]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.50\linewidth]{mosaic/mosaic_schematic.png}
-  \caption{Schematic of out-of-plane mosaicity: layer-normal misorientation relative to the substrate normal.}
+  \includegraphics[width=0.45\linewidth]{mosaic/mosaic_schematic.png}
+  \caption{Schematic of crystallite layer-normal misorientation (mosaicity). A distribution of crystallite orientations may form in a thin film.}
   \label{fig:mosaic}
 \end{figure}
-
-We model mosaicity with a misorientation density \(\omega(\Delta\theta)\), where \(\Delta\theta\) is the tilt of a crystallite layer normal away from the substrate normal. We take \(\omega\) to be a unit-normalized mixture of a Lorentzian and a Gaussian:
-\begin{equation}
-\omega(\Delta\theta)=
-\eta\,\frac{1}{\pi}\frac{\Gamma/2}{\Delta\theta^{2}+(\Gamma/2)^{2}}
+We describe out-of-plane mosaicity by a misorientation density \(\omega(\Delta\theta)\),
+where \(\Delta\theta\) is the crystallite tilt angle relative to the substrate normal (\(\Delta\theta=0\) for perfect alignment). Because orientations are periodic, we treat \(\omega\) as a \(2\pi\)-periodic wrapped distribution (see SI, Sec.~S4). We model \(\omega\) as a unit-normalized sum of a Lorentzian and a Gaussian:
+\[
+\omega(\Delta\theta)=\eta\,\frac{1}{\pi}\frac{\Gamma}{\Delta\theta^{2}+\Gamma^{2}}
 +(1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^{2}}{2\sigma^{2}}\right),
 \qquad 0\le\eta\le 1,
-\label{eq:mosaic_kernel}
-\end{equation}
-where \(\Gamma\) is the Lorentzian full-width at half maximum and \(\sigma\) is the Gaussian standard deviation. We use the \(2\pi\)-periodic wrapped form of \(\omega\) (normalized on \((-\pi,\pi]\)); see SI for details.
+\]
+with Lorentzian half-width at half maximum \(\Gamma\) and Gaussian standard deviation \(\sigma\).
+The inclusion of the Lorentzian component is not immediately intuitive and will be explained in more detail later in the discussion.
 
-For each reflection we work in the meridional \(\{G_r,G_z\}\) section of reciprocal space, with \(G_z=\bm G\cdot\hat{\bm n}\) and \(G_r=\lVert \bm G-(\bm G\cdot\hat{\bm n})\hat{\bm n}\rVert\), where \(\hat{\bm n}\) is the film (substrate) normal. Mosaicity redistributes intensity along the Bragg sphere in polar angle. We write the resulting meridional line density as \(I_0\,\omega(\Delta\theta)\), where \(I_0\) is the integrated intensity weight of the reflection before mosaic broadening (so \(I_0\,\omega\) has units of intensity per radian).
+For a reflection, we work in the meridional section (\(G_r, G_z\)) of reciprocal space, where \(G_r\) is the projection of the reciprocal vector onto the plane of the substrate, and \(G_z\) is the component along the surface normal. These components are related to the full reciprocal vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. 
 
-Random in-plane rotations about \(\hat{\bm n}\) revolve this meridional line density about the \(G_z\) axis, generating an axially symmetric distribution on the Bragg sphere. A latitude ring at polar angle \(\theta\) has area element \(dA=2\pi R^{2}\sin\theta\,d\theta\), so intensity conservation
-\(I_0\,\omega(\theta-\theta_B)\,d\theta=\sigma(\theta)\,dA\) gives
-\begin{equation}
-  \sigma(\theta)=\frac{I_0}{2\pi R^2\sin\theta}\,\omega(\theta-\theta_B),
-  \qquad 0<\theta<\pi,
-  \label{eq:mosaic_sigma}
-\end{equation}
-where \(\theta_B\) is the Bragg-sphere polar angle for the ideal (perfectly aligned) crystallite.
+The analysis is motivated by considering rotations about the substrate surface normal, allowing for a description of mosaicity without tying directly to \(H, K, L\) coordinates, but rather focusing on the resulting distribution in reciprocal space with line density \(I_0 \omega(\Delta\theta)\), where \(I_0\) is the total intensity associated with a given reflection prior to redistribution by mosaicity.
 
-Figure~\ref{fig:mosaic_combo} shows how mosaic broadening in \(\{G_r,G_z\}\) maps to detector-space arcs. When \(G_r\neq 0\) (in-plane condition), the Ewald sphere intersects the broadened Bragg-sphere feature in two symmetric arcs. When \(G_r=0\) (specular condition), intensity concentrates near the polar cap, producing a single arc.
+Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the meridional $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
   \centering
 
   % --- top row: 2D schematic Bragg-circle views ---
@@ -66,8 +57,42 @@ Figure~\ref{fig:mosaic_combo} shows how mosaic broadening in \(\{G_r,G_z\}\) map
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{Mosaic broadening in the \(\{G_r,G_z\}\) plane (top) and detector-space signatures (bottom). Intensity is redistributed along the Bragg circle with meridional line density \(I_0\,\omega(\Delta\theta)\). The \(G_r\neq 0\) condition (left) yields two arcs, while the \(G_r=0\) specular condition (right) concentrates intensity near the polar cap, forming a single arc.}
+  \caption{Mosaic broadening viewed in the $\{G_r,G_z\}$ plane (top) and its detector-space manifestation (bottom). Intensity is redistributed along the Bragg circle with line density $I_0\,\omega(\Delta\theta)$. The in-plane condition with $G_r\neq 0$ (left) yields two arcs of reflection, while the specular reflection with $G_r=0$ (right) concentrates intensity near the polar cap, forming a single arc.}
   \label{fig:mosaic_combo}
 \end{figure}
 
-On the detector, in-plane features appear as band-like scattering whose radial width and line shape are set primarily by the core of \(\omega\) and by the Jacobian factor \(1/\sin\theta\) in Eq.~\eqref{eq:mosaic_sigma}. Specular features are especially sensitive to the tails of \(\omega\), because intensity observed far off the nominal condition is controlled primarily by the tail character. In particular, a Lorentzian component produces algebraic decay at large \(|\Delta\theta|\), increasing the persistence of off-condition specular intensity and strengthening constraints on \(\Gamma\) and \(\eta\) during refinement.
+
+
+Random in-plane rotations about the film normal revolve the meridional line density
+about the \(G_z\) axis, generating an axially symmetric distribution on the Bragg sphere.
+
+We normalize the corresponding Bragg-sphere surface density \(\sigma(\vartheta)\) so that \(\int \sigma(\vartheta)\,dA = I_0\), yielding
+\begin{equation}
+  \sigma(\vartheta)=\frac{I_0}{2\pi R^2\sin\vartheta}\,\omega(\vartheta),
+  \qquad 0<\vartheta<\pi,
+  \label{eq:mosaic_sigma_maintext}
+\end{equation}
+
+where \(R\) is the Bragg-sphere radius for the reflection. The factor \(1/\sin\vartheta\) is the Jacobian for converting the one-dimensional tilt distribution \(\omega\) into a surface density (see SI, Sec.~S5).
+
+The reciprocal-space consequences appear on an area detector in
+Fig.~\ref{fig:mosaic_pbi2}. Strong out-of-plane mosaicity concentrates specular
+intensity near discrete $G_z$ values at $G_r=0$ (region A), while random
+in-plane orientation distributes in-plane reflections uniformly in azimuth
+about $G_z$, producing ring-like features (region B).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{mosaic/pbi2_waxs.png}
+  \caption{Log-scale WAXS pattern of Bi$_2$Se$_3$ at $\theta_i=5^\circ$. Region A: specular reflections. Region B: in-plane scattering.}
+  \label{fig:mosaic_pbi2}
+\end{figure}
+
+In the in-plane region (Fig.~\ref{fig:mosaic_pbi2}B), the Ewald sphere intersects the broadened Bragg-sphere feature along an extended band. Azimuthal averaging then produces band-like scattering whose radial width and line shape are set primarily by the core of $\omega$ and by the Jacobian factor $1/\sin\vartheta$ in Eq.~\eqref{eq:mosaic_sigma_maintext}.
+In the specular region (Fig.~\ref{fig:mosaic_pbi2}A), the same kernel produces cap-like broadening about the specular reflections. Off-condition specular intensity arises from crystallites whose layer normals are tilted by $\Delta\theta$ away from the mean, so the decay of intensity away from the nominal condition is governed primarily by the tails of $\omega$ (with only weak variation from the geometric factor in Eq.~\eqref{eq:mosaic_sigma_maintext}).
+
+This observation explains why multiple specular reflections can remain visible for a single incident $\mathbf{k}_i$, even when their nominal $\theta_i$ conditions lie outside the measurement window. If $\omega$ contains a Lorentzian component ($\eta>0$), then for $\lvert\Delta\theta\rvert\gg\Gamma$,
+\[
+\omega(\Delta\theta)\sim \eta\,\frac{\Gamma}{\pi\,\Delta\theta^2},
+\]
+so the intensity decays algebraically rather than exponentially. In practice this makes the specular reflections a strong constraint during refinement, since peak persistence and line shape at large $\Delta\theta$ directly determine both the width and the tail character of $\omega$, while in-plane rings are less sensitive to the tail.
