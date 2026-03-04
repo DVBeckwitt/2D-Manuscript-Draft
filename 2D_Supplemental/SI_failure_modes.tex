@@ -1,0 +1,348 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{physics}      % for \dyad{}{}
+\usepackage{siunitx}      % for \si{\angstrom}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Supporting-information numbering (S1, S2, ...; Fig. S1, Eq. (S1), ...).
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\title{Supporting information for:\\
+Two-dimensional powder diffraction in layered van der Waals films:\\
+quantitative X-ray area-detector modeling}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+This supporting information accompanies the manuscript titled
+\emph{Two-dimensional powder diffraction in layered van der Waals films: quantitative X-ray area-detector modeling}
+and provides expanded workflow notes and supplemental derivations.
+
+\section{Staged refinement workflow (expanded)}
+\label{sec:si_workflow}
+
+\begin{enumerate}
+  \item \textbf{Beam characterization (direct beam).}
+  Acquire direct-beam images at several detector distances.
+  Fit the spot position/shape versus distance to determine the incident-beam widths
+  $(w_x,w_z)$ and Gaussian divergences $(\Delta\theta_x,\Delta\theta_z)$ that set the
+  instrument-limited broadening.
+
+  \item \textbf{Detector geometry calibration (3D powder standard).}
+  Measure a polycrystalline calibrant (e.g., hBN).
+  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector tilts
+  $(\beta,\gamma)$, in-plane detector rotation $\phi$, and beam center $(x_0,y_0)$ so the rings
+  forward-project to concentric circles (equivalently, ellipses in the raw detector frame are
+  corrected to circles).
+
+  \item \textbf{Sample alignment and goniometer misset (2D powder film).}
+  Use the 2D-powder signature (paired symmetric in-plane features and single near-specular
+  features) to seed alignment.
+  With detector parameters fixed, refine sample alignment by minimizing positional residuals
+  between measured and simulated features spanning specular and off-specular regions.
+  Refine $(\theta_i,\delta,z_B,z_S,\chi)$ and the goniometer-axis misset rotations $(\alpha,\psi)$;
+  include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+
+  \item \textbf{Mosaicity from line shapes (two $\theta_i$ images).}
+  Acquire two images at different $\theta_i$ and fit them simultaneously using a shared
+  out-of-plane misorientation kernel
+  \[
+    \omega(\Delta\theta)=
+    \eta\,\frac{1}{\pi}\frac{\Gamma}{\Delta\theta^2+\Gamma^2}+
+    (1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^2}{2\sigma^2}\right),
+    \qquad 0\le \eta \le 1,
+  \]
+  (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$ if implemented).
+  Determine parameters from arc/cap widths and specular off-condition tails after normalizing
+  an overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$,
+  and mixing factor $\eta$.
+
+  \item \textbf{Structure-factor constrained intensities (two $\theta_i$ images).}
+  With geometry and mosaicity fixed, refine the intensity model against the full 2D images
+  (including near-specular).
+  Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set reflection
+  strengths.
+  Refine an overall scale plus structure-factor parameters (occupancies, anisotropic
+  Debye--Waller terms, and allowed static displacements) to match reflection-to-reflection
+  intensity ratios across both images.
+
+  \item \textbf{Stacking and polytype disorder (diffuse along $Q_z$).}
+  After the ordered model converges, introduce stacking-disorder (layer-slip / polytype)
+  parameters and refine them against the diffuse intensity between Bragg peaks along $Q_z$
+  (near-specular diffuse scattering and its $Q_z$-dependence), e.g., with an
+  Hendricks--Teller-type model when appropriate.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1  Material background and stacking‑fault model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section
+{ Material background and stacking–fault model}
+
+In layered metal–halides such as PbI$_2$ each I–Pb–I sandwich behaves like a rigid trilayer that can shift laterally with negligible energy cost compared with the much stronger intra‑layer bonding.  Consequently the crystal can adopt several
+{polytypes} that differ only in the {stacking sequence} of these sandwiches along the $c$ axis.
+Here we focus on the two sequences that bracket the experimentally relevant window:
+
+\subsection{Polytypism of PbI\texorpdfstring{$_2$}{2}}
+\label{subsec:polytype}
+\begin{description}
+  \item[2H (\textit{P}$\bar3$m1)] AB repeat stable below $140\,^{\circ}\mathrm{C}$; no lateral shift ($\phi_{AB}=0$); see Fig.~\ref{fig:2H}.
+  \item[6H (\textit{R}$\bar3$)] ABCA repeat above $\approx 200\,^{\circ}\mathrm{C}$; lateral shift $a/\sqrt3$ gives $\phi=2\pi/3$; 2H $\Leftrightarrow$ 6H transition near $94\,^{\circ}\mathrm{C}$; see Fig.~\ref{fig:6H}.
+\end{description}
+
+Our samples never achieve perfect periodicity; stacks often contain finite 2H and 6H "domains" interspersed by {stacking faults}. To model the resulting diffuse scattering we adapt the Hendricks--Teller (HT) Markov formalism and follow the streamlined matrix notation introduced a few years later by Lifshitz, who showed how to re-express pair probabilities through the eigenvalues of a $3\times3$ transition matrix.
+
+
+\begin{figure}[htbp]
+\centering
+%--- left image ----------------------------------------------------
+\begin{subfigure}[t]{0.4\linewidth}
+\centering
+\includegraphics[width=\linewidth]{2H.png}
+\small \caption{2H polytype (AB) with no in‑plane phase shifts.}
+\label{fig:2H}
+\end{subfigure}
+\hfill
+%--- right image ---------------------------------------------------
+\begin{subfigure}[t]{0.28\linewidth}
+\centering
+\includegraphics[width=\linewidth]{6H_R-3.png}
+\small \caption{6H R$\bar3$ polytype (ABCA) with $\tfrac13$‑lattice translations giving $e^{i2\pi/3}$ phase steps.}
+\label{fig:6H}
+\end{subfigure}
+\caption{Low-temperature 2H and high-temperature 6H stacking sequences in PbI\texorpdfstring{$_2$}{2}. Arrows illustrate the lateral shifts responsible for the phase factors used in the HT--Lifshitz model.}
+\label{fig:si_polytypes}
+\end{figure}
+
+\subsection{Molecular structure factor for PbI\texorpdfstring{$_2$}{2}}
+
+A single layer form factor is 
+\begin{equation}
+    F_m = b_{Pb} + b_I \left[ e^{2\pi i \left( H/3 + 2K/3 + Lz/3 \right) } +e^{2\pi i \left( 2H/3 + K/3 - Lz/3 \right) } \right]
+\end{equation}
+
+Where now the amplitude will be 
+\begin{equation}
+    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} 
+    \label{eq:FF}
+\end{equation}
+
+Where $\vec{R_p} = m\vec{a} + n\vec{b}$ is the in-plane position vector, with $m,n\in\mathbb{Z}$.
+Then $\vec{Q}\cdot\vec{R_p} \rightarrow Hm + kn$, and the Bragg condition makes $H,K$ integers.
+
+
+\section{No‑correlation stacking‑fault model}\label{sec:nocorr}
+
+Let $\tau_j\in\{0,1\}$ indicate whether the $j$‑th interface slips $(\tau_j=1)$ or not $(\tau_j=0)$.  
+The structure factor of one layer is $F_0(h,k,\ell)$, and for a three‑layer (ABC) repeat the per‑layer phase advance is  
+\begin{equation}
+  \phi(h,k,\ell)=\frac{h+2k}{3}+\ell/3,
+  \label{eq:phi_def}
+\end{equation}
+with $h,k,\ell$ in reciprocal‑lattice units.
+\\
+We now add the phase of each layer to the form factor from equation \ref{eq:FF}.
+\begin{equation}
+    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(HKL) \ell}
+\end{equation}
+Writing $e^{i \phi \ell} = \prod_{j=1}^\ell e^{i \phi}$
+
+\begin{equation}
+    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(HKL) \ell}
+\end{equation}
+
+
+\subsection{Coherent amplitude of an \texorpdfstring{$N$}{N}-layer stack}
+At layer $\ell$ the factor multiplying $F_0$ is
+\[
+  \bigl[1-\tau_\ell+\tau_\ell e^{-i\phi}\bigr]\,e^{i\phi\ell},
+\]
+so that  
+\begin{equation}
+  A
+  =F_0\sum_{\ell=0}^{N-1}
+        \left[\prod_{j=0}^{\ell}
+               \bigl(1-\tau_j+\tau_j e^{-i\phi}\bigr)\right]
+        e^{i\phi\ell}.
+  \label{eq:A_full}
+\end{equation}
+
+\subsection{Uncorrelated faults}
+Assume the $\tau_j$ are i.i.d.\ with slip probability $p=\Pr(\tau_j=1)$. Independence gives  
+\begin{equation}
+  \Bigl\langle\prod_{j=0}^{\ell}
+           (1-\tau_j+\tau_j e^{-i\phi})\Bigr\rangle
+  =\bigl[(1-p)+p\,e^{-i\phi}\bigr]^{\ell}
+  \equiv f^{\,\ell},
+  \qquad f\equiv(1-p)+p\,e^{-i\phi}.
+  \label{eq:f_def}
+\end{equation}
+
+\subsection{Mean amplitude}
+Averaging \eqref{eq:A_full} and inserting \eqref{eq:f_def} gives the geometric series  
+\begin{equation}
+  \langle A\rangle
+  =F_0\sum_{\ell=0}^{N-1}f^{\ell}e^{i\phi\ell}
+  =F_0\frac{1-(f\,e^{i\phi})^{N}}{1-f\,e^{i\phi}}.
+  \label{eq:A_mean_N}
+\end{equation}
+
+\subsection{Infinite‑crystal limit}
+For any non‑zero fault probability ($|f|<1$),
+\begin{equation}
+  \boxed{\;
+    \lim_{N\to\infty}\langle A\rangle
+    =F_0\,\frac{f}{1-f\,e^{i\phi}}
+  \;}
+  \label{eq:A_mean_inf}
+\end{equation}
+The perfect‑crystal result is recovered as $f\!\to\!1$.
+
+\subsection{Mean‑square amplitude}
+The heights of sharp Bragg peaks: i.e. the square of the coherently averaged structure amplitude. This is only the part of the intensity that survives perfect phase coherence: sharp Bragg peaks. Any layer-to-layer fluctuations are averaged before squaring and thus disappear. 
+
+\begin{align}
+  |\langle A\rangle|^{2}
+  &=|F_0|^{2}\frac{f^{2}}{|1-f\,e^{i\phi}|^{2}}
+     \notag\\[4pt]
+  &=|F_0|^{2}\frac{f^{2}}{(1-f\cos\phi)^{2}+f^{2}\sin^{2}\phi}
+     \label{eq:intensity_cos_sin}\\[4pt]
+  &=|F_0|^{2}\frac{f^{2}}{(1-f)^{2}+4f\sin^{2}\!\dfrac{\phi}{2}}.
+     \label{eq:intensity_halfangle}
+\end{align}
+
+\subsection{ Ensemble-averaged intensity}
+The full detector signal; adds the broadened peaks and diffuse background arising from stacking faults.
+\begin{equation}
+    <|A|^2>
+\end{equation}
+\subsubsection{Layer Autocorrelation}
+The layer-resolved autocorrelation of the stacking sequence tells you how phase coherence decays with layer phase shifts. It is the kernel that converts local disorder into the full intensity giving both Bragg and diffuse components. 
+\\
+
+Define
+\begin{equation}
+  g_j \equiv 1-\tau_j + \tau_j e^{-i\phi}, 
+  \qquad
+  S_{\ell} \equiv \prod_{j=0}^{\ell} g_j.
+\end{equation}
+We wish to compute
+\begin{equation}
+  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
+  =\bigl\langle \prod_{j=0}^{\ell}g_j \;\prod_{j'=0}^{\ell'}g_{j'}^{*}\bigr\rangle.
+\end{equation}
+Since the $g_j$ are i.i.d., expectations of products factor, and $g_jg_j^{*}=1$ identically.  We split into two cases:
+
+\paragraph{Case A: $\ell\ge\ell'$.}
+\begin{equation}
+S_{\ell}S_{\ell'}^{*}
+\;=\;
+\underbrace{\Bigl(\prod_{j=0}^{\ell'}g_j\Bigr)
+            \Bigl(\prod_{j'=0}^{\ell'}g_{j'}^{*}\Bigr)}_{\displaystyle =\,1\;\;\text{(common layers)}}
+\;
+\underbrace{\Bigl(\prod_{j=\ell'+1}^{\ell}g_j\Bigr)}_{\text{extra layers}}
+\end{equation}
+- For $0\le j\le\ell'$, $g_jg_j^{*}=1$, so the first two products give 1.  
+- For $j=\ell'+1,\dots,\ell$, independence implies
+\begin{equation}
+  \Bigl\langle\prod_{j=\ell'+1}^{\ell}g_j\Bigr\rangle
+  =\prod_{j=\ell'+1}^{\ell}\langle g_j\rangle
+  =f^{\,\ell-\ell'}.
+\end{equation}
+Hence
+\begin{equation}
+  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
+  =f^{\,\ell-\ell'},
+  \qquad(\ell\ge\ell').
+\end{equation}
+
+\paragraph{Case B: $\ell<\ell'$.}
+By an identical argument, swapping roles,
+\[
+  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
+  =\bigl(f^{*}\bigr)^{\ell'-\ell},
+  \qquad(\ell<\ell').
+\]
+
+\paragraph{The Solutions are then}
+\begin{equation}
+  \boxed{
+  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
+  =
+  \begin{cases}
+    f^{\,\ell-\ell'}, & \ell\ge\ell',\\[6pt]
+    \bigl(f^{*}\bigr)^{\ell'-\ell}, & \ell<\ell'.
+  \end{cases}
+  }
+  \label{eq:two_point}
+\end{equation}
+
+\subsection{Single‑sum form of the double series}
+With $\ell''=\ell-\ell'$, the double sum becomes  
+\begin{equation}
+  \sum_{\ell=0}^{N_z-1}\sum_{\ell'=0}^{N_z-1}
+     f^{|\ell-\ell'|}e^{i(\phi-\psi)(\ell-\ell')}
+  =N_z\sum_{\ell''=-N_z+1}^{N_z-1}
+        f^{|\ell''|}e^{i(\phi-\psi)\ell''}.
+  \label{eq:double_sum}
+\end{equation}
+Splitting out $\ell''=0$ and the $\pm\ell''$ pairs yields  
+\[
+  N_z\!\left[
+    1+\sum_{\ell''=1}^{N_z-1}
+      f^{\ell''}\bigl(
+        e^{i(\phi-\psi)\ell''}+e^{-i(\phi-\psi)\ell''}
+      \bigr)
+  \right],
+\]
+with  
+\[
+  \sum_{\ell''=1}^{N_z-1}f^{\ell''}e^{\pm i(\phi-\psi)\ell''}
+  =\frac{f\,e^{\pm i(\phi-\psi)}
+         \bigl[1-f^{N_z-1}e^{\pm i(\phi-\psi)(N_z-1)}\bigr]}
+        {1-f\,e^{\pm i(\phi-\psi)}}.
+\]
+
+\subsection{Infinite-crystal limit (\texorpdfstring{$0\le f<1$}{0<=f<1})}
+Letting $N_z\!\to\!\infty$ gives  
+\begin{equation}
+  \sum_{\ell,\ell'}f^{|\ell-\ell'|}e^{i(\phi-\psi)(\ell-\ell')}
+  =N_z\,\frac{1-f^{2}}{1+f^{2}-2f\cos(\phi-\psi)}.
+  \label{eq:sum_infinite}
+\end{equation}
+
+\subsection{Scattering cross‑section}
+Substituting \eqref{eq:sum_infinite},
+\begin{equation}
+  \boxed{
+    \frac{d\sigma}{d\Omega}
+    =|F_m|^{2}\,
+      \frac{(2\pi)^{2}}{A_c}\,
+      \delta\bigl(\mathbf{Q}-\mathbf{G}_p\bigr)\,
+      N_p N_z\,
+      \frac{1-f^{2}}{1+f^{2}-2f\cos(\phi-\psi)}
+  }.
+  \label{eq:cross_section}
+\end{equation}
+This is identical to the Hendrix–Teller formula upon identifying 
+$\phi^{\text{HT}}=\phi-\psi$ and noting that their parameter 
+$\cos(\phi^{1}-\phi^{2})$ equals $f$.
+
+
+\end{document}

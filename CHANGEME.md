@@ -80,11 +80,11 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 - **Reduce unnecessary detail** in the main-text normalization discussion (keep the essential normalization statement without a step-by-step derivation).
 - **Avoid “near-specular” language** in favor of clearer terms such as **specular** and **Bragg rods**.
 - **Replace colloquial “misset”** with **misalignment**.
-- **Introduce the SI reference for the wrapped mosaic distribution earlier** so the periodicity assumption is clear at first use.
+- **Introduce the wrapped mosaic distribution earlier** so the periodicity assumption is clear at first use.
 
 ### What changed (and why)
 
-- Shortened the wrapped-distribution discussion and moved the “see SI” reference to the first introduction of \(\omega(\Delta\theta)\) (`sections/mosaicity_texture.tex`).
+- Shortened the wrapped-distribution discussion and clarified periodicity at the first introduction of \(\omega(\Delta\theta)\) (`sections/mosaicity_texture.tex`).
 - Tightened the Bragg-sphere normalization discussion by removing the explicit area-element/intensity-conservation derivation while retaining the normalized surface-density expression and a brief Jacobian note (`sections/mosaicity_texture.tex`).
 - Replaced “near-specular” phrasing with “specular” and explicitly introduced Bragg-rod language where appropriate (intro narrative + refinement workflow + workflow table) (`sections/introduction.tex`, `sections/refinement_workflow.tex`).
 - Replaced remaining uses of “texture/textures” in the introduction with more specific orientation language (e.g., “preferred orientation”, “orientation distributions”) to keep terminology aligned with the mosaicity-focused model (`sections/introduction.tex`).
@@ -95,15 +95,14 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 ### Advisor requests addressed
 
 - **Add missing model components** that materially affect the observed line shapes and intensities: incident-beam angular divergence, finite beam size, finite sample size/footprint truncation, and refraction/absorption corrections.
-- **Decide what belongs in the main text versus SI** so the model narrative stays readable while still being fully specified.
+- **Decide what belongs in the main text versus deferred detail** so the model narrative stays readable while still being fully specified.
 
 ### What changed (and why)
 
 - Expanded the Diffraction Geometry narrative to explicitly state that the forward model averages over a finite beam phase space (finite spot size and angular divergence), rather than treating the incident beam as a single ray (`sections/modelling_methods.tex`).
 - Clarified how finite sample size and grazing-incidence footprint truncation are handled (by intersecting sampled rays with the sample plane and discarding rays outside the $W\times H$ window), so the origin of partial-illumination bias is clear in the model description (`sections/modelling_methods.tex`).
-- Added a compact absorption-weight expression for a uniformly scattering film of thickness $t$, and stated how refraction is incorporated (effective internal angles + Fresnel transmission factors). The main text keeps only the minimal equation/statement needed for model completeness, with details deferred to SI (`sections/modelling_methods.tex`).
-- Added a standalone Supplementary Information document that records the explicit phase-space distribution, Monte Carlo averaging statement, footprint truncation description, and the refraction/absorption assumptions in one place (`si.tex`). This also provides a concrete target for existing “see SI” references in the manuscript.
-- Updated the mosaicity subsection to cite the relevant SI sections explicitly for the wrapped distribution and the Bragg-sphere Jacobian (`sections/mosaicity_texture.tex`).
+- Added a compact absorption-weight expression for a uniformly scattering film of thickness $t$, and stated how refraction is incorporated (effective internal angles + Fresnel transmission factors) (`sections/modelling_methods.tex`).
+- Updated the mosaicity subsection to clarify the wrapped distribution and the Bragg-sphere Jacobian (`sections/mosaicity_texture.tex`).
 
 ## 2026-03-03 — Figure publication pass (layout + clarity)
 
@@ -140,3 +139,14 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 ### What changed (and why)
 
 - Restored `figures/geometry/sample_geometry_alignment.tex` to its pre-edit version (from the baseline `main` branch) at the author’s request, undoing the detector-orientation patch and reverting labels within that schematic. This provides a clean starting point for an alternative redraw without preserving intermediate layout experiments in the tracked figure source.
+
+## 2026-03-04 — Add supplemental document (workflow + failure modes)
+
+### What changed (and why)
+
+- Added a standalone supporting-information document for refinement workflow notes and stacking/polytype “failure-mode” derivations (`2D_Supplemental/SI_failure_modes.tex`) with supporting graphics (`2D_Supplemental/2H.png`, `2D_Supplemental/6H_R-3.png`).
+- Added in-manuscript callouts to the supporting information where it is used (workflow expansion + stacking-fault derivations) (`sections/refinement_workflow.tex`, `sections/results_diffuse_pbi2.tex`, `sections/introduction.tex`).
+
+### Verification
+
+- Confirmed the supplemental document compiles with `pdflatex SI_failure_modes.tex` (two passes) from within `2D_Supplemental/`.
