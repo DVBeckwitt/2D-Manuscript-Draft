@@ -1,6 +1,6 @@
 \section{Refinement workflow}
 
-Refinement is staged to separately determine the detector and sample geometry and then refine physical scattering parameters. By breaking the procedure into five steps (Table~\ref{tab:param_effects}), we reduce parameter interdependence and improve identifiability. Additional workflow detail is provided in the supporting information (Sec.~S1).
+Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple detector/sample geometry from physical scattering parameters, reducing correlations and improving identifiability. Additional workflow detail is provided in the supporting information (Sec.~S1).
 
 \begin{table}[!ht]
   \centering
@@ -22,8 +22,8 @@ Refinement is staged to separately determine the detector and sample geometry an
     Detector distance $D$; tilts $(\beta,\gamma)$; in-plane detector rotation $\phi$; beam center $(x_0,y_0)$ &
     Fix the detector-to-reciprocal-space geometry (distance, angles, rotation, beam center) and the orientation of features on the detector. \\
     3 &
-    Sample alignment and goniometer misset (2D powder film) &
-    $\theta_i,\delta,z_B,z_S,\chi$; film dimensions $W,H,t$; goniometer misset $(\alpha,\psi)$ &
+    Sample alignment and goniometer misalignment (2D powder film) &
+    $\theta_i,\delta,z_B,z_S,\chi$; film dimensions $W,H,t$; goniometer misalignment $(\alpha,\psi)$ &
     Place specular and off-specular features, and set footprint and absorption weighting. \\
     4 &
     Mosaicity from Bragg-peak shapes (two $\theta_i$ images) &
@@ -32,7 +32,7 @@ Refinement is staged to separately determine the detector and sample geometry an
     5 &
     Refinement of structure (Bragg + diffuse) &
     Overall scale; $\mathbf{r}_a,o_a,\Delta\mathbf{r}_a$; anisotropic Debye--Waller tensor $\mathbf{U}$; disorder parameters (if present) &
-    Match reflection-to-reflection intensity ratios and the $Q_z$ dependence near specular, including diffuse intensity between Bragg peaks when disorder is present. \\
+    Match reflection-to-reflection intensity ratios and the $Q_z$ dependence along specular (Bragg rods), including diffuse intensity between Bragg peaks when disorder is present. \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -40,43 +40,33 @@ Refinement is staged to separately determine the detector and sample geometry an
 \begin{enumerate}
   \item \textbf{Beam characterization (direct beam).}
   Acquire direct-beam images at several detector distances.
-  Fit the spot position and shape versus distance to determine the incident-beam widths
-  $(w_x,w_z)$ and Gaussian divergences $(\Delta\theta_x,\Delta\theta_z)$ that set the
-  instrument-limited broadening.
+  Fit the spot centroid and width versus distance to determine the incident-beam phase-space
+  parameters used by the diffraction model (Sec.~\ref{sec:diffraction_model}).
 
   \item \textbf{Detector geometry calibration (3D powder standard).}
   Measure a polycrystalline calibrant (e.g., hBN).
-  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector tilts
-  $(\beta,\gamma)$, in-plane detector rotation $\phi$, and beam center $(x_0,y_0)$ so the rings
-  forward-project to concentric circles.
+  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, tilts,
+  in-plane rotation, and beam center so the rings forward-project to concentric circles.
 
-  \item \textbf{Sample alignment and goniometer misset (2D powder film).}
-  Use the 2D-powder signature (paired symmetric in-plane features and a near-specular feature) to seed alignment.
-  With detector parameters fixed, refine sample alignment by minimizing positional residuals
+  \item \textbf{Sample alignment and goniometer misalignment (2D powder film).}
+  Use the 2D-powder signature (paired symmetric in-plane features and a specular feature) to seed alignment.
+  With detector parameters fixed, refine sample alignment and goniometer misalignment by minimizing positional residuals
   between measured and simulated features spanning specular and off-specular regions.
-  Refine $(\theta_i,\delta,z_B,z_S,\chi)$ and the goniometer-axis misset rotations $(\alpha,\psi)$;
-  include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+  Include finite-footprint and absorption weighting using the film dimensions and thickness
+  (Sec.~\ref{sec:diffraction_model}).
 
-  \item \textbf{Mosaicity from Bragg-peak shapes}
-  Acquire two images at different $\theta_i$ and fit them simultaneously using shared mosaic parameters
-  \[
-    \omega(\Delta\theta)=
-    \eta\,\frac{1}{\pi}\frac{\Gamma}{\Delta\theta^2+\Gamma^2}+
-    (1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^2}{2\sigma^2}\right),
-    \qquad 0\le \eta \le 1,
-  \]
-  (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$ if implemented).
-  Determine parameters from Bragg-peak arc and cap widths and specular off-condition tails after normalizing
-  an overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$,
-  and mixing factor $\eta$.
+  \item \textbf{Mosaicity from Bragg-peak shapes.}
+  Acquire two images at different $\theta_i$ and fit them simultaneously using shared mosaic parameters in
+  the misorientation model of Sec.~\ref{sec:mosaicity}.
+  Determine parameters from Bragg-peak arc/cap widths and specular off-condition tails after normalizing a
+  single overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and
+  mixing factor $\eta$.
 
   \item \textbf{Refinement of structure (Bragg + diffuse).}
-  With geometry and mosaicity fixed, refine the structural intensity model against the full 2D images
-  (including near-specular).
-  Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set Bragg reflection strengths.
-  Refine an overall scale plus structural parameters (occupancies, anisotropic Debye--Waller terms, and allowed
-  static displacements) to match reflection-to-reflection intensity ratios across both images.
-  When disorder is present, include disorder parameters and refine them primarily against the diffuse intensity
-  along $Q_z$ near specular and between Bragg peaks (which broadens and redistributes intensity along $Q_z$,
-  orthogonal to mosaic broadening).
+  With geometry and mosaicity fixed, refine an overall scale and structural parameters (occupancies,
+  anisotropic Debye--Waller terms, and allowed static displacements) in the structure-factor intensity model
+  (Eq.~\eqref{eq:structure_factor}) against the full 2D images (including specular), matching
+  reflection-to-reflection intensity ratios across both images.
+  When disorder is present, include disorder parameters and constrain them primarily using the diffuse
+  intensity along specular (Bragg rods) and between Bragg peaks along $Q_z$.
 \end{enumerate}

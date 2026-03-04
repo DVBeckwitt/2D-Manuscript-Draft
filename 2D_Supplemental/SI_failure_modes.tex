@@ -51,12 +51,12 @@ and provides expanded workflow notes and supplemental derivations.
   forward-project to concentric circles (equivalently, ellipses in the raw detector frame are
   corrected to circles).
 
-  \item \textbf{Sample alignment and goniometer misset (2D powder film).}
-  Use the 2D-powder signature (paired symmetric in-plane features and single near-specular
+  \item \textbf{Sample alignment and goniometer misalignment (2D powder film).}
+  Use the 2D-powder signature (paired symmetric in-plane features and single specular
   features) to seed alignment.
   With detector parameters fixed, refine sample alignment by minimizing positional residuals
   between measured and simulated features spanning specular and off-specular regions.
-  Refine $(\theta_i,\delta,z_B,z_S,\chi)$ and the goniometer-axis misset rotations $(\alpha,\psi)$;
+  Refine $(\theta_i,\delta,z_B,z_S,\chi)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
   include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity from line shapes (two $\theta_i$ images).}
@@ -75,7 +75,7 @@ and provides expanded workflow notes and supplemental derivations.
 
   \item \textbf{Structure-factor constrained intensities (two $\theta_i$ images).}
   With geometry and mosaicity fixed, refine the intensity model against the full 2D images
-  (including near-specular).
+  (including specular).
   Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set reflection
   strengths.
   Refine an overall scale plus structure-factor parameters (occupancies, anisotropic
@@ -85,7 +85,7 @@ and provides expanded workflow notes and supplemental derivations.
   \item \textbf{Stacking and polytype disorder (diffuse along $Q_z$).}
   After the ordered model converges, introduce stacking-disorder (layer-slip / polytype)
   parameters and refine them against the diffuse intensity between Bragg peaks along $Q_z$
-  (near-specular diffuse scattering and its $Q_z$-dependence), e.g., with an
+  (diffuse intensity along specular / Bragg rods and its $Q_z$-dependence), e.g., with an
   Hendricks--Teller-type model when appropriate.
 \end{enumerate}
 
