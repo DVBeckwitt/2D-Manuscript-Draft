@@ -1,69 +1,103 @@
 \section{Refinement workflow}
 
-Refinement is staged in five steps (Table~\ref{tab:param_effects}) to decouple detector/sample geometry from physical scattering parameters, reducing correlations and improving identifiability. Table~\ref{tab:param_effects} summarizes the dominant image signatures that constrain each parameter group, while the steps below describe the acquisition and fitting procedure. Additional workflow detail is provided in the supporting information (Sec.~S1).
+With the forward model defined above, refinement proceeds sequentially from instrumental quantities to sample-specific scattering parameters in order to reduce correlations. Beam phase-space terms are determined first, followed by detector calibration from a dark-subtracted hBN standard. The sample-side analysis then uses dark-subtracted WAXS images from the materials of interest: ordered-film images for Bi$_2$Se$_3$ and Bi$_2$Te$_3$, and diffuse-scattering images for PbI$_2$. Positional information dominates the alignment stage, where indexed Bragg peaks are matched by least squares, whereas line-shape and intensity information dominate the later stages. Mosaicity is obtained from a joint fit to two images acquired at different $\theta_i$, after which ordered-structure and disorder parameters are refined with geometry and mosaicity held fixed. The staged protocol is summarized in Table~\ref{tab:param_effects}; additional implementation detail is provided in the supporting information (Sec.~S1).
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow. For each step we list the primary parameter group and the dominant image signatures used to constrain it from area-detector images.}
+  \caption{Staged refinement workflow. For each step we list the data used, the parameters fit, and the dominant observables that constrain them from the area-detector measurements.}
   \label{tab:param_effects}
   \scriptsize
-  \setlength{\tabcolsep}{4pt}
+  \setlength{\tabcolsep}{2.5pt}
   \renewcommand{\arraystretch}{1.05}
-  \begin{tabularx}{\linewidth}{@{}c l L L@{}}
+  \begin{tabularx}{\linewidth}{@{}c l L L L@{}}
     \toprule
-    Step & Stage & Parameters & Dominant image signatures \\
+    Step & Stage & Data used & Parameters fit & Primary observables \\
     \midrule
     1 &
     Beam characterization (direct beam) &
-    Beam widths $w_{x,z}$; divergences $\Delta\theta_{x,z}$ &
-    Spot centroid/width versus detector distance (instrument broadening). \\
+    Direct-beam images at several detector distances &
+    Beam widths $w_{x,z}$ and divergences $\Delta\theta_{x,z}$ &
+    Spot centroid and width versus detector distance (instrument broadening). \\
     2 &
     Detector geometry calibration (3D powder standard) &
-    Detector distance $D$; tilts $(\beta,\gamma)$; in-plane rotation $\chi$; beam center $(x_0,y_0)$ &
-    Ring center/ellipticity and orientation (pixel-to-$\mathbf{Q}$ mapping). \\
+    Dark-subtracted hBN calibrant image &
+    Detector distance $D$, tilts $(\beta,\gamma)$, in-plane rotation $\chi$, beam center $(x_0,y_0)$ &
+    Ring center, ellipticity, and orientation (pixel-to-$\mathbf{Q}$ mapping). \\
     3 &
-    Sample alignment and goniometer misalignment (2D powder film) &
-    Sample geometry $(\theta_i,\delta,z_B,z_S)$; goniometer misalignment $(\alpha,\psi)$; film $(W,H,t)$ &
-    Specular/off-specular positions; footprint truncation; absorption weighting. \\
+    Sample alignment and goniometer misalignment &
+    Dark-subtracted sample image &
+    Sample geometry $(\theta_i,\delta,z_B,z_S)$, goniometer misalignment $(\alpha,\psi)$, film $(W,H,t)$ &
+    Least-squares residuals of indexed specular and off-specular Bragg-peak positions. \\
     4 &
     Mosaicity from Bragg-peak shapes (two $\theta_i$ images) &
+    Two dark-subtracted images of the same sample at different $\theta_i$ &
     Mosaic kernel $(\eta,\Gamma,\sigma)$ &
-    Arc/cap widths and specular off-condition tails. \\
+    Arc/cap widths and specular off-condition tails within local reflection ROIs. \\
     5 &
-    Refinement of structure (Bragg + diffuse) &
-    Scale; structure-factor parameters ($o_a$, $\mathbf{r}_a$, $\Delta\mathbf{r}_a$, $\mathbf{U}$); disorder (if present) &
-    Relative Bragg intensities; diffuse along specular (Bragg rods) and between peaks along $Q_z$. \\
+    Ordered-structure refinement &
+    Dark-subtracted Bi$_2$Se$_3$/Bi$_2$Te$_3$ images &
+    Scale and structure-factor parameters ($o_a$, $\mathbf{r}_a$, $\Delta\mathbf{r}_a$, $\mathbf{U}$) &
+    Relative Bragg intensities and rod profiles across the full 2D images. \\
+    6 &
+    Disorder refinement &
+    Dark-subtracted PbI$_2$ images &
+    Disorder parameters with ordered structure fixed &
+    Diffuse intensity along specular (Bragg rods) and between Bragg peaks along $Q_z$. \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
 \begin{enumerate}
   \item \textbf{Beam characterization (direct beam).}
-  Acquire direct-beam images at several detector distances.
-  Fit the spot centroid and width versus distance to determine the incident-beam phase-space
-  parameters used by the diffraction model (Sec.~\ref{sec:diffraction_model}).
+  Direct-beam images are acquired at several detector distances, and the spot centroid and width
+  are fit as functions of distance to determine the incident-beam phase-space parameters used in
+  the diffraction model (Sec.~\ref{sec:diffraction_model}).
 
   \item \textbf{Detector geometry calibration (3D powder standard).}
-  Measure a polycrystalline calibrant (e.g., hBN).
-  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, tilts,
-  in-plane rotation, and beam center so the rings forward-project to concentric circles.
+  A polycrystalline hBN calibrant is measured after subtraction of the detector dark frame.
+  Multiple Debye--Scherrer rings are fit in detector coordinates to refine detector distance,
+  tilts, in-plane rotation, and beam center so that the calibrated rings forward-project to
+  concentric circles.
 
-  \item \textbf{Sample alignment and goniometer misalignment (2D powder film).}
-  Use a 2D powder film to seed alignment.
-  With detector parameters fixed, refine sample alignment and goniometer misalignment by minimizing positional residuals
-  between measured and simulated features spanning specular and off-specular regions.
-  Include finite-footprint and absorption weighting using the film dimensions and thickness
-  (Sec.~\ref{sec:diffraction_model}).
+  \item \textbf{Sample alignment and goniometer misalignment.}
+  For each sample image, the alignment parameters are determined from indexed Bragg-peak positions
+  rather than from global image intensities, because the geometry is constrained primarily by
+  feature location. With detector parameters fixed, sample alignment and goniometer misalignment
+  are refined by minimizing least-squares residuals between measured and simulated peak positions
+  spanning both specular and off-specular regions. Finite-footprint and absorption weighting are
+  included through the film dimensions and thickness (Sec.~\ref{sec:diffraction_model}).
 
   \item \textbf{Mosaicity from Bragg-peak shapes.}
-  Acquire two images at different $\theta_i$ and fit them simultaneously using shared mosaic parameters in
-  the misorientation model of Sec.~\ref{sec:mosaicity}.
+  Two images acquired at different $\theta_i$ are fit simultaneously using the shared mosaic
+  parameters of the misorientation model in Sec.~\ref{sec:mosaicity}. The fit is carried out over
+  local regions of interest around the indexed reflections, with nuisance scale and background
+  terms treated separately in each region so that the shared mosaic kernel is determined by line
+  shape rather than by absolute counts.
   Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and mixing factor $\eta$.
 
-  \item \textbf{Refinement of structure (Bragg + diffuse).}
-  With geometry and mosaicity fixed, refine an overall scale and structural parameters (occupancies,
-  anisotropic Debye--Waller terms, and allowed static displacements) in the structure-factor intensity model
-  (Eq.~\eqref{eq:structure_factor}) against the full 2D images (including specular).
-  When disorder is present, include disorder parameters and constrain them primarily using the diffuse
-  intensity along specular (Bragg rods) and between Bragg peaks along $Q_z$.
+  \item \textbf{Ordered-structure refinement.}
+  With geometry and mosaicity fixed, the ordered-film images of Bi$_2$Se$_3$ and Bi$_2$Te$_3$ are
+  used to refine an overall scale together with the structural parameters entering the
+  structure-factor intensity model (Eq.~\eqref{eq:structure_factor}), including occupancies,
+  anisotropic Debye--Waller terms, and allowed static displacements. The fit is performed against
+  the full dark-subtracted 2D images, including the specular region. In a full end-to-end
+  implementation, this stage is most naturally formulated as a global intensity refinement with one
+  scale per image and physically constrained structural degrees of freedom.
+
+  \item \textbf{Disorder refinement.}
+  After the ordered model converges, disorder parameters are introduced and refined against the
+  dark-subtracted PbI$_2$ images while the ordered structure is held fixed. This final stage is
+  constrained primarily by the diffuse intensity along the specular Bragg rods and between Bragg
+  peaks along $Q_z$, and it is kept separate from the ordered refinement to reduce degeneracy
+  between average structure and disorder.
 \end{enumerate}
+
+All detector images are dark-subtracted before fitting. If additional preprocessing steps such as
+flat-field, polarization, solid-angle, or detector-efficiency corrections are applied, they should
+be used consistently throughout the workflow; if they are omitted, that choice should be stated
+explicitly. Parameter uncertainties are estimated stage by stage by repeated constrained refits
+rather than by a single local covariance matrix: calibrant-point selections are resampled for
+detector geometry, indexed peak lists are resampled for sample alignment, reflection ROIs are
+resampled for mosaicity, and the ordered/disorder intensity fits are repeated from perturbed
+initial values. Reported uncertainties are taken as the standard deviation of the accepted
+solutions and are propagated forward only after the preceding stage has stabilized.

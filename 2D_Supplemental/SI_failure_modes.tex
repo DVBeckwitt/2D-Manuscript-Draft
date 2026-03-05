@@ -45,18 +45,18 @@ and provides expanded workflow notes and supplemental derivations.
   instrument-limited broadening.
 
   \item \textbf{Detector geometry calibration (3D powder standard).}
-  Measure a polycrystalline calibrant (e.g., hBN).
-  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector tilts
-  $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center $(x_0,y_0)$ so the rings
-  forward-project to concentric circles (equivalently, ellipses in the raw detector frame are
-  corrected to circles).
+  Measure a polycrystalline hBN calibrant and subtract the detector dark frame.
+  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance,
+  detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center
+  $(x_0,y_0)$ so the rings forward-project to concentric circles (equivalently, ellipses
+  in the raw detector frame are corrected to circles).
 
-  \item \textbf{Sample alignment and goniometer misalignment (2D powder film).}
-  Use the 2D-powder signature (paired symmetric in-plane features and single specular
-  features) to seed alignment.
-  With detector parameters fixed, refine sample alignment by minimizing positional residuals
-  between measured and simulated features spanning specular and off-specular regions.
-  Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
+  \item \textbf{Sample alignment and goniometer misalignment.}
+  For the dark-subtracted sample image of interest, use indexed Bragg peaks to seed the
+  alignment rather than fitting the full image intensity. With detector parameters fixed,
+  refine sample alignment by minimizing least-squares residuals between measured and simulated
+  peak positions spanning both specular and off-specular regions. Refine
+  $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
   include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity from line shapes (two $\theta_i$ images).}
@@ -69,25 +69,38 @@ and provides expanded workflow notes and supplemental derivations.
     \qquad 0\le \eta \le 1,
   \]
   (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$; see Sec.~S1.1).
-  Determine parameters from arc/cap widths and specular off-condition tails after normalizing
-  an overall scale. Report Lorentzian FWHM $=2\Gamma$, Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$,
-  and mixing factor $\eta$.
+  Determine parameters from arc/cap widths and specular off-condition tails using local
+  reflection regions of interest in the two dark-subtracted images, with nuisance scale and
+  background terms handled separately for each region. Report Lorentzian FWHM $=2\Gamma$,
+  Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and mixing factor $\eta$.
 
-  \item \textbf{Structure-factor constrained intensities (two $\theta_i$ images).}
-  With geometry and mosaicity fixed, refine the intensity model against the full 2D images
-  (including specular).
-  Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set reflection
-  strengths.
-  Refine an overall scale plus structure-factor parameters (occupancies, anisotropic
-  Debye--Waller terms, and allowed static displacements) to match reflection-to-reflection
-  intensity ratios across both images.
+  \item \textbf{Ordered-structure refinement.}
+  With geometry and mosaicity fixed, refine the intensity model against the dark-subtracted
+  2D images of the ordered films (Bi$_2$Se$_3$ and Bi$_2$Te$_3$), including the specular
+  region. Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set
+  reflection strengths. Refine an overall scale plus structure-factor parameters
+  (occupancies, anisotropic Debye--Waller terms, and allowed static displacements) to match
+  reflection-to-reflection intensity ratios across the images. In a full end-to-end
+  implementation this stage should be performed as a global intensity refinement with one
+  scale per image and physically constrained structural degrees of freedom.
 
-  \item \textbf{Stacking and polytype disorder (diffuse along $Q_z$).}
+  \item \textbf{Disorder refinement.}
   After the ordered model converges, introduce stacking-disorder (layer-slip / polytype)
-  parameters and refine them against the diffuse intensity between Bragg peaks along $Q_z$
-  (diffuse intensity along specular / Bragg rods and its $Q_z$-dependence), e.g., with an
-  Hendricks--Teller-type model when appropriate.
+  parameters and refine them against the dark-subtracted PbI$_2$ images with the ordered
+  structure fixed. The dominant constraints are the diffuse intensity along the specular
+  Bragg rods and between Bragg peaks along $Q_z$; this stage is kept separate from the
+  ordered refinement to reduce degeneracy between average structure and disorder, e.g., when
+  using a Hendricks--Teller-type model.
 \end{enumerate}
+
+All detector images are dark-subtracted before fitting. Any additional preprocessing
+(flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be
+applied consistently to all images before refinement or stated explicitly if omitted. We
+recommend stage-specific uncertainty estimation by repeated constrained refits: resample the
+calibrant points for detector geometry, indexed peak lists for sample alignment, and local
+reflection regions for mosaicity, then repeat the ordered/disorder intensity fits from
+perturbed initial values. Report the standard deviation of the accepted solutions and
+propagate parameters to the next stage only after the preceding stage is stable.
 
 \subsection{Wrapped mosaic distribution}
 \label{subsec:si_wrapped_mosaic}

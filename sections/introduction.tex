@@ -5,60 +5,54 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
 \begin{figure}[H]
   \centering
 
-  % Row 1: reciprocal-space limits (schematics)
-  \begin{subfigure}[t]{0.374\linewidth}
+  \begin{subfigure}[t]{0.32\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{intro/reciprocal_2d_powder.png}
+    \includegraphics[width=\linewidth]{intro/mono_single_crystal.png}
     \caption{}
-    \label{fig:intro_2d_recip}
+    \label{fig:intro_single_image}
   \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.374\linewidth}
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{intro/reciprocal_3d_powder.png}
+    \caption{}
+    \label{fig:intro_3d_recip}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\linewidth}
     \centering
     \includegraphics[width=\linewidth]{intro/reciprocal_single_crystal.png}
     \caption{}
     \label{fig:intro_single_recip}
   \end{subfigure}
 
-  \vspace{0.0em}
+  \vspace{0.25em}
 
-  % Row 2: 3D powder schematic + detector rings
-  \begin{subfigure}[t]{0.374\linewidth}
+  \begin{subfigure}[t]{0.32\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{intro/reciprocal_3d_powder.png}
+    \includegraphics[width=\linewidth]{intro/realspace_2d_powder.png}
     \caption{}
-    \label{fig:intro_3d_recip}
+    \label{fig:intro_2d_real}
   \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.374\linewidth}
+  \begin{subfigure}[t]{0.32\linewidth}
     \centering
     \includegraphics[width=\linewidth]{intro/detector_3d_powder_hbn.png}
     \caption{}
     \label{fig:intro_3d_image}
-  \end{subfigure}
-
-  \vspace{0.0em}
-
-  % Row 3: detector signatures (2D powder vs single crystal)
-  \begin{subfigure}[t]{0.374\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/detector_2d_powder_example.png}
-    \caption{}
-    \label{fig:intro_2d_image}
   \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.374\linewidth}
+  \begin{subfigure}[t]{0.32\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{intro/mono_single_crystal.png}
+    \includegraphics[width=\linewidth]{intro/reciprocal_2d_powder.png}
     \caption{}
-    \label{fig:intro_single_image}
+    \label{fig:intro_2d_recip}
   \end{subfigure}
 
   \caption{\footnotesize
   Diffraction limits for single crystals and powders.
-  (a) 2D powder: cylindrical shells about the film normal (including specular \((00L)\));
-  (b) single crystal: discrete points;
-  (c) 3D powder: spherical shells.
-  Detector signatures: (d) Debye--Scherrer rings;
-  (e) specular caps and off-specular arcs;
-  (f) discrete Bragg spots.
+  (a) single-crystal detector: discrete Bragg spots;
+  (b) 3D powder reciprocal space: spherical shells;
+  (c) single-crystal reciprocal space: discrete points;
+  (d) schematic real-space 2D powder texture;
+  (e) 3D powder detector: Debye--Scherrer rings;
+  (f) 2D powder reciprocal space: cylindrical rings about the film normal (including specular \((00L)\)).
   }
 \label{fig:intro_2x3}
 \end{figure}
@@ -77,12 +71,13 @@ We therefore assume the physically motivated 2D-powder orientation distribution 
 mosaicity kernel) and refine its parameters by forward-modeling the full 2D detector image, so that the arc and
 specular (Bragg-rod) line shapes in Fig.~\ref{fig:intro_2x3} act as direct constraints to reduce computational resources while improving fit precision.\cite{SmilgiesBlasini2007,Hexemer2015}
 
-Figure~\ref{fig:intro_2x3} summarizes the associated reciprocal-space and detector-space limits. In the Ewald construction (Fig.~\ref{fig:intro_2x3}(a--c)), elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations (Fig.~\ref{fig:intro_single_image}).\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
+Figure~\ref{fig:intro_2x3} summarizes the associated reciprocal-space, detector-space, and real-space limits. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations (Fig.~\ref{fig:intro_single_image}).\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
 Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain
 localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2d_recip}).\cite{Kaganer1999,SmilgiesBlasini2007}
+The corresponding platelet-aligned texture in real space is illustrated schematically in Fig.~\ref{fig:intro_2d_real}.
 When the Ewald sphere intersects these features, the detector records hybrid signatures:
 pairs of symmetric spots from the ring intersections and single-crystal-like spots near the
-specular stripe from \((00L)\) intensity (Fig.~\ref{fig:intro_2d_image}).\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods}
+specular stripe from \((00L)\) intensity.\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods}
 Finite mosaicity then redistributes intensity in polar angle, broadening the ring intersections into
 arcs and spreading the \((00L)\) spots into cap-like features near the specular region.\cite{Kaganer1999,SmilgiesBlasini2007}
 
