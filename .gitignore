@@ -28,3 +28,14 @@ Thumbs.db
 *~
 *.swp
 *.swo
+
+main.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+

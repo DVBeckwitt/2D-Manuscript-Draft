@@ -137,6 +137,132 @@ $dA=2\pi R^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
 \]
 as used in the main text.
 
+\subsection{Wave propagation, refraction, and absorption}
+\label{subsec:si_refraction_absorption}
+
+Wave attenuation occurs both at the interfaces (Fresnel transmission) and as the wave propagates
+through the film (absorption). In the forward model we therefore (i) refract each ray into and out of
+the film, (ii) assign the absorption to the out-of-plane component of the internal wavevector, and
+(iii) weight scattering from a finite thickness $t$ by thickness-averaged Beer--Lambert attenuation.
+This subsection records the explicit equations used.
+
+\paragraph{Complex refractive index.}
+We write the complex refractive index as
+\begin{equation}
+  \tilde{n} = 1 - \delta_n + i\beta_n,
+\end{equation}
+where the subscript $n$ avoids confusion with the geometric angles $(\delta,\beta)$ used elsewhere.
+In terms of the wavelength $\lambda$, electron density $\rho_e$, classical electron radius $r_e$, and
+linear absorption coefficient $\mu$,
+\begin{equation}
+  \delta_n = \frac{r_e\lambda^2\rho_e}{2\pi},
+  \qquad
+  \beta_n = \frac{\mu\lambda}{4\pi}.
+\end{equation}
+
+\paragraph{Angles and refraction.}
+Let $k_0=2\pi/\lambda$ and take $\hat{z}$ along the sample normal. For an incident ray in air, the
+grazing-incidence angle $\theta_i$ and in-plane azimuth $\varphi_i$ may be expressed in terms of the
+external wavevector components as
+\begin{align}
+  \sin\theta_i &= \frac{k_{i,z}}{k_0},\\
+  \tan\varphi_i &= \frac{k_{i,x}}{k_{i,y}}.
+\end{align}
+Upon refraction, we compute the transmitted grazing angle using the real part of the refractive
+index,
+\begin{equation}
+  \theta_t = \cos^{-1}\!\left(\frac{\cos\theta_i}{\operatorname{Re}(\tilde{n})}\right).
+\end{equation}
+
+\paragraph{Internal wavevector components.}
+We define a real internal wavevector magnitude for the in-plane components as
+\begin{equation}
+  k' = k_0\left(\operatorname{Re}\!\left(\tilde{n}^2\right)\right)^{1/2},
+\end{equation}
+so that
+\begin{align}
+  k_{tx} &= k' \cos\theta_t \sin\varphi_i,\\
+  k_{ty} &= k' \cos\theta_t \cos\varphi_i.
+\end{align}
+To satisfy the boundary condition at the surface, we take only the out-of-plane component to be
+complex and write
+\begin{equation}
+  k_{tz}^2 = a + i b,
+  \qquad
+  k_{tz}=u+i v=\sqrt{a+i b}.
+\end{equation}
+Expanding $(u+i v)^2$ gives
+\[
+  (u+i v)^2 = u^2 - v^2 + 2iuv = a + i b,
+\]
+so that the real and imaginary parts satisfy
+\begin{equation}
+  a = u^2 - v^2 = (u+v)(u-v),
+  \qquad
+  b = 2uv = (u+v)^2 - u^2 - v^2.
+\end{equation}
+The magnitude follows from
+\begin{equation}
+  |k_{tz}|^2=u^2+v^2=\sqrt{(a+i b)(a-i b)}=\sqrt{a^2+b^2},
+\end{equation}
+which yields
+\begin{equation}
+  u^2=\frac{\sqrt{a^2+b^2}+a}{2},
+  \qquad
+  v^2=\frac{\sqrt{a^2+b^2}-a}{2}.
+\end{equation}
+In our parameterization,
+\begin{align}
+  \operatorname{Re}(k_{tz}^2) &= k'^2\sin^2\theta_t \equiv a_t,\\
+  \operatorname{Im}(k_{tz}^2) &= k_0^2\,\operatorname{Im}\!\left(\tilde{n}^2\right) \equiv b,
+\end{align}
+so that
+\begin{align}
+  \operatorname{Re}(k_{tz}) &= \sqrt{\frac{\sqrt{a_t^2+b^2}+a_t}{2}},\\
+  \operatorname{Im}(k_{tz}) &= \sqrt{\frac{\sqrt{a_t^2+b^2}-a_t}{2}}.
+\end{align}
+We take the physical branch $\operatorname{Im}(k_{tz})>0$ so that the field decays into the film.
+
+\paragraph{Exit path and refraction out of the film.}
+For the scattered ray we repeat the same construction using the external grazing-exit angle and
+in-plane azimuth $(\theta_f,\varphi_f)$. We compute an internal exit angle $\theta_t'$ (again using
+$\operatorname{Re}(\tilde{n})$) and form
+\begin{align}
+  k_{tx}' &= k' \cos\theta_t' \sin\varphi_f,\\
+  k_{ty}' &= k' \cos\theta_t' \cos\varphi_f,\\
+  a_f &\equiv k'^2\sin^2\theta_t',
+\end{align}
+with the same $b_f=b_t=b$,
+\begin{align}
+  \operatorname{Re}(k_{tz}') &= \sqrt{\frac{\sqrt{a_f^2+b^2}+a_f}{2}},\\
+  \operatorname{Im}(k_{tz}') &= \sqrt{\frac{\sqrt{a_f^2+b^2}-a_f}{2}}.
+\end{align}
+Optical reversibility then gives the refraction back into air; inverting the relation for $\theta_t$
+gives
+\begin{equation}
+  \theta_f=\cos^{-1}\!\left(\operatorname{Re}(\tilde{n})\cos\theta_t'\right).
+\end{equation}
+
+\paragraph{Fresnel transmission factors.}
+We weight each ray by Fresnel transmission factors at entry and exit interfaces. For a scalar field
+written in terms of the normal wavevector components, one convenient form for an amplitude
+transmission coefficient from medium 1 to 2 is
+\begin{equation}
+  t_{12}=\frac{2k_{1z}}{k_{1z}+k_{2z}}.
+\end{equation}
+
+\paragraph{Absorption weight (uniform scattering through thickness).}
+Assuming a uniform probability of scattering across depth $z\in[0,t]$ and Beer--Lambert attenuation
+along the incident and exit paths, the intensity weight used in the forward model is
+\begin{align}
+  w_{\mathrm{abs}}
+  &=\frac{1}{t}\int_{0}^{t}
+    \exp\!\left[-\mu z\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)\right]\,dz\\
+  &=
+  \frac{1-\exp\!\left[-\mu t\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)\right]}
+       {\mu t\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)}.
+\end{align}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1  Material background and stacking‑fault model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
