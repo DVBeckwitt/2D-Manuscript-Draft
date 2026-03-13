@@ -12,7 +12,7 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
         \textbf{Single crystal}\par\smallskip
         \begin{subfigure}[t]{\linewidth}
           \centering
-          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_single_crystal_structure.png}{(a)}
+          \panelgraphic[width=\linewidth,height=0.15\textheight,keepaspectratio]{figures/intro/1d_real.png}{(a)}
           \phantomcaption\label{fig:intro_single_real}
         \end{subfigure}
 
@@ -28,7 +28,7 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
 
         \begin{subfigure}[t]{\linewidth}
           \centering
-          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_single_crystal_reciprocal.png}{(c)}
+          \panelgraphic[width=\linewidth]{figures/intro/1d_detector.jpg}{(c)}
           \phantomcaption\label{fig:intro_single_recip}
         \end{subfigure}
       \end{minipage}%
@@ -39,7 +39,7 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
         \textbf{3D powder}\par\smallskip
         \begin{subfigure}[t]{\linewidth}
           \centering
-          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_3d_powder_structure.png}{(d)}
+          \panelgraphic[width=\linewidth,height=0.15\textheight,keepaspectratio]{figures/intro/3d_real.png}{(d)}
           \phantomcaption\label{fig:intro_3d_real}
         \end{subfigure}
 
@@ -66,7 +66,7 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
         \textbf{2D powder}\par\smallskip
         \begin{subfigure}[t]{\linewidth}
           \centering
-          \panelgraphic[width=\linewidth,height=0.15\textheight,keepaspectratio]{figures/intro/realspace_2d_powder.png}{(g)}
+          \panelgraphic[width=\linewidth,height=0.15\textheight,keepaspectratio]{figures/intro/2d_real.png}{(g)}
           \phantomcaption\label{fig:intro_2d_real}
         \end{subfigure}
 
@@ -95,18 +95,9 @@ A common thin-film preferred orientation in these systems is a two-dimensional (
       ($(col2.south east)!0.5!(col3.south west)+(0,0.85em)$);
   \end{tikzpicture}
 
-  \caption{\footnotesize
-  Diffraction limits for single crystals and powders. The three columns group the corresponding real-space, reciprocal-space, and detector-space views for each orientational limit.
-  (a) placeholder for a single-crystal real-space structure;
-  (b) single-crystal detector: discrete Bragg spots;
-  (c) placeholder for single-crystal reciprocal space;
-  (d) placeholder for a 3D-powder real-space structure;
-  (e) 3D-powder reciprocal space: spherical shells;
-  (f) 3D-powder detector: Debye--Scherrer rings;
-  (g) schematic real-space 2D-powder texture;
-  (h) 2D-powder reciprocal space: cylindrical rings about the film normal (including specular \((00L)\));
-  (i) 2D-powder detector: symmetric spots about single crystal-like spots down the center.
-  }
+\caption{\footnotesize
+Diffraction across three orientational limits: single crystal, 3D powder, and 2D powder. The columns show the corresponding real-space, reciprocal-space, and detector-space views. Panels (a--c) depict a single crystal, with an ordered lattice, discrete Bragg points in reciprocal space, and the resulting detector image. Panels (d--f) depict a 3D powder, with randomly oriented crystallites, spherical reciprocal-space shells, and Debye--Scherrer rings on the detector. Panels (g--i) depict a 2D powder, with aligned surface normals and in-plane orientational disorder, reciprocal-space rings with specular Bragg features, and the corresponding detector pattern with symmetry about the central axis.
+}
 \label{fig:intro_2x3}
 \end{figure}
 
