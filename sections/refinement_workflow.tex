@@ -4,7 +4,7 @@ With the forward model defined above, refinement proceeds sequentially from inst
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow. For each step we list the data used, the parameters fit, and the dominant observables that constrain them from the area-detector measurements.}
+  \caption{Staged refinement workflow.}
   \label{tab:param_effects}
   \scriptsize
   \setlength{\tabcolsep}{2.5pt}
@@ -17,32 +17,32 @@ With the forward model defined above, refinement proceeds sequentially from inst
     Beam characterization (direct beam) &
     Direct-beam images at several detector distances &
     Beam widths $w_{x,z}$ and divergences $\Delta\theta_{x,z}$ &
-    Spot centroid and width versus detector distance (instrument broadening). \\
+     \\
     2 &
     Detector geometry calibration (3D powder standard) &
     Dark-subtracted hBN calibrant image &
     Detector distance $D$, tilts $(\beta,\gamma)$, in-plane rotation $\chi$, beam center $(x_0,y_0)$ &
-    Ring center, ellipticity, and orientation (pixel-to-$\mathbf{Q}$ mapping). \\
+     \\
     3 &
     Sample alignment and goniometer misalignment &
     Dark-subtracted sample image &
     Sample geometry $(\theta_i,\delta,z_B,z_S)$, goniometer misalignment $(\alpha,\psi)$, film $(W,H,t)$ &
-    Least-squares residuals of indexed specular and off-specular Bragg-peak positions. \\
+    Bragg peak positions \\
     4 &
     Mosaicity from Bragg-peak shapes (two $\theta_i$ images) &
     Two dark-subtracted images of the same sample at different $\theta_i$ &
     Mosaic kernel $(\eta,\Gamma,\sigma)$ &
-    Arc/cap widths and specular off-condition tails within local reflection ROIs. \\
+    Bragg peak line shapes \\
     5 &
     Ordered-structure refinement &
     Dark-subtracted Bi$_2$Se$_3$/Bi$_2$Te$_3$ images &
     Scale and structure-factor parameters ($o_a$, $\mathbf{r}_a$, $\Delta\mathbf{r}_a$, $\mathbf{U}$) &
-    Relative Bragg intensities and rod profiles across the full 2D images. \\
+    Relative Bragg intensities. \\
     6 &
     Disorder refinement &
     Dark-subtracted PbI$_2$ images &
     Disorder parameters with ordered structure fixed &
-    Diffuse intensity along specular (Bragg rods) and between Bragg peaks along $Q_z$. \\
+    Diffuse intensity along Gz of Bragg peaks. \\
     \bottomrule
   \end{tabularx}
 \end{table}
