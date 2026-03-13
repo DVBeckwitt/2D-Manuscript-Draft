@@ -4,55 +4,108 @@ Layered van der Waals solids and related two-dimensional materials are commonly 
 A common thin-film preferred orientation in these systems is a two-dimensional (2D) oriented powder where plate-like crystallites lie flat with aligned layer normals but remain azimuthally randomized in-plane.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} This orientational state is neither a single crystal nor a fully isotropic three-dimensional (3D) powder. As a result, analysis strategies that assume discrete reciprocal-lattice points (single crystals) or spherical powder averaging (3D powders) can fail or become ambiguous for layered films in the intermediate regime.\cite{Kaganer1999}
 \begin{figure}[H]
   \centering
+  \captionsetup[subfigure]{list=false}
+  \begin{tikzpicture}
+    \node[anchor=north west, inner sep=0] (col1) at (0,0) {%
+      \begin{minipage}[t]{0.305\linewidth}
+        \centering
+        \textbf{Single crystal}\par\smallskip
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_single_crystal_structure.png}{(a)}
+          \phantomcaption\label{fig:intro_single_real}
+        \end{subfigure}
 
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/mono_single_crystal.png}
-    \caption{}
-    \label{fig:intro_single_image}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/reciprocal_3d_powder.png}
-    \caption{}
-    \label{fig:intro_3d_recip}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/reciprocal_single_crystal.png}
-    \caption{}
-    \label{fig:intro_single_recip}
-  \end{subfigure}
+        \vspace{0.35em}
 
-  \vspace{0.25em}
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/mono_single_crystal.png}{(b)}
+          \phantomcaption\label{fig:intro_single_image}
+        \end{subfigure}
 
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/realspace_2d_powder.png}
-    \caption{}
-    \label{fig:intro_2d_real}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/detector_3d_powder_hbn.png}
-    \caption{}
-    \label{fig:intro_3d_image}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.32\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{intro/reciprocal_2d_powder.png}
-    \caption{}
-    \label{fig:intro_2d_recip}
-  \end{subfigure}
+        \vspace{0.35em}
+
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_single_crystal_reciprocal.png}{(c)}
+          \phantomcaption\label{fig:intro_single_recip}
+        \end{subfigure}
+      \end{minipage}%
+    };
+    \node[anchor=north west, inner sep=0] (col2) at ([xshift=0.035\linewidth]col1.north east) {%
+      \begin{minipage}[t]{0.305\linewidth}
+        \centering
+        \textbf{3D powder}\par\smallskip
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/placeholder_3d_powder_structure.png}{(d)}
+          \phantomcaption\label{fig:intro_3d_real}
+        \end{subfigure}
+
+        \vspace{0.35em}
+
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/reciprocal_3d_powder.png}{(e)}
+          \phantomcaption\label{fig:intro_3d_recip}
+        \end{subfigure}
+
+        \vspace{0.35em}
+
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth]{figures/intro/detector_3d_powder_hbn.png}{(f)}
+          \phantomcaption\label{fig:intro_3d_image}
+        \end{subfigure}
+      \end{minipage}%
+    };
+    \node[anchor=north west, inner sep=0] (col3) at ([xshift=0.035\linewidth]col2.north east) {%
+      \begin{minipage}[t]{0.305\linewidth}
+        \centering
+        \textbf{2D powder}\par\smallskip
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,height=0.15\textheight,keepaspectratio]{figures/intro/realspace_2d_powder.png}{(g)}
+          \phantomcaption\label{fig:intro_2d_real}
+        \end{subfigure}
+
+        \vspace{0.35em}
+
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth,trim=150 150 150 150,clip]{figures/intro/reciprocal_2d_powder.png}{(h)}
+          \phantomcaption\label{fig:intro_2d_recip}
+        \end{subfigure}
+
+        \vspace{0.35em}
+
+        \begin{subfigure}[t]{\linewidth}
+          \centering
+          \panelgraphic[width=\linewidth]{figures/intro/detector_2d_powder_example.png}{(i)}
+          \phantomcaption\label{fig:intro_2d_image}
+        \end{subfigure}
+      \end{minipage}%
+    };
+    \draw[gray!70, densely dashed, line width=0.6pt]
+      ($(col1.north east)!0.5!(col2.north west)+(0,-0.85em)$) --
+      ($(col1.south east)!0.5!(col2.south west)+(0,0.85em)$);
+    \draw[gray!70, densely dashed, line width=0.6pt]
+      ($(col2.north east)!0.5!(col3.north west)+(0,-0.85em)$) --
+      ($(col2.south east)!0.5!(col3.south west)+(0,0.85em)$);
+  \end{tikzpicture}
 
   \caption{\footnotesize
-  Diffraction limits for single crystals and powders.
-  (a) single-crystal detector: discrete Bragg spots;
-  (b) 3D powder reciprocal space: spherical shells;
-  (c) single-crystal reciprocal space: discrete points;
-  (d) schematic real-space 2D powder texture;
-  (e) 3D powder detector: Debye--Scherrer rings;
-  (f) 2D powder reciprocal space: cylindrical rings about the film normal (including specular \((00L)\)).
+  Diffraction limits for single crystals and powders. The three columns group the corresponding real-space, reciprocal-space, and detector-space views for each orientational limit.
+  (a) placeholder for a single-crystal real-space structure;
+  (b) single-crystal detector: discrete Bragg spots;
+  (c) placeholder for single-crystal reciprocal space;
+  (d) placeholder for a 3D-powder real-space structure;
+  (e) 3D-powder reciprocal space: spherical shells;
+  (f) 3D-powder detector: Debye--Scherrer rings;
+  (g) schematic real-space 2D-powder texture;
+  (h) 2D-powder reciprocal space: cylindrical rings about the film normal (including specular \((00L)\));
+  (i) 2D-powder detector: symmetric spots about single crystal-like spots down the center.
   }
 \label{fig:intro_2x3}
 \end{figure}
@@ -71,10 +124,10 @@ We therefore assume the physically motivated 2D-powder orientation distribution 
 mosaicity kernel) and refine its parameters by forward-modeling the full 2D detector image, so that the arc and
 specular (Bragg-rod) line shapes in Fig.~\ref{fig:intro_2x3} act as direct constraints to reduce computational resources while improving fit precision.\cite{SmilgiesBlasini2007,Hexemer2015}
 
-Figure~\ref{fig:intro_2x3} summarizes the associated reciprocal-space, detector-space, and real-space limits. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations (Fig.~\ref{fig:intro_single_image}).\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
+Figure~\ref{fig:intro_2x3} summarizes the corresponding real-space, reciprocal-space, and detector-space limits, grouped by orientational state. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated points (Fig.~\ref{fig:intro_single_recip}), so at fixed incidence angle the Ewald sphere typically misses most reflections and the detector records only sparse spots for special orientations (Fig.~\ref{fig:intro_single_image}).\cite{AlsNielsenMcMorrow2001} For a 3D powder, random orientations smear each Bragg point into a spherical shell (a Bragg sphere), and the Ewald sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular
 Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain
 localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2d_recip}).\cite{Kaganer1999,SmilgiesBlasini2007}
-The corresponding platelet-aligned texture in real space is illustrated schematically in Fig.~\ref{fig:intro_2d_real}.
+The corresponding platelet-aligned texture in real space is illustrated schematically in Fig.~\ref{fig:intro_2d_real}, and a representative 2D-powder detector pattern is shown in Fig.~\ref{fig:intro_2d_image}.
 When the Ewald sphere intersects these features, the detector records hybrid signatures:
 pairs of symmetric spots from the ring intersections and single-crystal-like spots near the
 specular stripe from \((00L)\) intensity.\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods}

@@ -1,17 +1,34 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
 
-We model the measured area-detector intensity by combining a calibrated instrument geometry with a crystallographic scattering model and a low-dimensional mosaicity spread appropriate to two-dimensional powders. The forward calculation enumerates allowed reciprocal-lattice vectors $\mathbf{G}$, samples rays from the finite-divergence incident beam, applies the diffraction condition, and propagates diffracted rays to the detector so that simulated images can be compared to experiment on a pixel-by-pixel basis. The essential elements are introduced below: (i) the beam, sample, and detector geometry that defines the pixel-to-$\mathbf{Q}$ mapping; (ii) the crystallographic structure factors that set reflection intensities; and (iii) the mosaicity model that redistributes intensity about each ideal Bragg condition.
+We model the measured area-detector intensity by building the diffraction process in the same order used throughout this section. We first determine the allowed exit vectors $\mathbf{k}_f$ for the simplest elastic-scattering geometry, then extend that construction to the finite beam, sample, and detector geometry of the experiment. For each allowed reciprocal-space intersection, the crystallographic model supplies the structure-factor weight, and the mosaicity model redistributes that weight over the nearby \(\mathbf{k}_f\) values appropriate to a two-dimensional powder. The resulting forward calculation predicts the full detector image on a pixel-by-pixel basis.
 
 \subsection{Diffraction Geometry}
 
-In the lab frame, the incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, with a product of two Gaussian profiles in the $x$ and $z$ directions, as shown in Fig.~\ref{fig:waxs_geometry_system}. We treat the incident beam as a distribution in transverse position (widths $w_x,w_z$) and direction (rms divergences $\Delta\theta_x,\Delta\theta_z$). A Monte Carlo ray-tracing approach samples rays from this beam phase space and propagates each ray to the sample and then to the detector; simulated detector images are formed by accumulation over these rays.
 
-The goniometer defines a rotation axis about which the sample normal rotates, as shown in Fig.~\ref{fig:waxs_geometry_sample_triptych}. In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane, with the incident beam parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice, the beam center and sample center may be displaced from the goniometer axis by vertical offsets $z_B$ and $z_S$, respectively. Rotating the sample about this axis sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as shown in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane (e.g., it is not flush against the sample holder), the sample normal can also be tilted by a residual angle $\delta$. For each trial ray, we compute its intersection with the sample plane. The finite beam size at grazing incidence produces an elongated footprint of length $X_s$ (Fig.~\ref{fig:waxs_geometry_sample_triptych}); rays that fall outside the finite illuminated window set by $W$ and $H$ miss the sample and are discarded. Because rays are sampled from the spatial beam profile, partial illumination and footprint truncation are naturally captured.
 
-For rays that intersect the film, wave attenuation occurs both at the surface (Fresnel transmission) and during propagation through the medium (absorption). We model the film by a complex refractive index $\tilde{n}=1-\delta_n+i\beta_n$, compute transmitted internal wavevectors using Snell's law together with continuity of the in-plane components, and use the resulting complex out-of-plane components to set the attenuation along the incident and exit paths through thickness $t$. Full expressions for the internal wavevectors, Fresnel factors, and thickness-averaged absorption weight are given in the supporting information (Sec.~S1.2).
+We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Elastic scattering requires
+\[
+|\mathbf{k}_i| = |\mathbf{k}_f| = \frac{2\pi}{\lambda},
+\qquad
+\mathbf{Q} = \mathbf{k}_f - \mathbf{k}_i.
+\]
+Diffraction occurs when the momentum transfer matches a reciprocal-lattice vector, $\mathbf{Q}=\mathbf{G}$. In the Ewald construction, this means that the reciprocal-space point for that reflection lies on the Ewald sphere of radius $|\mathbf{k}_i|$, so the simplest diffracted ray is obtained directly from
+\[
+\mathbf{k}_f = \mathbf{k}_i + \mathbf{G}.
+\]
+For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. In this ideal limit, the diffraction problem is to find the intersection of the Ewald sphere with the relevant point on that Bragg sphere and then propagate the resulting exit ray to the detector.
 
-The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. An additional in-plane detector rotation $\chi$ accounts for rotation of the detector axes within the detector plane. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at a detector-plane azimuth $\phi$, measured from the detector $x'$ axis.
+For a single $\mathbf{k}_f$, we propagate that ray from the sample to the detector plane. The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. An additional in-plane detector rotation $\chi$ accounts for rotation of the detector axes within the detector plane. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at a detector-plane azimuth $\phi$, measured from the detector $x'$ axis.
+
+Recreating a real measurement requires a family of trial incident rays and sample configurations. In the lab frame, the nominal incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, but different trial rays can arrive with different transverse positions and directions, characterized by widths $w_x,w_z$ and rms divergences $\Delta\theta_x,\Delta\theta_z$, as shown in Fig.~\ref{fig:waxs_geometry_system}. Numerically, we sample these trial rays and propagate each one to the sample.
+
+The goniometer defines a rotation axis about which the sample normal rotates, as shown in Fig.~\ref{fig:waxs_geometry_sample_triptych}. In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane, with the incident beam parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice, the beam center and sample center may be displaced from the goniometer axis by vertical offsets $z_B$ and $z_S$, respectively. Rotating the sample about this axis sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as shown in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane, the sample normal can also be tilted by a residual angle $\delta$. For each trial ray, we compute its intersection with the sample plane. The finite beam size at grazing incidence produces an elongated footprint of length $X_s$ (Fig.~\ref{fig:waxs_geometry_sample_triptych}). Rays that fall outside the finite illuminated window set by $W$ and $H$ miss the sample and are discarded. In this way, the model explicitly captures finite-footprint illumination and footprint truncation.
+
+For rays that intersect the film, refraction also changes the ray geometry itself. We model the film by a complex refractive index $\tilde{n}=1-\delta_n+i\beta_n$ and compute transmitted internal wavevectors using Snell's law together with continuity of the in-plane components. The geometric task remains the same as in the simplest case: for each trial incident ray and sample configuration, determine the corresponding allowed exit vector or vectors $\mathbf{k}_f$ and propagate them to the detector.
+
+
+After the allowed $\mathbf{k}_f$ vectors are generated, each one is assigned a multiplicative weight. Beam-distribution weights arise first from the sampled incident-ray phase space, reflecting the intensity associated with each beam position and direction. Geometric weights then arise from whether the incident ray reaches the finite illuminated sample window. Optical weights arise from Fresnel transmission at the surface and from absorption along the incident and exit paths through the film thickness $t$.
 
 %------------------------------
 % Figure 1: System only
@@ -23,6 +40,7 @@ The 2D area detector is positioned at a distance $D$ from the sample along the l
   Overall lab-frame geometry.
   The incident beam $\mathbf{k}_i$ propagates along $y$ with widths $w_x,w_z$ and divergences
   $\Delta\theta_x,\Delta\theta_z$.
+  The detector normal is indicated by $\hat{n}_{\mathrm{det}}$.
   The detector at distance $D$ is tilted by $\beta$ and $\gamma$,
   and referenced to offsets $(x_0,y_0)$. A representative $\mathbf{k}_f$ defines the scattering angle $2\theta$ and detector-plane azimuth $\phi$.
   }
@@ -59,7 +77,9 @@ $\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the mis
 
 \subsection{Structure Factor}
 
-The crystallographic model supplies both the set of reflections that can contribute to the image and the intrinsic weight of each reflection. We enumerate all symmetry-allowed Miller triplets $(h,k,l)$ whose scattering angle $2\theta$ falls within the detector acceptance, and for each one construct the reciprocal-lattice vector $\mathbf G$. Conventional powder calculations often replace symmetry-equivalent reflections by a multiplicity factor. We do not do that here. In a two-dimensional powder, the measured intensity of symmetry-related reflections depends on the experimental geometry and on the crystallite orientation distribution, so the effective multiplicity is not a single geometry-independent number. We therefore retain every allowed $\mathbf G$ explicitly, compute the corresponding exit wavevector $\mathbf{k}_f$, and let multiplicity and orientation effects emerge within the forward model. The crystal structure enters through an intrinsic per-reflection weight $I_{0,\mathbf G}\propto \lvert F_{\mathbf G}\rvert^2$, while beam-geometry, absorption, and mosaicity effects are applied separately.
+We enumerate all Miller triplets $(h,k,l)$ whose scattering falls within the detector acceptance, construct the corresponding reciprocal-lattice vector $\mathbf G$, and evaluate the momentum-transfer magnitude $Q=|\mathbf{Q}|=|\mathbf{G}|$ for that reflection. For each allowed intersection, the geometry step supplies the associated set of $\mathbf{k}_f$ vectors on the detector, and the crystal structure contributes a multiplicative factor obtained by evaluating the structure-factor function at that reciprocal-space point. In the discrete Bragg case considered here, that weight is written as $I_{0,\mathbf G}\propto \lvert F_{\mathbf G}\rvert^2$, where $\mathbf Q=\mathbf G$ at the intersection. More generally, the same operation can be viewed as sampling a function $F(\mathbf Q)$ at the intersected reciprocal-space coordinate, so the crystallographic weight may be defined on either integer-indexed reciprocal-lattice points or a continuous reciprocal-space variable.
+
+Conventional powder calculations often replace symmetry-equivalent reflections by a multiplicity factor. We do not do that here. In a two-dimensional powder, the measured intensity of symmetry-related reflections depends on the experimental geometry and on the crystallite orientation distribution, so the effective multiplicity is not a single geometry-independent number. We therefore retain every allowed $\mathbf G$ explicitly, evaluate its structure factor at the appropriate $Q$, and let multiplicity and orientation effects emerge within the forward model.
 
 For each reflection with reciprocal-lattice vector
 \[
@@ -75,11 +95,13 @@ o_a\, f_a(Q)\,
 \label{eq:structure_factor}
 \end{equation}
 where the sum runs over atoms $a$ in the unit cell, $o_a$ is the site occupancy, $f_a(Q)$ is the
-atomic form factor evaluated at the momentum transfer of that reflection, and
+atomic form factor evaluated at the momentum-transfer magnitude of that reflection, and
 $\mathbf r_a=(x_a,y_a,z_a)$ gives the fractional atomic position generated by the space-group
 symmetry (Wyckoff site), so that $\mathbf G\cdot\mathbf r_a \equiv hx_a+ky_a+lz_a$. If we refine
 positions, we vary only the free parameters of the occupied Wyckoff sites, not independent
 per-atom shifts. The Debye--Waller factor is written in anisotropic tensor form, where
 $\mathbf U_a$ is the mean-square displacement tensor (ADP) for atom $a$, expressed in the same
-basis convention used for $\mathbf G$. In refinement, $\mathbf U_a$ may be constrained by symmetry
+basis convention used for $\mathbf G$. Operationally, once an allowed $\mathbf{k}_f$ is found, the
+corresponding ray weight is multiplied by the crystallographic factor $\lvert F\rvert^2$ evaluated
+at that reciprocal-space intersection. In refinement, $\mathbf U_a$ may be constrained by symmetry
 or reduced parameterizations when warranted by the data.

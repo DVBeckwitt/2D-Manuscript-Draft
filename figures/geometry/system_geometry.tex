@@ -92,11 +92,9 @@
     \coordinate (detBTL) at ($ (detFTL) + (detTvec) $);
     \coordinate (detBTR) at ($ (detFTR) + (detTvec) $);
 
-    % Draw partial back face
+    % Draw back face
     \draw[very thick]
-      (detBBR) -- (detBTR) -- (detBTL);
-    % Bottom back edge
-    \draw[very thick] (detBBL) -- (detBBR);
+      (detBBL) -- (detBBR) -- (detBTR) -- (detBTL) -- cycle;
 
     % Draw front face
     \draw[very thick]
@@ -118,8 +116,10 @@
       node[anchor=west, scale=0.6] {$x'$};
     \draw[->, black, line width=0.2mm] (detCenter) -- ($ (detCenter) + 0.9*(detV) $)
       node[anchor=south, scale=0.6] {$z'$};
-    \draw[->, black, line width=0.2mm] (detCenter) -- ($ (detCenter) + 2.5*(detTvec) $)
-      node[anchor=south west, scale=0.55, xshift=-2pt] {$\hat{n}_{\mathrm{det}}$};
+    \coordinate (detNormalBase) at ($ (detCenter) + 0.55*(detU) - 0.35*(detV) $);
+    \coordinate (detNormalTip) at ($ (detNormalBase) - 2.3*(detTvec) $);
+    \draw[->, black, line width=0.25mm] (detNormalBase) -- (detNormalTip)
+      node[anchor=south east, scale=0.58, xshift=-2pt, yshift=1pt] {$\hat{n}_{\mathrm{det}}$};
 
     %=========================
     % Beta arc, line, and label at top-right (display-only)

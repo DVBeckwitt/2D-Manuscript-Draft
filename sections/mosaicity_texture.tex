@@ -1,6 +1,6 @@
 \subsection{Mosaicity}
 \label{sec:mosaicity}
-Imperfect 2D powders exhibit out-of-plane mosaicity, with crystallite layer-normals (van der Waals crystal normals) distributed about the substrate normal (Fig.~\ref{fig:mosaic}). 
+The mosaic picture is most easily understood by comparing the three orientational limits introduced in Fig.~\ref{fig:intro_single_recip}, Fig.~\ref{fig:intro_3d_recip}, and Fig.~\ref{fig:intro_2d_recip}. For a perfect single crystal (Fig.~\ref{fig:intro_single_recip}), a reflection carries its full weight at a single Bragg spot. For a 3D powder (Fig.~\ref{fig:intro_3d_recip}), random crystallite orientations spread that weight uniformly over the Bragg sphere, so the Ewald-sphere intersection gives a circle of equivalent reciprocal-space points and associated exit vectors $\mathbf{k}_f$. A 2D powder (Fig.~\ref{fig:intro_2d_recip}) lies between these limits: the allowed $\mathbf{k}_f$ values still lie on that circle, but out-of-plane mosaicity makes some portions of the circle more probable than others. Mosaicity is therefore treated as a redistribution of the ideal per-reflection intensity over the allowed \(\mathbf{k}_f\) family, rather than as a change to the underlying diffraction condition or structure factor.
 
 \begin{figure}[H]
   \centering
@@ -8,19 +8,16 @@ Imperfect 2D powders exhibit out-of-plane mosaicity, with crystallite layer-norm
   \caption{Schematic of crystallite layer-normal misorientation (mosaicity). A distribution of crystallite orientations may form in a thin film.}
   \label{fig:mosaic}
 \end{figure}
-We describe out-of-plane mosaicity by a misorientation density \(\omega(\Delta\theta)\),
-where \(\Delta\theta\) is the crystallite tilt angle relative to the substrate normal (\(\Delta\theta=0\) for perfect alignment). Because orientations are periodic, we treat \(\omega\) as a \(2\pi\)-periodic wrapped distribution (see supporting information, Sec.~S1.1). We model \(\omega\) as a unit-normalized sum of a Lorentzian and a Gaussian:
+For a reflection, we work in the meridional section (\(G_r, G_z\)) of reciprocal space, where \(G_r\) is the projection of the reciprocal lattice vector onto the plane of the substrate, and \(G_z\) is the component along the surface normal. In this section, the perfect-crystal Bragg spot appears as a point on the Bragg circle. In the full three-dimensional picture, random in-plane rotations generate the circle of equivalent reciprocal-space intersections and associated \(\mathbf{k}_f\) values described above, consistent with the reciprocal-space evolution from Fig.~\ref{fig:intro_single_recip} to Fig.~\ref{fig:intro_3d_recip} to Fig.~\ref{fig:intro_2d_recip}. Out-of-plane misorientation then replaces the uniform weighting of that ideal circle by a line density \(I_0 \omega(\Delta\theta)\), where \(I_0\) is the total intensity associated with the reflection before mosaic redistribution.
+
+We describe this out-of-plane mosaicity by a misorientation density \(\omega(\Delta\theta)\), where \(\Delta\theta\) is the crystallite tilt angle relative to the substrate normal (\(\Delta\theta=0\) for perfect alignment). Because \(\Delta\theta\) is an angular variable, we treat \(\omega\) as a \(2\pi\)-periodic wrapped distribution: \(\Delta\theta\) and \(\Delta\theta+2\pi\) are equivalent, and without wrapping the tails would be artificially truncated at the chosen angular boundary (see supporting information, Sec.~S1.1). We model \(\omega\) as a unit-normalized sum of a Lorentzian and a Gaussian:
 \begin{equation}
 \omega(\Delta\theta)=\eta\,\frac{1}{\pi}\frac{\Gamma}{\Delta\theta^{2}+\Gamma^{2}}
 +(1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^{2}}{2\sigma^{2}}\right),
 \qquad 0\le\eta\le 1,
 \end{equation}
 with Lorentzian half-width at half maximum \(\Gamma\) and Gaussian standard deviation \(\sigma\).
-The inclusion of the Lorentzian component is not immediately intuitive and will be explained in more detail later in the discussion.
-
-For a reflection, we work in the meridional section (\(G_r, G_z\)) of reciprocal space, where \(G_r\) is the projection of the reciprocal lattice vector onto the plane of the substrate, and \(G_z\) is the component along the surface normal. These components are related to the full reciprocal lattice vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. 
-
-The analysis is motivated by considering rotations about the substrate surface normal, allowing for a description of mosaicity without tying directly to \(H, K, L\) coordinates, but rather focusing on the resulting distribution in reciprocal space with line density \(I_0 \omega(\Delta\theta)\), where \(I_0\) is the total intensity associated with a given reflection prior to redistribution by mosaicity.
+These components are related to the full reciprocal lattice vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. The inclusion of the Lorentzian component will be motivated later by the observed persistence of specular intensity away from the nominal condition.
 
 Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the meridional $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
 \begin{figure}[H]
@@ -74,7 +71,7 @@ We normalize the corresponding Bragg-sphere surface density \(\sigma(\vartheta)\
   \label{eq:mosaic_sigma_maintext}
 \end{equation}
 
-where \(R\) is the Bragg-sphere radius for the reflection. The factor \(1/\sin\vartheta\) is the Jacobian for converting the one-dimensional tilt distribution \(\omega\) into a surface density.
+where \(R\) is the Bragg-sphere radius for the reflection. The factor \(1/\sin\vartheta\) is the Jacobian for converting the one-dimensional tilt distribution \(\omega\) into a surface density. This surface density supplies the weights used to distribute the ideal intensity \(I_0\) over the neighboring \(\mathbf{k}_f\) rays generated by misoriented crystallites.
 
 The reciprocal-space consequences appear on an area detector in
 Fig.~\ref{fig:mosaic_pbi2}. Strong out-of-plane mosaicity concentrates specular

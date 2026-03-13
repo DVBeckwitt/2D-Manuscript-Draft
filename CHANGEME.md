@@ -2,6 +2,23 @@
 
 This file records manuscript edits made in response to advisor annotations, with brief rationale. It is intended to make structural decisions easy to audit while the draft is still evolving.
 
+## 2026-03-13 — Pedagogical rewrite of diffraction-model narrative
+
+### Advisor requests addressed
+
+- **Explain the diffraction model in the order a reader would naturally build it up:** first the simplest single-ray scattering picture, then the experimental complications.
+- **Make the structure-factor subsection read as the many-\(\mathbf G\) extension of that same geometry,** including the link between \(Q\), \(\mathbf G\), and the corresponding \(\mathbf{k}_f\) set.
+
+### What changed (and why)
+
+- Rewrote the opening of `\subsection{Diffraction Geometry}` so it now starts from the ideal elastic-scattering construction for one incident ray and one reflection, explicitly introducing \(\mathbf Q=\mathbf{k}_f-\mathbf{k}_i\), the Ewald sphere, the Bragg sphere, and the simplest relation \(\mathbf{k}_f=\mathbf{k}_i+\mathbf G\) before discussing real-world corrections (`sections/modelling_methods.tex`).
+- Rewrote the opening paragraph of the `Diffraction Model` section so it now previews the same reader-facing sequence used below: determine allowed \(\mathbf{k}_f\) values in the simplest geometry, extend that construction to the experimental beam/sample/detector geometry, then apply structure-factor and mosaicity weights (`sections/modelling_methods.tex`).
+- Moved the detector propagation immediately after that ideal construction so the reader sees how an allowed \(\mathbf{k}_f\) becomes a detector position before encountering beam divergence, footprint truncation, offsets, refraction, and absorption (`sections/modelling_methods.tex`).
+- Further reorganized the diffraction-geometry prose into an explicit three-step progression: (1) find the simplest \(\mathbf{k}_f\), (2) generalize to more complicated rays while still focusing only on allowed \(\mathbf{k}_f\) values, and (3) discuss how each resulting \(\mathbf{k}_f\) is weighted (`sections/modelling_methods.tex`).
+- Clarified the structure-factor subsection so \(F_{\mathbf G}\) is described operationally as a multiplicative factor applied to each allowed \(\mathbf{k}_f\) by evaluating the structure-factor function at the reciprocal-space intersection. The text now explicitly notes that this can be understood either on discrete integer-indexed reciprocal-lattice points or as a continuous function \(F(\mathbf Q)\) sampled at the intersected coordinate (`sections/modelling_methods.tex`).
+- Rewrote the opening of the mosaicity subsection so it now starts from the ideal \(\mathbf{k}_f\) set and explains mosaicity as a redistribution of the ideal per-reflection intensity over nearby exit vectors, before introducing the wrapped misorientation density \(\omega(\Delta\theta)\), Bragg-circle/Bragg-sphere weighting, and detector-space consequences (`sections/mosaicity_texture.tex`).
+- Reframed the `\subsection{Structure Factor}` opening so it now describes the full calculation as iterating over many symmetry-allowed \(\mathbf G\) vectors, evaluating the relevant \(Q\), assigning \(|F_{\mathbf G}|^2\), and generating the associated family of \(\mathbf{k}_f\) rays in the full forward model (`sections/modelling_methods.tex`).
+
 ## 2026-03-03 — Restructure the model narrative (paper flow)
 
 ### Advisor requests addressed
@@ -9,7 +26,7 @@ This file records manuscript edits made in response to advisor annotations, with
 - **Rename Section 2 to “Diffraction Model” and add a high-level overview of the model strategy.**
 - **Move the former Section 2.1 later** (standard definitions should not lead the narrative).
 - **Fold the former “Section 3” into the model** (as a subsection, e.g., 2.3) and avoid framing this part as “texture” when the model is specifically about mosaicity.
-- **Clarify the separation between model description and refinement/workflow** (the model comes first; the fitting workflow follows).
+- **Clarify the separation between model description and refinement/workflow** (the model comes first, and the fitting workflow follows).
 
 ### What changed (and where)
 

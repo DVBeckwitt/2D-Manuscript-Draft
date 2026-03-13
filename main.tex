@@ -34,9 +34,30 @@
 \newcommand{\maybeinclude}[2][]{%
   \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
     \fbox{\begin{minipage}[c][0.22\textheight][c]{0.95\linewidth}
-      \centering\small PLACEHOLDER\\\texttt{#2}
+      \centering\small PLACEHOLDER\\\footnotesize\path{#2}
     \end{minipage}}%
   }%
+}
+\newcommand{\maybeincludecompact}[2][]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\begin{minipage}[c][0.11\textheight][c]{0.92\linewidth}
+      \centering\small PLACEHOLDER\\\footnotesize\path{#2}
+    \end{minipage}}%
+  }%
+}
+\newcommand{\panelgraphic}[3][]{%
+  \begin{tikzpicture}
+    \node[inner sep=0] (img) {\maybeincludecompact[#1]{#2}};
+    \node[
+      anchor=north west,
+      font=\bfseries\footnotesize,
+      fill=white,
+      fill opacity=0.85,
+      text opacity=1,
+      inner sep=1.5pt,
+      rounded corners=1pt
+    ] at ([xshift=2pt,yshift=-2pt]img.north west) {#3};
+  \end{tikzpicture}%
 }
 
 \begin{document}
