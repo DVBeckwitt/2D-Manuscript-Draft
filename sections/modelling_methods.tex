@@ -13,15 +13,15 @@ We first consider a single incident ray striking a perfectly aligned crystallite
 \qquad
 \mathbf{Q} = \mathbf{k}_f - \mathbf{k}_i.
 \]
-Diffraction occurs when the momentum transfer matches a reciprocal-lattice vector, $\mathbf{Q}=\mathbf{G}$. In the Ewald construction, this means that the reciprocal-space point for that reflection lies on the Ewald sphere of radius $|\mathbf{k}_i|$, so the simplest diffracted ray is obtained directly from
+Diffraction occurs when the momentum transfer matches a reciprocal-lattice vector, $\mathbf{Q}=\mathbf{G}$. In the Ewald construction, this means that the reciprocal-space point for that reflection lies on the Ewald sphere of radius $|\mathbf{k}_i|$. A useful reciprocal-space visualization of this construction is shown in Fig.~\ref{fig:intro_3d_recip}. The simplest diffracted ray is obtained directly from
 \[
 \mathbf{k}_f = \mathbf{k}_i + \mathbf{G}.
 \]
-For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. In this ideal limit, the diffraction problem is to find the intersection of the Ewald sphere with the relevant point on that Bragg sphere and then propagate the resulting exit ray to the detector.
+For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. The allowed exit vectors are found by intersecting that Bragg sphere with the Ewald sphere, as visualized by the spherical reciprocal-space shell in Fig.~\ref{fig:intro_3d_recip}, and then propagating the resulting exit ray to the detector.
 
 For a single $\mathbf{k}_f$, we propagate that ray from the sample to the detector plane. The 2D area detector is positioned at a distance $D$ from the sample along the lab $y$ axis, with tilts about the $x$ and $z$ axes denoted $\beta$ and $\gamma$, respectively, as shown in Fig.~\ref{fig:waxs_geometry_system}. An additional in-plane detector rotation $\chi$ accounts for rotation of the detector axes within the detector plane. A diffracted ray with exit wavevector $\mathbf{k}_f$ in the lab frame intersects the detector at a scattering angle $2\theta$, defined as the angle between $\mathbf{k}_f$ and the $y$ axis, and at a detector-plane azimuth $\phi$, measured from the detector $x'$ axis.
 
-Recreating a real measurement requires a family of trial incident rays and sample configurations. In the lab frame, the nominal incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, but different trial rays can arrive with different transverse positions and directions, characterized by widths $w_x,w_z$ and rms divergences $\Delta\theta_x,\Delta\theta_z$, as shown in Fig.~\ref{fig:waxs_geometry_system}. Numerically, we sample these trial rays and propagate each one to the sample.
+Recreating a real measurement requires a family of trial incident rays and sample configurations. In the lab frame, the nominal incident wavevector $\mathbf{k}_i$ propagates along the $y$ axis, but different trial rays can arrive with different transverse positions and directions, characterized by widths $w_x,w_z$ and rms divergences $\Delta\theta_x,\Delta\theta_z$. Numerically, we sample these trial rays and propagate each one to the sample.
 
 The goniometer defines a rotation axis about which the sample normal rotates, as shown in Fig.~\ref{fig:waxs_geometry_sample_triptych}. In the aligned configuration, a rectangular film of in-plane dimensions $W$ and $H$ lies in the $x$-$y$ plane with thickness $t$ along the sample normal. The rotation axis lies within this plane, with the incident beam parallel to the $x$-$y$ plane and perpendicular to the rotation axis. In practice, the beam center and sample center may be displaced from the goniometer axis by vertical offsets $z_B$ and $z_S$, respectively. Rotating the sample about this axis sets the incidence angle $\theta_i$ between the incident wavevector $\mathbf{k}_i$ and the sample surface, as shown in Fig.~\ref{fig:waxs_geometry_system}. If the substrate is not perfectly parallel to the $x$-$y$ plane, the sample normal can also be tilted by a residual angle $\delta$. For each trial ray, we compute its intersection with the sample plane. The finite beam size at grazing incidence produces an elongated footprint of length $X_s$ (Fig.~\ref{fig:waxs_geometry_sample_triptych}). Rays that fall outside the finite illuminated window set by $W$ and $H$ miss the sample and are discarded. In this way, the model explicitly captures finite-footprint illumination and footprint truncation.
 
@@ -38,11 +38,8 @@ After the allowed $\mathbf{k}_f$ vectors are generated, each one is assigned a m
   \resizebox{0.6\linewidth}{!}{\input{figures/geometry/system_geometry}}
   \caption{
   Overall lab-frame geometry.
-  The incident beam $\mathbf{k}_i$ propagates along $y$ with widths $w_x,w_z$ and divergences
-  $\Delta\theta_x,\Delta\theta_z$.
-  The detector normal is indicated by $\hat{n}_{\mathrm{det}}$.
-  The detector at distance $D$ is tilted by $\beta$ and $\gamma$,
-  and referenced to offsets $(x_0,y_0)$. A representative $\mathbf{k}_f$ defines the scattering angle $2\theta$ and detector-plane azimuth $\phi$.
+  The incident wavevector $\mathbf{k}_i$ strikes the sample, and a representative exit wavevector $\mathbf{k}_f$ reaches the detector at scattering angle $2\theta$ and detector-plane azimuth $\phi$.
+  The detector at distance $D$ is tilted by $\beta$ and $\gamma$.
   }
   \label{fig:waxs_geometry_system}
 \end{figure}
