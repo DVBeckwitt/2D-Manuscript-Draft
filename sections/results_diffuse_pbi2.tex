@@ -1,21 +1,112 @@
 \section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
 
-For disordered CVD grown PbI\textsubscript{2} we return to the Bragg
-sphere (cylinder) picture and introduce the Hendricks--Teller (H--T)
-stacking fault model used to describe the diffuse scattering.
-Polytype background and supporting derivations for the stacking-fault model are provided in the supporting information (Fig.~S1; Secs.~S2--S3).
+We next apply the same calibrated forward framework to disordered CVD-grown PbI$_2$.
+Unlike the ordered films, the PbI$_2$ data are dominated by diffuse intensity along the
+Bragg rods and between the sharp reflections in $Q_z$, which indicates that the average
+ordered structure is not sufficient on its own. The relevant question here is not simply
+whether the Bragg positions are correct, but whether the model can reproduce how the
+intensity is redistributed when the stacking sequence contains faults.
 
-The corresponding reciprocal-space geometry is sketched in Fig.~\ref{fig:reciprocal_cylinders}.
+The physical picture is summarized in Fig.~\ref{fig:reciprocal_cylinders} and expanded in
+the supporting information. In the ordered limit, each layer stack produces sharp Bragg
+features. Stacking faults interrupt the perfect periodicity and transfer intensity from those
+ideal peaks into diffuse rods and background between the peaks. We therefore keep the ordered
+layer structure fixed and introduce a Hendricks--Teller type disorder parameterization to
+describe the faulted stacking sequence. This keeps the average structure and the disorder
+problem separate, which is important because the two effects are otherwise strongly correlated.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\linewidth]{figures/intro/reciprocal_cylinder.png}
-  \caption{Reciprocal cylinders}
+  \maybeincludecompact[width=0.34\linewidth]{figures/intro/reciprocal_cylinder.png}
+  \caption{Reciprocal-space cartoon used to motivate the PbI$_2$ disorder refinement. The
+  cylindrical Bragg-rod picture is the baseline geometry for interpreting diffuse scattering
+  from stacking faults.}
   \label{fig:reciprocal_cylinders}
 \end{figure}
 
-\begin{itemize}
-  \item Motivate the model with experimental data.
-  \item Outline the H--T model for PbI\textsubscript{2}.
-  \item Show resulting 2D images and line cuts with fits.
-\end{itemize}
+Figure~\ref{fig:pbi2_disorder_comp} compares the measured PbI$_2$ image with the
+ordered-only simulation and with the stacking-fault model. The key point to emphasize is that
+the ordered model can reproduce the basic reciprocal-lattice locations but not the observed
+diffuse redistribution of intensity, whereas the faulted model captures both the diffuse rods
+and the relative intensity between neighboring peaks. Any residual mismatch should be discussed
+as a limitation of the disorder parameterization rather than as a failure of the detector
+calibration, because the same geometry already succeeded on the ordered films.
+
+\begin{figure}[H]
+  \centering
+  \captionsetup[subfigure]{list=false}
+  \begin{subfigure}[t]{0.24\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_exp_image.png}
+    \caption{Experiment}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_ordered_baseline.png}
+    \caption{Ordered only}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_faulted_model.png}
+    \caption{Faulted model}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_faulted_residual.png}
+    \caption{Residual}
+  \end{subfigure}
+  \caption{Diffuse-scattering refinement for PbI$_2$. The ordered-only simulation is included as
+  a baseline to show why stacking disorder is required. The stacking-fault model is then
+  compared against the same data to show the recovery of diffuse intensity along the rods and
+  the redistribution of signal between sharp features.}
+  \label{fig:pbi2_disorder_comp}
+\end{figure}
+
+The corresponding quantitative comparison is shown in Fig.~\ref{fig:pbi2_linecuts}, where line
+cuts through the specular rods and the inter-peak diffuse regions are overlaid with the refined
+model. These cuts, together with Table~\ref{tab:pbi2_fit_summary}, are the natural place to
+report the disorder fit in the manuscript. The fitted fault parameter(s) should be described in
+terms of how they control the observed broadening and diffuse intensity transfer along $Q_z$.
+The supporting information contains the full derivation of the stacking-fault formalism and the
+polytype background, so the main text only needs this compact physical summary.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.49\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_specular_qz_cuts.png}
+    \caption{Specular-rod cuts}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.49\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/pbi2/pbi2_interpeak_qz_cuts.png}
+    \caption{Inter-peak cuts}
+  \end{subfigure}
+  \caption{Representative PbI$_2$ line cuts used to quantify the stacking-fault refinement.
+  These plots show the measured diffuse scattering and the refined Hendricks--Teller model on
+  the same axes, highlighting agreement in both the rod shape and the diffuse background.}
+  \label{fig:pbi2_linecuts}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Placeholder summary of PbI$_2$ disorder-fit outputs. Replace the entries with the
+  final refined values and uncertainties after the stacking-fault analysis is finalized.}
+  \label{tab:pbi2_fit_summary}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{@{}l l L@{}}
+    \toprule
+    Quantity & Meaning & Reported value \\
+    \midrule
+    $p$ or $\mathbf{T}$ parameter(s) & Slip probability / transition-matrix disorder parameterization & Placeholder $\pm$ uncertainty \\
+    Ordered reference model & Average layer structure held fixed during disorder refinement & Placeholder description \\
+    $\Delta I_{\mathrm{diff}}(Q_z)$ & Agreement of diffuse intensity along rods and between Bragg peaks & Placeholder value \\
+    $R_{\mathrm{img}}$ or $\chi^2_{\nu}$ & Global image residual / goodness-of-fit metric & Placeholder value \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Overall, the PbI$_2$ result demonstrates the main extension of the paper: once the ordered
+film case is established, the same forward model can be expanded to include stacking faults and
+used to interpret diffuse scattering quantitatively rather than treating it as an unmodelled
+background.

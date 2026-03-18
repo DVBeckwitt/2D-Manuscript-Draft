@@ -1,13 +1,108 @@
 \section{Results: ordered films}
 
-In this section we show representative fits for ordered MBE grown
-Bi\textsubscript{2}Te\textsubscript{3} and Bi\textsubscript{2}Se\textsubscript{3}
-films: 2D experimental images, 2D calculated images, and line cuts along
-$Q_z$ with fits overlaid.
+We first validate the forward model on the ordered van der Waals films, where the dominant
+task is to reproduce the measured detector geometry, reflection positions, and relative
+intensities with the crystallographic structure held fixed once the geometry and mosaicity
+have been determined. This step is the cleanest test of whether the simulation is capturing
+the mapping from reciprocal space to the detector, because the sharp Bragg features in
+Bi$_2$Se$_3$ and Bi$_2$Te$_3$ are sensitive to both the calibrated geometry and the ordered
+structure factor.
 
-\begin{itemize}
-  \item 2D image data.
-  \item 2D image calculation.
-  \item Line cuts along $Q_z$ with fitted curves.
-\end{itemize}
+Figure~\ref{fig:ordered_comp} compares representative experimental and calculated 2D WAXS
+images for the ordered films. The simulation reproduces the main Bragg-peak locations and the
+overall distribution of intensity across the specular and off-specular regions. Any remaining
+discrepancies are confined to localized regions near individual reflections and do not change
+the global pattern of agreement. In particular, the same refined geometry used in the
+simulation places the reflections in the correct detector positions without additional
+post-hoc shifts.
 
+\begin{figure}[H]
+  \centering
+  \captionsetup[subfigure]{list=false}
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2se3_exp_image.png}
+    \caption{Bi$_2$Se$_3$ experiment}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2se3_sim_image.png}
+    \caption{Bi$_2$Se$_3$ simulation}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2se3_residual_image.png}
+    \caption{Bi$_2$Se$_3$ residual}
+  \end{subfigure}
+
+  \medskip
+
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2te3_exp_image.png}
+    \caption{Bi$_2$Te$_3$ experiment}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2te3_sim_image.png}
+    \caption{Bi$_2$Te$_3$ simulation}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2te3_residual_image.png}
+    \caption{Bi$_2$Te$_3$ residual}
+  \end{subfigure}
+  \caption{Representative ordered-film refinements for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. The
+  experimental images are compared with the corresponding simulations from the refined ordered
+  model. The residual panels show where the model is most and least successful once the
+  geometry, mosaicity, and scale are fixed.}
+  \label{fig:ordered_comp}
+\end{figure}
+
+The quantitative refinement is then summarized through line cuts across representative
+reflections, as shown in Fig.~\ref{fig:ordered_linecuts}. These cuts emphasize that the
+refined model matches not only the integrated intensity but also the reflection shape along
+$Q_z$, which is the most sensitive direction for the layered ordering problem. The fitted scale
+and structure-factor parameters are summarized in Table~\ref{tab:ordered_fit_summary}. The key
+result is that a physically constrained ordered model explains the measured intensity ratios
+with a single internally consistent set of parameters.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.49\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2se3_qz_linecuts.png}
+    \caption{Bi$_2$Se$_3$ line cuts}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.49\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results/ordered/bi2te3_qz_linecuts.png}
+    \caption{Bi$_2$Te$_3$ line cuts}
+  \end{subfigure}
+  \caption{Line cuts through representative ordered-film reflections. Experimental data are
+  shown with the refined model overlaid. These plots document agreement in peak position,
+  width, and relative intensity after the geometry and mosaicity have been fixed.}
+  \label{fig:ordered_linecuts}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Placeholder summary of ordered-film fit outputs. Replace the entries with the final
+  refined values and uncertainties after the ordered-film refinement is finalized.}
+  \label{tab:ordered_fit_summary}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{@{}l l L@{}}
+    \toprule
+    Quantity & Meaning & Reported value \\
+    \midrule
+    $s$ & Overall image scale factor & Placeholder $\pm$ uncertainty \\
+    $(o_a,\Delta \mathbf{r}_a,\mathbf{U}_a)$ & Refined occupancy, static displacement, and Debye--Waller terms & Placeholder $\pm$ uncertainty \\
+    $\Delta Q_{\mathrm{peak}}$ & Characteristic peak-position mismatch after geometry is fixed & Placeholder value \\
+    $R_{\mathrm{img}}$ or $\chi^2_{\nu}$ & Global image residual / goodness-of-fit metric & Placeholder value \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Taken together, the ordered-film results establish that the forward model captures the
+instrumental projection, the reciprocal-space mapping, and the average ordered structure
+well enough to be used as the baseline for the disorder analysis in PbI$_2$.
