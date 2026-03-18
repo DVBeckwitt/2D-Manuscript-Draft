@@ -92,35 +92,71 @@
     \coordinate (detBTL) at ($ (detFTL) + (detTvec) $);
     \coordinate (detBTR) at ($ (detFTR) + (detTvec) $);
 
-    % Draw back face
-    \draw[very thick]
-      (detBBL) -- (detBBR) -- (detBTR) -- (detBTL) -- cycle;
+    % Hidden-edge style
+    \tikzset{
+      detectorHidden/.style={
+        line width=0.45pt,
+        dashed,
+        dash pattern=on 2pt off 1.2pt
+      }
+    }
+
+    % Draw back face edge-by-edge
+    \draw[detectorHidden] (detBBL) -- (detBBR); % bottom back
+    \draw[very thick]     (detBBR) -- (detBTR); % right back
+    \draw[very thick]     (detBTR) -- (detBTL); % top back
+    \draw[detectorHidden] (detBTL) -- (detBBL); % left back
 
     % Draw front face
     \draw[very thick]
       (detFBL) -- (detFBR) -- (detFTR) -- (detFTL) -- cycle;
 
     % Connector edges (thickness)
-    \draw[very thick] (detFBR) -- (detBBR);
-    \draw[very thick] (detFTR) -- (detBTR);
-    \draw[very thick] (detFTL) -- (detBTL);
-    \draw[very thick] (detFBL) -- (detBBL);
+    \draw[very thick]     (detFBR) -- (detBBR);
+    \draw[very thick]     (detFTR) -- (detBTR);
+    \draw[very thick]     (detFTL) -- (detBTL);
+    \draw[detectorHidden] (detFBL) -- (detBBL);
 
     % Detector label
     \node at ($(detCenter)+(0,0,1.3)$) {\scriptsize Detector};
-
     %=========================
     % Detector-frame axes (schematic)
     %=========================
     \draw[->, black, line width=0.2mm] (detCenter) -- ($ (detCenter) + 0.9*(detU) $)
-      node[anchor=west, scale=0.6] {$x'$};
+      node[anchor=west, scale=0.5, xshift = -12, yshift = -6] {$x'$};
     \draw[->, black, line width=0.2mm] (detCenter) -- ($ (detCenter) + 0.9*(detV) $)
-      node[anchor=south, scale=0.6] {$z'$};
-    \coordinate (detNormalBase) at ($ (detCenter) + 0.55*(detU) - 0.35*(detV) $);
-    \coordinate (detNormalTip) at ($ (detNormalBase) - 2.3*(detTvec) $);
-    \draw[->, black, line width=0.25mm] (detNormalBase) -- (detNormalTip)
-      node[anchor=south east, scale=0.58, xshift=-2pt, yshift=1pt] {$\hat{n}_{\mathrm{det}}$};
+      node[anchor=south, scale=0.5, xshift = -8, yshift = -20] {$z'$};
 
+
+% Detector normal anchor point on the front face
+\coordinate (detNormalBase) at ($ (detCenter) + 0.55*(detU) - 0.35*(detV) $);
+\coordinate (detNormalTip)  at ($ (detNormalBase) - 2.6*(detTvec) $);
+
+% Optional style definitions
+\tikzset{
+  detNormalArrow/.style={
+    ->,
+    black,
+    line width=0.3mm,
+    preaction={draw, white, line width=0.9mm}
+  },
+  detNormalPoint/.style={
+    fill=black,
+    draw=white,
+    line width=0.25pt
+  }
+}
+
+% Mark the point on the detector surface
+\filldraw[detNormalPoint] (detNormalBase) circle (0.7pt);
+
+% Draw the detector normal with a subtle white halo
+\draw[detNormalArrow] (detNormalBase) -- (detNormalTip)
+  node[pos=0.92, anchor=north west, scale=0.52,
+       xshift=2pt, yshift=-1pt,
+       fill=white, inner sep=1pt, text=black]
+  {$\hat{n}_{\mathrm{det}}$};
+  
     %=========================
     % Beta arc, line, and label at top-right (display-only)
     %=========================
@@ -234,19 +270,19 @@
 
     % Incident vector k_i
     \draw[blue,->] (0.5,0,0) -- (-0.5,0,0);
-    \node[scale=0.7, blue] at (0.0,0.12,-0.01) {\tiny $\vec{k}_i$};
+    \node[scale=0.7, blue, yshift= -0.5mm] at (0.0,0.12,-0.01) {\tiny $\vec{k}_i$};
 
     %=========================
     % Angle arcs for phi and 2theta
     %=========================
     \tdplotsetrotatedcoords{0}{90}{90}
     \tdplotdrawarc[dashed,tdplot_rotated_coords, cyan]
-      {(0,0,-3)}{0.8}{20}{90}{anchor=north west}{\tiny $\phi$}
+      {(0,0,-3)}{0.8}{20}{90}{anchor=north west, xshift = -8pt}{\tiny $\phi$}
 
     \tdplotsetrotatedcoords{90}{-20.56}{0}
     \tdplotdrawarc[dashed, green,tdplot_rotated_coords, line width=0.1mm]
       {(0,1.4,0)}{0.5}{15}{90}
-      {anchor=south east}{\scriptsize $2\theta$}
+      {anchor=south east}{\tiny $2\theta$}
 
     %=========================
     % Axes legend
