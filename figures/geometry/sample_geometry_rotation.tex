@@ -36,7 +36,7 @@
 %===========================
 % Shared parameters
 %===========================
-\def\ZsLen{2.6}        % |z_S| distance from COR to sample surface midpoint
+\def\ZsLen{2}        % |z_S| distance from COR to sample surface midpoint
 \def\sampleHalfW{1.8} % half width of sample surface
 \def\sampleThick{0.5} % sample thickness (drawn below the surface)
 
@@ -421,7 +421,7 @@
   \draw[#2/thetaArc, opacity=\incOpacity]
     (COR) ++(\axisAngle:\arcR)
     arc (\axisAngle:\zsAngle:\arcR)
-    node[pos=0.55, below, opacity=\incOpacity] {$\theta_i$};
+    node[pos=0.55, below, opacity=\incOpacity, xshift = -10pt] {$\theta_i$};
 
   \draw[#2/beam] (\beamStartX,\beamY) -- (BeamHit);
   \draw[#2/beamDash] (BeamHit) -- (\beamEndX,\beamY);
@@ -442,6 +442,6 @@
 % Overlay order
 %===========================
 \DrawCase{0}{case0}
-\DrawCase{5}{case5}
+\DrawCase{20}{case5}
 
 \end{tikzpicture}

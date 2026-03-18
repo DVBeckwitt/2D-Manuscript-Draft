@@ -38,6 +38,18 @@
     \end{minipage}}%
   }%
 }
+% Small helper to place a panel tag at the top left of arbitrary content
+\newcommand{\paneltagged}[2]{%
+  \begin{tikzpicture}
+    \node[inner sep=0] (img) {#2};
+    \node[
+      anchor=north west,
+      font=\bfseries,
+      inner sep=1.5pt
+    ] at ([xshift=2pt,yshift=-2pt]img.north west) {#1};
+  \end{tikzpicture}%
+}
+
 \newcommand{\maybeincludecompact}[2][]{%
   \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
     \fbox{\begin{minipage}[c][0.11\textheight][c]{0.92\linewidth}

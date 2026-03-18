@@ -5,7 +5,7 @@ The mosaic picture is most easily understood by comparing the three orientationa
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.35\linewidth]{figures/mosaic/2d_mosaic.png}
-  \caption{Schematic of crystallite layer-normal misorientation (mosaicity) about the surface normal ($\hat{n}$ of the substrate). A distribution of crystallite orientations may form in a thin film.}
+  \caption{Schematic of crystallite layer-normal misorientation (mosaicity) about the surface normal. A distribution of crystallite orientations may form in a thin film.}
   \label{fig:mosaic}
 \end{figure}
 For a reflection, we work in the meridional section (\(G_r, G_z\)) of reciprocal space, where \(G_r\) is the projection of the reciprocal lattice vector onto the plane of the substrate, and \(G_z\) is the component along the surface normal. In this section, the perfect-crystal Bragg spot appears as a point on the Bragg circle. In the full three-dimensional picture, random in-plane rotations generate the circle of equivalent reciprocal-space intersections and associated \(\mathbf{k}_f\) values described above, consistent with the reciprocal-space evolution from Fig.~\ref{fig:intro_single_recip} to Fig.~\ref{fig:intro_3d_recip} to Fig.~\ref{fig:intro_2d_recip}. Out-of-plane misorientation then replaces the uniform weighting of that ideal circle by a line density \(I_0 \omega(\Delta\theta)\), where \(I_0\) is the total intensity associated with the reflection before mosaic redistribution.
@@ -17,25 +17,24 @@ We describe this out-of-plane mosaicity by a misorientation density \(\omega(\De
 \qquad 0\le\eta\le 1,
 \end{equation}
 with Lorentzian half-width at half maximum \(\Gamma\) and Gaussian standard deviation \(\sigma\).
-These components are related to the full reciprocal lattice vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. The inclusion of the Lorentzian component will be motivated later by the observed persistence of specular intensity away from the nominal condition.
+These components are related to the full reciprocal lattice vector \(\bm G = (H, K, L)\), but the relationship depends on the crystal symmetry. For a general crystal, \(G_r\) is defined as the magnitude of the projection of \(\bm G\) onto the plane, and \(G_z\) is the component along the normal direction. A central question for the specular geometry is how a reflection can contribute intensity even when the incident angle is detuned from its nominal Bragg condition. More specifically, the model must account not only for the existence of off-condition specular intensity, but also for how that intensity remains visible across the sequence of specular reflections as the incident angle is varied. The Lorentzian component is introduced here as a possible source of the long tails required for that later discussion.
 
 Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the meridional $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
 \begin{figure}[H]
   \centering
-  % Keep only subfigure letters (a–d), no subcaption text, and avoid LoF entries.
   \captionsetup[subfigure]{list=false,labelsep=none}
 
   % --- top row: 2D schematic Bragg-circle views ---
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \input{figures/mosaic/mosaic_bragg_inplane}
-    \caption{}
+    \paneltagged{(a)}{\input{figures/mosaic/mosaic_bragg_inplane}}
+    \phantomcaption
     \label{fig:mosaic_combo:schem_inplane}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \input{figures/mosaic/mosaic_bragg_specular}
-    \caption{}
+    \paneltagged{(b)}{\input{figures/mosaic/mosaic_bragg_specular}}
+    \phantomcaption
     \label{fig:mosaic_combo:schem_specular}
   \end{subfigure}
 
@@ -44,30 +43,25 @@ Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening ap
   % --- bottom row: corresponding detector images ---
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \includegraphics[width=0.85\linewidth]{mosaic/inplane_detector_band.png}
-    \caption{}
+    \paneltagged{(c)}{\includegraphics[width=0.85\linewidth]{mosaic/inplane_detector_band.png}}
+    \phantomcaption
     \label{fig:mosaic_combo:img_inplane}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \includegraphics[width=0.85\linewidth]{mosaic/specular_detector_cap.png}
-    \caption{}
+    \paneltagged{(d)}{\includegraphics[width=0.85\linewidth]{mosaic/specular_detector_cap.png}}
+    \phantomcaption
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
   \caption{Mosaic broadening viewed in the $\{G_r,G_z\}$ plane (a,b) and its detector-space manifestation (c,d). Intensity is redistributed along the Bragg circle with line density $I_0\,\omega(\Delta\theta)$. The in-plane condition with $G_r\neq 0$ (a,c) yields two arcs of reflection, while the specular reflection with $G_r=0$ (b,d) concentrates intensity near the polar cap, forming a single arc.}
   \label{fig:mosaic_combo}
 \end{figure}
-
-
-
-Random in-plane rotations about the film normal revolve the meridional line density
-about the \(G_z\) axis, generating an axially symmetric distribution on the Bragg sphere.
+Random in-plane rotations about the film normal revolve the meridional line density about the \(G_z\) axis, generating an axially symmetric distribution on the Bragg sphere. Let \(\vartheta\) denote the polar angle on that sphere, and let \(\vartheta_B\) denote the Bragg position for the reflection, so that the mosaic misorientation is \(\Delta\theta=\vartheta-\vartheta_B\).
 
 We normalize the corresponding Bragg-sphere surface density \(\sigma(\vartheta)\) so that \(\int \sigma(\vartheta)\,dA = I_0\), yielding
 \begin{equation}
-  \sigma(\vartheta)=\frac{I_0}{2\pi R^2\sin\vartheta}\,\omega(\vartheta),
-  \qquad 0<\vartheta<\pi,
+\sigma(\vartheta)=\frac{I_0}{2\pi R^2\sin\vartheta}\,\omega(\vartheta-\vartheta_B)  \qquad 0<\vartheta<\pi,
   \label{eq:mosaic_sigma_maintext}
 \end{equation}
 
@@ -87,10 +81,4 @@ about $G_z$, producing ring-like features (region B).
 \end{figure}
 
 In the in-plane region (Fig.~\ref{fig:mosaic_pbi2}B), the Ewald sphere intersects the broadened Bragg-sphere feature along an extended band. Azimuthal averaging then produces band-like scattering whose radial width and line shape are set primarily by the core of $\omega$ and by the Jacobian factor $1/\sin\vartheta$ in Eq.~\eqref{eq:mosaic_sigma_maintext}.
-In the specular region (Fig.~\ref{fig:mosaic_pbi2}A), the same mosaic spread produces cap-like broadening about the specular reflections. Off-condition specular intensity arises from crystallites whose layer normals are tilted by $\Delta\theta$ away from the mean, so the decay of intensity away from the nominal condition is governed primarily by the tails of $\omega$ (with only weak variation from the geometric factor in Eq.~\eqref{eq:mosaic_sigma_maintext}).
-
-This observation explains why multiple specular reflections can remain visible for a single incident $\mathbf{k}_i$, even when their nominal $\theta_i$ conditions lie outside the measurement window. If $\omega$ contains a Lorentzian component ($\eta>0$), then for $\lvert\Delta\theta\rvert\gg\Gamma$,
-\[
-\omega(\Delta\theta)\sim \eta\,\frac{\Gamma}{\pi\,\Delta\theta^2},
-\]
-so the intensity decays algebraically rather than exponentially. In practice this makes the specular reflections a strong constraint during refinement, since peak persistence and line shape at large $\Delta\theta$ directly determine both the width and the tail character of $\omega$, while in-plane rings are less sensitive to the tail.
+In the specular region (Fig.~\ref{fig:mosaic_pbi2}A), the same mosaic spread produces cap-like broadening about the specular reflections. Off-condition specular intensity arises from crystallites whose layer normals are tilted by \(\Delta\theta\) away from the mean, so the intensity away from the nominal condition is governed primarily by the tails of \(\omega\), with only weak variation from the geometric factor in Eq.~\eqref{eq:mosaic_sigma_maintext}. Within this picture, a single incident \(\mathbf{k}_i\) can receive contributions from multiple specular reflections, including reflections whose nominal \(\theta_i\) conditions are not exactly satisfied.

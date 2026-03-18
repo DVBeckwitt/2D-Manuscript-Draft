@@ -100,7 +100,7 @@
 \coordinate (tBot) at ($ (tMid)!\tFrac!(BTR) + (0.08,0,0) $);
 
 \draw[black,<->] (tTop) -- (tBot)
-  node[midway,anchor=west,scale=0.7,xshift=1pt] {$t$};
+  node[midway,anchor=west,scale=0.7,xshift=1pt, font=\scriptsize] {$t$};
 
 %=========================
 % Incident wavevector k_i (along +y at z=zKi)
@@ -207,7 +207,7 @@
 
 \draw[black, dash pattern=on 1pt off 0.6pt, opacity=0.7] (kiEnd) -- (yDashEnd);
 \draw[black, ->] (yDashEnd) -- (yMaxPt)
-  node[anchor=west,scale=0.8] {$y$};
+  node[anchor=west,scale=0.8,font=\scriptsize] {$y$};
 
 %=========================
 % Goniometer arm: dashed (0 deg) and solid (Ry then Rx)
@@ -253,7 +253,7 @@
 
 % psi label on the drop line
 \coordinate (psiLabel) at ($ (goniEnd)!0.5!(goniEndAtZgoni) $);
-\node[scale=0.6, text=red!70!black, anchor=west, xshift=0pt]
+\node[scale=0.4, text=red!70!black, anchor=west, xshift=-13pt, yshift = 2pt]
   at (psiLabel) {$\psi$};
 
 % Arm labels at the -x ends
@@ -295,7 +295,7 @@
   }, {
     \zGoni
 });
-\node[scale=0.6, text=red!70!black, anchor=west, xshift=-15pt, yshift=-2pt]
+\node[scale=0.4, text=red!70!black, anchor=west, xshift=-3pt, yshift=-1pt]
   at (alphaLabel) {$\alpha$};
 
 %=========================
@@ -350,6 +350,6 @@
 %=========================
 \coordinate (xPlus) at ($(kiEnd) + (1.0,0,0)$);
 \draw[->, black] (kiEnd) -- (xPlus)
-  node[anchor=west,scale=0.8] {$x$};
+  node[anchor=west,scale=0.8,font=\scriptsize] {$x$};
 
 \end{tikzpicture}
