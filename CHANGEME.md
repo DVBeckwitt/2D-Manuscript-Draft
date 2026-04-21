@@ -2,6 +2,20 @@
 
 This file records manuscript edits made in response to advisor annotations, with brief rationale. It is intended to make structural decisions easy to audit while the draft is still evolving.
 
+## 2026-04-21 — Add adjacent Nookiin related-work citation
+
+### What changed
+
+- Added a narrow Introduction citation to Nookiin as complementary atomistic/supercell context for commensurate multilayer 2D heterostructures and reciprocal-space diffraction visualization (`sections/introduction.tex`).
+- Added the citable Computer Physics Communications article as `AguilarSpindola2026Nookiin` (`bibliography/references.bib`).
+
+### Status
+
+- **Feature:** implemented.
+- **Boundary:** Nookiin is not described as a workflow dependency, detector-space WAXS refinement method, or software used by the present model.
+- **Validation:** `pdflatex -> bibtex -> pdflatex -> pdflatex` completed and the bibliography key resolves in `main.bbl`; no duplicate BibTeX key was found.
+- **Known environment issue:** `latexmk` is unavailable because MiKTeX cannot find the required Perl script engine.
+
 ## 2026-03-13 — Pedagogical rewrite of diffraction-model narrative
 
 ### Advisor requests addressed
@@ -88,7 +102,7 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 
 ### Definitions added
 
-- Defined $I_0$ (per-reflection intensity scale prior to mosaic redistribution) and clarified the meaning of $R$ and $\sigma(\vartheta)$ in the Bragg-sphere normalization (`sections/mosaicity_texture.tex`).
+- Defined $I_0$ (per-reflection intensity scale prior to mosaic redistribution) and clarified the meaning of $R$ and $\rho(\vartheta)$ in the Bragg-sphere normalization (`sections/mosaicity_texture.tex`).
 
 ## 2026-03-03 — Scope and terminology tightening
 
