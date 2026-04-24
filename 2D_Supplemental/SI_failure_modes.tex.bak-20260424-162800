@@ -43,38 +43,89 @@ and provides expanded workflow notes and supplemental derivations.
 
 \begin{enumerate}
   \item \textbf{Beam characterization (direct beam).}
-  Acquire direct-beam images at several detector distances. Fit the spot position and shape versus distance to determine the incident-beam widths $(w_x,w_z)$ and Gaussian divergences $(\Delta\theta_x,\Delta\theta_z)$ that set the instrument-limited broadening.
+  Acquire direct-beam images at several detector distances.
+  Fit the spot position/shape versus distance to determine the incident-beam widths
+  $(w_x,w_z)$ and Gaussian divergences $(\Delta\theta_x,\Delta\theta_z)$ that set the
+  instrument-limited broadening.
 
   \item \textbf{Detector geometry calibration (3D powder standard).}
-  Measure a polycrystalline hBN calibrant and subtract the detector dark frame. Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center $(x_0,y_0)$.
+  Measure a polycrystalline hBN calibrant and subtract the detector dark frame.
+  Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance,
+  detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center
+  $(x_0,y_0)$ so the rings forward-project to concentric circles (equivalently, ellipses
+  in the raw detector frame are corrected to circles).
 
   \item \textbf{Sample alignment and goniometer misalignment.}
-  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and simulated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+  For the dark-subtracted sample image of interest, use indexed Bragg peaks to seed the
+  alignment rather than fitting the full image intensity. With detector parameters fixed,
+  refine sample alignment by minimizing least-squares residuals between measured and simulated
+  peak positions spanning both specular and off-specular regions. Refine
+  $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$;
+  include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
-  \item \textbf{Mosaicity/profile refinement.}
-  With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped Gaussian-plus-Lorentzian angular distribution, not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly constrain the Gaussian core, while off-condition specular intensity constrains the Lorentzian tail. Report Lorentzian FWHM, Gaussian FWHM, and the relative Lorentzian weight.
+  \item \textbf{Mosaicity from line shapes (two $\theta_i$ images).}
+  Acquire two images at different $\theta_i$ and fit them simultaneously using a shared
+  out-of-plane misorientation kernel
+  \[
+    \omega(\Delta\theta)=
+    \eta\,\frac{1}{\pi}\frac{\Gamma}{\Delta\theta^2+\Gamma^2}+
+    (1-\eta)\,\frac{1}{\sqrt{2\pi}\sigma}\exp\!\left(-\frac{\Delta\theta^2}{2\sigma^2}\right),
+    \qquad 0\le \eta \le 1,
+  \]
+  (use the $2\pi$-periodic wrapped form on $(-\pi,\pi]$; see Sec.~S1.1).
+  Determine parameters from arc/cap widths and specular off-condition tails using local
+  reflection regions of interest in the two dark-subtracted images, with nuisance scale and
+  background terms handled separately for each region. Report Lorentzian FWHM $=2\Gamma$,
+  Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$, and mixing factor $\eta$.
 
   \item \textbf{Ordered-structure refinement.}
-  With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg ROIs from multiple dark-subtracted images. The corresponding prediction is the simulated detector-carried intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
+  With geometry and mosaicity fixed, refine the intensity model against the dark-subtracted
+  2D images of the ordered films (Bi$_2$Se$_3$ and Bi$_2$Te$_3$), including the specular
+  region. Evaluate all allowed reciprocal vectors $G$ explicitly and use $|F_G|^2$ to set
+  reflection strengths. Refine an overall scale plus structure-factor parameters
+  (occupancies, anisotropic Debye--Waller terms, and allowed static displacements) to match
+  reflection-to-reflection intensity ratios across the images. In a full end-to-end
+  implementation this stage should be performed as a global intensity refinement with one
+  scale per image and physically constrained structural degrees of freedom.
 
   \item \textbf{Disorder refinement.}
-  After the ordered model converges, introduce stacking-disorder parameters only through selected $Q_r/Q_z$ rod profiles. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
+  After the ordered model converges, introduce stacking-disorder (layer-slip / polytype)
+  parameters and refine them against the dark-subtracted PbI$_2$ images with the ordered
+  structure fixed. The dominant constraints are the diffuse intensity along the specular
+  Bragg rods and between Bragg peaks along $Q_z$; this stage is kept separate from the
+  ordered refinement to reduce degeneracy between average structure and disorder, e.g., when
+  using a Hendricks--Teller-type model.
 \end{enumerate}
 
-All detector images are dark-subtracted before fitting. Any additional preprocessing (flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be applied consistently to all images before refinement or stated explicitly if omitted. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
+All detector images are dark-subtracted before fitting. Any additional preprocessing
+(flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be
+applied consistently to all images before refinement or stated explicitly if omitted. We
+recommend stage-specific uncertainty estimation by repeated constrained refits: resample the
+calibrant points for detector geometry, indexed peak lists for sample alignment, and local
+reflection regions for mosaicity, then repeat the ordered/disorder intensity fits from
+perturbed initial values. Report the standard deviation of the accepted solutions and
+propagate parameters to the next stage only after the preceding stage is stable.
 
 \subsection{Wrapped mosaic distribution}
 \label{subsec:si_wrapped_mosaic}
 
-In the main text we describe out-of-plane mosaicity by a misorientation density $\omega(\Delta\theta)$ in the crystallite tilt angle $\Delta\theta$ relative to the substrate normal. Since $\Delta\theta$ is an orientation angle, $\Delta\theta$ and $\Delta\theta+2\pi$ represent the same physical state. Accordingly, $\omega$ is treated as a $2\pi$-periodic probability density on $\Delta\theta\in(-\pi,\pi]$.
+In the main text we describe out-of-plane mosaicity by a misorientation density
+$\omega(\Delta\theta)$ in the crystallite tilt angle $\Delta\theta$ relative to the substrate
+normal. Since $\Delta\theta$ is an orientation angle, $\Delta\theta$ and $\Delta\theta+2\pi$
+represent the same physical state; accordingly, $\omega$ is most naturally treated as a
+$2\pi$-periodic (``wrapped'') probability density on $\Delta\theta\in(-\pi,\pi]$.
+Without wrapping, an otherwise smooth kernel on the real line produces an artificial seam at
+$\pm\pi$ and assigns different weights to physically equivalent orientations separated by $2\pi$,
+which can bias the weak tail intensity used to constrain mosaicity.
 
-The implemented profile is a wrapped Gaussian plus a wrapped Lorentzian,
+We use a wrapped pseudo-Voigt kernel,
 \[
   \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
   =\eta\,L_{\mathrm w}(\Delta\theta;\Gamma)+(1-\eta)\,G_{\mathrm w}(\Delta\theta;\sigma),
-  \qquad 0\le \eta \le 1.
+  \qquad 0\le \eta \le 1,
 \]
-This is not a pseudo-Voigt constraint: the Lorentzian half-width $\Gamma$ and Gaussian standard deviation $\sigma$ are independent. The wrapped Lorentzian and wrapped Gaussian are
+where the wrapped Lorentzian and wrapped Gaussian may be written by periodic summation (equivalently,
+in closed form) as
 \[
   L_{\mathrm w}(\Delta\theta;\Gamma)=
   \sum_{m=-\infty}^{\infty}\frac{1}{\pi}\frac{\Gamma}{(\Delta\theta+2\pi m)^2+\Gamma^2}
@@ -87,17 +138,26 @@ This is not a pseudo-Voigt constraint: the Lorentzian half-width $\Gamma$ and Ga
        \exp\!\left[-\frac{(\Delta\theta+2\pi m)^2}{2\sigma^2}\right] \\
     &= \frac{1}{2\pi}\!\left[
          1+2\sum_{n=1}^{\infty}e^{-n^2\sigma^2/2}\cos(n\Delta\theta)
-       \right].
+       \right] \\
+    &= \frac{1}{2\pi}\,\theta_{3}\!\left(\frac{\Delta\theta}{2},e^{-\sigma^2/2}\right).
   \end{aligned}
 \]
-Both components integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. The reported Lorentzian FWHM is $2\Gamma$, and the reported Gaussian FWHM is $2\sqrt{2\ln 2}\,\sigma$. The local small-width limit recovers the usual line-shape widths, but the refinement and normalization are defined by the wrapped functions above.
+Both integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. In the
+narrow-width regime relevant here ($\Gamma,\sigma\ll\pi$), $\omega_{\mathrm w}$ reduces locally
+near $\Delta\theta=0$ to the familiar unwrapped Lorentzian/Gaussian used in the main text, and we
+report Lorentzian FWHM $=2\Gamma$ and Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$.
 
-For a reflection with Bragg-sphere radius $G \equiv |\mathbf G|$, mosaicity redistributes intensity in polar angle $\vartheta$ with line density $I_0\,\omega_{\mathrm w}(\vartheta-\vartheta_B)\,d\vartheta$, where $\vartheta_B$ is the Bragg position for that reflection. Random in-plane rotations about the film normal revolve this line density about the $G_z$ axis, yielding an axially symmetric surface density $\rho(\vartheta)$. With area element $dA=2\pi G^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
+For a reflection with Bragg-sphere radius $G \equiv |\mathbf G|$, mosaicity redistributes intensity in polar angle
+$\vartheta$ with line density $I_0\,\omega(\vartheta)\,d\vartheta$. Random in-plane
+rotations about the film normal revolve this line density about the $G_z$ axis, yielding an axially
+symmetric surface density $\rho(\vartheta)$. With area element
+$dA=2\pi G^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
 \[
-  \rho(\vartheta)=\frac{I_0}{2\pi G^2\sin\vartheta}\,\omega_{\mathrm w}(\vartheta-\vartheta_B),
+  \rho(\vartheta)=\frac{I_0}{2\pi G^2\sin\vartheta}\,\omega(\vartheta),
   \qquad 0<\vartheta<\pi,
 \]
 as used in the main text.
+
 \subsection{Wave propagation, refraction, and absorption}
 \label{subsec:si_refraction_absorption}
 
@@ -223,57 +283,6 @@ along the incident and exit paths, the intensity weight used in the forward mode
   \frac{1-\exp\!\left[-\mu t\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)\right]}
        {\mu t\left(\frac{1}{\sin\theta_i}+\frac{1}{\sin\theta_f}\right)}.
 \end{align}
-
-\subsection{Detector-derived ordered and disorder observables}
-\label{subsec:si_detector_derived_objectives}
-
-The detector-space forward model predicts full images, but the inverse problems use stage-specific observables. In the ordered-structure stage, the measured quantity for ROI $i$ in image $m$ is the background-subtracted detector count
-\[
-  y_{mi}=\sum_{(u,v)\in\Omega_{mi}}\left[I_m^{\mathrm{meas}}(u,v)-b_{mi}(u,v)\right],
-\]
-where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the local background model. The corresponding prediction is the simulated detector-carried intensity deposited in the same ROI,
-\[
-  \mu_{mi}=\sum_{j\in\mathcal{R}_{mi}} w_j,
-\]
-with geometry, beam terms, and mosaicity fixed. One nuisance scale per image accounts for exposure and flux differences. This makes the ordered stage a multi-image ROI-integrated Bragg-intensity refinement, not a full-image pixel objective.
-
-The PbI$_2$ disorder refinement is a final-stage selected-profile fit, not a second global image refinement. The upstream beam, detector, sample alignment, mosaic/profile parameters, lattice constants, and ordered PbI$_2$ baseline are fixed before this stage starts. The detector image is first caked into a signal field $S(\phi,2\theta)$ and a normalization field $N(\phi,2\theta)$ using the calibrated detector geometry. For each caked bin,
-\[
-  Q=\frac{4\pi}{\lambda}\sin\!\left(\frac{2\theta}{2}\right),
-  \qquad
-  Q_r=|\sin\phi|Q,
-  \qquad
-  Q_z=\cos\phi\,Q.
-\]
-A selected rod with in-plane radius $Q_{r,0}$ is retained when
-\[
-  |Q_r-Q_{r,0}|\le \Delta Q_r,
-  \qquad
-  Q_{z,\min}\le Q_z\le Q_{z,\max}.
-\]
-A branch selector may be applied after this reciprocal-space mask so that one branch is used for the default fit and the symmetry-related branch is retained for validation.
-
-Let $S_{ij}$ and $N_{ij}$ denote the caked signal and normalization fields, and let $m_{ij}$ denote the selected-rod mask. The measured profile is
-\[
-  I_j^{\mathrm{rod}}=\frac{\sum_i m_{ij}S_{ij}}{\sum_i m_{ij}N_{ij}},
-\]
-for bins with positive selected normalization. Signal and normalization are therefore summed before division. This prevents the final trace from becoming a sum of already normalized pixels and keeps the observable tied to the detector-space calibration.
-
-The model profile is evaluated along the same selected branch. In compact notation,
-\[
-  M_j(\boldsymbol{\theta}_{\mathrm{dis}})
-  =B(x_j)+s\,[K*I_{hk}^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
-\]
-where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_{hk}^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
-
-The disorder objective is evaluated only over the retained profile bins,
-\[
-  \chi^2_{\mathrm{dis}}(\boldsymbol{\theta}_{\mathrm{dis}},s,B)
-  =\sum_{j\in\mathcal J}\rho\!\left(
-  \frac{I_j^{\mathrm{rod}}-M_j(\boldsymbol{\theta}_{\mathrm{dis}})}{\sigma_j}
-  \right),
-\]
-where $\rho$ may be a least-squares or robust loss and $\mathcal J$ is the retained $Q_z$ interval. The known Bragg locations on the selected branch are inherited from the fixed detector geometry and ordered model. Peak amplitudes are not fit independently before the stacking model is applied; otherwise the diffuse between-peak intensity would already have been absorbed by the preprocessing.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1  Material background and stacking‑fault model

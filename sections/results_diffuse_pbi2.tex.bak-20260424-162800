@@ -1,0 +1,21 @@
+\section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
+
+For disordered CVD grown PbI\textsubscript{2} we return to the Bragg
+sphere (cylinder) picture and introduce the Hendricks--Teller (H--T)
+stacking fault model used to describe the diffuse scattering.
+Polytype background and supporting derivations for the stacking-fault model are provided in the supporting information (Fig.~S1; Secs.~S2--S3).
+
+The corresponding reciprocal-space geometry is sketched in Fig.~\ref{fig:reciprocal_cylinders}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth,trim=150 150 150 150,clip]{figures/intro/reciprocal_2d_powder.png}
+  \caption{Reciprocal cylinders}
+  \label{fig:reciprocal_cylinders}
+\end{figure}
+
+\begin{itemize}
+  \item Motivate the model with experimental data.
+  \item Outline the H--T model for PbI\textsubscript{2}.
+  \item Show resulting 2D images and line cuts with fits.
+\end{itemize}

@@ -1,7 +1,7 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
 
-We model the measured area-detector intensity by building the diffraction process in the same order used throughout this section. We first determine the allowed exit vectors $\mathbf{k}_f$ for the simplest elastic-scattering geometry, then extend that construction to the finite beam, sample, and detector geometry of the experiment. For each allowed reciprocal-space intersection, the crystallographic model supplies the structure-factor weight, and the mosaicity model redistributes that weight over the nearby \(\mathbf{k}_f\) values appropriate to a two-dimensional powder. The result is a full detector-space image calculation with intensity deposited on detector pixels. That image is the common forward object for the workflow, but the refinement objectives are stage-specific: peak centers for geometry, local Gaussian-plus-Lorentzian line shapes for mosaicity, detector-space Bragg ROI integrals for ordered intensity, and selected-rod profiles for disorder.
+We model the measured area-detector intensity by building the diffraction process in the same order used throughout this section. We first determine the allowed exit vectors $\mathbf{k}_f$ for the simplest elastic-scattering geometry, then extend that construction to the finite beam, sample, and detector geometry of the experiment. For each allowed reciprocal-space intersection, the crystallographic model supplies the structure-factor weight, and the mosaicity model redistributes that weight over the nearby \(\mathbf{k}_f\) values appropriate to a two-dimensional powder. The resulting forward calculation predicts the full detector image on a pixel-by-pixel basis.
 
 \subsection{Diffraction Geometry}
 

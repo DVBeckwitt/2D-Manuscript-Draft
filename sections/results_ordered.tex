@@ -1,13 +1,44 @@
 \section{Results: ordered films}
 
-In this section we show representative fits for ordered MBE grown
-Bi\textsubscript{2}Te\textsubscript{3} and Bi\textsubscript{2}Se\textsubscript{3}
-films: 2D experimental images, 2D calculated images, and line cuts along
-$Q_z$ with fits overlaid.
+We first apply the staged workflow to ordered MBE-grown Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. These samples provide the ordered-limit check for the model: the detector images contain the specular features and off-specular arcs expected for a 2D oriented powder, but the dominant intensity can be treated without adding an explicit stacking-disorder term. The goal of this section is therefore not to re-solve the crystal structures from scratch. It is to test whether the same detector-space workflow can recover geometry, alignment, mosaic broadening, and relative ordered Bragg intensities in two related layered films.
 
-\begin{itemize}
-  \item 2D image data.
-  \item 2D image calculation.
-  \item Line cuts along $Q_z$ with fitted curves.
-\end{itemize}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results_ordered/bite_detector_fit.png}
+    \caption{}
+    \label{fig:ordered_detector_fits:bite}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results_ordered/bise_detector_fit.png}
+    \caption{}
+    \label{fig:ordered_detector_fits:bise}
+  \end{subfigure}
 
+  \vspace{0.5em}
+
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results_ordered/ordered_profile_examples.png}
+    \caption{}
+    \label{fig:ordered_detector_fits:profiles}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \maybeincludecompact[width=\linewidth]{figures/results_ordered/ordered_qz_checks.png}
+    \caption{}
+    \label{fig:ordered_detector_fits:qz}
+  \end{subfigure}
+  \caption{Placeholder layout for the ordered-film result. (a) Bi$_2$Te$_3$ measured/simulated/residual detector comparison. (b) Bi$_2$Se$_3$ measured/simulated/residual detector comparison. (c) Local mosaic/profile checks from selected detector ROIs. (d) Reciprocal-space or $Q_z$ checks used after the detector-space fit.}
+  \label{fig:ordered_detector_fits}
+\end{figure}
+
+Figure~\ref{fig:ordered_detector_fits} will show the ordered-film detector comparisons. The geometry stage is judged first by feature placement. A successful solution must place the specular region and the off-specular arcs simultaneously; improving one feature class while displacing the other is treated as residual geometric error rather than structural information. Once the detector registration is fixed, the remaining local broadening is interpreted as sample-specific mosaicity.
+
+Mosaicity is constrained from selected local detector regions rather than from the full image intensity. Specular caps and off-specular arcs are reduced to local intensity-versus-angle profiles, and measured and simulated profiles are compared after their centers are aligned. This keeps the mosaic stage focused on profile shape and prevents it from absorbing the inter-peak intensity ratios reserved for the ordered-structure refinement. The off-specular arcs primarily constrain the Gaussian core of the profile, while the persistence of specular intensity constrains the Lorentzian tail.
+
+The ordered-structure stage is entered only after the beam, detector, sample-alignment, and mosaic terms have been fixed. The fitted observables are background-subtracted integrated counts in selected detector-space Bragg ROIs, compared with the simulated detector-carried intensity deposited in the same ROIs. One nuisance scale is allowed for each image to account for exposure and flux differences. The ordered refinement is therefore a constrained multi-image refinement of relative Bragg intensities, not a full-image pixel fit and not an unconstrained crystallographic structure solution.
+
+The resulting ordered model is checked against reciprocal-space cuts and against the full detector-space morphology. Agreement in both views indicates that the ordered description is sufficient for these films within the resolution of the present workflow. The important result is not that Bi$_2$Te$_3$ and Bi$_2$Se$_3$ return identical parameters, but that the same refinement hierarchy remains stable in both systems. This ordered benchmark defines the baseline tested by the PbI$_2$ disorder case below.
