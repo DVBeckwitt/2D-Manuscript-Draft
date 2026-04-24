@@ -6,8 +6,12 @@
 \usepackage{microtype}
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,bm}
-\usepackage{physics}      % for \dyad{}{}
 \usepackage{siunitx}      % for \si{\angstrom}
+\usepackage{physics}      % for \dyad{}{}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{booktabs}
@@ -128,24 +132,28 @@ in closed form) as
   =\frac{1}{2\pi}\,\frac{\sinh\Gamma}{\cosh\Gamma-\cos\Delta\theta},
 \]
 \[
-  G_{\mathrm w}(\Delta\theta;\sigma)=
-  \sum_{m=-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma}
-  \exp\!\left[-\frac{(\Delta\theta+2\pi m)^2}{2\sigma^2}\right]
-  =\frac{1}{2\pi}\!\left[1+2\sum_{n=1}^{\infty}e^{-n^2\sigma^2/2}\cos(n\Delta\theta)\right]
-  =\frac{1}{2\pi}\,\theta_{3}\!\left(\frac{\Delta\theta}{2},e^{-\sigma^2/2}\right).
+  \begin{aligned}
+    G_{\mathrm w}(\Delta\theta;\sigma)
+    &= \sum_{m=-\infty}^{\infty}\frac{1}{\sqrt{2\pi}\sigma}
+       \exp\!\left[-\frac{(\Delta\theta+2\pi m)^2}{2\sigma^2}\right] \\
+    &= \frac{1}{2\pi}\!\left[
+         1+2\sum_{n=1}^{\infty}e^{-n^2\sigma^2/2}\cos(n\Delta\theta)
+       \right] \\
+    &= \frac{1}{2\pi}\,\theta_{3}\!\left(\frac{\Delta\theta}{2},e^{-\sigma^2/2}\right).
+  \end{aligned}
 \]
 Both integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. In the
 narrow-width regime relevant here ($\Gamma,\sigma\ll\pi$), $\omega_{\mathrm w}$ reduces locally
 near $\Delta\theta=0$ to the familiar unwrapped Lorentzian/Gaussian used in the main text, and we
 report Lorentzian FWHM $=2\Gamma$ and Gaussian FWHM $=2\sqrt{2\ln 2}\,\sigma$.
 
-For a reflection of Bragg-sphere radius $R$, mosaicity redistributes intensity in polar angle
-$\vartheta$ with meridional line density $I_0\,\omega(\vartheta)\,d\vartheta$. Random in-plane
+For a reflection with Bragg-sphere radius $G \equiv |\mathbf G|$, mosaicity redistributes intensity in polar angle
+$\vartheta$ with line density $I_0\,\omega(\vartheta)\,d\vartheta$. Random in-plane
 rotations about the film normal revolve this line density about the $G_z$ axis, yielding an axially
-symmetric surface density $\sigma(\vartheta)$. With area element
-$dA=2\pi R^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
+symmetric surface density $\rho(\vartheta)$. With area element
+$dA=2\pi G^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
 \[
-  \sigma(\vartheta)=\frac{I_0}{2\pi R^2\sin\vartheta}\,\omega(\vartheta),
+  \rho(\vartheta)=\frac{I_0}{2\pi G^2\sin\vartheta}\,\omega(\vartheta),
   \qquad 0<\vartheta<\pi,
 \]
 as used in the main text.
@@ -420,8 +428,7 @@ The full detector signal; adds the broadened peaks and diffuse background arisin
     <|A|^2>
 \end{equation}
 \subsubsection{Layer Autocorrelation}
-The layer-resolved autocorrelation of the stacking sequence tells you how phase coherence decays with layer phase shifts. It is the kernel that converts local disorder into the full intensity giving both Bragg and diffuse components. 
-\\
+The layer-resolved autocorrelation of the stacking sequence tells you how phase coherence decays with layer phase shifts. It is the kernel that converts local disorder into the full intensity giving both Bragg and diffuse components.
 
 Define
 \begin{equation}
