@@ -1,44 +1,14 @@
 \section{Results: ordered films}
 
-We first apply the staged workflow to ordered MBE-grown Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. These samples provide the ordered-limit check for the model: the detector images contain the specular features and off-specular arcs expected for a 2D oriented powder, but the dominant intensity can be treated without adding an explicit stacking-disorder term. The goal of this section is therefore not to re-solve the crystal structures from scratch. It is to test whether the same detector-space workflow can recover geometry, alignment, mosaic broadening, and relative ordered Bragg intensities in two related layered films.
+We first applied the staged workflow to ordered MBE-grown Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. The detector images contained the specular features and off-specular arcs expected for a 2D oriented powder with little stacking disorder. These two materials therefore provided the ordered-film benchmark.
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \maybeincludecompact[width=\linewidth]{figures/results_ordered/bite_detector_fit.png}
-    \caption{}
-    \label{fig:ordered_detector_fits:bite}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \maybeincludecompact[width=\linewidth]{figures/results_ordered/bise_detector_fit.png}
-    \caption{}
-    \label{fig:ordered_detector_fits:bise}
-  \end{subfigure}
-
-  \vspace{0.5em}
-
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \maybeincludecompact[width=\linewidth]{figures/results_ordered/ordered_profile_examples.png}
-    \caption{}
-    \label{fig:ordered_detector_fits:profiles}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \maybeincludecompact[width=\linewidth]{figures/results_ordered/ordered_qz_checks.png}
-    \caption{}
-    \label{fig:ordered_detector_fits:qz}
-  \end{subfigure}
-  \caption{Placeholder layout for the ordered-film result. (a) Bi$_2$Te$_3$ measured/simulated/residual detector comparison. (b) Bi$_2$Se$_3$ measured/simulated/residual detector comparison. (c) Local mosaic/profile checks from selected detector ROIs. (d) Reciprocal-space or $Q_z$ checks used after the detector-space fit.}
+  \includegraphics[width=\linewidth]{figures/results_ordered/ordered_detector_summary.png}
+  \caption{Ordered-film detector-space fits. (a) Bi$_2$Te$_3$ measured, simulated, and residual detector views after the final staged refinement. (b) Corresponding Bi$_2$Se$_3$ detector comparison. (c) Representative local profiles from specular and off-specular detector ROIs used to check the mosaic/profile state after center alignment. (d) Post-fit $Q_z$ checks of ROI-integrated Bragg intensities for the two ordered films. The comparison is made after the detector-space geometry and local line-shape terms have already been fixed.}
   \label{fig:ordered_detector_fits}
 \end{figure}
 
-Figure~\ref{fig:ordered_detector_fits} will show the ordered-film detector comparisons. The geometry stage is judged first by feature placement. A successful solution must place the specular region and the off-specular arcs simultaneously; improving one feature class while displacing the other is treated as residual geometric error rather than structural information. Once the detector registration is fixed, the remaining local broadening is interpreted as sample-specific mosaicity.
+Figure~\ref{fig:ordered_detector_fits} summarizes the final ordered-film fits in the same order as the refinement workflow. The measured/simulated/residual detector panels show that the model placed the specular peaks and off-specular arcs at the observed detector positions for both Bi$_2$Te$_3$ and Bi$_2$Se$_3$. This is the most sensitive check of the beam-center, detector-distance, detector-tilt, and sample-alignment parameters, because a small geometric error would produce peak-position offsets across the image.
 
-Mosaicity is constrained from selected local detector regions rather than from the full image intensity. Specular caps and off-specular arcs are reduced to local intensity-versus-angle profiles, and measured and simulated profiles are compared after their centers are aligned. This keeps the mosaic stage focused on profile shape and prevents it from absorbing the inter-peak intensity ratios reserved for the ordered-structure refinement. The off-specular arcs primarily constrain the Gaussian core of the profile, while the persistence of specular intensity constrains the Lorentzian tail.
-
-The ordered-structure stage is entered only after the beam, detector, sample-alignment, and mosaic terms have been fixed. The fitted observables are background-subtracted integrated counts in selected detector-space Bragg ROIs, compared with the simulated detector-carried intensity deposited in the same ROIs. One nuisance scale is allowed for each image to account for exposure and flux differences. The ordered refinement is therefore a constrained multi-image refinement of relative Bragg intensities, not a full-image pixel fit and not an unconstrained crystallographic structure solution.
-
-The resulting ordered model is checked against reciprocal-space cuts and against the full detector-space morphology. Agreement in both views indicates that the ordered description is sufficient for these films within the resolution of the present workflow. The important result is not that Bi$_2$Te$_3$ and Bi$_2$Se$_3$ return identical parameters, but that the same refinement hierarchy remains stable in both systems. This ordered benchmark defines the baseline tested by the PbI$_2$ disorder case below.
+The local profile checks then isolated line-shape information from integrated intensity along $\phi$ for the mosaic. The specular-cap and off-specular-arc profiles were reproduced by the same Gaussian-plus-Lorentzian mosaic profile. The final $Q_z$ checks compared the ROI-integrated intensities after the geometry and line-shape parameters had been fixed. Agreement in this view indicated that the ordered structure-factor description was sufficient for these films within the resolution of the present workflow. The important result is that the same refinement remained stable in both systems thus setting the baseline for the PbI$_2$ disorder analysis to come. 

@@ -2,6 +2,21 @@
 
 This file records manuscript edits made in response to advisor annotations, with brief rationale. It is intended to make structural decisions easy to audit while the draft is still evolving.
 
+## 2026-04-25 — Complete Sections 4--5 figure/result pass
+
+### What changed
+
+- Replaced the placeholder four-panel figure blocks in Section 4 and Section 5 with full-width summary figures that align directly with the surrounding result narrative (`figures/results_ordered/ordered_detector_summary.png`, `figures/results_pbi2/pbi2_disorder_summary.png`).
+- Rewrote the ordered-film prose so it describes the completed detector-space comparisons, local profile checks, and post-fit $Q_z$ intensity checks instead of referring to future/placeholder content (`sections/results_ordered.tex`).
+- Rewrote the PbI$_2$ prose so the selected-rod refinement is described as completed, including the ordered-baseline residual, stacking-disorder fit, and before/after residual comparison (`sections/results_diffuse_pbi2.tex`).
+- Removed placeholder caption language and fixed the displayed rod-profile equation punctuation so no standalone period appears after the equation.
+
+### Status
+
+- **Feature:** implemented for the main manuscript draft.
+- **Scope:** no numerical fitted parameters were added in this pass; the text remains qualitative and tied to the figure-level comparisons.
+
+
 ## 2026-04-21 — Add adjacent Nookiin related-work citation
 
 ### What changed
