@@ -21,17 +21,17 @@ Because the forward model combines beam phase space, detector geometry, sample a
     2 &
     Detector geometry calibration &
     Powder calibrant image &
-    Detector distance $D$, detector tilts $(\beta,\gamma)$, in-plane rotation $\chi$, and beam center $(x_0,y_0)$ &
+    Detector distance $D$, detector tilts $(\beta,\gamma)$, and beam center $(x_0,y_0)$ &
     Detector mapping \\
     3 &
     Sample alignment and goniometer misalignment &
     Indexed reflection centers from sample images &
-    Sample geometry $(\theta_i,\delta,z_B,z_S)$, goniometer misalignment $(\alpha,\psi)$, and film dimensions $(W,H,t)$ &
+    Sample geometry $(\theta_i,\delta,z_B,z_S)$, in-plane rotation $\chi$, goniometer misalignment $(\alpha,\psi)$ &
     Detector-space peak positions \\
     4 &
     Mosaicity/profile refinement &
     Selected local detector ROIs and local $I(\phi)$ profiles &
-    Gaussian-plus-Lorentzian mosaic/profile parameters, with geometry fixed &
+    Gaussian-plus-Lorentzian mosaic parameters &
     Center-aligned profile shapes and specular tails \\
     5 &
     Ordered-structure refinement &
@@ -47,12 +47,12 @@ Because the forward model combines beam phase space, detector geometry, sample a
   \end{tabularx}
 \end{table}
 
-The first two stages isolate the instrumental contribution to the measured image. Direct-beam images collected at several detector distances determine the incident-beam widths and divergences used in the forward model. These quantities define the baseline phase-space spread of the incoming beam and therefore the instrumental broadening that would be present even for an ideal sample. Detector distance, tilts, in-plane rotation, and beam center are then refined from hBN Debye--Scherrer rings. This calibration fixes the mapping from reciprocal-space intersections to detector coordinates independently of the sample, so later discrepancies in peak position or line shape are not absorbed spuriously into sample parameters.
+The first two stages isolate the instrumental contribution to the measured image. Direct-beam images collected at several detector distances determine the incident-beam widths and divergences used in the forward model. These quantities define the baseline phase-space spread of the incoming beam and therefore the instrumental broadening that would be present even for an ideal sample. Detector distance, tilts, and beam center are then refined from hBN Debye--Scherrer rings. This calibration fixes the mapping from reciprocal-space intersections to detector coordinates independently of the sample, so later discrepancies in peak position or line shape are not absorbed spuriously into sample parameters.
 
 With the instrumental terms fixed, refinement proceeds to the sample geometry. For each sample image, alignment and goniometer misalignment are determined from indexed Bragg-peak positions rather than from global intensities, because feature location is the most direct signature of geometric error. Reflections spanning both the specular and off-specular regions are included so the fit is constrained by the central $Q_z$-dominated features and by the off-axis intersections of the reciprocal-space rings. This step establishes the actual incidence condition and illuminated geometry of the experiment, which must be known before peak widths and intensities can be interpreted physically.
 
-Mosaicity is refined only after the reflection positions have been fixed, so the remaining variation in line shape can be attributed to crystallite misorientation rather than to geometric offset. The fit uses selected local detector regions around indexed reflections and compares measured and simulated local profiles after center alignment. When multiple incidence settings are available, they share the same Gaussian-plus-Lorentzian mosaic density. This model is not a pseudo-Voigt peak approximation: the Gaussian and Lorentzian components have independent widths and together describe a wrapped angular distribution. Off-specular arcs constrain the Gaussian-dominated core width, whereas the persistence and decay of specular intensity constrain the Lorentzian tail more strongly.
+Mosaicity is refined only after the reflection positions have been fixed, so the remaining variation in line shape can be attributed to crystallite misorientation rather than to geometric offset. The fit uses selected local detector regions around indexed reflections and compares measured and simulated local profiles after center alignment. When multiple incidence settings are available, they share the same Gaussian-plus-Lorentzian mosaic density. The Gaussian and Lorentzian components have independent widths and together describe a wrapped angular distribution. Off-specular arcs constrain the Gaussian-dominated core width, whereas the persistence and decay of specular intensity constrain the Lorentzian tail more strongly.
 
-Only after the geometric and mosaic terms have converged are the remaining Bragg-intensity variations assigned to ordered structure. The ordered stage uses background-subtracted integrated counts from selected detector-space Bragg ROIs, compared with the simulated detector-carried intensity deposited in those same ROIs. It is therefore a multi-image refinement of relative Bragg intensities, not a full-image pixel-by-pixel refinement. One nuisance scale is allowed for each image to absorb exposure and flux differences, while the shared ordered-structure parameters control the reflection-to-reflection intensity ratios.
+Only after the geometric and mosaic terms have converged are the remaining Bragg-intensity variations assigned to ordered structure. The ordered stage uses background-subtracted integrated counts from selected detector-space Bragg ROIs, compared with the simulated detector-carried intensity deposited in those same ROIs. One scale is allowed for each image to absorb exposure and flux differences, while the shared ordered-structure parameters control the reflection-to-reflection intensity ratios.
 
 Disorder parameters are introduced only after the ordered model has been pushed as far as it can go. At that point the beam, detector, sample geometry, mosaic/profile state, lattice parameters, and ordered intensity baseline are held fixed. Scale factors remain image-level terms: they are shared across the fitted observables from a given image but are not constrained to be identical between different images. The final observable is a selected $Q_r/Q_z$ rod profile formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. The disorder stage changes the stacking-disorder parameters and any image-level scale terms, rather than introducing independent peak areas. This separation is essential because diffuse intensity along $Q_z$ near and between Bragg peaks is otherwise easily confounded with average-structure or broadening effects.
