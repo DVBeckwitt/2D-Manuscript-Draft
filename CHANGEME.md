@@ -196,3 +196,19 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 ### Verification
 
 - Confirmed the supplemental document compiles with `pdflatex SI_failure_modes.tex` (two passes) from within `2D_Supplemental/`.
+
+## 2026-04-26 — Language cleanup, figure fit, and Eq. (4) notation
+
+### What changed
+
+- Included the existing discussion/conclusion section in `main.tex` and removed the `Draft outline` author placeholder from the title block.
+- Cleaned grammar and tightened wording in the refinement workflow, ordered-film results, PbI$_2$ disorder results, and discussion/conclusion sections.
+- Adjusted the ordered-film and PbI$_2$ summary figure inclusions to fit the text block more cleanly.
+- Clarified image-level scale handling: scales are shared within a given image but are not constrained to be identical across different images.
+- Updated Eq.~(4) notation from detector-plane azimuth $\phi$ to selected-rod polar angle $\eta$ so the main-text expression matches the caked $Q_r/Q_z$ transformation used in the simulation workflow; the supporting-information notation was updated consistently.
+
+### Verification
+
+- Recompiled `main.tex` successfully with two `pdflatex` passes.
+- Rendered the updated PDF and checked the pages containing the refinement workflow, ordered-film figure, PbI$_2$ equations/figure, and discussion/conclusion.
+- Checked that the compiled PDF no longer contains placeholder text, `Draft outline`, unresolved references, or `??` reference markers.

@@ -237,13 +237,13 @@ where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the
 \]
 with geometry, beam terms, and mosaicity fixed. One nuisance scale per image accounts for exposure and flux differences. This makes the ordered stage a multi-image ROI-integrated Bragg-intensity refinement, not a full-image pixel objective.
 
-The PbI$_2$ disorder refinement is a final-stage selected-profile fit, not a second global image refinement. The upstream beam, detector, sample alignment, mosaic/profile parameters, lattice constants, and ordered PbI$_2$ baseline are fixed before this stage starts. The detector image is first caked into a signal field $S(\phi,2\theta)$ and a normalization field $N(\phi,2\theta)$ using the calibrated detector geometry. For each caked bin,
+The PbI$_2$ disorder refinement is a final-stage selected-profile fit, not a second global image refinement. The upstream beam, detector, sample alignment, mosaic/profile parameters, lattice constants, and ordered PbI$_2$ baseline are fixed before this stage starts. The detector image is first caked into a signal field $S(\phi,2\theta)$ and a normalization field $N(\phi,2\theta)$ using the calibrated detector geometry. For the selected-rod conversion, let $\eta$ denote the polar angle of the scattering vector relative to the film normal. For each caked bin,
 \[
   Q=\frac{4\pi}{\lambda}\sin\!\left(\frac{2\theta}{2}\right),
   \qquad
-  Q_r=|\sin\phi|Q,
+  Q_r=|\sin\eta|Q,
   \qquad
-  Q_z=\cos\phi\,Q.
+  Q_z=\cos\eta\,Q.
 \]
 A selected rod with in-plane radius $Q_{r,0}$ is retained when
 \[

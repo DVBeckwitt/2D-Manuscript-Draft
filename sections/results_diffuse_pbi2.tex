@@ -1,28 +1,28 @@
 \section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
 
-We next applied the workflow to CVD-grown PbI$_2$ films. PbI$_2$ was the disorder-sensitive case because the measured image contained diffuse intensity along selected $Q_z$ rods that was not captured by the ordered baseline alone. The analysis began in the same way as for the ordered films: beam and detector terms were fixed, sample alignment was determined from detector-space feature positions, mosaic/profile parameters were constrained from local line shapes, and the ordered PbI$_2$ intensity model was fixed from the Bragg peak positions and areas. The stacking-fault model was introduced only after that ordered baseline is complete.  
+We next applied the workflow to CVD-grown PbI$_2$ films. PbI$_2$ was the disorder-sensitive case because the measured image contained diffuse intensity along selected $Q_z$ rods that was not captured by the ordered baseline alone. The analysis began in the same way as for the ordered films: beam and detector terms were fixed, sample alignment was determined from detector-space feature positions, mosaic/profile parameters were constrained from local line shapes, and the ordered PbI$_2$ intensity model was fixed from the Bragg peak positions and areas. The stacking-fault model was introduced only after that ordered baseline was established.
 
 The final selected-rod intensity was represented as
 \begin{equation}
 I_{hk}(L)=\mathcal{A}F_{hk}^{2}(L)R_{hk}(L;p,N,\ldots),
 \label{eq:pbi2_rod_main}
 \end{equation}
-where $F_{hk}^{2}(L)$ is the ordered PbI$_2$ rod intensity, $R_{hk}$ is the analytical stacking-fault correction, $p$ is the reported slip or fault parameter, and $N$ was retained only when an effective finite-stack length was used. The disorder observable was built from the scattering magnitude and selected-rod coordinates,
+where $\mathcal{A}$ is the image-level scale factor, $F_{hk}^{2}(L)$ is the ordered PbI$_2$ rod intensity, $R_{hk}$ is the analytical stacking-fault correction, $p$ is the fitted slip or fault parameter, and $N$ is retained only when an effective finite-stack length is used. When multiple images are fit, $\mathcal{A}$ is shared within each image but is not constrained to be identical across images. The disorder observable was built from the scattering magnitude and from the polar angle $\eta$ of the scattering vector relative to the film normal,
 \begin{equation}
 Q=\frac{4\pi}{\lambda}\sin\!\left(\frac{2\theta}{2}\right),
 \qquad
-Q_r=|\sin\phi|Q,
+Q_r=|\sin\eta|Q,
 \qquad
-Q_z=\cos\phi\,Q.
+Q_z=\cos\eta\,Q.
 \label{eq:pbi2_selected_coords}
 \end{equation}
-A rod mask kept bins satisfying $|Q_r-Q_{r,0}|\le\Delta Q_r$ and the chosen $Q_z$ bounds, with one detector branch used for the default fit and the opposite branch held as a validation profile.
+This is the same reciprocal-space transformation used in the caked selected-rod analysis; $\eta$ denotes the polar angle used for the $Q_r/Q_z$ conversion and is distinct from the detector-plane azimuth $\phi$ used in the detector-geometry discussion. A rod mask kept bins satisfying $|Q_r-Q_{r,0}|\le\Delta Q_r$ and the chosen $Q_z$ bounds, with one detector branch used for the default fit and the opposite branch held as a validation profile.
 
-The selected-rod profile was fit directly. Beam, detector geometry, sample alignment, mosaic/profile state, lattice constants, and the ordered PbI$_2$ baseline were held fixed. Known Bragg positions on the retained branch defined the profile locations. Number of layers of the film is used. The free terms were the stacking-fault slipping probability (p) and ratio of the polytypes present.   
+The selected-rod profile was fit directly. Beam, detector geometry, sample alignment, mosaic/profile state, lattice constants, and the ordered PbI$_2$ baseline were held fixed. Known Bragg positions on the retained branch defined the profile locations, and the number of film layers was used as an input to the stacking model. The free disorder terms were the stacking-fault slip probability, $p$, and the relative ratio of the polytypes present.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/results_pbi2/pbi2_disorder_summary.png}
+  \includegraphics[width=0.98\linewidth]{figures/results_pbi2/pbi2_disorder_summary.png}
   \caption{Selected-rod PbI$_2$ stacking-disorder refinement. (a) Caked detector-space view with the fitted rod mask and the opposite detector branch retained for validation. (b) Ordered-baseline profile and residual along the selected rod. The ordered model captures the principal Bragg positions but leaves diffuse between-peak intensity. (c) Selected-rod profile after adding the analytical stacking-disorder term while retaining the ordered baseline and upstream geometry/profile parameters. (d) Residual comparison before and after the disorder term is included.}
   \label{fig:pbi2_disorder_fit}
 \end{figure}
