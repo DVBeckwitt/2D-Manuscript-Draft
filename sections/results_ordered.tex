@@ -1,14 +1,22 @@
 \section{Results: ordered films}
 
 We first applied the staged workflow to ordered MBE-grown Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. The detector images contained the specular features and off-specular arcs expected for a 2D oriented powder with little stacking disorder. These two materials therefore provided the ordered-film benchmark.
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.98\linewidth]{figures/results_ordered/ordered_detector_summary.png}
+  \fbox{%
+    \begin{minipage}[c][0.55\linewidth][c]{0.94\linewidth}
+      \centering
+      \textbf{Placeholder figure}\\[0.75em]
+      \texttt{ordered\_detector\_summary.png}\\[0.75em]
+      Panels: (a) Bi$_2$Te$_3$ detector comparison;
+      (b) Bi$_2$Se$_3$ detector comparison;
+      (c) representative local profiles;
+      (d) post-fit $Q_z$ intensity checks.
+    \end{minipage}%
+  }
   \caption{Ordered-film detector-space fits. (a) Bi$_2$Te$_3$ measured, simulated, and residual detector views after the final staged refinement. (b) Corresponding Bi$_2$Se$_3$ detector comparison. (c) Representative local profiles from specular and off-specular detector ROIs used to check the mosaic/profile state after center alignment. (d) Post-fit $Q_z$ intensity checks for ROI-integrated Bragg intensities in the two ordered films. The comparison is made after the detector-space geometry and local line-shape terms have been fixed.}
   \label{fig:ordered_detector_fits}
 \end{figure}
-
 Figure~\ref{fig:ordered_detector_fits} summarizes the final ordered-film fits in the same order as the refinement workflow. The measured, simulated, and residual detector panels show that the model placed the specular peaks and off-specular arcs at the observed detector positions for both Bi$_2$Te$_3$ and Bi$_2$Se$_3$. This is the most sensitive check of the beam-center, detector-distance, detector-tilt, and sample-alignment parameters, because even small geometric errors would produce peak-position offsets across the image.
 
 The local profile checks then isolate line-shape information from integrated intensity information. The specular-cap and off-specular-arc profiles were reproduced by the same Gaussian-plus-Lorentzian mosaic profile. The final $Q_z$ checks compared the ROI-integrated Bragg intensities after the geometry and line-shape parameters had been fixed. Agreement in this view indicated that the ordered structure-factor description was sufficient for these films within the resolution of the present workflow. The important result is that the same refinement remained stable in both systems, thereby setting the baseline for the PbI$_2$ disorder analysis.
