@@ -22,7 +22,55 @@ The selected-rod profile was fit directly. Beam, detector geometry, sample align
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.98\linewidth]{figures/results_pbi2/pbi2_disorder_summary.png}
+  \setlength{\tabcolsep}{0.015\linewidth}
+  \renewcommand{\arraystretch}{1.2}
+
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(a) PbI$_2$ selected rod mask}\\[0.35em]
+      \fbox{%
+        \begin{minipage}[c][0.27\linewidth][c]{0.95\linewidth}
+          \centering
+          Placeholder for caked detector-space rod mask\\[0.5em]
+          fitted branch + validation branch
+        \end{minipage}%
+      }
+    \end{minipage}
+    &
+    \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(b) ordered baseline}\\[0.35em]
+      \fbox{%
+        \begin{minipage}[c][0.27\linewidth][c]{0.95\linewidth}
+          \centering
+          Placeholder for ordered-baseline profile\\[0.5em]
+          data, ordered model, residual
+        \end{minipage}%
+      }
+    \end{minipage}
+    \\[1.0em]
+    \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(c) stacking-disorder fit}\\[0.35em]
+      \fbox{%
+        \begin{minipage}[c][0.27\linewidth][c]{0.95\linewidth}
+          \centering
+          Placeholder for stacking-disorder fit\\[0.5em]
+          ordered term + disorder term
+        \end{minipage}%
+      }
+    \end{minipage}
+    &
+    \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(d) before/after residual comparison}\\[0.35em]
+      \fbox{%
+        \begin{minipage}[c][0.27\linewidth][c]{0.95\linewidth}
+          \centering
+          Placeholder for residual comparison\\[0.5em]
+          ordered residual vs disorder-fit residual
+        \end{minipage}%
+      }
+    \end{minipage}
+  \end{tabular}
+
   \caption{Selected-rod PbI$_2$ stacking-disorder refinement. (a) Caked detector-space view with the fitted rod mask and the opposite detector branch retained for validation. (b) Ordered-baseline profile and residual along the selected rod. The ordered model captures the principal Bragg positions but leaves diffuse between-peak intensity. (c) Selected-rod profile after adding the analytical stacking-disorder term while retaining the ordered baseline and upstream geometry/profile parameters. (d) Residual comparison before and after the disorder term is included.}
   \label{fig:pbi2_disorder_fit}
 \end{figure}
