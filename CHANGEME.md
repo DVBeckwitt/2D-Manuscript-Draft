@@ -14,7 +14,7 @@ This file records manuscript edits made in response to advisor annotations, with
 ### Status
 
 - **Feature:** implemented for the main manuscript draft.
-- **Scope:** no numerical fitted parameters were added in this pass; the text remains qualitative and tied to the figure-level comparisons.
+- **Scope:** this pass kept the result sections qualitative and tied to the figure-level comparisons.
 
 
 ## 2026-04-21 — Add adjacent Nookiin related-work citation
@@ -212,3 +212,33 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 - Recompiled `main.tex` successfully with two `pdflatex` passes.
 - Rendered the updated PDF and checked the pages containing the refinement workflow, ordered-film figure, PbI$_2$ equations/figure, and discussion/conclusion.
 - Checked that the compiled PDF no longer contains placeholder text, `Draft outline`, unresolved references, or `??` reference markers.
+
+## 2026-04-30 — Add preliminary literature-bounded parameter citations in Sections 4--5
+
+### What changed
+
+- Replaced the Section 4 and Section 5 placeholder figure blocks with the existing summary images (`figures/results_ordered/ordered_detector_summary.png` and `figures/results_pbi2/pbi2_disorder_summary.png`).
+- Added a preliminary ordered-film structure-factor parameter table in Section 4 for Bi$_2$Te$_3$ and Bi$_2$Se$_3$, tied to the literature spread of the cited structural references.
+- Added a preliminary PbI$_2$ ordered-baseline and selected-rod disorder parameter table in Section 5, with language noting that PbI$_2$ ADPs are fitted sample parameters because site-resolved ADP values are not widely or consistently reported in directly transferable form.
+- Added the missing bibliography entries for the structural-prior sources: Trueblood ADP nomenclature, Palosz PbI$_2$, Minagawa PbI$_2$, Lin PbI$_2$, Mansour Bi$_2$Te$_3$, Gharsallah Bi$_2$Te$_3$, Steiner Bi$_2$Te$_3$ MBE, and Callaert Bi$_2$Se$_3$.
+
+### Status
+
+- **Feature:** implemented as cited preliminary fitted-parameter text.
+- **Boundary:** numerical values remain provisional and should be checked against final refinement output before submission.
+
+## 2026-04-30 — Update discussion for fitted structure-factor and PbI$_2$ disorder parameters
+
+### What changed
+
+- Expanded the discussion/conclusion so it now interprets the fitted Bi$_2$Te$_3$, Bi$_2$Se$_3$, and PbI$_2$ parameter tables from Sections 4--5 rather than only the qualitative detector-space fits (`sections/discussion_conclusion.tex`).
+- Connected the ordered-film parameter table to Fig.~\ref{fig:ordered_detector_fits}, emphasizing that the Bi$_2$Te$_3$ and Bi$_2$Se$_3$ structure-factor parameters remain close to cited structural ranges after geometry and mosaic terms are fixed.
+- Connected the PbI$_2$ ordered-baseline table to Fig.~\ref{fig:pbi2_disorder_fit}, emphasizing that residual selected-rod intensity is assigned to stacking disorder only after the ordered average structure is fixed.
+- Framed PbI$_2$ ADPs as fitted sample parameters because site-resolved values are not widely or consistently reported in directly interchangeable conventions.
+- Restated the fitted PbI$_2$ disorder values as effective descriptors of the selected rod and fitted stacking model, not universal PbI$_2$ constants.
+
+### Status
+
+- **Feature:** implemented for the main manuscript discussion.
+- **Boundary:** final numerical values should still be checked against the final refinement outputs before submission.
+
