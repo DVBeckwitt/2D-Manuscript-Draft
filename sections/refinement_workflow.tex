@@ -1,10 +1,10 @@
 \section{Refinement workflow}
 
-Because the forward model combines beam phase space, detector geometry, sample alignment, mosaicity, and crystallographic intensity within a single image calculation, a fully global refinement from arbitrary starting values would lead to strong correlations between instrumental and sample-specific parameters. We therefore use a staged refinement strategy. Each stage uses the detector-space observable that is most diagnostic for that parameter class before the next class of parameters is introduced. Beam and detector terms first establish the experimental geometry shared across measurements. Sample alignment then determines where reflections appear on the detector. With the reflection positions established, mosaicity is constrained by local line shape, ordered structure by selected relative Bragg intensities, and stacking disorder by selected $Q_z$ rod profiles. The workflow is summarized in Table~\ref{tab:refinement_workflow}.
+We use a staged refinement because geometry, mosaicity, and crystallographic intensity are strongly correlated in a fully global fit. Each stage uses the detector-space observable most sensitive to one parameter class before the next class is introduced. Table~\ref{tab:refinement_workflow} summarizes the ordered-film workflow used for Bi$_2$Se$_3$ and Bi$_2$Te$_3$.
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow. All sample images are dark-subtracted before the listed observables are formed.}
+  \caption{Staged refinement workflow used for the ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. All sample images are dark-subtracted before the listed observables are formed. Diffuse-scattering and stacking-disorder refinements are deferred from the present main-text draft.}
   \label{tab:refinement_workflow}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
@@ -30,29 +30,20 @@ Because the forward model combines beam phase space, detector geometry, sample a
     Detector-space peak positions \\
     4 &
     Mosaicity/profile refinement &
-    Selected local detector ROIs and local $I(\phi)$ profiles &
+    Selected local detector ROIs, specular-tail checks, and local profile shapes &
     Gaussian-plus-Lorentzian mosaic parameters &
-    Center-aligned profile shapes and specular tails \\
+    Center-aligned profile shapes, off-specular arcs, and specular tails \\
     5 &
-    Ordered-structure refinement &
-    Selected detector-space Bragg ROIs from multiple dark-subtracted images &
-    Image-level scales and ordered-structure parameters entering Eq.~\eqref{eq:structure_factor}, including occupancies $o_a$, atomic positions $\mathbf{r}_a$, static displacements $\Delta\mathbf{r}_a$, and anisotropic Debye--Waller terms $\mathbf{U}$ &
-    Relative ROI-integrated Bragg intensities \\
-    6 &
-    Disorder refinement &
-    Selected $Q_r/Q_z$ rod profiles from caked signal and normalization fields &
-    Image-level scales, stacking-fault or slip probability, optional finite-stack terms, and polytype-mixture terms &
-    Diffuse $Q_z$ redistribution along the selected rod \\
+    Ordered-film validation &
+    Selected detector-space Bragg ROIs and $Q_z$ projections from fixed $Q_r$/HK trajectories &
+    Image scale factors and ordered structure-factor parameters &
+    Relative Bragg intensities and measured/calculated line-shape agreement \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-The first two stages isolate the instrumental contribution to the measured image. Direct-beam images collected at several detector distances determine the incident-beam widths and divergences used in the forward model. These quantities define the baseline phase-space spread of the incoming beam and therefore the instrumental broadening that would be present even for an ideal sample. Detector distance, tilts, and beam center are then refined from hBN Debye--Scherrer rings. This calibration fixes the mapping from reciprocal-space intersections to detector coordinates independently of the sample, so later discrepancies in peak position or line shape are not absorbed spuriously into sample parameters.
+The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment.
 
-With the instrumental terms fixed, refinement proceeds to the sample geometry. For each sample image, alignment and goniometer misalignment are determined from indexed Bragg-peak positions rather than from global intensities, because feature location is the most direct signature of geometric error. Reflections spanning both the specular and off-specular regions are included so the fit is constrained by the central $Q_z$-dominated features and by the off-axis intersections of the reciprocal-space rings. This step establishes the actual incidence condition and illuminated geometry of the experiment, which must be known before peak widths and intensities can be interpreted physically.
+The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/HK trajectories for comparison versus $Q_z$. The ordered-film figure is therefore not a separate illustration step; it is the closure test for the workflow. Peak positions test the calibrated geometry and sample alignment, widths and tails test the two-component mosaicity and resolution, the off-condition $HK=0$ specular peaks test the Lorentzian mosaic tail, and relative intensities test the ordered structure-factor weighting.
 
-Mosaicity is refined only after the reflection positions have been fixed, so the remaining variation in line shape can be attributed to crystallite misorientation rather than to geometric offset. The fit uses selected local detector regions around indexed reflections and compares measured and simulated local profiles after center alignment. When multiple incidence settings are available, they share the same Gaussian-plus-Lorentzian mosaic density. The Gaussian and Lorentzian components have independent widths and together describe a wrapped angular distribution. Off-specular arcs constrain the Gaussian-dominated core width, whereas the persistence and decay of specular intensity constrain the Lorentzian tail more strongly.
-
-Only after the geometric and mosaic terms have converged are the remaining Bragg-intensity variations assigned to ordered structure. The ordered stage uses background-subtracted integrated counts from selected detector-space Bragg ROIs, compared with the simulated detector-carried intensity deposited in those same ROIs. One scale is allowed for each image to absorb exposure and flux differences, while the shared ordered-structure parameters control the reflection-to-reflection intensity ratios.
-
-Disorder parameters are introduced only after the ordered model has been pushed as far as it can go. At that point the beam, detector, sample geometry, mosaic/profile state, lattice parameters, and ordered intensity baseline are held fixed. Scale factors remain image-level terms: they are shared across the fitted observables from a given image but are not constrained to be identical between different images. The final observable is a selected $Q_r/Q_z$ rod profile formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. The disorder stage changes the stacking-disorder parameters and any image-level scale terms, rather than introducing independent peak areas. This separation is essential because diffuse intensity along $Q_z$ near and between Bragg peaks is otherwise easily confounded with average-structure or broadening effects.
+Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information.

@@ -29,16 +29,10 @@
 \usepackage[numbers,sort&compress]{natbib}
 % if you want PRB-like superscripts instead:
 \setcitestyle{super,comma,numbers,sort&compress}
-% Assumes: graphicx, subcaption are loaded.
-% Optional: keep this helper so the PDF shows visible placeholders before images exist.
-\newcommand{\maybeinclude}[2][]{%
-  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
-    \fbox{\begin{minipage}[c][0.22\textheight][c]{0.95\linewidth}
-      \centering\small PLACEHOLDER\\\footnotesize\path{#2}
-    \end{minipage}}%
-  }%
-}
-% Small helper to place a panel tag at the top left of arbitrary content
+
+% Small helper to place a panel tag at the top left of arbitrary content.
+% This intentionally includes only real image files. Missing figures should fail
+% compilation rather than producing visible missing-figure boxes in the manuscript.
 \newcommand{\paneltagged}[2]{%
   \begin{tikzpicture}
     \node[inner sep=0] (img) {#2};
@@ -50,16 +44,9 @@
   \end{tikzpicture}%
 }
 
-\newcommand{\maybeincludecompact}[2][]{%
-  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
-    \fbox{\begin{minipage}[c][0.11\textheight][c]{0.92\linewidth}
-      \centering\small PLACEHOLDER\\\footnotesize\path{#2}
-    \end{minipage}}%
-  }%
-}
 \newcommand{\panelgraphic}[3][]{%
   \begin{tikzpicture}
-    \node[inner sep=0] (img) {\maybeincludecompact[#1]{#2}};
+    \node[inner sep=0] (img) {\includegraphics[#1]{#2}};
     \node[
       anchor=north west,
       font=\bfseries\footnotesize,
@@ -85,7 +72,10 @@ quantitative X-ray area-detector modeling}
 \input{sections/mosaicity_texture}
 \input{sections/refinement_workflow}
 \input{sections/results_ordered}
-\input{sections/results_diffuse_pbi2}
+% PbI$_2$ diffuse-scattering results are intentionally omitted from this
+% ordered-film-focused draft. Re-enable only after the Bi$_2$Se$_3$ and
+% Bi$_2$Te$_3$ Q_z projection figures are complete and the main result is clear.
+% \input{sections/results_diffuse_pbi2}
 \input{sections/discussion_conclusion}
 
 

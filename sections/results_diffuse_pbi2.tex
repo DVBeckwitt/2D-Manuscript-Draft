@@ -1,63 +1,10 @@
 \section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
+\label{sec:results_pbi2_deferred}
 
-We next applied the workflow to CVD-grown PbI$_2$ films. PbI$_2$ was the disorder-sensitive case because the measured image contained diffuse intensity along selected $Q_z$ rods that was not captured by the ordered baseline alone. The analysis began in the same way as for the ordered films: beam and detector terms were fixed, sample alignment was determined from detector-space feature positions, mosaic/profile parameters were constrained from local line shapes, and the ordered PbI$_2$ intensity model was fixed from the Bragg peak positions and areas. The stacking-fault model was introduced only after that ordered baseline was established.
+% This section is intentionally deferred from the active ordered-film manuscript.
+% Dr. Maselli's guidance was to finish the Bi2Se3/Bi2Te3 line-shape validation first.
+% Reintroduce PbI2 only after the ordered-film Qz projection figures are complete.
 
-The final selected-rod intensity was represented as
-\begin{equation}
-I_{hk}(L)=\mathcal{A}F_{hk}^{2}(L)R_{hk}(L;p,N,\ldots),
-\label{eq:pbi2_rod_main}
-\end{equation}
-where $\mathcal{A}$ is the image-level scale factor, $F_{hk}^{2}(L)$ is the ordered PbI$_2$ rod intensity, $R_{hk}$ is the analytical stacking-fault correction, $p$ is the fitted slip or fault parameter, and $N$ is an effective finite-stack number. When multiple images are fit, $\mathcal{A}$ is shared within each image but is not constrained to be identical across images. The disorder observable was built from the scattering magnitude and from the polar angle $\eta$ of the scattering vector relative to the film normal,
-\begin{equation}
-Q=\frac{4\pi}{\lambda}\sin\!\left(\frac{2\theta}{2}\right),
-\qquad
-Q_r=|\sin\eta|Q,
-\qquad
-Q_z=\cos\eta\,Q.
-\label{eq:pbi2_selected_coords}
-\end{equation}
-This is the same reciprocal-space transformation used in the caked selected-rod analysis; $\eta$ denotes the polar angle used for the $Q_r/Q_z$ conversion and is distinct from the detector-plane azimuth $\phi$ used in the detector-geometry discussion. A rod mask kept bins satisfying $|Q_r-Q_{r,0}|\le\Delta Q_r$ and the chosen $Q_z$ bounds, with one detector branch used for the default fit and the opposite branch held as a validation profile.
+PbI$_2$ is the disorder-sensitive extension of the same framework, not the first proof of the method. In the present draft this material is held out of the main text so that the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ validation remains the central result.
 
-The selected-rod profile was fit directly. Beam, detector geometry, sample alignment, mosaic/profile state, lattice constants, and the ordered PbI$_2$ baseline were held fixed. Known Bragg positions on the retained branch defined the profile locations, and the number of film layers was used as an input to the stacking model. The free disorder terms were the stacking-fault slip probability, $p$, an effective stack length, $N$, and the relative ratio of the 2H and 6H stacking-sequences.
-
-\begin{figure}[H]
-  \centering
-  \maybeinclude[width=\linewidth]{figures/results_pbi2/pbi2_disorder_summary.png}
-  \caption{Selected-rod PbI$_2$ stacking-disorder refinement. (a) Caked detector-space view with the fitted rod mask and the opposite detector branch retained for validation. (b) Ordered-baseline profile and residual along the selected rod. The ordered model captures the principal Bragg positions but leaves diffuse between-peak intensity. (c) Selected-rod profile after adding the analytical stacking-disorder term while retaining the ordered baseline and upstream geometry/profile parameters. (d) Residual comparison before and after the disorder term is included.}
-  \label{fig:pbi2_disorder_fit}
-\end{figure}
-
-Figure~\ref{fig:pbi2_disorder_fit} shows the selected-rod comparison. The ordered baseline captured the principal Bragg locations but left systematic positive residual intensity along $Q_z$. Adding the analytical stacking-fault term reduced the selected-rod residual while leaving the upstream detector-space agreement intact. The fitted values were therefore interpreted as effective stacking-disorder descriptors for the rod and branch analyzed here.
-
-The PbI$_2$ structure-factor parameters used for the ordered baseline in Fig.~\ref{fig:pbi2_disorder_fit} are summarized in Table~\ref{tab:pbi2_sf_parameters}. The lattice constants and iodine coordinate are tied to reported 2H structural values, and the near-full occupancies are tied to the clean ordered model. The displacement terms are retained as fitted sample-specific ADP values because transferable site-resolved Pb and I displacement values are not widely reported with a consistent convention across the PbI$_2$ literature. The fitted values nevertheless preserve the qualitative condition that Pb motion is larger perpendicular to the layer than within the layer.\cite{Minagawa1975,Palosz1990,Lin2019,Trueblood1996}
-
-\begin{table}[H]
-  \centering
-  \caption{Preliminary PbI$_2$ ordered-baseline and disorder parameters used in the selected-rod comparison of Fig.~\ref{fig:pbi2_disorder_fit}. PbI$_2$ ADPs are listed as fitted sample parameters because site-resolved ADP values are not widely or consistently reported in a directly transferable convention.}
-  \label{tab:pbi2_sf_parameters}
-  \scriptsize
-  \setlength{\tabcolsep}{3pt}
-  \renewcommand{\arraystretch}{1.12}
-  \begin{tabularx}{\linewidth}{@{}p{2.1cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
-    \toprule
-    Parameter class & Fitted value & Literature comparison & Role in Fig.~\ref{fig:pbi2_disorder_fit} \\
-    \midrule
-    Lattice and coordinates &
-    $a=4.5583\,\text{\AA}$, $c=6.985\,\text{\AA}$; Pb at $(0,0,0)$; I1 at $(1/3,2/3,0.2677)$ and I2 at $(2/3,1/3,0.7323)$. &
-    Lattice constants remain within the 2H single-crystal structural spread, and the iodine coordinate follows the corrected $z\simeq0.268$ value.\cite{Minagawa1975,Palosz1990} &
-    Fixes the ordered Bragg positions and the $F_{hk}^{2}(L)$ envelope before stacking disorder is introduced. \\
-    Occupancies &
-    Weakly floating test returned $o_{\mathrm{Pb}}=0.999$, $o_{\mathrm{I1}}=1.001$, and $o_{\mathrm{I2}}=1.000$; the ordered baseline was then evaluated with full occupancies. &
-    The clean ordered model uses full occupancies; the density-deficient occupancy reported for a Palosz-type sample is sample-specific and was not used as the default model.\cite{Palosz1990,Lin2019} &
-    Keeps the PbI$_2$ average structure stoichiometric while the diffuse rod intensity is assigned to stacking disorder. \\
-    Directional ADPs &
-    $U_r/U_z=0.0105/0.0185$ for Pb and $0.016/0.024\,\text{\AA}^2$ for I1 and I2. &
-    Site-resolved Pb and I ADPs are not widely or consistently reported for direct transfer; the qualitative inequality $U_z(\mathrm{Pb})>U_r(\mathrm{Pb})$ is retained.\cite{Minagawa1975,Trueblood1996} &
-    Moderates relative ordered intensities and is interpreted as a sample-specific displacement refinement rather than a universal PbI$_2$ displacement constant. \\
-    Stacking disorder &
-    $p=0.18$, $N=32$ layers, and a 2H:6H stacking sequence descrition of $0.76:0.24$. &
-    Treated as effective selected-rod descriptors of the fitted model class rather than universal PbI$_2$ structural constants. &
-    Converts the ordered rod envelope into the broadened between-peak intensity in Fig.~\ref{fig:pbi2_disorder_fit}(c,d). \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
+When this section is reintroduced, it should appear as a short extension built around a real selected-rod figure: measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals along the same indexed $Q_r/Q_z$ rod. The figure should not be added until the corresponding PbI$_2$ data product is ready and until it no longer competes with the ordered-film demonstration.

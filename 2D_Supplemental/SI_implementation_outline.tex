@@ -1,0 +1,23 @@
+% Supporting-information outline for implementation details moved out of the main text.
+% This file is not yet assembled into the SI PDF. It records the intended SI content
+% so that the main manuscript can remain physics-first.
+
+\section{Implementation details for the detector-space calculation}
+
+The main text describes the calculation in reciprocal-space and detector-space language. The numerical implementation uses $2\theta$--$\phi$ remapping and caked intensity fields for efficiency, but those coordinates do not change the physical comparison. The same reciprocal-space trajectories and projection regions are applied to the measured and calculated images.
+
+\subsection{Mosaic surface density}
+
+The out-of-plane mosaic line density $\omega(\Delta\theta)$ is evaluated as a wrapped Gaussian-plus-Lorentzian distribution. After random in-plane rotation about the film normal, the line density becomes an axially symmetric density on the Bragg sphere. For a reflection with $G=|\mathbf G|$, polar angle $\vartheta$, and Bragg position $\vartheta_B$, the normalized surface density used for ray weights is
+\begin{equation}
+\rho(\vartheta)=\frac{I_0}{2\pi G^2\sin\vartheta}\,\omega(\vartheta-\vartheta_B),\qquad 0<\vartheta<\pi.
+\end{equation}
+The $1/\sin\vartheta$ term is the Jacobian for converting the one-dimensional tilt density into a surface density.
+
+\subsection{Coordinate remapping and binning}
+
+Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$Q_r$/HK trajectories can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
+
+\subsection{Monte Carlo sampling}
+
+Beam position, divergence, wavelength spread, and mosaic events are sampled probabilistically for computational efficiency. This replaces a dense grid over the same phase space without changing the physical model used to generate the detector image.
