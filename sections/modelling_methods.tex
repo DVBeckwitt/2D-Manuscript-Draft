@@ -17,7 +17,7 @@ Diffraction occurs when the momentum transfer matches a reciprocal-lattice vecto
 \]
 For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. The allowed exit vectors are found by intersecting that Bragg sphere with the Ewald sphere and then propagating the resulting exit ray to the detector.
 
-For each trial incident ray, the model computes the sample intersection, applies the incidence geometry and optical corrections, finds the reciprocal-space intersections that satisfy elastic scattering, and propagates the resulting exit rays to the detector. Finite beam size, divergence, footprint truncation, detector tilt, refraction, and absorption enter as experimental resolution and intensity terms. Their role in the main text is not to define new physics, but to ensure that the calculated image carries the same geometric broadening and attenuation as the measurement. The coordinate conventions for the lab frame, detector plane, sample rotation, and illuminated footprint are summarized in Figs.~\ref{fig:waxs_geometry_system} and~\ref{fig:waxs_geometry_sample_triptych}.
+For each trial incident ray, the model computes the sample intersection, applies the incidence geometry and optical corrections, finds the reciprocal-space intersections that satisfy elastic scattering, and propagates the resulting exit rays to the detector. Rays are Monte Carlo sampled from the probability distribution formed by the shape, bandwidth, and divergence of the beam. A second Monte Carlo sampling occurs for each ray to choose an intersection point. Footprint, detector tilt, refraction, and absorption enter as experimental resolution and intensity terms. The coordinate conventions for the lab frame, detector plane, sample rotation, and illuminated footprint are summarized in Figs.~\ref{fig:waxs_geometry_system} and~\ref{fig:waxs_geometry_sample_triptych}.
 
 %------------------------------
 % Figure 1: System only
@@ -62,7 +62,21 @@ $\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the mis
 
 \subsection{Structure Factor}
 
-We enumerate all Miller triplets $(h,k,l)$ whose scattering falls within the detector acceptance, construct the corresponding reciprocal-lattice vector $\mathbf G$, and evaluate the allowed detector intersections. Conventional powder calculations often replace symmetry-equivalent reflections by a multiplicity factor. We retain every allowed $\mathbf G$ explicitly because, in a 2D powder, the measured contribution of symmetry-related reflections depends on the experimental geometry and on the crystallite orientation distribution. Multiplicity and orientation effects therefore emerge within the forward model rather than being imposed as a single geometry-independent number. In the ordered-film results, compact HK-family labels are used only after these individual detector-space contributions have been generated and projected.
+We enumerate integer in-plane Miller paire \(\mathrm{HK}\), construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
+\[
+\mathrm{HK}(H,K)
+=
+\begin{bmatrix}
+H & K
+\end{bmatrix}
+\mathbf M_{\parallel}
+\begin{bmatrix}
+H \\
+K
+\end{bmatrix}
+\propto Q_r^2 ,
+\]
+where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) is a number labeling an in-plane reciprocal-space rod family. In powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed. Multiplicity and orientation effects therefore emerge within the forward model.
 
 For each reflection with reciprocal-lattice vector
 \[
