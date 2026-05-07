@@ -1,10 +1,10 @@
 \section{Refinement workflow}
 
-We use a staged refinement because geometry, mosaicity, and crystallographic intensity are strongly correlated in a fully global fit. Each stage uses the detector-space observable most sensitive to one parameter class before the next class is introduced. Table~\ref{tab:refinement_workflow} summarizes the ordered-film workflow used for Bi$_2$Se$_3$ and Bi$_2$Te$_3$.
+We use a staged refinement because geometry, mosaicity, and crystallographic intensity are strongly correlated in a fully global fit. Each stage uses the detector-space observable most sensitive to one parameter group before the next group is introduced. Table~\ref{tab:refinement_workflow} summarizes the ordered-film workflow used for Bi$_2$Se$_3$ and Bi$_2$Te$_3$.
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow used for the ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. All sample images are dark-subtracted before the listed observables are formed. Diffuse-scattering and stacking-disorder refinements are deferred from the present main-text draft.}
+  \caption{Staged refinement workflow used for the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. All sample images are dark-subtracted before the listed observables are formed. Diffuse-scattering and stacking-disorder refinements are deferred from the present main-text draft.}
   \label{tab:refinement_workflow}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
@@ -35,15 +35,14 @@ We use a staged refinement because geometry, mosaicity, and crystallographic int
     Center-aligned profile shapes, off-specular arcs, and specular tails \\
     5 &
     Ordered-film validation &
-    Selected detector-space Bragg ROIs and $Q_z$ projections from fixed $Q_r$/HK trajectories &
+    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$Q_r$/HK trajectories &
     Image scale factors and ordered structure-factor parameters &
     Relative Bragg intensities and measured/calculated line-shape agreement \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment.
+The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment. 
 
-The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/HK trajectories for comparison versus $Q_z$. The ordered-film figure is therefore not a separate illustration step; it is the closure test for the workflow. Peak positions test the calibrated geometry and sample alignment, widths and tails test the two-component mosaicity and resolution, the off-condition $HK=0$ specular peaks test the Lorentzian mosaic tail, and relative intensities test the ordered structure-factor weighting.
-
-Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information.
+The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$Q_r$/HK trajectories for comparison versus $Q_z$. Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information. 
+Later stacking-disorder will be acquired by fitting the HK rods as a function of L. 

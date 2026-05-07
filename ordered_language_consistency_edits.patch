@@ -1,0 +1,225 @@
+--- original_unzip/2D-Manuscript-Draft/sections/discussion_conclusion.tex	2026-05-05 22:41:06.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/discussion_conclusion.tex	2026-05-06 04:58:22.283353358 +0000
+@@ -1,6 +1,6 @@
+ \section{Discussion and conclusion}
+ 
+-The ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films provide the validation for both the mosaic model and forward modelling. A single detector-space workflow accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, resolution, and ordered structure-factor intensity, then compares measured and calculated profiles along the same indexed $Q_r$/HK trajectories. The key result is the direct $Q_z$ line-shape agreement.
++The ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films provide the main validation of the mosaic model and detector-space forward model. A single calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, resolution, and ordered structure-factor weighting, then compares measured and calculated $Q_z$ profiles along the same fixed-$Q_r$/HK trajectories. The key result is direct line-shape agreement.
+ 
+-Keeping the comparison in detector space is essential because the information that constrains the model is distributed between arcs, caps, and weak off-condition specular peaks that would be obscured by a conventional 1D reduction. All these affects are present in the calculated image, so the overlay tests the complete experimental model.
++Keeping the comparison in detector space is essential because the constraining intensity is distributed among off-specular arcs, cap-like $HK=0$ features, and weak off-condition specular peaks that a conventional 1D reduction would obscure. Because the calculated image includes the same effects and is projected in the same way as the measurement, the overlay tests the complete experimental model. The off-condition $HK=0$ peaks also show why a narrow Gaussian-like mosaic core is insufficient and why the Lorentzian tail is required.
+ 
+--- original_unzip/2D-Manuscript-Draft/sections/introduction.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/introduction.tex	2026-05-06 04:59:52.568804021 +0000
+@@ -73,9 +73,9 @@
+ 
+ Figure~\ref{fig:intro_2x3} summarizes the real-space, reciprocal-space, and detector-space consequences of these three orientational limits. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated Bragg points (Fig.~\ref{fig:intro_single_image}), so at fixed incidence angle the Ewald sphere typically intersects only a small subset of reflections and the detector records sparse spots.\cite{AlsNielsenMcMorrow2001} For a 3D powder, random crystallite orientations smear the intensity of each Bragg point over a spherical shell, and the Ewald-sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2d_recip}).\cite{Kaganer1999,SmilgiesBlasini2007} The corresponding illustration in Fig.~\ref{fig:intro_2d_real} schematically shows 2D platelets with aligned growth, and a representative 2D-powder detector pattern is shown in Fig.~\ref{fig:intro_2d_image}. When the Ewald sphere intersects this reciprocal-space distribution, the detector records hybrid signatures: pairs of symmetric spots from the off-specular ring intersections and single-crystal-like features near the specular stripe from \((00L)\) intensity.\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods} Mosaicity then redistributes intensity, broadening the ring intersections into arcs and spreading the \((00L)\) features into cap-like intensity near the specular region.\cite{Kaganer1999,SmilgiesBlasini2007}
+ 
+-This hybrid detector-space information is what makes the 2D-powder problem both rich and difficult. Many standard WAXS workflows reduce the area-detector image to 1D profiles by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020} Those steps are well suited to nearly isotropic powders, but for 2D powders they deweight or remove the arcs and specular caps that are most sensitive to out-of-plane correlations, stacking, and mosaic tails.\cite{SmilgiesBlasini2007,Hexemer2015} Stacking disorder is also commonly inferred from 1D interference models and refinements,\cite{HendricksTeller1942,Treacy1991,CasasCabanas2016} which do not directly exploit the full two-dimensional anisotropy of oriented-film scattering. More general intermediate orientation distributions can be treated with orientation-distribution-function (ODF) refinements or preferred-orientation corrections.\cite{March1932,Dollase1986,MatthiesVinel1982,Pawlik1986,VonDreele1997,LutterottiVasinWenk2014} Those approaches are more flexible, but they are also more general than is needed for the narrowly constrained 2D-powder case considered here.\cite{VonDreele1997,LutterottiVasinWenk2014} Recent radial-profile approaches have made thin-film GIXD substantially more quantitative with extracted one-dimensional profiles but peak overlap and background separation can remain limiting in strongly anisotropic patterns, especially at small incidence angles.\cite{Gasser2025} For the layered films considered here, that level of generality is often unnecessary. The morphology and the measured patterns already motivate an axial symmetry about the film normal together with a low-dimensional out-of-plane mosaicity kernel.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} We therefore assume this physically motivated 2D-powder orientation distribution a priori and refine its parameters by forward-modeling the full 2D detector image, so that the arc and specular (Bragg-rod) line shapes in Fig.~\ref{fig:intro_2x3} act as direct constraints while reducing computational cost and improving fit precision.\cite{SmilgiesBlasini2007,Hexemer2015}
++This hybrid detector-space information is what makes the 2D-powder problem both rich and difficult. Many standard WAXS workflows reduce area-detector images to 1D profiles by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020} Those steps suit nearly isotropic powders, but for 2D powders they deweight or remove off-specular arcs and specular caps that constrain out-of-plane correlations, stacking, and mosaic tails.\cite{SmilgiesBlasini2007,Hexemer2015} Stacking disorder is also commonly inferred from 1D interference models and refinements,\cite{HendricksTeller1942,Treacy1991,CasasCabanas2016} which do not directly exploit the two-dimensional anisotropy of oriented-film scattering. More general intermediate orientation distributions can be treated with orientation-distribution-function (ODF) refinements or preferred-orientation corrections,\cite{March1932,Dollase1986,MatthiesVinel1982,Pawlik1986,VonDreele1997,LutterottiVasinWenk2014} but those approaches are more general than needed for the narrowly constrained 2D-powder case considered here.\cite{VonDreele1997,LutterottiVasinWenk2014} Recent radial-profile approaches have made thin-film GIXD substantially more quantitative, but peak overlap and background separation can remain limiting in strongly anisotropic patterns, especially at small incidence angles.\cite{Gasser2025} For the layered films considered here, the measured morphology already motivates axial symmetry about the film normal and a low-dimensional out-of-plane mosaicity kernel.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} We therefore assume this physically motivated 2D-powder orientation distribution a priori and refine it with a detector-space forward model, using off-specular arcs and specular-family line shapes as direct constraints.\cite{SmilgiesBlasini2007,Hexemer2015}
+ 
+ 
+-Here we present a quantitative forward model for WAXS from two-dimensional powders that predicts full area-detector images and then refines stage-specific detector-derived observables against measured data. Prior work has established the main ingredients needed for such a framework, including grazing-incidence scattering formalisms,\cite{Sinha1988,Renaud2009} reciprocal-space mapping and indexing for oriented thin films,\cite{SmilgiesBlasini2007,Smilgies2005Rods,Hexemer2015,Savikhin2020} and forward simulation of diffraction from textured films.\cite{Breiby2008} Complementary atomistic tools have also been developed for constructing commensurate multilayer 2D heterostructure supercells and visualizing their reciprocal-space diffraction signatures, including Nookiin.\cite{AguilarSpindola2026Nookiin} In contrast, the present work takes the crystallographic model as input and carries the calculation in detector space through the coupled effects of detector geometry, grazing-incidence propagation, mosaicity, resolution, and ordered structure-factor weighting. Geometry is constrained by detector-space peak positions, mosaicity by local profile shapes and specular-tail intensity, and ordered structure by selected Bragg-ROI intensities and $Q_z$ profile overlays. The main-text validation is deliberately centered on the ordered 2D-powder limit using Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films.\cite{Jerng2013,Zhang2022Bi2Te3} Diffuse PbI$_2$ and stacking-disorder refinements are treated as a later extension of the same detector-space framework rather than as the primary proof of the method. By embedding geometric and sample effects within a single forward model, we avoid separating geometric corrections from structural fitting and instead refine geometry, mosaicity, and ordered intensity within a common detector-space comparison.
++Here we present a detector-space forward model for 2D-powder WAXS. Starting from an indexed crystallographic model, it predicts area-detector images and applies the same projection and integration procedures to measured and calculated intensity. The comparison uses detector-space peak positions, local line shapes, relative Bragg intensities, and projected $Q_z$ profiles. Prior work has established the main ingredients needed for such a framework, including grazing-incidence scattering formalisms,\cite{Sinha1988,Renaud2009} reciprocal-space mapping and indexing for oriented thin films,\cite{SmilgiesBlasini2007,Smilgies2005Rods,Hexemer2015,Savikhin2020} and forward calculations of diffraction from textured films.\cite{Breiby2008} Complementary atomistic tools have also been developed for constructing commensurate multilayer 2D heterostructure supercells and visualizing reciprocal-space diffraction signatures, including Nookiin.\cite{AguilarSpindola2026Nookiin} In contrast, the present work carries the calculation in detector space through detector geometry, grazing-incidence propagation, beam phase space, mosaicity, resolution, and ordered structure-factor weighting. The main-text validation is centered on the ordered 2D-powder limit using Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films.\cite{Jerng2013,Zhang2022Bi2Te3} Diffuse PbI$_2$ and stacking-disorder refinements are treated as later extensions of the same framework rather than as the primary proof of the method.
+ 
+ \pagebreak
+--- original_unzip/2D-Manuscript-Draft/sections/modelling_methods.tex	2026-05-05 23:32:16.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/modelling_methods.tex	2026-05-06 04:58:22.281642808 +0000
+@@ -1,7 +1,7 @@
+ \section{Diffraction Model}
+ \label{sec:diffraction_model}
+ 
+-The forward model predicts the detector image produced by an indexed set of reciprocal-lattice vectors. For each reflection, the calculation determines the allowed exit rays, maps them to detector pixels, weights them by the structure factor, beam phase distribution, transmission, and redistributes their intensity according to the mosaic distribution. The same detector-space prediction is then compared with the $Q_z$ projection profile's measured peak positions, local line shapes, and relative Bragg intensities.
++The detector-space forward model predicts the area-detector image produced by an indexed set of reciprocal-lattice vectors. For each reflection, the calculation determines the allowed exit rays, maps them to detector pixels, weights them by the structure factor, beam phase distribution, and transmission, and redistributes the intensity according to the mosaic distribution. The measured and calculated images are then compared through the same detector-space peak positions, local line shapes, relative Bragg intensities, and projected $Q_z$ profiles used in the ordered-film validation.
+ 
+ \subsection{Diffraction Geometry}
+ 
+@@ -62,7 +62,7 @@
+ 
+ \subsection{Structure Factor}
+ 
+-We enumerate integer in-plane Miller paire \(\mathrm{HK}\), construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
++We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
+ \[
+ \mathrm{HK}(H,K)
+ =
+@@ -76,7 +76,7 @@
+ \end{bmatrix}
+ \propto Q_r^2 ,
+ \]
+-where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) is a number labeling an in-plane reciprocal-space rod family. In powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed. Multiplicity and orientation effects therefore emerge within the forward model.
++where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
+ 
+ For each reflection with reciprocal-lattice vector
+ \[
+--- original_unzip/2D-Manuscript-Draft/sections/mosaicity_texture.tex	2026-05-05 23:20:28.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/mosaicity_texture.tex	2026-05-06 04:58:22.282053645 +0000
+@@ -1,11 +1,11 @@
+ \subsection{Mosaicity}
+ \label{sec:mosaicity}
+ 
+-Mosaicity can be understood by comparing the orientational limits introduced in Fig.~\ref{fig:intro_2x3}. For a perfect single crystal, a reflection carries its full weight at a single Bragg spot. For a 3D powder, random crystallite orientations spread that weight isotropically over the Bragg sphere. A 2D powder lies between these limits. In-plane rotations are effectively randomized about the film normal, while the layer normals retain a finite out-of-plane misorientation distribution. Mosaicity is therefore treated as a redistribution of the ideal per-reflection intensity over the allowed HK family.
++Mosaicity can be understood by comparing the orientational limits introduced in Fig.~\ref{fig:intro_2x3}. For a perfect single crystal, a reflection carries its full weight at a single Bragg spot. For a 3D powder, random crystallite orientations spread that weight isotropically over the Bragg sphere. A 2D powder lies between these limits: in-plane rotations are randomized about the film normal, while the layer normals retain a finite out-of-plane misorientation distribution. Mosaicity is therefore treated as a redistribution of the ideal per-reflection intensity over the allowed $HK$ family.
+ 
+-For a reflection, we work in the $(G_r,G_z)$ cross-section of reciprocal space, where $G_r$ represents the rotaions in the basal plane. Random in-plane rotations generate a ring of equivalent reciprocal-space intersections about $G_z$. Out-of-plane misorientation then gives a nonuniform line density around that ring, written as $I_0\omega(\Delta\theta)$, where $I_0$ is the reflection intensity before mosaic redistribution and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal.
++For a reflection, we work in the $(G_r,G_z)$ cross-section of reciprocal space, where $G_r$ is the in-plane radial component. Random in-plane rotations generate a ring of equivalent reciprocal-space intersections about $G_z$. Out-of-plane misorientation then gives a nonuniform line density around that ring, written as $I_0\omega(\Delta\theta)$, where $I_0$ is the reflection intensity before mosaic redistribution and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal.
+ 
+-We will later find that a gaussian mosaic is not sufficient to reproduce the measurements. For this reason, we describe the out-of-plane mosaicity by a normalized Gaussian-plus-Lorentzian angular distribution, evaluated in wrapped form on $(-\pi,\pi]$ to conserve probability over one full angular period and avoid a discontinuity at $\Delta\theta=\pm\pi$. The Gaussian and Lorentzian widths are independent. The explicit wrapped Gaussian, wrapped Lorentzian, and surface-density forms are deferred to the supporting information.
++The ordered-film comparison below requires both a narrow mosaic core and a long tail. We therefore describe the out-of-plane mosaicity by a normalized Gaussian-plus-Lorentzian angular distribution, evaluated in wrapped form on $(-\pi,\pi]$ to conserve probability over one full angular period and avoid a discontinuity at $\Delta\theta=\pm\pi$. The Gaussian and Lorentzian widths are independent. The explicit wrapped Gaussian, wrapped Lorentzian, and surface-density forms are deferred to the supporting information.
+ 
+ Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
+ 
+--- original_unzip/2D-Manuscript-Draft/sections/refinement_workflow.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/refinement_workflow.tex	2026-05-06 04:58:22.282411479 +0000
+@@ -1,10 +1,10 @@
+ \section{Refinement workflow}
+ 
+-We use a staged refinement because geometry, mosaicity, and crystallographic intensity are strongly correlated in a fully global fit. Each stage uses the detector-space observable most sensitive to one parameter class before the next class is introduced. Table~\ref{tab:refinement_workflow} summarizes the ordered-film workflow used for Bi$_2$Se$_3$ and Bi$_2$Te$_3$.
++We use a staged refinement because geometry, mosaicity, and crystallographic intensity are strongly correlated in a fully global fit. Each stage uses the detector-space observable most sensitive to one parameter group before the next group is introduced. Table~\ref{tab:refinement_workflow} summarizes the ordered-film workflow used for Bi$_2$Se$_3$ and Bi$_2$Te$_3$.
+ 
+ \begin{table}[!ht]
+   \centering
+-  \caption{Staged refinement workflow used for the ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films. All sample images are dark-subtracted before the listed observables are formed. Diffuse-scattering and stacking-disorder refinements are deferred from the present main-text draft.}
++  \caption{Staged refinement workflow used for the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. All sample images are dark-subtracted before the listed observables are formed. Diffuse-scattering and stacking-disorder refinements are deferred from the present main-text draft.}
+   \label{tab:refinement_workflow}
+   \scriptsize
+   \setlength{\tabcolsep}{3pt}
+@@ -35,7 +35,7 @@
+     Center-aligned profile shapes, off-specular arcs, and specular tails \\
+     5 &
+     Ordered-film validation &
+-    Selected detector-space Bragg ROIs and $Q_z$ projections from fixed $Q_r$/HK trajectories &
++    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$Q_r$/HK trajectories &
+     Image scale factors and ordered structure-factor parameters &
+     Relative Bragg intensities and measured/calculated line-shape agreement \\
+     \bottomrule
+@@ -44,6 +44,6 @@
+ 
+ The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment.
+ 
+-The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/HK trajectories for comparison versus $Q_z$. The ordered-film figure is therefore not a separate illustration step; it is the closure test for the workflow. Peak positions test the calibrated geometry and sample alignment, widths and tails test the two-component mosaicity and resolution, the off-condition $HK=0$ specular peaks test the Lorentzian mosaic tail, and relative intensities test the ordered structure-factor weighting.
++The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$Q_r$/HK trajectories for comparison versus $Q_z$. The ordered-film figure is therefore the closure test for the workflow: peak positions test calibrated geometry and sample alignment, widths and tails test two-component mosaicity and resolution, off-condition $HK=0$ specular peaks test the Lorentzian mosaic tail, and relative intensities test ordered structure-factor weighting.
+ 
+ Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information.
+--- original_unzip/2D-Manuscript-Draft/sections/results_diffuse_pbi2.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/results_diffuse_pbi2.tex	2026-05-06 04:58:22.282911692 +0000
+@@ -3,8 +3,8 @@
+ 
+ % This section is intentionally deferred from the active ordered-film manuscript.
+ % Dr. Maselli's guidance was to finish the Bi2Se3/Bi2Te3 line-shape validation first.
+-% Reintroduce PbI2 only after the ordered-film Qz projection figures are complete.
++% Reintroduce PbI2 only after the ordered-film $Q_z$ projection figures are complete.
+ 
+ PbI$_2$ is the disorder-sensitive extension of the same framework, not the first proof of the method. In the present draft this material is held out of the main text so that the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ validation remains the central result.
+ 
+-When this section is reintroduced, it should appear as a short extension built around a real selected-rod figure: measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals along the same indexed $Q_r/Q_z$ rod. The figure should not be added until the corresponding PbI$_2$ data product is ready and until it no longer competes with the ordered-film demonstration.
++When this section is reintroduced, it should appear as a short extension built around a selected-rod figure: measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals projected along the same fixed-$Q_r$ trajectory and reported versus $Q_z$. The figure should not be added until the corresponding PbI$_2$ data product is ready and until it no longer competes with the ordered-film demonstration.
+--- original_unzip/2D-Manuscript-Draft/sections/results_ordered.tex	2026-05-05 23:50:48.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/sections/results_ordered.tex	2026-05-06 04:59:03.260128280 +0000
+@@ -18,9 +18,9 @@
+ 
+ Ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the model by showing that the same detector-space forward model quantitatively reproduces their measured line shapes and intensities. Together, they test the 2D-powder orientational limit for strongly oriented layered films, with sample geometry, beam phase space, mosaicity, detector resolution, and ordered structure-factor weighting included explicitly. Both materials exhibit the expected 2D-powder signatures: off-specular Bragg arcs from in-plane $HK$ families and specular-family intensity from $HK=0$ reflections.
+ 
+-For each material, the comparison is shown in two complementary views. The detector-space panel identifies the fixed-$Q_r$/HK Bragg-rod trajectories used for projection while keeping the measured area-detector intensity visible. The profile panel then gives the quantitative comparison with measured and calculated intensity plotted on the same axes as a function of $Q_z$ for the selected HK families. The detector image is the map of where the profiles are extracted. The plus and minus branches, where shown in profile panels, refer only to the two detector-side intersections of the same in-plane rod family and are not separate crystallographic families.
++For each material, the comparison is shown in two complementary views. The detector-space panel identifies the fixed-$Q_r$/HK Bragg-rod trajectories used for projection while keeping the measured area-detector intensity visible. The profile panel gives the quantitative comparison: measured and calculated intensity plotted on the same axes as a function of $Q_z$ for the selected $HK$ families. The detector image is the map of where the profiles are extracted. Each $HK$ label denotes a family of symmetry-equivalent rods with the same $Q_r$; those rods are generated and projected separately before their detector-space contributions are summed. The plus and minus branches, where shown in profile panels, refer only to the two detector-side intersections of the same in-plane rod family and are not separate crystallographic families.
+ 
+-A central result of the ordered-film comparison is the need for a Lorentzian contribution to the mosaic distribution. The clearest evidence is the $HK=0$ specular family, i.e. the $00L$ peaks. For a perfectly aligned crystallite at the nominal incidence angle $\theta_i$, only the specular condition directly selected by that incidence geometry should carry appreciable intensity. The measured detector images and projected profiles instead contain additional $HK=0$ peaks whose Bragg conditions are not directly excited by $\theta_i$. A narrow Gaussian-like mosaic core can account for the strong near-condition arc widths, but it decays too rapidly to supply enough diffracting volume for these off-condition specular peaks. The Lorentzian tail represents the small population of crystallites tilted far enough from the mean film normal to bring those reflections onto the Ewald sphere. 
++A central result of the ordered-film comparison is the need for a Lorentzian contribution to the mosaic distribution. The clearest evidence is the $HK=0$ specular family, i.e. the $00L$ peaks. For a perfectly aligned crystallite at the nominal incidence angle $\theta_i$, only the specular condition directly selected by that incidence geometry should carry appreciable intensity. The measured detector images and projected profiles instead contain additional $HK=0$ peaks whose Bragg conditions are not directly excited by $\theta_i$. A narrow Gaussian-like mosaic core can account for the strong near-condition arc widths, but it decays too rapidly to supply enough diffracting volume for these off-condition specular peaks. The Lorentzian tail represents crystallites tilted far enough from the mean film normal to bring those reflections onto the Ewald sphere.
+ 
+ A second important feature appears near the $HK=0$, $L=1$ reflection, where the measured image shows a star-like pattern together with bright intensity extending above the critical-angle region. This feature is not assigned to reflectivity. Instead, it is explained within the same diffraction picture by the finite bandwidth of the incident beam, which gives the Ewald sphere an effective thickness. Because the $HK=0$, $L=1$ Bragg sphere has comparatively small reciprocal-space radius, this finite-thickness Ewald shell illuminates a relatively large fraction of it. The result is enhanced intensity and the characteristic star-like morphology. This feature therefore provides an additional test that the forward model must treat the experimental phase space, not only the nominal central wavelength and incidence condition.
+ 
+@@ -33,13 +33,13 @@
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(a)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+-      Bi$_2$Se$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct HK labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
++      Bi$_2$Se$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
+     }}
+   \end{minipage}\hfill
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(b)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+-      Bi$_2$Te$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct HK labels. Use the same styling and label convention as Bi$_2$Se$_3$.
++      Bi$_2$Te$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use the same styling and label convention as Bi$_2$Se$_3$.
+     }}
+   \end{minipage}
+ 
+@@ -48,13 +48,13 @@
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(c)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png}{%
+-      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected HK families. Panels should use $Q_z$ on the horizontal axis and matched data/model curves.
++      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Panels should use $Q_z$ on the horizontal axis and matched measured/calculated curves.
+     }}
+   \end{minipage}\hfill
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(d)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png}{%
+-      Bi$_2$Te$_3$ measured/calculated $Q_z$ projection overlays for selected HK families. Match the Bi$_2$Se$_3$ axis, color, and labeling convention.
++      Bi$_2$Te$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Match the Bi$_2$Se$_3$ axis, color, and labeling convention.
+     }}
+   \end{minipage}
+   \caption{Ordered-film validation for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. (a,b) Detector-space views show the selected fixed-$Q_r$/HK trajectories. (c,d) The corresponding $Q_z$ profiles compare measured and calculated intensities using the same projection and integration procedure. The $HK=0$ rows probe off-condition $00L$ intensity associated with the Lorentzian mosaic tail.}
+@@ -75,8 +75,4 @@
+ 
+ Because mosaicity, beam divergence, wavelength spread, incidence-angle uncertainty, detector resolution, and finite integration width all broaden the effective scattering condition, the projected coordinate should not be interpreted as an ideal reciprocal-space cut from a single perfect crystallite. The comparison remains meaningful because the calculated image is subjected to the same projection and resolution effects before it is compared with the measured profile. The figure therefore tests the detector-space calculation as used experimentally.
+ 
+-In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular HK profiles and the $HK=0$ profiles play complementary roles. The off-specular arcs establish that the 2D-powder reciprocal-space construction and calibrated detector geometry put the selected Bragg-rod trajectories in the correct places. Their widths and asymmetries constrain the Gaussian-like mosaic core together with instrumental resolution. The $HK=0$ peaks that are not directly excited by the nominal $\theta_i$ condition then test the Lorentzian tail specifically. A model with only a rapidly decaying mosaic core could fit the main arcs while missing this weak specular-family intensity, so the $HK=0$ rows provide the visible evidence that the long-tail mosaic population is required.
+-
+-Figure~\ref{fig:hk0_l1_star} highlights a second feature that depends on the experimental phase-space treatment. The bright star-like intensity near $HK=0$, $L=1$ extends above the critical-angle region, but is not a reflectivity signal. Instead, it arises because the finite bandwidth gives the Ewald sphere an effective thickness, allowing a large portion of the small-radius $HK=0$, $L=1$ Bragg sphere to contribute simultaneously. This makes the morphology near $HK=0$, $L=1$ an additional check that the forward model must include wavelength bandwidth explicitly.
+-
+-This combined figure also closes the staged refinement workflow. Detector-space peak positions test the instrumental geometry, incidence condition, sample offsets, and goniometer misalignment. Local widths and tails test the two-component mosaic distribution and resolution terms. The off-condition $HK=0$ specular peaks test the Lorentzian mosaic contribution. Relative Bragg intensities test the ordered structure-factor description.
++In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular $HK$ profiles and the $HK=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $HK=0$ peaks test the Lorentzian tail and show why a rapidly decaying mosaic core alone is insufficient. Figure~\ref{fig:hk0_l1_star} isolates the bandwidth-sensitive $HK=0$, $L=1$ morphology, reinforcing that the forward model must include finite wavelength bandwidth explicitly. Together, peak positions test geometry and alignment; widths and tails test two-component mosaicity and resolution; off-condition $HK=0$ peaks test the Lorentzian mosaic contribution; and relative Bragg intensities test ordered structure-factor weighting.
+--- original_unzip/2D-Manuscript-Draft/2D_Supplemental/SI_failure_modes.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/2D_Supplemental/SI_failure_modes.tex	2026-05-06 04:56:20.691550084 +0000
+@@ -49,16 +49,16 @@
+   Measure a polycrystalline hBN calibrant and subtract the detector dark frame. Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center $(x_0,y_0)$.
+ 
+   \item \textbf{Sample alignment and goniometer misalignment.}
+-  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and simulated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
++  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+ 
+   \item \textbf{Mosaicity/profile refinement.}
+   With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped Gaussian-plus-Lorentzian angular distribution, not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly constrain the Gaussian core, while off-condition specular intensity constrains the Lorentzian tail. Report Lorentzian FWHM, Gaussian FWHM, and the relative Lorentzian weight.
+ 
+   \item \textbf{Ordered-structure refinement.}
+-  With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg ROIs from multiple dark-subtracted images. The corresponding prediction is the simulated detector-carried intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
++  With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg regions of interest (ROIs) from multiple dark-subtracted images. The corresponding prediction is the calculated detector intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
+ 
+   \item \textbf{Disorder refinement.}
+-  After the ordered model converges, introduce stacking-disorder parameters only through selected $Q_r/Q_z$ rod profiles. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
++  After the ordered model converges, introduce stacking-disorder parameters only through fixed-$Q_r$ rod profiles reported versus $Q_z$. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
+ \end{enumerate}
+ 
+ All detector images are dark-subtracted before fitting. Any additional preprocessing (flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be applied consistently to all images before refinement or stated explicitly if omitted. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
+@@ -231,7 +231,7 @@
+ \[
+   y_{mi}=\sum_{(u,v)\in\Omega_{mi}}\left[I_m^{\mathrm{meas}}(u,v)-b_{mi}(u,v)\right],
+ \]
+-where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the local background model. The corresponding prediction is the simulated detector-carried intensity deposited in the same ROI,
++where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the local background model. The corresponding prediction is the calculated detector intensity deposited in the same ROI,
+ \[
+   \mu_{mi}=\sum_{j\in\mathcal{R}_{mi}} w_j,
+ \]
+--- original_unzip/2D-Manuscript-Draft/2D_Supplemental/SI_implementation_outline.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/2D_Supplemental/SI_implementation_outline.tex	2026-05-06 04:59:03.260784395 +0000
+@@ -16,7 +16,7 @@
+ 
+ \subsection{Coordinate remapping and binning}
+ 
+-Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$Q_r$/HK trajectories can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
++Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$Q_r$/HK trajectories and projected $Q_z$ profiles can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
+ 
+ \subsection{Monte Carlo sampling}
+ 
+--- original_unzip/2D-Manuscript-Draft/2D_Supplemental/SI_ordered_structure_parameters.tex	2026-05-05 19:58:18.000000000 +0000
++++ manuscript_work/2D-Manuscript-Draft/2D_Supplemental/SI_ordered_structure_parameters.tex	2026-05-06 04:56:20.692169769 +0000
+@@ -2,7 +2,7 @@
+ % Include in the supporting information when the SI is assembled.
+ \begin{table}[H]
+   \centering
+-  \caption{Preliminary ordered-film structure-factor parameters used for the Bi$_2$Te$_3$ and Bi$_2$Se$_3$ simulations. Literature comparisons define the acceptable spread for the fitted lattice, coordinate, occupancy, and displacement parameters.}
++  \caption{Preliminary ordered-film structure-factor parameters used for the Bi$_2$Se$_3$ and Bi$_2$Te$_3$ calculations. Literature comparisons define the acceptable spread for the fitted lattice, coordinate, occupancy, and displacement parameters.}
+   \label{tab:ordered_sf_parameters}
+   \scriptsize
+   \setlength{\tabcolsep}{3pt}

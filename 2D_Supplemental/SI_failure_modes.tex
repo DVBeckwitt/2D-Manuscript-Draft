@@ -49,16 +49,16 @@ and provides expanded workflow notes and supplemental derivations.
   Measure a polycrystalline hBN calibrant and subtract the detector dark frame. Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi$, and beam center $(x_0,y_0)$.
 
   \item \textbf{Sample alignment and goniometer misalignment.}
-  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and simulated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\delta,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity/profile refinement.}
   With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped Gaussian-plus-Lorentzian angular distribution, not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly constrain the Gaussian core, while off-condition specular intensity constrains the Lorentzian tail. Report Lorentzian FWHM, Gaussian FWHM, and the relative Lorentzian weight.
 
   \item \textbf{Ordered-structure refinement.}
-  With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg ROIs from multiple dark-subtracted images. The corresponding prediction is the simulated detector-carried intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
+  With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg regions of interest (ROIs) from multiple dark-subtracted images. The corresponding prediction is the calculated detector intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
 
   \item \textbf{Disorder refinement.}
-  After the ordered model converges, introduce stacking-disorder parameters only through selected $Q_r/Q_z$ rod profiles. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
+  After the ordered model converges, introduce stacking-disorder parameters only through fixed-$Q_r$ rod profiles reported versus $Q_z$. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
 \end{enumerate}
 
 All detector images are dark-subtracted before fitting. Any additional preprocessing (flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be applied consistently to all images before refinement or stated explicitly if omitted. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
@@ -231,7 +231,7 @@ The detector-space forward model predicts full images, but the inverse problems 
 \[
   y_{mi}=\sum_{(u,v)\in\Omega_{mi}}\left[I_m^{\mathrm{meas}}(u,v)-b_{mi}(u,v)\right],
 \]
-where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the local background model. The corresponding prediction is the simulated detector-carried intensity deposited in the same ROI,
+where $\Omega_{mi}$ is the selected detector-space Bragg ROI and $b_{mi}$ is the local background model. The corresponding prediction is the calculated detector intensity deposited in the same ROI,
 \[
   \mu_{mi}=\sum_{j\in\mathcal{R}_{mi}} w_j,
 \]

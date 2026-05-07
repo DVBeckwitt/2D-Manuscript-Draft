@@ -1,8 +1,6 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
-
-The forward model predicts the detector image produced by an indexed set of reciprocal-lattice vectors. For each reflection, the calculation determines the allowed exit rays, maps them to detector pixels, weights them by the structure factor, beam phase distribution, transmission, and redistributes their intensity according to the mosaic distribution. The same detector-space prediction is then compared with the $Q_z$ projection profile's measured peak positions, local line shapes, and relative Bragg intensities.
-
+The detector-space forward model redistributes the structure-factor intensity of the contributing reflections over mosaic distributions. Monte Carlo samples the incident beam profile across those orientations, weights each ray by transmission, and maps the summed intensity to detector pixels. The calculated and measured images are then compared using the same peak positions, line shapes, relative Bragg intensities, and projected $Q_z$ profiles used for the ordered-film validation.
 \subsection{Diffraction Geometry}
 
 We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Elastic scattering requires
@@ -62,7 +60,7 @@ $\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the mis
 
 \subsection{Structure Factor}
 
-We enumerate integer in-plane Miller paire \(\mathrm{HK}\), construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
+We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
 \[
 \mathrm{HK}(H,K)
 =
@@ -76,7 +74,7 @@ K
 \end{bmatrix}
 \propto Q_r^2 ,
 \]
-where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) is a number labeling an in-plane reciprocal-space rod family. In powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed. Multiplicity and orientation effects therefore emerge within the forward model.
+where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
 
 For each reflection with reciprocal-lattice vector
 \[
