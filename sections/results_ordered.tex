@@ -22,9 +22,23 @@ For each material, the comparison is shown in two complementary views. The detec
 
 A central result of the ordered-film comparison is the need for a Lorentzian contribution to the mosaic distribution. The clearest evidence is the $HK=0$ specular family, i.e. the $00L$ peaks. For a perfectly aligned crystallite at the nominal incidence angle $\theta_i$, only the specular condition directly selected by that incidence geometry should carry appreciable intensity. The measured detector images and projected profiles instead contain additional $HK=0$ peaks whose Bragg conditions are not directly excited by $\theta_i$. A narrow Gaussian-like mosaic core can account for the strong near-condition arc widths, but it decays too rapidly to supply enough diffracting volume for these off-condition specular peaks. The Lorentzian tail represents crystallites tilted far enough from the mean film normal to bring those reflections onto the Ewald sphere.
 
-A second important feature appears near the $HK=0$, $L=1$ reflection, where the measured image shows a star-like pattern together with bright intensity extending above the critical-angle region. This feature is not assigned to reflectivity. Instead, it is explained within the same diffraction picture by the finite bandwidth of the incident beam, which gives the Ewald sphere an effective thickness. Because the $HK=0$, $L=1$ Bragg sphere has comparatively small reciprocal-space radius, this finite-thickness Ewald shell illuminates a relatively large fraction of it. The result is enhanced intensity and the characteristic star-like morphology. This feature therefore provides an additional test that the forward model must treat the experimental phase space, not only the nominal central wavelength and incidence condition.
+A second important feature appears near the $003$ condition, or $HK=0$, $L=3$, where the measured image shows a star-like pattern together with bright intensity extending above the critical-angle region (Fig.~\ref{fig:hk0_l3_star}). This is the observational problem that motivates the long-tail mosaic component before the full Bi$_2$Se$_3$/Bi$_2$Te$_3$ comparison is shown. A narrow mosaic core would keep most crystallites close to the nominal film normal and would strongly suppress intensity from off-condition $00L$ peaks. The measured $003$ feature instead requires a population of crystallites tilted far enough from the mean orientation to satisfy the Bragg condition, together with the finite bandwidth of the incident beam.
 
-Figure~\ref{fig:ordered_chalcogenide_validation} gathers the ordered-film validation into a single matched comparison. Panels~(a) and~(b) are the detector-space views for Bi$_2$Se$_3$ and Bi$_2$Te$_3$, respectively. These panels identify the fixed-$Q_r$/HK trajectories used for projection and show both off-specular and $HK=0$ features in the measured images. Panels~(c) and~(d) show the corresponding projected $Q_z$ profiles for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. In each profile panel, the measured and calculated intensities have been subjected to the same projection and integration procedure. 
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \orderedresultplaceholder{figures/results_ordered/00L_region_horizontal.png}{%
+      Close-up of the $HK=0$, $L=3$ detector feature. Show the star-like morphology and bright intensity above the critical-angle region in a tight crop, with minimal annotations and a clear $HK=0$, $L=3$ label.
+    }
+  \end{minipage}
+  \caption{Close-up of the $003$ detector feature, equivalently $HK=0$, $L=3$. The star-like intensity above the critical-angle region is not assigned to reflectivity. Instead, the finite incident bandwidth gives the Ewald sphere an effective thickness, which intersects the small-radius $003$ Bragg sphere over a finite volume. Combined with the long mosaic tail, that overlap redistributes intensity into the observed detector feature and motivates including the Lorentzian mosaic component before evaluating the full data/model overlays.}
+  \label{fig:hk0_l3_star}
+\end{figure}
+
+This feature is therefore explained within the same diffraction picture as the other $00L$ peaks rather than as an unrelated detector artifact. The finite incident bandwidth gives the Ewald sphere an effective thickness, while the Lorentzian mosaic tail supplies crystallites with enough out-of-plane misorientation to bring the $003$ Bragg sphere into the accepted scattering condition. The ordered-film validation below then tests whether this same phase-space treatment also reproduces the full set of off-specular and specular line shapes.
+
+Figure~\ref{fig:ordered_chalcogenide_validation} gathers the ordered-film validation into a single matched comparison. Panels~(a) and~(b) are the detector-space views for Bi$_2$Se$_3$ and Bi$_2$Te$_3$, respectively. These panels identify the fixed-$Q_r$/HK trajectories used for projection and show both off-specular and $HK=0$ features in the measured images. Panels~(c) and~(d) show the corresponding projected $Q_z$ profiles for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. In each profile panel, the measured and calculated intensities have been subjected to the same projection and integration procedure.
 
 \begin{figure}[H]
   \centering
@@ -61,18 +75,6 @@ Figure~\ref{fig:ordered_chalcogenide_validation} gathers the ordered-film valida
   \label{fig:ordered_chalcogenide_validation}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.2\linewidth}
-    \centering
-    \orderedresultplaceholder{figures/results_ordered/hk0_l3_star.png}{%
-      Close-up of the $HK=0$, $L=3$ detector feature. Show the star-like morphology and bright intensity above the critical-angle region in a tight crop, with minimal annotations and a clear $HK=0$, $L=1$ label.
-    }
-  \end{minipage}
-  \caption{Close-up of the $HK=0$, $L=1$ detector feature. The star-like intensity above the critical-angle region is not assigned to reflectivity. Instead, the finite incident-bandwidth gives the Ewald sphere an effective thickness, which illuminates a comparatively large fraction of the small-radius $HK=0$, $L=1$ Bragg sphere and produces the enhanced intensity and star-like morphology.}
-  \label{fig:hk0_l1_star}
-\end{figure}
-
 Because mosaicity, beam divergence, wavelength spread, incidence-angle uncertainty, detector resolution, and finite integration width all broaden the effective scattering condition, the projected coordinate should not be interpreted as an ideal reciprocal-space cut from a single perfect crystallite. The comparison remains meaningful because the calculated image is subjected to the same projection and resolution effects before it is compared with the measured profile. The figure therefore tests the detector-space calculation as used experimentally.
 
-In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular $HK$ and $HK=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $HK=0$ peaks test the Lorentzian tail and show why a rapidly decaying mosaic core alone is insufficient. Figure~\ref{fig:hk0_l1_star} isolates the bandwidth-sensitive $HK=0$, $L=1$ morphology, reinforcing that the forward model must include finite wavelength bandwidth explicitly. 
+In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular $HK$ and $HK=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $HK=0$ peaks test the Lorentzian tail and show why a rapidly decaying mosaic core alone is insufficient. The bandwidth-sensitive $003$ morphology isolated in Fig.~\ref{fig:hk0_l3_star} reinforces that the forward model must include finite wavelength bandwidth explicitly. 

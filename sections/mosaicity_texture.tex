@@ -5,7 +5,17 @@ Mosaicity can be understood by comparing the orientational limits introduced in 
 
 For a reflection, we work in the $(G_r,G_z)$ cross-section of reciprocal space, where $G_r$ is the in-plane radial component. Random in-plane rotations generate a ring of equivalent reciprocal-space intersections about $G_z$. Out-of-plane misorientation then gives a nonuniform line density around that ring, written as $I_0\omega(\Delta\theta)$, where $I_0$ is the reflection intensity before mosaic redistribution and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal.
 
-The ordered-film comparison below requires both a narrow mosaic core and a long tail. We therefore describe the out-of-plane mosaicity by a normalized Gaussian-plus-Lorentzian angular distribution, evaluated in wrapped form on $(-\pi,\pi]$ to conserve probability over one full angular period and avoid a discontinuity at $\Delta\theta=\pm\pi$. The Gaussian and Lorentzian widths are independent. The explicit wrapped Gaussian, wrapped Lorentzian, and surface-density forms are deferred to the supporting information.
+The ordered-film images show why a single narrow mosaic distribution is insufficient. At a fixed nominal incident angle $\theta_i$, the measured $HK=0$ specular family contains $00L$ peaks that are not directly selected by the ideal incidence condition. A narrow Gaussian-like core can reproduce the main widths of near-condition off-specular arcs, but it decays too rapidly to supply enough diffracting crystallites for weak off-condition specular intensity. The $003$ detector feature isolated in Fig.~\ref{fig:hk0_l3_star} is one visible example of this problem: the observed intensity requires crystallites whose layer normals are tilted far enough from the mean orientation to satisfy the Bragg condition, together with the finite wavelength bandwidth of the incident beam.
+
+We therefore describe the out-of-plane mosaicity by a two-component angular density,
+\begin{equation}
+  \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
+  =\eta L_{\mathrm w}(\Delta\theta;\Gamma)
+  +(1-\eta)G_{\mathrm w}(\Delta\theta;\sigma),
+  \qquad 0\le \eta \le 1 .
+  \label{eq:mosaic_two_component_maintext}
+\end{equation}
+Here $G_{\mathrm w}$ is the wrapped Gaussian core, $L_{\mathrm w}$ is the wrapped Lorentzian tail, and $\eta$ is the Lorentzian weight. The wrapped form is evaluated on $(-\pi,\pi]$ so that probability is conserved over one full angular period and the distribution has no artificial discontinuity at $\Delta\theta=\pm\pi$. The widths are independent: the Lorentzian full width at half maximum is $2\Gamma$, while the Gaussian full width at half maximum is $2\sqrt{2\ln2}\,\sigma$. For $|\Delta\theta|\gg\Gamma$, the Lorentzian component decays algebraically, $L(\Delta\theta;\Gamma)\simeq \Gamma/(\pi\Delta\theta^2)$, rather than exponentially. This long tail supplies the small but observable tilted-crystallite population needed for off-condition $00L$ peaks. The full periodic forms of $L_{\mathrm w}$ and $G_{\mathrm w}$ are given in the supporting information.
 
 Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
 
@@ -45,4 +55,12 @@ Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening ap
   \label{fig:mosaic_combo}
 \end{figure}
 
-After random in-plane rotation, the one-dimensional tilt density becomes an axially symmetric surface density on the Bragg sphere. This density supplies the ray weights used to distribute $I_0$ over mosaic-broadened exit directions. 
+After random in-plane rotation, the one-dimensional tilt density becomes an axially symmetric surface density on the Bragg sphere. Let $\vartheta$ be the polar angle on a Bragg sphere of radius $G\equiv|\mathbf G|$, and let $\vartheta_B$ be the Bragg position for the mean crystallite orientation, so that $\Delta\theta=\vartheta-\vartheta_B$. Conservation of the reflection intensity over the spherical area element $dA=2\pi G^2\sin\vartheta\,d\vartheta$ gives
+\begin{equation}
+  \rho(\vartheta)=
+  \frac{I_0}{2\pi G^2\sin\vartheta}
+  \,\omega_{\mathrm w}(\vartheta-\vartheta_B),
+  \qquad 0<\vartheta<\pi .
+  \label{eq:mosaic_rho_maintext}
+\end{equation}
+The $1/\sin\vartheta$ factor is the geometric Jacobian for revolving the one-dimensional tilt distribution into a Bragg-sphere surface density. This density supplies the weights used to distribute $I_0$ over mosaic-broadened exit directions; the two-component form in Eq.~\eqref{eq:mosaic_two_component_maintext} determines whether those weights vanish rapidly away from the nominal condition or retain the long tail needed for the observed $HK=0$ intensity.

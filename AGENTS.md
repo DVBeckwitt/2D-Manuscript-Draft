@@ -26,25 +26,39 @@ The manuscript is the priority. The software, code release, and implementation p
 6. **Explain more than feels necessary.**
    Do not compress a complicated procedure into a single sentence. If a step involves detector space, reciprocal-space trajectories, integration bands, projection, fitting, or simulation, explain it step by step. What is obvious to the author is probably not obvious to the reader.
 
+7. **Captions must teach.**
+   Captions are part of the scientific argument, not just labels. A caption should explain what the reader is seeing, how the comparison was generated, and what conclusion the reader should draw. Redundancy between the caption and main text is acceptable when it helps the reader catch the main point.
+
+8. **Show the observational problem before the model correction.**
+   When introducing a model ingredient such as long-tail mosaicity, wavelength bandwidth, projection width, structure-factor fitting, or propagated uncertainty, first show the experimental feature that makes the ingredient necessary.
+
+9. **Do not undersell the achievement.**
+   The manuscript should make clear that the model reproduces difficult measured features, not merely that a calculation was performed. If justified by the figures and error analysis, use careful refinement-quality language to describe what the method enables.
+
 ## Primary manuscript story
 
 The manuscript should follow this logic:
 
 1. Present the experimental diffraction data and the physical problem.
-2. Explain the model ingredients in physical terms: sample geometry, detector geometry, incident angle, beam position, divergence, wavelength spread, mosaicity, and resolution effects.
-3. Introduce the two-component mosaicity model, including the long Lorentzian tail, early enough that the reader understands why it is necessary.
-4. Show how measured data and calculated intensity are projected onto interpretable Q-space trajectories.
-5. Demonstrate, with direct overlays, that the model reproduces the measured line shapes for Bi2Se3 and Bi2Te3.
-6. Move computational implementation details to the supplementary material.
-7. Treat PbI2, stacking faults, and diffuse scattering as a later or separate part of the story unless specifically being drafted.
+2. Show the specific measured features that require additional model ingredients, especially unexpected reflections, long-tail mosaicity, and the 003/star feature.
+3. Explain the model ingredients in physical terms: sample geometry, detector geometry, incident angle, beam position, divergence, wavelength spread, mosaicity, bandwidth, structure factor, and resolution effects.
+4. Introduce the two-component mosaicity model, including the long Lorentzian tail, early enough that the reader understands why it is necessary.
+5. Explain the 003/star feature before using the final fit to validate it.
+6. Show how measured data and calculated intensity are projected onto interpretable Q-space trajectories.
+7. Demonstrate, with direct overlays, that the model reproduces the measured line shapes and non-obvious detector features for Bi2Se3 and Bi2Te3.
+8. Use the overlays, propagated/systematic error discussion, and structure-factor treatment to support the refinement-quality interpretation.
+9. Move computational implementation details to the supplementary material.
+10. Treat PbI2, stacking faults, and diffuse scattering as a later or separate part of the story unless specifically being drafted.
 
 ## Main result to emphasize
 
-The paper is not mainly about a software package. It is about showing that the calculation captures the experimental imperfections well enough to reproduce the measured diffraction profiles quantitatively.
+The paper is not mainly about a software package. It is about showing that a physically constrained detector-space forward model can reproduce measured diffraction features that would otherwise be difficult to interpret.
 
 The key claim should be:
 
-> By including the relevant experimental geometry, beam effects, mosaicity, and projection procedure, the model reproduces the measured line shapes in the Bi2Se3 and Bi2Te3 data.
+> When the instrumental geometry, sample orientation, beam distribution, wavelength bandwidth, detector effects, mosaicity, projection procedure, and structure factor are handled consistently, the model reproduces the measured Bi2Se3 and Bi2Te3 line shapes, relative intensities, and non-obvious detector features well enough to support refinement-quality interpretation.
+
+Use “refinement-quality” carefully. The claim must be tied to the plotted data/model overlays, the propagated/systematic error discussion, and the structure-factor/CIF/SIF treatment.
 
 Whenever possible, support this claim visually with data/calculation overlays rather than only prose.
 
@@ -72,9 +86,34 @@ A useful structure is:
 - Do not obscure the data with too many circles, markers, colored guides, or labels.
 - Avoid figures that look like artistic graphics rather than measured diffraction data.
 - Use guide lines, trajectories, or boxes only when they clarify the extraction procedure.
-- Captions must explain what the reader is seeing and how the plotted comparison was generated.
+- Captions must explain what the reader is seeing, how the plotted comparison was generated, and what conclusion the reader should draw.
+- Caption/text redundancy is allowed when it helps the reader catch the main point.
 - Figures should make the quality of the fit obvious without requiring the reader to understand the software.
 - Insert more figures than the final paper will probably keep; remove, merge, or move figures to the supplement later.
+
+## Caption strategy
+
+Captions should teach the paper. They should not merely identify panels.
+
+Each main-text figure caption should state:
+
+- what material is shown;
+- what is measured and what is calculated;
+- what solid lines, dashed lines, boxes, rods, projection bands, and symbols mean;
+- what coordinate convention is being used;
+- how projected profiles were generated;
+- what feature the reader should notice;
+- how the figure supports the manuscript claim.
+
+Do not avoid redundancy between captions and main text. Readers often inspect figures before reading the full section. Important interpretive points should appear in the caption even if they also appear in the text.
+
+Weak caption pattern:
+
+> Detector image and Qz projections for Bi2Se3.
+
+Preferred caption pattern:
+
+> Measured Bi2Se3 detector image with the fixed-in-plane reciprocal-space trajectory used for projection. Dashed bounds show the detector-space integration region. The lower panels compare measured and calculated intensity after applying the same projection to both data and model, showing that the fitted geometry and mosaic distribution reproduce the observed line shape.
 
 ## Projection and coordinate-space guidance
 
@@ -94,6 +133,8 @@ The manuscript should say, in effect:
 
 Do not overstate the exactness of the Q-space projection. Acknowledge that the effective Q interpretation is resolution-limited or compromised by mosaicity and experimental imperfections.
 
+If a plotted reciprocal-space trajectory is claimed to show where a diffraction feature should occur, it must include the relevant detector geometry and sample-orientation parameters. If the current plotted trajectory does not include sample rotation, chi, or other alignment distortions, do not explain peak offsets as physical effects. Either fix the trajectory calculation or explicitly describe the overlay as an approximate projection guide.
+
 ## Two-component mosaicity
 
 The two-component mosaicity model must be introduced early and supported with evidence immediately.
@@ -101,6 +142,8 @@ The two-component mosaicity model must be introduced early and supported with ev
 The manuscript should explain that a narrow mosaic distribution alone cannot account for all observed reflections. In particular, at some incident angles, reflections appear that would not be expected unless the sample has a long-tail mosaic component.
 
 The long Lorentzian tail is not a minor implementation detail. It is an important physical insight. It should be presented as necessary for reproducing the measured intensities and line shapes.
+
+The mosaicity equation or a compact version of it likely belongs in the main text. The Lorentzian-tail component is not just implementation machinery; it is part of the physical explanation for why reflections appear under incident-angle conditions where a narrow mosaic distribution would fail.
 
 When drafting this section:
 
@@ -110,6 +153,23 @@ When drafting this section:
 - Introduce the long-tail component as the physical resolution.
 - Show or cite a figure that demonstrates the effect.
 - Then connect the mosaicity model to the quality of the global fit.
+
+## 003 / star-feature explanation
+
+The manuscript must explicitly explain the star-like or line-like feature associated with the HK = 0, L = 3 region.
+
+Do not treat this feature as an unexplained artifact or as ordinary reflectivity. The current interpretation is that the finite Ewald-sphere thickness from wavelength bandwidth intersects the small 003 Bragg sphere in a way that, combined with mosaic extension, redistributes intensity into the observed detector feature.
+
+Required presentation:
+
+1. Show the detector-space feature clearly.
+2. Include the nearby 003 peak in the figure or crop.
+3. State that disabling the 003 reflection in the calculation removes both the direct 003 peak and the associated feature, if this remains true after verification.
+4. Add a schematic showing the Ewald sphere with bandwidth thickness, the 003 Bragg sphere, and the relevant overlap region.
+5. Explain why the feature could otherwise be mistaken for total reflectivity or an unrelated detector artifact.
+6. In the final data/model comparison, point out that the full model reproduces this feature.
+
+This explanation should appear before the final fit-quality figure, so the final comparison becomes the payoff.
 
 ## Indexing and labeling
 
@@ -128,6 +188,16 @@ If several symmetry-equivalent reflections contribute to the same powder ring or
 
 The reader should always be able to tell which crystal reflection, reflection family, or reciprocal-space radius is being discussed.
 
+For hexagonal Bi2Se3 and Bi2Te3, a compact scalar reflection-family label may be used:
+
+\[
+m = h^2 + hk + k^2 .
+\]
+
+Use this only after defining it. Avoid labels such as “HK = 1” unless the figure or caption makes clear that this is a scalar family label, not a literal pair of indices. Prefer \(m=1\), \(m=3\), or explicit \((h,k,l)\) labels when space allows.
+
+Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\), HK, HKL, branch labels, projection width, and reciprocal lattice units.
+
 ## Main text versus supplementary material
 
 ### Main text should contain
@@ -140,6 +210,11 @@ The reader should always be able to tell which crystal reflection, reflection fa
 - Data/calculation overlays demonstrating the fit quality.
 - The Bi2Se3 and Bi2Te3 results.
 - Enough experimental details to understand what data were collected and what data are shown.
+- The mosaicity equation or enough of it to explain how the two-component distribution is calculated.
+- The 003/star-feature explanation and its Ewald-sphere bandwidth schematic.
+- The propagated/systematic error introduced when detector pixels are converted to projected coordinates and fitted values.
+- The structure-factor/CIF/SIF discussion needed to justify the refinement-quality claim.
+- A statement about whether occupancies or structural parameters were fitted, including the size of any occupancy changes.
 
 ### Supplementary material should contain
 
@@ -154,6 +229,9 @@ The reader should always be able to tell which crystal reflection, reflection fa
 - Full profile arrays or large collections of peak-by-peak fits.
 - h-BN fitting procedure, if it is part of the analysis pipeline.
 - Additional incident-angle data not shown in the main text.
+- Full CIF/SIF contents if they are too long for the main text.
+- Full propagated-error derivations after the main paper explains the result and why it matters.
+- Additional validation plots supporting the 003/star-feature interpretation.
 
 The main paper may mention that computational optimizations were used for efficiency, but the detailed algorithm should be deferred to the supplement.
 
@@ -179,6 +257,7 @@ When drafting or revising:
 - Prefer physical explanations over implementation explanations.
 - Expand compressed method statements into complete explanatory paragraphs.
 - Use captions as part of the explanation, not merely as labels.
+- Repeat central interpretive points in captions and main text when redundancy improves comprehension.
 - Define all internal terminology before using it.
 - Keep the reader oriented in detector space, reciprocal space, and projected Q-space.
 - Make clear what is measured, what is calculated, and how they are compared.
@@ -191,15 +270,36 @@ When drafting or revising:
 For the next manuscript revision, focus on:
 
 1. Bi2Se3 and Bi2Te3 only.
-2. Qz projection figures with measured/calculated overlays.
-3. 2D diffraction images with clear trajectories or integration regions.
-4. A readable HK/HKL or reflection-family labeling convention.
-5. An early two-component mosaicity section with direct evidence.
-6. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
-7. A table or paragraph listing all collected incident angles.
-8. A supplementary-material outline for computational details.
+2. Readable 2D diffraction images with clear trajectories, integration regions, and material labels.
+3. Qz projection figures with measured/calculated overlays.
+4. Teaching captions that define the plotted guides, projection bounds, axes, and conclusions.
+5. A readable HK/HKL or reflection-family labeling convention, preferably using a defined scalar \(m = h^2 + hk + k^2\) when helpful.
+6. An early two-component mosaicity section with direct evidence.
+7. A 003/star-feature explanation with a detector crop and Ewald-sphere bandwidth schematic.
+8. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
+9. A structure-factor/CIF/SIF and occupancy-change discussion.
+10. A propagated/systematic error discussion in the main text.
+11. Careful refinement-quality framing tied to the overlays and uncertainty discussion.
+12. A table or paragraph listing all collected incident angles.
+13. A supplementary-material outline for computational details.
 
 Do not prioritize PbI2, stacking faults, diffuse scattering, or software release polish until the Bi2Se3 and Bi2Te3 manuscript story is clear.
+
+## Meeting-prep triage rule
+
+When preparing a short-turnaround draft for Paul, prioritize visible, low-risk improvements first unless correctness is at stake.
+
+Default order:
+
+1. Make figures readable.
+2. Rewrite captions so they teach the reader what to notice.
+3. Define labels, axes, and symbols.
+4. Add short main-text explanations for structure factor, propagated error, and refinement-quality framing.
+5. Add or revise the mosaicity-evidence figure.
+6. Add the 003/star-feature crop and schematic.
+7. Fix high-risk geometry or simulation issues last, unless the current figure would otherwise be misleading.
+
+Do not confuse ease order with scientific importance. The 003/star feature and Q-space trajectory correctness are scientifically important, but they may require more technical work than caption and figure readability fixes.
 
 ## Revision checklist for agents
 
@@ -215,6 +315,15 @@ Before returning a manuscript edit or new section, check the following:
 - Does it label reflections in a way a diffraction reader can understand?
 - Does it indicate which details belong in the supplement?
 - Does it add enough figure-driven explanation for the reader to follow the analysis?
+- Does the caption tell the reader what to notice, not just what is plotted?
+- Does the text show the data before explaining the model correction?
+- Does the mosaicity section include direct evidence for the Lorentzian tail?
+- Does the paper explain the 003/star feature before using it as model-validation evidence?
+- Are sample-orientation effects included in plotted Q-space trajectories, or is the limitation stated?
+- Are \(Q_R\), \(Q_z\), \(L\), \(m\), HK, and HKL defined before use?
+- Does the main text discuss propagated/systematic error rather than hiding it in the supplement?
+- Does the manuscript state what structural model, CIF/SIF file, occupancy changes, or structure-factor fitting were used?
+- Does the final comparison make the refinement-quality claim visible?
 
 ## Forbidden or discouraged patterns
 
@@ -230,7 +339,13 @@ Avoid these patterns unless there is a specific reason:
 - Delaying the mosaicity evidence until late in the paper.
 - Omitting figures that are needed to understand the method.
 - Moving the strongest Bi2Se3 / Bi2Te3 fit evidence out of the main paper.
+- Treating caption/main-text redundancy as a problem when the repeated point is central.
+- Presenting Q-space trajectory overlays as exact when sample-orientation effects are missing.
+- Explaining peak offsets as physical effects before ruling out incomplete geometry or projection artifacts.
+- Treating the 003/star feature as an unexplained artifact after the model can reproduce it.
+- Moving propagated/systematic error, mosaicity logic, or structure-factor/refinement evidence entirely to the supplement.
+- Using refinement-quality language without tying it to overlays, error propagation, and structure-factor treatment.
 
 ## One-sentence governing rule
 
-Write the manuscript so that a diffraction physicist can see the data, understand the reciprocal-space construction, and recognize from the plotted overlays that the model captures the experimental line shapes quantitatively.
+Write the manuscript so that a diffraction physicist can see the data, understand why each model ingredient is necessary, and recognize from the plotted overlays, uncertainty discussion, and structure-factor treatment that the model captures the experimental line shapes and non-obvious detector features quantitatively.
