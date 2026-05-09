@@ -56,7 +56,7 @@ Add relevant guidance from the meeting notes.
 
 - [ ] Added to the manuscript, figure folder, supplement, or tracker as appropriate.
 - [ ] Caption/text explains the point clearly.
-- [ ] Uses Q/Qr/Qz/HK/HKL language where appropriate.
+- [ ] Uses Q/Qr/Qz/m language where appropriate.
 - [ ] Measured data are visually clear if this is a figure task.
 - [ ] Computational implementation details are in the supplement unless needed in the main text.
 - [ ] `MANUSCRIPT_STATUS.md` updated.

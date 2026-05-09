@@ -31,11 +31,11 @@ The paper should include figures where the reader can see:
 - the Q/Qr/Qz trajectory or integration region;
 - the extracted projection plotted versus Qz;
 - the measured profile and calculated profile overlaid;
-- labels identifying the reflection family or relevant HK/HKL information.
+- labels identifying the reflection family or relevant m or explicit (h,k,l) information.
 
 ### 3. Use physics language in the main text
 
-The main manuscript should be written for a scattering/diffraction audience. Use Q, Qr, Qz, HK/HKL, Bragg rods, reciprocal-space trajectories, mosaicity, and line-shape fitting.
+The main manuscript should be written for a scattering/diffraction audience. Use Q, Qr, Qz, m, Bragg rods, reciprocal-space trajectories, mosaicity, and line-shape fitting.
 
 The 2theta-phi/caked-space method may be the better implementation, but the main text should not be organized around computational optimization. First explain the physics and the observable being compared.
 
@@ -61,9 +61,9 @@ A good figure lets the reader see the data first, then see how the model or traj
 
 ### 6. Label reflections in a physically interpretable way
 
-Internal labels such as M1/M2 are not enough unless clearly defined. HK/HKL labels or reflection-family labels will be clearer for readers.
+Internal labels such as M1/M2 are not enough unless clearly defined. m or explicit (h,k,l) labels or reflection-family labels will be clearer for readers.
 
-For hexagonal symmetry and powder rings, captions can define a representative HK family or manifold rather than listing every equivalent reflection repeatedly.
+For hexagonal symmetry and powder rings, captions can define a representative m family or manifold rather than listing every equivalent reflection repeatedly.
 
 ### 7. Discuss imperfect Q-space interpretation honestly
 
@@ -107,11 +107,11 @@ It is better to put too many figures into the draft and remove or consolidate la
 |---|---|
 | Focus next on Bi2Se3 and Bi2Te3. | Make ordered-film figures and text the immediate priority. |
 | Defer PbI2 and stacking faults. | Keep PbI2 material parked until the ordered-film story is stable. |
-| Use Q/Qr/Qz/HK/HKL language in the main text. | Do not make 2theta-phi optimization the main narrative. |
+| Use Q/Qr/Qz/m or explicit (h,k,l) language in the main text. | Do not make 2theta-phi optimization the main narrative. |
 | Put implementation details in the supplement. | Create supplement outline for caked-space, sub-pixelation, Monte Carlo, and h-BN fitting. |
 | Use more figures in the draft. | Insert rough figure versions now and refine later. |
 | Show data/model overlays directly. | Build Qz projection figures with measured and calculated curves. |
-| Develop reflection-family labels. | Replace or supplement internal M labels with HK/HKL-family labels. |
+| Develop reflection-family labels. | Replace or supplement internal M labels with m-family labels. |
 
 ## Action items
 

@@ -1,0 +1,877 @@
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/.github/ISSUE_TEMPLATE/manuscript_task.md 2D-Manuscript-Draft_UncertaintyMosaicity/.github/ISSUE_TEMPLATE/manuscript_task.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/.github/ISSUE_TEMPLATE/manuscript_task.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/.github/ISSUE_TEMPLATE/manuscript_task.md	2026-05-09 15:39:19.356737139 +0000
+@@ -56,7 +56,7 @@
+ 
+ - [ ] Added to the manuscript, figure folder, supplement, or tracker as appropriate.
+ - [ ] Caption/text explains the point clearly.
+-- [ ] Uses Q/Qr/Qz/HK/HKL language where appropriate.
++- [ ] Uses Q/Qr/Qz/m language where appropriate.
+ - [ ] Measured data are visually clear if this is a figure task.
+ - [ ] Computational implementation details are in the supplement unless needed in the main text.
+ - [ ] `MANUSCRIPT_STATUS.md` updated.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_failure_modes.tex 2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_failure_modes.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_failure_modes.tex	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_failure_modes.tex	2026-05-09 15:38:42.059475056 +0000
+@@ -253,18 +253,18 @@
+ \]
+ A branch selector may be applied after this reciprocal-space mask so that one branch is used for the default fit and the symmetry-related branch is retained for validation.
+ 
+-Let $S_{ij}$ and $N_{ij}$ denote the caked signal and normalization fields, and let $m_{ij}$ denote the selected-rod mask. The measured profile is
++Let $S_{ij}$ and $N_{ij}$ denote the caked signal and normalization fields, and let $w_{ij}$ denote the selected-rod mask. The measured profile is
+ \[
+-  I_j^{\mathrm{rod}}=\frac{\sum_i m_{ij}S_{ij}}{\sum_i m_{ij}N_{ij}},
++  I_j^{\mathrm{rod}}=\frac{\sum_i w_{ij}S_{ij}}{\sum_i w_{ij}N_{ij}},
+ \]
+ for bins with positive selected normalization. Signal and normalization are therefore summed before division. This prevents the final trace from becoming a sum of already normalized pixels and keeps the observable tied to the detector-space calibration.
+ 
+ The model profile is evaluated along the same selected branch. In compact notation,
+ \[
+   M_j(\boldsymbol{\theta}_{\mathrm{dis}})
+-  =B(x_j)+s\,[K*I_{hk}^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
++  =B(x_j)+s\,[K*I_m^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
+ \]
+-where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_{hk}^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
++where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_m^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
+ 
+ The disorder objective is evaluated only over the retained profile bins,
+ \[
+@@ -345,12 +345,12 @@
+ \\
+ We now add the phase of each layer to the form factor from equation \ref{eq:FF}.
+ \begin{equation}
+-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(HKL) \ell}
++    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(h,k,\ell) \ell}
+ \end{equation}
+ Writing $e^{i \phi \ell} = \prod_{j=1}^\ell e^{i \phi}$
+ 
+ \begin{equation}
+-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(HKL) \ell}
++    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(h,k,\ell) \ell}
+ \end{equation}
+ 
+ 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_implementation_outline.tex 2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_implementation_outline.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_implementation_outline.tex	2026-05-09 15:22:48.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/2D_Supplemental/SI_implementation_outline.tex	2026-05-09 15:37:16.918185939 +0000
+@@ -16,7 +16,7 @@
+ 
+ \subsection{Coordinate remapping and binning}
+ 
+-Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$Q_r$/HK trajectories and projected $Q_z$ profiles can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
++Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$m$ trajectories and projected $Q_z$ profiles can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
+ 
+ \subsection{Monte Carlo sampling}
+ 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/AGENTS.md 2D-Manuscript-Draft_UncertaintyMosaicity/AGENTS.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/AGENTS.md	2026-05-09 15:21:21.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/AGENTS.md	2026-05-09 15:38:12.665739556 +0000
+@@ -15,7 +15,7 @@
+    The central result is that the model quantitatively reproduces the measured diffraction line shapes for **Bi2Se3** and **Bi2Te3**. This success must be visible in the main paper. Do not hide it inside two-dimensional detector images where the reader cannot assess the fit.
+ 
+ 3. **Write for a scattering / diffraction audience.**
+-   Use the language readers expect: **Q**, **QR**, **Qz**, **HK/HKL indices**, **Bragg rods**, **Bragg positions**, **reciprocal space**, **incident angle**, **mosaicity**, **resolution**, and **line-shape fitting**. Avoid leading the main text with software-native language such as “caked space,” internal branch labels, configuration scripts, lookup tables, or optimization terminology.
++   Use the language readers expect: **Q**, **QR**, **Qz**, **m-indexed reflection families**, explicit **(h,k,l)** labels when needed, **Bragg rods**, **Bragg positions**, **reciprocal space**, **incident angle**, **mosaicity**, **resolution**, and **line-shape fitting**. Avoid leading the main text with software-native language such as “caked space,” internal branch labels, configuration scripts, lookup tables, or optimization terminology.
+ 
+ 4. **Physics first; optimization later.**
+    The main text should explain the physical model and the experimental comparison. Computational optimizations belong in the supplementary material unless they are absolutely necessary to understand the physics.
+@@ -72,7 +72,7 @@
+ 2. Q / QR / Qz trajectories or integration regions marked on the image.
+ 3. Extracted projections plotted versus **Qz**.
+ 4. Measured intensity and calculated intensity overlaid on the same axes.
+-5. Labels that identify the relevant reflection family, HK/HKL index, QR value, branch, and/or incident angle.
++5. Labels that identify the relevant reflection family, scalar m label, QR value, branch, and/or incident angle.
+ 
+ A useful structure is:
+ 
+@@ -119,7 +119,7 @@
+ 
+ The main text should present projections in a way that is natural for diffraction readers.
+ 
+-Use **Qz** as the main horizontal or projected coordinate for line profiles when that is the physical interpretation. Use **QR** or HK/HKL reflection-family labels to identify which reciprocal-space trajectory is being sampled.
++Use **Qz** as the main horizontal or projected coordinate for line profiles when that is the physical interpretation. Use **QR** or the scalar **m** reflection-family label to identify which reciprocal-space trajectory is being sampled.
+ 
+ It is acceptable that the implementation uses 2theta–phi coordinates or a “caked” representation internally. However, do not make 2theta–phi optimization the organizing principle of the main manuscript.
+ 
+@@ -156,7 +156,7 @@
+ 
+ ## 003 / star-feature explanation
+ 
+-The manuscript must explicitly explain the star-like or line-like feature associated with the HK = 0, L = 3 region.
++The manuscript must explicitly explain the star-like or line-like feature associated with the m = 0, L = 3 region.
+ 
+ Do not treat this feature as an unexplained artifact or as ordinary reflectivity. The current interpretation is that the finite Ewald-sphere thickness from wavelength bandwidth intersects the small 003 Bragg sphere in a way that, combined with mosaic extension, redistributes intensity into the observed detector feature.
+ 
+@@ -179,24 +179,24 @@
+ 
+ Preferred labels include:
+ 
+-- HK or HKL indices.
++- The scalar in-plane family label m, with explicit (h,k,l) labels where needed.
+ - Reflection-family labels.
+ - Equivalent-ring or powder-manifold labels, with the convention defined in the caption or text.
+ - QR values as secondary numerical information.
+ 
+-If several symmetry-equivalent reflections contribute to the same powder ring or reciprocal-space manifold, define a compact convention. For example, one label may represent a family of equivalent HK reflections, but the text or caption must state that convention explicitly.
++If several symmetry-equivalent reflections contribute to the same powder ring or reciprocal-space manifold, define a compact convention. For example, one m label may represent a family of equivalent in-plane reflections, but the text or caption must state that convention explicitly.
+ 
+ The reader should always be able to tell which crystal reflection, reflection family, or reciprocal-space radius is being discussed.
+ 
+-For hexagonal Bi2Se3 and Bi2Te3, a compact scalar reflection-family label may be used:
++For hexagonal Bi2Se3 and Bi2Te3, use the compact scalar reflection-family label:
+ 
+ \[
+-m = h^2 + hk + k^2 .
++m = h^2 + h k + k^2 .
+ \]
+ 
+-Use this only after defining it. Avoid labels such as “HK = 1” unless the figure or caption makes clear that this is a scalar family label, not a literal pair of indices. Prefer \(m=1\), \(m=3\), or explicit \((h,k,l)\) labels when space allows.
++Use this only after defining it. Avoid pair-style scalar labels; use \(m=1\), \(m=3\), or explicit \((h,k,l)\) labels when space allows.
+ 
+-Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\), HK, HKL, branch labels, projection width, and reciprocal lattice units.
++Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\), explicit \((h,k,l)\) labels, branch labels, projection width, and reciprocal lattice units.
+ 
+ ## Main text versus supplementary material
+ 
+@@ -273,7 +273,7 @@
+ 2. Readable 2D diffraction images with clear trajectories, integration regions, and material labels.
+ 3. Qz projection figures with measured/calculated overlays.
+ 4. Teaching captions that define the plotted guides, projection bounds, axes, and conclusions.
+-5. A readable HK/HKL or reflection-family labeling convention, preferably using a defined scalar \(m = h^2 + hk + k^2\) when helpful.
++5. A readable m-indexed reflection-family labeling convention, using a defined scalar \(m = h^2 + h k + k^2\) for hexagonal films.
+ 6. An early two-component mosaicity section with direct evidence.
+ 7. A 003/star-feature explanation with a detector crop and Ewald-sphere bandwidth schematic.
+ 8. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
+@@ -307,7 +307,7 @@
+ 
+ - Does this text put the paper before the software?
+ - Does it explain the physics before the optimization?
+-- Does it use Q, QR, Qz, HK/HKL, and reciprocal-space language where appropriate?
++- Does it use Q, QR, Qz, m-indexed reflection-family labels, and reciprocal-space language where appropriate?
+ - Does it avoid unnecessary software-native terminology in the main text?
+ - Does it make the measured data and calculated fit comparison clear?
+ - Does it preserve the central claim that the model quantitatively reproduces the line shapes?
+@@ -320,7 +320,7 @@
+ - Does the mosaicity section include direct evidence for the Lorentzian tail?
+ - Does the paper explain the 003/star feature before using it as model-validation evidence?
+ - Are sample-orientation effects included in plotted Q-space trajectories, or is the limitation stated?
+-- Are \(Q_R\), \(Q_z\), \(L\), \(m\), HK, and HKL defined before use?
++- Are \(Q_R\), \(Q_z\), \(L\), \(m\), and any explicit \((h,k,l)\) labels defined before use?
+ - Does the main text discuss propagated/systematic error rather than hiding it in the supplement?
+ - Does the manuscript state what structural model, CIF/SIF file, occupancy changes, or structure-factor fitting were used?
+ - Does the final comparison make the refinement-quality claim visible?
+@@ -333,7 +333,7 @@
+ - Leading the main text with 2theta–phi implementation details.
+ - Calling internal coordinates or labels self-explanatory.
+ - Showing plots that obscure the measured data.
+-- Using QR numbers without connecting them to HK/HKL or reflection families.
++- Using QR numbers without connecting them to m or a defined reflection family.
+ - Compressing multi-step analysis procedures into one sentence.
+ - Presenting optimization choices as if they were the physics.
+ - Delaying the mosaicity evidence until late in the paper.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_MASELLI.md 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_MASELLI.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_MASELLI.md	2026-05-09 15:21:21.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_MASELLI.md	2026-05-09 15:37:54.280115153 +0000
+@@ -4,7 +4,7 @@
+ 
+ ## Guiding basis
+ 
+-The revision follows `AGENTS.md` and the advisor meeting feedback: paper first, software second; show the Bi2Se3/Bi2Te3 success clearly; write in Q/QR/Qz/HK language for a diffraction audience; move implementation and optimization details to the supplement; and use figures to demonstrate measured/calculated agreement.
++The revision follows `AGENTS.md` and the advisor meeting feedback: paper first, software second; show the Bi2Se3/Bi2Te3 success clearly; write in Q/QR/Qz/m language for a diffraction audience; move implementation and optimization details to the supplement; and use figures to demonstrate measured/calculated agreement.
+ 
+ ## Global manuscript changes
+ 
+@@ -61,7 +61,7 @@
+   - Bi2Te3 measured/calculated Qz projection overlays.
+ - Moved the projection caveat closer to the figure-insertion location.
+ - Kept the caveat that Qz profiles are resolution-broadened, not ideal reciprocal-space cuts.
+-- Kept the requirement that HK/HKL reflection-family labels must be used or clearly tied to any internal labels.
++- Kept the requirement that m-indexed reflection-family labels must be used or clearly tied to any internal labels.
+ - Moved the ordered-film structure-parameter table to `2D_Supplemental/SI_ordered_structure_parameters.tex` and replaced it in the main text with a short supporting-information reference.
+ - Kept the main-text emphasis on the measured/calculated line-shape overlays.
+ 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_M_INDEXING.md 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_M_INDEXING.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_M_INDEXING.md	1970-01-01 00:00:00.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_M_INDEXING.md	2026-05-09 15:42:41.270044475 +0000
+@@ -0,0 +1,65 @@
++# Changes: scalar m reflection-family notation
++
++## Purpose
++
++This revision replaces the previous in-plane family label with the scalar label `m`. The intent is to keep the paper readable for a diffraction audience while avoiding the ambiguity of using a two-index-looking label as if it were also a scalar powder-ring or rod-family label.
++
++## Main-text changes
++
++- Added a formal definition of the scalar in-plane family label in `sections/modelling_methods.tex`:
++  - `m(H,K) = [H K] M_parallel [H K]^T proportional to Q_r^2`.
++  - For the hexagonal bismuth chalcogenide setting, `m` is proportional to `H^2 + H K + K^2`.
++  - All integer `(H,K)` rods with the same `m` are still generated and projected individually before summation.
++- Added `\label{sec:structure_factor}` so the results section can point to the definition of `m`.
++- Replaced visible profile/trajectory language with `m` language throughout the active manuscript.
++- Replaced the specular-family label with `m=0`.
++- Replaced the 003/star-feature label with `m=0, L=3`.
++- Renamed the internal figure label from the old zero-family name to `fig:m0_l3_star`.
++
++## Section-specific edits
++
++### `sections/modelling_methods.tex`
++
++- Changed the projection-uncertainty subsection to describe `Q_z` profiles through selected `m`-indexed trajectories.
++- Replaced the previous scalar family definition with `m(H,K)`.
++- Clarified that `m` is a family label, not an individual crystallographic reflection.
++
++### `sections/mosaicity_texture.tex`
++
++- Replaced in-plane ring/rod-family language with `m`-indexed language.
++- Replaced all zero-family mosaic-tail discussion with `m=0`.
++- Updated the mosaicity figure caption so off-condition specular peaks are described as `m=0` peaks.
++
++### `sections/refinement_workflow.tex`
++
++- Replaced mixed fixed-radius/family-notation phrasing with `fixed-m trajectories`.
++- Rephrased the deferred stacking-disorder sentence as fitting `m`-indexed rods as a function of `L`.
++
++### `sections/results_ordered.tex`
++
++- Replaced the ordered-film validation language with `m` terminology:
++  - in-plane `m` families,
++  - fixed-`m` Bragg-rod trajectories,
++  - selected `m` families,
++  - `m=0` specular-family reflections,
++  - `m=0, L=3` for the 003 feature.
++- Added an explicit reminder in the results opening that `m` is defined in the structure-factor section and that `m=0` denotes the specular `00L` family.
++- Updated figure placeholders/captions to request direct `m` labels.
++
++### `sections/discussion_conclusion.tex`
++
++- Replaced the summary language with fixed-`m` trajectories and `m=0` features.
++
++## Supporting-information and figure-documentation edits
++
++- Updated `2D_Supplemental/SI_implementation_outline.tex` to describe curved fixed-`m` trajectories.
++- Updated `2D_Supplemental/SI_failure_modes.tex` so the selected-rod analytical intensity uses `I_m`; the selected-rod mask was renamed from `m_ij` to `w_ij` to avoid conflict with the new family label.
++- Updated mosaic schematic labels to `G_{m,L}` and `G_{r,m}`.
++- Updated `figures/FIGURE_STATUS.md`, `MANUSCRIPT_STATUS.md`, `TODO.md`, and the manuscript-facing documentation so future figure tasks ask for `m` labels.
++- Updated `AGENTS.md` so future agents use `m` as the preferred compact in-plane family label, with explicit `(h,k,l)` labels only where needed.
++
++## Validation
++
++- Recompiled `main.tex` successfully with `pdflatex`.
++- Rendered the revised PDF pages for layout verification.
++- Checked active manuscript/source files to ensure manuscript-facing in-plane-family label language uses `m`. Bibliographic author names and excluded historical patch/backup artifacts were not treated as manuscript terminology.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_UNCERTAINTY_MOSAICITY.md 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_UNCERTAINTY_MOSAICITY.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_UNCERTAINTY_MOSAICITY.md	2026-05-09 15:22:49.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/CHANGES_UNCERTAINTY_MOSAICITY.md	2026-05-09 15:37:54.279848833 +0000
+@@ -2,14 +2,14 @@
+ 
+ ## Purpose
+ 
+-This revision adds the thesis-derived uncertainty discussion without adding new figures, and it cleans the mosaicity section so the main text follows the manuscript philosophy in `AGENTS.md`: physics first, Q/Qr/Qz/HK language in the main text, implementation details in the supporting information, and Bi2Se3/Bi2Te3 line-shape validation as the central story.
++This revision adds the thesis-derived uncertainty discussion without adding new figures, and it cleans the mosaicity section so the main text follows the manuscript philosophy in `AGENTS.md`: physics first, Q/Qr/Qz/m language in the main text, implementation details in the supporting information, and Bi2Se3/Bi2Te3 line-shape validation as the central story.
+ 
+ ## Main-text changes
+ 
+ ### `sections/modelling_methods.tex`
+ 
+ - Added a compact subsection, `Projection and transformed-coordinate uncertainty`.
+-- Framed the detector image as the primary measured object and the Qz/HK profiles as detector-derived projections.
++- Framed the detector image as the primary measured object and the Qz/m-indexed profiles as detector-derived projections.
+ - Added the leading detector-pixel footprint terms for angular coordinate uncertainty:
+   - radial angular uncertainty, `sigma_{2theta,pix}`;
+   - azimuthal uncertainty, `sigma_{phi,pix}`.
+@@ -21,7 +21,7 @@
+ 
+ - Rewrote the mosaicity section into manuscript-style prose.
+ - Opened with the physical role of mosaicity rather than implementation details.
+-- Stated the observational problem before introducing the model: off-condition HK=0 / 00L intensity cannot be explained by a narrow mosaic core alone.
++- Stated the observational problem before introducing the model: off-condition m=0 / 00L intensity cannot be explained by a narrow mosaic core alone.
+ - Kept the compact two-component mosaicity equation in the main text because it is part of the physical model.
+ - Explained the Gaussian core and Lorentzian tail in terms of what each contributes to measured detector features.
+ - Removed the main-text Bragg-sphere surface-density derivation from this section; that detail now belongs in the supporting information.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/MANUSCRIPT_STATUS.md 2D-Manuscript-Draft_UncertaintyMosaicity/MANUSCRIPT_STATUS.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/MANUSCRIPT_STATUS.md	2026-05-09 15:21:21.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/MANUSCRIPT_STATUS.md	2026-05-09 15:37:54.278978352 +0000
+@@ -27,7 +27,7 @@
+ |---|---|---|
+ | `main.tex` scaffold | DONE | Inputs the section files. |
+ | `sections/introduction.tex` | IN PROGRESS | Contains 2D-powder motivation and orientational-state framing. |
+-| `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/HK/HKL language. |
++| `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/m language. |
+ | `sections/mosaicity_texture.tex` | IN PROGRESS | Needs earlier evidence for two-component mosaicity and Lorentzian tails. |
+ | `sections/refinement_workflow.tex` | IN PROGRESS | Should explain staged refinement without becoming an optimization narrative. |
+ | `sections/results_ordered.tex` | IN PROGRESS | Immediate target. Needs clear Bi2Se3/Bi2Te3 data/model result figures. |
+@@ -50,7 +50,7 @@
+ | Create Bi2Te3 detector/projection figure | TODO | Main-text figure | Use the same logic as Bi2Se3. |
+ | Add Bi2Se3 Qz projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity vs Qz. |
+ | Add Bi2Te3 Qz projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity vs Qz. |
+-| Define reflection-family labels | TODO | Figure/caption convention | Prefer HK/HKL or reflection-family labels over internal M labels. |
++| Define reflection-family labels | TODO | Figure/caption convention | Prefer m or explicit (h,k,l) reflection-family labels over internal M labels. |
+ | Add early two-component mosaicity evidence | TODO | Text + figure | Show why a Lorentzian tail is necessary. |
+ | Write Q-space/projection caveat | TODO | Methods/results paragraph | Explain imperfect Q interpretation and why the model comparison remains valid. |
+ | Add experimental incident-angle table | TODO | Methods table | List all collected angles, not just shown angles. |
+@@ -103,7 +103,7 @@
+ - [ ] Bi2Se3 measured/calculated Qz projection overlays.
+ - [ ] Bi2Te3 measured detector image with Q/Qr/Qz trajectory or integration-region annotation.
+ - [ ] Bi2Te3 measured/calculated Qz projection overlays.
+-- [ ] Proposed HK/HKL or reflection-family label convention.
++- [ ] Proposed m or explicit (h,k,l) reflection-family label convention.
+ - [ ] Paragraph explaining imperfect Q-space/projection interpretation.
+ - [ ] Paragraph and figure concept for two-component mosaicity / Lorentzian-tail evidence.
+ - [ ] Table or list of all incident angles collected for Bi2Se3 and Bi2Te3.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/TODO.md 2D-Manuscript-Draft_UncertaintyMosaicity/TODO.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/TODO.md	2026-05-09 15:21:21.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/TODO.md	2026-05-09 15:37:54.279514722 +0000
+@@ -9,7 +9,7 @@
+ - [ ] Make Bi2Te3 detector/projection figure with measured data visible.
+ - [ ] Make Bi2Te3 Qz projection overlays with measured/calculated curves.
+ - [ ] Add or draft two-component mosaicity / Lorentzian-tail evidence.
+-- [ ] Define HK/HKL or reflection-family labeling convention.
++- [ ] Define m or explicit (h,k,l) reflection-family labeling convention.
+ - [ ] Add Q-space/projection caveat paragraph.
+ - [ ] Add incident-angle table for Bi2Se3 and Bi2Te3.
+ - [ ] Start supplement outline for implementation details.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/BLAST_CHECK_CONCISION.md 2D-Manuscript-Draft_UncertaintyMosaicity/docs/BLAST_CHECK_CONCISION.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/BLAST_CHECK_CONCISION.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/docs/BLAST_CHECK_CONCISION.md	2026-05-09 15:37:54.281658699 +0000
+@@ -72,7 +72,7 @@
+ ```latex
+ Here we present a forward model for WAXS from 2D powders that carries the calculation from crystallographic structure and film geometry to the measured area-detector image. The model includes detector geometry, grazing-incidence propagation, finite beam phase space, mosaicity, and structure-factor intensity.
+ 
+-The main result is demonstrated on ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. For these films, the same model reproduces detector positions, local line shapes, and projected intensity profiles along indexed $Q_r$/HK trajectories plotted versus $Q_z$.
++The main result is demonstrated on ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. For these films, the same model reproduces detector positions, local line shapes, and projected intensity profiles along indexed $Q_r$/m trajectories plotted versus $Q_z$.
+ 
+ Applications to PbI$_2$ diffuse scattering and stacking disorder use the same framework, but are deferred until the ordered-film validation is shown clearly.
+ ```
+@@ -191,7 +191,7 @@
+ ```latex
+ The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment.
+ 
+-The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/HK trajectories for comparison versus $Q_z$.
++The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/m trajectories for comparison versus $Q_z$.
+ ```
+ 
+ Then keep one sentence:
+@@ -225,7 +225,7 @@
+ Replace with result-forward language:
+ 
+ ```latex
+-Figures~X and~Y show the ordered-film validation for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. For each material, the detector image identifies the indexed $Q_r$/HK trajectories used for projection, and the companion panels compare measured and calculated intensity along those trajectories as functions of $Q_z$.
++Figures~X and~Y show the ordered-film validation for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. For each material, the detector image identifies the indexed $Q_r$/m trajectories used for projection, and the companion panels compare measured and calculated intensity along those trajectories as functions of $Q_z$.
+ ```
+ 
+ ### Change 2: keep the projection caveat, but move it closer to the first overlay figure or into the caption
+@@ -292,7 +292,7 @@
+ Suggested replacement:
+ 
+ ```latex
+-The ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films provide the central validation of the model. A single forward calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, and ordered structure-factor intensity, then compares measured and calculated profiles along the same indexed $Q_r$/HK trajectories. The key result is the direct $Q_z$ line-shape agreement, not merely visual similarity between two detector images.
++The ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films provide the central validation of the model. A single forward calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, and ordered structure-factor intensity, then compares measured and calculated profiles along the same indexed $Q_r$/m trajectories. The key result is the direct $Q_z$ line-shape agreement, not merely visual similarity between two detector images.
+ 
+ These profiles are not ideal reciprocal-space cuts. Mosaicity, divergence, wavelength spread, incidence-angle uncertainty, and detector sampling all broaden the effective meaning of $Q_z$. The useful point is that the same broadening is present in the calculated image before projection, so the overlay tests the complete experimental model rather than an idealized structure factor alone.
+ 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/MASELLI_REVISION_PLAN.md 2D-Manuscript-Draft_UncertaintyMosaicity/docs/MASELLI_REVISION_PLAN.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/MASELLI_REVISION_PLAN.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/docs/MASELLI_REVISION_PLAN.md	2026-05-09 15:37:54.282543747 +0000
+@@ -12,7 +12,7 @@
+ 
+ 2. `sections/introduction.tex`
+    - Rewrote the final contribution paragraph so the paper's stated validation target is Bi2Se3 and Bi2Te3, not PbI2.
+-   - Reframed the central result as quantitative line-shape agreement along selected Qr/HK trajectories plotted versus Qz.
++   - Reframed the central result as quantitative line-shape agreement along selected Qr/m trajectories plotted versus Qz.
+    - Deferred diffuse-scattering and stacking-disorder applications to later work in this draft.
+ 
+ 3. `sections/mosaicity_texture.tex`
+@@ -32,7 +32,7 @@
+      - Bi2Se3 measured/calculated Qz projection overlays.
+      - Bi2Te3 measured detector image with Q/Qr/Qz trajectories or integration bands.
+      - Bi2Te3 measured/calculated Qz projection overlays.
+-   - Added text explaining that the projection should be reported versus Qz and labeled by HK/HKL or reflection family, with Qr values used as secondary information.
++   - Added text explaining that the projection should be reported versus Qz and labeled by m or explicit (h,k,l) or reflection family, with Qr values used as secondary information.
+    - Added the required caveat that the projected Qz coordinate is resolution-limited by mosaicity, beam divergence, wavelength spread, incident-angle uncertainty, and detector sampling, while emphasizing that the same effects are applied to the calculation.
+ 
+ 6. `sections/discussion_conclusion.tex`
+@@ -54,7 +54,7 @@
+ For each material, make a detector image figure with these panels or visual elements:
+ 
+ - measured detector or transformed detector image;
+-- selected fixed-Qr or HK-family trajectories drawn lightly;
++- selected fixed-Qr or m-family trajectories drawn lightly;
+ - optional integration bands if they clarify the extraction;
+ - minimal Bragg-position markers, because large circles obscure the data;
+ - clear incident angle label;
+@@ -66,9 +66,9 @@
+ - y-axis: intensity, normalized consistently within the figure;
+ - measured data and calculation on the same axes;
+ - one panel per selected reflection family or trajectory;
+-- labels using HK/HKL or reflection-family notation;
++- labels using m or explicit (h,k,l) or reflection-family notation;
+ - plus/minus branch labels only if the caption defines them physically;
+-- no internal-only labels such as M1/M2 unless mapped explicitly to HK-family labels.
++- no internal-only labels such as M1/M2 unless mapped explicitly to m-family labels.
+ 
+ ### 2. Add an early Lorentzian-tail evidence figure
+ 
+@@ -88,7 +88,7 @@
+ 
+ Use language like:
+ 
+-> For hexagonal films, each plotted in-plane family label denotes the set of symmetry-equivalent HK reflections with the same in-plane reciprocal-space radius. The quoted Qr value is the corresponding radial magnitude and is used only as secondary numerical information. Branch labels distinguish the two detector-side intersections of the same reciprocal-space family at a given incident angle.
++> For hexagonal films, each plotted in-plane family label denotes the set of symmetry-equivalent in-plane reflections with the same in-plane reciprocal-space radius. The quoted Qr value is the corresponding radial magnitude and is used only as secondary numerical information. Branch labels distinguish the two detector-side intersections of the same reciprocal-space family at a given incident angle.
+ 
+ Then apply this convention consistently in every figure label and caption.
+ 
+@@ -108,7 +108,7 @@
+ 
+ ### 5. Move implementation details to the supplement
+ 
+-Keep the main paper in Q, Qr, Qz, HK/HKL, Bragg rod, incident angle, mosaicity, and line-shape language.
++Keep the main paper in Q, Qr, Qz, m, Bragg rod, incident angle, mosaicity, and line-shape language.
+ 
+ Move the following into the supplementary material:
+ 
+@@ -137,7 +137,7 @@
+ - Do not lead with software implementation.
+ - Do not hide the success in dense detector-summary graphics.
+ - Show the data and calculated line shapes directly.
+-- Use diffraction language first: Q, Qr, Qz, HK/HKL, Bragg rods, incident angle, mosaicity, resolution.
++- Use diffraction language first: Q, Qr, Qz, m, Bragg rods, incident angle, mosaicity, resolution.
+ - Use more figures during drafting than will survive in the final paper.
+ - Make measured data visually prominent.
+ - Use the supplement for optimization details.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/NEXT_MEETING_PREP.md 2D-Manuscript-Draft_UncertaintyMosaicity/docs/NEXT_MEETING_PREP.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/NEXT_MEETING_PREP.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/docs/NEXT_MEETING_PREP.md	2026-05-09 15:37:54.282973444 +0000
+@@ -32,7 +32,7 @@
+ ## Talking points
+ 
+ 1. The ordered-film fits already work; the draft now needs to show them clearly.
+-2. The main text will use Q/Qr/Qz/HK/HKL language.
++2. The main text will use Q/Qr/Qz/m or explicit (h,k,l) language.
+ 3. The 2theta-phi implementation will be explained in the supplement.
+ 4. The Lorentzian mosaic tail will be introduced earlier with evidence.
+ 5. PbI2 is intentionally parked until the ordered-film story is stable.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/meeting-notes/2026-04-30-maselli-meeting.md 2D-Manuscript-Draft_UncertaintyMosaicity/docs/meeting-notes/2026-04-30-maselli-meeting.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/docs/meeting-notes/2026-04-30-maselli-meeting.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/docs/meeting-notes/2026-04-30-maselli-meeting.md	2026-05-09 15:37:54.283531595 +0000
+@@ -31,11 +31,11 @@
+ - the Q/Qr/Qz trajectory or integration region;
+ - the extracted projection plotted versus Qz;
+ - the measured profile and calculated profile overlaid;
+-- labels identifying the reflection family or relevant HK/HKL information.
++- labels identifying the reflection family or relevant m or explicit (h,k,l) information.
+ 
+ ### 3. Use physics language in the main text
+ 
+-The main manuscript should be written for a scattering/diffraction audience. Use Q, Qr, Qz, HK/HKL, Bragg rods, reciprocal-space trajectories, mosaicity, and line-shape fitting.
++The main manuscript should be written for a scattering/diffraction audience. Use Q, Qr, Qz, m, Bragg rods, reciprocal-space trajectories, mosaicity, and line-shape fitting.
+ 
+ The 2theta-phi/caked-space method may be the better implementation, but the main text should not be organized around computational optimization. First explain the physics and the observable being compared.
+ 
+@@ -61,9 +61,9 @@
+ 
+ ### 6. Label reflections in a physically interpretable way
+ 
+-Internal labels such as M1/M2 are not enough unless clearly defined. HK/HKL labels or reflection-family labels will be clearer for readers.
++Internal labels such as M1/M2 are not enough unless clearly defined. m or explicit (h,k,l) labels or reflection-family labels will be clearer for readers.
+ 
+-For hexagonal symmetry and powder rings, captions can define a representative HK family or manifold rather than listing every equivalent reflection repeatedly.
++For hexagonal symmetry and powder rings, captions can define a representative m family or manifold rather than listing every equivalent reflection repeatedly.
+ 
+ ### 7. Discuss imperfect Q-space interpretation honestly
+ 
+@@ -107,11 +107,11 @@
+ |---|---|
+ | Focus next on Bi2Se3 and Bi2Te3. | Make ordered-film figures and text the immediate priority. |
+ | Defer PbI2 and stacking faults. | Keep PbI2 material parked until the ordered-film story is stable. |
+-| Use Q/Qr/Qz/HK/HKL language in the main text. | Do not make 2theta-phi optimization the main narrative. |
++| Use Q/Qr/Qz/m or explicit (h,k,l) language in the main text. | Do not make 2theta-phi optimization the main narrative. |
+ | Put implementation details in the supplement. | Create supplement outline for caked-space, sub-pixelation, Monte Carlo, and h-BN fitting. |
+ | Use more figures in the draft. | Insert rough figure versions now and refine later. |
+ | Show data/model overlays directly. | Build Qz projection figures with measured and calculated curves. |
+-| Develop reflection-family labels. | Replace or supplement internal M labels with HK/HKL-family labels. |
++| Develop reflection-family labels. | Replace or supplement internal M labels with m-family labels. |
+ 
+ ## Action items
+ 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/FIGURE_STATUS.md 2D-Manuscript-Draft_UncertaintyMosaicity/figures/FIGURE_STATUS.md
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/FIGURE_STATUS.md	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/figures/FIGURE_STATUS.md	2026-05-09 15:37:54.278521936 +0000
+@@ -19,7 +19,7 @@
+ 
+ The ordered-film result should be figure-driven. The reader should be able to see that the model fits the measured data without needing to understand the software implementation.
+ 
+-Use Q, Qr, Qz, HK/HKL, and reflection-family labels where possible.
++Use Q, Qr, Qz, the scalar in-plane family label m, and explicit (h,k,l) labels where useful.
+ 
+ ## Existing figure assets in the repo archive
+ 
+@@ -45,10 +45,10 @@
+ 
+ | Proposed file | Status | Needed action |
+ |---|---|---|
+-| `figures/results_ordered/bise_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Se3 detector image with projected fixed-$Q_r$ rod centerlines, direct HK labels near fitted peaks, linear intensity, no stars, no legend. |
+-| `figures/results_ordered/bise_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Se3 measured/calculated intensity overlays versus $Q_z$ for selected HK/fixed-$Q_r$ trajectories. |
+-| `figures/results_ordered/bite_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Te3 detector image with the same rod/HK-label convention as Bi2Se3; linear intensity, no stars, no legend. |
+-| `figures/results_ordered/bite_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Te3 measured/calculated intensity overlays versus $Q_z$ for selected HK/fixed-$Q_r$ trajectories. |
++| `figures/results_ordered/bise_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Se3 detector image with projected fixed-$Q_r$ rod centerlines, direct m labels near fitted peaks, linear intensity, no stars, no legend. |
++| `figures/results_ordered/bise_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Se3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
++| `figures/results_ordered/bite_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Te3 detector image with the same rod/m-label convention as Bi2Se3; linear intensity, no stars, no legend. |
++| `figures/results_ordered/bite_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Te3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
+ 
+ ### PbI2 figures
+ 
+@@ -62,12 +62,12 @@
+ 
+ | Proposed figure | Status | Suggested file name | Purpose |
+ |---|---|---|---|
+-| Bi2Se3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_trajectories.png` | Show measured data and where projections come from; linear intensity, direct HK labels, no stars. |
++| Bi2Se3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_trajectories.png` | Show measured data and where projections come from; linear intensity, direct m labels, no stars. |
+ | Bi2Se3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
+ | Bi2Te3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_trajectories.png` | Show measured data and where projections come from; same convention as Bi2Se3. |
+ | Bi2Te3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
+ | Two-component mosaicity evidence | TODO | `figures/mosaic/lorentzian_tail_evidence.png` | Show why long-tail mosaicity is required. |
+-| Reflection-label guide | TODO | caption or `figures/results_ordered/reflection_family_labels.png` | Explain HK/HKL family convention. |
++| Reflection-label guide | TODO | caption or `figures/results_ordered/reflection_family_labels.png` | Explain the scalar m family convention. |
+ 
+ ## Recommended main-text figure sequence
+ 
+@@ -150,14 +150,14 @@
+ 
+ Possible convention:
+ 
+-- Use a representative HK family label for each in-plane ring/manifold.
+-- State that symmetry-equivalent HK reflections are grouped under the representative label.
++- Use a representative m family label for each in-plane ring/manifold.
++- State that symmetry-equivalent in-plane reflections are grouped under the representative m label.
+ - Include L where needed for specific Bragg rods or profile panels.
+-- Define plus/minus detector branches separately from HK/HKL labels.
++- Define plus/minus detector branches separately from m and L labels.
+ 
+ Example caption language:
+ 
+-> Reflection families are labeled by representative HK indices; symmetry-equivalent reflections with the same in-plane scattering magnitude are grouped under the same label. The plus and minus branches refer only to the two detector-side intersections of the same in-plane family.
++> Reflection families are labeled by the scalar in-plane family m; symmetry-equivalent reflections with the same in-plane scattering magnitude are grouped under the same m label. The plus and minus branches refer only to the two detector-side intersections of the same in-plane family.
+ 
+ ## Immediate checklist
+ 
+@@ -166,7 +166,7 @@
+ - [ ] Generate detector/caked image panels with data prominent.
+ - [ ] Add Q/Qr/Qz trajectories or integration bands.
+ - [ ] Generate Qz projection profiles with data/model overlays.
+-- [ ] Add HK/HKL or reflection-family labels.
++- [ ] Add m or explicit (h,k,l) reflection-family labels.
+ - [ ] Create one mosaic-tail evidence figure or panel.
+ - [ ] Insert draft figures into `sections/results_ordered.tex` or related section.
+ - [ ] Update captions before polishing text.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_inplane.tex 2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_inplane.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_inplane.tex	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_inplane.tex	2026-05-09 15:37:16.918582483 +0000
+@@ -1,32 +1,32 @@
+-\begin{tikzpicture}[scale=2,>=stealth]
+-  \def\R{1.2}        % Bragg-sphere radius
+-  \def\Raxis{1.6}    % axis length
+-  \def\angleMid{50}  % midpoint angle of mosaic arc (degrees)
+-
+-  % Bragg sphere (2D slice)
+-  \draw[dashed,blue] (0,0) circle (\R);
+-
+-  % reciprocal-space axes
+-  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
+-  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
+-
+-  % radius vector at midpoint of mosaic arc, label closer to tip
+-  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)});
+-  \draw[thick,->] (0,0) -- (Gvec)
+-       node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{HKL}|$};
+-
+-  % polar angle vartheta from G_r to |G|
+-  \draw[red,thick] (0,0) ++(0:0.45) arc (0:\angleMid:0.45);
+-  \node[red] at (0.32,0.10) {\scriptsize $\vartheta$};
+-
+-  % mosaic arc on the Bragg sphere, labeled with omega(theta)
+-  \draw[very thick,orange]
+-    ({\R*cos(20)},{\R*sin(20)}) arc (20:80:\R)
+-    node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
+-
+-  % projection onto G_r axis, labeled |G_{r,HKL}|
+-  \coordinate (Gr) at ({\R*cos(\angleMid)},0);
+-  \draw[densely dashed] (Gvec) -- (Gr);
+-  \node[below, yshift = -2pt] at ({0.5*\R*cos(\angleMid)},0) {\scriptsize $|\mathbf G_{r,HKL}|$};
+-
+-\end{tikzpicture}
++\begin{tikzpicture}[scale=2,>=stealth]
++  \def\R{1.2}        % Bragg-sphere radius
++  \def\Raxis{1.6}    % axis length
++  \def\angleMid{50}  % midpoint angle of mosaic arc (degrees)
++
++  % Bragg sphere (2D slice)
++  \draw[dashed,blue] (0,0) circle (\R);
++
++  % reciprocal-space axes
++  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
++  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
++
++  % radius vector at midpoint of mosaic arc, label closer to tip
++  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)});
++  \draw[thick,->] (0,0) -- (Gvec)
++       node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{m,L}|$};
++
++  % polar angle vartheta from G_r to |G|
++  \draw[red,thick] (0,0) ++(0:0.45) arc (0:\angleMid:0.45);
++  \node[red] at (0.32,0.10) {\scriptsize $\vartheta$};
++
++  % mosaic arc on the Bragg sphere, labeled with omega(theta)
++  \draw[very thick,orange]
++    ({\R*cos(20)},{\R*sin(20)}) arc (20:80:\R)
++    node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
++
++  % projection onto G_r axis, labeled |G_{r,m}|
++  \coordinate (Gr) at ({\R*cos(\angleMid)},0);
++  \draw[densely dashed] (Gvec) -- (Gr);
++  \node[below, yshift = -2pt] at ({0.5*\R*cos(\angleMid)},0) {\scriptsize $|\mathbf G_{r,m}|$};
++
++\end{tikzpicture}
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_specular.tex 2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_specular.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_specular.tex	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/figures/mosaic/mosaic_bragg_specular.tex	2026-05-09 15:37:16.918843933 +0000
+@@ -1,28 +1,28 @@
+-\begin{tikzpicture}[scale=2,>=stealth]
+-  \def\R{1.2}        % Bragg-sphere radius
+-  \def\Raxis{1.6}    % axis length
+-  \def\angleMid{90}  % vartheta = 90 deg so G_r component is zero
+-  \def\angStart{60}  % 60° span -> same arclength as old (20:80)
+-  \def\angEnd{120}
+-
+-  % Bragg sphere (2D slice)
+-  \draw[dashed,blue] (0,0) circle (\R);
+-
+-  % reciprocal-space axes
+-  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
+-  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
+-
+-  % |G_HKL| at vartheta = 90 degrees: purely along G_z
+-  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)}); % = (0,\R)
+-  \draw[thick,->] (0,0) -- (Gvec)
+-       node[pos=0.75, right] {\scriptsize $|\mathbf G_{HKL}|$};
+-
+-  % vartheta marker as a right-angle corner (not an arc)
+-  \def\c{0.18}
+-  \draw[red,thick] (\c,0) -- (\c,\c) -- (0,\c);
+-
+-  % mosaic arc on the Bragg sphere, same arclength as old (60° at radius R)
+-  \draw[very thick,orange]
+-    ({\R*cos(\angStart)},{\R*sin(\angStart)}) arc (\angStart:\angEnd:\R)
+-    node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
+-\end{tikzpicture}
++\begin{tikzpicture}[scale=2,>=stealth]
++  \def\R{1.2}        % Bragg-sphere radius
++  \def\Raxis{1.6}    % axis length
++  \def\angleMid{90}  % vartheta = 90 deg so G_r component is zero
++  \def\angStart{60}  % 60° span -> same arclength as old (20:80)
++  \def\angEnd{120}
++
++  % Bragg sphere (2D slice)
++  \draw[dashed,blue] (0,0) circle (\R);
++
++  % reciprocal-space axes
++  \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
++  \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
++
++  % |G_{m,L}| at vartheta = 90 degrees: purely along G_z
++  \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)}); % = (0,\R)
++  \draw[thick,->] (0,0) -- (Gvec)
++       node[pos=0.75, right] {\scriptsize $|\mathbf G_{m,L}|$};
++
++  % vartheta marker as a right-angle corner (not an arc)
++  \def\c{0.18}
++  \draw[red,thick] (\c,0) -- (\c,\c) -- (0,\c);
++
++  % mosaic arc on the Bragg sphere, same arclength as old (60° at radius R)
++  \draw[very thick,orange]
++    ({\R*cos(\angStart)},{\R*sin(\angStart)}) arc (\angStart:\angEnd:\R)
++    node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
++\end{tikzpicture}
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/discussion_conclusion.tex 2D-Manuscript-Draft_UncertaintyMosaicity/sections/discussion_conclusion.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/discussion_conclusion.tex	2026-05-09 15:22:49.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/sections/discussion_conclusion.tex	2026-05-09 15:37:16.917217904 +0000
+@@ -1,7 +1,7 @@
+ \section{Discussion and conclusion}
+ 
+-The ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the mosaic model and detector-space forward model. A single calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, resolution, and ordered structure-factor weighting, then compares measured and calculated $Q_z$ profiles along the same fixed-$Q_r$/HK trajectories. The key result is direct line-shape agreement.
++The ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the mosaic model and detector-space forward model. A single calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, resolution, and ordered structure-factor weighting, then compares measured and calculated $Q_z$ profiles along the same fixed-$m$ trajectories. The key result is direct line-shape agreement.
+ 
+-Keeping the comparison in detector space is essential because the constraining intensity is distributed among off-specular arcs, cap-like $HK=0$ features, and weak off-condition specular peaks that a conventional 1D reduction would obscure. Because the calculated image includes the same effects and is projected in the same way as the measurement, the overlay tests the complete experimental model. The off-condition $HK=0$ peaks also show why a narrow Gaussian-like mosaic core is insufficient and why the Lorentzian tail is required.
++Keeping the comparison in detector space is essential because the constraining intensity is distributed among off-specular arcs, cap-like $m=0$ features, and weak off-condition specular peaks that a conventional 1D reduction would obscure. Because the calculated image includes the same effects and is projected in the same way as the measurement, the overlay tests the complete experimental model. The off-condition $m=0$ peaks also show why a narrow Gaussian-like mosaic core is insufficient and why the Lorentzian tail is required.
+ 
+ The projected profiles should therefore be read as detector-derived, resolution-limited observables rather than exact cuts through an ideal reciprocal-space volume. The detector-pixel contribution to the transformed-coordinate uncertainty and the propagated intensity uncertainty are included to define this limitation, while the final comparison remains a like-for-like test because data and calculation pass through the same projection. A complete covariance or posterior analysis of every fitted structure parameter is not claimed here; the present claim is that the detector-space model reproduces the measured ordered-film line shapes closely enough to support the proposed refinement workflow.
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/modelling_methods.tex 2D-Manuscript-Draft_UncertaintyMosaicity/sections/modelling_methods.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/modelling_methods.tex	2026-05-09 15:22:45.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/sections/modelling_methods.tex	2026-05-09 15:37:16.916047523 +0000
+@@ -61,7 +61,7 @@
+ \subsection{Projection and transformed-coordinate uncertainty}
+ \label{sec:projection_uncertainty}
+ 
+-The detector image is the primary measured object. The $Q_z$ and $HK$ profiles used for validation are detector-derived projections: detector pixels are mapped through the calibrated geometry, integrated over selected reciprocal-space trajectories, and compared with the same projections applied to the calculated image. This distinction matters because the transformed coordinates have finite resolution. A detector pixel has a finite footprint, so its assigned $(\phi,2\theta)$, $Q_r$, and $Q_z$ coordinates are not exact points.
++The detector image is the primary measured object. The $Q_z$ profiles used for validation are detector-derived projections through selected $m$-indexed reciprocal-space trajectories: detector pixels are mapped through the calibrated geometry, integrated over the selected trajectory, and compared with the same projection applied to the calculated image. This distinction matters because the transformed coordinates have finite resolution. A detector pixel has a finite footprint, so its assigned $(\phi,2\theta)$, $Q_r$, and $Q_z$ coordinates are not exact points.
+ 
+ For a flat detector with square pixel pitch $p$ at distance $d$, the leading pixel-footprint terms for the angular coordinates are
+ \begin{equation}
+@@ -76,10 +76,11 @@
+ This uncertainty treatment also limits the language of the refinement. The overlays test whether the detector-space model reproduces the measured profiles after the same projection and binning have been applied to data and calculation. They do not by themselves constitute a complete posterior uncertainty analysis for every fitted structural parameter.
+ 
+ \subsection{Structure Factor}
++\label{sec:structure_factor}
+ 
+-We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
++We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. For labels and profile extraction, the in-plane pair is represented by the scalar family index $m$, defined by the in-plane metric sum
+ \[
+-\mathrm{HK}(H,K)
++m(H,K)
+ =
+ \begin{bmatrix}
+ H & K
+@@ -89,9 +90,9 @@
+ H \\
+ K
+ \end{bmatrix}
+-\propto Q_r^2 ,
++\propto Q_r^2 .
+ \]
+-where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
++Here \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of $m$. For the hexagonal bismuth chalcogenide setting, this scalar is proportional to $H^2+H\,K+K^2$. Thus, $m$ labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same $m$, and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
+ 
+ For each reflection with reciprocal-lattice vector
+ \[
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/mosaicity_texture.tex 2D-Manuscript-Draft_UncertaintyMosaicity/sections/mosaicity_texture.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/mosaicity_texture.tex	2026-05-09 15:22:44.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/sections/mosaicity_texture.tex	2026-05-09 15:37:16.916390547 +0000
+@@ -1,9 +1,9 @@
+ \subsection{Mosaicity}
+ \label{sec:mosaicity}
+ 
+-Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal. It is distinct from the random in-plane rotation that defines the 2D-powder limit. Random in-plane rotation generates the equivalent $HK$ ring or rod family, while mosaicity determines how much of that reciprocal-space manifold is brought into the Ewald condition for a fixed incident angle.
++Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal. It is distinct from the random in-plane rotation that defines the 2D-powder limit. Random in-plane rotation generates the equivalent $m$-indexed ring or rod family, while mosaicity determines how much of that reciprocal-space manifold is brought into the Ewald condition for a fixed incident angle.
+ 
+-The ordered-film images require two pieces of this distribution. The strong off-specular arcs are controlled by a narrow core: most crystallites are close to the mean layer-normal direction, so nearby Bragg conditions are broadened but remain localized. The $HK=0$ specular family shows the complementary requirement. Some $00L$ peaks appear under incident-angle conditions where a narrow core would provide too little diffracting volume. Those peaks require a small population of crystallites tilted much farther from the mean orientation. In the present model that population is represented by a long Lorentzian-like tail.
++The ordered-film images require two pieces of this distribution. The strong off-specular arcs are controlled by a narrow core: most crystallites are close to the mean layer-normal direction, so nearby Bragg conditions are broadened but remain localized. The $m=0$ specular family shows the complementary requirement. Some $00L$ peaks appear under incident-angle conditions where a narrow core would provide too little diffracting volume. Those peaks require a small population of crystallites tilted much farther from the mean orientation. In the present model that population is represented by a long Lorentzian-like tail.
+ 
+ We therefore describe the out-of-plane mosaicity by a two-component angular density,
+ \begin{equation}
+@@ -15,7 +15,7 @@
+ \end{equation}
+ Here $G_{\mathrm w}$ is the wrapped Gaussian core, $L_{\mathrm w}$ is the wrapped Lorentzian tail, $\eta$ is the Lorentzian weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent: the Lorentzian full width at half maximum is $2\Gamma$, while the Gaussian full width at half maximum is $2\sqrt{2\ln2}\,\sigma$. The wrapped form conserves probability over one angular period and avoids an artificial discontinuity at $\Delta\theta=\pm\pi$.
+ 
+-This expression is not used as an empirical peak shape after the data are reduced. It is an angular population that enters the detector-space forward model before the rays are projected onto the area detector. The Gaussian component sets the main arc widths and local profile shapes. The Lorentzian component decays slowly enough to supply weak off-condition specular intensity, including the $HK=0$, $L=3$ feature discussed in Sec.~\ref{sec:results_ordered}. The full wrapped forms and the conversion from the one-dimensional tilt density to the Bragg-sphere surface density are given in the supporting information.
++This expression is not used as an empirical peak shape after the data are reduced. It is an angular population that enters the detector-space forward model before the rays are projected onto the area detector. The Gaussian component sets the main arc widths and local profile shapes. The Lorentzian component decays slowly enough to supply weak off-condition specular intensity, including the $m=0$, $L=3$ feature discussed in Sec.~\ref{sec:results_ordered}. The full wrapped forms and the conversion from the one-dimensional tilt density to the Bragg-sphere surface density are given in the supporting information.
+ 
+ Figure~\ref{fig:mosaic_combo} summarizes how the same mosaic distribution appears in reciprocal space and on the detector. For $G_r\neq0$, the redistributed intensity appears as off-specular arcs. For $G_r=0$, it appears as cap-like specular-family intensity. The important point is that both detector features are produced by the same orientational distribution, so the mosaic parameters are constrained by several types of measured line shape at once.
+ 
+@@ -51,6 +51,6 @@
+     \label{fig:mosaic_combo:img_specular}
+   \end{subfigure}
+ 
+-  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $G_r\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs. (b,d) For $G_r=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $HK=0$ peaks.}
++  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $G_r\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs. (b,d) For $G_r=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $m=0$ peaks.}
+   \label{fig:mosaic_combo}
+ \end{figure}
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/refinement_workflow.tex 2D-Manuscript-Draft_UncertaintyMosaicity/sections/refinement_workflow.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/refinement_workflow.tex	2026-05-09 15:21:22.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/sections/refinement_workflow.tex	2026-05-09 15:37:16.916890204 +0000
+@@ -35,7 +35,7 @@
+     Center-aligned profile shapes, off-specular arcs, and specular tails \\
+     5 &
+     Ordered-film validation &
+-    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$Q_r$/HK trajectories &
++    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$m$ trajectories &
+     Image scale factors and ordered structure-factor parameters &
+     Relative Bragg intensities and measured/calculated line-shape agreement \\
+     \bottomrule
+@@ -44,5 +44,5 @@
+ 
+ The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment. 
+ 
+-The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$Q_r$/HK trajectories for comparison versus $Q_z$. Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information. 
+-Later stacking-disorder will be acquired by fitting the HK rods as a function of L. 
++The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$m$ trajectories for comparison versus $Q_z$. Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information. 
++Later stacking disorder can be added by fitting the $m$-indexed rods as a function of $L$. 
+diff -ruN -x '*.aux' -x '*.log' -x '*.fls' -x '*.fdb_latexmk' -x '*.out' -x '*.toc' -x '*.synctex.gz' -x main.pdf -x '*.png' -x '*.pdf' -x '*.bbl' orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/results_ordered.tex 2D-Manuscript-Draft_UncertaintyMosaicity/sections/results_ordered.tex
+--- orig/2D-Manuscript-Draft_UncertaintyMosaicity/sections/results_ordered.tex	2026-05-09 15:22:47.000000000 +0000
++++ 2D-Manuscript-Draft_UncertaintyMosaicity/sections/results_ordered.tex	2026-05-09 15:37:54.277868589 +0000
+@@ -16,29 +16,29 @@
+   }%
+ }
+ 
+-Ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the model by showing that the same detector-space forward model quantitatively reproduces their measured line shapes and intensities. In the fitting process, three detector images with incident angles of  $5^\circ$, $10^\circ$, and $15^\circ$ were used. Together, they test the 2D-powder orientational limit, with sample geometry, beam phase space, mosaicity, detector resolution, and ordered structure-factor weighting. Both materials exhibit the expected 2D-powder signatures: off-specular Bragg arcs from in-plane $HK$ families and specular-family intensity from $HK=0$ reflections.
++Ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the model by showing that the same detector-space forward model quantitatively reproduces their measured line shapes and intensities. In the fitting process, three detector images with incident angles of  $5^\circ$, $10^\circ$, and $15^\circ$ were used. Together, they test the 2D-powder orientational limit, with sample geometry, beam phase space, mosaicity, detector resolution, and ordered structure-factor weighting. Both materials exhibit the expected 2D-powder signatures: off-specular Bragg arcs from in-plane $m$ families and specular-family intensity from $m=0$ reflections. Here $m$ is the scalar in-plane family label defined in Sec.~\ref{sec:structure_factor}; for the hexagonal setting it is proportional to $H^2+H\,K+K^2$, so $m=0$ denotes the specular $00L$ family.
+ 
+-For each material, the comparison is shown in two complementary views. The detector-space panel identifies the fixed-$HK$ Bragg-rod trajectories used for projection while keeping the measured area-detector intensity visible. The profile panel compares measured and calculated intensity plotted on the same axes as a function of $Q_z$ for the selected $HK$ families, with $L$ used as the reciprocal-lattice-unit label where useful. The detector image is the map of where the profiles are extracted. Each $HK$ label denotes a family of symmetry-equivalent rods with the same $Q_r$. Those rods are generated and projected separately before their detector-space contributions are summed. The plus and minus branches, where shown in profile panels, refer only to the two detector-side intersections of the same in-plane rod family and are not separate crystallographic families.
++For each material, the comparison is shown in two complementary views. The detector-space panel identifies the fixed-$m$ Bragg-rod trajectories used for projection while keeping the measured area-detector intensity visible. The profile panel compares measured and calculated intensity plotted on the same axes as a function of $Q_z$ for the selected $m$ families, with $L$ used as the reciprocal-lattice-unit label where useful. The detector image is the map of where the profiles are extracted. Each $m$ label denotes a family of symmetry-equivalent rods with the same $Q_r$. Those rods are generated and projected separately before their detector-space contributions are summed. The plus and minus branches, where shown in profile panels, refer only to the two detector-side intersections of the same in-plane rod family and are not separate crystallographic families.
+ 
+-The ordered-film comparison also shows why the Lorentzian mosaic tail is needed. The clearest evidence is the $HK=0$ specular family, i.e. the $00L$ peaks. For a perfectly aligned crystallite at the nominal incidence angle $\theta_i$, only the specular condition directly selected by that incidence geometry should carry appreciable intensity. The measured detector images and projected profiles instead contain additional $HK=0$ peaks whose Bragg conditions are not directly excited by $\theta_i$. A narrow Gaussian-like mosaic core reproduces the strong near-condition arc widths, but it decays too rapidly to supply enough diffracting volume for these off-condition specular peaks.
++The ordered-film comparison also shows why the Lorentzian mosaic tail is needed. The clearest evidence is the $m=0$ specular family, i.e. the $00L$ peaks. For a perfectly aligned crystallite at the nominal incidence angle $\theta_i$, only the specular condition directly selected by that incidence geometry should carry appreciable intensity. The measured detector images and projected profiles instead contain additional $m=0$ peaks whose Bragg conditions are not directly excited by $\theta_i$. A narrow Gaussian-like mosaic core reproduces the strong near-condition arc widths, but it decays too rapidly to supply enough diffracting volume for these off-condition specular peaks.
+ 
+-The $003$ condition, or $HK=0$, $L=3$, is the most visible example (Fig.~\ref{fig:hk0_l3_star}). The measured image shows a star-like feature and bright intensity above the critical-angle region. We do not assign this intensity to ordinary reflectivity or to an unrelated detector artifact. In the forward model, finite incident bandwidth gives the Ewald sphere an effective thickness, and the Lorentzian tail supplies crystallites tilted far enough from the mean orientation to bring the $003$ Bragg sphere into the accepted scattering condition.
++The $003$ condition, or $m=0$, $L=3$, is the most visible example (Fig.~\ref{fig:m0_l3_star}). The measured image shows a star-like feature and bright intensity above the critical-angle region. We do not assign this intensity to ordinary reflectivity or to an unrelated detector artifact. In the forward model, finite incident bandwidth gives the Ewald sphere an effective thickness, and the Lorentzian tail supplies crystallites tilted far enough from the mean orientation to bring the $003$ Bragg sphere into the accepted scattering condition.
+ 
+ \begin{figure}[H]
+   \centering
+   \begin{minipage}{0.8\linewidth}
+     \centering
+     \orderedresultplaceholder{figures/results_ordered/00L_region_horizontal.png}{%
+-      Close-up of the $HK=0$, $L=3$ detector feature. Show the star-like morphology and bright intensity above the critical-angle region in a tight crop, with minimal annotations and a clear $HK=0$, $L=3$ label.
++      Close-up of the $m=0$, $L=3$ detector feature. Show the star-like morphology and bright intensity above the critical-angle region in a tight crop, with minimal annotations and a clear $m=0$, $L=3$ label.
+     }
+   \end{minipage}
+-  \caption{Close-up of the $003$ detector feature, equivalently $HK=0$, $L=3$. The star-like intensity above the critical-angle region is not assigned to reflectivity. Instead, the finite incident bandwidth gives the Ewald sphere an effective thickness, which intersects the small-radius $003$ Bragg sphere over a finite volume. Combined with the long mosaic tail, that overlap redistributes intensity into the observed detector feature and motivates including the Lorentzian mosaic component before evaluating the full data/model overlays.}
+-  \label{fig:hk0_l3_star}
++  \caption{Close-up of the $003$ detector feature, equivalently $m=0$, $L=3$. The star-like intensity above the critical-angle region is not assigned to reflectivity. Instead, the finite incident bandwidth gives the Ewald sphere an effective thickness, which intersects the small-radius $003$ Bragg sphere over a finite volume. Combined with the long mosaic tail, that overlap redistributes intensity into the observed detector feature and motivates including the Lorentzian mosaic component before evaluating the full data/model overlays.}
++  \label{fig:m0_l3_star}
+ \end{figure}
+ 
+ The ordered-film validation below then tests whether the same phase-space treatment reproduces the full set of off-specular and specular line shapes, not only this isolated $003$ feature.
+ 
+-Figure~\ref{fig:ordered_chalcogenide_validation} gathers the ordered-film validation into a single matched comparison. Panels~(a) and~(b) are the detector-space views for Bi$_2$Se$_3$ and Bi$_2$Te$_3$, respectively. These panels identify the fixed-$Q_r$/HK trajectories used for projection and show both off-specular and $HK=0$ features in the measured images. Panels~(c) and~(d) show the corresponding projected $Q_z$ profiles for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. In each profile panel, the measured and calculated intensities have been subjected to the same projection and integration procedure.
++Figure~\ref{fig:ordered_chalcogenide_validation} gathers the ordered-film validation into a single matched comparison. Panels~(a) and~(b) are the detector-space views for Bi$_2$Se$_3$ and Bi$_2$Te$_3$, respectively. These panels identify the fixed-$m$ trajectories used for projection and show both off-specular and $m=0$ features in the measured images. Panels~(c) and~(d) show the corresponding projected $Q_z$ profiles for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. In each profile panel, the measured and calculated intensities have been subjected to the same projection and integration procedure.
+ 
+ \begin{figure}[H]
+   \centering
+@@ -47,13 +47,13 @@
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(a)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+-      Bi$_2$Se$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
++      Bi$_2$Se$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $m$ labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
+     }}
+   \end{minipage}\hfill
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(b)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+-      Bi$_2$Te$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use the same styling and label convention as Bi$_2$Se$_3$.
++      Bi$_2$Te$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $m$ labels. Use the same styling and label convention as Bi$_2$Se$_3$.
+     }}
+   \end{minipage}
+ 
+@@ -62,19 +62,19 @@
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(c)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png}{%
+-      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Panels should use $Q_z$ on the horizontal axis and matched measured/calculated curves.
++      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected $m$ families. Panels should use $Q_z$ on the horizontal axis and matched measured/calculated curves.
+     }}
+   \end{minipage}\hfill
+   \begin{minipage}[t]{0.48\linewidth}
+     \centering
+     \paneltagged{(d)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png}{%
+-      Bi$_2$Te$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Match the Bi$_2$Se$_3$ axis, color, and labeling convention.
++      Bi$_2$Te$_3$ measured/calculated $Q_z$ projection overlays for selected $m$ families. Match the Bi$_2$Se$_3$ axis, color, and labeling convention.
+     }}
+   \end{minipage}
+-  \caption{Model and data comparison for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. (a,b) Detector-space views show the selected $HK$ trajectories. (c,d) The corresponding $Q_z$ profiles compare measured and calculated intensities using the same projection and integration procedure. The $HK=0$ rows probe off-condition $00L$ intensity associated with the Lorentzian mosaic tail.}
++  \caption{Model and data comparison for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. (a,b) Detector-space views show the selected $m$ trajectories. (c,d) The corresponding $Q_z$ profiles compare measured and calculated intensities using the same projection and integration procedure. The $m=0$ rows probe off-condition $00L$ intensity associated with the Lorentzian mosaic tail.}
+   \label{fig:ordered_chalcogenide_validation}
+ \end{figure}
+ 
+ Because mosaicity, beam divergence, wavelength spread, incidence-angle uncertainty, detector-pixel size, and finite integration width all broaden the effective scattering condition, the projected coordinate should not be interpreted as an ideal reciprocal-space cut from a single perfect crystallite. The profiles are detector-derived, resolution-limited observables. The detector-pixel contribution to the transformed-coordinate uncertainty is discussed in Sec.~\ref{sec:projection_uncertainty}: the radial angular term remains bounded, while the azimuthal term becomes important mainly near the low-$2\theta$ specular limit. The ordered-film profiles are therefore interpreted through the projection itself, not through an assumption that each plotted point is an exact point in reciprocal space. The comparison remains meaningful because the calculated image is subjected to the same projection, binning, and resolution effects before it is compared with the measured profile.
+ 
+-In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular $HK$ and $HK=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $HK=0$ peaks test the Lorentzian tail and show why a rapidly decaying mosaic core alone is insufficient. The bandwidth-sensitive $003$ morphology isolated in Fig.~\ref{fig:hk0_l3_star} reinforces that the forward model must include finite wavelength bandwidth explicitly. 
++In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular $m$ and $m=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $m=0$ peaks test the Lorentzian tail and show why a rapidly decaying mosaic core alone is insufficient. The bandwidth-sensitive $003$ morphology isolated in Fig.~\ref{fig:m0_l3_star} reinforces that the forward model must include finite wavelength bandwidth explicitly. 

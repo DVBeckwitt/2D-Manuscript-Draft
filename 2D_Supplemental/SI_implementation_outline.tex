@@ -16,8 +16,40 @@ The $1/\sin\vartheta$ term is the Jacobian for converting the one-dimensional ti
 
 \subsection{Coordinate remapping and binning}
 
-Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$Q_r$/HK trajectories and projected $Q_z$ profiles can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
+Detector pixels are transformed into $2\theta$--$\phi$ fields with sub-pixelation so that curved fixed-$m$ trajectories and projected $Q_z$ profiles can be integrated without pixel-boundary artifacts. Lookup tables connect the detector grid and the remapped fields during fitting.
 
 \subsection{Monte Carlo sampling}
 
 Beam position, divergence, wavelength spread, and mosaic events are sampled probabilistically for computational efficiency. This replaces a dense grid over the same phase space without changing the physical model used to generate the detector image.
+
+
+\subsection{Projection and intensity uncertainty}
+
+The transformed-coordinate uncertainty is evaluated from the detector-pixel footprint rather than assigned after the caked or projected image is produced. For square detector pixels with pitch $p$ and detector distance $d$, the leading flat-detector terms are
+\begin{equation}
+\sigma_{2\theta,\mathrm{pix}}(t)=\frac{p\cos^{2}t}{\sqrt{12}\,d},
+\qquad
+\sigma_{\phi,\mathrm{pix}}(t)=\frac{p}{\sqrt{12}\,d\tan t},
+\qquad t=2\theta .
+\end{equation}
+The radial term is finite and largest near the direct beam. The azimuthal term scales as $1/\tan(2\theta)$, so the problematic regime is confined to the near-specular, low-$2\theta$ region where azimuth is poorly conditioned.
+
+For the $d=75$ mm and $p=300\,\mu\mathrm{m}$ geometry used in the uncertainty calculation, the maximum radial coordinate uncertainty is approximately $0.066^{\circ}$. The azimuthal coordinate uncertainty falls below $1^{\circ}$ above $2\theta\approx3.8^{\circ}$, below $0.5^{\circ}$ above $2\theta\approx7.5^{\circ}$, and below $0.25^{\circ}$ above $2\theta\approx14.9^{\circ}$. More generally, the threshold for a target azimuthal width $w_{\phi}$ is
+\begin{equation}
+2\theta_{\mathrm{crit}}=\arctan\!\left(\frac{p}{\sqrt{12}\,d\,w_{\phi}}\right),
+\end{equation}
+with $w_{\phi}$ expressed in radians.
+
+The intensity uncertainty of a projected bin is propagated from detector-space variance through the same overlap weights used to construct the rebinned image. If $s_i$, $n_i$, and $v_i$ are the signal, normalization, and variance of detector pixel $i$, and $w_{ib}$ is the overlap weight from detector pixel $i$ to projected bin $b$, then
+\begin{equation}
+S_b=\sum_i w_{ib}s_i,
+\qquad
+N_b=\sum_i w_{ib}n_i,
+\qquad
+I_b=\frac{S_b}{N_b},
+\end{equation}
+with
+\begin{equation}
+\mathrm{Var}(I_b)=\frac{\sum_i w_{ib}^{2}v_i}{N_b^{2}}.
+\end{equation}
+Thus the profile uncertainty remains detector-grounded after the coordinate transformation. This uncertainty propagation supports the interpretation of the projected line shapes, but it is not a complete posterior covariance analysis for every fitted model parameter.

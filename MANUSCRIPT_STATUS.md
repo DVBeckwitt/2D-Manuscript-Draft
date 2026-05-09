@@ -27,7 +27,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 |---|---|---|
 | `main.tex` scaffold | DONE | Inputs the section files. |
 | `sections/introduction.tex` | IN PROGRESS | Contains 2D-powder motivation and orientational-state framing. |
-| `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/HK/HKL language. |
+| `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/m language. |
 | `sections/mosaicity_texture.tex` | IN PROGRESS | Needs earlier evidence for two-component mosaicity and Lorentzian tails. |
 | `sections/refinement_workflow.tex` | IN PROGRESS | Should explain staged refinement without becoming an optimization narrative. |
 | `sections/results_ordered.tex` | IN PROGRESS | Immediate target. Needs clear Bi2Se3/Bi2Te3 data/model result figures. |
@@ -50,7 +50,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 | Create Bi2Te3 detector/projection figure | TODO | Main-text figure | Use the same logic as Bi2Se3. |
 | Add Bi2Se3 Qz projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity vs Qz. |
 | Add Bi2Te3 Qz projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity vs Qz. |
-| Define reflection-family labels | TODO | Figure/caption convention | Prefer HK/HKL or reflection-family labels over internal M labels. |
+| Define reflection-family labels | TODO | Figure/caption convention | Prefer m or explicit (h,k,l) reflection-family labels over internal M labels. |
 | Add early two-component mosaicity evidence | TODO | Text + figure | Show why a Lorentzian tail is necessary. |
 | Write Q-space/projection caveat | TODO | Methods/results paragraph | Explain imperfect Q interpretation and why the model comparison remains valid. |
 | Add experimental incident-angle table | TODO | Methods table | List all collected angles, not just shown angles. |
@@ -103,7 +103,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 - [ ] Bi2Se3 measured/calculated Qz projection overlays.
 - [ ] Bi2Te3 measured detector image with Q/Qr/Qz trajectory or integration-region annotation.
 - [ ] Bi2Te3 measured/calculated Qz projection overlays.
-- [ ] Proposed HK/HKL or reflection-family label convention.
+- [ ] Proposed m or explicit (h,k,l) reflection-family label convention.
 - [ ] Paragraph explaining imperfect Q-space/projection interpretation.
 - [ ] Paragraph and figure concept for two-component mosaicity / Lorentzian-tail evidence.
 - [ ] Table or list of all incident angles collected for Bi2Se3 and Bi2Te3.

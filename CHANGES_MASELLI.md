@@ -4,7 +4,7 @@ This changelog is cumulative. It includes the earlier Maselli-revision changes a
 
 ## Guiding basis
 
-The revision follows `AGENTS.md` and the advisor meeting feedback: paper first, software second; show the Bi2Se3/Bi2Te3 success clearly; write in Q/QR/Qz/HK language for a diffraction audience; move implementation and optimization details to the supplement; and use figures to demonstrate measured/calculated agreement.
+The revision follows `AGENTS.md` and the advisor meeting feedback: paper first, software second; show the Bi2Se3/Bi2Te3 success clearly; write in Q/QR/Qz/m language for a diffraction audience; move implementation and optimization details to the supplement; and use figures to demonstrate measured/calculated agreement.
 
 ## Global manuscript changes
 
@@ -61,7 +61,7 @@ The revision follows `AGENTS.md` and the advisor meeting feedback: paper first, 
   - Bi2Te3 measured/calculated Qz projection overlays.
 - Moved the projection caveat closer to the figure-insertion location.
 - Kept the caveat that Qz profiles are resolution-broadened, not ideal reciprocal-space cuts.
-- Kept the requirement that HK/HKL reflection-family labels must be used or clearly tied to any internal labels.
+- Kept the requirement that m-indexed reflection-family labels must be used or clearly tied to any internal labels.
 - Moved the ordered-film structure-parameter table to `2D_Supplemental/SI_ordered_structure_parameters.tex` and replaced it in the main text with a short supporting-information reference.
 - Kept the main-text emphasis on the measured/calculated line-shape overlays.
 

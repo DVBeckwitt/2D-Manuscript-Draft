@@ -1,13 +1,9 @@
 \subsection{Mosaicity}
 \label{sec:mosaicity}
 
-Mosaicity can be understood by comparing the orientational limits introduced in Fig.~\ref{fig:intro_2x3}. For a perfect single crystal, a reflection carries its full weight at a single Bragg spot. For a 3D powder, random crystallite orientations spread that weight isotropically over the Bragg sphere. A 2D powder lies between these limits: in-plane rotations are randomized about the film normal, while the layer normals retain a finite out-of-plane misorientation distribution. Mosaicity is therefore treated as a redistribution of the ideal per-reflection intensity over the allowed $HK$ family.
+Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal. It is distinct from the random in-plane rotation that defines the 2D-powder limit. Random in-plane rotation generates the equivalent $m$-indexed ring or rod family, while mosaicity determines how much of that reciprocal-space manifold is brought into the Ewald condition for a fixed incident angle.
 
-For a reflection, we work in the $(G_r,G_z)$ cross-section of reciprocal space, where $G_r$ is the in-plane radial component. Random in-plane rotations generate a ring of equivalent reciprocal-space intersections about $G_z$. Out-of-plane misorientation then gives a nonuniform line density around that ring, written as $I_0\omega(\Delta\theta)$, where $I_0$ is the reflection intensity before mosaic redistribution and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal.
-
-The ordered-film images show why a single narrow mosaic distribution is insufficient. At a fixed nominal incident angle $\theta_i$, the measured $HK=0$ specular family contains $00L$ peaks that are not directly selected by the ideal incidence condition. A narrow Gaussian-like core can reproduce the main widths of near-condition off-specular arcs, but it decays too rapidly to supply enough diffracting crystallites for weak off-condition specular intensity. The $003$ detector feature isolated in Fig.~\ref{fig:hk0_l3_star} is one visible example of this problem: the observed intensity requires crystallites whose layer normals are tilted far enough from the mean orientation to satisfy the Bragg condition, together with the finite wavelength bandwidth of the incident beam.
-
-We therefore describe the out-of-plane mosaicity by a two-component angular density,
+We will see that the ordered-film images will require a two-component angular density,
 \begin{equation}
   \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
   =\eta L_{\mathrm w}(\Delta\theta;\Gamma)
@@ -15,9 +11,9 @@ We therefore describe the out-of-plane mosaicity by a two-component angular dens
   \qquad 0\le \eta \le 1 .
   \label{eq:mosaic_two_component_maintext}
 \end{equation}
-Here $G_{\mathrm w}$ is the wrapped Gaussian core, $L_{\mathrm w}$ is the wrapped Lorentzian tail, and $\eta$ is the Lorentzian weight. The wrapped form is evaluated on $(-\pi,\pi]$ so that probability is conserved over one full angular period and the distribution has no artificial discontinuity at $\Delta\theta=\pm\pi$. The widths are independent: the Lorentzian full width at half maximum is $2\Gamma$, while the Gaussian full width at half maximum is $2\sqrt{2\ln2}\,\sigma$. For $|\Delta\theta|\gg\Gamma$, the Lorentzian component decays algebraically, $L(\Delta\theta;\Gamma)\simeq \Gamma/(\pi\Delta\theta^2)$, rather than exponentially. This long tail supplies the small but observable tilted-crystallite population needed for off-condition $00L$ peaks. The full periodic forms of $L_{\mathrm w}$ and $G_{\mathrm w}$ are given in the supporting information.
+Here $G_{\mathrm w}$ is the Gaussian core, $L_{\mathrm w}$ is the Lorentzian tail, $\eta$ is the Lorentzian weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent: the Lorentzian full width at half maximum is $2\Gamma$, while the Gaussian full width at half maximum is $2\sqrt{2\ln2}\,\sigma$. The wrapped form conserves probability over one angular period and avoids an artificial discontinuity at $\Delta\theta=\pm\pi$.
 
-Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening appears in the $\{G_r,G_z\}$ plane and how it maps onto characteristic detector-space features for in-plane and specular conditions.
+Figure~\ref{fig:mosaic_combo} summarizes how the same mosaic distribution appears in reciprocal space and on the detector. For $G_r\neq0$, the redistributed intensity appears as off-specular band while for $G_r=0$ it appears as cap-like. 
 
 \begin{figure}[H]
   \centering
@@ -51,16 +47,6 @@ Figure~\ref{fig:mosaic_combo} summarizes how this reciprocal-space broadening ap
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{Mosaic broadening viewed in the \(\{G_r,G_z\}\) plane (a,b) and its detector-space manifestation (c,d). Intensity is redistributed along the Bragg circle with line density \(I_0\omega(\Delta\theta)\). The in-plane condition with \(G_r\neq0\) (a,c) yields two off-specular arcs, while a specular reflection with \(G_r=0\) (b,d) concentrates intensity near the polar cap. The long tail of \(\omega(\Delta\theta)\) is what gives finite intensity to $HK=0$ specular-family peaks that are not directly excited by the nominal incidence angle.}
+  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $G_r\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs. (b,d) For $G_r=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $m=0$ peaks.}
   \label{fig:mosaic_combo}
 \end{figure}
-
-After random in-plane rotation, the one-dimensional tilt density becomes an axially symmetric surface density on the Bragg sphere. Let $\vartheta$ be the polar angle on a Bragg sphere of radius $G\equiv|\mathbf G|$, and let $\vartheta_B$ be the Bragg position for the mean crystallite orientation, so that $\Delta\theta=\vartheta-\vartheta_B$. Conservation of the reflection intensity over the spherical area element $dA=2\pi G^2\sin\vartheta\,d\vartheta$ gives
-\begin{equation}
-  \rho(\vartheta)=
-  \frac{I_0}{2\pi G^2\sin\vartheta}
-  \,\omega_{\mathrm w}(\vartheta-\vartheta_B),
-  \qquad 0<\vartheta<\pi .
-  \label{eq:mosaic_rho_maintext}
-\end{equation}
-The $1/\sin\vartheta$ factor is the geometric Jacobian for revolving the one-dimensional tilt distribution into a Bragg-sphere surface density. This density supplies the weights used to distribute $I_0$ over mosaic-broadened exit directions; the two-component form in Eq.~\eqref{eq:mosaic_two_component_maintext} determines whether those weights vanish rapidly away from the nominal condition or retain the long tail needed for the observed $HK=0$ intensity.

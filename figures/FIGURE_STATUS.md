@@ -19,7 +19,7 @@ Figures need to show data. Do not let annotations, Bragg-position circles, color
 
 The ordered-film result should be figure-driven. The reader should be able to see that the model fits the measured data without needing to understand the software implementation.
 
-Use Q, Qr, Qz, HK/HKL, and reflection-family labels where possible.
+Use Q, Qr, Qz, the scalar in-plane family label m, and explicit (h,k,l) labels where useful.
 
 ## Existing figure assets in the repo archive
 
@@ -45,10 +45,10 @@ The earlier placeholder/result PNGs in `figures/results_ordered/` were removed f
 
 | Proposed file | Status | Needed action |
 |---|---|---|
-| `figures/results_ordered/bise_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Se3 detector image with projected fixed-$Q_r$ rod centerlines, direct HK labels near fitted peaks, linear intensity, no stars, no legend. |
-| `figures/results_ordered/bise_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Se3 measured/calculated intensity overlays versus $Q_z$ for selected HK/fixed-$Q_r$ trajectories. |
-| `figures/results_ordered/bite_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Te3 detector image with the same rod/HK-label convention as Bi2Se3; linear intensity, no stars, no legend. |
-| `figures/results_ordered/bite_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Te3 measured/calculated intensity overlays versus $Q_z$ for selected HK/fixed-$Q_r$ trajectories. |
+| `figures/results_ordered/bise_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Se3 detector image with projected fixed-$Q_r$ rod centerlines, direct m labels near fitted peaks, linear intensity, no stars, no legend. |
+| `figures/results_ordered/bise_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Se3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
+| `figures/results_ordered/bite_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Te3 detector image with the same rod/m-label convention as Bi2Se3; linear intensity, no stars, no legend. |
+| `figures/results_ordered/bite_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Te3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
 
 ### PbI2 figures
 
@@ -62,12 +62,12 @@ The earlier PbI2 result PNGs were removed from `figures/results_pbi2/` and repla
 
 | Proposed figure | Status | Suggested file name | Purpose |
 |---|---|---|---|
-| Bi2Se3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_trajectories.png` | Show measured data and where projections come from; linear intensity, direct HK labels, no stars. |
+| Bi2Se3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_trajectories.png` | Show measured data and where projections come from; linear intensity, direct m labels, no stars. |
 | Bi2Se3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
 | Bi2Te3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_trajectories.png` | Show measured data and where projections come from; same convention as Bi2Se3. |
 | Bi2Te3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
 | Two-component mosaicity evidence | TODO | `figures/mosaic/lorentzian_tail_evidence.png` | Show why long-tail mosaicity is required. |
-| Reflection-label guide | TODO | caption or `figures/results_ordered/reflection_family_labels.png` | Explain HK/HKL family convention. |
+| Reflection-label guide | TODO | caption or `figures/results_ordered/reflection_family_labels.png` | Explain the scalar m family convention. |
 
 ## Recommended main-text figure sequence
 
@@ -150,14 +150,14 @@ Current issue: QR values or M1/M2-style labels are not broadly meaningful.
 
 Possible convention:
 
-- Use a representative HK family label for each in-plane ring/manifold.
-- State that symmetry-equivalent HK reflections are grouped under the representative label.
+- Use a representative m family label for each in-plane ring/manifold.
+- State that symmetry-equivalent in-plane reflections are grouped under the representative m label.
 - Include L where needed for specific Bragg rods or profile panels.
-- Define plus/minus detector branches separately from HK/HKL labels.
+- Define plus/minus detector branches separately from m and L labels.
 
 Example caption language:
 
-> Reflection families are labeled by representative HK indices; symmetry-equivalent reflections with the same in-plane scattering magnitude are grouped under the same label. The plus and minus branches refer only to the two detector-side intersections of the same in-plane family.
+> Reflection families are labeled by the scalar in-plane family m; symmetry-equivalent reflections with the same in-plane scattering magnitude are grouped under the same m label. The plus and minus branches refer only to the two detector-side intersections of the same in-plane family.
 
 ## Immediate checklist
 
@@ -166,7 +166,7 @@ Example caption language:
 - [ ] Generate detector/caked image panels with data prominent.
 - [ ] Add Q/Qr/Qz trajectories or integration bands.
 - [ ] Generate Qz projection profiles with data/model overlays.
-- [ ] Add HK/HKL or reflection-family labels.
+- [ ] Add m or explicit (h,k,l) reflection-family labels.
 - [ ] Create one mosaic-tail evidence figure or panel.
 - [ ] Insert draft figures into `sections/results_ordered.tex` or related section.
 - [ ] Update captions before polishing text.

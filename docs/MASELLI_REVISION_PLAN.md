@@ -12,7 +12,7 @@ This plan translates Dr. Maselli's manuscript philosophy into precise edits for 
 
 2. `sections/introduction.tex`
    - Rewrote the final contribution paragraph so the paper's stated validation target is Bi2Se3 and Bi2Te3, not PbI2.
-   - Reframed the central result as quantitative line-shape agreement along selected Qr/HK trajectories plotted versus Qz.
+   - Reframed the central result as quantitative line-shape agreement along selected Qr/m trajectories plotted versus Qz.
    - Deferred diffuse-scattering and stacking-disorder applications to later work in this draft.
 
 3. `sections/mosaicity_texture.tex`
@@ -32,7 +32,7 @@ This plan translates Dr. Maselli's manuscript philosophy into precise edits for 
      - Bi2Se3 measured/calculated Qz projection overlays.
      - Bi2Te3 measured detector image with Q/Qr/Qz trajectories or integration bands.
      - Bi2Te3 measured/calculated Qz projection overlays.
-   - Added text explaining that the projection should be reported versus Qz and labeled by HK/HKL or reflection family, with Qr values used as secondary information.
+   - Added text explaining that the projection should be reported versus Qz and labeled by m or explicit (h,k,l) or reflection family, with Qr values used as secondary information.
    - Added the required caveat that the projected Qz coordinate is resolution-limited by mosaicity, beam divergence, wavelength spread, incident-angle uncertainty, and detector sampling, while emphasizing that the same effects are applied to the calculation.
 
 6. `sections/discussion_conclusion.tex`
@@ -54,7 +54,7 @@ Create two figure sets, one for Bi2Se3 and one for Bi2Te3.
 For each material, make a detector image figure with these panels or visual elements:
 
 - measured detector or transformed detector image;
-- selected fixed-Qr or HK-family trajectories drawn lightly;
+- selected fixed-Qr or m-family trajectories drawn lightly;
 - optional integration bands if they clarify the extraction;
 - minimal Bragg-position markers, because large circles obscure the data;
 - clear incident angle label;
@@ -66,9 +66,9 @@ For each material, make a Qz overlay figure:
 - y-axis: intensity, normalized consistently within the figure;
 - measured data and calculation on the same axes;
 - one panel per selected reflection family or trajectory;
-- labels using HK/HKL or reflection-family notation;
+- labels using m or explicit (h,k,l) or reflection-family notation;
 - plus/minus branch labels only if the caption defines them physically;
-- no internal-only labels such as M1/M2 unless mapped explicitly to HK-family labels.
+- no internal-only labels such as M1/M2 unless mapped explicitly to m-family labels.
 
 ### 2. Add an early Lorentzian-tail evidence figure
 
@@ -88,7 +88,7 @@ Add one paragraph before the ordered-film figures or in the first ordered-film c
 
 Use language like:
 
-> For hexagonal films, each plotted in-plane family label denotes the set of symmetry-equivalent HK reflections with the same in-plane reciprocal-space radius. The quoted Qr value is the corresponding radial magnitude and is used only as secondary numerical information. Branch labels distinguish the two detector-side intersections of the same reciprocal-space family at a given incident angle.
+> For hexagonal films, each plotted in-plane family label denotes the set of symmetry-equivalent in-plane reflections with the same in-plane reciprocal-space radius. The quoted Qr value is the corresponding radial magnitude and is used only as secondary numerical information. Branch labels distinguish the two detector-side intersections of the same reciprocal-space family at a given incident angle.
 
 Then apply this convention consistently in every figure label and caption.
 
@@ -108,7 +108,7 @@ Dr. Maselli specifically wanted all collected angles listed so readers do not th
 
 ### 5. Move implementation details to the supplement
 
-Keep the main paper in Q, Qr, Qz, HK/HKL, Bragg rod, incident angle, mosaicity, and line-shape language.
+Keep the main paper in Q, Qr, Qz, m, Bragg rod, incident angle, mosaicity, and line-shape language.
 
 Move the following into the supplementary material:
 
@@ -137,7 +137,7 @@ When PbI2 returns, it should be a separate extension of the method, not mixed in
 - Do not lead with software implementation.
 - Do not hide the success in dense detector-summary graphics.
 - Show the data and calculated line shapes directly.
-- Use diffraction language first: Q, Qr, Qz, HK/HKL, Bragg rods, incident angle, mosaicity, resolution.
+- Use diffraction language first: Q, Qr, Qz, m, Bragg rods, incident angle, mosaicity, resolution.
 - Use more figures during drafting than will survive in the final paper.
 - Make measured data visually prominent.
 - Use the supplement for optimization details.

@@ -13,7 +13,7 @@
   % radius vector at midpoint of mosaic arc, label closer to tip
   \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)});
   \draw[thick,->] (0,0) -- (Gvec)
-       node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{HKL}|$};
+       node[pos=0.7, above, sloped] {\scriptsize $|\mathbf G_{m,L}|$};
 
   % polar angle vartheta from G_r to |G|
   \draw[red,thick] (0,0) ++(0:0.45) arc (0:\angleMid:0.45);
@@ -24,9 +24,9 @@
     ({\R*cos(20)},{\R*sin(20)}) arc (20:80:\R)
     node[pos=0.6, above right] {\scriptsize $\omega(\vartheta)$};
 
-  % projection onto G_r axis, labeled |G_{r,HKL}|
+  % projection onto G_r axis, labeled |G_{r,m}|
   \coordinate (Gr) at ({\R*cos(\angleMid)},0);
   \draw[densely dashed] (Gvec) -- (Gr);
-  \node[below, yshift = -2pt] at ({0.5*\R*cos(\angleMid)},0) {\scriptsize $|\mathbf G_{r,HKL}|$};
+  \node[below, yshift = -2pt] at ({0.5*\R*cos(\angleMid)},0) {\scriptsize $|\mathbf G_{r,m}|$};
 
 \end{tikzpicture}

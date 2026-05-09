@@ -253,18 +253,18 @@ A selected rod with in-plane radius $Q_{r,0}$ is retained when
 \]
 A branch selector may be applied after this reciprocal-space mask so that one branch is used for the default fit and the symmetry-related branch is retained for validation.
 
-Let $S_{ij}$ and $N_{ij}$ denote the caked signal and normalization fields, and let $m_{ij}$ denote the selected-rod mask. The measured profile is
+Let $S_{ij}$ and $N_{ij}$ denote the caked signal and normalization fields, and let $w_{ij}$ denote the selected-rod mask. The measured profile is
 \[
-  I_j^{\mathrm{rod}}=\frac{\sum_i m_{ij}S_{ij}}{\sum_i m_{ij}N_{ij}},
+  I_j^{\mathrm{rod}}=\frac{\sum_i w_{ij}S_{ij}}{\sum_i w_{ij}N_{ij}},
 \]
 for bins with positive selected normalization. Signal and normalization are therefore summed before division. This prevents the final trace from becoming a sum of already normalized pixels and keeps the observable tied to the detector-space calibration.
 
 The model profile is evaluated along the same selected branch. In compact notation,
 \[
   M_j(\boldsymbol{\theta}_{\mathrm{dis}})
-  =B(x_j)+s\,[K*I_{hk}^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
+  =B(x_j)+s\,[K*I_m^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
 \]
-where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_{hk}^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
+where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_m^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
 
 The disorder objective is evaluated only over the retained profile bins,
 \[
@@ -345,12 +345,12 @@ with $h,k,\ell$ in reciprocal‑lattice units.
 \\
 We now add the phase of each layer to the form factor from equation \ref{eq:FF}.
 \begin{equation}
-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(HKL) \ell}
+    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(h,k,\ell) \ell}
 \end{equation}
 Writing $e^{i \phi \ell} = \prod_{j=1}^\ell e^{i \phi}$
 
 \begin{equation}
-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(HKL) \ell}
+    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(h,k,\ell) \ell}
 \end{equation}
 
 

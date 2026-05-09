@@ -32,7 +32,7 @@ Primary goal: show Dr. Maselli a figure-driven Bi2Se3/Bi2Te3 manuscript update.
 ## Talking points
 
 1. The ordered-film fits already work; the draft now needs to show them clearly.
-2. The main text will use Q/Qr/Qz/HK/HKL language.
+2. The main text will use Q/Qr/Qz/m or explicit (h,k,l) language.
 3. The 2theta-phi implementation will be explained in the supplement.
 4. The Lorentzian mosaic tail will be introduced earlier with evidence.
 5. PbI2 is intentionally parked until the ordered-film story is stable.

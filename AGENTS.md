@@ -15,7 +15,7 @@ The manuscript is the priority. The software, code release, and implementation p
    The central result is that the model quantitatively reproduces the measured diffraction line shapes for **Bi2Se3** and **Bi2Te3**. This success must be visible in the main paper. Do not hide it inside two-dimensional detector images where the reader cannot assess the fit.
 
 3. **Write for a scattering / diffraction audience.**
-   Use the language readers expect: **Q**, **QR**, **Qz**, **HK/HKL indices**, **Bragg rods**, **Bragg positions**, **reciprocal space**, **incident angle**, **mosaicity**, **resolution**, and **line-shape fitting**. Avoid leading the main text with software-native language such as “caked space,” internal branch labels, configuration scripts, lookup tables, or optimization terminology.
+   Use the language readers expect: **Q**, **QR**, **Qz**, **m-indexed reflection families**, explicit **(h,k,l)** labels when needed, **Bragg rods**, **Bragg positions**, **reciprocal space**, **incident angle**, **mosaicity**, **resolution**, and **line-shape fitting**. Avoid leading the main text with software-native language such as “caked space,” internal branch labels, configuration scripts, lookup tables, or optimization terminology.
 
 4. **Physics first; optimization later.**
    The main text should explain the physical model and the experimental comparison. Computational optimizations belong in the supplementary material unless they are absolutely necessary to understand the physics.
@@ -72,7 +72,7 @@ For **Bi2Se3** and **Bi2Te3**, prepare figure sets that include:
 2. Q / QR / Qz trajectories or integration regions marked on the image.
 3. Extracted projections plotted versus **Qz**.
 4. Measured intensity and calculated intensity overlaid on the same axes.
-5. Labels that identify the relevant reflection family, HK/HKL index, QR value, branch, and/or incident angle.
+5. Labels that identify the relevant reflection family, scalar m label, QR value, branch, and/or incident angle.
 
 A useful structure is:
 
@@ -119,7 +119,7 @@ Preferred caption pattern:
 
 The main text should present projections in a way that is natural for diffraction readers.
 
-Use **Qz** as the main horizontal or projected coordinate for line profiles when that is the physical interpretation. Use **QR** or HK/HKL reflection-family labels to identify which reciprocal-space trajectory is being sampled.
+Use **Qz** as the main horizontal or projected coordinate for line profiles when that is the physical interpretation. Use **QR** or the scalar **m** reflection-family label to identify which reciprocal-space trajectory is being sampled.
 
 It is acceptable that the implementation uses 2theta–phi coordinates or a “caked” representation internally. However, do not make 2theta–phi optimization the organizing principle of the main manuscript.
 
@@ -156,7 +156,7 @@ When drafting this section:
 
 ## 003 / star-feature explanation
 
-The manuscript must explicitly explain the star-like or line-like feature associated with the HK = 0, L = 3 region.
+The manuscript must explicitly explain the star-like or line-like feature associated with the m = 0, L = 3 region.
 
 Do not treat this feature as an unexplained artifact or as ordinary reflectivity. The current interpretation is that the finite Ewald-sphere thickness from wavelength bandwidth intersects the small 003 Bragg sphere in a way that, combined with mosaic extension, redistributes intensity into the observed detector feature.
 
@@ -179,24 +179,24 @@ Avoid relying only on internal labels such as `M1`, `M2`, “plus branch,” or 
 
 Preferred labels include:
 
-- HK or HKL indices.
+- The scalar in-plane family label m, with explicit (h,k,l) labels where needed.
 - Reflection-family labels.
 - Equivalent-ring or powder-manifold labels, with the convention defined in the caption or text.
 - QR values as secondary numerical information.
 
-If several symmetry-equivalent reflections contribute to the same powder ring or reciprocal-space manifold, define a compact convention. For example, one label may represent a family of equivalent HK reflections, but the text or caption must state that convention explicitly.
+If several symmetry-equivalent reflections contribute to the same powder ring or reciprocal-space manifold, define a compact convention. For example, one m label may represent a family of equivalent in-plane reflections, but the text or caption must state that convention explicitly.
 
 The reader should always be able to tell which crystal reflection, reflection family, or reciprocal-space radius is being discussed.
 
-For hexagonal Bi2Se3 and Bi2Te3, a compact scalar reflection-family label may be used:
+For hexagonal Bi2Se3 and Bi2Te3, use the compact scalar reflection-family label:
 
 \[
-m = h^2 + hk + k^2 .
+m = h^2 + h k + k^2 .
 \]
 
-Use this only after defining it. Avoid labels such as “HK = 1” unless the figure or caption makes clear that this is a scalar family label, not a literal pair of indices. Prefer \(m=1\), \(m=3\), or explicit \((h,k,l)\) labels when space allows.
+Use this only after defining it. Avoid pair-style scalar labels; use \(m=1\), \(m=3\), or explicit \((h,k,l)\) labels when space allows.
 
-Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\), HK, HKL, branch labels, projection width, and reciprocal lattice units.
+Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\), explicit \((h,k,l)\) labels, branch labels, projection width, and reciprocal lattice units.
 
 ## Main text versus supplementary material
 
@@ -273,7 +273,7 @@ For the next manuscript revision, focus on:
 2. Readable 2D diffraction images with clear trajectories, integration regions, and material labels.
 3. Qz projection figures with measured/calculated overlays.
 4. Teaching captions that define the plotted guides, projection bounds, axes, and conclusions.
-5. A readable HK/HKL or reflection-family labeling convention, preferably using a defined scalar \(m = h^2 + hk + k^2\) when helpful.
+5. A readable m-indexed reflection-family labeling convention, using a defined scalar \(m = h^2 + h k + k^2\) for hexagonal films.
 6. An early two-component mosaicity section with direct evidence.
 7. A 003/star-feature explanation with a detector crop and Ewald-sphere bandwidth schematic.
 8. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
@@ -307,7 +307,7 @@ Before returning a manuscript edit or new section, check the following:
 
 - Does this text put the paper before the software?
 - Does it explain the physics before the optimization?
-- Does it use Q, QR, Qz, HK/HKL, and reciprocal-space language where appropriate?
+- Does it use Q, QR, Qz, m-indexed reflection-family labels, and reciprocal-space language where appropriate?
 - Does it avoid unnecessary software-native terminology in the main text?
 - Does it make the measured data and calculated fit comparison clear?
 - Does it preserve the central claim that the model quantitatively reproduces the line shapes?
@@ -320,7 +320,7 @@ Before returning a manuscript edit or new section, check the following:
 - Does the mosaicity section include direct evidence for the Lorentzian tail?
 - Does the paper explain the 003/star feature before using it as model-validation evidence?
 - Are sample-orientation effects included in plotted Q-space trajectories, or is the limitation stated?
-- Are \(Q_R\), \(Q_z\), \(L\), \(m\), HK, and HKL defined before use?
+- Are \(Q_R\), \(Q_z\), \(L\), \(m\), and any explicit \((h,k,l)\) labels defined before use?
 - Does the main text discuss propagated/systematic error rather than hiding it in the supplement?
 - Does the manuscript state what structural model, CIF/SIF file, occupancy changes, or structure-factor fitting were used?
 - Does the final comparison make the refinement-quality claim visible?
@@ -333,7 +333,7 @@ Avoid these patterns unless there is a specific reason:
 - Leading the main text with 2theta–phi implementation details.
 - Calling internal coordinates or labels self-explanatory.
 - Showing plots that obscure the measured data.
-- Using QR numbers without connecting them to HK/HKL or reflection families.
+- Using QR numbers without connecting them to m or a defined reflection family.
 - Compressing multi-step analysis procedures into one sentence.
 - Presenting optimization choices as if they were the physics.
 - Delaying the mosaicity evidence until late in the paper.

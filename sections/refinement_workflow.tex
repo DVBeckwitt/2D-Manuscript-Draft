@@ -35,7 +35,7 @@ We use a staged refinement because geometry, mosaicity, and crystallographic int
     Center-aligned profile shapes, off-specular arcs, and specular tails \\
     5 &
     Ordered-film validation &
-    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$Q_r$/HK trajectories &
+    Selected detector-space Bragg regions and $Q_z$ projections from fixed-$m$ trajectories &
     Image scale factors and ordered structure-factor parameters &
     Relative Bragg intensities and measured/calculated line-shape agreement \\
     \bottomrule
@@ -44,5 +44,5 @@ We use a staged refinement because geometry, mosaicity, and crystallographic int
 
 The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment. 
 
-The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$Q_r$/HK trajectories for comparison versus $Q_z$. Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information. 
-Later stacking-disorder will be acquired by fitting the HK rods as a function of L. 
+The remaining stages refine peak shape and intensity. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Selected Bragg-region integrals constrain ordered structure-factor parameters, and the final validation projects measured and calculated images along the same fixed-$m$ trajectories for comparison versus $Q_z$. Implementation details required for efficiency, including $2\theta$--$\phi$ remapping, caked fields, lookup tables, and Monte Carlo sampling, are described in the supporting information. 
+Later stacking disorder can be added by fitting the $m$-indexed rods as a function of $L$. 

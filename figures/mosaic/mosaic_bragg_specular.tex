@@ -12,10 +12,10 @@
   \draw[->,thick] (0,0) -- (0,\Raxis) node[above] {$G_z$};
   \draw[->,thick] (0,0) -- (\Raxis,0) node[right] {$G_r$};
 
-  % |G_HKL| at vartheta = 90 degrees: purely along G_z
+  % |G_{m,L}| at vartheta = 90 degrees: purely along G_z
   \coordinate (Gvec) at ({\R*cos(\angleMid)},{\R*sin(\angleMid)}); % = (0,\R)
   \draw[thick,->] (0,0) -- (Gvec)
-       node[pos=0.75, right] {\scriptsize $|\mathbf G_{HKL}|$};
+       node[pos=0.75, right] {\scriptsize $|\mathbf G_{m,L}|$};
 
   % vartheta marker as a right-angle corner (not an arc)
   \def\c{0.18}

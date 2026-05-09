@@ -72,7 +72,7 @@ Suggested replacement:
 ```latex
 Here we present a forward model for WAXS from 2D powders that carries the calculation from crystallographic structure and film geometry to the measured area-detector image. The model includes detector geometry, grazing-incidence propagation, finite beam phase space, mosaicity, and structure-factor intensity.
 
-The main result is demonstrated on ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. For these films, the same model reproduces detector positions, local line shapes, and projected intensity profiles along indexed $Q_r$/HK trajectories plotted versus $Q_z$.
+The main result is demonstrated on ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films. For these films, the same model reproduces detector positions, local line shapes, and projected intensity profiles along indexed $Q_r$/m trajectories plotted versus $Q_z$.
 
 Applications to PbI$_2$ diffuse scattering and stacking disorder use the same framework, but are deferred until the ordered-film validation is shown clearly.
 ```
@@ -191,7 +191,7 @@ Suggested replacement for lines after the table:
 ```latex
 The instrumental and alignment stages fix where an ideal reflection should appear on the detector. Direct-beam and calibrant data define the beam phase space and detector mapping, while indexed sample reflections determine the incidence condition, sample offsets, and goniometer misalignment.
 
-The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/HK trajectories for comparison versus $Q_z$.
+The remaining stages refine what the peaks look like and how intense they are. Local detector profiles constrain the shared Gaussian-plus-Lorentzian mosaic distribution. Bragg ROI integrals constrain the ordered structure-factor parameters, and the final validation projects both measured and calculated images along the same indexed $Q_r$/m trajectories for comparison versus $Q_z$.
 ```
 
 Then keep one sentence:
@@ -225,7 +225,7 @@ Current language:
 Replace with result-forward language:
 
 ```latex
-Figures~X and~Y show the ordered-film validation for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. For each material, the detector image identifies the indexed $Q_r$/HK trajectories used for projection, and the companion panels compare measured and calculated intensity along those trajectories as functions of $Q_z$.
+Figures~X and~Y show the ordered-film validation for Bi$_2$Se$_3$ and Bi$_2$Te$_3$. For each material, the detector image identifies the indexed $Q_r$/m trajectories used for projection, and the companion panels compare measured and calculated intensity along those trajectories as functions of $Q_z$.
 ```
 
 ### Change 2: keep the projection caveat, but move it closer to the first overlay figure or into the caption
@@ -292,7 +292,7 @@ Suggested structure:
 Suggested replacement:
 
 ```latex
-The ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films provide the central validation of the model. A single forward calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, and ordered structure-factor intensity, then compares measured and calculated profiles along the same indexed $Q_r$/HK trajectories. The key result is the direct $Q_z$ line-shape agreement, not merely visual similarity between two detector images.
+The ordered Bi$_2$Te$_3$ and Bi$_2$Se$_3$ films provide the central validation of the model. A single forward calculation accounts for detector geometry, finite beam phase space, sample alignment, mosaicity, and ordered structure-factor intensity, then compares measured and calculated profiles along the same indexed $Q_r$/m trajectories. The key result is the direct $Q_z$ line-shape agreement, not merely visual similarity between two detector images.
 
 These profiles are not ideal reciprocal-space cuts. Mosaicity, divergence, wavelength spread, incidence-angle uncertainty, and detector sampling all broaden the effective meaning of $Q_z$. The useful point is that the same broadening is present in the calculated image before projection, so the overlay tests the complete experimental model rather than an idealized structure factor alone.
 

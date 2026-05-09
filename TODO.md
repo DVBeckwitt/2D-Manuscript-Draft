@@ -9,7 +9,7 @@ The detailed tracker is `MANUSCRIPT_STATUS.md`. Use this as a short entry point.
 - [ ] Make Bi2Te3 detector/projection figure with measured data visible.
 - [ ] Make Bi2Te3 Qz projection overlays with measured/calculated curves.
 - [ ] Add or draft two-component mosaicity / Lorentzian-tail evidence.
-- [ ] Define HK/HKL or reflection-family labeling convention.
+- [ ] Define m or explicit (h,k,l) reflection-family labeling convention.
 - [ ] Add Q-space/projection caveat paragraph.
 - [ ] Add incident-angle table for Bi2Se3 and Bi2Te3.
 - [ ] Start supplement outline for implementation details.

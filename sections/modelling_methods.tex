@@ -1,6 +1,6 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
-The detector-space forward model redistributes the structure-factor intensity of the contributing reflections over mosaic distributions. Monte Carlo samples the incident beam profile across those orientations, weights each ray by transmission, and maps the summed intensity to detector pixels. The calculated and measured images are then compared using the same peak positions, line shapes, relative Bragg intensities, and projected $Q_z$ profiles used for the ordered-film validation.
+The detector-space forward model redistributes the structure-factor intensity of the contributing reflections over mosaic distributions. We Monte Carlo sample the incident beam profile across those orientations, weights each ray by transmission, and maps the summed intensity to detector pixels. The calculated and measured images are then compared using the same peak positions, line shapes, relative Bragg intensities, and projected L-integrated profiles.
 \subsection{Diffraction Geometry}
 
 We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Elastic scattering requires
@@ -15,7 +15,7 @@ Diffraction occurs when the momentum transfer matches a reciprocal-lattice vecto
 \]
 For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. The allowed exit vectors are found by intersecting that Bragg sphere with the Ewald sphere and then propagating the resulting exit ray to the detector.
 
-For each trial incident ray, the model computes the sample intersection, applies the incidence geometry and optical corrections, finds the reciprocal-space intersections that satisfy elastic scattering, and propagates the resulting exit rays to the detector. Rays are Monte Carlo sampled from the probability distribution formed by the shape, bandwidth, and divergence of the beam. A second Monte Carlo sampling occurs for each ray to choose an intersection point. Footprint, detector tilt, refraction, and absorption enter as experimental resolution and intensity terms. The coordinate conventions for the lab frame, detector plane, sample rotation, and illuminated footprint are summarized in Figs.~\ref{fig:waxs_geometry_system} and~\ref{fig:waxs_geometry_sample_triptych}.
+For each trial incident ray, the model computes the sample intersection, applies the incidence geometry and optical corrections, finds the reciprocal-space intersections that satisfy elastic scattering, and propagates the resulting exit rays to the detector. Rays are Monte Carlo sampled from the probability distribution formed by the shape, bandwidth, and divergence of the beam. From every Bragg peak's structure factor spread upon the mosaic, a second Monte Carlo sampling occurs for each ray to choose an intersection point. Footprint, detector tilt, refraction, and absorption enter as experimental resolution and intensity terms. The coordinate conventions for the lab frame, detector plane, sample rotation, and illuminated footprint are summarized in Figs.~\ref{fig:waxs_geometry_system} and~\ref{fig:waxs_geometry_sample_triptych}.
 
 %------------------------------
 % Figure 1: System only
@@ -59,10 +59,11 @@ $\vec{g}$ is the goniometer arm (normal to $\hat{y}$), and $\vec{g}'$ is the mis
 \end{figure}
 
 \subsection{Structure Factor}
+\label{sec:structure_factor}
 
-We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. We define \(\mathrm{HK}\) as the scalar in-plane metric sum
+We enumerate integer in-plane Miller pairs $(H,K)$, construct the reciprocal-space rod along $G_z$ for each pair, and evaluate its detector intersections. For labels and profile extraction, the in-plane pair is represented by the scalar family index $m$, defined by the in-plane sum
 \[
-\mathrm{HK}(H,K)
+m(H,K)
 =
 \begin{bmatrix}
 H & K
@@ -72,9 +73,9 @@ H & K
 H \\
 K
 \end{bmatrix}
-\propto Q_r^2 ,
+.
 \]
-where \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of \(\mathrm{HK}\). Thus, \(\mathrm{HK}\) labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same \(\mathrm{HK}\), and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
+Here \(\mathbf M_{\parallel}\) is the in-plane reciprocal-lattice metric, with any lattice-dependent normalization absorbed into the definition of $m$. For the hexagonal bismuth chalcogenides, this scalar is proportional to $H^2+H\,K+K^2$. Thus, $m$ labels an in-plane reciprocal-space rod family. In 2D-powder calculations, all integer \((H,K)\) rods with the same $m$, and therefore the same \(Q_r\), are evaluated individually and then summed after projection. Multiplicity and orientation effects therefore emerge within the forward model.
 
 For each reflection with reciprocal-lattice vector
 \[
