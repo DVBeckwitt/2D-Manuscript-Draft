@@ -1,6 +1,6 @@
 # Figure Status
 
-Last updated: 2026-04-30  
+Last updated: 2026-05-10
 Current figure priority: Bi2Se3 and Bi2Te3 ordered-film figures showing measured data, Q/Qr/Qz trajectories or integration regions, and measured/calculated Qz projection overlays.
 
 ## Status definitions
@@ -41,14 +41,15 @@ Use Q, Qr, Qz, the scalar in-plane family label m, and explicit (h,k,l) labels w
 
 ### Ordered-film result figures
 
-The earlier placeholder/result PNGs in `figures/results_ordered/` were removed from the active package because they were not the final advisor-requested figures. The folder now contains `README_needed_figures.md` and should be repopulated with real data figures only.
+The active manuscript now uses the current ordered-film assets in `figures/results_ordered/`. The low-L m=0 star-feature crop is placed before the ordered-film validation figure so the reader sees the observational problem before the data/model payoff.
 
-| Proposed file | Status | Needed action |
+| Active file | Status | Notes |
 |---|---|---|
-| `figures/results_ordered/bise_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Se3 detector image with projected fixed-$Q_r$ rod centerlines, direct m labels near fitted peaks, linear intensity, no stars, no legend. |
-| `figures/results_ordered/bise_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Se3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
-| `figures/results_ordered/bite_qz_trajectories.png` | PLACEHOLDER INSERTED | Measured Bi2Te3 detector image with the same rod/m-label convention as Bi2Se3; linear intensity, no stars, no legend. |
-| `figures/results_ordered/bite_qz_projection_overlays.png` | PLACEHOLDER INSERTED | Bi2Te3 measured/calculated intensity overlays versus $Q_z$ for selected m/fixed-$Q_r$ trajectories. |
+| `figures/results_ordered/00L_region_horizontal.png` | DONE | Inserted as the low-L m=0 star-feature crop before the validation overlay; ready for advisor review. |
+| `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | IN PROGRESS | Inserted in the ordered validation figure; still needs advisor review for readability and annotation density. |
+| `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | IN PROGRESS | Inserted in the ordered validation figure; should match Bi2Se3 styling and label convention. |
+| `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png` | IN PROGRESS | Inserted as measured/calculated profile overlays; final axis and label convention still need advisor check. |
+| `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png` | IN PROGRESS | Inserted as measured/calculated profile overlays; final axis and label convention still need advisor check. |
 
 ### PbI2 figures
 
@@ -62,12 +63,13 @@ The earlier PbI2 result PNGs were removed from `figures/results_pbi2/` and repla
 
 | Proposed figure | Status | Suggested file name | Purpose |
 |---|---|---|---|
-| Bi2Se3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_trajectories.png` | Show measured data and where projections come from; linear intensity, direct m labels, no stars. |
-| Bi2Se3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bise_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
-| Bi2Te3 detector image with Q/Qr/Qz trajectories | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_trajectories.png` | Show measured data and where projections come from; same convention as Bi2Se3. |
-| Bi2Te3 Qz projection overlays | PLACEHOLDER INSERTED | `figures/results_ordered/bite_qz_projection_overlays.png` | Show measured/calculated fits vs $Q_z$. |
-| Two-component mosaicity evidence | TODO | `figures/mosaic/lorentzian_tail_evidence.png` | Show why long-tail mosaicity is required. |
-| Reflection-label guide | TODO | caption or `figures/results_ordered/reflection_family_labels.png` | Explain the scalar m family convention. |
+| Low-L m=0 star-feature crop | DONE | `figures/results_ordered/00L_region_horizontal.png` | Show the near-origin specular feature before the validation overlay. |
+| Bi2Se3 detector image with Q/Qr/Qz trajectories | IN PROGRESS | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | Show measured data and where projections come from; needs advisor readability check. |
+| Bi2Se3 Qz projection overlays | IN PROGRESS | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png` | Show measured/calculated fits vs Qz/L; needs final axis-label check. |
+| Bi2Te3 detector image with Q/Qr/Qz trajectories | IN PROGRESS | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | Show measured data and where projections come from; same convention as Bi2Se3. |
+| Bi2Te3 Qz projection overlays | IN PROGRESS | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png` | Show measured/calculated fits vs Qz/L; needs final axis-label check. |
+| Two-component mosaicity evidence | IN PROGRESS | `figures/mosaic/lorentzian_tail_evidence.png` or existing ordered-film crop | Low-L m=0 evidence is inserted; a direct narrow-core versus Lorentzian-tail comparison may still be needed. |
+| Reflection-label guide | IN PROGRESS | caption or `figures/results_ordered/reflection_family_labels.png` | Initial scalar m convention appears in text/captions; final convention needs advisor check. |
 
 ## Recommended main-text figure sequence
 
@@ -104,14 +106,28 @@ Immediate priority.
 
 Use the same visual logic as Bi2Se3.
 
-### Figure 5 — Two-component mosaicity / Lorentzian-tail evidence
+### Figure 5 — Low-L m=0 star-feature observation
 
-Status: TODO  
-Immediate priority if it can be made cleanly.
+Status: DONE
+Current file: `figures/results_ordered/00L_region_horizontal.png`.
+
+Purpose: show the unexpected near-origin specular-family detector feature before the final ordered-film validation figure.
+
+### Figure 6 — Ordered-film validation overlay
+
+Status: IN PROGRESS
+Current files: `figures/results_ordered/figure7_*`.
+
+Purpose: show Bi2Se3 and Bi2Te3 detector trajectories and measured/calculated profile overlays after the star-feature observation has been introduced.
+
+### Future figure — Two-component mosaicity / Lorentzian-tail evidence
+
+Status: IN PROGRESS
+Still useful if it can be made cleanly.
 
 Purpose: show that a narrow mosaic distribution alone cannot explain observed high-angle reflections at a given incident angle.
 
-### Figure 6 — PbI2 selected-rod / stacking-disorder result
+### Future figure — PbI2 selected-rod / stacking-disorder result
 
 Status: PARKED  
 Do not prioritize until ordered-film story is stable.
@@ -167,6 +183,7 @@ Example caption language:
 - [ ] Add Q/Qr/Qz trajectories or integration bands.
 - [ ] Generate Qz projection profiles with data/model overlays.
 - [ ] Add m or explicit (h,k,l) reflection-family labels.
-- [ ] Create one mosaic-tail evidence figure or panel.
-- [ ] Insert draft figures into `sections/results_ordered.tex` or related section.
+- [ ] Create one mosaic-tail evidence figure or panel, if the inserted m=0 crop is not enough.
+- [x] Insert draft ordered-film figures into `sections/results_ordered.tex`.
+- [x] Move the low-L m=0 star-feature figure before the ordered validation figure.
 - [ ] Update captions before polishing text.

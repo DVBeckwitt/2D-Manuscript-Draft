@@ -1,7 +1,14 @@
 # Next Meeting Prep
 
-Planned meeting: 2026-05-07, 2:00 PM, subject to rescheduling  
+Meeting status: CHECK - the 2026-05-07 planned meeting date is now past; update when the next advisor meeting is known
 Primary goal: show Dr. Maselli a figure-driven Bi2Se3/Bi2Te3 manuscript update.
+
+## Current status update
+
+- [x] Low-L m=0 star-feature crop and discussion now appear before the ordered-film validation figure.
+- [x] `main.pdf` was rebuilt after the reorder, and the LaTeX log showed no unresolved references.
+- [x] Existing figure labels stayed stable, so no reference migration was needed.
+- [ ] Advisor still needs to decide whether the inserted star-feature crop is enough mosaic-tail evidence or whether a direct narrow-core versus Lorentzian-tail comparison figure is required.
 
 ## What to have ready
 
@@ -11,14 +18,15 @@ Primary goal: show Dr. Maselli a figure-driven Bi2Se3/Bi2Te3 manuscript update.
 - [ ] Bi2Se3 measured/calculated Qz projection overlays.
 - [ ] Bi2Te3 measured detector/caked image with Q/Qr/Qz trajectories or integration regions.
 - [ ] Bi2Te3 measured/calculated Qz projection overlays.
-- [ ] A mosaicity/Lorentzian-tail evidence panel or at least a sketched figure concept.
+- [x] A low-L m=0 star-feature observation panel before the final validation figure.
+- [ ] A direct mosaicity/Lorentzian-tail comparison panel, if the advisor wants stronger evidence.
 
 ### Text
 
-- [ ] Paragraph explaining why the projection is useful even though it is not an ideal perfect-Q measurement.
+- [x] Paragraph explaining why the projection is useful even though it is not an ideal perfect-Q measurement.
 - [ ] Paragraph introducing two-component mosaicity and the Lorentzian tail.
 - [ ] Caption text for the Bi2Se3 and Bi2Te3 figures.
-- [ ] Reflection-family label convention.
+- [x] Initial reflection-family label convention.
 - [ ] Incident-angle table or draft list.
 
 ### Supplement stubs
