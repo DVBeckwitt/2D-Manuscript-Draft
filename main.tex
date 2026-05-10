@@ -31,16 +31,17 @@
 \setcitestyle{super,comma,numbers,sort&compress}
 
 % Small helper to place a panel tag at the top left of arbitrary content.
-% This intentionally includes only real image files. Missing figures should fail
-% compilation rather than producing visible missing-figure boxes in the manuscript.
+% Keep tags just outside the graphic so they do not cover axes, tick labels, or
+% detector annotations.
 \newcommand{\paneltagged}[2]{%
   \begin{tikzpicture}
     \node[inner sep=0] (img) {#2};
     \node[
-      anchor=north west,
+      anchor=south east,
       font=\bfseries,
-      inner sep=1.5pt
-    ] at ([xshift=2pt,yshift=-2pt]img.north west) {#1};
+      inner sep=1.5pt,
+      overlay
+    ] at ([xshift=-2pt,yshift=2pt]img.north west) {#1};
   \end{tikzpicture}%
 }
 
