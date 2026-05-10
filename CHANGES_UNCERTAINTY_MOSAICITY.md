@@ -61,3 +61,24 @@ This revision adds the thesis-derived uncertainty discussion without adding new 
 - No new figures were added.
 - No existing figures were removed.
 - The uncertainty material is text/equations only, with the detailed derivation pushed to the supporting-information outline.
+
+## Additional uncertainty-propagation revision
+
+### `sections/refinement_workflow.tex`
+
+- Added a concise main-text paragraph on uncertainty propagation and parameter correlations.
+- Kept the main text in detector-space, fixed-`m`, `Q_z`, and `L` language rather than leading with implementation-native caked-space terminology.
+- Stated that the projected profiles are resolution-limited detector-space projections, not ideal one-dimensional reciprocal-space cuts.
+- Connected the staged workflow to the major parameter correlations: detector/alignment terms for peak positions, divergence/mosaicity for widths, bandwidth/background/Lorentzian tail for weak low-`L` intensity, and scale/absorption/thickness/structure factors for relative intensity.
+
+### `sections/results_ordered.tex`
+
+- Added a sentence connecting the unexpected `00L` peaks and enhanced low-`L` specular intensity to the same uncertainty and correlation limits discussed in the workflow section.
+- Corrected minor placeholder/caption typographical errors in the low-`L` feature description.
+
+### `2D_Supplemental/SI_implementation_outline.tex`
+
+- Expanded the coordinate-remapping section into a fuller derivation of caked-space projection, fixed-`Q_r`/HK slicing, projected `Q_z`/`L` profiles, coordinate-label uncertainty, detector-pixel intensity variance propagation, and parameter correlations.
+- Added the sparse detector-to-cake operator `M`, the signal-before-normalization convention, the fixed-`Q_r` selection rule, and the ROI profile expression.
+- Added the effective detector-to-profile weight `a` so that caking and rod-mask operations share a single propagated-variance expression.
+- Added a short Monte Carlo sampling uncertainty paragraph that distinguishes numerical integration uncertainty from physical broadening.

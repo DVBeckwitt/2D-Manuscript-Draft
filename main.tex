@@ -30,18 +30,17 @@
 % if you want PRB-like superscripts instead:
 \setcitestyle{super,comma,numbers,sort&compress}
 
-% Small helper to place a panel tag at the top left of arbitrary content.
-% Keep tags just outside the graphic so they do not cover axes, tick labels, or
-% detector annotations.
+% Small helper to place a panel tag just above the top-left of arbitrary content.
+% The label is part of the picture's bounding box so adjacent content cannot
+% overlap it.
 \newcommand{\paneltagged}[2]{%
   \begin{tikzpicture}
     \node[inner sep=0] (img) {#2};
     \node[
-      anchor=south east,
+      anchor=south west,
       font=\bfseries,
-      inner sep=1.5pt,
-      overlay
-    ] at ([xshift=-2pt,yshift=2pt]img.north west) {#1};
+      inner sep=1.5pt
+    ] at ([xshift=0pt,yshift=3pt]img.north west) {#1};
   \end{tikzpicture}%
 }
 
