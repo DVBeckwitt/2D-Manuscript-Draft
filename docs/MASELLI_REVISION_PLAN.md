@@ -1,5 +1,8 @@
 # Maselli-directed manuscript revision plan
 
+**Status note (2026-05-12):** This older ordered-film triage plan has been partially superseded by the 2026-05-12 advisor-feedback restructure. The current draft reintroduces PbI$_2$ as a subordinate extension after the ordered-film results, moves the workflow to the end before the conclusion, and adds a correlated-effects section after mosaicity. See `CHANGES_20260512_ADVISOR_RESTRUCTURE.md` for the current changes.
+
+
 This plan translates Dr. Maselli's manuscript philosophy into precise edits for the current draft. It is meant to be used as the next editing checklist, not as general advice.
 
 ## Edits already made in this package

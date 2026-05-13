@@ -1,0 +1,50 @@
+\subsection{Correlated mosaicity, bandwidth, and Bragg-sphere size}
+\label{sec:correlated_effects}
+
+Mosaicity is not observed independently of the beam phase space. It is observed through the subset of mosaic orientations that also satisfy the Ewald condition for the incident wavelength, incident direction, and detector geometry. This is why the low-$L$ $m=0$ features in Fig.~\ref{fig:hk0_low_l_star} are discussed separately from the mosaic functional form. They depend on the correlated action of mosaicity, wavelength bandwidth, beam divergence, and Bragg-sphere size.
+
+For one monochromatic incident ray, elastic scattering selects the intersection of two geometric objects: the Ewald sphere, with radius $2\pi/\lambda$, and the Bragg sphere associated with a reflection of magnitude $|\mathbf G|$. The Bragg sphere is a useful construction because each point on it corresponds to a different crystallite orientation for the same reciprocal-lattice-vector magnitude. Mosaicity populates only a cap-like region of that Bragg sphere around the nominal orientation. The observed intensity is therefore not the whole Ewald--Bragg intersection ring; it is the part of that allowed ring that overlaps the populated mosaic cap.
+
+Finite wavelength bandwidth changes the Ewald sphere from an infinitesimally thin surface into a shell of allowed radii. Beam divergence and incident-angle spread have a similar effect by moving the Ewald-sphere center and direction. When this finite Ewald shell intersects the mosaic-populated Bragg sphere, the overlap region can become much larger than the ideal single-ray intersection. This is especially important for low-order reflections. For a small Bragg sphere, a fixed instrumental bandwidth or angular spread covers a comparatively large fraction of the Bragg sphere and can continue to overlap the mosaic cap over a broad range of nominal incident angles. For a larger Bragg sphere, the same bandwidth produces a narrower effective intersection, so the detected intensity is more sensitive to the exact incidence condition.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.34\textheight]{figures/mosaic/bragg_sphere_bandwidth_size_series.png}{%
+      Tutorial schematic series showing a finite-thickness Ewald sphere intersecting small, medium, and large Bragg spheres. Include the mosaic cap on each Bragg sphere and highlight how much of the cap is sampled for each sphere size.
+    }
+  \end{minipage}
+  \caption{Planned tutorial schematic for the coupled bandwidth--mosaicity geometry. The figure should compare small and large Bragg spheres, show the finite Ewald-sphere thickness from wavelength bandwidth, overlay the mosaic cap, and identify the allowed intersection ring. The central lesson is that the same instrumental bandwidth can sample a much larger angular fraction of a low-order Bragg sphere than of a high-order Bragg sphere.}
+  \label{fig:correlated_bragg_sphere_size_series}
+\end{figure}
+
+This geometry explains a counterintuitive feature of the measurements. Increasing the incidence angle can bring high-order $00L$ peaks into condition while the low-order peaks remain visible, but lowering the incidence angle does not necessarily preserve the high-order peaks. The low-order peaks are robust because the finite Ewald-shell thickness and the mosaic cap continue to overlap. The high-order peaks require a more specific intersection because their Bragg spheres are larger and the same bandwidth samples a smaller fraction of the populated cap.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.34\textheight]{figures/mosaic/delta_lambda_detector_series.png}{%
+      Calculated detector-image sequence for different $\Delta\lambda$ values and/or incident angles. Show how the low-$L$ feature, streaks, and star-like morphology change as the Ewald-shell thickness changes.
+    }
+  \end{minipage}
+  \caption{Planned calculated-image sequence connecting the schematic geometry to detector space. The panels should hold the mosaic model fixed while varying $\Delta\lambda$, incident angle, or Bragg-sphere size, then show how the detector streaks and star-like $m=0$ morphology change. This figure is intended to make the correlated effects visible rather than leaving them as text-only geometry.}
+  \label{fig:correlated_delta_lambda_detector_series}
+\end{figure}
+
+The detector image is the projection of the allowed $\mathbf k_f$ directions. The Ewald--Bragg intersection ring is a geometric set of possible rays, not a statement that intensity is uniformly present around the ring. Most of the ring is dark unless it crosses the mosaic-populated cap. When it does cross the cap, the mapped exit vectors can form a narrow streak, a star-like feature, or broadened cap-like intensity depending on $|\mathbf G|$, incident angle, bandwidth, divergence, and the tail of $\omega_{\mathrm w}$. The low-$L$ feature is therefore not only evidence for a long mosaic tail. The long tail supplies tilted crystallites, but finite bandwidth and divergence determine which part of that tail the detector samples.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.36\textheight]{figures/mosaic/low_q_003_03_06_data_model_overlay.png}{%
+      Side-by-side measured and calculated detector crops/profiles for the low-$Q$ or $003$ region, the $03$ feature, and the off-condition $06$ or $006$ feature. Include a with/without bandwidth or with/without Lorentzian-tail comparison if available.
+    }
+  \end{minipage}
+  \caption{Planned data/model comparison for the correlated-effects explanation. The figure should place the measured and calculated low-$Q$ or $003$ feature, the $03$ feature, and the off-condition $06$/$006$ feature next to one another. A useful final version would include a control calculation with the Lorentzian tail or finite bandwidth disabled, provided that the control calculation has been verified.}
+  \label{fig:correlated_feature_model_overlay}
+\end{figure}
+
+In the final ordered-film validation, the off-specular arcs, the weak off-condition $m=0$ peaks, and the low-$L$ feature are interpreted together. Off-specular line widths constrain the narrow mosaic core and detector resolution. Weak $00L$ peaks constrain the Lorentzian-like tail. The star-like low-$L$ feature tests whether that mosaic tail has been combined with the correct wavelength bandwidth, divergence, and detector projection. Treating these effects as correlated is what allows the model to reproduce non-obvious detector features rather than only the strongest Bragg peaks.

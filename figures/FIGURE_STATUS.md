@@ -1,7 +1,7 @@
 # Figure Status
 
-Last updated: 2026-05-10
-Current figure priority: Bi2Se3 and Bi2Te3 ordered-film figures showing measured data, Q/Qr/Qz trajectories or integration regions, and measured/calculated Qz projection overlays.
+Last updated: 2026-05-12
+Current figure priority: Bi2Se3 and Bi2Te3 ordered-film figures, plus the newly added mosaic-motivation and correlated-effects placeholders requested after the advisor discussion.
 
 ## Status definitions
 
@@ -33,19 +33,24 @@ Use Q, Qr, Qz, the scalar in-plane family label m, and explicit (h,k,l) labels w
 
 | Path or folder | Status | Notes |
 |---|---|---|
+| `figures/mosaic/raw_detector_mosaic_motivation.png` | TODO | New placeholder for the full raw detector image that motivates mosaicity before the low-L crop. |
+| `figures/results_ordered/00L_region_horizontal_marked.png` | IN PROGRESS | Moved into the mosaicity section as the low-L m=0 star-feature crop; asset path is retained from the ordered-results figure folder for now. |
+| `figures/mosaic/bragg_sphere_bandwidth_size_series.png` | TODO | Placeholder for Bragg-sphere size / Ewald thickness / mosaic cap tutorial sequence. |
+| `figures/mosaic/delta_lambda_detector_series.png` | TODO | Placeholder for detector-image sequence varying wavelength bandwidth, incidence angle, or Bragg-sphere size. |
+| `figures/mosaic/low_q_003_03_06_data_model_overlay.png` | TODO | Placeholder for measured/calculated overlay or control comparison for low-Q/003, 03, and 06-type features. |
 | `figures/mosaic/2d_mosaic.png` | IN PROGRESS | Candidate for mosaicity explanation. |
 | `figures/mosaic/inplane_detector_band.png` | IN PROGRESS | May support integration-region explanation. |
 | `figures/mosaic/mosaic_schematic.png` | IN PROGRESS | Candidate schematic. |
 | `figures/mosaic/specular_detector_cap.png` | IN PROGRESS | Candidate for specular-cap/mosaic discussion. |
-| `figures/mosaic/pbi2_waxs.png` | PARKED | PbI2-related; defer for now. |
+| `figures/mosaic/pbi2_waxs.png` | PARKED | Legacy PbI2-related asset; new PbI2 placeholders are under `figures/results_pbi2/`. |
 
 ### Ordered-film result figures
 
-The active manuscript now uses the current ordered-film assets in `figures/results_ordered/`. The low-L m=0 star-feature crop is placed before the ordered-film validation figure so the reader sees the observational problem before the data/model payoff.
+The active manuscript now uses the current ordered-film assets in `figures/results_ordered/`. The low-L m=0 star-feature crop has been moved earlier into the mosaicity section so the reader sees the observational problem before the data/model payoff.
 
 | Active file | Status | Notes |
 |---|---|---|
-| `figures/results_ordered/00L_region_horizontal.png` | DONE | Inserted as the low-L m=0 star-feature crop before the validation overlay; ready for advisor review. |
+| `figures/results_ordered/00L_region_horizontal_marked.png` | IN PROGRESS | Moved into the mosaicity section as the low-L m=0 star-feature crop; ready for advisor review once the real asset is present. |
 | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | IN PROGRESS | Inserted in the ordered validation figure; still needs advisor review for readability and annotation density. |
 | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | IN PROGRESS | Inserted in the ordered validation figure; should match Bi2Se3 styling and label convention. |
 | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png` | IN PROGRESS | Inserted as measured/calculated profile overlays; final axis and label convention still need advisor check. |
@@ -53,17 +58,21 @@ The active manuscript now uses the current ordered-film assets in `figures/resul
 
 ### PbI2 figures
 
-The earlier PbI2 result PNGs were removed from `figures/results_pbi2/` and replaced with `README_DEFERRED.md`. PbI2 remains parked until the ordered Bi2Se3/Bi2Te3 figures are complete.
+PbI2 has been reintroduced as a draft extension with placeholders. The real detector, stacking-model, reciprocal-space, and selected-trajectory figures still need to be generated.
 
 | Path or folder | Status | Notes |
 |---|---|---|
-| `figures/results_pbi2/` | PARKED | Reintroduce only with real selected-rod data/calculation/residual figures. |
+| `figures/results_pbi2/pbi2_raw_detector_diffuse_motivation.png` | TODO | Placeholder for measured PbI2 detector image with diffuse features. |
+| `figures/results_pbi2/pbi2_stacking_fault_model.png` | TODO | Placeholder for real-space stacking-fault schematic. |
+| `figures/results_pbi2/pbi2_diffuse_cylinder_schematic.png` | TODO | Placeholder for reciprocal-space diffuse rods/cylinders schematic. |
+| `figures/results_pbi2/pbi2_diffuse_data_model_overlay.png` | TODO | Placeholder for measured/ordered/faulted/residual projection figure. |
 
 ## P0 figure deliverables
 
 | Proposed figure | Status | Suggested file name | Purpose |
 |---|---|---|---|
-| Low-L m=0 star-feature crop | DONE | `figures/results_ordered/00L_region_horizontal.png` | Show the near-origin specular feature before the validation overlay. |
+| Raw detector mosaic motivation | TODO | `figures/mosaic/raw_detector_mosaic_motivation.png` | Show the full measured detector image before the low-L crop. |
+| Low-L m=0 star-feature crop | IN PROGRESS | `figures/results_ordered/00L_region_horizontal_marked.png` | Show the near-origin specular feature in the mosaicity section before the correlated-effects tutorial and validation overlay. |
 | Bi2Se3 detector image with Q/Qr/Qz trajectories | IN PROGRESS | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | Show measured data and where projections come from; needs advisor readability check. |
 | Bi2Se3 Qz projection overlays | IN PROGRESS | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png` | Show measured/calculated fits vs Qz/L; needs final axis-label check. |
 | Bi2Te3 detector image with Q/Qr/Qz trajectories | IN PROGRESS | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | Show measured data and where projections come from; same convention as Bi2Se3. |
@@ -108,10 +117,10 @@ Use the same visual logic as Bi2Se3.
 
 ### Figure 5 — Low-L m=0 star-feature observation
 
-Status: DONE
-Current file: `figures/results_ordered/00L_region_horizontal.png`.
+Status: IN PROGRESS
+Current file placeholder: `figures/results_ordered/00L_region_horizontal_marked.png`.
 
-Purpose: show the unexpected near-origin specular-family detector feature before the final ordered-film validation figure.
+Purpose: show the unexpected near-origin specular-family detector feature in the mosaicity section before the final ordered-film validation figure.
 
 ### Figure 6 — Ordered-film validation overlay
 
@@ -129,8 +138,8 @@ Purpose: show that a narrow mosaic distribution alone cannot explain observed hi
 
 ### Future figure — PbI2 selected-rod / stacking-disorder result
 
-Status: PARKED  
-Do not prioritize until ordered-film story is stable.
+Status: TODO  
+Placeholders are now inserted in the PbI2 section; generate real figures after the ordered-film story remains readable.
 
 ## Figure design rules
 

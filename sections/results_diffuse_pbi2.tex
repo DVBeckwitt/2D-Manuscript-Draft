@@ -1,10 +1,62 @@
 \section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
-\label{sec:results_pbi2_deferred}
+\label{sec:results_pbi2}
 
-% This section is intentionally deferred from the active ordered-film manuscript.
-% Dr. Maselli's guidance was to finish the Bi2Se3/Bi2Te3 line-shape validation first.
-% Reintroduce PbI2 only after the ordered-film $Q_z$ projection figures are complete.
+PbI$_2$ extends the ordered-film analysis to a case where the detector image is not described by Bragg peaks from a single ordered stacking sequence alone. The same calibrated detector geometry, beam phase space, two-dimensional powder construction, and mosaic treatment are still used. The additional physics is stacking disorder: local PbI$_2$ layers remain crystalline enough to define in-plane reciprocal-space radii, but the registry between adjacent layers is not perfectly periodic. That loss of stacking coherence redistributes intensity along $Q_z$ and produces diffuse features that must be modeled rather than subtracted as background.
 
-PbI$_2$ is the disorder-sensitive extension of the same framework, not the first proof of the method. In the present draft this material is held out of the main text so that the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ validation remains the central result.
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.86\linewidth}
+    \centering
+    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_raw_detector_diffuse_motivation.png}{%
+      Raw or minimally processed PbI$_2$ detector image. Mark the diffuse features that motivate the stacking-disorder model, but keep the measured data visually dominant.
+    }
+  \end{minipage}
+  \caption{Planned PbI$_2$ detector image motivating the diffuse-scattering section. The figure should show the measured detector image before a detailed model overlay and identify the diffuse intensity associated with stacking disorder. The purpose is to make clear that the PbI$_2$ section introduces a new physical ingredient beyond the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ fits: layer-stacking disorder creates intensity distributed along reciprocal-space trajectories rather than only at sharp ordered Bragg positions.}
+  \label{fig:pbi2_raw_detector_diffuse}
+\end{figure}
 
-When this section is reintroduced, it should appear as a short extension built around a selected-rod figure: measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals projected along the same fixed-$Q_r$ trajectory and reported versus $Q_z$. The figure should not be added until the corresponding PbI$_2$ data product is ready and until it no longer competes with the ordered-film demonstration.
+In an ideal layered crystal, the scattering from successive layers has a fixed phase relation. For a reflection with momentum transfer $\mathbf Q=(\mathbf Q_R,Q_z)$, the intensity contains an interference factor from all layer pairs. If the separation and in-plane registry of every adjacent layer are perfectly repeated, that interference factor is sharply peaked at the ordered Bragg values of $Q_z$. A stacking fault changes the registry of one layer relative to the next. The in-plane order within each layer can remain largely intact, so the same $Q_R$ families are still present, but the phase relation along the stacking direction is interrupted. The result is a combination of residual ordered Bragg intensity and diffuse intensity spread along $Q_z$.
+
+For a two-dimensional powder film, random in-plane rotation turns each in-plane reflection family into a reciprocal-space cylinder at fixed $Q_R$. Stacking disorder then modulates the intensity along that cylinder. In detector space, the measured diffuse features are therefore not arbitrary streaks; they are the detector projection of fault-broadened intensity on these $Q_R$ cylinders after the same beam bandwidth, divergence, mosaicity, detector tilt, and integration effects used for the ordered films are applied.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_diffuse_cylinder_schematic.png}{%
+      Reciprocal-space schematic for PbI$_2$. Show fixed-$Q_R$ cylinders, ordered Bragg points along $Q_z$, and diffuse intensity redistributed along the cylinders by stacking disorder.
+    }
+  \end{minipage}
+  \caption{Planned reciprocal-space schematic for PbI$_2$ diffuse scattering. Each in-plane reflection family produces a fixed-$Q_R$ cylinder in the two-dimensional powder average. Perfect stacking would place intensity mainly at discrete ordered Bragg positions along the cylinder. Stacking faults reduce the layer-to-layer phase coherence and redistribute part of the intensity along $Q_z$, producing diffuse features that are then projected onto the detector by the same forward model used for the ordered films.}
+  \label{fig:pbi2_diffuse_cylinders}
+\end{figure}
+
+The stacking-fault model should be introduced as a real-space correlation model rather than as an empirical detector correction. A useful representation is a stack of PbI$_2$ layers in which each layer-to-layer step can follow the ideal registry or one of the allowed faulted registries. The fault probabilities determine the probability that two layers separated by $n$ spacings remain in the same phase relation. Those pair correlations determine the $Q_z$ dependence of the diffuse intensity. In the limit of zero fault probability, the model returns the ordered Bragg sequence. As the fault probability increases, the ordered peaks lose coherent weight and the diffuse component between or around them grows.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_stacking_fault_model.png}{%
+      Real-space stacking schematic. Show ideal PbI$_2$ layer sequence, one or more faulted layer registries, the corresponding layer-pair correlations, and the qualitative effect on $Q_z$ intensity.
+    }
+  \end{minipage}
+  \caption{Planned stacking-fault model schematic. The figure should show how an ideal repeated layer registry differs from a faulted sequence. The important quantity for diffraction is not only whether an individual layer is faulted, but how the fault changes pair correlations along the stacking direction. Those correlations control whether intensity remains concentrated at ordered Bragg positions or is redistributed into diffuse $Q_z$ intensity on the fixed-$Q_R$ cylinders.}
+  \label{fig:pbi2_stacking_fault_model}
+\end{figure}
+
+The PbI$_2$ comparison should therefore contain three calculated components: an ordered-baseline calculation, a stacking-disorder calculation, and the measured detector-space or projected $Q_z$ profile to which both are compared. The ordered baseline shows which features would be expected from a perfectly periodic stack. The disorder calculation tests whether the chosen fault probabilities and layer-pair correlations reproduce the diffuse intensity without damaging the detector geometry and mosaicity already established by the ordered-film analysis.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.92\linewidth}
+    \centering
+    \draftfigureplaceholder[0.36\textheight]{figures/results_pbi2/pbi2_diffuse_data_model_overlay.png}{%
+      PbI$_2$ measured/calculated comparison. Include measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals for selected fixed-$Q_R$ trajectories or detector regions.
+    }
+  \end{minipage}
+  \caption{Planned PbI$_2$ diffuse-scattering validation figure. The comparison should use the same detector-space projection logic as the ordered-film figures: measured and calculated images are projected through matched fixed-$Q_R$ regions and plotted versus $Q_z$ or $L$. The ordered-baseline calculation should show what is missing without stacking disorder, while the stacking-fault calculation should account for the diffuse intensity associated with fault-broadened layer correlations.}
+  \label{fig:pbi2_diffuse_overlay}
+\end{figure}
+
+This section is intentionally assembled as a figure-driven scaffold. The final version should keep the PbI$_2$ result subordinate to the ordered-film validation unless the diffuse-scattering figures are complete enough to support an independent conclusion. The scientific role of PbI$_2$ is to demonstrate that the same detector-space framework can be extended from ordered Bragg line-shape refinement to disorder-sensitive diffuse scattering when the stacking model is expressed in reciprocal-space terms that map onto the measured detector image.

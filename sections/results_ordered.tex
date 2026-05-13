@@ -1,44 +1,15 @@
 \section{Results: ordered Bi\texorpdfstring{$_2$}{2}Se\texorpdfstring{$_3$}{3} and Bi\texorpdfstring{$_2$}{2}Te\texorpdfstring{$_3$}{3} films}
 \label{sec:results_ordered}
 
-\newcommand{\orderedresultplaceholder}[2]{%
-  \IfFileExists{#1}{%
-    \includegraphics[width=\linewidth]{#1}%
-  }{%
-    \fbox{%
-      \begin{minipage}[c][0.30\textheight][c]{0.92\linewidth}
-        \centering\footnotesize
-        \textbf{Draft figure placeholder}\\[0.6em]
-        \texttt{\detokenize{#1}}\\[0.8em]
-        #2
-      \end{minipage}%
-    }%
-  }%
-}
+Ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the model by showing that the same detector-space forward model quantitatively reproduces measured line shapes and intensities in two related layered chalcogenides. Three detector images, collected at incident angles of $5^\circ$, $10^\circ$, and $15^\circ$, were used in the refinement. The $5^\circ$ condition gives the clearest single-view display of both the off-specular arc families and the specular $m=0$ features. Together, the data test the two-dimensional powder orientational limit, sample geometry, finite beam phase space, mosaicity, detector resolution, and ordered structure-factor weighting.
 
-Ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ films validate the model by showing that the same detector-space forward model quantitatively reproduces measured line shapes and intensities in two related layered chalcogenides. Three detector images, collected at incident angles of $5^\circ$, $10^\circ$, and $15^\circ$, were used in the refinement. The $5^\circ$ condition gives the clearest single-view display of both the off-specular arc families and the specular $m=0$ features. Together, the data test the 2D-powder orientational limit, sample geometry, finite beam phase space, mosaicity, detector resolution, and ordered structure-factor weighting.
+The ordered-film comparison is intentionally made after the mosaic and correlated-effects discussion. The model is not only asked to place intense Bragg features at the correct detector positions. It must also reproduce weak off-condition $m=0$ peaks, semilogarithmic tails, and the low-$L$ specular-family intensity that motivate the two-component mosaicity model. A narrow-core mosaic distribution can reproduce the main width of near-condition features, but the measured $m=0$ profiles show additional $(00L)$ intensity that persists far from the strongest specular peak. Those weak peaks provide the direct experimental check on the Lorentzian-like tail.
 
-The off-specular $m=1$, 3, and 4 profiles show that the calculated 2D-powder geometry places the arc intersections at the correct detector positions and reproduces their $L$-dependent line shapes. More unexpectedly, the same images contain strong specular-family intensity from $m=0$ reflections that are not all selected by the nominal incidence condition. In a narrowly aligned film with only the central incidence angle and a rapidly decaying mosaic distribution, only a small subset of the $00L$ family would carry appreciable intensity. The measured $m=0$ profiles instead show additional $00L$ peaks, including weak off-condition peaks that remain visible on a semilogarithmic scale. These peaks provide the most direct evidence that the mosaic distribution has a long tail rather than only a narrow Gaussian-like core.
+The low-$L$ detector feature introduced in Fig.~\ref{fig:hk0_low_l_star} is a second, independent check. It lies close to the direct-beam and critical-angle region, where it could easily be mistaken for ordinary reflectivity or an unrelated detector artifact. The correlated-effects discussion in Sec.~\ref{sec:correlated_effects} instead predicts that a small Bragg sphere, finite wavelength bandwidth, finite divergence, and a long mosaic tail can redistribute $m=0$ intensity into a star-like detector morphology. The ordered-film comparison below therefore has to reproduce more than the off-specular arc positions: it must also account for the unexpected specular-family peaks and the low-$L$ morphology that motivated the mosaic model.
 
-A second observation is the bright low-$L$ intensity near the base of the $m=0$ trajectory in the detector images. This intensity lies close to the direct-beam and critical-angle region and is not expected. It is therefore not treated as ordinary reflectivity in the ordered-film comparison. Instead, it is used as a quantitative check on whether the forward model includes the relevant experimental phase space. Because the low-$L$ Bragg sphere is small in reciprocal-space radius, those finite-width effects illuminate a comparatively large angular fraction of the near-origin specular region and can produce the observed star-like detector morphology.
+The detector-space panels and profile panels in Fig.~\ref{fig:ordered_chalcogenide_validation} use the same extraction convention. In panels~(a) and~(b), the solid colored curves are the calculated centerlines of selected $m$-indexed Bragg-rod trajectories on the detector. The semi-transparent colored bands are the finite detector regions integrated to form the one-dimensional profiles. The dashed colored outlines mark the edges of those integration bands. The central blue band is the $m=0$ specular-family trajectory, while the paired off-specular bands are the two detector-side intersections of the same two-dimensional powder rod family. The plus and minus labels identify those two detector-side branches only.
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.8\linewidth}
-    \centering
-    \orderedresultplaceholder{figures/results_ordered/00L_region_horizontal_marked.png}{%
-      Close-up of the low-$L$ $m=0$ detector feature. Show the star-like morphology and the bright near-origin intensity above the critical-angle region.
-    }
-  \end{minipage}
-  \caption{Close-up of the low-$L$ $m=0$ detector feature. The bright near-origin intensity and vertical star-like morphology are not expected from an ideal calculation. The feature reflects the wavelength bandwidth and angular divergence that give the Ewald sphere an effective thickness, while the long mosaic tail supplies tilted crystallites that bring otherwise off-condition specular-family intensity into the measured detector region.}
-  \label{fig:hk0_low_l_star}
-\end{figure}
-
-Figure~\ref{fig:hk0_low_l_star} isolates this low-$L$ specular-region feature before the full data/model overlay. The unexpected $00L$ peaks and near-origin specular intensity both require the calculation to include the finite beam phase space and the tails of the out-of-plane orientation distribution, so the final validation comparison must reproduce more than the off-specular arc positions alone.
-
-The detector-space panels and profile panels in Fig.~\ref{fig:ordered_chalcogenide_validation} use the same extraction convention. In panels~(a) and~(b), the solid colored curves are the calculated centerlines of selected m-indexed Bragg-rod trajectories on the detector. The semi-transparent colored bands are the finite detector regions integrated to form the one-dimensional profiles. The dashed colored outlines mark the edges of those integration bands. The central blue band is the $m=0$ specular-family trajectory, while the paired off-specular bands are the two detector-side intersections of the same 2D-powder rod family. The plus and minus labels identify those two branches only. 
-
-Panels~(c) and~(d) show the corresponding line profiles after applying the same projection and integration operation to the measured and calculated images. The horizontal coordinate is $L$ so a marker labeled $L=n$ denotes the nominal $00n$ or corresponding off-specular Bragg condition for that selected rod family. The black solid curves are the measured profiles. The orange dashed curves are the simulated profiles after the same detector-space projection. The off-specular rows are plotted on a linear intensity scale while the $m=0$ row is plotted on a logarithmic scale because the important result is the persistence of weak, unexpected $00L$ intensity far from the strongest specular peak.
+Panels~(c) and~(d) show the corresponding line profiles after applying the same projection and integration operation to the measured and calculated images. The horizontal coordinate is $L$, so a marker labeled $L=n$ denotes the nominal $00n$ or corresponding off-specular Bragg condition for that selected rod family. The black solid curves are the measured profiles. The orange dashed curves are the simulated profiles after the same detector-space projection. The off-specular rows are plotted on a linear intensity scale, while the $m=0$ row is plotted on a logarithmic scale because the important result is the persistence of weak, unexpected $00L$ intensity far from the strongest specular peak.
 
 \begin{figure}[H]
   \centering
@@ -47,15 +18,15 @@ Panels~(c) and~(d) show the corresponding line profiles after applying the same 
   \begin{minipage}[t]{0.48\linewidth}
     \centering
     \textbf{Bi$_2$Se$_3$}\\[0.25em]
-    \paneltagged{(a)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
-      Bi$_2$Se$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
+    \paneltagged{(a)}{\draftfigureplaceholder[0.32\textheight]{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+      Bi$_2$Se$_3$ detector image with projected fixed-$Q_R$ Bragg-rod centerlines and direct $HK$ labels. Use linear intensity, no stars, no legend, and absolute detector-pixel coordinates.
     }}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.48\linewidth}
     \centering
     \textbf{Bi$_2$Te$_3$}\\[0.25em]
-    \paneltagged{(b)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
-      Bi$_2$Te$_3$ detector image with projected fixed-$Q_r$ Bragg-rod centerlines and direct $HK$ labels. Use the same styling and label convention as Bi$_2$Se$_3$.
+    \paneltagged{(b)}{\draftfigureplaceholder[0.32\textheight]{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png}{%
+      Bi$_2$Te$_3$ detector image with projected fixed-$Q_R$ Bragg-rod centerlines and direct $HK$ labels. Use the same styling and label convention as Bi$_2$Se$_3$.
     }}
   \end{minipage}
 
@@ -63,20 +34,20 @@ Panels~(c) and~(d) show the corresponding line profiles after applying the same 
 
   \begin{minipage}[t]{0.48\linewidth}
     \centering
-    \paneltagged{(c)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png}{%
-      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Panels should use $Q_z$ on the horizontal axis and matched measured/calculated curves.
+    \paneltagged{(c)}{\draftfigureplaceholder[0.32\textheight]{figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png}{%
+      Bi$_2$Se$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Panels should use $Q_z$ or $L$ on the horizontal axis and matched measured/calculated curves.
     }}
   \end{minipage}\hfill
   \begin{minipage}[t]{0.48\linewidth}
     \centering
-    \paneltagged{(d)}{\orderedresultplaceholder{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png}{%
+    \paneltagged{(d)}{\draftfigureplaceholder[0.32\textheight]{figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png}{%
       Bi$_2$Te$_3$ measured/calculated $Q_z$ projection overlays for selected $HK$ families. Match the Bi$_2$Se$_3$ axis, color, and labeling convention.
     }}
   \end{minipage}
-  \caption{Ordered-film validation of Bi$_2$Se$_3$ and Bi$_2$Te$_3$ at $\theta_i=5^\circ$. (a,b) Measured detector images with selected Q-space extraction regions overlaid. Solid colored curves are the trajectory centerlines. Semi-transparent colored regions are the detector pixels integrated to form the profiles. Dashed colored outlines mark the integration-band boundaries. The labels $m$ identify 2D-powder rod families, and the signs label the two detector-side branches of the same family. The central $m=0$ band follows the specular family and includes the bright low-$L$ intensity near the critical-angle region. (c,d) Extracted profiles plotted versus $L$. Black solid curves are measured data and orange dashed curves are simulations after the same projection. The off-specular rows test the detector geometry, 2D-powder construction, mosaic-core width, and ordered structure-factor pattern. The semilogarithmic $m=0$ rows emphasize the unexpected persistence of additional $00L$ peaks, which requires a long Lorentzian mosaic tail in addition to the narrow mosaic core.}
+  \caption{Ordered-film validation of Bi$_2$Se$_3$ and Bi$_2$Te$_3$ at $\theta_i=5^\circ$. (a,b) Measured detector images with selected reciprocal-space extraction regions overlaid. Solid colored curves are the trajectory centerlines. Semi-transparent colored regions are the detector pixels integrated to form the profiles. Dashed colored outlines mark the integration-band boundaries. The labels $m$ identify two-dimensional powder rod families, and the signs label the two detector-side branches of the same family. The central $m=0$ band follows the specular family and includes the bright low-$L$ intensity near the critical-angle region. (c,d) Extracted profiles plotted versus $L$ after applying the same projection to measured and calculated images. Black solid curves are measured data and orange dashed curves are simulations. The off-specular rows test detector geometry, the two-dimensional powder construction, the mosaic-core width, and the ordered structure-factor pattern. The semilogarithmic $m=0$ rows emphasize the unexpected persistence of additional $00L$ peaks, which requires a long Lorentzian mosaic tail in addition to the narrow mosaic core.}
   \label{fig:ordered_chalcogenide_validation}
 \end{figure}
 
 Because mosaicity, beam divergence, wavelength spread, incidence-angle uncertainty, detector resolution, and finite integration width all broaden the effective scattering condition, the projected coordinate should not be interpreted as an ideal reciprocal-space cut from a single perfect crystallite. The comparison remains meaningful because the calculated image is subjected to the same projection and resolution effects before it is compared with the measured profile. The figure therefore tests the detector-space calculation as used experimentally. This distinction is especially important for the unexpected $00L$ peaks and the enhanced low-$L$ specular intensity, where incidence angle, wavelength bandwidth, divergence, detector-coordinate uncertainty, background, and the Lorentzian mosaic tail are most strongly coupled.
 
-In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular and $m=0$ profiles play complementary roles. The off-specular arcs check the 2D-powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $m=0$ peaks test the Lorentzian mosaic tail and show why a rapidly decaying mosaic core alone is insufficient. 
+In Fig.~\ref{fig:ordered_chalcogenide_validation}, the off-specular and $m=0$ profiles play complementary roles. The off-specular arcs check the two-dimensional powder reciprocal-space construction and calibrated detector geometry, while their widths and asymmetries constrain the Gaussian-like mosaic core and instrumental resolution. The off-condition $m=0$ peaks test the Lorentzian mosaic tail and show why a rapidly decaying mosaic core alone is insufficient. The ordered-film result is therefore not only that the fitted curves match the strongest peaks, but that the same physical model also accounts for weaker and less intuitive detector features that were not built into a one-dimensional reduction.

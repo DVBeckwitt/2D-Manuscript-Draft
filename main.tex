@@ -44,9 +44,38 @@
   \end{tikzpicture}%
 }
 
+% Manuscript drafting helper. If the named image exists, it is used; otherwise
+% a visible placeholder keeps the figure slot and caption in the draft.
+\newcommand{\draftfigureplaceholder}[3][0.30\textheight]{%
+  \IfFileExists{#2}{%
+    \includegraphics[width=\linewidth]{#2}%
+  }{%
+    \fbox{%
+      \begin{minipage}[c][#1][c]{0.92\linewidth}
+        \centering\footnotesize
+        \textbf{Draft figure placeholder}\\[0.6em]
+        \texttt{\detokenize{#2}}\\[0.8em]
+        #3
+      \end{minipage}%
+    }%
+  }%
+}
+
 \newcommand{\panelgraphic}[3][]{%
   \begin{tikzpicture}
-    \node[inner sep=0] (img) {\includegraphics[#1]{#2}};
+    \IfFileExists{#2}{%
+      \node[inner sep=0] (img) {\includegraphics[#1]{#2}};%
+    }{%
+      \node[inner sep=0] (img) {%%
+        \fbox{%
+          \begin{minipage}[c][0.14\textheight][c]{0.82\linewidth}
+            \centering\scriptsize
+            \textbf{Missing draft graphic}\\[0.35em]
+            \texttt{\detokenize{#2}}
+          \end{minipage}%
+        }%
+      };%
+    }%
     \node[
       anchor=north west,
       font=\bfseries\footnotesize,
@@ -70,12 +99,10 @@ quantitative X-ray area-detector modeling}
 \input{sections/introduction}
 \input{sections/modelling_methods}
 \input{sections/mosaicity_texture}
-\input{sections/refinement_workflow}
+\input{sections/correlated_effects}
 \input{sections/results_ordered}
-% PbI$_2$ diffuse-scattering results are intentionally omitted from this
-% ordered-film-focused draft. Re-enable only after the Bi$_2$Se$_3$ and
-% Bi$_2$Te$_3$ Q_z projection figures are complete and the main result is clear.
-% \input{sections/results_diffuse_pbi2}
+\input{sections/results_diffuse_pbi2}
+\input{sections/refinement_workflow}
 \input{sections/discussion_conclusion}
 
 

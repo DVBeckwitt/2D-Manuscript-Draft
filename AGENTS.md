@@ -35,20 +35,56 @@ The manuscript is the priority. The software, code release, and implementation p
 9. **Do not undersell the achievement.**
    The manuscript should make clear that the model reproduces difficult measured features, not merely that a calculation was performed. If justified by the figures and error analysis, use careful refinement-quality language to describe what the method enables.
 
+10. **Write to teach, not merely to document.**
+    The manuscript should read like a clear research talk expanded into paper form: begin from visible observations, tell the reader what is puzzling, then teach the physical explanation. Avoid a dry archive-style account that only someone trying to reproduce the exact workflow would read.
+
+11. **Use the data as the hook.**
+    Start important sections from measured features that a reader can see: unexpected reflections at a single incidence angle, the 003/star feature, and the low-Q feature. These observations should create the need for mosaicity, bandwidth, and the full detector-space forward model.
+
+12. **Treat explanation itself as a contribution.**
+    If an effect is counterintuitive, underexplained in the literature, or usually presented in an inaccessible way, a clear figure-based explanation is valuable. The manuscript should not merely cite or assume such physics; it should make the point understandable enough that readers can use and cite the paper as the explanation.
+
+13. **Draft big, then cut.**
+    A practical drafting strategy is to put the full argument and figure logic into the main text first, then move genuinely tangential or implementation-heavy details to the supplementary material later. Do not prematurely hide material that is needed to understand the paper's claim.
+
+## Advisor philosophy update: narrative and teaching rules
+
+Use these rules when deciding how to reorganize or rewrite a section.
+
+1. **Target audience.**
+   Write for a diffraction/scattering reader who is not already an expert in this specific geometry or code. A good mental model is a scientifically trained reader such as Suchi or one of her students: capable, interested, but not already carrying all the hidden assumptions of an expert x-ray scatterer.
+
+2. **Talk-like organization, paper-level detail.**
+   Organize the manuscript the way a strong research talk would be organized: show the audience something interesting, point out what is unexplained, then build the explanation. Unlike a talk, include the necessary details in the paper so the reasoning is reproducible.
+
+3. **Tease the puzzle before solving it.**
+   Do not introduce a model component as an abstract method choice. First show the feature that makes it necessary. For example: why is an 06-type reflection visible at one incidence angle, why does the 003/star feature appear, and why do low-order features remain visible across geometries?
+
+4. **Figures are the reader's entry point.**
+   Assume many readers will inspect the figures and captions before reading the full prose. The figure sequence and captions should therefore carry the main logic of the paper.
+
+5. **Expand explanations at the difficult points.**
+   If a concept involves Ewald-sphere thickness, Bragg-sphere size, mosaic caps, allowed k_i/k_f pairs, detector projection, or systematic coordinate uncertainty, do not compress it. Add explanatory text and, where possible, a schematic or calculated example.
+
+6. **Use explicit payoff.**
+   After teaching the reader why a feature is difficult, show that the simulation reproduces it. The reader should be able to see why the model is not merely plausible but useful.
+
 ## Primary manuscript story
 
 The manuscript should follow this logic:
 
-1. Present the experimental diffraction data and the physical problem.
-2. Show the specific measured features that require additional model ingredients, especially unexpected reflections, long-tail mosaicity, and the 003/star feature.
-3. Explain the model ingredients in physical terms: sample geometry, detector geometry, incident angle, beam position, divergence, wavelength spread, mosaicity, bandwidth, structure factor, and resolution effects.
-4. Introduce the two-component mosaicity model, including the long Lorentzian tail, early enough that the reader understands why it is necessary.
-5. Explain the 003/star feature before using the final fit to validate it.
-6. Show how measured data and calculated intensity are projected onto interpretable Q-space trajectories.
-7. Demonstrate, with direct overlays, that the model reproduces the measured line shapes and non-obvious detector features for Bi2Se3 and Bi2Te3.
-8. Use the overlays, propagated/systematic error discussion, and structure-factor treatment to support the refinement-quality interpretation.
-9. Move computational implementation details to the supplementary material.
-10. Treat PbI2, stacking faults, and diffuse scattering as a later or separate part of the story unless specifically being drafted.
+1. Put the main experimental diffraction figures into the draft first.
+2. Present the experimental diffraction data and the physical problem before the machinery.
+3. Use a visible detector image or crop as the springboard for the section. Point out the specific measured features that are not obvious: unexpected reflections at a single incidence angle, low-order features, long-tail mosaicity, and the 003/star feature.
+4. Explain the model ingredients in physical terms: sample geometry, detector geometry, incident angle, beam position, divergence, wavelength spread, mosaicity, bandwidth, structure factor, and resolution effects.
+5. Introduce the two-component mosaicity model, including the long Lorentzian tail, early enough that the reader understands why it is necessary.
+6. Explain the finite-bandwidth / Bragg-sphere / mosaic-cap geometry as a tutorial point, not as an aside.
+7. Explain the 003/star feature before using the final fit to validate it.
+8. Show how measured data and calculated intensity are projected onto interpretable Q-space trajectories.
+9. Demonstrate, with direct overlays, that the model reproduces the measured line shapes and non-obvious detector features for Bi2Se3 and Bi2Te3.
+10. Use the overlays, propagated/systematic error discussion, and structure-factor treatment to support the refinement-quality interpretation.
+11. Move computational implementation details to the supplementary material after the main argument is understandable.
+12. Treat PbI2, stacking faults, and diffuse scattering as a later or separate part of the story unless specifically being drafted.
 
 ## Main result to emphasize
 
@@ -79,6 +115,12 @@ A useful structure is:
 - One figure for the 2D image and selected trajectories / integration bands.
 - One multi-panel figure for the extracted Qz projections and fit overlays.
 - Repeat the same logic for Bi2Se3 and Bi2Te3.
+
+### Figure-first drafting rule
+
+Get the experimental/result figures into the manuscript before trying to perfect the explanatory prose. Write to those figures. If, while writing, the explanation becomes too abstract, add an explanatory schematic or calculated example at that point.
+
+The first pass may include more figures than the final paper keeps. This is preferable to under-explaining the work. Consolidate, remove, or move figures to the supplement only after the argument is visible.
 
 ### Figure-writing rules
 
@@ -135,6 +177,24 @@ Do not overstate the exactness of the Q-space projection. Acknowledge that the e
 
 If a plotted reciprocal-space trajectory is claimed to show where a diffraction feature should occur, it must include the relevant detector geometry and sample-orientation parameters. If the current plotted trajectory does not include sample rotation, chi, or other alignment distortions, do not explain peak offsets as physical effects. Either fix the trajectory calculation or explicitly describe the overlay as an approximate projection guide.
 
+## Observational-hook strategy
+
+Important model ingredients should be motivated by visible experimental observations. A useful sequence is:
+
+1. Show the full detector image to orient the reader.
+2. Show the relevant crop or annotated region.
+3. Point out the puzzling features before explaining them.
+4. State why a naive or narrow model would not obviously produce those features.
+5. Introduce the model ingredient that resolves the puzzle.
+6. Show the corresponding simulation or overlay as the payoff.
+
+For the current Bi2Se3/Bi2Te3 story, the key hooks are:
+
+- a reflection such as 06 appearing even though a single incidence angle might seem insufficient;
+- the star-like or line-like feature near the 003 region;
+- the low-Q feature that is sensitive to bandwidth and the Lorentzian mosaic tail;
+- the persistence of low-order reflections when higher-order reflections are geometrically more selective.
+
 ## Two-component mosaicity
 
 The two-component mosaicity model must be introduced early and supported with evidence immediately.
@@ -142,6 +202,10 @@ The two-component mosaicity model must be introduced early and supported with ev
 The manuscript should explain that a narrow mosaic distribution alone cannot account for all observed reflections. In particular, at some incident angles, reflections appear that would not be expected unless the sample has a long-tail mosaic component.
 
 The long Lorentzian tail is not a minor implementation detail. It is an important physical insight. It should be presented as necessary for reproducing the measured intensities and line shapes.
+
+The Lorentzian-tail motivation is stronger if presented as two independent observations rather than one fitting choice: first, it helps explain reflections that appear under incident-angle conditions where a narrow mosaic distribution would fail; second, it contributes to the low-Q / 003-associated feature that appears when bandwidth is included. This double motivation should be visible in the text and figures.
+
+The manuscript should not overclaim that the true mosaic distribution is exactly Lorentzian or exactly Gaussian. These are useful functional forms. If the model fits the data closely but is imperfect on a logarithmic scale, describe the Lorentzian tail as a close and physically useful approximation rather than as a uniquely proven distribution.
 
 The mosaicity equation or a compact version of it likely belongs in the main text. The Lorentzian-tail component is not just implementation machinery; it is part of the physical explanation for why reflections appear under incident-angle conditions where a narrow mosaic distribution would fail.
 
@@ -153,6 +217,22 @@ When drafting this section:
 - Introduce the long-tail component as the physical resolution.
 - Show or cite a figure that demonstrates the effect.
 - Then connect the mosaicity model to the quality of the global fit.
+
+## Bandwidth / Bragg-sphere / mosaic-cap tutorial
+
+The finite-bandwidth geometry should be explained as a tutorial section because it is counterintuitive and central to the manuscript. The goal is to teach the reader how Ewald-sphere thickness, Bragg-sphere size, and mosaic-cap intensity combine to produce detector features.
+
+Required explanation:
+
+1. Define the Bragg sphere, Ewald sphere, bandwidth thickness, allowed intersection ring, incident vector, outgoing vector, and mosaic cap.
+2. Explain that the allowed geometric intersection ring is not automatically populated uniformly; intensity appears where the ring samples the mosaic-smeared Bragg intensity.
+3. Show why small Bragg spheres can intersect a large fraction of the mosaic cap, making low-order reflections robustly visible across changes in incidence geometry.
+4. Show why larger Bragg spheres intersect a thinner region of the mosaic cap and therefore become more geometrically selective.
+5. Include schematic examples with different Bragg-sphere sizes and, if useful, different \(\Delta\lambda\) values.
+6. Pair the schematic with calculated detector images showing how streaks, star-like features, or low-Q features change as geometry or bandwidth changes.
+7. Then show measured data and simulation side by side so the tutorial explanation becomes a model-validation result.
+
+This section can be one of the manuscript's main conceptual contributions. Even if related geometry exists elsewhere, the paper should make this explanation clear enough for readers to understand and reuse.
 
 ## 003 / star-feature explanation
 
@@ -235,6 +315,8 @@ Every symbol must be defined before use, including \(Q_R\), \(Q_z\), \(L\), \(m\
 
 The main paper may mention that computational optimizations were used for efficiency, but the detailed algorithm should be deferred to the supplement.
 
+Drafting rule: during early revisions, it is acceptable to put more material into the main text than will remain there. Once the argument is complete, move tangential derivations, large validation sets, and implementation details to the supplement. Do not move material out before the reader has enough context to understand why it matters.
+
 ## Experimental-section requirements
 
 The manuscript must state what data were collected, not only what data are shown.
@@ -248,13 +330,29 @@ For each material, include:
 
 Do not let the reader infer that only the displayed incident angles were measured if more were collected.
 
+## Workflow-section guidance
+
+The workflow table is useful, but it cannot stand alone. Add text that teaches the reader why the workflow exists and how to interpret it.
+
+A good workflow section should:
+
+- begin by saying that many parameters must be established before quantitative comparison is possible;
+- distinguish instrumental parameters from sample-dependent parameters;
+- explain the sequence used to determine those parameters;
+- describe what each step contributes to the final comparison;
+- avoid forcing the reader to infer the method from a table alone.
+
+Placement matters. If the workflow interrupts the main physical story, move it later in the paper, possibly after the model parameters have been introduced or near the end of the methods/results sequence. The reader should encounter the workflow when they can appreciate why the steps are needed.
+
 ## Writing style
 
-Use clear, direct scientific prose. The paper should bring the reader along through the analysis rather than assuming they already understand the workflow.
+Use clear, direct scientific prose. The paper should bring the reader along through the analysis rather than assuming they already understand the workflow. The manuscript should be engaging in the same way as a good research talk, but with enough detail that the reader can reconstruct the reasoning.
 
 When drafting or revising:
 
 - Prefer physical explanations over implementation explanations.
+- Start sections from a visible observation or question when possible.
+- Write the reader's motivation into the section: why this feature matters, why the naive explanation is insufficient, and why the next model ingredient is needed.
 - Expand compressed method statements into complete explanatory paragraphs.
 - Use captions as part of the explanation, not merely as labels.
 - Repeat central interpretive points in captions and main text when redundancy improves comprehension.
@@ -270,18 +368,23 @@ When drafting or revising:
 For the next manuscript revision, focus on:
 
 1. Bi2Se3 and Bi2Te3 only.
-2. Readable 2D diffraction images with clear trajectories, integration regions, and material labels.
-3. Qz projection figures with measured/calculated overlays.
-4. Teaching captions that define the plotted guides, projection bounds, axes, and conclusions.
-5. A readable m-indexed reflection-family labeling convention, using a defined scalar \(m = h^2 + h k + k^2\) for hexagonal films.
-6. An early two-component mosaicity section with direct evidence.
-7. A 003/star-feature explanation with a detector crop and Ewald-sphere bandwidth schematic.
-8. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
-9. A structure-factor/CIF/SIF and occupancy-change discussion.
-10. A propagated/systematic error discussion in the main text.
-11. Careful refinement-quality framing tied to the overlays and uncertainty discussion.
-12. A table or paragraph listing all collected incident angles.
-13. A supplementary-material outline for computational details.
+2. Main experimental/result figures first, before polishing explanatory prose.
+3. A full-detector image followed by crops or annotations that expose the puzzling features.
+4. Readable 2D diffraction images with clear trajectories, integration regions, and material labels.
+5. Qz projection figures with measured/calculated overlays.
+6. Teaching captions that define the plotted guides, projection bounds, axes, and conclusions.
+7. A readable m-indexed reflection-family labeling convention, using a defined scalar \(m = h^2 + h k + k^2\) for hexagonal films.
+8. An early two-component mosaicity section with direct evidence for the Lorentzian tail.
+9. A bandwidth / Bragg-sphere / mosaic-cap tutorial with different Bragg-sphere sizes and, if useful, different \(\Delta\lambda\) examples.
+10. A 003/star-feature explanation with a detector crop and Ewald-sphere bandwidth schematic.
+11. Side-by-side measured/simulated comparisons for the low-Q/003, 03, and 06-type features.
+12. A clear explanation of why the projections are useful even though they are not perfect ideal-Q measurements.
+13. A workflow explanation that supplements, rather than merely repeats, the workflow table.
+14. A structure-factor/CIF/SIF and occupancy-change discussion.
+15. A propagated/systematic error discussion in the main text, with detailed derivations or plots placed in the supplement if they interrupt the story.
+16. Careful refinement-quality framing tied to the overlays and uncertainty discussion.
+17. A table or paragraph listing all collected incident angles.
+18. A supplementary-material outline for computational details.
 
 Do not prioritize PbI2, stacking faults, diffuse scattering, or software release polish until the Bi2Se3 and Bi2Te3 manuscript story is clear.
 
@@ -317,7 +420,10 @@ Before returning a manuscript edit or new section, check the following:
 - Does it add enough figure-driven explanation for the reader to follow the analysis?
 - Does the caption tell the reader what to notice, not just what is plotted?
 - Does the text show the data before explaining the model correction?
+- Does the section begin from a visible observation or puzzle when possible?
+- Does the manuscript explain the counterintuitive bandwidth / Bragg-sphere / mosaic-cap geometry clearly enough to teach it?
 - Does the mosaicity section include direct evidence for the Lorentzian tail?
+- Does the text avoid overclaiming that the chosen Gaussian/Lorentzian functional forms are uniquely true?
 - Does the paper explain the 003/star feature before using it as model-validation evidence?
 - Are sample-orientation effects included in plotted Q-space trajectories, or is the limitation stated?
 - Are \(Q_R\), \(Q_z\), \(L\), \(m\), and any explicit \((h,k,l)\) labels defined before use?
@@ -345,6 +451,10 @@ Avoid these patterns unless there is a specific reason:
 - Treating the 003/star feature as an unexplained artifact after the model can reproduce it.
 - Moving propagated/systematic error, mosaicity logic, or structure-factor/refinement evidence entirely to the supplement.
 - Using refinement-quality language without tying it to overlays, error propagation, and structure-factor treatment.
+- Writing a dry documentation-style section when a visible observation could motivate the reader.
+- Treating the workflow table as self-explanatory.
+- Hiding the counterintuitive Bragg-sphere/bandwidth/mosaic-cap explanation behind unexplained terminology.
+- Presenting the Lorentzian tail as a purely mathematical fit parameter rather than a physically motivated approximation supported by multiple observations.
 
 ## One-sentence governing rule
 
