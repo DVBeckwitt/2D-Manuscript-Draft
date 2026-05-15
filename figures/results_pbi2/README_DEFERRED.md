@@ -1,10 +1,13 @@
-# Planned PbI2 figure assets
+# PbI2 diffuse-scattering figure assets
 
-This directory is no longer treated as wholly deferred. The main text now contains a scaffolded PbI2 diffuse-scattering section with explicit placeholders for the following planned figure files:
+This directory now contains three self-contained schematic figures used by `sections/results_diffuse_pbi2.tex`:
 
-- `pbi2_raw_detector_diffuse_motivation.png`
-- `pbi2_diffuse_cylinder_schematic.png`
-- `pbi2_stacking_fault_model.png`
-- `pbi2_diffuse_data_model_overlay.png`
+- `pbi2_diffuse_cylinder_schematic.png` — fixed-`Q_R` cylinder picture showing ordered Bragg positions and diffuse redistribution along `Q_z`.
+- `pbi2_polytype_motifs.png` — schematic 2H-like and 6H-like local stacking motifs replacing the missing thesis image files `2H.png` and `6H_R-3.png`.
+- `pbi2_ht_correlation_rod_schematic.png` — layer-sequence/pair-correlation/rod-intensity schematic for the Hendricks--Teller correction.
 
-The figures should support the section order: first show the measured diffuse detector feature, then teach the stacking-fault/reciprocal-cylinder model, then show the measured/calculated diffuse-scattering comparison.
+The selected-rod measured/data-model figure is still expected as:
+
+- `pbi2_disorder_summary.png`
+
+That file was not present in the supplied manuscript or thesis zip. The manuscript keeps an explicit draft placeholder for it instead of inventing a measured-data overlay.

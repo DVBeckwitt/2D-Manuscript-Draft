@@ -1,62 +1,204 @@
-\section{Results: diffuse scattering in PbI\texorpdfstring{$_2$}{2}}
+\section{Results: diffuse scattering and stacking disorder in PbI\texorpdfstring{$_2$}{2}}
 \label{sec:results_pbi2}
 
-PbI$_2$ extends the ordered-film analysis to a case where the detector image is not described by Bragg peaks from a single ordered stacking sequence alone. The same calibrated detector geometry, beam phase space, two-dimensional powder construction, and mosaic treatment are still used. The additional physics is stacking disorder: local PbI$_2$ layers remain crystalline enough to define in-plane reciprocal-space radii, but the registry between adjacent layers is not perfectly periodic. That loss of stacking coherence redistributes intensity along $Q_z$ and produces diffuse features that must be modeled rather than subtracted as background.
+PbI$_2$ extends the ordered-film analysis to a case where the detector image is not described by Bragg peaks from a single periodic stacking sequence alone.
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.86\linewidth}
+  \begin{minipage}{0.78\linewidth}
     \centering
-    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_raw_detector_diffuse_motivation.png}{%
-      Raw or minimally processed PbI$_2$ detector image. Mark the diffuse features that motivate the stacking-disorder model, but keep the measured data visually dominant.
-    }
+    \includegraphics[width=\linewidth]{figures/results_pbi2/PbI2_detector.png}
   \end{minipage}
-  \caption{Planned PbI$_2$ detector image motivating the diffuse-scattering section. The figure should show the measured detector image before a detailed model overlay and identify the diffuse intensity associated with stacking disorder. The purpose is to make clear that the PbI$_2$ section introduces a new physical ingredient beyond the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ fits: layer-stacking disorder creates intensity distributed along reciprocal-space trajectories rather than only at sharp ordered Bragg positions.}
-  \label{fig:pbi2_raw_detector_diffuse}
-\end{figure}
-
-In an ideal layered crystal, the scattering from successive layers has a fixed phase relation. For a reflection with momentum transfer $\mathbf Q=(\mathbf Q_R,Q_z)$, the intensity contains an interference factor from all layer pairs. If the separation and in-plane registry of every adjacent layer are perfectly repeated, that interference factor is sharply peaked at the ordered Bragg values of $Q_z$. A stacking fault changes the registry of one layer relative to the next. The in-plane order within each layer can remain largely intact, so the same $Q_R$ families are still present, but the phase relation along the stacking direction is interrupted. The result is a combination of residual ordered Bragg intensity and diffuse intensity spread along $Q_z$.
-
-For a two-dimensional powder film, random in-plane rotation turns each in-plane reflection family into a reciprocal-space cylinder at fixed $Q_R$. Stacking disorder then modulates the intensity along that cylinder. In detector space, the measured diffuse features are therefore not arbitrary streaks; they are the detector projection of fault-broadened intensity on these $Q_R$ cylinders after the same beam bandwidth, divergence, mosaicity, detector tilt, and integration effects used for the ordered films are applied.
-
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.92\linewidth}
-    \centering
-    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_diffuse_cylinder_schematic.png}{%
-      Reciprocal-space schematic for PbI$_2$. Show fixed-$Q_R$ cylinders, ordered Bragg points along $Q_z$, and diffuse intensity redistributed along the cylinders by stacking disorder.
-    }
-  \end{minipage}
-  \caption{Planned reciprocal-space schematic for PbI$_2$ diffuse scattering. Each in-plane reflection family produces a fixed-$Q_R$ cylinder in the two-dimensional powder average. Perfect stacking would place intensity mainly at discrete ordered Bragg positions along the cylinder. Stacking faults reduce the layer-to-layer phase coherence and redistribute part of the intensity along $Q_z$, producing diffuse features that are then projected onto the detector by the same forward model used for the ordered films.}
+  \caption{On the right is the raw detector image with the beam center labeled and the m=0 vertically alined with that beam center. The region enclosed by the white rectangle is the region of interest shown to the left of this detector image. Along m=1 there is an observed diffuse intensity between the Bragg points while the m=0 does not share this.}
   \label{fig:pbi2_diffuse_cylinders}
 \end{figure}
 
-The stacking-fault model should be introduced as a real-space correlation model rather than as an empirical detector correction. A useful representation is a stack of PbI$_2$ layers in which each layer-to-layer step can follow the ideal registry or one of the allowed faulted registries. The fault probabilities determine the probability that two layers separated by $n$ spacings remain in the same phase relation. Those pair correlations determine the $Q_z$ dependence of the diffuse intensity. In the limit of zero fault probability, the model returns the ordered Bragg sequence. As the fault probability increases, the ordered peaks lose coherent weight and the diffuse component between or around them grows.
+We can explain this selective manifestation of diffuse intensity with stacking disorder I--Pb--I trilayers remain crystalline enough to define in-plane reciprocal-space radii, but the registry between adjacent trilayers is not perfectly periodic. That loss of stacking coherence redistributes intensity along $Q_z$ and produces diffuse features.
+
+The PbI$_2$ extension is therefore introduced only after the ordered baseline. Beam and detector terms, sample alignment, mosaicity, profile broadening, lattice constants, and the ordered PbI$_2$ rod intensities are fixed first. The disorder model is then asked to explain the remaining systematic diffuse signal on selected m/L rods. This ordering is important because a diffuse feature should be interpreted as stacking information only after the detector geometry and orientation distribution have already been constrained by the ordered Bragg features.
+
+For a two-dimensional powder film, random in-plane rotation turns each in-plane reflection family into a reciprocal-space cylinder at fixed $Q_R$. Perfect stacking would concentrate intensity at discrete ordered Bragg values of $Q_z$ on those cylinders. For the $PbI_2$ case we see tails in $2\theta$ between the Bragg peaks sharing the same m. That residual is the observational reason for adding a stacking-disorder term.
+
+
+\subsection{Stacking motifs and polytypism}
+
+The structural unit treated by the disorder model is the I--Pb--I trilayer. Ordered 2H-like and laterally shifted 6H-like motifs differ primarily in the basal translation accumulated from one trilayer to the next. This makes PbI$_2$ a natural case for a Hendricks--Teller-type rod treatment in which the ordered layer form factor is retained and the layer-to-layer correlation enters as an analytical correction along $L$.\cite{HendricksTeller1942}
+
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.3\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/results_pbi2/2H.png}
+    \vspace{0.5ex}
+    \textbf{(a)}
+  \end{minipage}
+  \begin{minipage}[t]{0.3\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/results_pbi2/6H_R-3.png}
+    \vspace{0.5ex}
+    \textbf{(b)}
+  \end{minipage}
+  \caption{Polytypes of the PbI$_2$ disorder model. The refinement acts on an effective Hendricks--Teller rod model built from ordered layer form factors and layer-to-layer phase correlations.}
+  \label{fig:pbi2_ewald_cylinder_comparison}
+\end{figure}
+
+For a basal translation $(\Delta x,\Delta y)$ in fractional hexagonal coordinates, a reflection $(h,k,L)$ acquires the phase
+\begin{equation}
+  \exp\!\left[i2\pi(h\Delta x+k\Delta y)\right].
+  \label{eq:pbi2_translation_phase}
+\end{equation}
+The slip convention used here corresponds to the basal translation
+\begin{equation}
+  \mathbf{s}=\left(\frac{2}{3},\frac{1}{3}\right),
+  \qquad
+  hs_x+ks_y=\frac{2h+k}{3},
+  \label{eq:pbi2_slip_vector}
+\end{equation}
+so the default PbI$_2$ slip phase is
+\begin{equation}
+  \delta(h,k)=2\pi\left(\frac{2h+k}{3}\right).
+  \label{eq:pbi2_delta}
+\end{equation}
+If $\tau_j\in\{0,1\}$ marks whether interface $j$ slips, the cumulative basal offset of layer $n$ is
+\begin{equation}
+  \mathbf{u}_n=\left(\sum_{j=0}^{n-1}\tau_j\right)\mathbf{s}\pmod{1},
+  \qquad n=0,\ldots,N-1.
+  \label{eq:pbi2_cumulative_shift}
+\end{equation}
+Thus a no-slip interface leaves the next trilayer in the same lateral registry, while a slip interface advances the next trilayer by $\mathbf{s}$. The all-slip three-layer sequence gives offsets $(0,0)$, $(2/3,1/3)$, and $(1/3,2/3)$, then returns to $(0,0)$ on the fourth layer. This is the ABCA closure used to connect the reciprocal-space disorder phase to the 6H-like visual motif.
+
+The active convention first remaps the reported parameter through
+\begin{equation}
+  p_{\mathrm{flip}}=1-p.
+  \label{eq:pbi2_pflip}
+\end{equation}
+With the slip phase in Eq.~\eqref{eq:pbi2_delta}, the layer-step average is
+\begin{equation}
+  z=(1-p_{\mathrm{flip}})+p_{\mathrm{flip}}e^{i\delta},
+  \qquad
+  f=|z|,
+  \qquad
+  \psi=\arg z.
+  \label{eq:pbi2_zfpsi}
+\end{equation}
+The out-of-plane phase sampled by the rod model is
+\begin{equation}
+  \phi(h,k,L)=\delta(h,k)+\frac{2\pi L}{\phi_{L,\mathrm{div}}},
+  \label{eq:pbi2_phi}
+\end{equation}
+where $\phi_{L,\mathrm{div}}$ is the divisor defining the active $L$ phase convention. For an infinite stack, the Hendricks--Teller correction is
+\begin{equation}
+  R_{\infty}(h,k,L)=
+  \frac{1-f^2}{1+f^2-2f\cos\!\left[\phi(h,k,L)-\psi\right]}.
+  \label{eq:pbi2_rinf}
+\end{equation}
+The finite-domain form used when an explicit stack length is retained is
+\begin{equation}
+  R_N(h,k,L)=
+  1+\frac{2}{N}\operatorname{Re}\!\sum_{n=1}^{N-1}(N-n)t^n,
+  \qquad
+  t=f\,e^{i[\phi(h,k,L)-\psi]}.
+  \label{eq:pbi2_rn}
+\end{equation}
+Equation~\eqref{eq:pbi2_rn} approaches Eq.~\eqref{eq:pbi2_rinf} as $N\rightarrow\infty$. In the ordered limit, the correction collapses back toward the discrete Bragg sequence. As the effective layer-to-layer correlation decreases, coherent peak weight is redistributed into broader between-peak intensity along the same rod.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.94\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/results_pbi2/pbi2_ht_correlation_rod_schematic.png}
+  \end{minipage}
+  \caption{Mathematical logic of the PbI$_2$ stacking-disorder correction. A sequence of slipped and unslipped interfaces defines layer-pair correlations. Those correlations determine the Hendricks--Teller factor $R_{hk}(L)$, which multiplies the ordered rod intensity $F_{hk}^2(L)$. Weak disorder preserves long-range phase coherence and leaves narrow ordered peaks dominant. Stronger disorder shortens the layer-pair correlation length and transfers intensity into broader diffuse signal along $L$ or $Q_z$. The detector model sees the resulting rod intensity after the same projection and broadening operations used for the ordered films.}
+  \label{fig:pbi2_ht_rod_schematic}
+\end{figure}
+
+When several local stacking environments are allowed, the calculation constructs multiple Hendricks--Teller component curves and combines them with nonnegative raw weights $w_\mu$. After normalization,
+\begin{equation}
+  \tilde{w}_\mu=\frac{w_\mu}{\sum_\nu w_\nu},
+  \qquad
+  I^{\mathrm{mix}}_{hk}(L)=\sum_{\mu=1}^{M}\tilde{w}_\mu I^{(\mu)}_{hk}(L).
+  \label{eq:pbi2_mixture}
+\end{equation}
+The weights are therefore interpreted as effective fractions within the selected model family, not literal macroscopic phase fractions. Before detector projection, rods are grouped by the in-plane radial class
+\begin{equation}
+  m=h^2+hk+k^2,
+  \label{eq:pbi2_qrclass}
+\end{equation}
+because all reflections with the same $m$ share the same in-plane $Q_R$ magnitude in the two-dimensional powder average. Their intensity curves are interpolated onto a common $L$ grid and summed before the detector trace is launched.
+
+\subsection{Selected-rod refinement and physical interpretation}
+
+The selected-rod profile is fit directly. The known Bragg positions on the retained branch define the centers of the profile terms inherited from the fixed detector geometry and ordered structural model. The disorder parameters control the redistribution of intensity among those terms and the diffuse between-peak signal through Eqs.~\eqref{eq:pbi2_rod_main}--\eqref{eq:pbi2_rn}; peak amplitudes are not released as independent free parameters. This is necessary because independently fitting the peaks first would allow the disorder signal to be absorbed into empirical peak areas, widths, or local backgrounds before the stacking model is tested.
+
+The residual minimized in this stage has the schematic form
+\begin{equation}
+  r_j=\frac{I_j^{\mathrm{meas}}-I_j^{\mathrm{model}}(\boldsymbol{\theta}_{\mathrm{dis}})}{\sigma_j},
+  \label{eq:pbi2_disorder_profile_residual}
+\end{equation}
+where $\boldsymbol{\theta}_{\mathrm{dis}}$ contains the slip probability, finite-stack length, declared mixture weights, and any explicitly allowed nuisance scale or background terms. The fit is accepted only if it improves the selected rod profile without destroying the ordered detector-space agreement established by the upstream refinement stages.
+
+\begin{table}[H]
+  \centering
+  \caption{Azimuthal pseudo-Voigt profile fit used to set the PbI$_2$ mosaic/profile state before the selected-rod stacking-disorder refinement. The large Lorentzian fraction accounts for long-tailed off-specular Bragg visibility, but it is not sufficient to explain selective diffuse rods.}
+  \label{tab:pbi2_azimuth_profile}
+  \scriptsize
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{@{}lrrrrrr@{}}
+    \toprule
+    Material & $\phi$ (deg) & Center (deg) & G-FWHM (deg) & L-FWHM (deg) & G/L (\%) & RMSE \\
+    \midrule
+    PbI$_2$ & $-73.7681$ & $-73.7509$ & $3.6809$ & $3.6809$ & $23.1/76.9$ & $6.196$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The PbI$_2$ profile is broader and more Lorentzian dominated than the ordered-film benchmarks. That matters because long Lorentzian tails allow more than the expected specular conditions to be met, making off-specular PbI$_2$ Bragg intensity a natural consequence of the fitted orientation distribution. Those tails, however, are a global profile effect. They broaden Bragg features tied to the same orientation distribution, but they do not generate continuous intensity selectively along only certain $Q_z$ rods. The selective presence and absence of diffuse rods is therefore assigned to stacking disorder rather than to the ordered baseline, detector resolution, or mosaic tails alone.
 
 \begin{figure}[H]
   \centering
   \begin{minipage}{0.92\linewidth}
     \centering
-    \draftfigureplaceholder[0.34\textheight]{figures/results_pbi2/pbi2_stacking_fault_model.png}{%
-      Real-space stacking schematic. Show ideal PbI$_2$ layer sequence, one or more faulted layer registries, the corresponding layer-pair correlations, and the qualitative effect on $Q_z$ intensity.
+    \draftfigureplaceholder[0.36\textheight]{figures/results_pbi2/pbi2_disorder_summary.png}{%
+      Selected-rod PbI$_2$ data/model summary from the current thesis workflow. Use the caked detector-space view with the fitted rod mask, ordered-baseline residual, disorder-enabled full-profile fit, and residual comparison.
     }
   \end{minipage}
-  \caption{Planned stacking-fault model schematic. The figure should show how an ideal repeated layer registry differs from a faulted sequence. The important quantity for diffraction is not only whether an individual layer is faulted, but how the fault changes pair correlations along the stacking direction. Those correlations control whether intensity remains concentrated at ordered Bragg positions or is redistributed into diffuse $Q_z$ intensity on the fixed-$Q_R$ cylinders.}
-  \label{fig:pbi2_stacking_fault_model}
+  \caption{Selected-rod PbI$_2$ stacking-disorder refinement. The intended final figure compares the measured ROI-integrated profile with the fixed ordered baseline and the disorder-enabled full-profile model. The ordered calculation should capture the principal Bragg positions while leaving systematic positive between-peak residual intensity along $Q_z$. Adding the analytical stacking-disorder term should reduce that selected-rod residual while leaving the upstream detector-space agreement intact.}
+  \label{fig:pbi2_disorder_fit}
 \end{figure}
 
-The PbI$_2$ comparison should therefore contain three calculated components: an ordered-baseline calculation, a stacking-disorder calculation, and the measured detector-space or projected $Q_z$ profile to which both are compared. The ordered baseline shows which features would be expected from a perfectly periodic stack. The disorder calculation tests whether the chosen fault probabilities and layer-pair correlations reproduce the diffuse intensity without damaging the detector geometry and mosaicity already established by the ordered-film analysis.
+The preliminary ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
-  \begin{minipage}{0.92\linewidth}
-    \centering
-    \draftfigureplaceholder[0.36\textheight]{figures/results_pbi2/pbi2_diffuse_data_model_overlay.png}{%
-      PbI$_2$ measured/calculated comparison. Include measured intensity, ordered-baseline calculation, stacking-disorder calculation, and residuals for selected fixed-$Q_R$ trajectories or detector regions.
-    }
-  \end{minipage}
-  \caption{Planned PbI$_2$ diffuse-scattering validation figure. The comparison should use the same detector-space projection logic as the ordered-film figures: measured and calculated images are projected through matched fixed-$Q_R$ regions and plotted versus $Q_z$ or $L$. The ordered-baseline calculation should show what is missing without stacking disorder, while the stacking-fault calculation should account for the diffuse intensity associated with fault-broadened layer correlations.}
-  \label{fig:pbi2_diffuse_overlay}
-\end{figure}
+  \caption{Preliminary PbI$_2$ ordered-baseline and disorder parameters used in the selected-rod comparison. PbI$_2$ displacement parameters are listed as fitted sample parameters because site-resolved Pb and I ADP values are not widely or consistently reported in a directly transferable convention.}
+  \label{tab:pbi2_sf_parameters}
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\linewidth}{@{}p{2.1cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Parameter class & Fitted value & Literature comparison & Role in the selected-rod model \\
+    \midrule
+    Lattice and coordinates &
+    $a=4.5583\,\text{\AA}$, $c=6.985\,\text{\AA}$; Pb at $(0,0,0)$; I1 at $(1/3,2/3,0.2677)$ and I2 at $(2/3,1/3,0.7323)$. &
+    Lattice constants remain within the 2H single-crystal structural spread, and the iodine coordinate follows the corrected $z\simeq0.268$ value.\cite{Minagawa1975,Palosz1990} &
+    Fixes the ordered Bragg positions and the $F_{hk}^{2}(L)$ envelope before stacking disorder is introduced. \\
+    Occupancies &
+    Weakly floating test returned $o_{\mathrm{Pb}}=0.999$, $o_{\mathrm{I1}}=1.001$, and $o_{\mathrm{I2}}=1.000$; the ordered baseline was then evaluated with full occupancies. &
+    The clean ordered model uses full occupancies; the density-deficient occupancy reported for a Palosz-type sample is sample-specific and was not used as the default model.\cite{Palosz1990,Lin2019} &
+    Keeps the PbI$_2$ average structure stoichiometric while the diffuse rod intensity is assigned to stacking disorder. \\
+    Directional ADPs &
+    $U_R/U_z=0.0105/0.0185$ for Pb and $0.016/0.024\,\text{\AA}^2$ for I1 and I2. &
+    Site-resolved Pb and I ADPs are not widely or consistently reported for direct transfer; the qualitative inequality $U_z(\mathrm{Pb})>U_R(\mathrm{Pb})$ is retained.\cite{Minagawa1975,Trueblood1996} &
+    Moderates relative ordered intensities and is interpreted as a sample-specific displacement refinement rather than a universal PbI$_2$ displacement constant. \\
+    Stacking disorder &
+    $p=0.18$, $N=32$ layers, and a 2H:6H motif fraction of $0.76:0.24$. &
+    Treated as effective selected-rod descriptors of the fitted model class rather than universal PbI$_2$ structural constants. &
+    Converts the ordered rod envelope into broadened between-peak intensity along the selected $Q_z$ rod. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
 
-This section is intentionally assembled as a figure-driven scaffold. The final version should keep the PbI$_2$ result subordinate to the ordered-film validation unless the diffuse-scattering figures are complete enough to support an independent conclusion. The scientific role of PbI$_2$ is to demonstrate that the same detector-space framework can be extended from ordered Bragg line-shape refinement to disorder-sensitive diffuse scattering when the stacking model is expressed in reciprocal-space terms that map onto the measured detector image.
+The physical interpretation is therefore deliberately limited. The fitted slip probability, finite-stack length, and 2H:6H mixture describe the stacking correlations required by the measured selected-rod intensity under the stated Hendricks--Teller convention. They are not a unique microscopic reconstruction of every trilayer sequence in the film. Their scientific value is that they quantify the minimum stacking-disorder physics needed once the ordered detector-space baseline has failed.
