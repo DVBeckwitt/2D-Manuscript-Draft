@@ -1,5 +1,6 @@
 *.aux
 *.bbl
+*.generated_bbl
 *.blg
 *.log
 *.out

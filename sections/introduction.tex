@@ -5,41 +5,9 @@ Wide-angle x-ray scattering (WAXS) with an area detector is attractive for this 
 
 \begin{figure}[H]
   \centering
-  \captionsetup[subfigure]{list=false}
-
-  % Fixed panel height for every image
-  \newlength{\panelH}
-  \setlength{\panelH}{0.15\textheight}
-
-  % #1 optional includegraphics options
-  % #2 filename
-  % #3 panel tag, e.g. (a)
-  % #4 label
-  \newcommand{\gridpanel}[4][]{%
-    \begin{subfigure}[t]{\linewidth}
-      \centering
-      \begin{minipage}[c][\panelH][c]{\linewidth}
-        \centering
-        \panelgraphic[
-          width=\linewidth,
-          height=\panelH,
-          keepaspectratio,
-          #1
-        ]{#2}{#3}
-      \end{minipage}
-      \phantomcaption\label{#4}
-    \end{subfigure}%
-  }
-
-  \newcommand{\rowhead}[1]{%
-    \begin{minipage}[c][\panelH][c]{\linewidth}
-      \centering\textbf{#1}
-    \end{minipage}%
-  }
-
+  \captionsetup{font=footnotesize}
   \setlength{\tabcolsep}{0pt}
   \renewcommand{\arraystretch}{1}
-
   \begin{tabular}{@{}p{0.16\linewidth}@{\hspace{0.02\linewidth}}p{0.24\linewidth}@{\hspace{0.02\linewidth}}p{0.24\linewidth}@{\hspace{0.02\linewidth}}p{0.24\linewidth}@{}}
     &
     \centering\textbf{Real space} &
@@ -47,31 +15,29 @@ Wide-angle x-ray scattering (WAXS) with an area detector is attractive for this 
     \centering\textbf{Detector space}
     \tabularnewline[0.4em]
 
-    \rowhead{Single\\crystal} &
-    \gridpanel{figures/intro/1d_real.png}{(a)}{fig:intro_single_real} &
-    \gridpanel[trim=150 150 150 150,clip]{figures/intro/mono_single_crystal.png}{(b)}{fig:intro_single_image} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{Single\\crystal}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(a)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio]{figures/intro/1d_real.png}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(b)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio,trim=150 150 150 150,clip]{figures/intro/mono_single_crystal.png}\end{minipage} &
     \mbox{}
     \tabularnewline[0.35em]
 
-    \rowhead{3D powder} &
-    \gridpanel{figures/intro/3d_real.png}{(c)}{fig:intro_3d_real} &
-    \gridpanel[trim=150 150 150 150,clip]{figures/intro/reciprocal_3d_powder.png}{(d)}{fig:intro_3d_recip} &
-    \gridpanel{figures/intro/detector_3d_powder_hbn.png}{(e)}{fig:intro_3d_image}
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{3D powder}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(c)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio]{figures/intro/3d_real.png}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(d)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio,trim=150 150 150 150,clip]{figures/intro/reciprocal_3d_powder.png}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(e)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio]{figures/intro/detector_3d_powder_hbn.png}\end{minipage}
     \tabularnewline[0.35em]
 
-    \rowhead{2D powder} &
-    \gridpanel{figures/intro/2d_real.png}{(f)}{fig:intro_2d_real} &
-    \gridpanel[trim=150 150 150 150,clip]{figures/intro/reciprocal_2d_powder.png}{(g)}{fig:intro_2d_recip} &
-    \gridpanel{figures/intro/detector_2d_powder_example.png}{(h)}{fig:intro_2d_image}
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{2D powder}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(f)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio]{figures/intro/2d_real.png}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(g)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio,trim=150 150 150 150,clip]{figures/intro/reciprocal_2d_powder.png}\end{minipage} &
+    \begin{minipage}[c][0.15\textheight][c]{\linewidth}\centering\textbf{(h)}\\[-0.2em]\includegraphics[width=\linewidth,height=0.12\textheight,keepaspectratio]{figures/intro/detector_2d_powder_example.png}\end{minipage}
   \end{tabular}
 
-  \caption{\footnotesize
-  Diffraction across three orientational limits: single crystal, 3D powder, and 2D powder. Columns show the corresponding real-space, reciprocal-space, and detector-space views, while rows group the orientational limits. Panels (a,b) show a single crystal in real space and reciprocal space. Panels (c--e) show a 3D powder, with randomly oriented crystallites, spherical reciprocal-space shells, and Debye--Scherrer rings on the detector. Panels (f--h) show a 2D powder, with aligned surface normals and in-plane orientational disorder, reciprocal-space rings with specular Bragg features, and the corresponding detector pattern with symmetry about the central axis.
-  }
+  \caption[Diffraction across three orientational limits]{Diffraction across three orientational limits: single crystal, 3D powder, and 2D powder. Columns show the corresponding real-space, reciprocal-space, and detector-space views, while rows group the orientational limits. Panels (a,b) show a single crystal in real space and reciprocal space. Panels (c--e) show a 3D powder, with randomly oriented crystallites, spherical reciprocal-space shells, and Debye--Scherrer rings on the detector. Panels (f--h) show a 2D powder, with aligned surface normals and in-plane orientational disorder, reciprocal-space rings with specular Bragg features, and the corresponding detector pattern with symmetry about the central axis.}
   \label{fig:intro_2x3}
 \end{figure}
 
-Figure~\ref{fig:intro_2x3} summarizes the real-space, reciprocal-space, and detector-space consequences of these three orientational limits. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated Bragg points (Fig.~\ref{fig:intro_single_image}), so at fixed incidence angle the Ewald sphere typically intersects only a small subset of reflections and the detector records sparse spots.\cite{AlsNielsenMcMorrow2001} For a 3D powder, random crystallite orientations smear the intensity of each Bragg point over a spherical shell, and the Ewald-sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_3d_recip}, Fig.~\ref{fig:intro_3d_image}).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2d_recip}).\cite{Kaganer1999,SmilgiesBlasini2007} The corresponding illustration in Fig.~\ref{fig:intro_2d_real} schematically shows 2D platelets with aligned growth, and a representative 2D-powder detector pattern is shown in Fig.~\ref{fig:intro_2d_image}. When the Ewald sphere intersects this reciprocal-space distribution, the detector records hybrid signatures: pairs of symmetric spots from the off-specular ring intersections and single-crystal-like features near the specular stripe from \((00L)\) intensity.\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods} Mosaicity then redistributes intensity, broadening the ring intersections into arcs and spreading the \((00L)\) features into cap-like intensity near the specular region.\cite{Kaganer1999,SmilgiesBlasini2007}
+Figure~\ref{fig:intro_2x3} summarizes the real-space, reciprocal-space, and detector-space consequences of these three orientational limits. In the Ewald construction, elastic scattering requires that reciprocal-space intensity lie on the Ewald sphere of radius $|\mathbf{k}|$.\cite{AlsNielsenMcMorrow2001} For a single crystal, reciprocal space consists of isolated Bragg points (Fig.~\ref{fig:intro_2x3}b), so at fixed incidence angle the Ewald sphere typically intersects only a small subset of reflections and the detector records sparse spots.\cite{AlsNielsenMcMorrow2001} For a 3D powder, random crystallite orientations smear the intensity of each Bragg point over a spherical shell, and the Ewald-sphere intersection produces Debye--Scherrer rings on the detector (Fig.~\ref{fig:intro_2x3}d,e).\cite{AlsNielsenMcMorrow2001} For a 2D powder, azimuthal disorder about the common \(c\) axis smears each off-specular Bragg point into an in-plane ring about \(Q_z\), while specular \((00L)\) reflections remain localized near the \(Q_z\) axis (Fig.~\ref{fig:intro_2x3}g).\cite{Kaganer1999,SmilgiesBlasini2007} The corresponding illustration in Fig.~\ref{fig:intro_2x3}f schematically shows 2D platelets with aligned growth, and a representative 2D-powder detector pattern is shown in Fig.~\ref{fig:intro_2x3}h. When the Ewald sphere intersects this reciprocal-space distribution, the detector records hybrid signatures: pairs of symmetric spots from the off-specular ring intersections and single-crystal-like features near the specular stripe from \((00L)\) intensity.\cite{SmilgiesBlasini2007,Hexemer2015,Smilgies2005Rods} Mosaicity then redistributes intensity, broadening the ring intersections into arcs and spreading the \((00L)\) features into cap-like intensity near the specular region.\cite{Kaganer1999,SmilgiesBlasini2007}
 
 This hybrid detector-space information is what makes the 2D-powder problem both rich and difficult. Many standard WAXS workflows reduce area-detector images to 1D profiles by azimuthal integration, often with masking near the direct beam and specular region.\cite{Ashiotis2015,Hexemer2015,Strzalka2018,Reus2024,Savikhin2020} Those steps suit nearly isotropic powders, but for 2D powders they deweight or remove off-specular arcs and specular caps that constrain out-of-plane correlations, stacking, and mosaic tails.\cite{SmilgiesBlasini2007,Hexemer2015} Stacking disorder is also commonly inferred from 1D interference models and refinements,\cite{HendricksTeller1942,Treacy1991,CasasCabanas2016} which do not directly exploit the two-dimensional anisotropy of oriented-film scattering. More general intermediate orientation distributions can be treated with orientation-distribution-function (ODF) refinements or preferred-orientation corrections,\cite{March1932,Dollase1986,MatthiesVinel1982,Pawlik1986,VonDreele1997,LutterottiVasinWenk2014} but those approaches are more general than needed for the narrowly constrained 2D-powder case considered here.\cite{VonDreele1997,LutterottiVasinWenk2014} Recent radial-profile approaches have made thin-film GIXD substantially more quantitative, but peak overlap and background separation can remain limiting in strongly anisotropic patterns, especially at small incidence angles.\cite{Gasser2025} For the layered films considered here, the measured morphology already motivates axial symmetry about the film normal and a low-dimensional out-of-plane mosaicity kernel.\cite{Kaganer1999,Smilgies2000POPOP,Fischer2023MOFGIWAXS} We therefore assume this physically motivated 2D-powder orientation distribution a priori and refine it with a detector-space forward model, using off-specular arcs and specular-family line shapes as direct constraints.\cite{SmilgiesBlasini2007,Hexemer2015}
 

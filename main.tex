@@ -19,7 +19,6 @@
 \usepackage{pgf}
 \usepackage{amsmath,amssymb,amsfonts,bm}
 \usepgfplotslibrary{fillbetween}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usetikzlibrary{calc}
 \definecolor{oiPurple}{RGB}{204,121,167}
 \definecolor{oiOrange}{RGB}{230,159,0}
@@ -29,6 +28,7 @@
 \usepackage[numbers,sort&compress]{natbib}
 % if you want PRB-like superscripts instead:
 \setcitestyle{super,comma,numbers,sort&compress}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
 % Small helper to place a panel tag just above the top-left of arbitrary content.
 % The label is part of the picture's bounding box so adjacent content cannot
@@ -105,9 +105,13 @@ quantitative X-ray area-detector modeling}
 \input{sections/refinement_workflow}
 \input{sections/discussion_conclusion}
 
-
 \bibliographystyle{apsrev4-2}
-\bibliography{bibliography/references}
+\makeatletter
+\if@filesw
+  \immediate\write\@auxout{\string\bibdata{bibliography/references}}%
+\fi
+\InputIfFileExists{main.generated_bbl}{}{\typeout{No file main.generated_bbl.}}
+\makeatother
 
 
 \end{document}
