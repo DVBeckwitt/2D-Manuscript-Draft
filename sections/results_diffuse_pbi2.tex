@@ -103,16 +103,6 @@ The finite-domain form used when an explicit stack length is retained is
 \end{equation}
 Equation~\eqref{eq:pbi2_rn} approaches Eq.~\eqref{eq:pbi2_rinf} as $N\rightarrow\infty$. In the ordered limit, the correction collapses back toward the discrete Bragg sequence. As the effective layer-to-layer correlation decreases, coherent peak weight is redistributed into broader between-peak intensity along the same rod.
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.94\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/results_pbi2/pbi2_ht_correlation_rod_schematic.png}
-  \end{minipage}
-  \caption{Mathematical logic of the PbI$_2$ stacking-disorder correction. A sequence of slipped and unslipped interfaces defines layer-pair correlations. Those correlations determine the Hendricks--Teller factor $R_{hk}(L)$, which multiplies the ordered rod intensity $F_{hk}^2(L)$. Weak disorder preserves long-range phase coherence and leaves narrow ordered peaks dominant. Stronger disorder shortens the layer-pair correlation length and transfers intensity into broader diffuse signal along $L$ or $Q_z$. The detector model sees the resulting rod intensity after the same projection and broadening operations used for the ordered films.}
-  \label{fig:pbi2_ht_rod_schematic}
-\end{figure}
-
 When several local stacking environments are allowed, the calculation constructs multiple Hendricks--Teller component curves and combines them with nonnegative raw weights $w_\mu$. After normalization,
 \begin{equation}
   \tilde{w}_\mu=\frac{w_\mu}{\sum_\nu w_\nu},
@@ -155,18 +145,6 @@ where $\boldsymbol{\theta}_{\mathrm{dis}}$ contains the slip probability, finite
 \end{table}
 
 The PbI$_2$ profile is broader and more Lorentzian dominated than the ordered-film benchmarks. That matters because long Lorentzian tails allow more than the expected specular conditions to be met, making off-specular PbI$_2$ Bragg intensity a natural consequence of the fitted orientation distribution. Those tails, however, are a global profile effect. They broaden Bragg features tied to the same orientation distribution, but they do not generate continuous intensity selectively along only certain $Q_z$ rods. The selective presence and absence of diffuse rods is therefore assigned to stacking disorder rather than to the ordered baseline, detector resolution, or mosaic tails alone.
-
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.92\linewidth}
-    \centering
-    \draftfigureplaceholder[0.36\textheight]{figures/results_pbi2/pbi2_disorder_summary.png}{%
-      Selected-rod PbI$_2$ data/model summary from the current thesis workflow. Use the caked detector-space view with the fitted rod mask, ordered-baseline residual, disorder-enabled full-profile fit, and residual comparison.
-    }
-  \end{minipage}
-  \caption{Selected-rod PbI$_2$ stacking-disorder refinement. The intended final figure compares the measured ROI-integrated profile with the fixed ordered baseline and the disorder-enabled full-profile model. The ordered calculation should capture the principal Bragg positions while leaving systematic positive between-peak residual intensity along $Q_z$. Adding the analytical stacking-disorder term should reduce that selected-rod residual while leaving the upstream detector-space agreement intact.}
-  \label{fig:pbi2_disorder_fit}
-\end{figure}
 
 The preliminary ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
 
