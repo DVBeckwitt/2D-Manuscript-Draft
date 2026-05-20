@@ -128,7 +128,35 @@ where $\boldsymbol{\theta}_{\mathrm{dis}}$ contains the slip probability, finite
 \(\sigma_j\) is the assigned intensity uncertainty for point \(j\).
 The fit is accepted only if it improves the selected rod profile without destroying the ordered detector-space agreement established by the upstream refinement stages.
 
-The preliminary ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
+\begin{figure}[H]
+  \centering
+  % PbI2 diffuse-rod validation figure. Top: detector-space extraction
+  % geometry. Bottom: corresponding L-profile overlays.
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \paneltagged{(a)}{\includegraphics[width=\linewidth]{figures/results_pbi2/figure7_pbi2_qr_rod_qz_profiles_detector_selected_q_regions_4deg.png}}
+  \end{minipage}
+
+  \vspace{0.8em}
+
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \paneltagged{(b)}{\includegraphics[width=\linewidth]{figures/results_pbi2/figure7_pbi2_qr_rod_qz_profiles.png}}
+  \end{minipage}
+
+  \caption[PbI2 diffuse-rod validation]{
+  PbI$_2$ diffuse-rod validation at $\theta_i=4^\circ$.
+  (a) Measured detector image with selected constant-$m$ extraction regions overlaid.
+  Solid colored curves mark the projected rod centerlines, semi-transparent regions mark the integrated detector pixels, and dashed outlines mark the integration-band boundaries.
+  The labels $m$ identify two-dimensional powder rod families, with signs distinguishing the two detector-side branches of the same family.
+  (b) Extracted profiles plotted versus $L$ after applying the same projection to measured and calculated images.
+  Black solid curves are measured data and orange dashed curves are simulations.
+  The agreement across the off-specular diffuse rods tests the stacking-disorder model, detector geometry, mosaic broadening, and the relative structure-factor weighting of the constant-$m$ rod families.
+  }
+  \label{fig:pbi2_diffuse_rod_validation}
+\end{figure}
+
+The ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
 
 \begin{table}[H]
   \centering
