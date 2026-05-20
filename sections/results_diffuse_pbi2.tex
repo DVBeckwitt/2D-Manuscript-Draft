@@ -1,7 +1,8 @@
 \section{Results: diffuse scattering and stacking disorder in PbI\texorpdfstring{$_2$}{2}}
 \label{sec:results_pbi2}
 
-PbI$_2$ extends the ordered-film analysis to a case where the detector image is not described by Bragg peaks from a single periodic stacking sequence alone.
+Pictured in Fig.\ref{fig:pbi2_diffuse_cylinders} is $PbI_2$ with a region of interest cropped on the left of the m=0,1 Bragg rods. Between the integer Bragg peaks expected for this polytype lies a diffuse intensity not seen in the m=0 rod. We will soon understand this to be a consequence of stacking disrders resulting in various stacking sequences (polytypes). That loss of stacking coherence redistributes intensity along $Q_z$ and produces diffuse features. For a two-dimensional powder film, random in-plane rotation turns each in-plane reflection family into a reciprocal-space cylinder at fixed $Q_R$. Perfect stacking would concentrate intensity at discrete ordered Bragg values of $Q_z$ on those cylinders. For the $PbI_2$ case we see tails in $2\theta$ between the Bragg peaks sharing the same m. That residual is the observational reason for adding a stacking-disorder term.
+
 
 \begin{figure}[H]
   \centering
@@ -9,15 +10,9 @@ PbI$_2$ extends the ordered-film analysis to a case where the detector image is 
     \centering
     \includegraphics[width=\linewidth]{figures/results_pbi2/PbI2_detector.png}
   \end{minipage}
-  \caption{On the right is the raw detector image with the beam center labeled and the m=0 vertically alined with that beam center. The region enclosed by the white rectangle is the region of interest shown to the left of this detector image. Along m=1 there is an observed diffuse intensity between the Bragg points while the m=0 does not share this.}
+  \caption{On the right is the raw detector image with the beam center labeled and the m=0 vertically aligned with that beam center. The region enclosed by the white rectangle is the region of interest shown to the left of this detector image. Along m=1 there is an observed diffuse intensity between the Bragg points while the m=0 does not share this.}
   \label{fig:pbi2_diffuse_cylinders}
 \end{figure}
-
-We can explain this selective manifestation of diffuse intensity with stacking disorder I--Pb--I trilayers remain crystalline enough to define in-plane reciprocal-space radii, but the registry between adjacent trilayers is not perfectly periodic. That loss of stacking coherence redistributes intensity along $Q_z$ and produces diffuse features.
-
-The PbI$_2$ extension is therefore introduced only after the ordered baseline. Beam and detector terms, sample alignment, mosaicity, profile broadening, lattice constants, and the ordered PbI$_2$ rod intensities are fixed first. The disorder model is then asked to explain the remaining systematic diffuse signal on selected m/L rods. This ordering is important because a diffuse feature should be interpreted as stacking information only after the detector geometry and orientation distribution have already been constrained by the ordered Bragg features.
-
-For a two-dimensional powder film, random in-plane rotation turns each in-plane reflection family into a reciprocal-space cylinder at fixed $Q_R$. Perfect stacking would concentrate intensity at discrete ordered Bragg values of $Q_z$ on those cylinders. For the $PbI_2$ case we see tails in $2\theta$ between the Bragg peaks sharing the same m. That residual is the observational reason for adding a stacking-disorder term.
 
 
 \subsection{Stacking motifs and polytypism}
@@ -119,32 +114,19 @@ because all reflections with the same $m$ share the same in-plane $Q_R$ magnitud
 
 \subsection{Selected-rod refinement and physical interpretation}
 
-The selected-rod profile is fit directly. The known Bragg positions on the retained branch define the centers of the profile terms inherited from the fixed detector geometry and ordered structural model. The disorder parameters control the redistribution of intensity among those terms and the diffuse between-peak signal through Eqs.~\eqref{eq:pbi2_rod_main}--\eqref{eq:pbi2_rn}; peak amplitudes are not released as independent free parameters. This is necessary because independently fitting the peaks first would allow the disorder signal to be absorbed into empirical peak areas, widths, or local backgrounds before the stacking model is tested.
 
-The residual minimized in this stage has the schematic form
+The selected-rod profile is fit directly. The known Bragg positions for the convolution of polytypes in a Bragg rod define the centers of the profile terms inherited from the fixed detector geometry and ordered structural model. The disorder parameters control the redistribution of intensity among those terms and the diffuse between-peak signal through Eqs.~\eqref{eq:pbi2_rod_main}--\eqref{eq:pbi2_rn}.
+
+Beam and detector terms, sample alignment, mosaicity, profile broadening, lattice constants, and the ordered PbI$_2$ rod intensities are fixed first by the prior method for ordered structures. The disorder model is then asked to explain the remaining systematic diffuse signal on selected m/L rods. This ordering is important because a diffuse feature should be interpreted as stacking information only after the detector geometry and orientation distribution have already been constrained by the ordered Bragg features.
+
+The residual minimized in this stage has the form
 \begin{equation}
   r_j=\frac{I_j^{\mathrm{meas}}-I_j^{\mathrm{model}}(\boldsymbol{\theta}_{\mathrm{dis}})}{\sigma_j},
   \label{eq:pbi2_disorder_profile_residual}
 \end{equation}
-where $\boldsymbol{\theta}_{\mathrm{dis}}$ contains the slip probability, finite-stack length, declared mixture weights, and any explicitly allowed nuisance scale or background terms. The fit is accepted only if it improves the selected rod profile without destroying the ordered detector-space agreement established by the upstream refinement stages.
-
-\begin{table}[H]
-  \centering
-  \caption{Azimuthal pseudo-Voigt profile fit used to set the PbI$_2$ mosaic/profile state before the selected-rod stacking-disorder refinement. The large Lorentzian fraction accounts for long-tailed off-specular Bragg visibility, but it is not sufficient to explain selective diffuse rods.}
-  \label{tab:pbi2_azimuth_profile}
-  \scriptsize
-  \setlength{\tabcolsep}{5pt}
-  \renewcommand{\arraystretch}{1.12}
-  \begin{tabular}{@{}lrrrrrr@{}}
-    \toprule
-    Material & $\phi$ (deg) & Center (deg) & G-FWHM (deg) & L-FWHM (deg) & G/L (\%) & RMSE \\
-    \midrule
-    PbI$_2$ & $-73.7681$ & $-73.7509$ & $3.6809$ & $3.6809$ & $23.1/76.9$ & $6.196$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-The PbI$_2$ profile is broader and more Lorentzian dominated than the ordered-film benchmarks. That matters because long Lorentzian tails allow more than the expected specular conditions to be met, making off-specular PbI$_2$ Bragg intensity a natural consequence of the fitted orientation distribution. Those tails, however, are a global profile effect. They broaden Bragg features tied to the same orientation distribution, but they do not generate continuous intensity selectively along only certain $Q_z$ rods. The selective presence and absence of diffuse rods is therefore assigned to stacking disorder rather than to the ordered baseline, detector resolution, or mosaic tails alone.
+where $\boldsymbol{\theta}_{\mathrm{dis}}$ contains the slip probability, finite-stack length, declared mixture weights, and any explicitly allowed nuisance scale or background terms. \(j\) indexes sampled points along the selected rod profile, and
+\(\sigma_j\) is the assigned intensity uncertainty for point \(j\).
+The fit is accepted only if it improves the selected rod profile without destroying the ordered detector-space agreement established by the upstream refinement stages.
 
 The preliminary ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
 
@@ -179,4 +161,4 @@ The preliminary ordered-baseline and disorder parameters used for the selected-r
   \end{tabularx}
 \end{table}
 
-The physical interpretation is therefore deliberately limited. The fitted slip probability, finite-stack length, and 2H:6H mixture describe the stacking correlations required by the measured selected-rod intensity under the stated Hendricks--Teller convention. They are not a unique microscopic reconstruction of every trilayer sequence in the film. Their scientific value is that they quantify the minimum stacking-disorder physics needed once the ordered detector-space baseline has failed.
+The physical interpretation is therefore deliberately limited. The fitted slip probability, finite-stack length, and 2H:6H mixture describe the stacking correlations required by the measured selected-rod intensity under the stated Hendricks--Teller convention.
