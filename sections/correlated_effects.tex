@@ -4,16 +4,21 @@
 The observed intensities are a result of the convlolution of the bandwidth, mosaic, and incident angle. The Bragg sphere corresponds to a different crystallite orientation for the same reciprocal-lattice-vector magnitude. Mosaicity populates only a cap-like region of that Bragg sphere for m=0. The observed intensity is therefore the part of that allowed ring that overlaps the populated mosaic cap.
 
 Finite wavelength bandwidth modifies the Ewald sphere into a shell of allowed radii. Beam divergence and incident-angle spread have a similar effect by moving the Ewald-sphere center and direction. When this Ewald shell intersects the mosaic-populated Bragg sphere, the overlap region's morphology is altered. This is prominent for low-order reflections as a small Bragg sphere with a fixed instrumental bandwidth covers comparatively large fraction of the Bragg sphere and can continue to overlap the mosaic cap over a broad range of nominal incident angles. For a larger Bragg sphere, the same bandwidth produces a narrower effective intersection, so the detected intensity is more sensitive to the exact incidence condition.
-
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.92\linewidth}
+
+  \begin{minipage}[t]{0.6\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/mosaic/bragg_sphere_bandwidth_size_series.png}
+    \includegraphics[width=\linewidth]{figures/mosaic/special_cause_reciprocal_matrix_ratio_scaled.png}
   \end{minipage}
-  \caption{Comparison of small and large Bragg spheres (grey) shows the Ewald-sphere (blue and only shown in the L=3, $5^\circ$ case) intersection from wavelength bandwidth and mosaic cap. The same instrumental bandwidth can sample a much larger angular fraction of a low-order Bragg sphere than of a high-order Bragg sphere. The result is that low-order peaks will survive at higher incident angles than higher-order peaks lower.}
+  \hfill
+  \begin{minipage}[t]{0.3\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/mosaic/with_ewald.png}
+  \end{minipage}
+
+  \caption{Comparison of various size Bragg spheres (L=3,6,9) illustrates how bandwidth and the mosaic cap determine the accessible intersection region. Left: Bragg-sphere size series. Right: the same geometry with the Ewald sphere shown explicitly to visualize the Ewald shell and intersection band on the Bragg sphere. The same instrumental bandwidth samples a much larger angular fraction of a low-order Bragg sphere than of a high-order Bragg sphere. As a result, low-order peaks can survive to higher incident angles, while high-order peaks are lost at lower incident angles.}
   \label{fig:correlated_bragg_sphere_size_series}
 \end{figure}
-
 This geometry explains a counterintuitive feature of the measurements. Increasing the incidence angle can bring high-order $00L$ peaks into condition while the low-order peaks remain visible, but lowering the incidence angle does not necessarily preserve the high-order peaks. The low-order peaks are robust because the finite Ewald-shell thickness and the mosaic cap continue to overlap. The high-order peaks require a more specific intersection because their Bragg spheres are larger and the same bandwidth samples a smaller fraction of the populated cap.
 
