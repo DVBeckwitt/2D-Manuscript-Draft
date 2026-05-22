@@ -4,6 +4,7 @@ The detailed tracker is `MANUSCRIPT_STATUS.md`. Use this as a short entry point.
 
 ## Recently completed
 
+- [x] Apply the concise bandwidth SI patch: main text now states the approximate $1/L$ angular-bandwidth scaling, and the supplement includes the derivation.
 - [x] Move the low-L m=0 star-feature crop and discussion before the ordered-film validation figure.
 - [x] Rebuild `main.pdf` after the figure-order change and verify no unresolved LaTeX references.
 - [x] Keep existing figure labels stable so no reference migration is required.

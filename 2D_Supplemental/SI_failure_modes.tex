@@ -38,6 +38,65 @@ This supporting information accompanies the manuscript titled
 \emph{Two-dimensional powder diffraction in layered van der Waals films: quantitative X-ray area-detector modeling}
 and provides expanded workflow notes and supplemental derivations.
 
+
+\section{Bandwidth scaling for the specular Bragg-sphere cap overlap}
+\label{sec:si_bandwidth_mosaic_scaling}
+
+This section gives the short reciprocal-space derivation behind the statement that a fixed Ewald-shell thickness samples a larger angular fraction of a low-order $00L$ Bragg sphere than of a high-order one.
+
+For the specular family, $m=0$ and $G_R=0$, so
+\begin{equation}
+G_L \equiv G_{00L}=\frac{2\pi L}{c}.
+\end{equation}
+Thus the Bragg-sphere radius grows linearly with $L$.
+
+In the fixed-center Ewald-shell construction used for the geometric interpretation, the central wavevector is
+\begin{equation}
+K_0=\frac{2\pi}{\lambda_0}.
+\end{equation}
+A small fractional bandwidth $b=\Delta\lambda/\lambda_0$ gives a reciprocal-space shell thickness
+\begin{equation}
+\Delta K \simeq K_0 b.
+\end{equation}
+This thickness is set by the instrument and is independent of $L$.
+
+Let $\psi$ be the angular position of the Ewald-shell intersection band on the Bragg sphere. For an Ewald radius $K$, with the shell center held fixed at the central $K_0$ position, the intersection satisfies
+\begin{equation}
+\sin\psi(K;G_L)=\frac{K_0^2-K^2+G_L^2}{2K_0G_L}.
+\end{equation}
+At the central wavelength, $K=K_0$, this reduces to
+\begin{equation}
+\sin\psi_0=\frac{G_L}{2K_0}.
+\end{equation}
+Differentiating the fixed-center relation at $K=K_0$ gives
+\begin{equation}
+\cos\psi_0\,d\psi \simeq -\frac{dK}{G_L}.
+\end{equation}
+Therefore the full angular width of the Ewald intersection band is approximately
+\begin{equation}
+\Delta\psi \simeq \frac{\Delta K}{G_L\cos\psi_0}
+             \simeq \frac{K_0 b}{G_L\cos\psi_0}.
+\end{equation}
+Substituting $G_L=2\pi L/c$ and $K_0=2\pi/\lambda_0$ gives
+\begin{equation}
+\Delta\psi(L) \simeq \frac{bc}{\lambda_0 L\cos\psi_0}.
+\end{equation}
+For low and moderate $L$, $\cos\psi_0$ varies more slowly than $G_L$, so the leading scaling is
+\begin{equation}
+\Delta\psi(L)\propto \frac{1}{L}.
+\end{equation}
+
+The mosaic cap clips this band. If the cap has angular half-width $\eta$ and is displaced by the nominal incident angle $\theta_i$, a one-dimensional angular measure of the accessible overlap is
+\begin{equation}
+\ell(L)=\max\left[0,
+\min\left(\psi_0+\frac{\Delta\psi}{2},\theta_i+\eta\right)-
+\max\left(\psi_0-\frac{\Delta\psi}{2},\theta_i-\eta\right)
+\right].
+\end{equation}
+When the Ewald band is narrower than the mosaic cap and limits the overlap, $\ell(L)\simeq\Delta\psi(L)$, so the bandwidth-controlled accessible overlap inherits the same approximate $1/L$ scaling. If the cap is fully inside the band, the overlap is mosaic-limited instead. If the band and cap do not intersect, the overlap is zero.
+
+This scaling describes the fixed-center reciprocal-space shell overlap used to interpret the Bragg-sphere schematics. It is not the raw Bragg-sphere surface area, and it is distinct from the strict moving-center Bragg-law derivative $\Delta\theta_B\simeq b\tan\theta_B$.
+
 \section{Staged refinement workflow (expanded)}
 \label{sec:si_workflow}
 

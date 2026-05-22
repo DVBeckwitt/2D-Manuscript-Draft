@@ -1,6 +1,6 @@
 # Supplement Status
 
-Last updated: 2026-04-30  
+Last updated: 2026-05-22
 Current supplement priority: support the main manuscript without interrupting the physics narrative.
 
 ## Supplement purpose
@@ -18,6 +18,12 @@ The main text should explain the diffraction physics and show the measured/calcu
 | DONE | Ready for advisor review. |
 | PARKED | Deferred. |
 | CHECK | Needs advisor decision. |
+
+## Recent completed changes
+
+| Date | Status | Notes |
+|---|---|---|
+| 2026-05-22 | DONE | Added the concise bandwidth-scaling derivation for the specular Bragg-sphere cap overlap to `SI_failure_modes.tex`, supporting the main-text statement that fixed Ewald-shell thickness samples an angular band scaling approximately as $1/L$ for the $m=0$, $00L$ family. |
 
 ## Proposed supplement outline
 
@@ -134,6 +140,7 @@ Potential contents later:
 | Task | Status | Notes |
 |---|---|---|
 | Create supplement section structure | TODO | Decide how this integrates with existing `2D_Supplemental/SI_failure_modes.tex`. |
+| Add concise bandwidth-scaling derivation | DONE | Added as `Bandwidth scaling for the specular Bragg-sphere cap overlap` in `2D_Supplemental/SI_failure_modes.tex`. |
 | Write S1 coordinate/projection section | TODO | Connect 2theta-phi back to Q/Qr/Qz. |
 | Write S2 sub-pixelation section | TODO | Explain pixel-noise issue. |
 | Write S3 beam/instrument sampling section | TODO | Use clear terminology. |

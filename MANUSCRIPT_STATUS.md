@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-05-12
+Last updated: 2026-05-22
 Source meeting: Dr. Paul Maselli / David manuscript discussion, 2026-04-30  
 Next advisor meeting: CHECK - 2026-05-07 date is now past; update when the next meeting is known
 Current priority: Bi2Se3 and Bi2Te3 ordered-film figures and physics narrative
@@ -25,6 +25,11 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 
 | Date | Type | Status | Notes |
 |---|---|---|---|
+| 2026-05-22 | Feature | DONE | Applied `concise_bandwidth_si.patch` exactly: the main correlated-effects section now states the approximate $1/L$ angular-bandwidth scaling for the $m=0$, $00L$ Bragg-sphere cap overlap, and the supplement contains the concise derivation in `2D_Supplemental/SI_failure_modes.tex`. |
+| 2026-05-22 | Bug/error | DONE | Corrected the bandwidth/mosaicity explanation from a qualitative statement to an explicit fixed-center Ewald-shell scaling argument tied to the supplement. No behavioral regression test was required because this is a manuscript-text patch. |
+| 2026-05-22 | CI/CD | CHECK | No GitHub Actions workflow is present. Local checks used isolated LaTeX output directories so unrelated `main.pdf` worktree changes were not overwritten: `main.tex` built successfully but still reports the pre-existing unresolved PbI2 reference `eq:pbi2_rod_main`; `SI_failure_modes.tex` built successfully from `2D_Supplemental` after the normal LaTeX rerun. |
+| 2026-05-22 | Deprecation/migration | DONE | No deprecation or migration was introduced. Existing figure and section labels remain stable, with the new supplemental label `sec:si_bandwidth_mosaic_scaling` added for future cross-reference if needed. |
+| 2026-05-22 | Shipping/rollback | DONE | Patch is reversible with a normal git revert of the commit. No deployment or release artifact was published as part of this manuscript-source change. |
 | 2026-05-10 | Feature | DONE | Moved the low-L m=0 star-feature crop and explanation before the ordered-film validation figure in `sections/results_ordered.tex`, so the observation now precedes the fit-quality payoff. |
 | 2026-05-10 | Bug/error | DONE | Verified the figure-order check, rebuilt `main.pdf` with two `pdflatex -interaction=nonstopmode -halt-on-error main.tex` passes, and found no unresolved-reference warnings in `main.log`. |
 | 2026-05-10 | CI/CD | CHECK | No GitHub Actions workflows are present in `.github/`; current quality gate is local LaTeX build plus log/reference scan. |
