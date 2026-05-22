@@ -36,7 +36,7 @@ DEFAULT_OUTPUT_PATH = "special_cause_reciprocal_matrix_ratio_scaled.png"
 OUTPUT_WIDTH_PX = 2400
 OUTPUT_HEIGHT_PX: int | None = None  # None keeps the output square.
 
-MATRIX_TITLE = "theta"
+MATRIX_TITLE = "delta_theta"
 Y_AXIS_TITLE = "L"
 TITLE_FONT_SIZE_PT = 90
 AXIS_FONT_SIZE_PT = 90
@@ -49,24 +49,24 @@ FALLBACK_BRAGG_FILL_FRACTION = 0.82
 GLOBAL_CELL_SCALE = 1.0
 
 # Per-cell image multipliers used when no --scale values are supplied.
-# Format: (L value, theta degrees, multiplier)
+# Format: (L value, delta_theta degrees, multiplier)
 DEFAULT_CELL_SCALE_OVERRIDES = [
+    (3, 0.0, 1.0 / 3.0),
     (3, 5.0, 1.0 / 3.0),
     (3, 10.0, 1.0 / 3.0),
-    (3, 15.0, 1.0 / 3.0),
+    (6, 0.0, 2.0 / 3.0),
     (6, 5.0, 2.0 / 3.0),
     (6, 10.0, 2.0 / 3.0),
-    (6, 15.0, 2.0 / 3.0),
+    (9, 0.0, 1.0),
     (9, 5.0, 1.0),
     (9, 10.0, 1.0),
-    (9, 15.0, 1.0),
 ]
 
 # None uses the bundle default. True preserves relative L size; False scales each
 # row locally so the Bragg footprint fills the same fraction of its grid cell.
 PRESERVE_RELATIVE_L_SCALE: bool | None = None
 
-SHOW_COLORBAR = True
+SHOW_COLORBAR = False
 CLIP_CELLS_TO_GRID = True
 TRANSPARENT_BACKGROUND = False
 DRAW_DEBUG_BOXES = False
@@ -271,8 +271,16 @@ def _numeric_key(value: Any, *, ndigits: int = 6) -> float:
     return round(numeric, ndigits)
 
 
-def _cell_key(L: Any, theta_deg: Any) -> tuple[int, float]:
-    return int(round(float(L))), _numeric_key(theta_deg)
+def _cell_key(L: Any, column_value: Any) -> tuple[int, float]:
+    return int(round(float(L))), _numeric_key(column_value)
+
+
+def _matrix_column_contract(manifest: dict[str, Any], cells: list[CellImage]) -> tuple[str, str, str]:
+    if isinstance(manifest.get("delta_theta_values"), list) and manifest["delta_theta_values"]:
+        return "delta_theta_values", "delta_theta_deg", "delta_theta"
+    if any("delta_theta_deg" in cell.metadata for cell in cells):
+        return "delta_theta_values", "delta_theta_deg", "delta_theta"
+    return "theta_values", "theta_deg", "theta"
 
 
 def _ordered_values_from_manifest_or_cells(
@@ -353,17 +361,34 @@ def _draw_centered_text(
     font: ImageFont.ImageFont,
     fill: tuple[int, int, int, int] = (45, 67, 99, 255),
     angle: float = 0.0,
+    stroke_fill: tuple[int, int, int, int] | None = None,
+    stroke_width: int = 0,
 ) -> None:
     draw = ImageDraw.Draw(image)
     if not angle:
         width, height = _text_size(draw, text, font)
-        draw.text((x - width / 2, y - height / 2), text, font=font, fill=fill)
+        draw.text(
+            (x - width / 2, y - height / 2),
+            text,
+            font=font,
+            fill=fill,
+            stroke_fill=stroke_fill,
+            stroke_width=stroke_width,
+        )
         return
 
     width, height = _text_size(draw, text, font)
-    label = Image.new("RGBA", (max(1, width + 8), max(1, height + 8)), (0, 0, 0, 0))
+    padding = max(4, stroke_width + 4)
+    label = Image.new("RGBA", (max(1, width + padding * 2), max(1, height + padding * 2)), (0, 0, 0, 0))
     label_draw = ImageDraw.Draw(label)
-    label_draw.text((4, 4), text, font=font, fill=fill)
+    label_draw.text(
+        (padding, padding),
+        text,
+        font=font,
+        fill=fill,
+        stroke_fill=stroke_fill,
+        stroke_width=stroke_width,
+    )
     rotated = label.rotate(angle, expand=True, resample=Image.Resampling.BICUBIC)
     image.alpha_composite(rotated, (int(round(x - rotated.width / 2)), int(round(y - rotated.height / 2))))
 
@@ -379,7 +404,7 @@ def _draw_matrix_labels(
     *,
     width: int,
     l_values: list[float | int],
-    theta_values: list[float | int],
+    column_values: list[float | int],
     outer_margin: int,
     row_label_band: int,
     title_band: int,
@@ -395,24 +420,17 @@ def _draw_matrix_labels(
 ) -> None:
     title_font = _font(title_font_size)
     axis_font = _font(axis_font_size)
+    y_axis_overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
 
     _draw_centered_text(canvas, title, width / 2, outer_margin * 0.75, font=title_font)
-    for col_index, theta in enumerate(theta_values):
+    for col_index, column_value in enumerate(column_values):
         _draw_centered_text(
             canvas,
-            _format_axis_value(theta, suffix="°"),
+            _format_axis_value(column_value, suffix="°"),
             grid_x + cell_width * (col_index + 0.5),
             outer_margin + title_band + column_label_band * 0.45,
             font=axis_font,
         )
-    _draw_centered_text(
-        canvas,
-        y_axis_title,
-        outer_margin * 0.45,
-        grid_y + cell_height * len(l_values) / 2.0,
-        font=axis_font,
-        angle=90,
-    )
     for row_index, L in enumerate(l_values):
         _draw_centered_text(
             canvas,
@@ -421,6 +439,17 @@ def _draw_matrix_labels(
             grid_y + cell_height * (row_index + 0.5),
             font=axis_font,
         )
+    _draw_centered_text(
+        y_axis_overlay,
+        y_axis_title,
+        outer_margin * 0.45,
+        grid_y + cell_height * len(l_values) / 2.0,
+        font=axis_font,
+        angle=90,
+        stroke_fill=(255, 255, 255, 255),
+        stroke_width=max(6, axis_font_size // 12),
+    )
+    canvas.alpha_composite(y_axis_overlay)
 
 
 def _plotly_color_to_rgba(color: str) -> tuple[int, int, int, int]:
@@ -496,8 +525,21 @@ def _file_number_token(value: float | int, *, width: int = 3) -> str:
 
 def _scale_override_key(metadata: dict[str, Any]) -> str:
     L = int(round(float(metadata["L"])))
-    theta = _numeric_key(metadata["theta_deg"])
-    return f"L{L:03d}_theta{_file_number_token(theta)}"
+    if "delta_theta_deg" in metadata:
+        column_name = "delta_theta"
+        column_value = _numeric_key(metadata["delta_theta_deg"])
+    else:
+        column_name = "theta"
+        column_value = _numeric_key(metadata["theta_deg"])
+    return f"L{L:03d}_{column_name}{_file_number_token(column_value)}"
+
+
+def _strip_column_prefix(raw: str) -> str:
+    compact = raw.strip().lower()
+    for prefix in ("delta_theta=", "delta=", "theta="):
+        if compact.startswith(prefix):
+            return compact[len(prefix) :]
+    return compact
 
 
 def _parse_scale_override(raw: str) -> tuple[tuple[int, float] | str, float]:
@@ -515,11 +557,11 @@ def _parse_scale_override(raw: str) -> tuple[tuple[int, float] | str, float]:
     if "," in compact:
         left, right = compact.split(",", 1)
         try:
-            return _cell_key(float(left.lstrip("l=")), float(right.lstrip("theta="))), scale
+            return _cell_key(float(left.lstrip("l=")), float(_strip_column_prefix(right))), scale
         except ValueError as exc:
-            raise argparse.ArgumentTypeError(f"Invalid L,theta scale key: {key_text}") from exc
+            raise argparse.ArgumentTypeError(f"Invalid L,column scale key: {key_text}") from exc
 
-    match = re.search(r"l0*(\d+).*theta0*([0-9]+(?:p[0-9]+)?)", compact)
+    match = re.search(r"l0*(\d+).*(?:delta_theta|delta|theta)0*([0-9]+(?:p[0-9]+)?)", compact)
     if match:
         theta = float(match.group(2).replace("p", "."))
         return _cell_key(int(match.group(1)), theta), scale
@@ -603,11 +645,21 @@ def compose_matrix_image(
     if height is None:
         height = width
     l_values = _ordered_values_from_manifest_or_cells(manifest, cells, "L_values", "L")
-    theta_values = _ordered_values_from_manifest_or_cells(manifest, cells, "theta_values", "theta_deg")
-    if len(l_values) != 3 or len(theta_values) != 3:
-        raise ValueError(f"Expected a 3x3 bundle, found L={l_values} and theta={theta_values}.")
+    column_values_key, column_metadata_key, column_label = _matrix_column_contract(manifest, cells)
+    column_values = _ordered_values_from_manifest_or_cells(
+        manifest,
+        cells,
+        column_values_key,
+        column_metadata_key,
+    )
+    if len(l_values) != 3 or len(column_values) != 3:
+        raise ValueError(f"Expected a 3x3 bundle, found L={l_values} and {column_label}={column_values}.")
 
-    cells_by_key = {_cell_key(cell.metadata["L"], cell.metadata["theta_deg"]): cell for cell in cells}
+    cells_by_key = {
+        _cell_key(cell.metadata["L"], cell.metadata[column_metadata_key]): cell
+        for cell in cells
+        if column_metadata_key in cell.metadata
+    }
     defaults = manifest if manifest else (cells[0].metadata.get("matrix_defaults") or {})
     if bragg_fill_fraction is None:
         bragg_fill_fraction = float(defaults.get("bragg_cell_fill_fraction", FALLBACK_BRAGG_FILL_FRACTION))
@@ -634,16 +686,16 @@ def compose_matrix_image(
     grid_height = height - grid_y - bottom_margin
     if grid_width <= 0 or grid_height <= 0:
         raise ValueError("Layout margins leave no room for the matrix grid.")
-    cell_width = grid_width / len(theta_values)
+    cell_width = grid_width / len(column_values)
     cell_height = grid_height / len(l_values)
 
     placements = []
     for row_index, L in enumerate(l_values):
-        for col_index, theta in enumerate(theta_values):
-            key = _cell_key(L, theta)
+        for col_index, column_value in enumerate(column_values):
+            key = _cell_key(L, column_value)
             cell = cells_by_key.get(key)
             if cell is None:
-                raise ValueError(f"Missing matrix cell L={L}, theta={theta}.")
+                raise ValueError(f"Missing matrix cell L={L}, {column_label}={column_value}.")
             image = cell.image.convert("RGBA")
             bragg = _bbox(cell.metadata, image)
             relative_extent = float(cell.metadata.get("relative_extent", 1.0) or 1.0)
@@ -676,7 +728,8 @@ def compose_matrix_image(
 
             placement = {
                 "L": int(L),
-                "theta_deg": float(theta),
+                "delta_theta_deg": float(cell.metadata["delta_theta_deg"]) if "delta_theta_deg" in cell.metadata else None,
+                "theta_deg": float(cell.metadata.get("theta_deg", column_value)),
                 "image_path": cell.metadata.get("image_path"),
                 "cell_rect_px": {"x": cell_x, "y": cell_y, "width": cell_width, "height": cell_height},
                 "paste_rect_px": {"x": paste_x, "y": paste_y, "width": draw_width, "height": draw_height},
@@ -713,7 +766,7 @@ def compose_matrix_image(
         canvas,
         width=width,
         l_values=l_values,
-        theta_values=theta_values,
+        column_values=column_values,
         outer_margin=outer_margin,
         row_label_band=row_label_band,
         title_band=title_band,
@@ -733,7 +786,7 @@ def compose_matrix_image(
         "version": 1,
         "output_size_px": {"width": width, "height": height},
         "L_values": [int(value) for value in l_values],
-        "theta_values": [float(value) for value in theta_values],
+        column_values_key: [float(value) for value in column_values],
         "bragg_fill_fraction": bragg_fill_fraction,
         "cell_scale": cell_scale,
         "preserve_relative_l_scale": preserve_relative_l_scale,
@@ -775,7 +828,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
         action="append",
         type=_parse_scale_override,
         default=None,
-        help="Per-cell multiplier. Use L003_theta005=1.10 or 3,5=1.10. May be repeated. If omitted, defaults to L=3 -> 1/3, L=6 -> 2/3, L=9 -> 1.0.",
+        help="Per-cell multiplier. Use L003_delta_theta005=1.10 or 3,5=1.10. May be repeated. If omitted, defaults to L=3 -> 1/3, L=6 -> 2/3, L=9 -> 1.0.",
     )
     parser.add_argument("--relative-l-scale", action="store_true", help="Preserve relative L size across rows.")
     parser.add_argument("--local-scale", action="store_true", help="Scale each row locally so its Bragg sphere fills the same cell fraction.")

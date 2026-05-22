@@ -112,7 +112,7 @@ The weights are therefore interpreted as effective fractions within the selected
 \end{equation}
 because all reflections with the same $m$ share the same in-plane $Q_R$ magnitude in the two-dimensional powder average. Their intensity curves are interpolated onto a common $L$ grid and summed before the detector trace is launched.
 
-\subsection{Selected-rod refinement and physical interpretation}
+\subsection{Refinement}
 
 
 The selected-rod profile is fit directly. The known Bragg positions for the convolution of polytypes in a Bragg rod define the centers of the profile terms inherited from the fixed detector geometry and ordered structural model. The disorder parameters control the redistribution of intensity among those terms and the diffuse between-peak signal through Eqs.~\eqref{eq:pbi2_rod_main}--\eqref{eq:pbi2_rn}.
@@ -130,37 +130,60 @@ The fit is accepted only if it improves the selected rod profile without destroy
 
 \begin{figure}[H]
   \centering
-  % PbI2 diffuse-rod validation figure. Top: detector-space extraction
-  % geometry. Bottom: corresponding L-profile overlays.
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \paneltagged{(a)}{\includegraphics[width=\linewidth]{figures/results_pbi2/figure7_pbi2_qr_rod_qz_profiles_detector_selected_q_regions_4deg.png}}
-  \end{minipage}
-
+  {\large\bfseries Disorder Series Fitting\par}
   \vspace{0.8em}
-
-  \begin{minipage}[t]{0.5\linewidth}
+  % Left column: less disorder, prominent peaks
+  \begin{minipage}[t]{0.32\linewidth}
     \centering
-    \paneltagged{(b)}{\includegraphics[width=\linewidth]{figures/results_pbi2/figure7_pbi2_qr_rod_qz_profiles.png}}
+    \paneltagged{(a)}{\includegraphics[width=\linewidth]{figures/results_pbi2/low_disorder/Y2_5d_10m.png}}
+
+    \vspace{0.6em}
+
+    \paneltagged{(b)}{\includegraphics[width=\linewidth]{figures/results_pbi2/less_disorder_qr_rod_qz_profiles.png}}
+  \end{minipage}
+  \hfill
+  % Middle column: intermediate disorder
+  \begin{minipage}[t]{0.32\linewidth}
+    \centering
+    \paneltagged{(c)}{\includegraphics[width=\linewidth]{figures/results_pbi2/med_disorder/mid_disorder_detector_selected_q_regions_4deg.png}}
+
+    \vspace{0.6em}
+
+    \paneltagged{(d)}{\includegraphics[width=\linewidth]{figures/results_pbi2/med_disorder/mid_disorder_qr_rod_qz_profiles.png}}
+  \end{minipage}
+  \hfill
+  % Right column: high disorder, stacking faults
+  \begin{minipage}[t]{0.32\linewidth}
+    \centering
+    \paneltagged{(e)}{\includegraphics[width=\linewidth]{figures/results_pbi2/high_disorder/Clean2_4d_2m.png}}
+
+    \vspace{0.6em}
+
+    \paneltagged{(f)}{\includegraphics[width=\linewidth]{figures/results_pbi2/high_disorder_qr_rod_qz_profiles.png}}
   \end{minipage}
 
-  \caption[PbI2 diffuse-rod validation]{
-  PbI$_2$ diffuse-rod validation at $\theta_i=4^\circ$.
-  (a) Measured detector image with selected constant-$m$ extraction regions overlaid.
+  \caption[PbI$_2$ diffuse-rod validation across disorder]{
+  PbI$_2$ diffuse-rod validation at $\theta_i=4^\circ$ for samples spanning increasing stacking disorder.
+  The left column, (a,b), shows a less-disordered sample with prominent peaks.
+  The middle column, (c,d), shows a sample with intermediate disorder seen from the diffuse between the peaks.
+  The right column, (e,f), shows a highly disordered sample with pronounced stacking faults.
+  In the top row, measured detector images are shown with selected constant-$m$ extraction regions overlaid.
   Solid colored curves mark the projected rod centerlines, semi-transparent regions mark the integrated detector pixels, and dashed outlines mark the integration-band boundaries.
   The labels $m$ identify two-dimensional powder rod families, with signs distinguishing the two detector-side branches of the same family.
-  (b) Extracted profiles plotted versus $L$ after applying the same projection to measured and calculated images.
+  In the bottom row, extracted profiles are plotted versus $L$ after applying the same projection to measured and calculated images.
   Black solid curves are measured data and orange dashed curves are simulations.
-  The agreement across the off-specular diffuse rods tests the stacking-disorder model, detector geometry, mosaic broadening, and the relative structure-factor weighting of the constant-$m$ rod families.
+  The progression across the three samples shows how increasing stacking disorder modifies the diffuse-rod profiles while testing the stacking-disorder model, detector geometry, mosaic broadening, and relative structure-factor weighting of the constant-$m$ rod families.
   }
-  \label{fig:pbi2_diffuse_rod_validation}
+  \label{fig:pbi2_diffuse_rod_validation_disorder_series}
 \end{figure}
+
+In Fig.\ref{fig:pbi2_diffuse_rod_validation_disorder_series} we see a series of $PbI_2$ samples with increasing disorder evident by the sharpness of the peaks in (a) and the increased diffuse signal between the peaks in (e). We observe a few unique signatures of these disordered powders. The m=0 rod does not express diffuse as its the specular direction in which no faults occur. The m=3 rods also do not express diffuse although due to the stacking fault leaving exceptions for when 2h+k=0. The appearance of higher order m=0/L peaks at increased disorder is not due to the stacking faults but rather an increased mosaic from growth conditions.
 
 The ordered-baseline and disorder parameters used for the selected-rod comparison are summarized in Table~\ref{tab:pbi2_sf_parameters}. These values should be read as selected-rod descriptors of the present model state rather than universal PbI$_2$ constants. The clean ordered baseline keeps the average structure stoichiometric, while the diffuse rod intensity is assigned to stacking correlations.
 
 \begin{table}[H]
   \centering
-  \caption{Preliminary PbI$_2$ ordered-baseline and disorder parameters used in the selected-rod comparison. PbI$_2$ displacement parameters are listed as fitted sample parameters because site-resolved Pb and I ADP values are not widely or consistently reported in a directly transferable convention.}
+  \caption{PbI$_2$ ordered-baseline and disorder parameters used in the selected-rod comparison. PbI$_2$ displacement parameters are listed as fitted sample parameters because site-resolved Pb and I ADP values are not widely or consistently reported in a directly transferable convention.}
   \label{tab:pbi2_sf_parameters}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
