@@ -36,7 +36,7 @@ DEFAULT_OUTPUT_PATH = "special_cause_reciprocal_matrix_ratio_scaled.png"
 OUTPUT_WIDTH_PX = 2400
 OUTPUT_HEIGHT_PX: int | None = None  # None keeps the output square.
 
-MATRIX_TITLE = "delta_theta"
+MATRIX_TITLE = "Δθ"
 Y_AXIS_TITLE = "L"
 TITLE_FONT_SIZE_PT = 90
 AXIS_FONT_SIZE_PT = 90
@@ -51,14 +51,9 @@ GLOBAL_CELL_SCALE = 1.0
 # Per-cell image multipliers used when no --scale values are supplied.
 # Format: (L value, delta_theta degrees, multiplier)
 DEFAULT_CELL_SCALE_OVERRIDES = [
-    (3, 0.0, 1.0 / 3.0),
-    (3, 5.0, 1.0 / 3.0),
-    (3, 10.0, 1.0 / 3.0),
-    (6, 0.0, 2.0 / 3.0),
-    (6, 5.0, 2.0 / 3.0),
-    (6, 10.0, 2.0 / 3.0),
+    (3, 0.0, 2.0 / 3.0),
+    (3, 10.0, 2.0 / 3.0),
     (9, 0.0, 1.0),
-    (9, 5.0, 1.0),
     (9, 10.0, 1.0),
 ]
 
@@ -277,9 +272,9 @@ def _cell_key(L: Any, column_value: Any) -> tuple[int, float]:
 
 def _matrix_column_contract(manifest: dict[str, Any], cells: list[CellImage]) -> tuple[str, str, str]:
     if isinstance(manifest.get("delta_theta_values"), list) and manifest["delta_theta_values"]:
-        return "delta_theta_values", "delta_theta_deg", "delta_theta"
+        return "delta_theta_values", "delta_theta_deg", "Δθ"
     if any("delta_theta_deg" in cell.metadata for cell in cells):
-        return "delta_theta_values", "delta_theta_deg", "delta_theta"
+        return "delta_theta_values", "delta_theta_deg", "Δθ"
     return "theta_values", "theta_deg", "theta"
 
 
@@ -640,7 +635,7 @@ def compose_matrix_image(
     title_font_size: int = TITLE_FONT_SIZE_PT,
     axis_font_size: int = AXIS_FONT_SIZE_PT,
 ) -> tuple[Image.Image, dict[str, Any]]:
-    """Return a composed 3x3 matrix image and placement metadata."""
+    """Return a composed 2x2 matrix image and placement metadata."""
 
     if height is None:
         height = width
@@ -652,8 +647,8 @@ def compose_matrix_image(
         column_values_key,
         column_metadata_key,
     )
-    if len(l_values) != 3 or len(column_values) != 3:
-        raise ValueError(f"Expected a 3x3 bundle, found L={l_values} and {column_label}={column_values}.")
+    if len(l_values) != 2 or len(column_values) != 2:
+        raise ValueError(f"Expected a 2x2 bundle, found L={l_values} and {column_label}={column_values}.")
 
     cells_by_key = {
         _cell_key(cell.metadata["L"], cell.metadata[column_metadata_key]): cell
@@ -665,7 +660,7 @@ def compose_matrix_image(
         bragg_fill_fraction = float(defaults.get("bragg_cell_fill_fraction", FALLBACK_BRAGG_FILL_FRACTION))
     if preserve_relative_l_scale is None:
         preserve_relative_l_scale = bool(defaults.get("preserve_relative_l_scale", False))
-    scale_overrides = scale_overrides or {}
+    scale_overrides = dict(_default_scale_overrides()) if scale_overrides is None else scale_overrides
     layout_values = _layout_defaults(width, height, colorbar)
     if layout:
         layout_values.update(layout)
@@ -812,7 +807,7 @@ def save_matrix_image(image: Image.Image, output_path: str | Path, metadata: dic
 
 def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Build a 3x3 special-cause matrix PNG from exported cropped cell images.",
+        description="Build a 2x2 special-cause matrix PNG from exported cropped cell images.",
     )
     parser.add_argument("input", nargs="?", default=None, help="Exported special_cause_reciprocal_matrix_cells.zip or extracted directory. Defaults to special_cause_reciprocal_matrix_cells.zip in the current folder, script folder, or Downloads.")
     parser.add_argument("--output", "-o", default=DEFAULT_OUTPUT_PATH, help="Output PNG path.")
@@ -828,7 +823,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
         action="append",
         type=_parse_scale_override,
         default=None,
-        help="Per-cell multiplier. Use L003_delta_theta005=1.10 or 3,5=1.10. May be repeated. If omitted, defaults to L=3 -> 1/3, L=6 -> 2/3, L=9 -> 1.0.",
+        help="Per-cell multiplier. Use L003_delta_theta010=1.10 or 3,10=1.10. May be repeated. If omitted, defaults to L=3 -> 2/3 and L=9 -> 1.0.",
     )
     parser.add_argument("--relative-l-scale", action="store_true", help="Preserve relative L size across rows.")
     parser.add_argument("--local-scale", action="store_true", help="Scale each row locally so its Bragg sphere fills the same cell fraction.")
