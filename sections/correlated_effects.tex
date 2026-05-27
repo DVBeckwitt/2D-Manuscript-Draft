@@ -1,32 +1,32 @@
-\subsection{Wave propagation and bandwidth-coupled refraction}
+\subsection{Bandwidth-coupled refraction and absorption}
 \label{sec:correlated_effects}
 \label{sec:refraction}
 
 The low-\(L\), \(m=0\) feature in Fig.~\ref{fig:hk0_low_l_star}
 lies close to the direct beam and near the critical-angle region. In this
-regime the measured intensity is not determined by an ideal external
-Ewald-sphere intersection alone. Each ray is transmitted into the film,
-refracted by the material optical constants, attenuated during propagation,
-scattered from the mosaic population, and then refracted back into air before
-it reaches the detector. The forward model therefore treats wavelength
-bandwidth, refraction, transmission, absorption, divergence, and mosaicity as
-coupled terms.
+regime the measured intensity is not set by an external Ewald-sphere
+intersection alone. Each ray is transmitted into the film, refracted by the
+material optical constants, attenuated during propagation, scattered from the
+mosaic population, and refracted back into air before reaching the detector.
+The forward model therefore treats bandwidth, refraction, transmission,
+absorption, divergence, and mosaicity as coupled physical effects.
 
-The key point is that the refractive index is itself evaluated across the
-source bandwidth. For each sampled wavelength \(\lambda_j\), with spectral
-weight \(w_j\),
+The coupling starts with the refractive index. For each sampled wavelength
+\(\lambda_j\), with spectral weight \(w_j\), the model evaluates
 \begin{equation}
   k_0(\lambda_j)=\frac{2\pi}{\lambda_j},
   \qquad
   \tilde n(\lambda_j)
   =
   1-\delta_n(\lambda_j)+i\beta_n(\lambda_j).
-  \label{eq:n_complex_lambda}
+  \label{eq:n_complex_lambda_main}
 \end{equation}
-Here \(\delta_n\) is the refractive decrement that shifts the phase velocity
-inside the film, while \(\beta_n\) gives absorption. For electron density
-\(\rho_e\), classical electron radius \(r_e\), and linear absorption
-coefficient \(\mu(\lambda_j)\),
+Here \(\delta_n\) is the refractive decrement that shifts the internal phase
+velocity, and \(\beta_n\) is the absorptive correction that gives the finite
+penetration depth. The real decrement may be estimated from the electron
+density \(\rho_e\) and classical electron radius \(r_e\), while the imaginary
+term is the wavelength-dependent optical input used directly by the complex
+wavevector calculation:
 \begin{equation}
   \delta_n(\lambda_j)
   =
@@ -34,40 +34,120 @@ coefficient \(\mu(\lambda_j)\),
   \qquad
   \beta_n(\lambda_j)
   =
-  \frac{\mu(\lambda_j)\lambda_j}{4\pi}.
-  \label{eq:delta_beta_lambda}
+  \operatorname{Im}\{\tilde n(\lambda_j)\}.
+  \label{eq:delta_beta_lambda_main}
 \end{equation}
-Thus the finite bandwidth changes both the radius of the Ewald sphere and the
-optical constants that set the internal propagation direction and attenuation.
+Thus bandwidth changes both the Ewald-sphere radius and the optical constants
+that determine refraction and attenuation. The attenuation itself is not
+applied through a separate scalar absorption coefficient; it enters through the
+imaginary parts of the refracted internal wavevectors.
 
-For a uniformly scattering film of thickness \(t\), the complex normal
-components give the depth-averaged propagation weight
+For an incident wavevector in air, the grazing angle and azimuth are
 \begin{equation}
-  A(\lambda_j)
+  \sin\theta_i
+  =
+  \frac{k_{i,z}}{k_0(\lambda_j)},
+  \qquad
+  \tan\varphi_i
+  =
+  \frac{k_{i,x}}{k_{i,y}}.
+  \label{eq:incident_angles_lambda_main}
+\end{equation}
+Following the wave-propagation construction used in the dissertation, the
+transmitted angle and internal wavevector scale are
+\begin{align}
+  \theta_t(\lambda_j)
+  &=
+  \cos^{-1}\!\left[
+  \frac{\cos\theta_i}{\operatorname{Re}\{\tilde n(\lambda_j)\}}
+  \right],\\
+  k'(\lambda_j)
+  &=
+  k_0(\lambda_j)
+  \left[\operatorname{Re}\{\tilde n(\lambda_j)^2\}\right]^{1/2}.
+  \label{eq:theta_kprime_lambda_main}
+\end{align}
+The in-plane internal components are fixed by \(\theta_t\) and \(\varphi_i\).
+The remaining surface-normal component is complex. Using the closed-form
+solution of the \(a+i b\) decomposition, define
+\begin{align}
+  a_t(\lambda_j)
+  &=
+  k'(\lambda_j)^2\sin^2\theta_t(\lambda_j),\\
+  b(\lambda_j)
+  &=
+  k_0(\lambda_j)^2
+  \operatorname{Im}\{\tilde n(\lambda_j)^2\}.
+  \label{eq:at_b_lambda_main}
+\end{align}
+Then
+\begin{align}
+  \operatorname{Re}\{k_{t,z}(\lambda_j)\}
+  &=
+  \left[
+  \frac{\sqrt{a_t(\lambda_j)^2+b(\lambda_j)^2}+a_t(\lambda_j)}{2}
+  \right]^{1/2},\\
+  \operatorname{Im}\{k_{t,z}(\lambda_j)\}
+  &=
+  \left[
+  \frac{\sqrt{a_t(\lambda_j)^2+b(\lambda_j)^2}-a_t(\lambda_j)}{2}
+  \right]^{1/2}.
+  \label{eq:ktz_solution_lambda_main}
+\end{align}
+The branch is chosen so that \(\operatorname{Im}\{k_{t,z}\}\ge 0\), giving a
+decaying wave inside the film. The same result is applied to the outgoing
+internal wavevector using the scattered internal angle. Optical reversibility
+then refracts the scattered ray back into air. The algebraic derivation and the
+interface transmission factors are given in the Supporting Information.
+
+The imaginary normal components set the propagation loss. For each accepted
+candidate, define
+\begin{equation}
+  \kappa_i(\lambda_j)
+  =
+  \operatorname{Im}\{k_{t,z}(\lambda_j)\},
+  \qquad
+  \kappa_f(\lambda_j)
+  =
+  \operatorname{Im}\{k'_{t,z}(\lambda_j)\} .
+  \label{eq:kappa_if_lambda_main}
+\end{equation}
+If \(L_{\mathrm{in}}\) and \(L_{\mathrm{out}}\) are the entry and exit
+propagation lengths used for that candidate, the absorption/evanescence weight
+is
+\begin{equation}
+  A_{\mathrm{prop}}(\lambda_j)
+  =
+  \exp\!\left[
+  -2\kappa_i(\lambda_j)L_{\mathrm{in}}(\lambda_j)
+  -2\kappa_f(\lambda_j)L_{\mathrm{out}}(\lambda_j)
+  \right].
+  \label{eq:imkz_pathlength_weight_main}
+\end{equation}
+This is the form used by the simulation: the path lengths set how far the wave
+propagates in the film, and the imaginary parts of the internal normal
+wavevectors set the damping per unit length. The exponent is dimensionless, so
+\(L_{\mathrm{in}}\) and \(L_{\mathrm{out}}\) must use the same length units as
+\(k_{t,z}^{-1}\). For a uniformly scattering film of thickness \(t\), the same
+idea may be written as a depth average,
+\begin{equation}
+  \bar A_{\mathrm{prop}}(\lambda_j)
+  =
+  \frac{1}{t}\int_0^t
+  \exp\!\left[-2\left(\kappa_i(\lambda_j)+\kappa_f(\lambda_j)\right)\zeta\right]
+  d\zeta
   =
   \frac{
   1-
-  \exp\!\left[
-  -2\left(
-  \operatorname{Im}\{k_{t,z}(\lambda_j)\}
-  +
-  \operatorname{Im}\{k'_{t,z}(\lambda_j)\}
-  \right)t
-  \right]}
-  {
-  2\left(
-  \operatorname{Im}\{k_{t,z}(\lambda_j)\}
-  +
-  \operatorname{Im}\{k'_{t,z}(\lambda_j)\}
-  \right)t
-  } .
-  \label{eq:absorption_lambda}
+  \exp\!\left[-2\left(\kappa_i(\lambda_j)+\kappa_f(\lambda_j)\right)t\right]}
+  {2\left(\kappa_i(\lambda_j)+\kappa_f(\lambda_j)\right)t}.
+  \label{eq:absorption_lambda_main}
 \end{equation}
-This propagation factor is multiplied by the entrance and exit transmission
-factors, the structure-factor intensity, and the mosaic weight before the ray
-is deposited on the detector.
+This attenuation is multiplied by the entrance and exit transmission factors,
+the structure-factor intensity, and the mosaic weight before the ray is
+deposited on the detector.
 
-The calculated image is therefore an incoherent sum over wavelength samples:
+The detector image is therefore an incoherent sum over wavelength samples,
 \begin{equation}
   I_{\mathrm{det}}(x,y)
   =
@@ -79,11 +159,11 @@ The calculated image is therefore an incoherent sum over wavelength samples:
   \lambda_j,
   \tilde n(\lambda_j)
   \right].
-  \label{eq:detector_sum_lambda}
+  \label{eq:detector_sum_lambda_main}
 \end{equation}
-The bandwidth therefore has two roles. It thickens the Ewald construction
+The bandwidth has two roles: it thickens the reciprocal-space intersection
 through \(k_0(\lambda_j)\), and it changes the refracted wave through
-\(\tilde n(\lambda_j)\). This is why the near-critical low-\(L\) feature is a
+\(\tilde n(\lambda_j)\). The near-critical low-\(L\) feature is therefore a
 coupled optical and geometric effect, not a post-processing correction.
 
 For the \(00L\) family, \(G_{00L}=2\pi L/c\). A fixed wavelength spread gives
@@ -91,7 +171,7 @@ an effective Ewald-shell thickness, and its angular overlap with the
 mosaic-populated Bragg cap scales approximately as \(1/L\). Low-\(L\) Bragg
 spheres therefore retain overlap with the mosaic cap over a broader range of
 incident-angle detuning than high-\(L\) Bragg spheres. The long mosaic tail
-supplies the tilted crystallites, while bandwidth-dependent refraction and
+supplies the tilted crystallites, while wavelength-dependent refraction and
 attenuation determine how much of that intensity reaches the detector.
 
 \begin{figure}[H]
