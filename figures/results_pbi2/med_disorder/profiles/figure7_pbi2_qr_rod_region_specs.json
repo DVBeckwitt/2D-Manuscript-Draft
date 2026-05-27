@@ -6,8 +6,8 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 1,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
     "pixel_count_sum": 44836.0,
     "profile_rows": 96,
     "qr": 1.580653040727,
@@ -15,8 +15,8 @@
     "qz_min": 0.77134588877,
     "source": "primary",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   },
   {
     "accepted_from_gui": true,
@@ -25,8 +25,8 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 1,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
     "pixel_count_sum": 49411.0,
     "profile_rows": 96,
     "qr": 1.580653040727,
@@ -34,8 +34,8 @@
     "qz_min": 0.466535449028,
     "source": "primary",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   },
   {
     "accepted_from_gui": true,
@@ -44,8 +44,8 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 3,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
     "pixel_count_sum": 94504.0,
     "profile_rows": 96,
     "qr": 2.737771375677,
@@ -53,8 +53,8 @@
     "qz_min": 0.463361748317,
     "source": "primary",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   },
   {
     "accepted_from_gui": true,
@@ -63,8 +63,8 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 4,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
     "pixel_count_sum": 143965.0,
     "profile_rows": 96,
     "qr": 3.161306081454,
@@ -72,8 +72,8 @@
     "qz_min": 0.463361748317,
     "source": "primary",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   },
   {
     "accepted_from_gui": true,
@@ -82,8 +82,8 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 7,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
     "pixel_count_sum": 40562.0,
     "profile_rows": 15,
     "qr": 4.182014854842,
@@ -91,8 +91,8 @@
     "qz_min": 0.463361748317,
     "source": "primary",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   },
   {
     "accepted_from_gui": true,
@@ -101,16 +101,16 @@
     "l_max": 3.0,
     "l_min": 0.5,
     "m": 0,
-    "phi_max": 6.429298419,
-    "phi_min": -82.743315174,
-    "pixel_count_sum": 231223.0,
+    "phi_max": 10.0,
+    "phi_min": -10.0,
+    "pixel_count_sum": 199477.0,
     "profile_rows": 96,
     "qr": 0.0,
-    "qz_max": 2.386956414339,
-    "qz_min": 0.105826324776,
+    "qz_max": 3.297830371282,
+    "qz_min": 0.347606588676,
     "source": "specular",
     "theta_initial_deg": 4.0,
-    "two_theta_max": 36.898376271,
-    "two_theta_min": 10.660877035
+    "two_theta_max": 55.0,
+    "two_theta_min": 5.0
   }
 ]

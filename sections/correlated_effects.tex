@@ -1,22 +1,122 @@
-\subsection{Mosaicity, bandwidth, and Bragg-sphere size}
+\subsection{Wave propagation and bandwidth-coupled refraction}
 \label{sec:correlated_effects}
+\label{sec:refraction}
 
-The observed intensities are controlled by the overlap of wavelength bandwidth, mosaic orientation, and incident-angle phase space. For the $m=0$, $00L$ family, mosaicity populates a cap-like region of the Bragg sphere, and the measured intensity is the portion of the finite-bandwidth Ewald intersection that falls inside that cap. Because $G_{00L}=2\pi L/c$, the Ewald-shell thickness maps to an angular band width that scales approximately as $1/L$ after projection onto the Bragg sphere. Thus the same bandwidth samples a larger angular fraction of low-$L$ Bragg spheres than high-$L$ Bragg spheres, allowing low-order peaks to retain mosaic overlap over larger incident-angle detuning. The reciprocal-space scaling is derived in the Supporting Information.
+The low-\(L\), \(m=0\) feature in Fig.~\ref{fig:hk0_low_l_star}
+lies close to the direct beam and near the critical-angle region. In this
+regime the measured intensity is not determined by an ideal external
+Ewald-sphere intersection alone. Each ray is transmitted into the film,
+refracted by the material optical constants, attenuated during propagation,
+scattered from the mosaic population, and then refracted back into air before
+it reaches the detector. The forward model therefore treats wavelength
+bandwidth, refraction, transmission, absorption, divergence, and mosaicity as
+coupled terms.
+
+The key point is that the refractive index is itself evaluated across the
+source bandwidth. For each sampled wavelength \(\lambda_j\), with spectral
+weight \(w_j\),
+\begin{equation}
+  k_0(\lambda_j)=\frac{2\pi}{\lambda_j},
+  \qquad
+  \tilde n(\lambda_j)
+  =
+  1-\delta_n(\lambda_j)+i\beta_n(\lambda_j).
+  \label{eq:n_complex_lambda}
+\end{equation}
+Here \(\delta_n\) is the refractive decrement that shifts the phase velocity
+inside the film, while \(\beta_n\) gives absorption. For electron density
+\(\rho_e\), classical electron radius \(r_e\), and linear absorption
+coefficient \(\mu(\lambda_j)\),
+\begin{equation}
+  \delta_n(\lambda_j)
+  =
+  \frac{r_e\lambda_j^2\rho_e}{2\pi},
+  \qquad
+  \beta_n(\lambda_j)
+  =
+  \frac{\mu(\lambda_j)\lambda_j}{4\pi}.
+  \label{eq:delta_beta_lambda}
+\end{equation}
+Thus the finite bandwidth changes both the radius of the Ewald sphere and the
+optical constants that set the internal propagation direction and attenuation.
+
+For a uniformly scattering film of thickness \(t\), the complex normal
+components give the depth-averaged propagation weight
+\begin{equation}
+  A(\lambda_j)
+  =
+  \frac{
+  1-
+  \exp\!\left[
+  -2\left(
+  \operatorname{Im}\{k_{t,z}(\lambda_j)\}
+  +
+  \operatorname{Im}\{k'_{t,z}(\lambda_j)\}
+  \right)t
+  \right]}
+  {
+  2\left(
+  \operatorname{Im}\{k_{t,z}(\lambda_j)\}
+  +
+  \operatorname{Im}\{k'_{t,z}(\lambda_j)\}
+  \right)t
+  } .
+  \label{eq:absorption_lambda}
+\end{equation}
+This propagation factor is multiplied by the entrance and exit transmission
+factors, the structure-factor intensity, and the mosaic weight before the ray
+is deposited on the detector.
+
+The calculated image is therefore an incoherent sum over wavelength samples:
+\begin{equation}
+  I_{\mathrm{det}}(x,y)
+  =
+  \sum_j
+  w_j\,
+  I_{\mathrm{det}}
+  \!\left[
+  x,y;
+  \lambda_j,
+  \tilde n(\lambda_j)
+  \right].
+  \label{eq:detector_sum_lambda}
+\end{equation}
+The bandwidth therefore has two roles. It thickens the Ewald construction
+through \(k_0(\lambda_j)\), and it changes the refracted wave through
+\(\tilde n(\lambda_j)\). This is why the near-critical low-\(L\) feature is a
+coupled optical and geometric effect, not a post-processing correction.
+
+For the \(00L\) family, \(G_{00L}=2\pi L/c\). A fixed wavelength spread gives
+an effective Ewald-shell thickness, and its angular overlap with the
+mosaic-populated Bragg cap scales approximately as \(1/L\). Low-\(L\) Bragg
+spheres therefore retain overlap with the mosaic cap over a broader range of
+incident-angle detuning than high-\(L\) Bragg spheres. The long mosaic tail
+supplies the tilted crystallites, while bandwidth-dependent refraction and
+attenuation determine how much of that intensity reaches the detector.
+
 \begin{figure}[H]
   \centering
 
-  \begin{minipage}[t]{0.6\linewidth}
+  \begin{minipage}[t]{0.48\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/mosaic/special_cause_reciprocal_matrix_ratio_scaled.png}
+    \draftfigureplaceholder{figures/mosaic/special_cause_reciprocal_matrix_ratio_scaled.png}{%
+      Bragg-sphere size comparison for \(L=3,6,9\), showing how a fixed
+      wavelength bandwidth maps to a larger angular band for smaller \(L\).
+    }
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{0.5\linewidth}
+  \begin{minipage}[t]{0.48\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/mosaic/with_ewald.png}
+    \draftfigureplaceholder{figures/mosaic/with_ewald.png}{%
+      Ewald sphere with finite bandwidth thickness intersecting the mosaic cap
+      of a low-\(L\) \(00L\) Bragg sphere.
+    }
   \end{minipage}
 
-  \caption{Comparison of different Bragg-sphere sizes $(L=3,6,9)$ showing how bandwidth and the mosaic cap determine the accessible intersection region. Left: Bragg-sphere size series. Right: the same geometry with the Ewald sphere shown explicitly to visualize the finite shell and its intersection band on the Bragg sphere. For the $m=0$, $00L$ series, $G_{00L}\propto L$, so a fixed Ewald-shell thickness maps to an angular bandwidth that scales approximately as $1/L$. Low-$L$ peaks can therefore retain overlap with the mosaic cap over larger incident-angle detuning, while high-$L$ peaks are geometrically more selective.}
+  \caption{Bandwidth, refraction, and mosaic-cap geometry for the low-\(L\)
+  \(m=0\) feature. The wavelength distribution changes both the Ewald-sphere
+  radius and the refractive index used to calculate the internal wavevector.
+  Because \(G_{00L}\propto L\), a fixed bandwidth samples a larger angular
+  fraction of low-\(L\) Bragg spheres than high-\(L\) Bragg spheres.}
   \label{fig:correlated_bragg_sphere_size_series}
 \end{figure}
-This geometry explains a counterintuitive feature of the measurements. Increasing the incidence angle can bring high-order $00L$ peaks into condition while the low-order peaks remain visible, but lowering the incidence angle does not necessarily preserve the high-order peaks. The low-order peaks are robust because the finite Ewald-shell thickness and the mosaic cap continue to overlap. The high-order peaks require a more specific intersection because their Bragg spheres are larger and the same bandwidth samples a smaller fraction of the populated cap.
-

@@ -14,7 +14,7 @@ Phi signs: `-` and `+`.
 
 The figure uses only the 4° background. Non-specular traces are integrated directly in detector Qr/Qz space.
 Nonzero rods use detector Q maps at `theta_i = 4°`.
-m = 0 ROI uses caked phi/2theta bounds `phi=[-82.7433, 6.4293]°`, `2theta=[10.6609, 36.8984]°`; its final L axis is autoscaled from the accepted ROI trace.
+m = 0 ROI uses caked phi/2theta bounds `phi=[-10, 10]°`, `2theta=[5, 55]°`; its final L axis is autoscaled from the accepted ROI trace.
 Before integration, each non-specular HK rod center is adjusted from fitted detector peak Qr samples; every Qz bin then uses the adjusted Qr0 +/- delta_Qr, branch, positive Qz, and the 2theta display limit before summing intensity.
 The detector-region figure is a detector-space Qr overlay diagnostic: the background is linear detector intensity with robust percentile clipping, translucent ribbons show the active Delta Qr support with dashed boundary strokes, solid curves are projected fitted-geometry rod centerlines, and solid-white m labels start from the default geometry before manual adjustment; the intensity scale is saved as a separate file.
 The plotted traces are acceptance-normalized detector-count densities unless BACKGROUND_SOLID_ANGLE_CORRECTION is enabled. Raw summed columns are retained for audit only.
