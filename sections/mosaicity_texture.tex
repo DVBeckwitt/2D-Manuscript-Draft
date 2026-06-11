@@ -3,8 +3,7 @@
 
 Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal illustrated in Fig.\ref{fig:intro_2x3}(a,b,c). It is distinct from the random in-plane rotation that defines the two-dimensional powder limit. Random in-plane rotation generates the equivalent $m$-indexed rod family at a common in-plane reciprocal-space radius $Q_R$, while mosaicity determines which tilted members of that family can satisfy the Ewald condition at a fixed incident angle.
 
-Fig.\ref{fig:hk0_low_l_star} demonstrates why mosaicity must be introduced early. Shown is a full 2D area detector image of $Bi_2Se_3$ at $5^\circ$ with a zoomed in m=0 specular region. A single incident angle should select only a limited part of the specular $m=0$ family if the film has only a narrow orientational distribution. The measured images at single incident angles instead contain unexpected $00L$ intensity, including a low-$L$ feature near the $003$ region and weak off-condition specular peaks that remain visible.
-
+Fig.\ref{fig:hk0_low_l_star} demonstrates why mosaicity must be introduced early. Shown is a full 2D area detector image of $Bi_2Se_3$ at $5^\circ$ with a zoomed in m=0 specular region. A single incident angle should select only a limited part of the specular $m=0$ family if the film has only a narrow orientational distribution. The measured images at single incident angles instead contain unexpected $00L$ intensities. Highlighted are three notable regions of interest. Near L=0 we identify as reflectivity. The L=3 peak and L=6 peaks are both visible primarily due to long mosaic tails. The $\phi$ spread of intensity of both L=3 and 6 is also due to mosaic. However, the 2$\theta$ spread of the L=3 peak is due to the wavelength bandwidth as we will discuss later.  
 
 \begin{figure}[H]
   \centering
@@ -15,11 +14,11 @@ Fig.\ref{fig:hk0_low_l_star} demonstrates why mosaicity must be introduced early
       Close-up of the low-$L$ $m=0$ detector feature. Show the star-like morphology and the bright near-origin intensity above the critical-angle region.
     }
   \end{minipage}
-  \caption{Close-up of the low-$L$ $m=0$ detector feature from the $5^\circ$ Bi$_2$Se$_3$. The bright near-origin intensity and vertical star-like morphology are not expected from an ideal single-crystallite calculation or from a mosaic distribution with only a rapidly decaying core. The feature reflects the combined effect of wavelength bandwidth and angular divergence, which give the Ewald sphere an effective thickness, and a long mosaic tail, which supplies tilted crystallites that bring otherwise off-condition specular-family intensity into the measured detector region.}
+  \caption{Close-up of the low-$L$ $m=0$ detector feature from the $5^\circ$ Bi$_2$Se$_3$. The bright near-origin intensity is due to reflectivity while the star-like morphology of the L=3 and appearance of the L=6 is not expected from an ideal single-crystallite calculation or from only a mosaic distribution. The latter feature reflects the combined effect of wavelength bandwidth and angular divergence, which give the Ewald sphere an effective thickness, and a long mosaic tail, which supplies tilted crystallites that bring otherwise off-condition specular-family intensity into the measured detector region.}
   \label{fig:hk0_low_l_star}
 \end{figure}
 
-The in-plane rod-family arcs are described by a narrow mosaic core. The specular-family features expose a different part of the orientational distribution: weak intensity from crystallites tilted far enough from the mean normal to satisfy reflections that would otherwise be missed at the nominal incidence condition. A rapidly decaying Gaussian-like mosaic density can reproduce the central widths of near-condition features but does not provide enough tilted-crystallite population in the tails. We therefore use a compact two-component angular density,
+The in-plane rod-family arcs are described by a gaussian mosaic distrubtion. The specular-family features expose a different part of the orientational distribution. Namely the weak intensity from crystallites tilted far enough from the mean normal satisfy reflections that would otherwise be missed at the nominal incidence condition. A rapidly decaying Gaussian-like mosaic density can reproduce the central widths of near-condition features but does not provide enough tilted-crystallite population in the tails. We therefore use a compact two-component angular density,
 \begin{equation}
   \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
   =\eta L_{\mathrm w}(\Delta\theta;\Gamma)
@@ -29,7 +28,7 @@ The in-plane rod-family arcs are described by a narrow mosaic core. The specular
 \end{equation}
 Here $G_{\mathrm w}$ is the Gaussian-like core, $L_{\mathrm w}$ is the Lorentzian-like tail, $\eta$ is the Lorentzian weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent with shared centers.
 
-Figure~\ref{fig:mosaic_combo} summarizes how the same orientational distribution appears in reciprocal space and detector space. For $G_R\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $G_R=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction, where the tail contribution is especially visible.
+Figure~\ref{fig:mosaic_combo} summarizes how the same orientational distribution appears in reciprocal space. For $G_R\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $G_R=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction, where the tail contribution is especially visible.
 
 \begin{figure}[H]
   \centering
