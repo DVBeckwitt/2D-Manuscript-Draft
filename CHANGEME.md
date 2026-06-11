@@ -2,6 +2,22 @@
 
 This file records manuscript edits made in response to advisor annotations, with brief rationale. It is intended to make structural decisions easy to audit while the draft is still evolving.
 
+## 2026-06-11 — Repository cleanup and build plumbing
+
+### What changed
+
+- Removed legacy laptop/server LaTeX build products, dated manuscript backups, temporary SyncTeX/page artifacts, Windows shortcut files, and old patch handoff files that were no longer active manuscript inputs.
+- Replaced the custom `main.generated_bbl` include path with standard BibTeX usage in `main.tex`, so clean builds regenerate the bibliography from `bibliography/references.bib`.
+- Simplified `.gitignore` and `latexmkrc` by deleting duplicate ignore entries and the now-dead generated-BBL copy hook.
+
+### Status
+
+- **Chore/cleanup:** complete.
+- **Bug/error:** fixed the clean-build bibliography dependency on ignored local state.
+- **CI/CD:** no GitHub Actions workflow is present; local LaTeX quality gates passed.
+- **Known warning:** `main.tex` still reports the pre-existing unresolved PbI2 reference `eq:pbi2_rod_main`.
+- **Shipping/rollback:** no PDFs were intentionally regenerated for release; rollback is a normal git revert.
+
 ## 2026-04-25 — Complete Sections 4--5 figure/result pass
 
 ### What changed
@@ -241,4 +257,3 @@ This pass intentionally does **not** attempt to solve other annotated items (e.g
 
 - **Feature:** implemented for the main manuscript discussion.
 - **Boundary:** final numerical values should still be checked against the final refinement outputs before submission.
-

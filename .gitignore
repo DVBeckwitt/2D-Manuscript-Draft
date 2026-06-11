@@ -1,6 +1,5 @@
 *.aux
 *.bbl
-*.generated_bbl
 *.blg
 *.log
 *.out
@@ -29,13 +28,3 @@ Thumbs.db
 *~
 *.swp
 *.swo
-
-*.aux
-*.log
-*.out
-*.toc
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-

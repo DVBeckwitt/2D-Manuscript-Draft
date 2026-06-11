@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-05-22
+Last updated: 2026-06-11
 Source meeting: Dr. Paul Maselli / David manuscript discussion, 2026-04-30  
 Next advisor meeting: CHECK - 2026-05-07 date is now past; update when the next meeting is known
 Current priority: Bi2Se3 and Bi2Te3 ordered-film figures and physics narrative
@@ -25,6 +25,11 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 
 | Date | Type | Status | Notes |
 |---|---|---|---|
+| 2026-06-11 | Chore/cleanup | DONE | Removed duplicate laptop/server LaTeX build products, dated `.bak-20260424-162800` backups, temporary SyncTeX/page artifacts, Windows shortcuts, and legacy patch handoff files. Active manuscript sources, figures, bibliography, and review PDFs were preserved. |
+| 2026-06-11 | Bug/error | DONE | Replaced the stale `main.generated_bbl` shim with normal `\bibliography{bibliography/references}` in `main.tex`, so a clean build regenerates the bibliography from `bibliography/references.bib` instead of relying on ignored local state. |
+| 2026-06-11 | CI/CD | CHECK | No GitHub Actions workflow is present. Local quality gates passed: `main.tex` built in an isolated output directory with BibTeX regeneration, and `2D_Supplemental/SI_failure_modes.tex` built from `2D_Supplemental`. The main manuscript still reports the pre-existing unresolved PbI2 reference `eq:pbi2_rod_main`. |
+| 2026-06-11 | Deprecation/migration | DONE | Deprecated and removed the custom `main.generated_bbl` build path and old patch-handoff package. The public build command remains standard LaTeX/latexmk plus BibTeX; rollback is a normal git revert. |
+| 2026-06-11 | Shipping/rollback | DONE | No external release or deployment was published. Cleanup is source-control-only and reversible with a commit revert; no regenerated `main.pdf` or supplement PDF was intentionally committed. |
 | 2026-05-22 | Feature | DONE | Applied `concise_bandwidth_si.patch` exactly: the main correlated-effects section now states the approximate $1/L$ angular-bandwidth scaling for the $m=0$, $00L$ Bragg-sphere cap overlap, and the supplement contains the concise derivation in `2D_Supplemental/SI_failure_modes.tex`. |
 | 2026-05-22 | Bug/error | DONE | Corrected the bandwidth/mosaicity explanation from a qualitative statement to an explicit fixed-center Ewald-shell scaling argument tied to the supplement. No behavioral regression test was required because this is a manuscript-text patch. |
 | 2026-05-22 | CI/CD | CHECK | No GitHub Actions workflow is present. Local checks used isolated LaTeX output directories so unrelated `main.pdf` worktree changes were not overwritten: `main.tex` built successfully but still reports the pre-existing unresolved PbI2 reference `eq:pbi2_rod_main`; `SI_failure_modes.tex` built successfully from `2D_Supplemental` after the normal LaTeX rerun. |
@@ -41,6 +46,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 | Item | Status | Notes |
 |---|---|---|
 | `main.tex` scaffold | DONE | Inputs the reordered section files: model, mosaic/correlated effects, ordered results, PbI2 extension, workflow, conclusion. |
+| Build plumbing | DONE | Uses standard BibTeX via `\bibliography{bibliography/references}`. Generated aux, BBL, log, SyncTeX, and non-review PDFs are ignored. |
 | `sections/introduction.tex` | IN PROGRESS | Contains 2D-powder motivation and orientational-state framing. |
 | `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/m language. |
 | `sections/mosaicity_texture.tex` | IN PROGRESS | Now begins with a raw detector placeholder and the moved low-L m=0 star-feature figure to motivate the two-component mosaicity argument. |

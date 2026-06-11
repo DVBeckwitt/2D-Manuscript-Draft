@@ -19,7 +19,6 @@
 \usepackage{pgf}
 \usepackage{amsmath,amssymb,amsfonts,bm}
 \usepgfplotslibrary{fillbetween}
-\usetikzlibrary{calc}
 \definecolor{oiPurple}{RGB}{204,121,167}
 \definecolor{oiOrange}{RGB}{230,159,0}
 \usepackage{booktabs}
@@ -106,12 +105,7 @@ quantitative X-ray area-detector modeling}
 \input{sections/discussion_conclusion}
 
 \bibliographystyle{apsrev4-2}
-\makeatletter
-\if@filesw
-  \immediate\write\@auxout{\string\bibdata{bibliography/references}}%
-\fi
-\InputIfFileExists{main.generated_bbl}{}{\typeout{No file main.generated_bbl.}}
-\makeatother
+\bibliography{bibliography/references}
 
 
 \end{document}

@@ -1,6 +1,6 @@
 # Input Inventory
 
-Last updated: 2026-04-30
+Last updated: 2026-06-11
 
 ## Uploaded or available context
 
@@ -18,10 +18,10 @@ Current `main.tex` uses:
 \input{sections/introduction}
 \input{sections/modelling_methods}
 \input{sections/mosaicity_texture}
-\input{sections/refinement_workflow}
+\input{sections/correlated_effects}
 \input{sections/results_ordered}
-% PbI2 diffuse-scattering results are deferred from the active draft.
-% \input{sections/results_diffuse_pbi2}
+\input{sections/results_diffuse_pbi2}
+\input{sections/refinement_workflow}
 \input{sections/discussion_conclusion}
 ```
 
@@ -41,7 +41,12 @@ Observed supplement folder:
 
 The earlier ordered-result PNGs were removed from the active package because they were placeholders or incomplete result summaries. The `figures/results_ordered/` folder now contains `README_needed_figures.md`, which specifies the real Bi2Se3 and Bi2Te3 detector-trajectory and Qz-overlay figures still needed.
 
+## Cleanup status
+
+The 2026-06-11 cleanup removed legacy laptop/server build products, dated `.bak-20260424-162800` snapshots, temporary page/SyncTeX artifacts, Windows shortcuts, and old patch handoff files. Active manuscript sections, current figure assets, bibliography source, `main.pdf`, and `2D_Supplemental/SI_failure_modes.pdf` remain the retained review package.
+
+Build plumbing now uses standard BibTeX from `main.tex` via `\bibliography{bibliography/references}`. The former ignored `main.generated_bbl` handoff path has been removed.
+
 ## AGENTS.md status
 
 A repo-level `AGENTS.md` is present in this package and should govern future manuscript edits.
-
