@@ -16,6 +16,7 @@
 *.ind
 *.idx
 *.dvi
+build/
 
 # PDFs: keep rendered outputs for review, ignore everything else.
 *.pdf
