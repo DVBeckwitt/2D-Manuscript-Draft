@@ -1,17 +1,12 @@
-\subsection{Effects Due to Bandwidth}
+\subsection{Bandwidth-Related Effects}
 \label{sec:correlated_effects}
 \label{sec:refraction}
 
-The low-\(L\), \(m=0\) feature in Fig.~\ref{fig:hk0_low_l_star}
-lies close to the direct beam and near the critical-angle region. In this
+The anomylous intensity along $2\theta$ for the m=0, L=3 feature in Fig.~\ref{fig:hk0_low_l_star} can be explained by the bandwidth forming an ewald shell on a much smaller Bragg sphere. In this
 regime the measured intensity is not set by an external Ewald-sphere
-intersection alone. Each ray is transmitted into the film, refracted by the
-material optical constants, attenuated during propagation, scattered from the
-mosaic population, and refracted back into air before reaching the detector.
-The forward model therefore treats bandwidth, refraction, transmission,
-absorption, divergence, and mosaicity as coupled physical effects.
+intersection alone. 
 
-The coupling starts with the refractive index. For each sampled wavelength
+For each sampled wavelength
 \(\lambda_j\), with spectral weight \(w_j\), the model evaluates
 \begin{equation}
   k_0(\lambda_j)=\frac{2\pi}{\lambda_j},
@@ -38,10 +33,7 @@ wavevector calculation:
   \label{eq:delta_beta_lambda_main}
 \end{equation}
 Thus bandwidth changes both the Ewald-sphere radius and the optical constants
-that determine refraction and attenuation. The attenuation itself is not
-applied through a separate scalar absorption coefficient; it enters through the
-imaginary parts of the refracted internal wavevectors.
-
+that determine refraction and attenuation.
 For an incident wavevector in air, the grazing angle and azimuth are
 \begin{equation}
   \sin\theta_i
@@ -53,8 +45,8 @@ For an incident wavevector in air, the grazing angle and azimuth are
   \frac{k_{i,x}}{k_{i,y}}.
   \label{eq:incident_angles_lambda_main}
 \end{equation}
-Following the wave-propagation construction used in the dissertation, the
-transmitted angle and internal wavevector scale are
+
+The transmitted angle and internal wavevector scale are
 \begin{align}
   \theta_t(\lambda_j)
   &=
@@ -126,10 +118,8 @@ is
 \end{equation}
 This is the form used by the simulation: the path lengths set how far the wave
 propagates in the film, and the imaginary parts of the internal normal
-wavevectors set the damping per unit length. The exponent is dimensionless, so
-\(L_{\mathrm{in}}\) and \(L_{\mathrm{out}}\) must use the same length units as
-\(k_{t,z}^{-1}\). For a uniformly scattering film of thickness \(t\), the same
-idea may be written as a depth average,
+wavevectors set the damping per unit length. For a uniformly scattering film of thickness \(t\),
+this may be written as a depth average,
 \begin{equation}
   \bar A_{\mathrm{prop}}(\lambda_j)
   =
@@ -143,9 +133,8 @@ idea may be written as a depth average,
   {2\left(\kappa_i(\lambda_j)+\kappa_f(\lambda_j)\right)t}.
   \label{eq:absorption_lambda_main}
 \end{equation}
-This attenuation is multiplied by the entrance and exit transmission factors,
-the structure-factor intensity, and the mosaic weight before the ray is
-deposited on the detector.
+This attenuation is multiplied by the entrance and exit transmission factors and
+the structure-factor intensity.
 
 The detector image is therefore an incoherent sum over wavelength samples,
 \begin{equation}
@@ -163,8 +152,7 @@ The detector image is therefore an incoherent sum over wavelength samples,
 \end{equation}
 The bandwidth has two roles: it thickens the reciprocal-space intersection
 through \(k_0(\lambda_j)\), and it changes the refracted wave through
-\(\tilde n(\lambda_j)\). The near-critical low-\(L\) feature is therefore a
-coupled optical and geometric effect, not a post-processing correction.
+\(\tilde n(\lambda_j)\). 
 
 The specular-family profiles in this near-critical region are therefore
 calculated with an optical-to-structural handoff rather than with a purely

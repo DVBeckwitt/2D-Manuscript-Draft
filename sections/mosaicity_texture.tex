@@ -3,7 +3,7 @@
 
 Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal illustrated in Fig.\ref{fig:intro_2x3}(a,b,c). It is distinct from the random in-plane rotation that defines the two-dimensional powder limit. Random in-plane rotation generates the equivalent $m$-indexed rod family at a common in-plane reciprocal-space radius $Q_R$, while mosaicity determines which tilted members of that family can satisfy the Ewald condition at a fixed incident angle.
 
-Fig.\ref{fig:hk0_low_l_star} demonstrates why mosaicity must be introduced early. Shown is a full 2D area detector image of $Bi_2Se_3$ at $5^\circ$ with a zoomed in m=0 specular region. A single incident angle should select only a limited part of the specular $m=0$ family if the film has only a narrow orientational distribution. The measured images at single incident angles instead contain unexpected $00L$ intensities. Highlighted are three notable regions of interest. Near L=0 we identify as reflectivity. The L=3 peak and L=6 peaks are both visible primarily due to long mosaic tails. The $\phi$ spread of intensity of both L=3 and 6 is also due to mosaic. However, the 2$\theta$ spread of the L=3 peak is due to the wavelength bandwidth as we will discuss later.  
+Shown in Fig.\ref{fig:hk0_low_l_star} is a full 2D area detector image of $Bi_2Se_3$ at $5^\circ$ with a zoomed in m=0 specular region. A single incident angle should select only a limited part of the specular $m=0$ family if the film has only a narrow orientational distribution. The measured images at single incident angles instead contain unexpected $00L$ intensities. Highlighted are three regions of interest. Near L=0 we identify as reflectivity. The L=3 and 6 peaks, found at nominally 6 and 12 degrees 2$\theta$ respectively, are both visible primarily due to long mosaic tails. The $\phi$ spread of intensity of both L=3 and 6 is also due to mosaic. However, the 2$\theta$ spread of the L=3 peak is due to the wavelength bandwidth as we will discuss later.  
 
 \begin{figure}[H]
   \centering
@@ -28,7 +28,7 @@ The in-plane rod-family arcs are described by a Gaussian mosaic distribution. Th
 \end{equation}
 Here $G_{\mathrm w}$ is the Gaussian-like core, $L_{\mathrm w}$ is the Lorentzian-like tail, $\eta$ is the Lorentzian weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent with shared centers.
 
-Figure~\ref{fig:mosaic_combo} summarizes how the same orientational distribution appears in reciprocal space. For $G_R\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $G_R=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction, where the tail contribution is especially visible.
+Figure~\ref{fig:mosaic_combo} summarizes how orientational distribution manifests for m=0 and m$\neq$=0 in reciprocal space. For $m\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $m=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction, where the tail contribution is especially visible.
 
 \begin{figure}[H]
   \centering
@@ -52,7 +52,7 @@ Figure~\ref{fig:mosaic_combo} summarizes how the same orientational distribution
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \paneltagged{(c)}{\draftfigureplaceholder{figures/mosaic/inplane_detector_band.png}{%
-      Calculated detector example for an off-specular $G_R\neq0$ rod family showing how the mosaic distribution appears as an arc or band on the detector.
+      Calculated detector example for an off-specular $m\neq0$ rod family showing how the mosaic distribution appears as an arc or band on the detector.
     }}
     \phantomcaption
     \label{fig:mosaic_combo:img_inplane}
@@ -66,12 +66,7 @@ Figure~\ref{fig:mosaic_combo} summarizes how the same orientational distribution
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $G_R\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs or bands. (b,d) For $G_R=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $m=0$ peaks.}
+  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $m\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs or bands. (b,d) For $m=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $m=0$ peaks.}
   \label{fig:mosaic_combo}
 \end{figure}
 
-
-The low-\(L\), \(m=0\) feature is therefore not explained by mosaicity alone. It occurs
-where the long mosaic tail, wavelength bandwidth, refraction, transmission,
-absorption, and divergence are coupled. The next subsection treats that
-combined propagation and geometry effect.
