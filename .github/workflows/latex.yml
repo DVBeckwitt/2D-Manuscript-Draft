@@ -1,0 +1,43 @@
+name: LaTeX
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-main:
+    name: Build main manuscript
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install TeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            lmodern \
+            texlive-fonts-recommended \
+            texlive-latex-extra \
+            texlive-latex-recommended \
+            texlive-pictures \
+            texlive-publishers
+
+      - name: Clean build main manuscript
+        run: |
+          latexmk -C main.tex
+          latexmk -pdf -g -interaction=nonstopmode -file-line-error main.tex
+
+      - name: Check bibliography outputs
+        run: |
+          test -s build/main.aux
+          test -s build/main.bbl
+          grep -F '\bibstyle{apsrev4-2}' build/main.aux
+          grep -F '\bibdata{bibliography/references}' build/main.aux
+          grep -F '\begin{thebibliography}' build/main.bbl

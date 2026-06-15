@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-06-11
+Last updated: 2026-06-15
 Source meeting: Dr. Paul Maselli / David manuscript discussion, 2026-04-30  
 Next advisor meeting: CHECK - 2026-05-07 date is now past; update when the next meeting is known
 Current priority: Bi2Se3 and Bi2Te3 ordered-film figures and physics narrative
@@ -25,6 +25,10 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 
 | Date | Type | Status | Notes |
 |---|---|---|---|
+| 2026-06-15 | Bug/error | DONE | Fixed the reset-time BibTeX failure where stale ignored build state or an active VimTeX/latexmk watcher could make BibTeX read an incomplete `.aux` without `\bibdata` or `\bibstyle`. `main.tex` already contained the bibliography commands; recovery is now a clean `latexmk` rebuild from tracked sources. |
+| 2026-06-15 | CI/CD | DONE | Added `.github/workflows/latex.yml` to build `main.tex` on push, pull request, and manual dispatch, then verify `build/main.aux` and `build/main.bbl` contain the expected bibliography markers. |
+| 2026-06-15 | Deprecation/migration | DONE | The unsafe draft `-StopWatchers` auto-kill behavior was not shipped. The local recovery script now refuses to build while a continuous watcher is active and tells the user to stop that watcher manually. |
+| 2026-06-15 | Shipping/rollback | DONE | No external release was published. The change is source-control-only, verified by local clean builds, and reversible with a normal git revert. Generated `build/` outputs remain ignored. |
 | 2026-06-11 | Chore/cleanup | DONE | Removed duplicate laptop/server LaTeX build products, dated `.bak-20260424-162800` backups, temporary SyncTeX/page artifacts, Windows shortcuts, and legacy patch handoff files. Active manuscript sources, figures, bibliography, and review PDFs were preserved. |
 | 2026-06-11 | Bug/error | DONE | Replaced the stale `main.generated_bbl` shim with normal `\bibliography{bibliography/references}` in `main.tex`, so a clean build regenerates the bibliography from `bibliography/references.bib` instead of relying on ignored local state. |
 | 2026-06-11 | CI/CD | CHECK | No GitHub Actions workflow is present. Local quality gates passed: `main.tex` built in an isolated output directory with BibTeX regeneration, and `2D_Supplemental/SI_failure_modes.tex` built from `2D_Supplemental`. The main manuscript still reports the pre-existing unresolved PbI2 reference `eq:pbi2_rod_main`. |
@@ -46,7 +50,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 | Item | Status | Notes |
 |---|---|---|
 | `main.tex` scaffold | DONE | Inputs the reordered section files: model, mosaic/correlated effects, ordered results, PbI2 extension, workflow, conclusion. |
-| Build plumbing | DONE | Uses standard BibTeX via `\bibliography{bibliography/references}`. Generated aux, BBL, log, SyncTeX, and non-review PDFs are ignored. |
+| Build plumbing | DONE | Uses standard BibTeX via `\bibliography{bibliography/references}`. Generated aux, BBL, log, SyncTeX, and non-review PDFs are ignored. `scripts/build-main.ps1` performs a guarded clean rebuild and refuses to run while a continuous `latexmk -pvc main.tex` watcher is active. |
 | `sections/introduction.tex` | IN PROGRESS | Contains 2D-powder motivation and orientational-state framing. |
 | `sections/modelling_methods.tex` | IN PROGRESS | Should keep the main narrative in Q/Qr/Qz/m language. |
 | `sections/mosaicity_texture.tex` | IN PROGRESS | Now begins with a raw detector placeholder and the moved low-L m=0 star-feature figure to motivate the two-component mosaicity argument. |
