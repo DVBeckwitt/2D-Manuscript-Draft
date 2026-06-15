@@ -1,8 +1,9 @@
 \subsection{Bandwidth-Related Effects}
 \label{sec:correlated_effects}
 \label{sec:refraction}
+\label{sec:bandwidth_mosaic_cap}
 
-The anomylous intensity along $2\theta$ for the m=0, L=3 feature in Fig.~\ref{fig:hk0_low_l_star} can be explained by the bandwidth forming an ewald shell on a much smaller Bragg sphere. In this
+The anomalous intensity along \(2\theta\) for the \(m=0\), \(L=3\) feature in Fig.~\ref{fig:hk0_low_l_star} can be explained by the bandwidth forming an Ewald shell on a much smaller Bragg sphere. In this
 regime the measured intensity is not set by an external Ewald-sphere
 intersection alone. 
 
@@ -154,36 +155,6 @@ The bandwidth has two roles: it thickens the reciprocal-space intersection
 through \(k_0(\lambda_j)\), and it changes the refracted wave through
 \(\tilde n(\lambda_j)\). 
 
-The specular-family profiles in this near-critical region are therefore
-calculated with an optical-to-structural handoff rather than with a purely
-kinematic rod intensity. The low-\(Q_z\) branch is calculated with a Parratt
-multilayer reflectivity recursion, which retains refraction, evanescence, and
-multiple reflection at the film interfaces.\cite{Parratt1954} At larger
-\(Q_z/Q_c\), where critical-angle corrections become small, this optical branch
-is matched to a normalized finite-stack structure term divided by \(Q_z^2\).
-The two limits are joined with a smooth log-intensity blend over the region
-where the optical and structural branches agree, as summarized in
-Fig.~\ref{fig:parratt_handoff}. This construction prevents the near-critical
-specular intensity from being treated as an ordinary high-\(Q_z\) structure
-factor, while preserving the finite-stack modulation that controls the
-higher-\(L\) rod profile. Details of the recursion, scale estimate, and blend
-criterion are provided in the Supporting Information.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\linewidth]{figures/correlated_effects/fig_parratt_ht_handoff.png}
-  \caption[Optical-to-structural handoff for near-critical specular intensity]{Optical-to-structural handoff used for the near-critical
-  specular-family calculation. (a) Pure Parratt reflectivity gives the
-  low-\(Q_z\) optical response, including refraction, evanescence, and multiple
-  reflection at the film interfaces. The high-\(Q_z\) branch is the normalized
-  finite-stack structure term divided by \(Q_z^2\) and scaled to the optical
-  branch in an overlap region. The final curve is a smooth log-intensity blend
-  between these limits, plotted versus \(Q_z/Q_c\) with the corresponding
-  crystallographic \(L\) coordinate on the top axis.  
-  \(Q_z\).}
-  \label{fig:parratt_handoff}
-\end{figure}
-
 For the \(00L\) family, \(G_{00L}=2\pi L/c\). A fixed wavelength spread gives
 an effective Ewald-shell thickness, and its angular overlap with the
 mosaic-populated Bragg cap scales approximately as \(1/L\). Low-\(L\) Bragg
@@ -211,10 +182,43 @@ attenuation determine how much of that intensity reaches the detector.
     }
   \end{minipage}
 
-  \caption[Bandwidth/refraction mosaic-cap geometry for the low-L feature]{Bandwidth, refraction, and mosaic-cap geometry for the low-\(L\)
+  \caption[Bandwidth-related effects for the low-L feature]{Bandwidth-related effects for the low-\(L\)
   \(m=0\) feature. The wavelength distribution changes both the Ewald-sphere
   radius and the refractive index used to calculate the internal wavevector.
   Because \(G_{00L}\propto L\), a fixed bandwidth samples a larger angular
   fraction of low-\(L\) Bragg spheres than high-\(L\) Bragg spheres.}
   \label{fig:correlated_bragg_sphere_size_series}
+\end{figure}
+
+\subsection{Reflectivity}
+\label{sec:reflectivity}
+
+The bright near-origin \(m=0\) intensity in Fig.~\ref{fig:hk0_low_l_star} lies in the near-critical specular region.
+
+The specular-family profiles in this near-critical region are 
+calculated with an optical-to-structural handoff. The low-\(Q_z\) branch is calculated with a Parratt
+multilayer reflectivity recursion, which retains refraction, evanescence, and
+multiple reflection at the film interfaces.\cite{Parratt1954} At larger
+\(Q_z/Q_c\), where critical-angle corrections become small, this optical branch
+is matched to a normalized finite-stack structure term.
+The two limits are joined with a smooth log-intensity blend over the region
+where the optical and structural branches agree, as summarized in
+Fig.~\ref{fig:parratt_handoff}. This construction prevents the near-critical
+specular intensity from being treated as an ordinary high-\(Q_z\) structure
+factor, while preserving the finite-stack modulation that controls the
+higher-\(L\) rod profile. Details of the recursion, scale estimate, and blend
+criterion are provided in the Supporting Information.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\linewidth]{figures/correlated_effects/fig_parratt_ht_handoff.png}
+  \caption[Optical-to-structural handoff for near-critical specular intensity]{Optical-to-structural handoff used for the near-critical
+  specular-family calculation. (a) Pure Parratt reflectivity gives the
+  low-\(Q_z\) optical response, including refraction, evanescence, and multiple
+  reflection at the film interfaces. The high-\(Q_z\) branch is the normalized
+  finite-stack structure term scaled to the optical
+  branch in an overlap region. The final curve is a smooth log-intensity blend
+  between these limits, plotted versus \(Q_z/Q_c\) with the corresponding
+  crystallographic \(L\) coordinate on the top axis.}
+  \label{fig:parratt_handoff}
 \end{figure}
