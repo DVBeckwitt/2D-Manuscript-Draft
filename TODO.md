@@ -27,3 +27,9 @@ The detailed tracker is `MANUSCRIPT_STATUS.md`. Use this as a short entry point.
 - PbI2 diffuse scattering / stacking-fault finalization.
 - Software release polish.
 - Full software feature documentation.
+
+
+## PbI2 transition-matrix refit
+
+- Refit the retained PbI2 rod profiles with $\epsilon_{2H}$, $\epsilon_{4H}$, $\epsilon_{6H}$ and normalized 2H/4H/6H weights.
+- Insert the resulting values and uncertainty estimates in Table~`tab:pbi2_sf_parameters`; do not reuse the superseded scalar $p$ value.

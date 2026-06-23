@@ -58,10 +58,11 @@ The active manuscript now uses the current ordered-film assets in `figures/resul
 
 ### PbI2 figures
 
-PbI2 has been reintroduced as a draft extension with placeholders. The real detector, stacking-model, reciprocal-space, and selected-trajectory figures still need to be generated.
+PbI2 has been reintroduced as a draft extension. The projected 2H/4H/6H parent-stack schematic is now integrated as Figure 11; the remaining reciprocal-space and selected-trajectory comparison figures still need completion.
 
 | Path or folder | Status | Notes |
 |---|---|---|
+| `figures/results_pbi2/transition_matrix/pbi2_polytype_stacks.{tex,pdf,png}` | DONE | Figure 11: supplied projected atomic stacks, relabeled in the manuscript $rF_\sigma$ notation and integrated with a teaching caption. |
 | `figures/results_pbi2/pbi2_raw_detector_diffuse_motivation.png` | TODO | Placeholder for measured PbI2 detector image with diffuse features. |
 | `figures/results_pbi2/pbi2_stacking_fault_model.png` | TODO | Placeholder for real-space stacking-fault schematic. |
 | `figures/results_pbi2/pbi2_diffuse_cylinder_schematic.png` | TODO | Placeholder for reciprocal-space diffuse rods/cylinders schematic. |

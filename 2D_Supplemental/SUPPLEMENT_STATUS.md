@@ -170,3 +170,8 @@ Do not imply that the optimized Monte Carlo method changes the physics. It is an
 Do not introduce implementation terms without defining them.
 
 Do not move the central Bi2Se3/Bi2Te3 fit evidence into the supplement. The main paper needs enough fit evidence to be convincing.
+
+
+## PbI2 transition model (2026-06-23)
+
+The obsolete no-correlation scalar stacking section was replaced by the six-state transition-matrix derivation and validation figures.

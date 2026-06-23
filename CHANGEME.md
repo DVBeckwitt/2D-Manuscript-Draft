@@ -2,6 +2,21 @@
 
 This file records manuscript edits made in response to advisor annotations, with brief rationale. It is intended to make structural decisions easy to audit while the draft is still evolving.
 
+## 2026-06-23 — Replace PbI$_2$ parent-stack Figure 11
+
+### What changed
+
+- Replaced the abstract transition-state-cycle graphic in Figure 11 with the supplied projected atomic-stack schematic.
+- Relabeled the visible stacks in the manuscript notation: $0F_+$ for the 2H repeat, $0F_+\leftrightarrow1F_-$ for 4H, and $0F_+\rightarrow1F_+\rightarrow2F_+\rightarrow0F_+$ for 6H.
+- Added panel labels and revised the surrounding paragraph and caption to explain the bottom-to-top $+c$ reading direction, the registry/orientation state labels, atom colors, guide lines, and trilayer brackets.
+- Added the editable TikZ source and regenerated PDF/PNG assets under `figures/results_pbi2/transition_matrix/`.
+
+### Status
+
+- **Feature:** complete and integrated with the direction-resolved transition-matrix notation.
+- **Validation:** the standalone figure and a manuscript-style Figure 11 section preview compiled and rendered cleanly. The full manuscript build remains blocked by the pre-existing missing asset `figures/intro/area_detector_bragg_peaks_overview.png`, unrelated to this edit.
+- **References:** no new citation was required; the existing Minagawa and Palosz citations continue to support the established PbI$_2$ polytypes.
+
 ## 2026-06-11 — Repository cleanup and build plumbing
 
 ### What changed

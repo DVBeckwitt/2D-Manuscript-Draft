@@ -1,0 +1,599 @@
+\documentclass[tikz,border=1mm]{standalone}
+\usepackage{fix-cm}
+\usetikzlibrary{calc,arrows.meta}
+
+\definecolor{iodine}{RGB}{145,20,145}
+\definecolor{lead}{RGB}{74,76,82}
+\definecolor{guideblue}{RGB}{0,105,145}
+\definecolor{guidegreen}{RGB}{55,175,35}
+\definecolor{chargecyan}{RGB}{0,205,225}
+
+\tikzset{
+	cell edge/.style={
+		draw=black!70,
+		line width=0.45pt
+	},
+	blue guide/.style={
+		draw=guideblue,
+		line width=0.65pt,
+		dash pattern=on 2.3pt off 2.0pt
+	},
+	green guide/.style={
+		draw=guidegreen,
+		line width=0.65pt,
+		dash pattern=on 2.3pt off 2.0pt
+	},
+	bracket/.style={
+		draw=black,
+		line width=0.75pt,
+		line cap=round,
+		line join=round
+	},
+	panel title/.style={
+		font=\sffamily\bfseries\fontsize{13}{14}\selectfont,
+		text=black!85
+	},
+	stack label/.style={
+		font=\sffamily\bfseries\fontsize{14}{15}\selectfont,
+		text=black!80
+	}
+}
+
+% Pb--I bond: dark outer cylinder, gray Pb half, violet I half.
+\newcommand{\PbIbond}[2]{%
+	\draw[
+	black!72,
+	line width=1.55pt,
+	line cap=round
+	] (#1) -- (#2);
+
+	\draw[
+	lead!92,
+	line width=0.86pt,
+	line cap=round
+	] (#1) -- ($(#1)!0.53!(#2)$);
+
+	\draw[
+	iodine!95,
+	line width=0.86pt,
+	line cap=round
+	] ($(#1)!0.47!(#2)$) -- (#2);
+}
+
+\newcommand{\Iatom}[1]{%
+	\shade[ball color=iodine]
+	(#1) circle[radius=13];
+
+	\draw[
+	black!55,
+	line width=0.22pt
+	] (#1) circle[radius=13];
+}
+
+\newcommand{\Pbatom}[1]{%
+	\shade[ball color=lead]
+	(#1) circle[radius=18];
+
+	\draw[
+	black!60,
+	line width=0.25pt
+	] (#1) circle[radius=18];
+}
+
+% Coordinates for an A layer.
+% #1 = coordinate prefix.
+% #2 = y coordinate of the upper iodine row.
+\newcommand{\NormalAcoords}[2]{%
+	\coordinate (#1T1) at (174,{#2});
+	\coordinate (#1T2) at (273,{#2});
+	\coordinate (#1T3) at (372,{#2});
+
+	\coordinate (#1P1) at (239,{#2+47});
+	\coordinate (#1P2) at (338,{#2+47});
+
+	\coordinate (#1B1) at (207,{#2+93});
+	\coordinate (#1B2) at (305,{#2+93});
+	\coordinate (#1B3) at (404,{#2+93});
+}
+
+% Coordinates for a B layer.
+\newcommand{\Bcoords}[2]{%
+	\coordinate (#1T1) at (207,{#2});
+	\coordinate (#1T2) at (305,{#2});
+
+	\coordinate (#1P) at (273,{#2+47});
+
+	\coordinate (#1B1) at (239,{#2+93});
+	\coordinate (#1B2) at (338,{#2+93});
+}
+
+% B layer flipped about its fixed Pb position.
+\newcommand{\Binvcoords}[2]{%
+	\coordinate (#1T1) at (239,{#2});
+	\coordinate (#1T2) at (338,{#2});
+
+	\coordinate (#1P) at (273,{#2+47});
+
+	\coordinate (#1B1) at (207,{#2+93});
+	\coordinate (#1B2) at (305,{#2+93});
+}
+
+\newcommand{\DrawNormalA}[1]{%
+	\PbIbond{#1P1}{#1T1}
+	\PbIbond{#1P1}{#1T2}
+	\PbIbond{#1P1}{#1B1}
+	\PbIbond{#1P1}{#1B2}
+
+	\PbIbond{#1P2}{#1T2}
+	\PbIbond{#1P2}{#1T3}
+	\PbIbond{#1P2}{#1B2}
+	\PbIbond{#1P2}{#1B3}
+
+	\Iatom{#1T1}
+	\Iatom{#1T2}
+	\Iatom{#1T3}
+
+	\Iatom{#1B1}
+	\Iatom{#1B2}
+	\Iatom{#1B3}
+
+	\Pbatom{#1P1}
+	\Pbatom{#1P2}
+}
+
+\newcommand{\DrawB}[1]{%
+	\PbIbond{#1P}{#1T1}
+	\PbIbond{#1P}{#1T2}
+	\PbIbond{#1P}{#1B1}
+	\PbIbond{#1P}{#1B2}
+
+	\Iatom{#1T1}
+	\Iatom{#1T2}
+
+	\Iatom{#1B1}
+	\Iatom{#1B2}
+
+	\Pbatom{#1P}
+}
+
+\newcommand{\DrawBinv}[1]{%
+	\PbIbond{#1P}{#1T1}
+	\PbIbond{#1P}{#1T2}
+	\PbIbond{#1P}{#1B1}
+	\PbIbond{#1P}{#1B2}
+
+	\Iatom{#1T1}
+	\Iatom{#1T2}
+
+	\Iatom{#1B1}
+	\Iatom{#1B2}
+
+	\Pbatom{#1P}
+}
+
+\begin{document}
+
+	\begin{tikzpicture}[x=0.1mm,y=-0.1mm]
+
+		% Compact two-column layout:
+		% 2H above 4H on the left.
+		% 2H monolayer above 6H on the right.
+		\path[use as bounding box]
+		(0,0) rectangle (900,930);
+
+		% ================================================================
+		% Top left: 2H
+		% ================================================================
+		\begin{scope}[shift={(-40,0)}]
+
+			\node[panel title] at (289,18) {(a) 2H};
+
+			\NormalAcoords{hU}{60}
+			\NormalAcoords{hL}{225}
+
+			% Projected unit-cell edges.
+			\draw[cell edge]
+			(hUP1) -- (hUP2);
+
+			\draw[cell edge]
+			(hUP1) -- (hLP1);
+
+			\draw[cell edge]
+			(hUP2) -- (hLP2);
+
+			\draw[cell edge]
+			(hLP1) -- (hLP2);
+
+			\DrawNormalA{hU}
+			\DrawNormalA{hL}
+
+			% Registry guides.
+			\draw[green guide]
+			(239,60) -- (239,355);
+
+			\draw[green guide]
+			(272,60) -- (272,355);
+
+			\draw[green guide]
+			(306,60) -- (306,355);
+
+			\draw[green guide]
+			(338,60) -- (338,355);
+
+			\draw[blue guide]
+			(174,225) -- (405,225);
+
+			\draw[blue guide]
+			(239,272) -- (386,272);
+
+			\draw[blue guide]
+			(207,318) -- (418,318);
+
+			% Restore the rightmost lower iodine above the dashed guide.
+			\Iatom{hLB3}
+
+			% Ionic signs on the reference A layer.
+			\foreach \a in {hLT1,hLT2,hLT3,hLB1,hLB2,hLB3}{
+				\node[
+				text=chargecyan,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$-$};
+			}
+
+			\foreach \a in {hLP1,hLP2}{
+				\node[
+				text=guidegreen!85!black,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$+$};
+			}
+
+			% Layer brackets.
+			\draw[bracket]
+			(150,60)
+			-- (134,60)
+			-- (134,153)
+			-- (150,153);
+
+			\draw[bracket]
+			(150,225)
+			-- (134,225)
+			-- (134,318)
+			-- (150,318);
+
+			% Stacking labels.
+			\node[stack label] at (98,107)
+			{$0F_{+}$};
+
+			\node[stack label] at (98,272)
+			{$0F_{+}$};
+
+		\end{scope}
+
+		% ================================================================
+		% Bottom left: 4H
+		% ================================================================
+		\begin{scope}[shift={(-40,385)}]
+
+			\node[panel title] at (289,18) {(c) 4H};
+
+			\Binvcoords{fU}{60}
+			\NormalAcoords{fL}{225}
+
+			% Projected unit-cell edges.
+			\draw[cell edge]
+			(239,107) -- (338,107);
+
+			\draw[cell edge]
+			(239,107) -- (fLP1);
+
+			\draw[cell edge]
+			(338,107) -- (fLP2);
+
+			\draw[cell edge]
+			(fLP1) -- (fLP2);
+
+			\DrawBinv{fU}
+			\DrawNormalA{fL}
+
+			% Registry guides.
+			\draw[green guide]
+			(239,60) -- (239,355);
+
+			\draw[green guide]
+			(272,60) -- (272,355);
+
+			\draw[green guide]
+			(306,60) -- (306,355);
+
+			\draw[green guide]
+			(338,60) -- (338,355);
+
+			\draw[blue guide]
+			(174,225) -- (405,225);
+
+			\draw[blue guide]
+			(239,272) -- (386,272);
+
+			\draw[blue guide]
+			(207,318) -- (418,318);
+
+			% Restore the rightmost lower iodine above the dashed guide.
+			\Iatom{fLB3}
+
+			% Ionic signs on the reference A layer.
+			\foreach \a in {fLT1,fLT2,fLT3,fLB1,fLB2,fLB3}{
+				\node[
+				text=chargecyan,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$-$};
+			}
+
+			\foreach \a in {fLP1,fLP2}{
+				\node[
+				text=guidegreen!85!black,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$+$};
+			}
+
+			% Layer brackets.
+			\draw[bracket]
+			(150,60)
+			-- (134,60)
+			-- (134,153)
+			-- (150,153);
+
+			\draw[bracket]
+			(150,225)
+			-- (134,225)
+			-- (134,318)
+			-- (150,318);
+
+			% Stacking labels.
+			\node[stack label] at (93,107)
+			{$1F_{-}$};
+
+			\node[stack label] at (98,272)
+			{$0F_{+}$};
+
+		\end{scope}
+
+		% ================================================================
+		% Top right: single A layer of 2H
+		% ================================================================
+		\begin{scope}[shift={(420,0)}]
+
+			\node[panel title] at (289,18)
+			{(b) $F_{+}$ trilayer};
+
+			\NormalAcoords{m}{65}
+
+			% Projected in-plane cell edge.
+			\draw[cell edge]
+			(mP1) -- (mP2);
+
+			\DrawNormalA{m}
+
+			% Reference guides and labels appear only in this panel.
+			\draw[green guide]
+			(239,65) -- (239,205);
+
+			\draw[green guide]
+			(272,65) -- (272,205);
+
+			\draw[green guide]
+			(306,65) -- (306,205);
+
+			\draw[green guide]
+			(338,65) -- (338,205);
+
+			\draw[blue guide]
+			(174,65) -- (405,65);
+
+			\draw[blue guide]
+			(239,112) -- (386,112);
+
+			\draw[blue guide]
+			(207,158) -- (418,158);
+
+			% Restore the rightmost lower iodine above the dashed guide.
+			\Iatom{mB3}
+
+			% Ionic signs.
+			\foreach \a in {mT1,mT2,mT3,mB1,mB2,mB3}{
+				\node[
+				text=chargecyan,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$-$};
+			}
+
+			\foreach \a in {mP1,mP2}{
+				\node[
+				text=guidegreen!85!black,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$+$};
+			}
+
+			% Atomic-plane labels.
+			\node[
+			anchor=west,
+			font=\fontsize{11}{12}\selectfont
+			] at (400,65) {$\mathrm{I}_{2}$};
+
+			\node[
+			anchor=west,
+			font=\fontsize{11}{12}\selectfont
+			] at (379,114) {$\mathrm{Pb}$};
+
+			\node[
+			anchor=west,
+			font=\fontsize{11}{12}\selectfont
+			] at (425,160) {$\mathrm{I}_{1}$};
+
+			% Registry phases are defined in the manuscript for each $(h,k)$ rod.
+
+		\end{scope}
+
+		% ================================================================
+		% Bottom right: 6H
+		% ================================================================
+		\begin{scope}[shift={(420,275)}]
+
+			\node[panel title] at (289,18) {(d) 6H};
+
+			\NormalAcoords{sU}{50}
+			\NormalAcoords{sL}{500}
+
+			% C layer.
+			\coordinate (sCT1) at (239,200);
+			\coordinate (sCT2) at (339,200);
+
+			\coordinate (sCP) at (305,247);
+
+			\coordinate (sCB1) at (273,293);
+			\coordinate (sCB2) at (371,293);
+
+			% B layer.
+			\Bcoords{sM}{350}
+
+			% Projected unit-cell edges.
+			\draw[cell edge]
+			(sUP1) -- (sUP2);
+
+			\draw[cell edge]
+			(sUP1) -- (sLP1);
+
+			\draw[cell edge]
+			(sUP2) -- (sLP2);
+
+			\draw[cell edge]
+			(sLP1) -- (sLP2);
+
+			% Top A layer.
+			\DrawNormalA{sU}
+
+			% C layer.
+			\PbIbond{sCP}{sCT1}
+			\PbIbond{sCP}{sCT2}
+			\PbIbond{sCP}{sCB1}
+			\PbIbond{sCP}{sCB2}
+
+			\Iatom{sCT1}
+			\Iatom{sCT2}
+			\Iatom{sCB1}
+			\Iatom{sCB2}
+
+			\Pbatom{sCP}
+
+			% B and lower A layers.
+			\DrawB{sM}
+			\DrawNormalA{sL}
+
+			% Registry guides.
+			\draw[green guide]
+			(272,50) -- (272,625);
+
+			\draw[green guide]
+			(306,50) -- (306,625);
+
+			\draw[green guide]
+			(239,547) -- (239,625);
+
+			\draw[green guide]
+			(338,547) -- (338,625);
+
+			\draw[blue guide]
+			(174,500) -- (405,500);
+
+			\draw[blue guide]
+			(239,547) -- (386,547);
+
+			\draw[blue guide]
+			(207,593) -- (418,593);
+
+			% Restore the rightmost lower iodine above the dashed guide.
+			\Iatom{sLB3}
+
+			% Ionic signs on the reference A layer.
+			\foreach \a in {sLT1,sLT2,sLT3,sLB1,sLB2,sLB3}{
+				\node[
+				text=chargecyan,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$-$};
+			}
+
+			\foreach \a in {sLP1,sLP2}{
+				\node[
+				text=guidegreen!85!black,
+				font=\bfseries\fontsize{9}{9}\selectfont
+				] at (\a) {$+$};
+			}
+
+			% Layer brackets.
+			\draw[bracket]
+			(150,50)
+			-- (134,50)
+			-- (134,143)
+			-- (150,143);
+
+			\draw[bracket]
+			(158,200)
+			-- (142,200)
+			-- (142,293)
+			-- (158,293);
+
+			\draw[bracket]
+			(164,350)
+			-- (147,350)
+			-- (147,443)
+			-- (164,443);
+
+			\draw[bracket]
+			(150,500)
+			-- (134,500)
+			-- (134,593)
+			-- (150,593);
+
+			% Stacking labels.
+			\node[stack label] at (98,97)
+			{$0F_{+}$};
+
+			\node[stack label] at (98,247)
+			{$2F_{+}$};
+
+			\node[stack label] at (98,397)
+			{$1F_{+}$};
+
+			\node[stack label] at (98,547)
+			{$0F_{+}$};
+
+		\end{scope}
+
+		% ================================================================
+		% One shared lattice-direction axis
+		% ================================================================
+		% Since y=-0.1mm, decreasing y points visually upward.
+		\coordinate (Oax) at (28,905);
+
+		\draw[
+		-{Latex[length=2.2mm,width=1.6mm]},
+		line width=0.8pt
+		]
+		(Oax) -- ++(0,-52)
+		node[
+		above,
+		font=\sffamily\fontsize{10}{10}\selectfont
+		] {$c$};
+
+		\draw[
+		-{Latex[length=2.2mm,width=1.6mm]},
+		line width=0.8pt
+		]
+		(Oax) -- ++(52,0)
+		node[
+		right,
+		font=\sffamily\fontsize{10}{10}\selectfont
+		] {$a$};
+
+	\end{tikzpicture}
+
+\end{document}

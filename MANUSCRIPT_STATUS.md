@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-06-15
+Last updated: 2026-06-23
 Source meeting: Dr. Paul Maselli / David manuscript discussion, 2026-04-30  
 Next advisor meeting: CHECK - 2026-05-07 date is now past; update when the next meeting is known
 Current priority: Bi2Se3 and Bi2Te3 ordered-film figures and physics narrative
@@ -25,6 +25,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 
 | Date | Type | Status | Notes |
 |---|---|---|---|
+| 2026-06-23 | Figure/text | DONE | Replaced Figure 11 with the projected PbI$_2$ 2H/4H/6H atomic-stack schematic, relabeled it in the $rF_\sigma$ state notation, and revised the adjacent explanation and caption. |
 | 2026-06-15 | Bug/error | DONE | Fixed the reset-time BibTeX failure where stale ignored build state or an active VimTeX/latexmk watcher could make BibTeX read an incomplete `.aux` without `\bibdata` or `\bibstyle`. `main.tex` already contained the bibliography commands; recovery is now a clean `latexmk` rebuild from tracked sources. |
 | 2026-06-15 | CI/CD | DONE | Added `.github/workflows/latex.yml` to build `main.tex` on push, pull request, and manual dispatch, then verify `build/main.aux` and `build/main.bbl` contain the expected bibliography markers. |
 | 2026-06-15 | Deprecation/migration | DONE | The unsafe draft `-StopWatchers` auto-kill behavior was not shipped. The local recovery script now refuses to build while a continuous watcher is active and tells the user to stop that watcher manually. |
@@ -60,7 +61,7 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 | `sections/discussion_conclusion.tex` | IN PROGRESS | Updated to include PbI2 as an extension while keeping ordered Bi2Se3/Bi2Te3 as the central validation. |
 | Intro schematic figures | IN PROGRESS | Existing assets are useful; check final clarity. |
 | Ordered-film figures | IN PROGRESS | Current star-feature and validation assets are inserted; still need advisor review for readability and completeness. |
-| PbI2 figures | IN PROGRESS | Placeholder figure plan added; real data/model figures still need to be generated. |
+| PbI2 figures | IN PROGRESS | The Figure 11 parent-stack schematic is complete; reciprocal-space and measured/calculated disorder figures remain in progress. |
 | Software release polish | PARKED | Advisor said paper comes first. |
 
 ## Advisor-directed thesis of the next draft
@@ -143,3 +144,8 @@ The manuscript needs measured detector images, Q/Qr/Qz trajectories or integrati
 - Added a correlated mosaic/bandwidth/Bragg-sphere effects section after mosaicity, with placeholders for Bragg-sphere-size and detector-response figure sequences.
 - Reintroduced PbI$_2$ as a draft extension between the ordered-film results and the workflow, with stacking-fault explanation and figure placeholders.
 - Moved the refinement workflow to the end of the manuscript, immediately before the conclusion.
+
+
+## PbI2 transition-matrix update (2026-06-23)
+
+The PbI2 section now uses the direction-resolved six-state transition model. The experimental refit is still required before numerical $\epsilon_j$ and population weights can be reported. See `PBI2_TRANSITION_MATRIX_UPDATE.md`.

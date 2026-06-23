@@ -725,274 +725,318 @@ for bins with positive selected normalization. Signal and normalization are ther
 
 The model profile is evaluated along the same selected branch. In compact notation,
 \[
-  M_j(\boldsymbol{\theta}_{\mathrm{dis}})
-  =B(x_j)+s\,[K*I_m^{\mathrm{nc}}(L;\boldsymbol{\theta}_{\mathrm{dis}})]_j,
+  M_j(\boldsymbol{\Theta}_{\mathrm{dis}})
+  =B(x_j)+s\left[K*\sum_{p\in\{2H,4H,6H\}}
+  w_p I_p(L;\epsilon_p,N)\right]_j,
 \]
-where $x_j$ is the profile coordinate, $L$ is the corresponding stacking coordinate on the selected branch, $B$ is a low-order background, $s$ is a global scale, $K$ is the fixed detector/profile broadening kernel, and $I_m^{\mathrm{nc}}$ is the no-correlation analytical stacking intensity from Sec.~\ref{sec:nocorr}. When an explicit closed-form broadening kernel is used, $K$ is written as a Gaussian-plus-Lorentzian kernel with widths fixed by the upstream resolution and mosaic/profile state or declared before the disorder fit. It is not used to release independent peak areas.
+where $x_j$ is the profile coordinate, $L$ is the corresponding stacking
+coordinate, $B$ is a low-order background, $s$ is a global scale, $K$ is the
+fixed detector/profile broadening kernel, and $I_p$ is the finite-stack
+transition-matrix intensity derived in
+Sec.~\ref{sec:si_pbi2_transition}.  When an explicit closed-form broadening
+kernel is used, its widths are fixed by the upstream resolution and
+mosaic/profile state or declared before the disorder fit.  It is not used to
+release independent peak areas.
 
 The disorder objective is evaluated only over the retained profile bins,
 \[
-  \chi^2_{\mathrm{dis}}(\boldsymbol{\theta}_{\mathrm{dis}},s,B)
+  \chi^2_{\mathrm{dis}}(\boldsymbol{\Theta}_{\mathrm{dis}},s,B)
   =\sum_{j\in\mathcal J}\rho\!\left(
-  \frac{I_j^{\mathrm{rod}}-M_j(\boldsymbol{\theta}_{\mathrm{dis}})}{\sigma_j}
+  \frac{I_j^{\mathrm{rod}}-M_j(\boldsymbol{\Theta}_{\mathrm{dis}})}{\sigma_j}
   \right),
 \]
 where $\rho$ may be a least-squares or robust loss and $\mathcal J$ is the retained $Q_z$ interval. The known Bragg locations on the selected branch are inherited from the fixed detector geometry and ordered model. Peak amplitudes are not fit independently before the stacking model is applied; otherwise the diffuse between-peak intensity would already have been absorbed by the preprocessing.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1  Material background and stacking‑fault model
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section
-{ Material background and stacking–fault model}
+% BEGIN PBI2_TRANSITION_MATRIX_DERIVATION
+\section{Transition-matrix derivation for PbI\texorpdfstring{$_2$}{2} stacking disorder}
+\label{sec:si_pbi2_transition}
 
-In layered metal–halides such as PbI$_2$ each I–Pb–I sandwich behaves like a rigid trilayer that can shift laterally with negligible energy cost compared with the much stronger intra‑layer bonding.  Consequently the crystal can adopt several
-{polytypes} that differ only in the {stacking sequence} of these sandwiches along the $c$ axis.
-Here we focus on the two sequences that bracket the experimentally relevant window:
+This section gives the PbI$_2$-specific state construction and the finite-stack
+intensity used in the main text.  The general strategy--propagating layer-pair
+probabilities with a transition matrix--follows the established theory of
+one-dimensionally disordered crystals.\cite{HendricksTeller1942,KakinokiKomura1954,KakinokiKomura1965,Hart2018}
+The particular six states, allowed interface events, and fault templates below
+are the model assumptions introduced for the present PbI$_2$ analysis.
 
-\subsection{Polytypism of PbI\texorpdfstring{$_2$}{2}}
-\label{subsec:polytype}
-\begin{description}
-  \item[2H (\textit{P}$\bar3$m1)] AB repeat stable below $140\,^{\circ}\mathrm{C}$; no lateral shift ($\phi_{AB}=0$); see Fig.~\ref{fig:2H}.
-  \item[6H (\textit{R}$\bar3$)] ABCA repeat above $\approx 200\,^{\circ}\mathrm{C}$; lateral shift $a/\sqrt3$ gives $\phi=2\pi/3$; 2H $\Leftrightarrow$ 6H transition near $94\,^{\circ}\mathrm{C}$; see Fig.~\ref{fig:6H}.
-\end{description}
+\subsection{Trilayer amplitudes and six-state basis}
 
-Our samples never achieve perfect periodicity; stacks often contain finite 2H and 6H "domains" interspersed by {stacking faults}. To model the resulting diffuse scattering we adapt the Hendricks--Teller (HT) Markov formalism and follow the streamlined matrix notation introduced a few years later by Lifshitz, who showed how to re-express pair probabilities through the eigenvalues of a $3\times3$ transition matrix.
+The basal registries are
+\begin{equation}
+  0=(0,0),\qquad
+  1=\left(\frac13,\frac23\right),\qquad
+  2=\left(\frac23,\frac13\right).
+  \label{eq:si_pbi2_registries}
+\end{equation}
+Taking the Pb plane as the local origin and writing the Pb--I vertical offset
+as $\eta=\Delta z_{\mathrm{I-Pb}}/c$, the two orientation-dependent trilayer
+amplitudes are
+\begin{align}
+ F_+(h,k,L)={}&f_{\mathrm{Pb}}+
+ f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{2h+k}{3}+L\eta\right]\right\}
+ +f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{h+2k}{3}-L\eta\right]\right\},
+ \label{eq:si_pbi2_Fplus}\\
+ F_-(h,k,L)={}&f_{\mathrm{Pb}}+
+ f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{2h+k}{3}-L\eta\right]\right\}
+ +f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{h+2k}{3}+L\eta\right]\right\}.
+ \label{eq:si_pbi2_Fminus}
+\end{align}
+Atomic form factors retain their usual $Q$ dependence.  The two amplitudes
+satisfy $F_-(h,k,L)=F_+(h,k,-L)$.
 
+For the forward registry step $\mathbf{s}=(1/3,2/3)$, define
+\begin{equation}
+  \omega=\exp\!\left[2\pi i(hs_x+ks_y)\right]
+  =\exp\!\left[\frac{2\pi i}{3}(h+2k)\right].
+  \label{eq:si_pbi2_omega}
+\end{equation}
+The ordered state basis and its scattering-amplitude vector are
+\begin{equation}
+ \mathcal{S}=[0F_+,1F_+,2F_+,0F_-,1F_-,2F_-],\qquad
+ \mathbf{g}=\begin{pmatrix}
+ F_+&\omega F_+&\omega^2F_+&F_-&\omega F_-&\omega^2F_-
+ \end{pmatrix}^{\mathsf T}.
+ \label{eq:si_pbi2_state_amplitudes}
+\end{equation}
+Because $\omega^3=1$, registry 2 is also one backward step from registry 0.
+
+\subsection{Direction-resolved interface law}
+
+The five mutually exclusive interface events are
+\begin{equation}
+ \boldsymbol{\theta}=(a,b_+,b_-,d_+,d_-),\qquad
+ a+b_++b_-+d_++d_-=1.
+ \label{eq:si_pbi2_interface_law}
+\end{equation}
+The $a$ event preserves registry and orientation; $b_+$ and $b_-$ shift the
+registry by $+1$ and $-1$ without changing orientation; and $d_+$ and $d_-$
+combine an orientation change with the two handed shift rules.  A flip without
+a registry shift is excluded.  For a $d_+$ event, an $F_+\rightarrow F_-$ step
+advances the registry and the corresponding $F_-\rightarrow F_+$ step returns
+it.  The directions are interchanged for $d_-$.  This reversal is what makes a
+pure $d_+$ or $d_-$ process a two-layer 4H repeat rather than a registry random
+walk.
+
+Let
+\begin{equation}
+ S_+=\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix},\qquad
+ S_-=S_+^{-1}=S_+^{\mathsf T}.
+ \label{eq:si_pbi2_shift_matrices}
+\end{equation}
+With rows denoting the current state and columns the next state, define
+\begin{align}
+ A&=aI_3+b_+S_+ +b_-S_-,\\
+ B&=d_+S_+ +d_-S_-,\\
+ C&=d_+S_- +d_-S_+.
+\end{align}
+The full six-state transition matrix is
+\begin{equation}
+ T_6=\begin{pmatrix}A&B\\C&A\end{pmatrix}.
+ \label{eq:si_pbi2_T6}
+\end{equation}
+For example, the row for the state $0F_+$ is
+$(a,b_+,b_-,0,d_+,d_-)$.  Every row of $T_6$ sums to one.
+
+The deterministic parent-event vectors, in the order
+$(a,b_+,b_-,d_+,d_-)$, are
+\begin{equation}
+ \mathbf e_{2H}=(1,0,0,0,0),\qquad
+ \mathbf e_{4H}=(0,0,0,1,0),\qquad
+ \mathbf e_{6H}=(0,1,0,0,0).
+ \label{eq:si_pbi2_parent_vectors}
+\end{equation}
+The opposite-handed 4H and 6H parents are obtained by selecting $d_-$ and
+$b_-$ instead.
+
+\subsection{Exact rod-dependent reduction}
+
+The three registry-shift matrices are diagonal in the discrete Fourier basis.
+In the sector selected by the scattering phase $\omega$, the $6\times6$
+transition reduces exactly to
+\begin{equation}
+ M(\omega)=
+ \begin{pmatrix}
+ a+b_+\omega+b_-\omega^{-1} & d_+\omega+d_-\omega^{-1}\\
+ d_+\omega^{-1}+d_-\omega & a+b_+\omega+b_-\omega^{-1}
+ \end{pmatrix}.
+ \label{eq:si_pbi2_Momega}
+\end{equation}
+No registry states are discarded; Eq.~\eqref{eq:si_pbi2_Momega} is one Fourier
+block of Eq.~\eqref{eq:si_pbi2_T6}.  Setting the registry phase to unity gives
+the orientation-population matrix
+\begin{equation}
+ P=M(1)=
+ \begin{pmatrix}
+ a+b_++b_- & d_++d_-\\
+ d_++d_- & a+b_++b_-
+ \end{pmatrix}.
+ \label{eq:si_pbi2_P}
+\end{equation}
+Unlike $M(\omega)$, which carries complex scattering phases, $P$ is a
+row-stochastic probability matrix.
+
+\subsection{Finite-stack intensity}
+
+Let $d$ be the separation between neighboring trilayer centers and
+$\xi=\exp(iq_zd)$ the corresponding vertical phase.  Define
+\begin{equation}
+ \mathbf f=\begin{pmatrix}F_+\\F_-\end{pmatrix},\qquad
+ D_{F^*}=\operatorname{diag}(F_+^*,F_-^*).
+ \label{eq:si_pbi2_form_vector}
+\end{equation}
+If $\boldsymbol{\pi}^{\mathrm{ori}}_0$ is the initial orientation row vector,
+then
+\begin{equation}
+ \boldsymbol{\pi}^{\mathrm{ori}}_m
+ =\boldsymbol{\pi}^{\mathrm{ori}}_0P^m.
+ \label{eq:si_pbi2_orientation_population}
+\end{equation}
+The phase-weighted correlation between trilayers $m$ and $m+\Delta$ is
+\begin{equation}
+ K_{m,\Delta}=\boldsymbol{\pi}^{\mathrm{ori}}_m
+ D_{F^*}M(\omega)^\Delta\mathbf f.
+ \label{eq:si_pbi2_pair_kernel}
+\end{equation}
+The ensemble-averaged intensity per trilayer for a finite stack of $N$
+trilayers is therefore
+\begin{align}
+ \frac{\langle I_N\rangle}{N}={}&
+ \frac{1}{N}\sum_{m=0}^{N-1}
+ \boldsymbol{\pi}^{\mathrm{ori}}_m
+ \begin{pmatrix}|F_+|^2\\|F_-|^2\end{pmatrix}
+ \nonumber\\
+ &+\frac{2}{N}\operatorname{Re}\!\left[
+ \sum_{\Delta=1}^{N-1}\xi^\Delta
+ \sum_{m=0}^{N-1-\Delta}K_{m,\Delta}\right].
+ \label{eq:si_pbi2_finite_intensity}
+\end{align}
+The first term contains the $N$ self contributions and the second contains all
+distinct trilayer pairs.  The calculation evaluates these finite sums
+directly, retaining end effects and avoiding singular closed forms when an
+eigenvalue approaches unity.  Equivalent matrix-power and recursive
+formulations are standard for planar-fault diffraction.\cite{Treacy1991}
+
+\subsection{Polytype-rich fault templates and population mixture}
+
+For each parent-rich population,
+\begin{equation}
+ \boldsymbol{\theta}_j(\epsilon_j)
+ =(1-\epsilon_j)\mathbf e_j+\epsilon_j\mathbf q_j,
+ \qquad j\in\{2H,4H,6H\}.
+ \label{eq:si_pbi2_fault_parameterization}
+\end{equation}
+The equal-alternative templates used in the present implementation are
+\begin{align}
+ \mathbf q_{2H}&=\left(0,\frac14,\frac14,\frac14,\frac14\right),\\
+ \mathbf q_{4H}&=\left(\frac14,\frac14,\frac14,0,\frac14\right),\\
+ \mathbf q_{6H}&=\left(\frac14,0,\frac14,\frac14,\frac14\right).
+ \label{eq:si_pbi2_fault_templates}
+\end{align}
+Consequently, $\epsilon_j$ is exactly the probability that an interface in
+population $j$ does not follow its selected parent event.  Its numerical value
+is conditional on the chosen $\mathbf q_j$ and must not be interpreted without
+that template.
+
+Separate parent-rich populations are not taken to be mutually phase coherent,
+so their calculated intensities are added:
+\begin{equation}
+ I_{\mathrm{calc}}(L)=S\left[
+ \left(\sum_{j\in\{2H,4H,6H\}}w_jI_j(L;\epsilon_j,N)\right)
+ \otimes R(L)\right]+B(L),\qquad
+ \sum_jw_j=1.
+ \label{eq:si_pbi2_total_intensity}
+\end{equation}
+The core parameterization has three disorder magnitudes and two independent
+population weights.  The stack length $N$, scale, background, and any fixed or
+refined resolution terms are separate.  If the data do not support three
+independent disorder magnitudes, the constrained starting model is
+$\epsilon_{2H}=\epsilon_{4H}=\epsilon_{6H}$.
 
 \begin{figure}[htbp]
-\centering
-%--- left image ----------------------------------------------------
-\begin{subfigure}[t]{0.4\linewidth}
-\centering
-\includegraphics[width=\linewidth]{2H.png}
-\small \caption{2H polytype (AB) with no in‑plane phase shifts.}
-\label{fig:2H}
-\end{subfigure}
-\hfill
-%--- right image ---------------------------------------------------
-\begin{subfigure}[t]{0.28\linewidth}
-\centering
-\includegraphics[width=\linewidth]{6H_R-3.png}
-\small \caption{6H R$\bar3$ polytype (ABCA) with $\tfrac13$‑lattice translations giving $e^{i2\pi/3}$ phase steps.}
-\label{fig:6H}
-\end{subfigure}
-\caption{Low-temperature 2H and high-temperature 6H stacking sequences in PbI\texorpdfstring{$_2$}{2}. Arrows illustrate the lateral shifts responsible for the phase factors used in the HT--Lifshitz model.}
-\label{fig:si_polytypes}
+ \centering
+ \begin{subfigure}[t]{0.49\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{../figures/results_pbi2/transition_matrix/fig03_reduction_validation.png}
+  \caption{Agreement between the full and reduced calculations.}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[t]{0.49\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{../figures/results_pbi2/transition_matrix/fig04_pure_validation.png}
+  \caption{Recovery of the deterministic parent limits.}
+ \end{subfigure}
+ \caption{Calculation-only validation of the transition construction.  The
+ $6\times6$ and $2\times2$ expressions agree to numerical precision, and the
+ zero-disorder 2H, 4H, and 6H limits reproduce independently evaluated
+ periodic-parent intensities.  These panels validate the implementation; they
+ are not fits to experimental data.}
+ \label{fig:si_pbi2_transition_validation}
 \end{figure}
 
-\subsection{Molecular structure factor for PbI\texorpdfstring{$_2$}{2}}
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.88\linewidth]{../figures/results_pbi2/transition_matrix/fig05_three_population_sum.png}
+ \caption{Illustrative incoherent sum of 2H-, 4H-, and 6H-rich intensities.
+ Each population has its own disorder magnitude and one normalized population
+ weight.  The numerical values in this calculation-only example are not the
+ experimental fit values.}
+ \label{fig:si_pbi2_population_sum}
+\end{figure}
 
-A single layer form factor is 
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.90\linewidth]{../figures/results_pbi2/transition_matrix/fig06_4H_oscillations.png}
+ \caption{Illustrative sensitivity of common and 4H-specific positions to
+ $\epsilon_{4H}$.  Positions shared with the 2H parent retain stronger
+ finite-thickness coherence than positions that require the alternating
+ shift-plus-orientation-change rule.}
+ \label{fig:si_pbi2_4h_sensitivity}
+\end{figure}
+
+\subsection{Deterministic and phase-insensitive checks}
+
+The zero-disorder cycles are
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Parent & Nonzero event & State cycle from $0F_+$ & Reduced matrix\\
+\midrule
+2H & $a=1$ & $0F_+\rightarrow0F_+$ & $I_2$\\
+4H & $d_+=1$ & $0F_+\rightarrow1F_-\rightarrow0F_+$ &
+$\left(\begin{smallmatrix}0&\omega\\\omega^{-1}&0\end{smallmatrix}\right)$\\
+6H & $b_+=1$ & $0F_+\rightarrow1F_+\rightarrow2F_+\rightarrow0F_+$ &
+$\omega I_2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For 4H, $M(\omega)^2=I_2$; for 6H, $M(\omega)^3=I_2$ because
+$\omega^3=1$.  The $d_-=1$ and $b_-=1$ limits generate the opposite-handed
+cycles.
+
+For $h=k=0$, $\omega=1$ and $F_+=F_-=F$.  Because $P^\Delta\mathbf 1=\mathbf
+1$, Eq.~\eqref{eq:si_pbi2_pair_kernel} becomes
+$K_{m,\Delta}=|F|^2$ for every allowed transition law.  Equation
+\eqref{eq:si_pbi2_finite_intensity} then reduces to the normalized Laue factor
 \begin{equation}
-    F_m = b_{Pb} + b_I \left[ e^{2\pi i \left( H/3 + 2K/3 + Lz/3 \right) } +e^{2\pi i \left( 2H/3 + K/3 - Lz/3 \right) } \right]
+ \frac{\langle I_N\rangle}{N}
+ =\frac{|F|^2}{N}\left|\sum_{n=0}^{N-1}\xi^n\right|^2
+ =\frac{|F|^2}{N}\frac{\sin^2(N\vartheta/2)}{\sin^2(\vartheta/2)},
+ \qquad \xi=e^{i\vartheta}.
+ \label{eq:si_pbi2_m0_laue}
 \end{equation}
+Thus the strong $m=0$ oscillations are finite-thickness fringes, not diffuse
+stacking-fault contrast.  Faults can still be present; this rod does not
+distinguish their registry or orientation path.
 
-Where now the amplitude will be 
-\begin{equation}
-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} 
-    \label{eq:FF}
-\end{equation}
-
-Where $\vec{R_p} = m\vec{a} + n\vec{b}$ is the in-plane position vector, with $m,n\in\mathbb{Z}$.
-Then $\vec{Q}\cdot\vec{R_p} \rightarrow Hm + kn$, and the Bragg condition makes $H,K$ integers.
-
-
-\section{No‑correlation stacking‑fault model}\label{sec:nocorr}
-
-Let $\tau_j\in\{0,1\}$ indicate whether the $j$‑th interface slips $(\tau_j=1)$ or not $(\tau_j=0)$.  
-The structure factor of one layer is $F_0(h,k,\ell)$, and for a three‑layer (ABC) repeat the per‑layer phase advance is  
-\begin{equation}
-  \phi(h,k,\ell)=\frac{h+2k}{3}+\ell/3,
-  \label{eq:phi_def}
-\end{equation}
-with $h,k,\ell$ in reciprocal‑lattice units.
-\\
-We now add the phase of each layer to the form factor from equation \ref{eq:FF}.
-\begin{equation}
-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \sum_\ell e^{i \phi(h,k,\ell) \ell}
-\end{equation}
-Writing $e^{i \phi \ell} = \prod_{j=1}^\ell e^{i \phi}$
-
-\begin{equation}
-    A = F_m \sum_{R_p} e^{i \vec{Q} \cdot \vec{R_p}} \prod_\ell e^{i \phi(h,k,\ell) \ell}
-\end{equation}
-
-
-\subsection{Coherent amplitude of an \texorpdfstring{$N$}{N}-layer stack}
-At layer $\ell$ the factor multiplying $F_0$ is
-\[
-  \bigl[1-\tau_\ell+\tau_\ell e^{-i\phi}\bigr]\,e^{i\phi\ell},
-\]
-so that  
-\begin{equation}
-  A
-  =F_0\sum_{\ell=0}^{N-1}
-        \left[\prod_{j=0}^{\ell}
-               \bigl(1-\tau_j+\tau_j e^{-i\phi}\bigr)\right]
-        e^{i\phi\ell}.
-  \label{eq:A_full}
-\end{equation}
-
-\subsection{Uncorrelated faults}
-Assume the $\tau_j$ are i.i.d.\ with slip probability $p=\Pr(\tau_j=1)$. Independence gives  
-\begin{equation}
-  \Bigl\langle\prod_{j=0}^{\ell}
-           (1-\tau_j+\tau_j e^{-i\phi})\Bigr\rangle
-  =\bigl[(1-p)+p\,e^{-i\phi}\bigr]^{\ell}
-  \equiv f^{\,\ell},
-  \qquad f\equiv(1-p)+p\,e^{-i\phi}.
-  \label{eq:f_def}
-\end{equation}
-
-\subsection{Mean amplitude}
-Averaging \eqref{eq:A_full} and inserting \eqref{eq:f_def} gives the geometric series  
-\begin{equation}
-  \langle A\rangle
-  =F_0\sum_{\ell=0}^{N-1}f^{\ell}e^{i\phi\ell}
-  =F_0\frac{1-(f\,e^{i\phi})^{N}}{1-f\,e^{i\phi}}.
-  \label{eq:A_mean_N}
-\end{equation}
-
-\subsection{Infinite‑crystal limit}
-For any non‑zero fault probability ($|f|<1$),
-\begin{equation}
-  \boxed{\;
-    \lim_{N\to\infty}\langle A\rangle
-    =F_0\,\frac{f}{1-f\,e^{i\phi}}
-  \;}
-  \label{eq:A_mean_inf}
-\end{equation}
-The perfect‑crystal result is recovered as $f\!\to\!1$.
-
-\subsection{Mean‑square amplitude}
-The heights of sharp Bragg peaks: i.e. the square of the coherently averaged structure amplitude. This is only the part of the intensity that survives perfect phase coherence: sharp Bragg peaks. Any layer-to-layer fluctuations are averaged before squaring and thus disappear. 
-
-\begin{align}
-  |\langle A\rangle|^{2}
-  &=|F_0|^{2}\frac{f^{2}}{|1-f\,e^{i\phi}|^{2}}
-     \notag\\[4pt]
-  &=|F_0|^{2}\frac{f^{2}}{(1-f\cos\phi)^{2}+f^{2}\sin^{2}\phi}
-     \label{eq:intensity_cos_sin}\\[4pt]
-  &=|F_0|^{2}\frac{f^{2}}{(1-f)^{2}+4f\sin^{2}\!\dfrac{\phi}{2}}.
-     \label{eq:intensity_halfangle}
-\end{align}
-
-\subsection{ Ensemble-averaged intensity}
-The full detector signal; adds the broadened peaks and diffuse background arising from stacking faults.
-\begin{equation}
-    <|A|^2>
-\end{equation}
-\subsubsection{Layer Autocorrelation}
-The layer-resolved autocorrelation of the stacking sequence tells you how phase coherence decays with layer phase shifts. It is the kernel that converts local disorder into the full intensity giving both Bragg and diffuse components.
-
-Define
-\begin{equation}
-  g_j \equiv 1-\tau_j + \tau_j e^{-i\phi}, 
-  \qquad
-  S_{\ell} \equiv \prod_{j=0}^{\ell} g_j.
-\end{equation}
-We wish to compute
-\begin{equation}
-  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
-  =\bigl\langle \prod_{j=0}^{\ell}g_j \;\prod_{j'=0}^{\ell'}g_{j'}^{*}\bigr\rangle.
-\end{equation}
-Since the $g_j$ are i.i.d., expectations of products factor, and $g_jg_j^{*}=1$ identically.  We split into two cases:
-
-\paragraph{Case A: $\ell\ge\ell'$.}
-\begin{equation}
-S_{\ell}S_{\ell'}^{*}
-\;=\;
-\underbrace{\Bigl(\prod_{j=0}^{\ell'}g_j\Bigr)
-            \Bigl(\prod_{j'=0}^{\ell'}g_{j'}^{*}\Bigr)}_{\displaystyle =\,1\;\;\text{(common layers)}}
-\;
-\underbrace{\Bigl(\prod_{j=\ell'+1}^{\ell}g_j\Bigr)}_{\text{extra layers}}
-\end{equation}
-- For $0\le j\le\ell'$, $g_jg_j^{*}=1$, so the first two products give 1.  
-- For $j=\ell'+1,\dots,\ell$, independence implies
-\begin{equation}
-  \Bigl\langle\prod_{j=\ell'+1}^{\ell}g_j\Bigr\rangle
-  =\prod_{j=\ell'+1}^{\ell}\langle g_j\rangle
-  =f^{\,\ell-\ell'}.
-\end{equation}
-Hence
-\begin{equation}
-  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
-  =f^{\,\ell-\ell'},
-  \qquad(\ell\ge\ell').
-\end{equation}
-
-\paragraph{Case B: $\ell<\ell'$.}
-By an identical argument, swapping roles,
-\[
-  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
-  =\bigl(f^{*}\bigr)^{\ell'-\ell},
-  \qquad(\ell<\ell').
-\]
-
-\paragraph{The Solutions are then}
-\begin{equation}
-  \boxed{
-  \bigl\langle S_{\ell}S_{\ell'}^{*}\bigr\rangle
-  =
-  \begin{cases}
-    f^{\,\ell-\ell'}, & \ell\ge\ell',\\[6pt]
-    \bigl(f^{*}\bigr)^{\ell'-\ell}, & \ell<\ell'.
-  \end{cases}
-  }
-  \label{eq:two_point}
-\end{equation}
-
-\subsection{Single‑sum form of the double series}
-With $\ell''=\ell-\ell'$, the double sum becomes  
-\begin{equation}
-  \sum_{\ell=0}^{N_z-1}\sum_{\ell'=0}^{N_z-1}
-     f^{|\ell-\ell'|}e^{i(\phi-\psi)(\ell-\ell')}
-  =N_z\sum_{\ell''=-N_z+1}^{N_z-1}
-        f^{|\ell''|}e^{i(\phi-\psi)\ell''}.
-  \label{eq:double_sum}
-\end{equation}
-Splitting out $\ell''=0$ and the $\pm\ell''$ pairs yields  
-\[
-  N_z\!\left[
-    1+\sum_{\ell''=1}^{N_z-1}
-      f^{\ell''}\bigl(
-        e^{i(\phi-\psi)\ell''}+e^{-i(\phi-\psi)\ell''}
-      \bigr)
-  \right],
-\]
-with  
-\[
-  \sum_{\ell''=1}^{N_z-1}f^{\ell''}e^{\pm i(\phi-\psi)\ell''}
-  =\frac{f\,e^{\pm i(\phi-\psi)}
-         \bigl[1-f^{N_z-1}e^{\pm i(\phi-\psi)(N_z-1)}\bigr]}
-        {1-f\,e^{\pm i(\phi-\psi)}}.
-\]
-
-\subsection{Infinite-crystal limit (\texorpdfstring{$0\le f<1$}{0<=f<1})}
-Letting $N_z\!\to\!\infty$ gives  
-\begin{equation}
-  \sum_{\ell,\ell'}f^{|\ell-\ell'|}e^{i(\phi-\psi)(\ell-\ell')}
-  =N_z\,\frac{1-f^{2}}{1+f^{2}-2f\cos(\phi-\psi)}.
-  \label{eq:sum_infinite}
-\end{equation}
-
-\subsection{Scattering cross‑section}
-Substituting \eqref{eq:sum_infinite},
-\begin{equation}
-  \boxed{
-    \frac{d\sigma}{d\Omega}
-    =|F_m|^{2}\,
-      \frac{(2\pi)^{2}}{A_c}\,
-      \delta\bigl(\mathbf{Q}-\mathbf{G}_p\bigr)\,
-      N_p N_z\,
-      \frac{1-f^{2}}{1+f^{2}-2f\cos(\phi-\psi)}
-  }.
-  \label{eq:cross_section}
-\end{equation}
-This is identical to the Hendrix–Teller formula upon identifying 
-$\phi^{\text{HT}}=\phi-\psi$ and noting that their parameter 
-$\cos(\phi^{1}-\phi^{2})$ equals $f$.
-
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.88\linewidth]{../figures/results_pbi2/transition_matrix/fig07_m0_fringes.png}
+ \caption{Calculation-only check of the phase-insensitive $m=0$ condition.
+ Different parent-rich transition laws coincide because registry and
+ orientation changes do not alter the local $00L$ amplitude; the remaining
+ oscillations are controlled by finite stack length.}
+ \label{fig:si_pbi2_m0_fringes}
+\end{figure}
+% END PBI2_TRANSITION_MATRIX_DERIVATION
 
 \bibliographystyle{apsrev4-2}
 \bibliography{../bibliography/references}
