@@ -939,15 +939,15 @@ that template.
 Separate parent-rich populations are not taken to be mutually phase coherent,
 so their calculated intensities are added:
 \begin{equation}
- I_{\mathrm{calc}}(L)=S\left[
- \left(\sum_{j\in\{2H,4H,6H\}}w_jI_j(L;\epsilon_j,N)\right)
- \otimes R(L)\right]+B(L),\qquad
- \sum_jw_j=1.
+ I_{\mathrm{calc}}(L)=S\left\{\left[
+ w_{2H}I_{2H}(L)+w_{4H}I_{4H}(L)+w_{6H}I_{6H}(L)
+ \right]\otimes R(L)\right\},\qquad
+ w_{2H}+w_{4H}+w_{6H}=1.
  \label{eq:si_pbi2_total_intensity}
 \end{equation}
 The core parameterization has three disorder magnitudes and two independent
-population weights.  The stack length $N$, scale, background, and any fixed or
-refined resolution terms are separate.  If the data do not support three
+population weights.  The stack length $N$, scale, and any fixed or refined
+resolution terms are separate.  If the data do not support three
 independent disorder magnitudes, the constrained starting model is
 $\epsilon_{2H}=\epsilon_{4H}=\epsilon_{6H}$.
 
