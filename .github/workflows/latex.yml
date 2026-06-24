@@ -31,13 +31,20 @@ jobs:
 
       - name: Clean build main manuscript
         run: |
-          latexmk -C main.tex
+          latexmk -c main.tex
+          rm -f build/main.pdf
           latexmk -pdf -g -interaction=nonstopmode -file-line-error main.tex
 
       - name: Check bibliography outputs
         run: |
+          test -s main.pdf
+          test ! -e build/main.pdf
           test -s build/main.aux
           test -s build/main.bbl
           grep -F '\bibstyle{apsrev4-2}' build/main.aux
           grep -F '\bibdata{bibliography/references}' build/main.aux
           grep -F '\begin{thebibliography}' build/main.bbl
+
+      - name: Check single published PDF
+        run: |
+          test "$(git ls-files '*main.pdf')" = "main.pdf"
