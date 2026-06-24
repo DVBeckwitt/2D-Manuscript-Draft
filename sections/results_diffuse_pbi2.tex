@@ -126,33 +126,66 @@ For one definite sequence $s_n=(r_n,\sigma_n)$, the layer amplitude is
 $g_{s_n}=\omega^{r_n}F_{\sigma_n}$ and the coherent stack amplitude is
 $A_N(L)=\sum_{n=0}^{N-1}\xi(L)^n g_{s_n}$, where
 $\xi(L)=\exp(iq_zd)$ is the vertical phase between neighboring trilayer
-centers.  Expanding $\langle|A_N|^2\rangle$, grouping the two orders of each
-layer pair as complex conjugates, and dividing by $N$ gives the exact reduced
-finite-stack expression
+centers.  Expanding $\langle|A_N|^2\rangle$ leaves two familiar
+contributions: the intensity scattered by each trilayer individually and the
+interference between distinct trilayer pairs.
+
+For population $j$, define the orientation population of trilayer $m$ as
 \begin{equation}
-\begin{aligned}
-  K_{m,\Delta}^{(j)}&=
-  \boldsymbol{\pi}_{j,m}D_{F^*}M_j(\omega)^\Delta\mathbf{f},\\
-  I_j(L)&=\frac{1}{N}\sum_{m=0}^{N-1}
-  \boldsymbol{\pi}_{j,m}\mathbf{u}
-  +\frac{2}{N}\operatorname{Re}\!\sum_{0\le m<n\le N-1}
-  \xi(L)^{n-m}K_{m,n-m}^{(j)}.
-\end{aligned}
-\label{eq:pbi2_finite_intensity}
+  \boldsymbol{\pi}_{j,m}
+  =\left(p_{j,m}^{+},p_{j,m}^{-}\right)
+  =\boldsymbol{\pi}_{j,0}P_j^m,
+  \qquad p_{j,m}^{+}+p_{j,m}^{-}=1.
+  \label{eq:pbi2_orientation_population}
 \end{equation}
-Here $\mathbf{f}=(F_+,F_-)^{\mathsf T}$,
-$\mathbf{u}=(|F_+|^2,|F_-|^2)^{\mathsf T}$,
-$D_{F^*}=\operatorname{diag}(F_+^*,F_-^*)$, and
-$\boldsymbol{\pi}_{j,m}=\boldsymbol{\pi}_{j,0}P_j^m$ is the orientation
-population at trilayer $m$.  The first line defines the pair kernel:
-$\boldsymbol{\pi}_{j,m}$ selects the earlier orientation, $D_{F^*}$ supplies
-its conjugated form factor, $M_j^\Delta$ sums every allowed path and registry
-phase across the intervening interfaces, and $\mathbf f$ supplies the later
-form factor.  In the second line, the first term is self-scattering from the
-$N$ trilayers and the second is the interference from every distinct pair.
-The factor $\xi^{n-m}$ gives the vertical phase separation, while
-$2\operatorname{Re}$ includes the reverse-ordered conjugate pair without
-writing it separately.
+Here $j$ identifies the 2H-, 4H-, or 6H-rich population and $m$ identifies a
+trilayer within the finite stack.  The quantities $p_{j,m}^{+}$ and
+$p_{j,m}^{-}$ are ordinary probabilities that trilayer $m$ has orientation
+$F_+$ or $F_-$, respectively; they are neither scattering amplitudes nor the
+sample weights $w_j$ used below.
+
+The disorder-averaged interference amplitude for trilayers $m$ and
+$m+\Delta$ is
+\begin{equation}
+  K_{m,\Delta}^{(j)}=
+  \begin{pmatrix}p_{j,m}^{+} & p_{j,m}^{-}\end{pmatrix}
+  \begin{pmatrix}F_+^* & 0\\0 & F_-^*\end{pmatrix}
+  M_j(\omega)^\Delta
+  \begin{pmatrix}F_+\\F_-\end{pmatrix}.
+  \label{eq:pbi2_pair_kernel}
+\end{equation}
+The finite-stack intensity is then written as ``self scattering plus pair
+interference'':
+\begin{subequations}
+\label{eq:pbi2_finite_intensity}
+\begin{align}
+  I_j(L)
+  &=I_{j,\mathrm{self}}(L)+I_{j,\mathrm{pair}}(L),
+  \label{eq:pbi2_intensity_split}\\
+  I_{j,\mathrm{self}}(L)
+  &=\frac{1}{N}\sum_{m=0}^{N-1}
+  \left[p_{j,m}^{+}|F_+|^2+p_{j,m}^{-}|F_-|^2\right],
+  \label{eq:pbi2_self_intensity}\\
+  I_{j,\mathrm{pair}}(L)
+  &=\frac{2}{N}\operatorname{Re}
+  \sum_{\Delta=1}^{N-1}\xi(L)^\Delta
+  \sum_{m=0}^{N-1-\Delta}K_{m,\Delta}^{(j)}.
+  \label{eq:pbi2_pair_intensity}
+\end{align}
+\end{subequations}
+The self term averages the isolated-trilayer intensity over the two possible
+orientations.  The pair term groups all trilayer pairs by their separation
+$\Delta$: there are $N-\Delta$ pairs at that separation, and each carries the
+same vertical phase $\xi(L)^\Delta$.  In
+Eq.~\eqref{eq:pbi2_pair_kernel}, the expression can be read from right to
+left.  The final column supplies the scattering amplitude of the later
+trilayer, $M_j(\omega)^\Delta$ sums all allowed stacking paths and registry
+phases between the two layers, the diagonal matrix supplies the conjugated
+amplitude of the earlier trilayer, and $\boldsymbol{\pi}_{j,m}$ averages over
+whether that earlier trilayer is in the $F_+$ or $F_-$ orientation.  The
+factor $2\operatorname{Re}$ in Eq.~\eqref{eq:pbi2_pair_intensity} includes the
+reverse-ordered conjugate pair without writing it separately.  The complete
+derivation is given in Supplementary Note S3.
 
 The 2H-, 4H-, and 6H-rich domains are taken to be mutually incoherent, so the
 three calculated intensities (not their amplitudes) are combined as
