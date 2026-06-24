@@ -20,10 +20,11 @@ Use `MANUSCRIPT_STATUS.md` as the single source of truth.
 
 ## Build and reset recovery
 
-The main manuscript uses `latexmkrc` to write generated LaTeX files into
-`build/`. That directory is intentionally ignored by git. A command such as
-`git reset --hard` restores tracked source files, but it does not remove stale
-ignored files in `build/` or stop an editor build watcher.
+The main manuscript uses `latexmkrc` to write the public manuscript artifact to
+the repository-root `main.pdf`. Generated LaTeX auxiliaries, logs, and
+bibliography outputs go into `build/`, which is intentionally ignored by git. A
+command such as `git reset --hard` restores tracked source files, but it does
+not remove stale ignored files in `build/` or stop an editor build watcher.
 
 Use this guarded clean rebuild when citations or bibliography output look stale:
 
@@ -40,13 +41,14 @@ reliably prove which repository owns a generic `main.tex` watcher.
 The underlying `latexmk` commands are:
 
 ```powershell
-latexmk -C main.tex
+latexmk -c main.tex
 latexmk -pdf -g -interaction=nonstopmode -file-line-error main.tex
 ```
 
-After a successful build, `build/main.aux` should contain
-`\bibstyle{apsrev4-2}` and `\bibdata{bibliography/references}`, and
-`build/main.bbl` should be non-empty.
+After a successful build, root `main.pdf` is the review artifact and the
+GitHub Pages PDF. `build/main.aux` should contain `\bibstyle{apsrev4-2}` and
+`\bibdata{bibliography/references}`, and `build/main.bbl` should be non-empty.
+There should not be a second tracked `main.pdf` under any subdirectory.
 
 If VimTeX or another editor reports `I found no \bibdata command` after a
 reset, first stop the continuous build watcher, then run the clean rebuild
@@ -62,8 +64,7 @@ That BibTeX message usually means BibTeX read an incomplete or stale `.aux`
 file. It does not by itself prove that `main.tex` is missing the bibliography
 commands.
 
-Status as of 2026-06-15: the reset/bibliography failure is fixed locally with a
+Status as of 2026-06-24: the reset/bibliography failure is fixed locally with a
 guarded clean-build script, `latexmkrc` clean behavior, and a GitHub Actions
-LaTeX build check. The local build produces `build/main.pdf`,
-`build/main.aux`, and a non-empty `build/main.bbl` with the expected BibTeX
-markers.
+LaTeX build check. The local build produces root `main.pdf`, `build/main.aux`,
+and a non-empty `build/main.bbl` with the expected BibTeX markers.
