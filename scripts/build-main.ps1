@@ -82,6 +82,8 @@ $($watchers | ForEach-Object { "PID=$($_.ProcessId) $($_.CommandLine)" } | Out-S
 $auxPath = Join-Path $repoRoot 'build/main.aux'
 $bblPath = Join-Path $repoRoot 'build/main.bbl'
 $pdfPath = Join-Path $repoRoot 'build/main.pdf'
+$servedPdfPath = Join-Path $repoRoot 'main.pdf'
+$legacyPublicPdfPath = Join-Path $repoRoot 'build_codex/main.pdf'
 
 Assert-FileWritable -Path $pdfPath
 Invoke-Latexmk -Arguments @('-C', 'main.tex')
@@ -115,4 +117,10 @@ if ($bbl -notmatch '\\begin\{thebibliography\}') {
     throw 'build/main.bbl is missing \begin{thebibliography}'
 }
 
+Assert-FileWritable -Path $servedPdfPath
+Assert-FileWritable -Path $legacyPublicPdfPath
+Copy-Item -LiteralPath $pdfPath -Destination $servedPdfPath -Force
+Copy-Item -LiteralPath $pdfPath -Destination $legacyPublicPdfPath -Force
+
 Write-Output "Build succeeded: build/main.pdf"
+Write-Output "Updated served PDFs: main.pdf, build_codex/main.pdf"
