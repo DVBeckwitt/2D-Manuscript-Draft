@@ -195,30 +195,35 @@ attenuation determine how much of that intensity reaches the detector.
 
 The bright near-origin \(m=0\) intensity in Fig.~\ref{fig:hk0_low_l_star} lies in the near-critical specular region.
 
-The specular-family profiles in this near-critical region are 
-calculated with an optical-to-structural handoff. The low-\(Q_z\) branch is calculated with a Parratt
+The specular-family profiles in this near-critical region are calculated with an
+optical-to-kinematic handoff. The low-\(Q_z\) branch is calculated with a Parratt
 multilayer reflectivity recursion, which retains refraction, evanescence, and
 multiple reflection at the film interfaces.\cite{Parratt1954} At larger
 \(Q_z/Q_c\), where critical-angle corrections become small, this optical branch
-is matched to a normalized finite-stack structure term.
-The two limits are joined with a smooth log-intensity blend over the region
-where the optical and structural branches agree, as summarized in
-Fig.~\ref{fig:parratt_handoff}. This construction prevents the near-critical
-specular intensity from being treated as an ordinary high-\(Q_z\) structure
-factor, while preserving the finite-stack modulation that controls the
-higher-\(L\) rod profile. Details of the recursion, scale estimate, and blend
-criterion are provided in the Supporting Information.
+is matched to a normalized finite-stack kinematic term. In the calculation, the
+two limits are joined with a smooth log-intensity blend over the region where
+they agree. Figure~\ref{fig:parratt_handoff} overlays the measured near-critical
+\(m=0\) profile with the Parratt and kinematic limiting calculations on the same
+axes, while omitting the internal blended curve. The direct overlay shows which
+limit describes each part of the measured profile and where the two calculated
+branches converge. This construction prevents near-critical specular intensity
+from being treated as ordinary high-\(Q_z\) kinematic scattering while
+preserving the finite-stack modulation that controls the higher-\(L\) rod
+profile. Details of the recursion, scale estimate, and blend criterion are
+provided in the Supporting Information.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.82\linewidth]{figures/correlated_effects/fig_parratt_ht_handoff.png}
-  \caption[Optical-to-structural handoff for near-critical specular intensity]{Optical-to-structural handoff used for the near-critical
-  specular-family calculation. (a) Pure Parratt reflectivity gives the
-  low-\(Q_z\) optical response, including refraction, evanescence, and multiple
-  reflection at the film interfaces. The high-\(Q_z\) branch is the normalized
-  finite-stack structure term scaled to the optical
-  branch in an overlap region. The final curve is a smooth log-intensity blend
-  between these limits, plotted versus \(Q_z/Q_c\) with the corresponding
-  crystallographic \(L\) coordinate on the top axis.}
+  \includegraphics[width=0.98\linewidth]{figures/correlated_effects/fig_reflectivity_data_parratt_kinematic.png}
+  \caption[Measured profile overlaid with Parratt and kinematic calculations]{Measured
+  near-critical Bi$_2$Se$_3$ \(m=0\) profile overlaid with the two limiting
+  calculations used by the optical-to-kinematic handoff. The solid black curve
+  is the background-subtracted detector-derived data, the dotted curve is the
+  Parratt reflectivity calculation, and the dashed curve is the finite-stack
+  kinematic calculation. All three are shown on the same normalized-intensity
+  axis over \(0.2\leq L\leq 1.05\), before the \(003\) peak. The common overlay
+  makes the low-\(L\) optical regime and the convergence of the calculated
+  branches toward the measured high-\(L\) tail directly visible. The smoothly
+  blended curve used internally by the model is omitted.}
   \label{fig:parratt_handoff}
 \end{figure}

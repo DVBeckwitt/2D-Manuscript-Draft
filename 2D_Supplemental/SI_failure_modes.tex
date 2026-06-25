@@ -538,14 +538,14 @@ changing $\lambda_j$ changes $k_0$, $\tilde{n}$, the transmitted angle, the comp
 wavevector, the transmission factors, and the attenuation length.
 
 
-\subsection{Specular-family Parratt-to-structure-factor handoff}
+\subsection{Specular-family Parratt-to-kinematic handoff}
 \label{subsec:si_parratt_structure_handoff}
 
-The main-text handoff figure summarizes the optical-to-structural construction
+The main-text handoff figure summarizes the optical-to-kinematic construction
 used for the near-critical specular-family profile. Here we give the explicit
 calculation. The low-$Q_z$ branch is the specular Parratt reflectivity, which
 retains refraction, evanescence, interface reflection, and finite-film multiple
-scattering. The high-$Q_z$ branch is a normalized finite-stack structure term
+scattering. The high-$Q_z$ branch is a normalized finite-stack kinematic term
 divided by $Q_z^2$ and scaled to the Parratt intensity in an overlap region. A
 smooth log-domain blend is then applied across the contiguous range of $Q_z/Q_c$
 for which the two branches agree. This handoff is a controlled transition
@@ -606,7 +606,7 @@ This branch retains total-reflection behavior, refraction, evanescence, finite
 penetration depth, roughness damping, and multiple reflection between the film
 interfaces.
 
-The high-$Q_z$ branch is built from the normalized finite-stack structure term
+The high-$Q_z$ branch is built from the normalized finite-stack kinematic term
 \begin{equation}
   S_{\mathrm{HT},0}(L)=
   \frac{I_{\mathrm{HT}}(L;p=0)}{I_{\mathrm{HT}}(0;p=0)}.
@@ -622,7 +622,7 @@ computed from the real propagating part of the film wavevector,
   \label{eq:si_internal_phase_coordinate}
 \end{equation}
 Below the critical edge this real oscillatory coordinate is zero because the
-internal wave is evanescent. The unscaled structural branch is then
+internal wave is evanescent. The unscaled kinematic branch is then
 \begin{equation}
   M(Q_z)=\frac{S_{\mathrm{HT},0}(L_\phi)}{Q_z^2}.
   \label{eq:si_handoff_unscaled_structure}
@@ -631,7 +631,7 @@ The $Q_z^{-2}$ factor gives the high-$Q_z$ structural envelope, while the
 internal coordinate $L_\phi$ keeps the finite-stack fringe phase consistent with
 the optical film phase.
 
-A multiplicative scale places this structural branch on the Parratt intensity
+A multiplicative scale places this kinematic branch on the Parratt intensity
 scale. The scale is fit in a high-$Q_z$ overlap window, excluding the selected
 $00L$ neighborhoods used in the diagnostic. With fit set $\mathcal F$, the
 log-median estimate is
@@ -646,7 +646,7 @@ log-median estimate is
   \right],
   \label{eq:si_handoff_scale}
 \end{equation}
-with the default overlap window $5<Q_z/Q_c<10$. The scaled structural branch is
+with the default overlap window $5<Q_z/Q_c<10$. The scaled kinematic branch is
 \begin{equation}
   R_{\mathrm H}(Q_z)=A M(Q_z).
   \label{eq:si_handoff_scaled_structure}
