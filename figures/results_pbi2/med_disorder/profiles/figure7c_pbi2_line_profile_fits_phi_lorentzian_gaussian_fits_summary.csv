@@ -1,7 +1,0 @@
-sample_name,peak_label,branch,h,k,l,fit_count,gaussian_height_percent_mean,gaussian_height_percent_observed_sem,gaussian_height_percent_fit_stderr_on_mean,lorentzian_height_percent_mean,lorentzian_height_percent_observed_sem,lorentzian_height_percent_fit_stderr_on_mean,gaussian_fwhm_phi_deg_mean,gaussian_fwhm_phi_deg_observed_sem,gaussian_fwhm_phi_deg_fit_stderr_on_mean,lorentzian_fwhm_phi_deg_mean,lorentzian_fwhm_phi_deg_observed_sem,lorentzian_fwhm_phi_deg_fit_stderr_on_mean
-PbI2,"-1,0,1",+,-1,0,1,1,100.0,,,0.0,,,4.709640090061899,,,4.0,,
-PbI2,"-1,0,1",-,-1,0,1,1,100.0,,,0.0,,,4.120935078804162,,,3.5,,
-PbI2,"-1,0,5",+,-1,0,5,1,100.0,,,0.0,,,6.4757551238351105,,,5.5,,
-PbI2,"-1,0,5",-,-1,0,5,1,100.0,,,0.0,,,6.4757551238351105,,,5.5,,
-PbI2,"-1,1,1",+,-1,1,1,1,100.0,,,0.0,,,5.298345101319636,,,4.5,,
-PbI2,"-1,1,1",-,-1,1,1,1,100.0,,,0.0,,,6.4757551238351105,,,5.5,,

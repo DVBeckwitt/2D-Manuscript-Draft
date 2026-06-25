@@ -1,2 +1,0 @@
-m,branch,source,qr,delta_qr,qz_min,qz_max,l_min,l_max,theta_initial_deg,phi_min,phi_max,two_theta_min,two_theta_max,pixel_count_sum,profile_rows,accepted_from_gui
-0,qz,specular,0.0,0.0,0.3090932518486267,1.6526656645556703,0.5,3.0,4.0,-10.0,10.0,5.0,25.0,20593.0,96,True

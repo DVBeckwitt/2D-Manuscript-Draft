@@ -365,6 +365,7 @@ Highest-priority cuts before the next advisor draft:
 
 | Date | Decision / change | Current interpretation |
 |---|---|---|
+| 2026-06-25 | Pruned generated figure diagnostics. | Removed 76 unreferenced generated PbI2 assets: misplaced ordered-folder outputs, parent-level generated exports, and low/medium/high `profiles/` diagnostics. Active manuscript and supplement figure paths remain the source contract for retained assets. |
 | 2026-06-25 | Integrated annotated-PDF changes. | Low-L near-origin intensity is described as reflectivity; optical-to-kinematic handoff terminology is used; Figure 8 is a single overlay of measured Bi2Se3 near-critical m=0, Parratt, and kinematic traces. Digitized figure inputs should be replaced by direct array exports before final submission. |
 | 2026-06-25 | Consolidated legacy manuscript tracking. | Advisor notes, meeting-prep notes, figure status, supplement status, changelogs, TODO tracking, old patch handoffs, and temporary review artifacts are subsumed here or removed. Git history remains the archive for exact old wording. |
 | 2026-06-23 | Replaced superseded PbI2 scalar slip/flip model. | PbI2 now uses a six-state direction-resolved transition-matrix model. Numerical epsilon_j and population weights remain pending a refit and must not be converted from old scalar p values. |
@@ -387,11 +388,11 @@ Highest-priority cuts before the next advisor draft:
 
 | Area | Status | Notes |
 |---|---|---|
-| Feature | DONE | `MANUSCRIPT_STATUS.md` is the single source for advisor guidance, preferences, active manuscript status, figure status, supplement scope, open questions, build notes, decision history, and revision checklist. `AGENTS.md`, the issue template, and the PR template now point back to that file instead of separate trackers. |
-| Bug/error | DONE | Stale references to deleted tracking docs and patch-handoff files were removed or redirected. Local scans found no remaining references to the removed legacy filenames. |
-| CI/CD | CHECK | No CI workflow behavior changed. Local quality gates passed for this source-control-only change: staged diff whitespace check, ruff on touched Python scripts, Python compilation, stale-reference scan, and byte-equivalent regenerated Parratt overlay output after simplification. No LaTeX build was run because no `.tex` source changed. |
-| Deprecation/migration | DONE | Separate advisor-note, meeting-prep, figure-status, supplement-status, input-inventory, TODO, changelog, old patch, and temporary review-artifact files are deprecated in favor of this document. Active manuscript sources, current figure assets, bibliography sources, `main.pdf`, and `2D_Supplemental/SI_failure_modes.pdf` remain retained review artifacts. |
-| Documentation | DONE | The document policy below records that future manuscript guidance, active status, open questions, and durable decisions belong here unless a separate document is explicitly requested. |
+| Feature | DONE | `MANUSCRIPT_STATUS.md` remains the single source for advisor guidance, manuscript status, figure status, supplement scope, open questions, build notes, decision history, and revision checklist. Removed 76 unreferenced generated PbI2 assets from `figures/`. |
+| Bug/error | DONE | Stale references to deleted tracking docs, patch-handoff files, and removed generated figure diagnostics were checked. Local scans found no remaining external references to the removed paths. |
+| CI/CD | CHECK | No CI workflow behavior changed. Local quality gates for this cleanup are reference scans, LaTeX figure path resolution, diff whitespace check, and untracked/ignored artifact checks. No LaTeX build was run because no `.tex` source changed and no included figure path was touched. |
+| Deprecation/migration | DONE | Separate advisor-note, meeting-prep, figure-status, supplement-status, input-inventory, TODO, changelog, old patch, temporary review-artifact files, and unreferenced generated diagnostics are deprecated in favor of current manuscript sources plus this document. Active manuscript sources, included figure assets, bibliography sources, `main.pdf`, and `2D_Supplemental/SI_failure_modes.pdf` remain retained review artifacts. |
+| Documentation | DONE | The document policy below records that future manuscript guidance, active status, open questions, cleanup decisions, and durable decisions belong here unless a separate document is explicitly requested. |
 | Shipping/rollback | DONE | No external release or deployment was published. This is a git-only cleanup and documentation consolidation; rollback is a normal revert of the commit. |
 
 ## Build And Reset Recovery
