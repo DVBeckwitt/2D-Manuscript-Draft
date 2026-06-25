@@ -545,7 +545,6 @@ def draw_bragg_peak_labels(
         if not label:
             continue
         head = np.array([head0[0] * scale, head0[1] * scale], dtype=float)
-        tail = np.array([tail_base[0] * scale, tail_base[1] * scale], dtype=float)
         offset = base_offset * scale
 
         # Put right-column peak labels to the left of the peak. Put central peaks to the right.

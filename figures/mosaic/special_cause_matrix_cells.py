@@ -22,7 +22,6 @@ CELL_METADATA_KEY = "special_cause_metadata"
 MATRIX_METADATA_KEY = "special_cause_matrix_metadata"
 MANIFEST_NAME = "special_cause_reciprocal_matrix_cells.json"
 CELL_KIND = "special-cause-matrix-cell"
-BUNDLE_KIND = "special-cause-matrix-cell-bundle"
 
 # =============================================================================
 # User settings

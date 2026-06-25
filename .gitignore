@@ -17,6 +17,10 @@
 *.idx
 *.dvi
 build/
+build_codex/
+__pycache__/
+*.pyc
+.ruff_cache/
 
 # PDFs: keep rendered outputs for review, ignore everything else.
 *.pdf
@@ -29,3 +33,9 @@ Thumbs.db
 *~
 *.swp
 *.swo
+*.bak
+*.backup
+*.orig
+*.rej
+*.patch
+*.diff
