@@ -1,6 +1,6 @@
 \section{Diffraction Model}
 \label{sec:diffraction_model}
-The detector-space forward model redistributes the structure-factor intensity of the contributing reflections over mosaic distributions. By Monte Carlo sampling the incident beam profile across those orientations, weighting each ray by transmission, and mapping the summed intensity to detector pixels the calculated and measured images can then be compared using the same peak positions, line shapes, relative Bragg intensities, and projected L-integrated profiles.
+The detector-space intensity model begins from the same geometric object used for detector-space indexing: the allowed reciprocal-lattice intersections and their detector coordinates.\cite{SmilgiesLi2026IndexGIXS} It then goes beyond predicted spot centers by redistributing the structure-factor intensity of the contributing reflections over mosaic distributions. By Monte Carlo sampling the incident beam profile across those orientations, weighting each ray by transmission and optical attenuation, and mapping the summed intensity to detector pixels, the calculated and measured images can be compared using the same peak positions, line shapes, relative Bragg intensities, and projected $L$-integrated profiles.
 \subsection{Diffraction Geometry}
 
 We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Elastic scattering requires

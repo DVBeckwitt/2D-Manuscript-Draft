@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-06-25
+Last updated: 2026-06-29
 
 This is the canonical manuscript guidance and status document for the 2D diffraction / mosaicity manuscript. It subsumes the previous advisor notes, meeting-prep checklists, figure status, supplement status, changelogs, and manuscript task trackers. Use this file as the single source of truth for writing, rewriting, figure planning, caption drafting, structural editing, and manuscript triage.
 
@@ -365,6 +365,7 @@ Highest-priority cuts before the next advisor draft:
 
 | Date | Decision / change | Current interpretation |
 |---|---|---|
+| 2026-06-29 | Added Smilgies/Li indexGIXS citation and narrowed detector-space framing. | Smilgies and Li are now cited as prior art for calculating/overlaying grazing-incidence diffraction-spot positions directly in detector space. The manuscript contribution is framed as detector-space intensity/profile forward modeling after the geometric indexing step, not as novelty in detector-space indexing itself. |
 | 2026-06-25 | Pruned generated figure diagnostics. | Removed 76 unreferenced generated PbI2 assets: misplaced ordered-folder outputs, parent-level generated exports, and low/medium/high `profiles/` diagnostics. Active manuscript and supplement figure paths remain the source contract for retained assets. |
 | 2026-06-25 | Integrated annotated-PDF changes. | Low-L near-origin intensity is described as reflectivity; optical-to-kinematic handoff terminology is used; Figure 8 is a single overlay of measured Bi2Se3 near-critical m=0, Parratt, and kinematic traces. Digitized figure inputs should be replaced by direct array exports before final submission. |
 | 2026-06-25 | Consolidated legacy manuscript tracking. | Advisor notes, meeting-prep notes, figure status, supplement status, changelogs, TODO tracking, old patch handoffs, and temporary review artifacts are subsumed here or removed. Git history remains the archive for exact old wording. |
@@ -388,12 +389,12 @@ Highest-priority cuts before the next advisor draft:
 
 | Area | Status | Notes |
 |---|---|---|
-| Feature | DONE | `MANUSCRIPT_STATUS.md` remains the single source for advisor guidance, manuscript status, figure status, supplement scope, open questions, build notes, decision history, and revision checklist. Removed 76 unreferenced generated PbI2 assets from `figures/`. |
-| Bug/error | DONE | Stale references to deleted tracking docs, patch-handoff files, and removed generated figure diagnostics were checked. Local scans found no remaining external references to the removed paths. |
-| CI/CD | CHECK | No CI workflow behavior changed. Local quality gates for this cleanup are reference scans, LaTeX figure path resolution, diff whitespace check, and untracked/ignored artifact checks. No LaTeX build was run because no `.tex` source changed and no included figure path was touched. |
-| Deprecation/migration | DONE | Separate advisor-note, meeting-prep, figure-status, supplement-status, input-inventory, TODO, changelog, old patch, temporary review-artifact files, and unreferenced generated diagnostics are deprecated in favor of current manuscript sources plus this document. Active manuscript sources, included figure assets, bibliography sources, `main.pdf`, and `2D_Supplemental/SI_failure_modes.pdf` remain retained review artifacts. |
-| Documentation | DONE | The document policy below records that future manuscript guidance, active status, open questions, cleanup decisions, and durable decisions belong here unless a separate document is explicitly requested. |
-| Shipping/rollback | DONE | No external release or deployment was published. This is a git-only cleanup and documentation consolidation; rollback is a normal revert of the commit. |
+| Feature | DONE | Added `SmilgiesLi2026IndexGIXS` to `bibliography/references.bib` and cited indexGIXS in the introduction, model opening, workflow, and discussion as prior art for detector-space visualization/indexing. |
+| Bug/error | DONE | Corrected the framing risk that bare "detector-space forward model" could imply novelty in detector-space spot-position calculation or indexing. The manuscript now uses detector-space intensity/profile language for the present contribution, and a source scan found no remaining bare `detector-space forward model` matches in `sections/`. |
+| CI/CD | DONE | Existing LaTeX CI workflow and build script were left unchanged. Local guarded rebuild succeeded with `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-main.ps1`; `main.pdf` was regenerated, `build/main.bbl` contains the new citation, and the final log has no unresolved citation or reference warnings. |
+| Deprecation/migration | DONE | Deprecated the broader manuscript phrasing in favor of the narrower detector-space intensity/profile-forward-model framing. The geometric indexing stage is now explicitly separated from later intensity, profile, mosaicity, resolution, optical, structure-factor, and disorder calculations. |
+| Documentation | DONE | This status file records the citation/framing decision, verification state, and release boundary. No separate advisor-note, changelog, or patch-handoff file was created. |
+| Shipping/rollback | DONE | No external release was published. The review artifact `main.pdf` was rebuilt locally; rollback is a normal `git revert` of the citation/framing commit. |
 
 ## Build And Reset Recovery
 
