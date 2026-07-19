@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-06-29
+Last updated: 2026-07-18
 
 This is the canonical manuscript guidance and status document for the 2D diffraction / mosaicity manuscript. It subsumes the previous advisor notes, meeting-prep checklists, figure status, supplement status, changelogs, and manuscript task trackers. Use this file as the single source of truth for writing, rewriting, figure planning, caption drafting, structural editing, and manuscript triage.
 
@@ -8,7 +8,7 @@ Former detailed documents are intentionally not required for active work; git hi
 
 ## Source Context
 
-Primary meeting source: Dr. Paul Maselli / David manuscript discussion on 2026-04-30.
+Primary meeting source: Dr. Paul F. Miceli / David manuscript discussion on 2026-04-30.
 
 No next advisor meeting date is currently known. The earlier planned date, 2026-05-07, is past.
 
@@ -18,9 +18,12 @@ Source context used during current revisions:
 
 | Item | Role |
 |---|---|
-| `Voice 260430_141619_llm.txt` | Transcript/source notes from the 2026-04-30 Maselli meeting. |
+| `Voice 260430_141619_llm.txt` | Transcript/source notes from the 2026-04-30 Miceli meeting. |
 | `2D-Manuscript-Draft.zip` | Manuscript repo archive used to identify current section and figure structure. |
 | `Combined_variance_report_PbI2_Bi2Te3_Bi2Se3_updated.tex` | Technical/report material available for uncertainty and manuscript cross-checking. |
+| `Advisor_Writing_Philosophy.md` | General writing principles distilled from the advisor's repeated guidance. Integrated below and in `AGENTS.md`. |
+| `Comment_by_Comment_Response_Plan.md` | Proposed response to the 22 annotations. Independently audited below rather than accepted automatically. |
+| `Commented_Manuscript_Paul_Miceli.pdf` | Exact 29-page annotated manuscript used to verify comment wording, authorship, order, and highlighted targets. |
 
 Current `main.tex` includes:
 
@@ -44,6 +47,73 @@ Current `main.tex` includes:
 | DONE | Incorporated into the manuscript or supplement in a form ready for advisor review. |
 | PARKED | Important, but intentionally deferred. |
 | CHECK | Needs advisor verification or a decision. |
+| BLOCKED | Cannot be completed until a specific missing input, source, or calculation is available. |
+
+## Advisor Comment Audit And Revision Tasklist - 2026-07-18
+
+The packet inventory was checked against the annotated PDF rather than inferred from the response-plan Markdown. The 29-page PDF contains exactly 22 substantive annotations by Paul Miceli: 18 sticky notes and 4 highlighted-text comments on pages 1, 3, 5, 6, 7, 8, 11, 14, and 17. No substantive annotation is missing from the response plan.
+
+Audit verdicts:
+
+- **AGREE**: the packet's proposed response is appropriate as written in substance.
+- **AGREE WITH MODIFICATION**: the advisor's intent is sound, but the proposed implementation is too broad, too certain, duplicative, or must be conditioned on the actual model/data.
+- **DISAGREE WITH PROPOSED IMPLEMENTATION**: the underlying advisor concern is valid, but the packet prescribes wording or work that should be replaced rather than merely adjusted.
+- **CHECK**: the advisor's wording is ambiguous enough that it should not be treated as a settled literal instruction.
+
+Overall, the packet is directionally strong. The independent audit agrees with 10 proposed responses, agrees with 10 after modification, and disagrees with 2 proposed implementations (C20 and C21) while accepting the underlying advisor concerns. Current manuscript closure is 1 fully addressed, 13 partially addressed, 7 unaddressed, and 1 blocked on missing/uncertain experimental geometry. The main weaknesses of the packet are that it occasionally prescribes an implementation before the calculation has been verified, treats one heading edit too confidently, does not audit the structure-factor and optical conventions before reorganizing them, and makes a three-way optical-constant ablation sound mandatory before its scientific payoff and boundary-condition implementation are established.
+
+One packet instruction is stale relative to the repository: the ordered Bi2Se3/Bi2Te3 detector and profile panels no longer need to be “restored.” The assets exist and already show close measured/calculated overlays. They still need readability checks, residual/uncertainty support, and verification that the displayed curves and labels are generated from the final analysis.
+
+### Independent critical findings beyond the packet
+
+1. **The current low-\(L\) bandwidth-scaling argument is not yet safe to publish.** The SI derives \(\Delta\psi\propto1/L\) by holding the Ewald-sphere center fixed while varying its radius. Physical wavelength variation changes both center and radius; the Bragg-law limit instead gives \(\Delta\theta_B\simeq(\Delta\lambda/\lambda)\tan\theta_B\). Treat the present \(1/L\) explanation as `CHECK` until a moving-center derivation and direct simulation/ablation establish the observed feature.
+2. **The annotation's 003/006 detuning premise may compare unlike angles.** The manuscript gives \(c=28.6561\) Å and nominal 003/006 positions near \(2\theta=6^\circ/12^\circ\), which imply \(\lambda\approx1.00\) Å and conventional \(\theta_{B,003}\approx3.00^\circ\), \(\theta_{B,006}\approx6.01^\circ\). At \(\theta_i=5^\circ\), the naive Bragg-angle offsets would make 006 closer, not “very far” from condition. Do not use either subtraction as the final result; compute the full vector/orientation mismatch with actual wavelength, alignment, and angle definitions before using 003/006 visibility as evidence for the long tail.
+3. **The optical implementation needs a physics audit before a sensitivity plot.** Use tangential-wavevector conservation and \(k_z=\sqrt{(\tilde n k_0)^2-k_\parallel^2}\) with the decaying branch as the primary boundary condition. Verify whether attenuation is integrated over normal depth or ray path, and convert field transmission amplitudes to flux consistently. A visually plausible ablation cannot validate an inconsistent propagation model.
+4. **The near-critical handoff is not yet validation evidence.** The plotted Parratt and kinematic limits do not show the full blended forward prediction, the blend is ad hoc unless justified, and mosaic averaging of the optical branch is unspecified. Its README also records that the arrays were digitized from the annotated PDF, raster artifacts were repaired, and a visible plateau substitutes for a clipped branch. This figure is provisional and non-evidentiary; replace it with direct measured and calculated array exports and show the complete prediction against data or state the limitation.
+5. **“Validation” currently means in-sample fit unless a held-out test is added.** All three listed incident angles appear to be used in refinement. Either call the examples fit/test cases and describe the evidence honestly, or reserve one or more angles/material conditions for a predictive check.
+6. **The structure-factor convention is dimensionally ambiguous.** The current text combines a reciprocal vector \(\mathbf G\), fractional coordinates, an explicit \(2\pi\) phase, and a Debye-Waller exponent without stating whether reciprocal basis vectors include \(2\pi\). Establish one consistent crystallographic convention before reordering the subsection.
+7. **The next-draft PbI2 scope is disproportionate.** `results_diffuse_pbi2.tex` is 348 lines versus 49 lines for ordered validation and still reports a pending transition-matrix refit. For the next advisor draft, either omit PbI2 from the main text or reduce it to the measured motivation and one final data/model panel; move the transition-matrix derivation, parameter table, and parent-stack detail to SI.
+8. **Notation drift will worsen the requested equation expansion unless it is consolidated first.** The sources mix \(Q_r/Q_R\), \(h,H\), \(\phi,\varphi\), and use \(\eta\) both for mosaic-cap angular half-width and Lorentzian mixture weight. Create one notation ledger, choose conventions, and consolidate `SI_implementation_outline.tex` into the built SI rather than creating a third geometry source.
+9. **The ordered overlays are visually strong but not yet provenance-ready.** This repository has PNG/JSON assets but no generation source or raw plotted arrays for the ordered panels. Record normalization and scaling, verify whether relative intensities share a meaningful scale, retain direct source arrays/scripts, add residual/uncertainty support, reduce bands that obscure data, and fix the clipped-looking Bi2Te3 detector y-axis labels.
+10. **“Grown by TEM” is ambiguous and likely misleading to readers.** Define the intended growth-method acronym or replace it with the full method; otherwise TEM reads as transmission electron microscopy.
+
+| ID | Advisor request | Audit verdict | Current state | Priority | Independent recommendation and acceptance gate |
+|---|---|---|---|---|---|
+| C01 | Open with 2D van der Waals films | AGREE | DONE | P1 | Resolved in the opening paragraphs and first figure of `sections/introduction.tex`. The 115-word first paragraph now follows layered-film importance -> substrate/growth-dependent azimuthal registry -> operational 2D-powder definition -> simultaneous area-detector observables, with no model or software language. The material-family catalogue was removed, the orientational-limits comparison is now the first visual, citation fit was checked, and a clean build plus rendered review of `main.pdf` pages 1-3 verified the change. |
+| C02 | Explain the Ewald sphere and diffraction selection | AGREE WITH MODIFICATION | IN PROGRESS | P1 | Teach the elastic/Ewald condition once in a primary location, revise the reciprocal-space figure or caption so the sphere and intersections are visible, and cross-reference it elsewhere instead of duplicating tutorials. Accept when the single-crystal, 3D-powder, and 2D-powder detector signatures follow visibly from the drawn intersections. |
+| C03 | State accomplishments and outline the paper | AGREE | IN PROGRESS | P2, last prose pass | Keep the existing contribution/roadmap close as a draft, but finalize it only after the ordered-film evidence and uncertainty boundary are fixed. Accept when every claimed accomplishment points to displayed evidence and PbI2 remains an extension. |
+| C04 | Define \(\mathbf k_i\), \(\mathbf k_f\), \(\mathbf Q\), and \(\mathbf G\); number equations | AGREE | IN PROGRESS | P1 | Define every vector in prose before first use; place elastic scattering, momentum transfer, Bragg matching, and exit-vector relations in numbered, labeled equations with text references. Build a notation ledger before expanding equations. Accept when no central symbol is inferentially defined and the main/SI notation scan is consistent. |
+| C05 | Define sample intersection | AGREE WITH MODIFICATION | TODO | P1 | Define the ray-film-plane hit and finite-sample rejection in physical language, but verify the actual coordinate convention and code behavior before writing the formula. Put the full ray-plane equation in SI. Accept when prose, equation, figure, and implementation describe the same boundary test and no second footprint factor double-counts rejected rays. |
+| C06 | Unpack incidence geometry and optical corrections | AGREE WITH MODIFICATION | TODO | P1 | Replace the overloaded sentence with the actual causal pipeline, one operation per sentence. Do not commit to the packet's proposed operation order until it is checked against the model. Accept when each operation has a physical object/input/output and detailed transforms are cross-referenced to SI. |
+| C07 | Introduce Monte Carlo sampling with incident rays | AGREE | IN PROGRESS | P1 | State immediately that wavelength, beam position, and direction are sampled from measured beam distributions; describe mosaic-event sampling separately; state that Miller pairs are enumerated, not Monte Carlo sampled. Accept when the two probability spaces and the discrete reflection construction cannot be confused. |
+| C08 | Explain footprint from sample intersection | AGREE WITH MODIFICATION | TODO | P1 | Define one ray intersection first and the footprint as the distribution/envelope of accepted intersections. Repair the existing sample-geometry figure rather than automatically adding another figure. Verify whether ray rejection already supplies the footprint so an additional multiplicative correction does not double-count it. Accept when beam size, incidence angle, sample bounds, hit point, and weighting are connected explicitly. |
+| C09 | Replace vague labels/profile extraction language | AGREE WITH MODIFICATION | IN PROGRESS | P1 | Replace software nouns with symmetry-family grouping, a finite detector integration band, and the reported \(I(Q_z)\) or \(I(L)\) profile. Use \(Q_R\) consistently. Accept when the method sentence and ordered-film caption identify the same bands and observables. |
+| C10 | Explain reciprocal-space construction algorithm | AGREE WITH MODIFICATION | IN PROGRESS | P1 | Retain the current deterministic \((H,K)\) enumeration but add verified bounds, systematic-absence handling, symmetry grouping, Ewald/Bragg intersection, detector acceptance, and stopping criteria in SI. Accept only after these details are checked against the actual implementation. |
+| C11 | Put geometric-correction equations in SI | AGREE | TODO | P1 | Extend and unify the existing SI rather than duplicating its projection and optical derivations: add coordinate frames, sample/detector rotations, ray-plane and detector-plane intersections, finite-sample acceptance, and pixel mapping, then cross-reference the existing projection/refraction pieces as one chain. Accept when the SI builds and the main text cites the complete section. |
+| C12 | Repair Figure 4 and caption | AGREE | TODO | P1 | Redraw rather than patch the caption. Establish whether \(\mathbf g\) is an axis or arm; remove or unambiguously draw \(\delta\); show \(X_s,W,H\) or move them to SI. Accept when every drawn symbol is defined and every caption symbol is visible. |
+| C13 | Put structure factor before multiplicity | AGREE WITH MODIFICATION | TODO | P1 | Reorder to one reflection and then family grouping, but first fix the reciprocal-vector/fractional-coordinate/\(2\pi\)/Debye-Waller convention. Accept when the phase and displacement exponents are dimensionally consistent, then \(\mathbf G_{hkl}\), \(F_{\mathbf G}\), and \(|F_{\mathbf G}|^2\) precede multiplicity. |
+| C14 | Replace \(\mathbf M_\parallel\) with the explicit 2D-powder rule | AGREE WITH MODIFICATION | IN PROGRESS | P1 | For the hexagonal test cases use \(m=H^2+HK+K^2\) and \(Q_R=4\pi\sqrt m/(\sqrt3a)\), but explicitly call \(m\) a radial/family index, not a multiplicity. Define multiplicity separately as the count of allowed equivalent \((H,K)\) members. Accept when \(Q_r/Q_R\), upper/lower-case Miller indices, and family/multiplicity notation are consistent in text, SI, figures, and captions. |
+| C15 | Reframe the mosaicity introduction | AGREE | IN PROGRESS | P1 | The present paragraph already distinguishes in-plane powder rotation from out-of-plane mosaicity; revise it to complete the advisor's causal sequence and state why an area detector is sensitive before showing the observation. Accept when cause, detector consequence, observation, and model appear in that order. |
+| C16 | Replace “a limited part” with a quantitative condition | AGREE | BLOCKED | P0 | The repository does not report the beam wavelength, and the annotation's near/far premise may compare incidence with displayed \(2\theta\). Once the experimental spectrum is supplied, calculate the full 003/006 vector-orientation mismatch from wavelength, refined \(c\), alignment, bandwidth, and the incidence convention; state whether any reported quantity is \(\theta_B\), \(2\theta\), exit angle, or required crystallite tilt. Accept when the manuscript gives a reproducible like-for-like condition and eliminates “limited.” |
+| C17 | Remind the reader that \(\phi\) is azimuth | AGREE | IN PROGRESS | P2 | Write “azimuthal extent along detector-plane angle \(\phi\)” and confirm that \(\phi\) is defined earlier. Accept when \(\phi/\varphi\) usage is intentional and a notation search finds no unexplained first use. |
+| C18 | Demonstrate Gaussian core plus Lorentzian tail quantitatively | AGREE WITH MODIFICATION | IN PROGRESS | P0 | First correct or independently validate the moving-center bandwidth treatment so the tail is not compensating for a geometric artifact. Then show both (a) the final fit with the tail removed while other parameters are fixed and (b) a fairly re-optimized Gaussian-only nested model, alongside the Gaussian-plus-Lorentzian fit, multi-angle data, residuals, and identical verified geometry/instrument settings. Report widths, tail fraction, parameter correlation/uncertainty, and a declared comparison metric if supported. Accept when the necessity claim survives compensation by bandwidth/divergence/background across more than one condition and the Lorentzian form remains phenomenological, not unique. |
+| C19 | Separate \(L\approx0\) intensity from mosaicity | AGREE WITH MODIFICATION | IN PROGRESS | P0 | Retain only a short signpost in the mosaic observation/caption and keep the mechanism in a distinct near-critical reflectivity subsection. State explicitly whether mosaicity enters that optical branch; do not infer causation from detector overlap. The present limiting-curve figure omits the blended prediction and uses digitized/repaired/clipped-source traces, so it is provisional and cannot validate the assignment. Accept only after direct measured/model arrays show the full prediction or the limitation is stated, and the two mechanisms cannot be conflated. |
+| C20 | Introduce and justify optical constants | DISAGREE WITH PROPOSED IMPLEMENTATION | IN PROGRESS | P0 | Accept the advisor's request to explain and bound optical importance, but do not make the packet's three-way publication deliverable mandatory. Move the duplicated long derivation to SI, first verify tangential-wavevector conservation, the complex normal boundary condition, decaying branch, attenuation coordinate, and flux normalization, then run full- versus fixed-\(n\) sensitivity by declared ROI and \(Q_z\) range. Use \(n=1\) only as a separate total-optics-off diagnostic where meaningful. Add a main-text figure only if the effect is scientifically consequential. |
+| C21 | Reframe ordered films as “Test cases:” | DISAGREE WITH PROPOSED IMPLEMENTATION / CHECK | IN PROGRESS | P0 | Coordinate-level extraction verifies that the highlight covers “Results: ordered.” The most literal low-risk edit is therefore “Test cases: Bi2Se3 and Bi2Te3 films,” replacing the highlighted phrase. Do not add the packet's invented word “Validation” unless the advisor confirms it; all listed angles appear fitted, so do not imply held-out prediction without a genuine holdout. Make the opening state exactly which positions, line shapes, intensities, and non-obvious features are tested. |
+| C22 | Move workflow directly after ordered validation | AGREE | TODO | P0 | Change the order to ordered validation -> refinement workflow -> PbI2 extension and delete the workflow's current placement meta-comment. Accept when `main.tex`, the workflow opening, section cross-references, and the introduction roadmap all agree. |
+
+### Recommended execution order
+
+1. **Lock the evidence (C16, C18-C20 plus the ordered-film overlays).** Verify wavelength/lattice inputs and detunings; produce the controlled mosaic ablation; validate the optical boundary-condition implementation and show the full near-critical prediction or an explicit limitation; determine the bounded role of optical constants; finish figure readability and residual checks. Claims remain provisional until this gate passes.
+2. **Repair story order (C19, C21, C22).** Separate near-critical optics from mosaicity, make the ordered films explicit test cases, state whether each comparison is an in-sample fit or a held-out prediction, place the workflow immediately after them, and keep PbI2 downstream.
+3. **Rewrite the geometry/construction tutorial (C02, C04-C12).** Define vectors and physical objects in the main text, repair Figures 2 and 4, and add the reproducible equation/algorithm chain to SI.
+4. **Repair and simplify reflection notation (C13-C14).** First make the reciprocal-vector, phase, coordinate, and Debye-Waller conventions dimensionally consistent. Then explain one reflection and its structure factor before family grouping; replace the abstract metric with the explicit hexagonal relation and distinguish family index from multiplicity.
+5. **Polish mosaicity language (C15-C17).** Complete the causal introduction, replace vague selection language with verified detunings, and repair the \(\phi\) reminder.
+6. **Finish the introduction and teaching captions last (C03 and all affected figures).** The C01 layered-film-first opening is complete. Once evidence and section order are stable, finalize the accomplishments paragraph, roadmap, and captions that teach the complete comparison.
+
+### Completion protocol
+
+For each C01-C22 item, record the exact revised manuscript/SI location, the evidence or build used to verify it, and one of `TODO`, `IN PROGRESS`, `DONE`, `CHECK`, `BLOCKED`, or `PARKED`. A placeholder, future-tense caption, or related paragraph is not `DONE`. Any disagreement or deliberate non-adoption must be evidence-based and recorded here before the response letter is drafted.
 
 ## Core Thesis
 
@@ -70,6 +140,12 @@ Use "refinement-quality" carefully. Tie it to plotted data/model overlays, propa
 11. Use the data as the hook: unexpected reflections, the m=0, L=3 star feature, and low-Q / low-L features should motivate mosaicity, bandwidth, and the full detector-space model.
 12. Treat explanation itself as a contribution when the geometry is counterintuitive or underexplained.
 13. Draft big, then cut. Move implementation-heavy details later, after the main argument is understandable.
+14. Define symbols and specialized terms before use, number important equations, and refer to them explicitly.
+15. Prefer simple, explicit notation. Keep a reflection-family index distinct from the number of symmetry-equivalent reflections in that family.
+16. Preserve causal order and avoid overloaded sentences; at difficult points, give each physical or computational operation its own sentence.
+17. Replace vague qualifiers with testable conditions, numerical values, or direct comparisons.
+18. When a model component is claimed to be necessary, show an otherwise-identical ablation, residuals, fitted values, and uncertainties where feasible.
+19. Keep the strongest completed result ahead of extensions, future capabilities, and implementation detail.
 
 ## Primary Story
 
@@ -94,7 +170,7 @@ The paper should follow this logic:
 |---|---|---|
 | `main.tex` scaffold | DONE | Inputs model, mosaic/correlated effects, ordered results, PbI2 extension, workflow, and conclusion. |
 | Build plumbing | DONE | Uses standard BibTeX via `\bibliography{bibliography/references}`. Generated aux, BBL, log, SyncTeX, and non-review PDFs are ignored. |
-| `sections/introduction.tex` | IN PROGRESS | Should focus breadth around layered-film orientation and ordered-film validation. |
+| `sections/introduction.tex` | IN PROGRESS | C01 layered-film-first opening and first-visual order are resolved; C02/C03 tutorial, contribution, and roadmap work remains. |
 | `sections/modelling_methods.tex` | IN PROGRESS | Keep the main narrative in Q/Q_R/Q_z/m language; move coordinate bookkeeping to SI. |
 | `sections/mosaicity_texture.tex` | IN PROGRESS | Begins from low-L / m=0 observational motivation; still benefits from stronger direct Lorentzian-tail evidence. |
 | `sections/correlated_effects.tex` | IN PROGRESS | Contains bandwidth / Bragg-sphere / mosaic-cap tutorial material. |
@@ -112,12 +188,21 @@ The paper should follow this logic:
 
 | Task | Status | Deliverable | Notes |
 |---|---|---|---|
-| Create Bi2Se3 detector/projection figure | IN PROGRESS | Main-text figure | Show measured data prominently with Q/Q_R/Q_z trajectories or integration regions. |
-| Create Bi2Te3 detector/projection figure | IN PROGRESS | Main-text figure | Use the same logic and styling as Bi2Se3. |
+| Finalize Bi2Se3 detector/projection figure | IN PROGRESS | Main-text figure | Asset exists; verify direct-source provenance/scaling, keep measured data prominent, reduce obscuring band weight, and complete label/readability checks. |
+| Finalize Bi2Te3 detector/projection figure | IN PROGRESS | Main-text figure | Asset exists; match Bi2Se3 styling and fix the clipped-looking detector y-axis labels before reuse. |
 | Add Bi2Se3 Q_z projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity versus Q_z. |
 | Add Bi2Te3 Q_z projection overlays | IN PROGRESS | Figure panels | Plot measured and calculated intensity versus Q_z. |
 | Define reflection-family labels | IN PROGRESS | Figure/caption convention | Initial m-indexed convention is present; final notation still needs advisor check. |
-| Add early two-component mosaicity evidence | IN PROGRESS | Text + figure | Low-L m=0 evidence is inserted; a direct narrow-core versus Lorentzian-tail comparison may still be needed. |
+| Add early two-component mosaicity evidence | IN PROGRESS | Text + controlled comparison | Low-L m=0 evidence is inserted; advisor comment C18 now requires a matched Gaussian-core-only versus Gaussian-plus-Lorentzian comparison with residuals and fitted uncertainty. |
+| Verify ordered-figure provenance and scaling | TODO | Reproducible figure record | Retain scripts/direct arrays; state normalization and whether scales are common across families/images; add residual/uncertainty support before claiming relative-intensity validation. |
+| Verify moving-center bandwidth geometry | CHECK | Corrected derivation + direct simulation | Replace or validate the fixed-center 1/L argument before it supports low-L or mosaic-tail claims. |
+| Verify 003/006 Bragg conditions and orientation mismatch | BLOCKED | Quantitative sentence + calculation record | Obtain the actual wavelength distribution, then use full vector geometry, refined lattice, alignment, bandwidth, and explicit angle definitions; do not subtract incidence from displayed 2theta. |
+| Bound the role of optical constants | TODO | ROI sensitivity statement + SI physics check | Validate boundary conditions/attenuation/flux first; compare full versus fixed n by declared ROI. Use n=1 only as a separate total-optics diagnostic. |
+| Replace provisional reflectivity traces | BLOCKED | Direct-array full prediction | Current plot is digitized/repaired and omits the blended curve. Obtain direct measured and model arrays, show the full prediction, and declare how mosaicity enters. |
+| Reorder workflow before PbI2 | TODO | `main.tex` + workflow opening | Required sequence: ordered-film validation, refinement workflow, then PbI2 extension. Remove the placement meta-comment. |
+| Confirm ordered-section “Test cases:” intent | CHECK | Heading decision | Provisional literal edit is “Test cases: Bi2Se3 and Bi2Te3 films”; do not add “Validation” without confirmation or a held-out test. |
+| Decide next-draft PbI2 scope | TODO | Main-text/SI boundary | Prefer omission until refit, or reduce to measured motivation plus one final data/model panel and move transition-matrix detail to SI. |
+| Define or correct “grown by TEM” | CHECK | Results wording | Spell out the intended growth method; avoid the transmission-electron-microscopy reading. |
 | Write Q-space/projection caveat | DONE | Methods/results paragraph | Results state why projected Q_z is not an ideal perfect-crystal cut and why data/model comparison remains meaningful. |
 | Add experimental incident-angle table | TODO | Methods or workflow table | List all collected angles, not just shown angles. |
 | Replace remaining future-tense scaffold prose | TODO | Results prose | Convert "should show" language to result-forward statements once final figures are inserted. |
@@ -126,10 +211,13 @@ The paper should follow this logic:
 
 | Task | Status | Deliverable | Notes |
 |---|---|---|---|
-| Write 2theta-phi/caked implementation supplement | TODO | Supplement section | Main text should not be driven by this. |
+| Consolidate 2theta-phi/caked implementation supplement | IN PROGRESS | Built supplement section | Material exists in an unassembled outline and the built SI; merge into one canonical source rather than duplicating it. |
 | Explain sub-pixelation/binning | TODO | Supplement section | Needed for pixel-sensitive detector transformations. |
-| Explain Monte Carlo beam sampling | TODO | Supplement section | Include wavelength, beam position, and divergence. |
-| Explain mosaic-event sampling | TODO | Supplement section | Describe optimized sampling and validation. |
+| Explain Monte Carlo beam sampling | IN PROGRESS | Supplement section | Outline exists but is unassembled; include wavelength, beam position, divergence, event counts, seeds, and convergence. |
+| Explain mosaic-event sampling | IN PROGRESS | Supplement section | Outline exists but is unassembled; separate it from beam sampling and document convergence/validation. |
+| Create a notation ledger | TODO | Main text + SI convention table | Resolve Q_r/Q_R, h/H, phi/varphi, and the duplicate eta meanings before expanding equations. |
+| Complete geometric-correction SI chain | TODO | Supplement section | Add frames, rotations, ray-plane and detector-plane intersections, finite-sample acceptance, refraction/transmission, pixel mapping, and projection bands. |
+| Repair sample-geometry Figure 4 | TODO | Main-text figure + caption | Resolve axis/arm naming, delta, X_s, W, and H with a one-to-one symbol contract. |
 | Add h-BN fitting method | TODO | Supplement section | Unique workflow step mentioned in the paper. |
 | Assemble full ordered-film peak-profile checks | TODO | Supplement figures | Good place for full measured/calculated profile panels. |
 | Finalize structure-factor/CIF/SIF and occupancy discussion | TODO | Main text plus SI | State what was fit, including size of occupancy changes. |
@@ -146,16 +234,24 @@ The paper should follow this logic:
 
 ## Immediate Checklist
 
-- [ ] Bi2Se3 measured detector image with Q/Q_R/Q_z trajectory or integration-region annotation.
-- [ ] Bi2Se3 measured/calculated Q_z projection overlays.
-- [ ] Bi2Te3 measured detector image with Q/Q_R/Q_z trajectory or integration-region annotation.
-- [ ] Bi2Te3 measured/calculated Q_z projection overlays.
+- [ ] Final QA/provenance for the existing Bi2Se3 measured detector image and integration-region annotation.
+- [ ] Final QA/provenance, scaling declaration, and residual/uncertainty support for the existing Bi2Se3 overlay.
+- [ ] Final QA/provenance and y-axis-label repair for the existing Bi2Te3 detector image.
+- [ ] Final QA/provenance, scaling declaration, and residual/uncertainty support for the existing Bi2Te3 overlay.
 - [x] Initial m or explicit (h,k,l) reflection-family label convention.
 - [x] Paragraph explaining imperfect Q-space/projection interpretation.
 - [x] Paragraph and figure concept for two-component mosaicity / Lorentzian-tail evidence.
 - [ ] Table or list of all incident angles collected for Bi2Se3 and Bi2Te3.
-- [ ] Supplement outline for 2theta-phi implementation, sub-pixelation, Monte Carlo sampling, and h-BN fitting.
-- [ ] Direct mosaicity/Lorentzian-tail comparison panel if advisor wants stronger evidence.
+- [ ] Consolidate the unassembled implementation outline into the built SI; add the missing geometry chain and a notation ledger.
+- [ ] Correct/validate moving-center bandwidth geometry before using the current 1/L claim.
+- [ ] Fair Gaussian-only refit, same-fit no-tail counterfactual, and Gaussian-plus-Lorentzian comparison across multiple angles with residuals/correlation/uncertainty.
+- [ ] Verified 003/006 full orientation mismatch from actual wavelength, lattice, alignment, bandwidth, and like-for-like angle definitions.
+- [ ] Physics-checked, bounded optical-constant sensitivity result; long duplicated derivation removed from main text.
+- [ ] Direct-array measured/full-model near-critical plot replacing the digitized/repaired limiting traces.
+- [ ] Workflow moved directly after ordered-film validation and before PbI2.
+- [ ] Literal provisional “Test cases:” heading marked for advisor confirmation; no added “Validation” without evidence.
+- [ ] Decide whether PbI2 is omitted or reduced to one result panel until the refit is complete.
+- [ ] Define/correct the “grown by TEM” phrase.
 
 ## Advisor Questions
 
@@ -163,11 +259,14 @@ The paper should follow this logic:
 - Which Bi2Se3/Bi2Te3 incident angles should be main-text figures versus supplement?
 - Should Lorentzian-tail evidence be a standalone figure or part of the mosaicity figure?
 - How many Q_z projection panels are enough for the main text?
-- Is the inserted star-feature crop enough mosaic-tail evidence, or is a direct narrow-core versus Lorentzian-tail comparison required?
+- Did “Test cases:” on page 14 request that exact heading prefix, or only validation framing?
+- After the targeted sensitivity check, should the optical-constant ablation appear in the main text or only in the supplement?
 
 ## Figure Guidance
 
 Figures must show data. Do not obscure measured detector intensity with too many Bragg-position circles, colored paths, markers, or labels.
+
+Quantitative figures must be generated from retained direct data/model arrays with documented scripts and normalization. Digitized, repaired, clipped, or placeholder curves are provisional and cannot support fits, residuals, ablations, or validation claims.
 
 Each main-text figure caption should state:
 
@@ -189,6 +288,7 @@ Each main-text figure caption should state:
 | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles_detector_selected_q_regions_5deg.png` | IN PROGRESS | Bi2Te3 detector trajectory/projection setup; match Bi2Se3 styling. |
 | `figures/results_ordered/figure7_bi2se3_qr_rod_qz_profiles.png` | IN PROGRESS | Bi2Se3 measured/calculated Q_z overlays; final axis/label check needed. |
 | `figures/results_ordered/figure7_bi2te3_qr_rod_qz_profiles.png` | IN PROGRESS | Bi2Te3 measured/calculated Q_z overlays; final axis/label check needed. |
+| `figures/correlated_effects/fig_reflectivity_data_parratt_kinematic.png` | CHECK | Provisional only: digitized/repaired traces, clipped-branch plateau, and no full blended prediction. Replace with direct exports before using as evidence. |
 | `figures/mosaic/lorentzian_tail_evidence.png` or existing ordered-film crop | TODO | Direct evidence that narrow-core mosaicity alone is insufficient. |
 | `figures/mosaic/bragg_sphere_bandwidth_size_series.png` | TODO | Bragg-sphere size / Ewald thickness / mosaic-cap tutorial. |
 | `figures/mosaic/delta_lambda_detector_series.png` | TODO | Detector-image sequence varying wavelength bandwidth, incidence angle, or Bragg-sphere size. |
@@ -201,7 +301,7 @@ Recommended main-text sequence:
 
 1. Orientational limits / 2D powder motivation.
 2. Model geometry and mosaicity.
-3. Low-L m=0 star-feature observation and bandwidth/mosaic-cap explanation.
+3. Low-L m=0 star-feature observation and a verified bandwidth/mosaic-cap explanation; otherwise label the mechanism as an open check.
 4. Bi2Se3 ordered-film detector setup and Q_z overlays.
 5. Bi2Te3 ordered-film detector setup and Q_z overlays.
 6. Refinement workflow and uncertainty/structure-factor framing.
@@ -365,6 +465,8 @@ Highest-priority cuts before the next advisor draft:
 
 | Date | Decision / change | Current interpretation |
 |---|---|---|
+| 2026-07-18 | Resolved advisor comment C01. | Replaced the WAXS-first opening with a 115-word layered-film-first paragraph, defined the 2D-powder state operationally, made substrate/growth dependence explicit, removed the material-family catalogue, and moved the orientational-limits comparison ahead of the PbI2 overview. The guarded build succeeded and rendered pages 1-3 passed visual review. |
+| 2026-07-18 | Audited the 22-comment Miceli packet and integrated the writing philosophy into `AGENTS.md`. | All comments are traceable here. Ten packet responses are accepted, ten require modification, and two proposed implementations are rejected/replaced while retaining the advisor's underlying concern. Critical physics/provenance checks now precede prose polish; at the time of this initial audit, no manuscript comment was fully closed. |
 | 2026-06-29 | Added Smilgies/Li indexGIXS citation and narrowed detector-space framing. | Smilgies and Li are now cited as prior art for calculating/overlaying grazing-incidence diffraction-spot positions directly in detector space. The manuscript contribution is framed as detector-space intensity/profile forward modeling after the geometric indexing step, not as novelty in detector-space indexing itself. |
 | 2026-06-25 | Pruned generated figure diagnostics. | Removed 76 unreferenced generated PbI2 assets: misplaced ordered-folder outputs, parent-level generated exports, and low/medium/high `profiles/` diagnostics. Active manuscript and supplement figure paths remain the source contract for retained assets. |
 | 2026-06-25 | Integrated annotated-PDF changes. | Low-L near-origin intensity is described as reflectivity; optical-to-kinematic handoff terminology is used; Figure 8 is a single overlay of measured Bi2Se3 near-critical m=0, Parratt, and kinematic traces. Digitized figure inputs should be replaced by direct array exports before final submission. |
@@ -393,7 +495,7 @@ Highest-priority cuts before the next advisor draft:
 | Bug/error | DONE | Corrected the framing risk that bare "detector-space forward model" could imply novelty in detector-space spot-position calculation or indexing. The manuscript now uses detector-space intensity/profile language for the present contribution, and a source scan found no remaining bare `detector-space forward model` matches in `sections/`. |
 | CI/CD | DONE | Existing LaTeX CI workflow and build script were left unchanged. Local guarded rebuild succeeded with `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-main.ps1`; `main.pdf` was regenerated, `build/main.bbl` contains the new citation, and the final log has no unresolved citation or reference warnings. |
 | Deprecation/migration | DONE | Deprecated the broader manuscript phrasing in favor of the narrower detector-space intensity/profile-forward-model framing. The geometric indexing stage is now explicitly separated from later intensity, profile, mosaicity, resolution, optical, structure-factor, and disorder calculations. |
-| Documentation | DONE | This status file records the citation/framing decision, verification state, and release boundary. No separate advisor-note, changelog, or patch-handoff file was created. |
+| Documentation | IN PROGRESS | This status file records the citation/framing decision, the independently audited 22-comment response plan, verification state, and release boundary. `AGENTS.md` now enforces the advisor philosophy and traceability rules. No separate advisor-note, response-plan, changelog, or patch-handoff file was created. |
 | Shipping/rollback | DONE | No external release was published. The review artifact `main.pdf` was rebuilt locally; rollback is a normal `git revert` of the citation/framing commit. |
 
 ## Build And Reset Recovery
@@ -441,6 +543,11 @@ Before returning a manuscript edit or new section, check:
 - Does main text discuss propagated/systematic error rather than hiding it entirely in SI?
 - Does the manuscript state what structural model, CIF/SIF file, occupancy changes, or structure-factor fitting were used?
 - Does the final comparison make the refinement-quality claim visible?
+- Are the Ewald vectors, reflection-family labels, multiplicity, angles, and specialized operations defined before use, with important equations numbered?
+- Have vague qualifiers been replaced by a testable condition, value, range, or controlled comparison?
+- If a component is called necessary, does an otherwise-identical ablation with residuals or a documented reason for not running one support that claim?
+- Does `main.tex` place ordered-film validation before the refinement workflow and PbI2 extension?
+- Does every C01-C22 item have an exact change location, verification evidence, and honest status?
 
 ## Document Policy
 
