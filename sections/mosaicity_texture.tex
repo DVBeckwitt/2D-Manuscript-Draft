@@ -1,34 +1,34 @@
 \subsection{Mosaicity}
 \label{sec:mosaicity}
 
-Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal illustrated in Fig.~\ref{fig:intro_2x3}(a,b,c). It is distinct from the random in-plane rotation that defines the two-dimensional powder limit. Random in-plane rotation generates the equivalent $m$-indexed rod family at a common in-plane reciprocal-space radius $Q_R$, while mosaicity determines which tilted members of that family can satisfy the Ewald condition at a fixed incident angle.
+Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal illustrated in Fig.~\ref{fig:intro_2x3}(g--i). It is distinct from the random in-plane rotation that defines the two-dimensional powder limit. Random in-plane rotation generates an $m$-indexed rod family at a common in-plane reciprocal-space radius $Q_R$, whereas mosaicity spreads each member over crystallite tilt. On an area detector, those two operations appear differently: random azimuthal rotation generates paired off-specular arcs for $m\neq0$, while out-of-plane tilt broadens the arcs and distributes $m=0$ intensity away from the ideal specular direction.
 
-Shown in Fig.~\ref{fig:hk0_low_l_star} is a full two-dimensional area-detector image of Bi$_2$Se$_3$ at $\theta_i=5^\circ$ with the low-\(L\), \(m=0\) specular region expanded. A single incident angle should select only a limited part of the specular \(m=0\) family if the film has only a narrow orientational distribution. The measured image instead contains unexpected \(00L\) intensity at \(L=3\) and \(L=6\), nominally near \(6^\circ\) and \(12^\circ\) in \(2\theta\), respectively. Their spread in \(\phi\) is direct evidence for crystallites tilted away from the mean layer normal, and their visibility at this incidence condition requires a long mosaic tail in addition to the narrow mosaic core. The near-origin \(L\approx0\) intensity is due to reflectivity and is retained in the crop to clarify how it can obscure the nearby \(003\) and \(006\) features used to interpret mosaicity and bandwidth; its treatment is given in Sec.~\ref{sec:reflectivity}. The \(2\theta\) breadth of the \(L=3\) feature is not assigned to mosaicity alone. Sec.~\ref{sec:bandwidth_mosaic_cap} explains how finite wavelength bandwidth broadens the Ewald condition for small Bragg spheres.
+Figure~\ref{fig:hk0_low_l_star} shows a full two-dimensional area-detector image of Bi$_2$Se$_3$ at $\theta_i=5^\circ$ with the low-$L$, $m=0$ region expanded. At a fixed incident orientation, an ideal perfectly aligned crystallite can satisfy at most one discrete $(00l)$ specular condition, and often none. The measured image instead contains intensity at the nominal $003$ and $006$ detector locations, near $6^\circ$ and $12^\circ$ in the displayed scattering angle $2\theta$. Their azimuthal extent along the detector-plane angle $\phi$ is consistent with a distribution of layer-normal tilts. The displayed $2\theta$ values cannot, however, be subtracted from $\theta_i$ to obtain the required crystallite tilt; that comparison requires the experimental wavelength and the full vector alignment geometry. The bright near-origin intensity lies in the near-critical specular region and is treated separately in Sec.~\ref{sec:reflectivity}; it is not used here as evidence for mosaicity. Bandwidth, divergence, alignment, background, and mosaicity remain coupled in the breadth and visibility of the higher-$L$ features.
 
 \begin{figure}[H]
   \centering
-  \textbf{Detector Image features of Bi$_2$Se$_3$}
+  \textbf{Detector-image features of Bi$_2$Se$_3$}
   \begin{minipage}{0.8\linewidth}
     \centering
     \draftfigureplaceholder{figures/results_ordered/00L_region_marked.png}{%
       Close-up of the low-$L$ $m=0$ detector feature. Show the star-like morphology and the bright near-origin intensity above the critical-angle region.
     }
   \end{minipage}
-  \caption{Close-up of the low-$L$ $m=0$ detector feature from the $5^\circ$ Bi$_2$Se$_3$ image. The bright near-origin intensity is assigned to near-critical reflectivity and is treated separately in Sec.~\ref{sec:reflectivity}. The star-like morphology of the \(L=3\) feature and the appearance of the \(L=6\) peak are not expected from an ideal single-crystallite calculation or from only a narrow mosaic distribution. These higher-\(L\) features reflect the combined effect of wavelength bandwidth and angular divergence, which give the Ewald sphere an effective thickness, and a long mosaic tail, which supplies tilted crystallites that bring otherwise off-condition specular-family intensity into the measured detector region.}
+  \caption{Close-up of the low-$L$, $m=0$ detector region from the $5^\circ$ Bi$_2$Se$_3$ image. The bright near-origin intensity lies in the near-critical specular region and is treated separately in Sec.~\ref{sec:reflectivity}. Intensity appears at the nominal $003$ and $006$ detector locations and extends along detector-plane azimuth $\phi$. An ideal perfectly aligned crystallite at one incident orientation can satisfy at most one discrete $(00l)$ condition. The coexistence of these features therefore motivates testing an orientational distribution broader than the narrow core, but bandwidth, divergence, alignment, and background must be held fixed before the broad component can be called necessary.}
   \label{fig:hk0_low_l_star}
 \end{figure}
 
-The in-plane rod-family arcs are described by a Gaussian mosaic distribution. The specular-family features expose a different part of the orientational distribution: weak intensity from crystallites tilted far enough from the mean normal to satisfy reflections that would otherwise be missed at the nominal incidence condition. A rapidly decaying Gaussian-like mosaic density can reproduce the central widths of near-condition features but does not provide enough tilted-crystallite population in the tails. We therefore use a compact two-component angular density,
+The in-plane rod-family arcs primarily constrain the narrow part of the orientational distribution, whereas weak off-condition specular-family intensity is more sensitive to its broad part. We represent those two scales with the compact phenomenological density
 \begin{equation}
-  \omega_{\mathrm w}(\Delta\theta;\eta,\Gamma,\sigma)
-  =\eta L_{\mathrm w}(\Delta\theta;\Gamma)
-  +(1-\eta)G_{\mathrm w}(\Delta\theta;\sigma),
-  \qquad 0\le \eta \le 1 .
+  \omega_{\mathrm w}(\Delta\theta;p_{\mathrm{tail}},\Gamma,\sigma)
+  =p_{\mathrm{tail}} L_{\mathrm w}(\Delta\theta;\Gamma)
+  +(1-p_{\mathrm{tail}})G_{\mathrm w}(\Delta\theta;\sigma),
+  \qquad 0\le p_{\mathrm{tail}} \le 1 .
   \label{eq:mosaic_two_component_maintext}
 \end{equation}
-Here $G_{\mathrm w}$ is the Gaussian-like core, $L_{\mathrm w}$ is the Lorentzian-like tail, $\eta$ is the Lorentzian weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent with shared centers.
+Here $G_{\mathrm w}$ is the Gaussian-like core, $L_{\mathrm w}$ is the Lorentzian-like tail, $p_{\mathrm{tail}}$ is the tail weight, and $\Delta\theta$ is the crystallite tilt relative to the mean layer normal. The two widths are independent with shared centers. The Lorentzian-like form is a convenient broad-tailed parameterization, not a claim that the physical distribution is uniquely Lorentzian. The present overlays establish that the two-component form is adequate within the refinement set; necessity requires both a fixed-parameter no-tail counterfactual and a fairly re-optimized Gaussian-only comparison.
 
-Figure~\ref{fig:mosaic_combo} summarizes how the orientational distribution manifests for \(m=0\) and \(m\neq 0\) in reciprocal space. For $m\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $m=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction, where the tail contribution is especially visible.
+Figure~\ref{fig:mosaic_combo} summarizes the reciprocal-space construction for $m=0$ and $m\neq0$. For $m\neq0$, random in-plane rotation and out-of-plane mosaicity produce off-specular arcs. For $m=0$, the same angular distribution produces cap-like $00L$ intensity near the specular direction. The radial coordinate is folded onto $Q_R\geq0$, so opposite signed in-plane tilt components map to the same $Q_R$ locus.
 
 \begin{figure}[H]
   \centering
@@ -52,7 +52,7 @@ Figure~\ref{fig:mosaic_combo} summarizes how the orientational distribution mani
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \paneltagged{(c)}{\draftfigureplaceholder{figures/mosaic/inplane_detector_band.png}{%
-      Calculated detector example for an off-specular $m\neq0$ rod family showing how the mosaic distribution appears as an arc or band on the detector.
+      Three-dimensional reciprocal-space schematic for an off-specular $m\neq0$ family, showing mosaic-smeared Bragg-sphere intensity relative to the Ewald-sphere intersection.
     }}
     \phantomcaption
     \label{fig:mosaic_combo:img_inplane}
@@ -60,13 +60,13 @@ Figure~\ref{fig:mosaic_combo} summarizes how the orientational distribution mani
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
     \paneltagged{(d)}{\draftfigureplaceholder{figures/mosaic/specular_detector_cap.png}{%
-      Calculated detector example for a specular $G_R=0$ reflection showing cap-like $00L$ intensity and the effect of the long mosaic tail.
+      Three-dimensional reciprocal-space schematic for a specular $Q_R=0$ reflection, showing the corresponding Bragg-sphere and Ewald-sphere intersection.
     }}
     \phantomcaption
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{Mosaic broadening in reciprocal space and detector space. (a,c) For $m\neq0$, random in-plane rotation and finite out-of-plane mosaicity give off-specular arcs or bands. (b,d) For $m=0$, the same orientational distribution gives cap-like $00L$ intensity near the specular direction. The narrow Gaussian-like core controls the main width of near-condition features, while the Lorentzian-like tail supplies the weak tilted-crystallite population needed for off-condition $m=0$ peaks.}
+  \caption{Mosaic broadening and Ewald selection in reciprocal space. (a) For $m\neq0$, the reciprocal vector has radial and film-normal components $Q_R$ and $Q_z$; its mosaic distribution occupies an arc on the folded $Q_R\geq0$ Bragg locus. (b) A specular $m=0$ vector lies at $Q_R=0$, and opposite signed tilts fold onto the same radial arc. (c,d) Three-dimensional reciprocal-space views place the corresponding off-specular and specular orientation distributions relative to the Ewald-sphere intersection. The narrow Gaussian-like core and weak Lorentzian-like broad component are the two fitted scales in Eq.~\eqref{eq:mosaic_two_component_maintext}; these schematics illustrate the selection geometry but are neither simulated detector images nor an ablation test of either component.}
   \label{fig:mosaic_combo}
 \end{figure}
 

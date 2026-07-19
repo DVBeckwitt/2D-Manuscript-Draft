@@ -177,6 +177,72 @@ def save_image(image, name):
     downsampled.save(ROOT / name)
 
 
+def redraw_single_crystal_detector():
+    """Draw a sparse, explicitly schematic single-crystal detector pattern."""
+    base = Image.new("RGBA", (CANVAS, CANVAS), (30, 19, 48, 255))
+
+    background = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    draw_gradient_disc(
+        background,
+        center=(CANVAS // 2, int(CANVAS * 0.62)),
+        radius=int(CANVAS * 0.48),
+        outer_rgb=(36, 24, 58),
+        inner_rgb=(35, 88, 136),
+        outer_alpha=0,
+        inner_alpha=130,
+        steps=240,
+    )
+    add_layer(base, background)
+
+    frame = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    frame_draw = ImageDraw.Draw(frame, "RGBA")
+    margin = 230
+    frame_draw.rounded_rectangle(
+        (margin, margin, CANVAS - margin, CANVAS - margin),
+        radius=150,
+        outline=(181, 193, 218, 175),
+        width=22,
+    )
+    add_layer(base, frame)
+
+    spots = [
+        ((920, 760), 48),
+        ((2680, 760), 48),
+        ((1160, 1390), 58),
+        ((2440, 1390), 58),
+        ((760, 2120), 42),
+        ((2840, 2120), 42),
+        ((1320, 2600), 52),
+        ((2280, 2600), 52),
+        ((1800, 1030), 38),
+        ((1800, 2950), 44),
+    ]
+    for center, radius in spots:
+        glow = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        glow_draw = ImageDraw.Draw(glow, "RGBA")
+        glow_draw.ellipse(
+            ellipse_bbox(center, radius * 3.2, radius * 3.2),
+            fill=(48, 154, 255, 150),
+        )
+        add_layer(base, glow.filter(ImageFilter.GaussianBlur(radius * 1.5)))
+        draw_point(
+            base,
+            center=center,
+            radius=radius,
+            fill=(198, 235, 255, 245),
+            outline=(255, 255, 255, 220),
+            outline_width=8,
+        )
+
+    beam = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    beam_draw = ImageDraw.Draw(beam, "RGBA")
+    beam_draw.line([(1800, 3380), (1800, 3200)], fill=(16, 18, 30, 230), width=54)
+    beam_draw.ellipse(ellipse_bbox((1800, 3150), 80, 80), fill=(255, 226, 96, 245))
+    add_layer(base, beam)
+
+    save_image(base, "detector_single_crystal_schematic.png")
+
+
 def redraw_3d_powder():
     base = Image.new("RGBA", (CANVAS, CANVAS), (0, 0, 0, 0))
     ewald_center = (1260, 1220)
@@ -374,6 +440,7 @@ def redraw_2d_powder():
 
 
 def main():
+    redraw_single_crystal_detector()
     redraw_3d_powder()
     redraw_2d_powder()
 

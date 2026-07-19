@@ -210,13 +210,13 @@
   node[anchor=west,scale=0.8,font=\scriptsize] {$y$};
 
 %=========================
-% Goniometer arm: dashed (0 deg) and solid (Ry then Rx)
+% Goniometer-axis direction: nominal (dashed) and misaligned (solid)
 %=========================
 \pgfmathsetmacro{\zGoni}{0.5}
 \pgfmathsetmacro{\xGoni}{0.8}   % half-length
 \pgfmathsetmacro{\yGoni}{0.0}
 
-% Dashed (0 deg) arm along x at (y=0, z=zGoni)
+% Nominal axis direction along x at (y=0, z=zGoni)
 \coordinate (goniStart0) at (-\xGoni,\yGoni,\zGoni);
 \coordinate (goniEnd0)   at ( \xGoni,\yGoni,\zGoni);
 
@@ -229,7 +229,7 @@
 \pgfmathsetmacro{\alphaCos}{cos(\alphadeg)}
 \pgfmathsetmacro{\alphaSin}{sin(\alphadeg)}
 
-% Pivot point (arm center)
+% Pivot point (axis marker)
 \coordinate (goniPivot)  at (0,\yGoni,\zGoni);
 \coordinate (goniCenter) at (goniPivot);
 
@@ -242,7 +242,7 @@
 \coordinate (goniStart) at ({-\xGoni*\gdx}, {\yGoni - \xGoni*\gdy}, {\zGoni - \xGoni*\gdz});
 \coordinate (goniEnd)   at ({ \xGoni*\gdx}, {\yGoni + \xGoni*\gdy}, {\zGoni + \xGoni*\gdz});
 
-% Draw arms
+% Draw nominal and misaligned axis directions
 \draw[red!70!black, thick, dash pattern=on 2pt off 2pt] (goniStart0) -- (goniEnd0);
 \draw[red!70!black, thick] (goniStart) -- (goniEnd);
 \fill[red!70!black] (goniCenter) circle (0.5pt);
@@ -256,11 +256,11 @@
 \node[scale=0.4, text=red!70!black, anchor=west, xshift=-13pt, yshift = 2pt]
   at (psiLabel) {$\psi$};
 
-% Arm labels at the -x ends
+% Axis-direction labels at the -x ends
 \node[scale=0.5, text=red!70!black, anchor=east, xshift=2pt, yshift=4pt]
-  at (goniStart0) {$\vec{g}$};
+  at (goniStart0) {$\hat{\mathbf g}_0$};
 \node[scale=0.5, text=red!70!black, anchor=east, xshift=0pt, yshift=-2pt]
-  at (goniStart) {$\vec{g}'$};
+  at (goniStart) {$\hat{\mathbf g}$};
 
 %=========================
 % Alpha arc: from dashed +x end (goniEnd0) to bottom of solid +x end (goniEndAtZgoni)
@@ -299,7 +299,7 @@
   at (alphaLabel) {$\alpha$};
 
 %=========================
-% Moment (torque) arrow about the solid goniometer arm
+% Rotation arrow about the misaligned goniometer axis
 % Plane perpendicular to d=(gdx,gdy,gdz), centered on the arm
 %=========================
 \pgfmathsetmacro{\rMom}{0.11}
@@ -343,7 +343,7 @@
 %=========================
 \draw[blue!65!black, ->] (kiStart) -- (kiEnd);
 \node[scale=0.7, text=blue!65!black, xshift=-15, yshift=-10]
-  at ($ (kiStart)!0.55!(kiEnd) + (0,0,0.18) $) {\tiny $\vec{k}_i$};
+  at ($ (kiStart)!0.55!(kiEnd) + (0,0,0.18) $) {\tiny $\mathbf{k}_i$};
 
 %=========================
 % Global x axis at kiEnd (last)

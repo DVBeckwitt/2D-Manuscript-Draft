@@ -14,8 +14,6 @@
   case0/beamDash/.style={red, thick, dashed, opacity=0.35},
   case0/zb/.style={red, thick, <->, opacity=0.35},
   case0/zs/.style={green!60!black, thick, <->, opacity=0.35},
-  case0/xs/.style={purple, thick, <->, opacity=0.35},
-  case0/xsDash/.style={purple, thick, dashed, opacity=0.35},
   case0/thetaArc/.style={black, thick, opacity=0.35},
   case5/sample/.style={green!60!black, thick},
   case5/axis/.style={orange, thick, dashed},
@@ -23,8 +21,6 @@
   case5/beamDash/.style={red, thick, dashed},
   case5/zb/.style={red, thick, <->},
   case5/zs/.style={green!60!black, thick, <->},
-  case5/xs/.style={purple, thick, <->},
-  case5/xsDash/.style={purple, thick, dashed},
   case5/thetaArc/.style={black, thick}
 }
 
@@ -76,7 +72,7 @@
   % numerical helpers
   \pgfmathsetmacro{\epsVal}{0.00001}
   \pgfmathsetmacro{\sentinel}{10000}
-  % Hide theta_i and X_s when rotAng ~ 0
+  % Hide theta_i when rotAng ~ 0
   \pgfmathsetmacro{\vInc}{abs(\rotAng) < 0.0001 ? 0 : 1}
   \pgfmathsetmacro{\incOpacity}{\vInc}
 
@@ -400,17 +396,6 @@
   \pgfmathsetmacro{\zsAngle}{\nAngle}
   \def\arcR{0.7}
 
-  %---------------------------
-  % Purple X_s along +x to beam-sample touch
-  %---------------------------
-  \pgfmathsetmacro{\xTouch}{\beamEndEff}
-  \pgfmathsetmacro{\vPurple}{\vBeamSeg * (\xTouch > 0 ? 1 : 0)}
-  \pgfmathsetmacro{\purpleOpacity}{\incOpacity*\vPurple}
-  \pgfmathsetmacro{\purpleEndX}{\vPurple*\xTouch}
-  \coordinate (PurpleEnd) at (\purpleEndX,0);
-  \pgfmathsetmacro{\purpleDashEndY}{\vPurple*\beamY}
-  \coordinate (PurpleDashEnd) at (\purpleEndX,\purpleDashEndY);
-
   %===========================
   % Draw this case
   %===========================
@@ -425,16 +410,15 @@
 
   \draw[#2/beam] (\beamStartX,\beamY) -- (BeamHit);
   \draw[#2/beamDash] (BeamHit) -- (\beamEndX,\beamY);
+  \fill[red, opacity=\vBeamSeg] (BeamHit) circle (2.1pt);
+  \node[scale=0.55, text=red, anchor=south west, opacity=\vBeamSeg,
+        xshift=1pt, yshift=1pt] at (BeamHit) {$\mathbf r_{\mathrm{hit}}$};
 
   \draw[#2/zb] (\zBx,0) -- (ZBend) node[midway, right] {$z_B$};
 
   % z_S suppressed when theta_i = 0
   \draw[#2/zs, opacity=\zsOpacity] (COR) -- (Ssurf)
     node[midway, right, opacity=\zsOpacity] {$z_S$};
-
-  \draw[#2/xs, opacity=\purpleOpacity] (0,0) -- (PurpleEnd)
-    node[midway, above, opacity=\purpleOpacity] {$X_s$};
-  \draw[#2/xsDash, opacity=\purpleOpacity] (PurpleEnd) -- (PurpleDashEnd);
 
 }
 

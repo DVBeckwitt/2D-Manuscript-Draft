@@ -130,25 +130,25 @@ centers.  Expanding $\langle|A_N|^2\rangle$ leaves two familiar
 contributions: the intensity scattered by each trilayer individually and the
 interference between distinct trilayer pairs.
 
-For population $j$, define the orientation population of trilayer $m$ as
+For population $j$, define the orientation population of trilayer $n$ as
 \begin{equation}
-  \boldsymbol{\pi}_{j,m}
-  =\left(p_{j,m}^{+},p_{j,m}^{-}\right)
-  =\boldsymbol{\pi}_{j,0}P_j^m,
-  \qquad p_{j,m}^{+}+p_{j,m}^{-}=1.
+  \boldsymbol{\pi}_{j,n}
+  =\left(p_{j,n}^{+},p_{j,n}^{-}\right)
+  =\boldsymbol{\pi}_{j,0}P_j^n,
+  \qquad p_{j,n}^{+}+p_{j,n}^{-}=1.
   \label{eq:pbi2_orientation_population}
 \end{equation}
-Here $j$ identifies the 2H-, 4H-, or 6H-rich population and $m$ identifies a
-trilayer within the finite stack.  The quantities $p_{j,m}^{+}$ and
-$p_{j,m}^{-}$ are ordinary probabilities that trilayer $m$ has orientation
+Here $j$ identifies the 2H-, 4H-, or 6H-rich population and $n$ identifies a
+trilayer within the finite stack.  The quantities $p_{j,n}^{+}$ and
+$p_{j,n}^{-}$ are ordinary probabilities that trilayer $n$ has orientation
 $F_+$ or $F_-$, respectively; they are neither scattering amplitudes nor the
 sample weights $w_j$ used below.
 
-The disorder-averaged interference amplitude for trilayers $m$ and
-$m+\Delta$ is
+The disorder-averaged interference amplitude for trilayers $n$ and
+$n+\Delta$ is
 \begin{equation}
-  K_{m,\Delta}^{(j)}=
-  \begin{pmatrix}p_{j,m}^{+} & p_{j,m}^{-}\end{pmatrix}
+  K_{n,\Delta}^{(j)}=
+  \begin{pmatrix}p_{j,n}^{+} & p_{j,n}^{-}\end{pmatrix}
   \begin{pmatrix}F_+^* & 0\\0 & F_-^*\end{pmatrix}
   M_j(\omega)^\Delta
   \begin{pmatrix}F_+\\F_-\end{pmatrix}.
@@ -163,13 +163,13 @@ interference'':
   &=I_{j,\mathrm{self}}(L)+I_{j,\mathrm{pair}}(L),
   \label{eq:pbi2_intensity_split}\\
   I_{j,\mathrm{self}}(L)
-  &=\frac{1}{N}\sum_{m=0}^{N-1}
-  \left[p_{j,m}^{+}|F_+|^2+p_{j,m}^{-}|F_-|^2\right],
+  &=\frac{1}{N}\sum_{n=0}^{N-1}
+  \left[p_{j,n}^{+}|F_+|^2+p_{j,n}^{-}|F_-|^2\right],
   \label{eq:pbi2_self_intensity}\\
   I_{j,\mathrm{pair}}(L)
   &=\frac{2}{N}\operatorname{Re}
   \sum_{\Delta=1}^{N-1}\xi(L)^\Delta
-  \sum_{m=0}^{N-1-\Delta}K_{m,\Delta}^{(j)}.
+  \sum_{n=0}^{N-1-\Delta}K_{n,\Delta}^{(j)}.
   \label{eq:pbi2_pair_intensity}
 \end{align}
 \end{subequations}
@@ -181,7 +181,7 @@ Eq.~\eqref{eq:pbi2_pair_kernel}, the expression can be read from right to
 left.  The final column supplies the scattering amplitude of the later
 trilayer, $M_j(\omega)^\Delta$ sums all allowed stacking paths and registry
 phases between the two layers, the diagonal matrix supplies the conjugated
-amplitude of the earlier trilayer, and $\boldsymbol{\pi}_{j,m}$ averages over
+amplitude of the earlier trilayer, and $\boldsymbol{\pi}_{j,n}$ averages over
 whether that earlier trilayer is in the $F_+$ or $F_-$ orientation.  The
 factor $2\operatorname{Re}$ in Eq.~\eqref{eq:pbi2_pair_intensity} includes the
 reverse-ordered conjugate pair without writing it separately.  The complete
