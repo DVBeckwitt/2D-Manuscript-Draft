@@ -3,16 +3,28 @@
 The detector-space intensity model begins from the same geometric object used for detector-space indexing: the allowed reciprocal-lattice intersections and their detector coordinates.\cite{SmilgiesLi2026IndexGIXS} It then goes beyond predicted spot centers by redistributing the structure-factor intensity of the contributing reflections over mosaic distributions. By Monte Carlo sampling the incident beam profile across those orientations, weighting each ray by transmission and optical attenuation, and mapping the summed intensity to detector pixels, the calculated and measured images can be compared using the same peak positions, line shapes, relative Bragg intensities, and projected $L$-integrated profiles.
 \subsection{Diffraction Geometry}
 
-We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Elastic scattering requires
-\[
-|\mathbf{k}_i| = |\mathbf{k}_f| = \frac{2\pi}{\lambda},
+We first consider a single incident ray striking a perfectly aligned crystallite, with no beam divergence, no refraction, and no absorption. Let $\mathbf{k}_i$ denote the incident wavevector and $\mathbf{k}_f$ the scattered wavevector. For x-ray wavelength $\lambda$, elastic scattering preserves their magnitudes,
+\begin{equation}
+|\mathbf{k}_i|=|\mathbf{k}_f|=\frac{2\pi}{\lambda}.
+\label{eq:elastic_scattering}
+\end{equation}
+Equation~\eqref{eq:elastic_scattering} sets the radius of the Ewald sphere. The momentum transfer $\mathbf Q$ is the change between the incident and scattered wavevectors,
+\begin{equation}
+\mathbf Q=\mathbf{k}_f-\mathbf{k}_i.
+\label{eq:momentum_transfer}
+\end{equation}
+For reflection $(h,k,l)$, $\mathbf G$ is the corresponding reciprocal-lattice vector. Diffraction occurs when the momentum transfer matches that vector,
+\begin{equation}
+\mathbf Q=\mathbf G,
 \qquad
-\mathbf{Q} = \mathbf{k}_f - \mathbf{k}_i.
-\]
-Diffraction occurs when the momentum transfer matches a reciprocal-lattice vector, $\mathbf{Q}=\mathbf{G}$ as seen in Fig. \ref{fig:intro_2x3}d. In the Ewald construction, this means that the reciprocal-space point for that reflection lies on the Ewald sphere of radius $|\mathbf{k}_i|$, and the simplest diffracted ray is obtained from
-\[
-\mathbf{k}_f = \mathbf{k}_i + \mathbf{G}.
-\]
+\mathbf G=h\mathbf a^{*}+k\mathbf b^{*}+l\mathbf c^{*},
+\label{eq:bragg_matching}
+\end{equation}
+where $\mathbf a^{*}$, $\mathbf b^{*}$, and $\mathbf c^{*}$ are the reciprocal-lattice basis vectors. Equation~\eqref{eq:bragg_matching} is the reciprocal-space Bragg condition. Combining Eqs.~\eqref{eq:momentum_transfer} and~\eqref{eq:bragg_matching} gives the scattered wavevector,
+\begin{equation}
+\mathbf{k}_f=\mathbf{k}_i+\mathbf G.
+\label{eq:exit_wavevector}
+\end{equation}
 For a fixed $|\mathbf{G}|$, the set of possible reflection orientations forms a Bragg sphere of radius $|\mathbf{G}|$ about the reciprocal-space origin. The allowed exit vectors are found by intersecting that Bragg sphere with the Ewald sphere and then propagating the resulting exit ray to the detector.
 
 For each trial incident ray, the model computes the sample intersection, applies the incidence geometry and optical corrections, finds the reciprocal-space intersections that satisfy elastic scattering, and propagates the resulting exit rays to the detector. Rays are Monte Carlo sampled from the probability distribution formed by the shape, bandwidth, and divergence of the beam. From every Bragg peak's structure factor spread upon the mosaic, a second Monte Carlo sampling occurs for each ray to choose an intersection point. Footprint, detector tilt, refraction, and absorption enter as experimental resolution and intensity terms. The coordinate conventions for the lab frame, detector plane, sample rotation, and illuminated footprint are summarized in Figs.~\ref{fig:waxs_geometry_system} and~\ref{fig:waxs_geometry_sample_triptych}.
