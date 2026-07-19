@@ -17,12 +17,26 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{titlesec}
 \usepackage[numbers,sort&compress]{natbib}
 \setcitestyle{super,comma,numbers,sort&compress}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
-% Supporting-information numbering (S1, S2, ...; Fig. S1, Eq. (S1), ...).
+% Keep paragraph headings at their semantic level, but display them as
+% unnumbered block headings rather than run-in headings.
+\setcounter{secnumdepth}{3}
+\titleformat{\paragraph}[block]
+  {\normalfont\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\paragraph}
+  {0pt}
+  {1.4\baselineskip}
+  {0.35\baselineskip}
+
+% Supporting-information numbering for sections, figures, and equations.
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\theequation}{S\arabic{equation}}
@@ -111,16 +125,16 @@ Reflection indices are constructed before stochastic integration. If $Q_{\max}$ 
 \right\}.
 \label{eq:si_reflection_candidate_set}
 \end{equation}
-Here $\operatorname{allowed}$ applies the reflection conditions of the selected structure. For a rod representation, integer $(h,k)$ pairs are enumerated by the same detector-coverage rule and the coordinate along each rod is evaluated continuously; Monte Carlo sampling never generates noninteger Miller indices.
+Here $\operatorname{allowed}$ applies the reflection conditions of the selected structure. For a rod representation, integer $(h,k)$ pairs are enumerated by the same detector-coverage rule and the coordinate along each rod is evaluated continuously. Monte Carlo sampling never generates noninteger Miller indices.
 
 The calculation order is therefore:
 \begin{enumerate}
   \item Construct the finite reflection or rod candidate set from the structural model and detector coverage.
   \item Draw one incident-beam event $(\mathbf r_0,\hat{\mathbf s}_i,\lambda)$ from the declared beam distributions.
-  \item Evaluate Eqs.~\eqref{eq:si_sample_plane_intersection}--\eqref{eq:si_sample_bounds}; reject rays that miss the finite sample.
+  \item Evaluate Eqs.~\eqref{eq:si_sample_plane_intersection}--\eqref{eq:si_sample_bounds}. Reject rays that miss the finite sample.
   \item Transform the accepted ray into the sample basis, evaluate its local incidence angle, and apply the wavelength-dependent optical boundary calculation.
   \item For every retained candidate, integrate the mosaic orientation distribution with a separate stochastic draw, test the elastic-scattering condition, and construct $\mathbf k_f$.
-  \item Evaluate Eqs.~\eqref{eq:si_detector_plane_intersection} and~\eqref{eq:si_detector_coordinates}; reject exits outside the active detector and deposit the weighted intensity into the intersected pixels.
+  \item Evaluate Eqs.~\eqref{eq:si_detector_plane_intersection} and~\eqref{eq:si_detector_coordinates}. Reject exits outside the active detector and deposit the weighted intensity into the intersected pixels.
 \end{enumerate}
 Monte Carlo sampling is a numerical quadrature over beam and mosaic variables, not an additional source of physical broadening. Its numerical uncertainty must be checked with independent seeds and increasing event count until changes in the reported detector regions and projected profiles are below a declared tolerance relative to the experimental residuals.
 
@@ -149,7 +163,7 @@ within the declared instrumental and numerical resolution.\cite{AlsNielsenMcMorr
 The incident direction is resampled as well when beam divergence is included.
 Changing wavelength therefore moves the Ewald-sphere center and changes its
 radius. The calculation must reconstruct and test Eq.~\eqref{eq:si_moving_ewald_condition}
-for every wavelength and direction sample; a set of concentric shells about a
+for every wavelength and direction sample. A set of concentric shells about a
 shared center is not the physical wavelength construction.
 
 For one lattice-plane spacing at fixed orientation, Bragg's law gives a useful
@@ -185,7 +199,7 @@ feature to bandwidth or report a numerical cap overlap.
   Measure a polycrystalline hBN calibrant and subtract the detector dark frame. Fit multiple Debye--Scherrer rings in detector coordinates and refine detector distance, detector tilts $(\beta,\gamma)$, in-plane detector rotation $\chi_D$, and beam center $(x_0,y_0)$.
 
   \item \textbf{Sample alignment and goniometer misalignment.}
-  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\chi,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$; include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
+  For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\chi,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$. Include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity/profile refinement.}
   With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped Gaussian-plus-Lorentzian angular distribution, not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly inform the narrow core, while off-condition specular intensity is sensitive to the broad component together with bandwidth, divergence, alignment, and background. The parameterization yields component widths and a broad-component weight, but attribution and necessity require the controlled no-tail and re-optimized Gaussian-only comparisons specified under C18.
@@ -194,7 +208,7 @@ feature to bandwidth or report a numerical cap overlap.
   With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg regions of interest (ROIs) from multiple dark-subtracted images. The corresponding prediction is the calculated detector intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
 
   \item \textbf{Disorder refinement.}
-  After the ordered model converges, introduce stacking-disorder parameters only through fixed-in-plane-momentum rod profiles reported versus the film-normal momentum. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed; only stacking-disorder parameters and declared scale/background terms are refined.
+  After the ordered model converges, introduce stacking-disorder parameters only through fixed-in-plane-momentum rod profiles reported versus the film-normal momentum. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed. Only stacking-disorder parameters and declared scale/background terms are refined.
 \end{enumerate}
 
 All detector images are dark-subtracted before fitting. Any additional preprocessing (flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be applied consistently to all images before refinement or stated explicitly if omitted. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
@@ -230,7 +244,7 @@ Q_z=\mathbf Q\cdot \hat{\mathbf n},
 \qquad
 L=\frac{Q_z}{|\mathbf c^{*}|}=\frac{Q_z c}{2\pi},
 \end{equation}
-where $\hat{\mathbf n}$ is the film normal. For a hexagonal basal plane, the radial family index is $m=h^2+hk+k^2$; $m$ is a label, not a multiplicity. A selected fixed-$Q_R$ or fixed-$m$ family is retained when
+where $\hat{\mathbf n}$ is the film normal. For a hexagonal basal plane, the radial family index is $m=h^2+hk+k^2$. The index $m$ is a label, not a multiplicity. A selected fixed-$Q_R$ or fixed-$m$ family is retained when
 \begin{equation}
 |Q_R-Q_{R,0}|\le \Delta Q_R,
 \qquad
@@ -306,9 +320,9 @@ The displayed coordinate for a projected point can be represented by the same fi
 \end{equation}
 before adding calibration, incidence-angle, wavelength, divergence, and mosaic contributions. This width is a projection and resolution effect. It is not a counting-statistical error bar.
 
-These projection uncertainties are coupled to model-parameter correlations. Peak positions are sensitive to detector distance, beam center, detector tilt, sample height, and incidence angle. Profile widths are sensitive to both beam divergence and the Gaussian mosaic core. Off-condition profiles are sensitive to the broad mosaic component together with bandwidth, divergence, alignment, and background; near-critical intensity additionally depends on the optical response and is excluded from evidence for the broad component. Relative integrated intensities are sensitive to scale, footprint, absorption, thickness, and structure-factor parameters. The staged workflow separates these effects by fixing or constraining the parameters tied to peak position before fitting profile widths, and by fixing the geometry and mosaic state before interpreting ordered intensities.
+These projection uncertainties are coupled to model-parameter correlations. Peak positions are sensitive to detector distance, beam center, detector tilt, sample height, and incidence angle. Profile widths are sensitive to both beam divergence and the Gaussian mosaic core. Off-condition profiles are sensitive to the broad mosaic component together with bandwidth, divergence, alignment, and background. Near-critical intensity additionally depends on the optical response and is excluded from evidence for the broad component. Relative integrated intensities are sensitive to scale, footprint, absorption, thickness, and structure-factor parameters. The staged workflow separates these effects by fixing or constraining the parameters tied to peak position before fitting profile widths, and by fixing the geometry and mosaic state before interpreting ordered intensities.
 
-The practical consequences are: (i) the $2\theta$--$\phi$ maps and $Q_R$-selected $Q_z$ profiles are controlled projections of the detector image, not independent ideal reciprocal-space scans; (ii) transformed-coordinate uncertainty is concentrated near the low-angle/specular region; (iii) intensity variance is propagated through the same overlap weights used for caking and profile extraction; and (iv) the strongest remaining systematic coupling occurs near low $L$, where direct-beam background, bandwidth, divergence, incidence angle, and optical response overlap. That near-critical region is excluded from evidence for the broad mosaic component.
+The practical consequences are fourfold. First, the $2\theta$--$\phi$ maps and $Q_R$-selected $Q_z$ profiles are controlled projections of the detector image, not independent ideal reciprocal-space scans. Second, transformed-coordinate uncertainty is concentrated near the low-angle/specular region. Third, intensity variance is propagated through the same overlap weights used for caking and profile extraction. Fourth, the strongest remaining systematic coupling occurs near low $L$, where direct-beam background, bandwidth, divergence, incidence angle, and optical response overlap. That near-critical region is excluded from evidence for the broad mosaic component.
 
 \subsection{Wrapped mosaic distribution}
 \label{subsec:si_wrapped_mosaic}
@@ -338,7 +352,7 @@ This is not a pseudo-Voigt constraint: the Lorentzian half-width $\Gamma$ and Ga
        \right].
   \end{aligned}
 \]
-Both components integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. The reported Lorentzian FWHM is $2\Gamma$, and the reported Gaussian FWHM is $2\sqrt{2\ln 2}\,\sigma$. The local small-width limit recovers the usual line-shape widths, but the refinement and normalization are defined by the wrapped functions above. The broad functional form is phenomenological. These equations define the two-component model; they do not establish its necessity relative to a re-optimized Gaussian-only model.
+Both components integrate to unity over $(-\pi,\pi]$, so $\omega_{\mathrm w}$ is normalized. The reported Lorentzian FWHM is $2\Gamma$, and the reported Gaussian FWHM is $2\sqrt{2\ln 2}\,\sigma$. The local small-width limit recovers the usual line-shape widths, but the refinement and normalization are defined by the wrapped functions above. The broad functional form is phenomenological. These equations define the two-component model. They do not establish its necessity relative to a re-optimized Gaussian-only model.
 
 For a reflection with $Q\equiv|\mathbf G_{hkl}|$, mosaicity redistributes intensity in polar angle $\vartheta$ with line density $I_0\,\omega_{\mathrm w}(\vartheta-\vartheta_B)\,d\vartheta$, where $\vartheta_B$ is the Bragg position for that reflection. Random in-plane rotations about the film normal revolve this line density about the $Q_z$ axis, yielding an axially symmetric surface density $\rho(\vartheta)$. With area element $dA=2\pi Q^2\sin\vartheta\,d\vartheta$, conservation of intensity gives
 \[
@@ -363,7 +377,7 @@ where $q$ identifies the layer. The decrement $\delta_q$ controls refraction
 and critical-angle behavior, whereas $\beta_q$ controls absorption and
 penetration depth. Both are wavelength-dependent material inputs. The
 calculation must record their source and interpolation together with the
-sampled spectrum; those numerical inputs are not present in this repository.
+sampled spectrum. Those numerical inputs are not present in this repository.
 
 \paragraph{Tangential matching and the complex normal component.}
 Translational invariance along a flat interface conserves the tangential
@@ -379,7 +393,7 @@ wavevector. For a field entering layer $q$ from the ambient medium,
   -\left|\mathbf k_{\parallel,0}(\lambda_j)\right|^2}.
   \label{eq:si_boundary_ktz_lambda}
 \end{equation}
-The root is chosen so that the field decays in its propagation direction; for
+The root is chosen so that the field decays in its propagation direction. For
 the inward solution and the depth convention above,
 $\operatorname{Im}k_{z,q}^{(+)}\geq0$.\cite{Renaud2009} The reciprocal exit
 field is obtained from the same boundary condition with its own conserved
@@ -401,7 +415,7 @@ $\operatorname{Re}k_{z,q}/\operatorname{Re}k_{z,p}$ in addition to
 $|t_{pq}|^2$. Absorbing or polarization-resolved layers require the
 corresponding Poynting-flux or Fresnel normalization. The calculation must
 therefore declare whether each interface weight is a field amplitude, an
-intensity, or a normal flux; $|t|^2$ alone is not generally transmitted flux.
+intensity, or a normal flux. The quantity $|t|^2$ alone is not generally transmitted flux.
 
 \paragraph{Normal-depth attenuation.}
 Let $\kappa_i(\lambda_j)$ and $\kappa_f(\lambda_j)$ be the nonnegative
@@ -417,7 +431,7 @@ depth and from that depth back to the surface, respectively:
 \end{equation}
 Here \(k_{z,f}^{(+)}\) is the inward reciprocal exit-channel root used by
 reciprocity. Thus \(\kappa_f\) is the positive attenuation constant for the
-physical path from depth back to the surface; equivalently,
+physical path from depth back to the surface. Equivalently,
 \(\kappa_f=-\operatorname{Im}k_{z,f}^{(\mathrm{out})}\) if an outward
 wavevector is stored explicitly.
 For a normalized scattering-depth distribution $\rho(z)$ over a film of
@@ -465,7 +479,7 @@ The detector images are then added incoherently,
 Changing $\lambda_j$ changes the moving Ewald construction, the layer optical
 constants, the complex normal components, and the interface and depth weights.
 The equations do not imply that optical constants are important only near
-$L=0$; their practical importance must be bounded over a declared observable.
+$L=0$. Their practical importance must be bounded over a declared observable.
 The required diagnostic compares the full wavelength-dependent
 $\tilde n_q(\lambda)$ calculation with a fixed-$\tilde n_q$ calculation over
 declared detector ROIs and $Q_z$ ranges. A calculation with $\tilde n_q=1$ is a
@@ -484,7 +498,7 @@ annotated raster, the complete blended prediction is unavailable as a direct
 array, and mosaic averaging of the optical branch has not been established. In
 the proposed construction, the low-$Q_z$ branch is the specular Parratt
 reflectivity and the high-$Q_z$ branch is a normalized finite-stack kinematic
-term divided by $Q_z^2$. The equations below define the intended handoff; they
+term divided by $Q_z^2$. The equations below define the intended handoff. They
 do not validate its scale, blend window, or connection to the measured profile.
 
 The plotted coordinate is
@@ -599,7 +613,7 @@ log intensity,
 \end{equation}
 Candidate points must lie in the search range $3\le x\le10$ and satisfy
 $|r(x)|\le0.10$. The selected window $[x_1,x_2]$ is the widest contiguous
-eligible region with width at least $1.0$ in $Q_z/Q_c$; ties are broken by the
+eligible region with width at least $1.0$ in $Q_z/Q_c$. Ties are broken by the
 smaller median $|r|$. If no acceptable region is found, the fallback window
 is $x_1=3$ and $x_2=6$.
 
@@ -684,7 +698,7 @@ The disorder objective is evaluated only over the retained profile bins,
   \frac{I_j^{\mathrm{rod}}-M_j(\boldsymbol{\Theta}_{\mathrm{dis}})}{\sigma_j}
   \right),
 \]
-where $\rho$ may be a least-squares or robust loss and $\mathcal J$ is the retained $Q_z$ interval. The known Bragg locations on the selected branch are inherited from the fixed detector geometry and ordered model. Peak amplitudes are not fit independently before the stacking model is applied; otherwise the diffuse between-peak intensity would already have been absorbed by the preprocessing.
+where $\rho$ may be a least-squares or robust loss and $\mathcal J$ is the retained $Q_z$ interval. The known Bragg locations on the selected branch are inherited from the fixed detector geometry and ordered model. Peak amplitudes are not fit independently before the stacking model is applied. Otherwise, the diffuse between-peak intensity would already have been absorbed by the preprocessing.
 
 % BEGIN PBI2_TRANSITION_MATRIX_DERIVATION
 \section{Transition-matrix derivation for PbI\texorpdfstring{$_2$}{2} stacking disorder}
@@ -746,8 +760,8 @@ The five mutually exclusive interface events are
  a+b_++b_-+d_++d_-=1.
  \label{eq:si_pbi2_interface_law}
 \end{equation}
-The $a$ event preserves registry and orientation; $b_+$ and $b_-$ shift the
-registry by $+1$ and $-1$ without changing orientation; and $d_+$ and $d_-$
+The $a$ event preserves registry and orientation. The $b_+$ and $b_-$ events shift the
+registry by $+1$ and $-1$ without changing orientation. The $d_+$ and $d_-$ events
 combine an orientation change with the two handed shift rules.  A flip without
 a registry shift is excluded.  For a $d_+$ event, an $F_+\rightarrow F_-$ step
 advances the registry and the corresponding $F_-\rightarrow F_+$ step returns
@@ -799,7 +813,7 @@ transition reduces exactly to
  \end{pmatrix}.
  \label{eq:si_pbi2_Momega}
 \end{equation}
-No registry states are discarded; Eq.~\eqref{eq:si_pbi2_Momega} is one Fourier
+No registry states are discarded. Equation~\eqref{eq:si_pbi2_Momega} is one Fourier
 block of Eq.~\eqref{eq:si_pbi2_T6}.  Setting the registry phase to unity gives
 the orientation-population matrix
 \begin{equation}
@@ -906,7 +920,7 @@ $\epsilon_{2H}=\epsilon_{4H}=\epsilon_{6H}$.
  \caption{Calculation-only validation of the transition construction.  The
  $6\times6$ and $2\times2$ expressions agree to numerical precision, and the
  zero-disorder 2H, 4H, and 6H limits reproduce independently evaluated
- periodic-parent intensities.  These panels validate the implementation; they
+ periodic-parent intensities.  These panels validate the implementation. They
  are not fits to experimental data.}
  \label{fig:si_pbi2_transition_validation}
 \end{figure}
@@ -947,7 +961,7 @@ $\omega I_2$\\
 \bottomrule
 \end{tabular}
 \end{center}
-For 4H, $M(\omega)^2=I_2$; for 6H, $M(\omega)^3=I_2$ because
+For 4H, $M(\omega)^2=I_2$. For 6H, $M(\omega)^3=I_2$ because
 $\omega^3=1$.  The $d_-=1$ and $b_-=1$ limits generate the opposite-handed
 cycles.
 
@@ -963,7 +977,7 @@ $K_{n,\Delta}=|F|^2$ for every allowed transition law.  Equation
  \label{eq:si_pbi2_m0_laue}
 \end{equation}
 Thus the strong $m=0$ oscillations are finite-thickness fringes, not diffuse
-stacking-fault contrast.  Faults can still be present; this rod does not
+stacking-fault contrast.  Faults can still be present. This rod does not
 distinguish their registry or orientation path.
 
 \begin{figure}[htbp]
@@ -971,7 +985,7 @@ distinguish their registry or orientation path.
  \includegraphics[width=0.88\linewidth]{../figures/results_pbi2/transition_matrix/fig07_m0_fringes.png}
  \caption{Calculation-only check of the phase-insensitive $m=0$ condition.
  Different parent-rich transition laws coincide because registry and
- orientation changes do not alter the local $00L$ amplitude; the remaining
+ orientation changes do not alter the local $00L$ amplitude. The remaining
  oscillations are controlled by finite stack length.}
  \label{fig:si_pbi2_m0_fringes}
 \end{figure}

@@ -22,12 +22,26 @@
 \definecolor{oiPurple}{RGB}{204,121,167}
 \definecolor{oiOrange}{RGB}{230,159,0}
 \usepackage{booktabs}
+\usepackage{titlesec}
 \usepackage{tabularx}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \usepackage[numbers,sort&compress]{natbib}
 % if you want PRB-like superscripts instead:
 \setcitestyle{super,comma,numbers,sort&compress}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Keep paragraph headings at their semantic level, but display them as
+% unnumbered block headings rather than run-in headings.
+\setcounter{secnumdepth}{3}
+\titleformat{\paragraph}[block]
+  {\normalfont\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\paragraph}
+  {0pt}
+  {1.4\baselineskip}
+  {0.35\baselineskip}
 
 % Small helper to place a panel tag just above the top-left of arbitrary content.
 % The label is part of the picture's bounding box so adjacent content cannot
