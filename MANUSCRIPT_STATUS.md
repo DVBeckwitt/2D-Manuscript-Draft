@@ -1,6 +1,6 @@
 # Manuscript Status
 
-Last updated: 2026-07-19
+Last updated: 2026-07-30
 
 This is the canonical manuscript guidance and status document for the 2D diffraction / mosaicity manuscript. It subsumes the previous advisor notes, meeting-prep checklists, figure status, supplement status, changelogs, and manuscript task trackers. Use this file as the single source of truth for writing, rewriting, figure planning, caption drafting, structural editing, and manuscript triage.
 
@@ -479,6 +479,7 @@ Highest-priority cuts before the next advisor draft:
 
 | Date | Decision / change | Current interpretation |
 |---|---|---|
+| 2026-07-30 | Added a dependency-only Overleaf export with persistent graphics caching. | `scripts/export-overleaf.ps1` packages both document entry points, losslessly wraps all referenced raster assets as PDFs, pre-renders live TikZ figures with overflow-safe bounds, removes unused staged graphics packages, compile-checks the main manuscript and SI, and creates `build_overleaf/overleaf.zip`. Git metadata, scripts, existing review PDFs, unreferenced assets, and LaTeX auxiliaries are excluded. The generated package preserved the 27-page main layout in rendered comparison; a clean local check completed in 9.11 s for the main manuscript and 8.19 s for the SI. |
 | 2026-07-19 | Addressed all three author annotations in `main_advisor_comment_color_proof.pdf`. | Restored the earlier eight-panel Fig. 1 design and curated 3D/2D reciprocal panels, removed the reintroduced panel (c), retained the C02 diffraction-selection explanation, and removed prose semicolons and em dashes throughout the main manuscript and SI. Mathematical semicolon separators and source-only TeX syntax remain. The desired reciprocal assets were introduced as curated binaries in `9bb1c9b` and losslessly re-encoded in `bfb7869`. No historical generator reproduces them, so the misleading redraw script was removed. Both PDFs build, and revised Fig. 1 passed rendered review. |
 | 2026-07-19 | Restyled paragraph-level headings as unnumbered blocks in the main manuscript and SI. | The shared preamble treatment is available to the main-text physical-foundation material and the SI. The four existing SI optical-interface subheadings retain semantic `\paragraph` hierarchy but appear on their own lines with book-like vertical spacing; numbering remains limited through `\subsubsection`. |
 | 2026-07-18 | Completed the manuscript-resolvable advisor-correction pass. | C01--C04, C09, C12--C15, C17, C19, C21, and C22 are DONE; C05--C08 and C10 remain IN PROGRESS for executable/configuration parity; C11, C16, C18, and C20 are BLOCKED on specified missing inputs. Main/SI notation, Ewald/optical interfaces, causal ordering, workflow placement, and evidence boundaries are reconciled and verified by final builds, static scans, and rendered-page review. |
@@ -520,6 +521,14 @@ Highest-priority cuts before the next advisor draft:
 ## Build And Reset Recovery
 
 The main manuscript uses `latexmkrc` to write the public artifact to repository-root `main.pdf`. Generated LaTeX auxiliaries, logs, and bibliography outputs go into `build/`, which is ignored by git.
+
+For an Overleaf upload, generate the clean cached package from the repository root:
+
+```powershell
+.\scripts\export-overleaf.ps1
+```
+
+The script creates `build_overleaf/overleaf/` and `build_overleaf/overleaf.zip`. Upload the ZIP contents with `main.tex` at the Overleaf project root. The package contains only the dependency closure for `main.tex` and `2D_Supplemental/SI_failure_modes.tex`; referenced TikZ and raster graphics are losslessly cached as PDFs. Persistent source-hash caches under `build_overleaf/graphics-cache/` make later exports rebuild only changed graphics. The default command compile-checks both entry points before creating the ZIP. Use `-SkipCompileCheck` only when a faster package-only refresh is intentional.
 
 Use the guarded clean rebuild when citations or bibliography output look stale:
 
