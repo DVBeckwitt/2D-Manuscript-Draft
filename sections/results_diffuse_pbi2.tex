@@ -192,15 +192,14 @@ three calculated intensities (not their amplitudes) are combined as
 \begin{equation}
   I_{\mathrm{calc}}(L)=S\left\{\left[
   w_{2H}I_{2H}(L)+w_{4H}I_{4H}(L)+w_{6H}I_{6H}(L)
-  \right]\!\otimes R(L)\right\},
+  \right]\!\otimes K_{\mathrm{prof}}(L)\right\},
   \qquad w_{2H}+w_{4H}+w_{6H}=1.
   \label{eq:pbi2_population_sum}
 \end{equation}
 Each $I_j(L)$ is first evaluated from
 Eq.~\eqref{eq:pbi2_finite_intensity} using its own $\epsilon_j$.  The weights
 then specify the fraction of the total calculated intensity assigned to each
-parent-rich population, the shared resolution function $R(L)$ broadens the
-combined profile, and $S$ converts the normalized calculation to the measured
+parent-rich population, the declared fixed profile kernel $K_{\mathrm{prof}}(L)$ represents the finite upstream profile integration and broadening used for the selected comparison, and $S$ converts the normalized calculation to the measured
 intensity scale.  Accordingly, $\epsilon_j$ is an effective per-interface
 disorder probability under the stated equal-alternative template, whereas
 $w_j$ is an effective population weight.
@@ -216,7 +215,7 @@ indistinguishable.
 
 The disorder stage is applied only after the detector geometry, sample
 alignment, mosaic distribution, lattice constants, ordered PbI$_2$ structure
-factor, and profile resolution have been fixed by the upstream refinement.
+factor, and fixed profile construction have been established by the upstream refinement.
 Measured and calculated detector images are projected through the same
 constant-$Q_R$ rod masks and reported versus $Q_z$ or the corresponding
 stacking coordinate $L$.  No independent peak areas are introduced before the
@@ -296,7 +295,7 @@ progression from sharp ordered maxima to stronger between-peak intensity.  The
 absence of comparable diffuse contrast on $m=0$ does not imply that those
 scattering volumes contain no faults. It follows from the phase-insensitive
 condition described above.  Likewise, changes in the visibility of higher
-order $m=0$ peaks are assigned to the growth-dependent mosaic and resolution
+order $m=0$ peaks are assigned to the growth-dependent mosaic and profile-broadening
 state rather than to lateral-registry disorder.
 
 The ordered baseline and the transition-model parameterization are summarized
@@ -328,10 +327,10 @@ normalized weights.
     A weakly floating test returned $o_{\mathrm{Pb}}=0.999$, $o_{\mathrm{I1}}=1.001$, and $o_{\mathrm{I2}}=1.000$. The ordered baseline was then evaluated with full occupancies. &
     The clean ordered model uses full occupancies. The density-deficient occupancy reported for a Palosz-type sample is sample-specific and was not used as the default model.\cite{Palosz1990,Lin2019} &
     Keeps the PbI$_2$ average structure stoichiometric while the diffuse rod intensity is assigned to stacking correlations. \\
-    Directional ADPs &
-    $U_R/U_z=0.0105/0.0185$ for Pb and $0.016/0.024\,\text{\AA}^2$ for I1 and I2. &
-    Site-resolved Pb and I ADPs are not widely or consistently reported for direct transfer. The qualitative inequality $U_z(\mathrm{Pb})>U_R(\mathrm{Pb})$ is retained.\cite{Minagawa1975,Trueblood1996} &
-    Moderates relative ordered intensities and is interpreted as a sample-specific displacement refinement rather than a universal PbI$_2$ displacement constant. \\
+    Displacement factor &
+    The current ordered-film interface uses the crystallographic isotropic baseline and, when released, one shared uniaxial pair $U_R$ and $U_z$ in the film frame. Numerical values are not reported for the pending transition-matrix refit. &
+    General site-resolved anisotropic CIF tensors are not transferred into the present calculation. Any site-specific directional refinement would require an explicitly implemented and documented structural model.\cite{Trueblood1996} &
+    Moderates the ordered intensity envelope without implying unsupported site-resolved displacement parameters. \\
     Transition-matrix stacking disorder &
     $\epsilon_{2H}$, $\epsilon_{4H}$, $\epsilon_{6H}$, normalized weights $w_{2H}$, $w_{4H}$, $w_{6H}$, and finite stack length $N$.  Final numerical values are pending the transition-matrix refit. &
     These are effective selected-rod descriptors under the stated parent rules and equal-alternative fault templates, not universal PbI$_2$ constants. &

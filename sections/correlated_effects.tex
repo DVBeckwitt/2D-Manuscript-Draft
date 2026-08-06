@@ -1,56 +1,26 @@
-\subsection{Wavelength sampling and grazing-incidence optics}
+\subsection{Incident-beam phase space and wavelength}
 \label{sec:correlated_effects}
 \label{sec:refraction}
 \label{sec:bandwidth_mosaic_cap}
 
-The low-\(L\), \(m=0\) intensity lies where source bandwidth, crystallite orientation, and grazing-incidence optics are correlated. The present comparison does not isolate those contributions, so we do not assign the feature to bandwidth or optical constants alone. Instead, the forward-model interface treats wavelength sampling and the optical boundary calculation as separate, explicit operations.
+The incident beam is represented by weighted states in position, propagation direction, and wavelength. Position and direction determine where the ray reaches the film and its local incidence condition. Wavelength fixes the magnitude of the incident wavevector and therefore the Ewald-sphere construction used for that state. These variables are introduced together because they are inputs to one forward calculation rather than independent corrections applied to a completed detector image.
 
-For each sampled wavelength \(\lambda_j\) with spectral weight \(w_j\),
+For wavelength state $\lambda_j$ with spectral weight $w_j$,
 \begin{equation}
   k_0(\lambda_j)=\frac{2\pi}{\lambda_j},
   \qquad
-  \mathbf k_i(\lambda_j)=k_0(\lambda_j)\hat{\mathbf s}_i,
+  \mathbf k_i(\lambda_j)=k_0(\lambda_j)\hat{\mathbf s}_{i,j},
   \qquad
   \left|\mathbf k_i(\lambda_j)+\mathbf G\right|=k_0(\lambda_j).
   \label{eq:moving_ewald_condition_main}
 \end{equation}
-With the reciprocal-space origin fixed, the Ewald sphere for that sample is centered at \(-\mathbf k_i(\lambda_j)\) and has radius \(k_0(\lambda_j)\).\cite{AlsNielsenMcMorrow2001} Changing wavelength therefore moves the center and changes the radius. The wavelength samples are not concentric shells about one shared center. Each wavelength sample must be tested with the full vector condition in Eq.~\eqref{eq:moving_ewald_condition_main}, including the sampled incident direction and crystallite orientation. We consequently make no universal inverse-order bandwidth-scaling claim.
+With the reciprocal-space origin fixed, the Ewald sphere for state $j$ is centered at $-\mathbf k_i(\lambda_j)$ and has radius $k_0(\lambda_j)$.\cite{AlsNielsenMcMorrow2001} Changing wavelength therefore changes both the center and the radius. The full vector condition in Eq.~\eqref{eq:moving_ewald_condition_main} is evaluated for each weighted direction and wavelength state, and the resulting detector intensities are summed incoherently. The source-state construction and convergence checks are given in the Supporting Information.
 
-For a layer \(q\), the wavelength-dependent optical input is
-\begin{equation}
-  \tilde n_q(\lambda_j)=1-\delta_q(\lambda_j)+i\beta_q(\lambda_j).
-  \label{eq:complex_index_main}
-\end{equation}
-Using the field convention \(\exp[i(\mathbf k\cdot\mathbf r-\omega t)]\) and a depth coordinate \(z\geq0\) directed into the film, phase matching at a flat interface conserves the tangential component and fixes the normal component through
-\begin{equation}
-  \mathbf k_{\parallel,q}=\mathbf k_{\parallel,0},
-  \qquad
-  k_{z,q}=
-  \sqrt{\left[\tilde n_q(\lambda_j)k_0(\lambda_j)\right]^2
-  -\left|\mathbf k_{\parallel,0}\right|^2}.
-  \label{eq:complex_kz_main}
-\end{equation}
-The square-root branch is chosen to decay in the propagation direction. For the inward solution, this is \(\operatorname{Im}k_{z,q}\geq0\).\cite{Renaud2009} The incident and reciprocal exit fields are evaluated separately. The decrement \(\delta_q\) controls refraction and critical-angle behavior, whereas \(\beta_q\) controls absorption and penetration depth. Both enter every wavelength sample through Eq.~\eqref{eq:complex_kz_main}. Whether they materially affect a particular detector region is a sensitivity question, not an assumption tied only to \(L\approx0\).
+Standard planar-interface refraction and attenuation corrections are applied to the incident and exit fields before the accepted contribution is mapped to the detector. They account for the change between external and internal propagation directions, transmission at the film boundary, and the finite depth sampled by the incident and exit fields. These corrections are included for physical completeness but are not a principal result of this work. Their boundary-condition equations, branch convention, attenuation integral, and wavelength dependence are given in the Supporting Information.
 
-If \(\kappa_i(\lambda_j)\) and \(\kappa_f(\lambda_j)\) are the nonnegative normal-depth attenuation constants for the incident and exit fields, scattering from depth \(z\) carries the intensity factor
-\begin{equation}
-  W_{\mathrm{depth}}(z;\lambda_j)=
-  \exp\!\left[-2\left(\kappa_i(\lambda_j)+\kappa_f(\lambda_j)\right)z\right].
-  \label{eq:normal_depth_weight_main}
-\end{equation}
-Thus the imaginary normal wavevector is integrated over normal depth, not multiplied by an oblique ray-path length. Interface transmission coefficients are field amplitudes. A transmitted-flux interpretation additionally requires the appropriate normal-flux factor. The wavelength-resolved detector images are then accumulated incoherently,
-\begin{equation}
-  I_{\mathrm{det}}(x,y)=
-  \sum_j w_j I_{\mathrm{det}}
-  \!\left[x,y;\lambda_j,\tilde n(\lambda_j)\right].
-  \label{eq:detector_bandwidth_sum_main}
-\end{equation}
-
-The repository does not yet contain the measured spectrum, the optical-constant table used by the calculation, the executable forward-model source, or direct arrays for the low-\(L\) comparison. We therefore do not present an optical-constant ablation or claim that wavelength-dependent optics explain the observed feature. The required test is a full-versus-fixed-\(\tilde n\) comparison over declared detector ROIs and \(Q_z\) ranges. Setting \(n=1\) is a separate total-optics-off diagnostic. The Supporting Information records the boundary-condition and evidence requirements without supplying missing numerical inputs.
-
-\subsection{Reflectivity}
+\subsection{Near-critical specular response}
 \label{sec:reflectivity}
 
-The bright near-origin $m=0$ intensity in Fig.~\ref{fig:hk0_low_l_star} lies in the near-critical specular region. Its mechanism is distinct from the orientational broadening used to describe the $003$ and $006$ features. Near the critical angle, refraction, evanescence, absorption, and multiple reflection at the film interfaces can control the intensity, and a Parratt recursion is the appropriate optical limit.\cite{Parratt1954} The near-origin feature is therefore excluded from the mosaic-tail inference rather than treated as detector-space evidence for tilted crystallites.
+The bright near-origin $m=0$ intensity in Fig.~\ref{fig:hk0_low_l_star} lies in the near-critical specular regime. Its physical origin is distinct from the orientational broadening used to describe the higher-$L$ $m=0$ features. Refraction, evanescence, absorption, roughness, and multiple reflection at the film interfaces can control this region, for which a standard Parratt recursion is the appropriate optical diagnostic.\cite{Parratt1954}
 
-The available near-critical comparison is not yet quantitative evidence for a particular optical-to-kinematic handoff. Its archived traces were reconstructed from an annotated raster, the complete blended prediction is absent, and the archive does not establish whether the optical branch is averaged over the mosaic distribution. We therefore omit that provisional overlay from the main text. A quantitative assignment requires direct measured and calculated arrays on matched axes, including the complete prediction and an explicit statement of how crystallite orientation enters the optical branch. Until those inputs are available, the near-origin assignment remains provisional and is kept separate from the mosaicity conclusion.
+The near-critical region is therefore excluded from evidence for the broad mosaic component. The archived reflectivity comparison is not retained as a main-text quantitative result because its measured and complete calculated curves are not available as direct matched arrays. The Supporting Information records the Parratt calculation and the empirical crossover diagnostic used in the earlier analysis, together with this evidence limitation. No central conclusion of the present manuscript depends on that crossover construction.

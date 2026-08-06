@@ -7,7 +7,7 @@ curve remains part of the model but is deliberately omitted from the figure.
 
 The measured trace is background-subtracted and normalized to its maximum. The
 two calculated traces retain their common normalization from the previous
-handoff plot. All three curves are shown over the pre-003 interval.
+empirical crossover diagnostic. All three curves are shown over the pre-003 interval.
 
 The original arrays were not present in the source archive, so the CSV inputs
 are digitized from the plotted curves in the annotated PDF. The script repairs

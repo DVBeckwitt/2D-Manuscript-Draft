@@ -7,7 +7,7 @@ The first distinction is between instrumental parameters and sample parameters. 
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow. Steps 1--5 are used for the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ test cases. Step 6 is the added PbI$_2$ extension for stacking-fault diffuse scattering. All sample images are dark-subtracted before the listed observables are formed, and the final measured/calculated comparison applies the same detector-space projection to data and calculation.}
+  \caption{Staged refinement workflow. Steps 1--5 are used for the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ test cases. Step 6 is the added PbI$_2$ extension for stacking-fault diffuse scattering. All sample images are dark-subtracted before the listed observables are formed. The final measured and calculated profiles use the same calibrated coordinate map, finite integration limits, and normalization.}
   \label{tab:refinement_workflow}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
@@ -33,13 +33,13 @@ The first distinction is between instrumental parameters and sample parameters. 
     Detector-space peak positions \\
     4 &
     Mosaicity/profile refinement &
-    Selected local detector ROIs, specular-tail checks, and local profile shapes &
-    Gaussian-plus-Lorentzian mosaic parameters &
-    Center-aligned profile shapes, off-specular arcs, and specular tails \\
+    Selected local detector ROIs, off-condition specular regions, and local profile shapes &
+    Narrow-core plus broad-component mosaic parameters &
+    Center-aligned profile shapes, off-specular arcs, and off-condition specular intensity \\
     5 &
     Ordered-film comparison &
     Selected detector-space Bragg regions and $Q_z$ projections from fixed-$m$ trajectories &
-    Image scale factors and ordered structure-factor parameters &
+    Image-wise nuisance scales and constrained ordered-intensity parameters &
     Selected Bragg-feature locations and apparent line shapes \\
     6 &
     PbI$_2$ diffuse extension &
@@ -54,8 +54,8 @@ The instrumental stages fix where an ideal reflection should appear before any s
 
 The alignment stage is the part of the workflow most similar to detector-space indexing. Indexed sample reflections are used to determine how the film sits in the beam, fixing the nominal incident angle, sample offsets, in-plane rotation, and goniometer misalignment well enough that calculated Bragg-rod trajectories can be overlaid on the detector. This establishes where allowed reflections should appear, analogous to detector-space indexing tools such as indexGIXS.\cite{SmilgiesLi2026IndexGIXS} Only after this geometric step does it make sense to refine the mosaic distribution, because mosaicity should explain profile shape and off-condition intensity rather than compensate for a misplaced trajectory.
 
-The mosaicity stage constrains the shared narrow-core plus broad-tail angular distribution. Local off-specular profiles constrain the narrow core, while the specular-family profiles are sensitive to the broad component together with bandwidth, divergence, alignment, and background. The ordered-film comparison then applies the same projection to measured and calculated images and compares profiles along fixed-$m$ trajectories. At that point structure-factor parameters and image scale factors can be adjusted using intensity information rather than detector placement alone. Quantitative relative-intensity claims require documented normalization and direct arrays.
+The mosaicity stage constrains the shared narrow-core plus broad-component angular distribution. Local off-specular profiles constrain the narrow core, while the specular-family profiles are sensitive to the broad component together with bandwidth, divergence, alignment, and background. The ordered-film comparison then applies the same calibrated coordinate map and finite profile integration to the measured and calculated detector quantities. The present main-text figures use this stage to compare feature locations and apparent profile shapes. Quantitative relative-intensity refinement requires a documented common normalization and retained direct arrays.
 
 For PbI$_2$, the ordered workflow is not discarded. It provides the geometry, projection, and mosaic baseline needed before diffuse scattering can be interpreted. The additional stacking-disorder stage asks whether a physically defined layer-correlation model accounts for the remaining diffuse intensity along fixed-$Q_R$ cylinders. This keeps the PbI$_2$ result tied to the same detector-space framework while making clear which extra parameters belong specifically to stacking faults.
 
-Implementation details, including lookup tables, Monte Carlo sampling, sub-pixel remapping, parameter-correlation plots, and the propagated uncertainty from $2\theta$--$\phi$ and $Q$ transformations, should be documented in the supporting information. The main-text role of the workflow is to make the logic of the refinement reproducible: determine instrumental geometry first, determine sample orientation second, refine mosaic/profile effects third, and only then interpret ordered or diffuse intensity differences as structural information.
+Implementation details, including weighted source-state quadrature, analytic Ewald restriction, detector-coordinate integration, parameter-correlation plots, and propagated uncertainty from the $2\theta$--$\phi$ and $Q$ transformations, are documented in the Supporting Information. The main-text role of the workflow is to make the logic of the refinement reproducible. Instrumental geometry is determined first, sample orientation second, mosaic and profile effects third, and ordered or diffuse intensity differences are interpreted as structural information only after those stages are fixed.

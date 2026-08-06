@@ -56,10 +56,10 @@ This supporting information accompanies the manuscript titled
 and provides expanded workflow notes and supplemental derivations.
 
 
-\section{Geometric ray acceptance and calculation sequence}
+\section{Geometric ray acceptance, detector mapping, and calculation sequence}
 \label{sec:si_geometric_ray_acceptance}
 
-This section makes the geometric operations in the main text explicit. A beam event supplies a ray origin $\mathbf r_0$, unit propagation direction $\hat{\mathbf s}_i$, and wavelength $\lambda$. The incident line is
+A weighted incident state supplies a ray origin $\mathbf r_0$, unit propagation direction $\hat{\mathbf s}_i$, wavelength $\lambda$, and source weight $w_s$. The incident line is
 \begin{equation}
 \mathbf r(u)=\mathbf r_0+u\hat{\mathbf s}_i,
 \qquad u\geq0.
@@ -82,41 +82,52 @@ A parallel ray, or a solution with $u_{\mathrm{hit}}\leq0$, does not reach the s
 \upsilon=(\mathbf r_{\mathrm{hit}}-\mathbf r_s)\cdot\hat{\mathbf e}_2.
 \label{eq:si_sample_coordinates}
 \end{equation}
-The finite rectangular sample accepts the event only if
+A finite rectangular support accepts the state only if
 \begin{equation}
 |\xi|\leq \frac{W}{2},
 \qquad
 |\upsilon|\leq \frac{H}{2}.
 \label{eq:si_sample_bounds}
 \end{equation}
-The illuminated footprint is the weighted distribution of the accepted $(\xi,\upsilon)$ values. It is therefore fixed by the beam distribution and the intersection test, not applied later as an independent position shift. For the convention in which $\hat{\mathbf n}$ points out of the film, the event-specific grazing angle is
+The illuminated footprint is the weighted distribution of the accepted $(\xi,\upsilon)$ values. It is fixed by the source distribution and the intersection test rather than applied later as an independent position shift. For the convention in which $\hat{\mathbf n}$ points out of the film, the state-specific grazing angle is
 \begin{equation}
-\theta_i^{(\mathrm{ray})}
+\theta_i^{(s)}
 =\sin^{-1}\!\left(-\hat{\mathbf s}_i\cdot\hat{\mathbf n}\right).
 \label{eq:si_local_incidence_angle}
 \end{equation}
-Expressing $\hat{\mathbf s}_i$ in the sample basis and evaluating Eq.~\eqref{eq:si_local_incidence_angle} is what the main text calls applying the incidence geometry. Refraction, transmission, and attenuation are subsequent optical operations and do not change the geometric definition of $\mathbf r_{\mathrm{hit}}$.
+The ordered-film configurations used for the displayed Bi$_2$Se$_3$ and Bi$_2$Te$_3$ calculations specify an unbounded in-plane sample plane. Equation~\eqref{eq:si_sample_bounds} documents the available finite-support model, but sample-edge clipping is not invoked as a fitted broadening mechanism in those comparisons.
 
-For an allowed exit wavevector $\mathbf k_f$, let $\hat{\mathbf s}_f=\mathbf k_f/|\mathbf k_f|$. A detector plane through $\mathbf r_D$ with normal $\hat{\mathbf n}_D$ is intersected at
+The detector mapping is most transparent in its own rigid coordinate frame. Let $\mathbf R_D$ and $\mathbf t_D$ map detector-frame vectors and points into the laboratory frame. For an exit ray that begins at $\mathbf r_{\mathrm{hit}}$ and has unit laboratory direction $\hat{\mathbf s}_f$, the detector-frame origin and direction are
 \begin{equation}
-v_D
-=\frac{(\mathbf r_D-\mathbf r_{\mathrm{hit}})\cdot\hat{\mathbf n}_D}
-       {\hat{\mathbf s}_f\cdot\hat{\mathbf n}_D},
+\mathbf o_D=\mathbf R_D^{\mathsf T}(\mathbf r_{\mathrm{hit}}-\mathbf t_D),
 \qquad
-\mathbf r_{D,\mathrm{hit}}
-=\mathbf r_{\mathrm{hit}}+v_D\hat{\mathbf s}_f,
+\mathbf s_D=\mathbf R_D^{\mathsf T}\hat{\mathbf s}_f.
+\label{eq:si_detector_frame_ray}
+\end{equation}
+The detector plane is $z_D=0$. Its forward intersection is
+\begin{equation}
+v_D=-\frac{o_{D,z}}{s_{D,z}},
+\qquad
+\mathbf p_D=\mathbf o_D+v_D\mathbf s_D,
 \label{eq:si_detector_plane_intersection}
 \end{equation}
-with the same nonparallel and forward-propagation requirements. Detector coordinates are
+provided $s_{D,z}$ is nonzero and $v_D>0$. The front-face convention additionally requires the exit direction to approach the active face. If $(c_0,r_0)$ is the calibrated reference coordinate and $p_c,p_r$ are the column and row pitches, the continuous detector coordinates are
 \begin{equation}
-x_D=(\mathbf r_{D,\mathrm{hit}}-\mathbf r_D)\cdot\hat{\mathbf e}_{D,x},
+c=c_0+\frac{p_{D,x}}{p_c},
 \qquad
-y_D=(\mathbf r_{D,\mathrm{hit}}-\mathbf r_D)\cdot\hat{\mathbf e}_{D,y},
-\label{eq:si_detector_coordinates}
+r=r_0+\frac{p_{D,y}}{p_r}.
+\label{eq:si_detector_pixel_coordinates}
 \end{equation}
-and the contribution is retained only inside the calibrated active detector bounds.
+For a detector with $N_c$ columns and $N_r$ rows, the active-area condition is
+\begin{equation}
+-\frac12\leq c\leq N_c-\frac12,
+\qquad
+-\frac12\leq r\leq N_r-\frac12.
+\label{eq:si_detector_active_bounds}
+\end{equation}
+Detector distance, beam center, and detector tilts are contained in $\mathbf R_D$, $\mathbf t_D$, and the reference coordinate. Native pixel masses or finite angular-bin quantities are obtained by integrating the continuous detector-coordinate density over the corresponding region. The detector solid-angle factor is already contained in the coordinate Jacobian that defines that density, so it is not multiplied a second time during profile construction.
 
-Reflection indices are constructed before stochastic integration. If $Q_{\max}$ is the largest momentum transfer subtended by the active detector over the sampled wavelength interval and $\Delta Q$ is a declared resolution margin, the symbolic candidate set is
+Reflection identities are constructed before source integration. If $Q_{\max}$ is the largest momentum transfer subtended by the active detector over the wavelength interval and $\Delta Q$ is a declared coverage margin, the symbolic candidate set is
 \begin{equation}
 \mathcal R=
 \left\{(h,k,l)\in\mathbb Z^3:
@@ -125,21 +136,53 @@ Reflection indices are constructed before stochastic integration. If $Q_{\max}$ 
 \right\}.
 \label{eq:si_reflection_candidate_set}
 \end{equation}
-Here $\operatorname{allowed}$ applies the reflection conditions of the selected structure. For a rod representation, integer $(h,k)$ pairs are enumerated by the same detector-coverage rule and the coordinate along each rod is evaluated continuously. Monte Carlo sampling never generates noninteger Miller indices.
+Here $\operatorname{allowed}$ imposes the reflection conditions of the structural model. For the rod representation, integer $(h,k)$ identities are enumerated by the same detector-coverage rule and the coordinate along each rod remains continuous.
 
-The calculation order is therefore:
+The production calculation proceeds in the following order:
 \begin{enumerate}
-  \item Construct the finite reflection or rod candidate set from the structural model and detector coverage.
-  \item Draw one incident-beam event $(\mathbf r_0,\hat{\mathbf s}_i,\lambda)$ from the declared beam distributions.
-  \item Evaluate Eqs.~\eqref{eq:si_sample_plane_intersection}--\eqref{eq:si_sample_bounds}. Reject rays that miss the finite sample.
-  \item Transform the accepted ray into the sample basis, evaluate its local incidence angle, and apply the wavelength-dependent optical boundary calculation.
-  \item For every retained candidate, integrate the mosaic orientation distribution with a separate stochastic draw, test the elastic-scattering condition, and construct $\mathbf k_f$.
-  \item Evaluate Eqs.~\eqref{eq:si_detector_plane_intersection} and~\eqref{eq:si_detector_coordinates}. Reject exits outside the active detector and deposit the weighted intensity into the intersected pixels.
+  \item Compile the physical rod identities, systematic absences, structure strengths, sample geometry, detector geometry, and source-state description.
+  \item Construct weighted source states in two transverse positions, two angular coordinates, and wavelength. The current source sampler uses seeded equal-mass antithetic Latin-hypercube states, so each state carries weight $1/N_s$.
+  \item Intersect each source ray with the sample plane and apply the selected finite-support test, if any.
+  \item Transform the accepted incident state into the sample frame and apply the standard planar-interface correction that determines the internal incident propagation state.
+  \item For each retained rod, treat the mosaic distribution as a continuous density and solve the wavelength-specific Ewald intersections analytically. No separate stochastic crystallite-orientation cloud is deposited on the detector.
+  \item Map each accepted internal exit state through the planar boundary to its external direction, then evaluate Eqs.~\eqref{eq:si_detector_frame_ray}--\eqref{eq:si_detector_active_bounds}.
+  \item Sum the source-weighted continuous detector-coordinate density and integrate it over the declared native pixels or finite angular bins.
 \end{enumerate}
-Monte Carlo sampling is a numerical quadrature over beam and mosaic variables, not an additional source of physical broadening. Its numerical uncertainty must be checked with independent seeds and increasing event count until changes in the reported detector regions and projected profiles are below a declared tolerance relative to the experimental residuals.
+Convergence of the finite source representation is checked by increasing the source-state count and, where useful, repeating the seeded construction. The continuous mosaic integral and analytic Ewald roots are part of the deterministic forward measure rather than a second stochastic broadening mechanism. Numerical configurations, source revisions, and profile definitions must remain bound to each retained result.
 
-The current repository does not contain the executable forward-model source or the numerical configuration that fixes the Miller bounds, $\Delta Q$, event counts, random seeds, or beam-distribution parameters. Equations~\eqref{eq:si_incident_ray}--\eqref{eq:si_reflection_candidate_set} therefore define the manuscript interface, while those configuration values remain required provenance inputs rather than values inferred here.
+\section{Crystallographic displacement conventions and current implementation scope}
+\label{sec:si_structure_factor_conventions}
 
+The main text writes the structure factor in the conventional fractional-coordinate form
+\begin{equation}
+F_{hkl}=\sum_a o_a f_a(Q)T_a(hkl)
+\exp\!\left[2\pi i(hx_a+ky_a+lz_a)\right].
+\label{eq:si_structure_factor_conventional}
+\end{equation}
+The displacement factor $T_a(hkl)$ must be interpreted in the crystallographic convention of the reported $U$ or $B$ parameters. For an isotropic mean-square displacement $U_{\mathrm{iso},a}$,
+\begin{equation}
+T_a(hkl)
+=\exp\!\left[-8\pi^2U_{\mathrm{iso},a}
+\left(\frac{\sin\theta}{\lambda}\right)^2\right]
+=\exp\!\left(-\frac12U_{\mathrm{iso},a}Q^2\right),
+\label{eq:si_isotropic_displacement_factor}
+\end{equation}
+with $B_{\mathrm{iso}}=8\pi^2U_{\mathrm{iso}}$ and $Q=4\pi\sin\theta/\lambda$.
+
+The executable CIF interface accepts isotropic $U_{\mathrm{iso}}$ or $B_{\mathrm{iso}}$ values and stores their equivalent isotropic mean-square displacement. General per-site anisotropic CIF metadata are not imported by the current calculation. When directional damping is released in the ordered-film parameterization, one shared uniaxial tensor is defined in the film frame,
+\begin{equation}
+\mathbf U_{\mathrm{film}}
+=U_R\left(\mathbf I-\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T}\right)
++U_z\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T},
+\label{eq:si_shared_uniaxial_u}
+\end{equation}
+which gives
+\begin{equation}
+T_{\mathrm{dir}}(\mathbf Q)
+=\exp\!\left[-\frac12\left(U_RQ_R^2+U_zQ_z^2\right)\right].
+\label{eq:si_shared_uniaxial_factor}
+\end{equation}
+This pair is shared by the selected ordered structural model. It is not a site-resolved anisotropic refinement. Any future use of general $U_{ij}$ values must state the CIF tensor convention and the verified transformation into the calculation basis before those values are compared with crystallographic reports.
 
 \section{Wavelength sampling and moving Ewald construction}
 \label{sec:si_bandwidth_mosaic_scaling}
@@ -202,7 +245,7 @@ feature to bandwidth or report a numerical cap overlap.
   For each dark-subtracted sample image, use indexed Bragg-peak centers rather than full-image intensity. With detector parameters fixed, refine sample alignment by minimizing detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Refine $(\theta_i,\chi,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha,\psi)$. Include film dimensions $(W,H)$ and thickness $t$ to weight footprint and absorption.
 
   \item \textbf{Mosaicity/profile refinement.}
-  With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped Gaussian-plus-Lorentzian angular distribution, not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly inform the narrow core, while off-condition specular intensity is sensitive to the broad component together with bandwidth, divergence, alignment, and background. The parameterization yields component widths and a broad-component weight, but attribution and necessity require the controlled no-tail and re-optimized Gaussian-only comparisons specified under C18.
+  With geometry fixed, compare selected local detector ROIs or local $I(\phi)$ profiles after center alignment. The shared profile model is a wrapped two-component angular distribution with a Gaussian-like core and a Lorentzian-like broad component. It is not a pseudo-Voigt common-width peak approximation. Off-specular arcs mainly inform the narrow core, while off-condition specular intensity is sensitive to the broad component together with bandwidth, divergence, alignment, and background. The parameterization yields component widths and a broad-component weight, but attribution and necessity require the controlled no-tail and re-optimized Gaussian-only comparisons specified under C18.
 
   \item \textbf{Ordered-structure refinement.}
   With geometry and mosaicity fixed, refine the ordered intensity model against background-subtracted integrated counts in selected detector-space Bragg regions of interest (ROIs) from multiple dark-subtracted images. The corresponding prediction is the calculated detector intensity deposited in those same ROIs. Use one nuisance scale per image and physically constrained ordered-structure parameters.
@@ -211,7 +254,7 @@ feature to bandwidth or report a numerical cap overlap.
   After the ordered model converges, introduce stacking-disorder parameters only through fixed-in-plane-momentum rod profiles reported versus the film-normal momentum. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed. Only stacking-disorder parameters and declared scale/background terms are refined.
 \end{enumerate}
 
-All detector images are dark-subtracted before fitting. Any additional preprocessing (flat-field, polarization, solid-angle, or detector-efficiency corrections) should either be applied consistently to all images before refinement or stated explicitly if omitted. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
+All detector images are dark-subtracted before fitting. Any additional flat-field, polarization, or detector-efficiency correction should be applied consistently to all images or stated explicitly if omitted. The calculated detector-coordinate density already contains the detector-coordinate Jacobian, including the pixel solid-angle factor, so a second solid-angle correction must not be applied to the model output. We recommend stage-specific uncertainty estimation by repeated constrained refits: resample the calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg ROIs for ordered intensity, and selected rod bins for disorder. Report the standard deviation of the accepted solutions and propagate parameters to the next stage only after the preceding stage is stable.
 
 
 \subsection{Coordinate remapping, projected profiles, and uncertainty propagation}
@@ -263,7 +306,7 @@ I_{\ell}^{\mathrm{ROI}}=
 \qquad
  a_{\ell k}=\sum_b r_{\ell b}M_{bk}.
 \end{equation}
-Each point in the plotted profile is therefore an average over a finite detector-space band. Its coordinate may be labeled by $Q_z$ or $L$, but the point represents a resolution-limited projection rather than the intensity at one exact reciprocal-space coordinate.
+Each point in the plotted profile is therefore an average over a finite detector-space band. Its coordinate may be labeled by $Q_z$ or $L$, but the point represents a finite-bin projection rather than the intensity at one exact reciprocal-space coordinate.
 
 The transformed-coordinate uncertainty has two parts: uncertainty in the coordinate label and uncertainty in the rebinned intensity. The coordinate-label uncertainty follows from the finite detector-pixel footprint and from uncertainty in the detector calibration. For square detector pixels with pitch $p$, detector distance $d$, and $t=2\theta$, the leading flat-detector terms are
 \begin{equation}
@@ -318,7 +361,7 @@ The displayed coordinate for a projected point can be represented by the same fi
 \qquad
 \sigma^2_{L,\ell}=\frac{\sum_b r_{\ell b}N_b(L_b-\bar L_{\ell})^2}{\sum_b r_{\ell b}N_b},
 \end{equation}
-before adding calibration, incidence-angle, wavelength, divergence, and mosaic contributions. This width is a projection and resolution effect. It is not a counting-statistical error bar.
+before adding calibration, incidence-angle, wavelength, divergence, and mosaic contributions. This width is a finite-bin projection effect. It is not a counting-statistical error bar.
 
 These projection uncertainties are coupled to model-parameter correlations. Peak positions are sensitive to detector distance, beam center, detector tilt, sample height, and incidence angle. Profile widths are sensitive to both beam divergence and the Gaussian mosaic core. Off-condition profiles are sensitive to the broad mosaic component together with bandwidth, divergence, alignment, and background. Near-critical intensity additionally depends on the optical response and is excluded from evidence for the broad component. Relative integrated intensities are sensitive to scale, footprint, absorption, thickness, and structure-factor parameters. The staged workflow separates these effects by fixing or constraining the parameters tied to peak position before fitting profile widths, and by fixing the geometry and mosaic state before interpreting ordered intensities.
 
@@ -465,7 +508,7 @@ normalized entrance and exit interface factors before it multiplies the
 structure-factor and mosaic weights.
 
 \paragraph{Detector accumulation over the bandwidth.}
-For each accepted event, the wavelength-resolved contribution is formed with
+For each accepted source-state and rod contribution, the wavelength-resolved detector density is formed with
 the same geometry, structure-factor, mosaic, detector, and optical interfaces.
 The detector images are then added incoherently,
 \begin{equation}
@@ -483,33 +526,23 @@ $L=0$. Their practical importance must be bounded over a declared observable.
 The required diagnostic compares the full wavelength-dependent
 $\tilde n_q(\lambda)$ calculation with a fixed-$\tilde n_q$ calculation over
 declared detector ROIs and $Q_z$ ranges. A calculation with $\tilde n_q=1$ is a
-separate total-optics-off diagnostic. Because the executable source,
-configuration, measured spectrum, optical-constant table, and direct
-comparison arrays are absent, no such sensitivity result is claimed here.
+separate total-optics-off diagnostic. The executable boundary calculation and configuration interface are now available. The exact measured spectrum, optical-constant table, and direct arrays bound to the displayed low-$L$ comparison have not yet been retained together, so no numerical sensitivity result is claimed here.
 
 
-\subsection{Specular-family Parratt-to-kinematic handoff}
-\label{subsec:si_parratt_structure_handoff}
+\subsection{Near-critical specular diagnostic and empirical crossover}
+\label{subsec:si_parratt_structure_crossover}
 
-This section records the provisional optical-to-kinematic construction so that
-its assumptions remain auditable. It is not used as quantitative evidence in
-the main text: the archived comparison traces were reconstructed from an
-annotated raster, the complete blended prediction is unavailable as a direct
-array, and mosaic averaging of the optical branch has not been established. In
-the proposed construction, the low-$Q_z$ branch is the specular Parratt
-reflectivity and the high-$Q_z$ branch is a normalized finite-stack kinematic
-term divided by $Q_z^2$. The equations below define the intended handoff. They
-do not validate its scale, blend window, or connection to the measured profile.
+This section records the standard Parratt calculation and the empirical crossover explored in the earlier near-critical analysis. It is not used as quantitative evidence in the main text. The archived comparison traces were reconstructed from an annotated raster, the complete combined prediction is unavailable as a direct array, and mosaic averaging of the optical branch has not been established. In the diagnostic construction, the low-$Q_z$ branch is the specular Parratt reflectivity and the high-$Q_z$ branch is a normalized finite-stack kinematic term divided by $Q_z^2$. The equations below document that empirical crossover. They do not validate its absolute scale, crossover window, or agreement with the measured profile.
 
 The plotted coordinate is
 \begin{equation}
   x=\frac{Q_z}{Q_c},
   \qquad
   L=\frac{Q_z c}{2\pi}=x\frac{Q_c c}{2\pi}.
-  \label{eq:si_handoff_x_l}
+  \label{eq:si_crossover_x_l}
 \end{equation}
 Here $Q_c$ is the film critical wavevector and $c$ is the out-of-plane lattice
-constant. The provisional handoff coordinate uses $Q_z/Q_c$ and the
+constant. The diagnostic crossover coordinate uses $Q_z/Q_c$ and the
 corresponding $L$ value defined above.
 
 The low-$Q_z$ branch is the Parratt reflectivity.\cite{Parratt1954} For a layer
@@ -549,7 +582,7 @@ reflection amplitude is
        {1+r_jR_{j+1}^{\mathrm{amp}}P_{j+1}}.
   \label{eq:si_parratt_recursion}
 \end{equation}
-The optical branch in the provisional handoff is
+The optical branch in this diagnostic is
 \begin{equation}
   R_{\mathrm P}(Q_z)=\left|R_0^{\mathrm{amp}}(Q_z)\right|^2.
   \label{eq:si_parratt_reflectivity}
@@ -578,7 +611,7 @@ limit, while a complex internal wavevector still describes evanescence and
 absorption. The unscaled kinematic branch is then
 \begin{equation}
   M(Q_z)=\frac{S_{\mathrm{HT},0}(L_{\mathrm{film}})}{Q_z^2}.
-  \label{eq:si_handoff_unscaled_structure}
+  \label{eq:si_crossover_unscaled_structure}
 \end{equation}
 The $Q_z^{-2}$ factor gives the high-$Q_z$ structural envelope, while the
 internal coordinate $L_{\mathrm{film}}$ keeps the finite-stack fringe phase consistent with
@@ -597,19 +630,19 @@ log-median estimate is
   \ln M(Q_{z,i})
   \right)
   \right],
-  \label{eq:si_handoff_scale}
+  \label{eq:si_crossover_scale}
 \end{equation}
 with the default overlap window $5<Q_z/Q_c<10$. The scaled kinematic branch is
 \begin{equation}
   R_{\mathrm H}(Q_z)=A M(Q_z).
-  \label{eq:si_handoff_scaled_structure}
+  \label{eq:si_crossover_scaled_structure}
 \end{equation}
 
-The handoff window is selected by comparing the two positive finite branches in
+The crossover window is selected by comparing the two positive finite branches in
 log intensity,
 \begin{equation}
   r(x)=\log_{10}\!\left[\frac{R_{\mathrm H}(x)}{R_{\mathrm P}(x)}\right].
-  \label{eq:si_handoff_log_ratio}
+  \label{eq:si_crossover_log_ratio}
 \end{equation}
 Candidate points must lie in the search range $3\le x\le10$ and satisfy
 $|r(x)|\le0.10$. The selected window $[x_1,x_2]$ is the widest contiguous
@@ -622,7 +655,7 @@ Inside the selected window, the interpolation coordinate and weight are
   t=\frac{x-x_1}{x_2-x_1},
   \qquad
   w(t)=6t^5-15t^4+10t^3,
-  \label{eq:si_handoff_smoothstep}
+  \label{eq:si_crossover_smoothstep}
 \end{equation}
 with $t$ clipped to the interval $[0,1]$. The final branch is blended in log
 reflectivity,
@@ -634,25 +667,25 @@ R_{\mathrm P}(x), & x\le x_1,\\[3pt]
   & x_1<x<x_2,\\[3pt]
 R_{\mathrm H}(x), & x\ge x_2.
 \end{cases}
-\label{eq:si_handoff_blend}
+\label{eq:si_crossover_blend}
 \end{equation}
 A small positive numerical floor is used only to avoid logarithms of nonpositive
 roundoff values inside the blend window. The resulting curve is exactly
 Parratt below the selected window, exactly the scaled structure branch above the
-window, and smooth through the handoff.
+window, and smooth through the crossover.
 
 \subsection{Detector-derived ordered and disorder observables}
 \label{subsec:si_detector_derived_objectives}
 
-The detector-space forward model predicts full images, but the inverse problems use stage-specific observables. In the ordered-structure stage, the measured quantity for ROI $i$ in exposure $e$ is the background-subtracted detector count
+The detector-space forward model predicts a continuous detector-coordinate density and its finite-region integrals, while the inverse problems use stage-specific observables. In the ordered-structure stage, the measured quantity for ROI $i$ in exposure $e$ is the background-subtracted detector count
 \[
   y_{ei}=\sum_{(u,v)\in\Omega_{ei}}\left[I_e^{\mathrm{meas}}(u,v)-b_{ei}(u,v)\right],
 \]
-where $\Omega_{ei}$ is the selected detector-space Bragg ROI and $b_{ei}$ is the local background model. The corresponding prediction is the calculated detector intensity deposited in the same ROI,
+where $\Omega_{ei}$ is the selected detector-space Bragg ROI and $b_{ei}$ is the local background model. The corresponding prediction is the detector-coordinate density integrated over the same region,
 \[
-  \mu_{ei}=\sum_{j\in\mathcal{R}_{ei}} w_j,
+  \mu_{ei}=\int_{\Omega_{ei}} I_e^{\mathrm{calc}}(c,r)\,dc\,dr,
 \]
-with geometry, beam terms, and mosaicity fixed. One nuisance scale per image accounts for exposure and flux differences. This makes the ordered stage a multi-image ROI-integrated Bragg-intensity refinement, not a full-image pixel objective.
+or the equivalent deterministic sum of native pixel masses. Geometry, source terms, and mosaicity are fixed before this stage. One nuisance scale per image accounts for exposure and flux differences. This defines a multi-image ROI-integrated ordered-intensity objective rather than a full-image pixel objective.
 
 The PbI$_2$ disorder refinement is a final-stage selected-profile fit, not a second global image refinement. The upstream beam, detector, sample alignment, mosaic/profile parameters, lattice constants, and ordered PbI$_2$ baseline are fixed before this stage starts. The detector image is first caked into a signal field $S(\phi,2\theta)$ and a normalization field $N(\phi,2\theta)$ using the calibrated detector geometry. For the selected-rod conversion, let $\vartheta_Q$ denote the polar angle of the scattering vector relative to the film normal. For each caked bin,
 \[
@@ -684,7 +717,7 @@ The model profile is evaluated along the same selected branch. In compact notati
 \]
 where $x_j$ is the profile coordinate, $L$ is the corresponding stacking
 coordinate, $B$ is a low-order background, $s$ is a global scale, $K$ is the
-fixed detector/profile broadening kernel, and $I_p$ is the finite-stack
+fixed finite-profile kernel, and $I_p$ is the finite-stack
 transition-matrix intensity derived in
 Sec.~\ref{sec:si_pbi2_transition}.  When an explicit closed-form broadening
 kernel is used, its widths are fixed by the upstream resolution and
@@ -894,13 +927,13 @@ so their calculated intensities are added:
 \begin{equation}
  I_{\mathrm{calc}}(L)=S\left\{\left[
  w_{2H}I_{2H}(L)+w_{4H}I_{4H}(L)+w_{6H}I_{6H}(L)
- \right]\otimes R(L)\right\},\qquad
+ \right]\otimes K_{\mathrm{prof}}(L)\right\},\qquad
  w_{2H}+w_{4H}+w_{6H}=1.
  \label{eq:si_pbi2_total_intensity}
 \end{equation}
 The core parameterization has three disorder magnitudes and two independent
 population weights.  The stack length $N$, scale, and any fixed or refined
-resolution terms are separate.  If the data do not support three
+finite-profile and instrumental broadening terms are separate.  If the data do not support three
 independent disorder magnitudes, the constrained starting model is
 $\epsilon_{2H}=\epsilon_{4H}=\epsilon_{6H}$.
 
