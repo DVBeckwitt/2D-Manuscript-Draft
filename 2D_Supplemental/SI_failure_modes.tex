@@ -205,8 +205,8 @@ An allowed reciprocal vector contributes only when
 within the declared instrumental and numerical resolution.\cite{AlsNielsenMcMorrow2001}
 The incident direction is resampled as well when beam divergence is included.
 Changing wavelength therefore moves the Ewald-sphere center and changes its
-radius. The calculation must reconstruct and test Eq.~\eqref{eq:si_moving_ewald_condition}
-for every wavelength and direction sample. A set of concentric shells about a
+radius. The calculation reconstructs and tests Eq.~\eqref{eq:si_moving_ewald_condition}
+for every wavelength and direction state. A set of concentric shells about a
 shared center is not the physical wavelength construction.
 
 For one lattice-plane spacing at fixed orientation, Bragg's law gives a useful
@@ -219,17 +219,44 @@ limiting check,
 \end{equation}
 This scalar derivative does not replace the full detector-space condition,
 because sample orientation, incident direction, mosaicity, refraction, and
-detector acceptance remain coupled. In particular, neither
-Eq.~\eqref{eq:si_moving_ewald_condition} nor
-Eq.~\eqref{eq:si_bragg_bandwidth_check} supports a universal inverse-order
-angular-overlap law. Any statement that one $(00l)$ member has a broader accessible mosaic
-overlap than another must be obtained from the full vector calculation using
-the measured spectrum and verified geometry.
+detector acceptance remain coupled. It is used only as a local check on the
+radial direction in which wavelength changes the detector position.
 
-The repository does not contain that spectrum or the numerical forward-model
-configuration. This section therefore defines the wavelength-sampling
-interface and its sanity check, but does not assign the observed low-$L$
-feature to bandwidth or report a numerical cap overlap.
+The wavelength assignment of the Bi$_2$Se$_3$ $003$ streak is tested with an
+otherwise-identical control. The full detector quantity is
+\begin{equation}
+  I_{\mathrm{full}}(x,y)=\sum_j w_j I(x,y;\lambda_j),
+  \qquad
+  \sum_j w_j=1,
+  \label{eq:si_full_spectrum_control}
+\end{equation}
+where every wavelength state has its own incident wavevector and Ewald
+intersection. The control replaces the distribution by its weighted mean,
+\begin{equation}
+  I_{\mathrm{mono}}(x,y)=I(x,y;\bar\lambda),
+  \qquad
+  \bar\lambda=\sum_j w_j\lambda_j,
+  \label{eq:si_mean_wavelength_control}
+\end{equation}
+while holding the geometry, structure factors, continuous mosaic density,
+background treatment, and detector mapping fixed.
+
+The full-spectrum calculation reproduces the long radial extension through
+$003$. The mean-wavelength control collapses that extension, while the
+transverse $\phi$ width remains because it is set primarily by the
+crystallite-orientation distribution. The $006$ feature lies at approximately
+twice the radial $2\theta$ coordinate of $003$ and remains more localized in
+the measured image. The stronger apparent $003$ signal is not attributed to
+$|F_{003}|^2$ alone. Because $003$ lies closer to the strong low-$Q_z$
+specular response, the wavelength convolution samples a higher-intensity
+radial envelope than it does around $006$. The detector calculation therefore
+accounts for both the structure strength and the wavelength-resolved Ewald,
+Jacobian, and intensity weights before the two features are compared.
+
+This result does not imply a universal inverse-order bandwidth law. The radial
+extension is a property of the full source distribution and detector measure
+for the stated geometry. The transverse $\phi$ width is treated separately as
+the cleaner mosaic observable.
 
 \section{Staged refinement workflow (expanded)}
 \label{sec:si_workflow}
@@ -418,9 +445,9 @@ $\lambda_j$ with spectral weight $w_j$,
 \end{equation}
 where $q$ identifies the layer. The decrement $\delta_q$ controls refraction
 and critical-angle behavior, whereas $\beta_q$ controls absorption and
-penetration depth. Both are wavelength-dependent material inputs. The
-calculation must record their source and interpolation together with the
-sampled spectrum. Those numerical inputs are not present in this repository.
+penetration depth. Both are wavelength-dependent material inputs. Their
+source, interpolation, and association with the sampled spectrum are recorded
+with the calculation configuration.
 
 \paragraph{Tangential matching and the complex normal component.}
 Translational invariance along a flat interface conserves the tangential
@@ -521,18 +548,17 @@ The detector images are then added incoherently,
 \end{equation}
 Changing $\lambda_j$ changes the moving Ewald construction, the layer optical
 constants, the complex normal components, and the interface and depth weights.
-The equations do not imply that optical constants are important only near
-$L=0$. Their practical importance must be bounded over a declared observable.
-The required diagnostic compares the full wavelength-dependent
-$\tilde n_q(\lambda)$ calculation with a fixed-$\tilde n_q$ calculation over
-declared detector ROIs and $Q_z$ ranges. A calculation with $\tilde n_q=1$ is a
-separate total-optics-off diagnostic. The executable boundary calculation and configuration interface are now available. The exact measured spectrum, optical-constant table, and direct arrays bound to the displayed low-$L$ comparison have not yet been retained together, so no numerical sensitivity result is claimed here.
+The planar-interface correction is retained for every wavelength state. Its
+role is expected to be strongest when an incident or exit angle approaches the
+critical-angle regime. No separate optics sensitivity or optics-off comparison
+is used in the present argument because the optical correction is not a
+principal contribution of the manuscript.
 
 
-\subsection{Near-critical specular diagnostic and empirical crossover}
+\subsection{Parratt-to-kinematic crossover for the specular profile}
 \label{subsec:si_parratt_structure_crossover}
 
-This section records the standard Parratt calculation and the empirical crossover explored in the earlier near-critical analysis. It is not used as quantitative evidence in the main text. The archived comparison traces were reconstructed from an annotated raster, the complete combined prediction is unavailable as a direct array, and mosaic averaging of the optical branch has not been established. In the diagnostic construction, the low-$Q_z$ branch is the specular Parratt reflectivity and the high-$Q_z$ branch is a normalized finite-stack kinematic term divided by $Q_z^2$. The equations below document that empirical crossover. They do not validate its absolute scale, crossover window, or agreement with the measured profile.
+The detector-derived $m=0$ profile spans two limiting regimes. The low-$Q_z$ response is described by standard Parratt reflectivity, while the higher-$Q_z$ Bragg response is described by a finite-stack kinematic term. The two branches are matched smoothly over a declared overlap interval. We refer to this matching as the Parratt-to-kinematic crossover. It is a practical connection between two limiting calculations, not a new scattering theory. The main-text figure slot is reserved for a direct-array comparison that places the low-$Q_z$ region and the $003$ peak on one coordinate transformation, one background treatment, and one intensity scale.
 
 The plotted coordinate is
 \begin{equation}
@@ -673,6 +699,14 @@ A small positive numerical floor is used only to avoid logarithms of nonpositive
 roundoff values inside the blend window. The resulting curve is exactly
 Parratt below the selected window, exactly the scaled structure branch above the
 window, and smooth through the crossover.
+
+For the joint comparison, the low-$Q_z$ interval and the $003$ neighborhood are
+not normalized independently. The measured detector profile, the Parratt
+branch, the finite-stack branch, and the combined curve must share one declared
+background treatment and one intensity scale. The $003$ peak serves as the
+higher-$Q_z$ structural reference. Its radial wavelength broadening is evaluated
+with Eqs.~\eqref{eq:si_full_spectrum_control} and
+\eqref{eq:si_mean_wavelength_control}.
 
 \subsection{Detector-derived ordered and disorder observables}
 \label{subsec:si_detector_derived_objectives}

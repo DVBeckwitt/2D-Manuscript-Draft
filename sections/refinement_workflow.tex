@@ -33,9 +33,9 @@ The first distinction is between instrumental parameters and sample parameters. 
     Detector-space peak positions \\
     4 &
     Mosaicity/profile refinement &
-    Selected local detector ROIs, off-condition specular regions, and local profile shapes &
+    Selected off-specular ROIs, transverse $\phi$ profiles, and off-condition $m=0$ regions &
     Narrow-core plus broad-component mosaic parameters &
-    Center-aligned profile shapes, off-specular arcs, and off-condition specular intensity \\
+    Off-specular arc widths, transverse $\phi$ widths, and off-condition specular intensity \\
     5 &
     Ordered-film comparison &
     Selected detector-space Bragg regions and $Q_z$ projections from fixed-$m$ trajectories &
@@ -54,7 +54,7 @@ The instrumental stages fix where an ideal reflection should appear before any s
 
 The alignment stage is the part of the workflow most similar to detector-space indexing. Indexed sample reflections are used to determine how the film sits in the beam, fixing the nominal incident angle, sample offsets, in-plane rotation, and goniometer misalignment well enough that calculated Bragg-rod trajectories can be overlaid on the detector. This establishes where allowed reflections should appear, analogous to detector-space indexing tools such as indexGIXS.\cite{SmilgiesLi2026IndexGIXS} Only after this geometric step does it make sense to refine the mosaic distribution, because mosaicity should explain profile shape and off-condition intensity rather than compensate for a misplaced trajectory.
 
-The mosaicity stage constrains the shared narrow-core plus broad-component angular distribution. Local off-specular profiles constrain the narrow core, while the specular-family profiles are sensitive to the broad component together with bandwidth, divergence, alignment, and background. The ordered-film comparison then applies the same calibrated coordinate map and finite profile integration to the measured and calculated detector quantities. The present main-text figures use this stage to compare feature locations and apparent profile shapes. Quantitative relative-intensity refinement requires a documented common normalization and retained direct arrays.
+The mosaicity stage constrains the shared narrow-core plus broad-component angular distribution. Local off-specular profiles constrain the narrow core. Within the $m=0$ family, transverse $\phi$ profiles constrain crystallite tilt, while the radial $2\theta$ profile is held out of the mosaic interpretation until the wavelength distribution is fixed. With geometry and mosaicity held fixed, the full-spectrum and mean-wavelength calculations are then compared directly. The successful control assigns the radial $003$ streak to wavelength dispersion rather than to the broad mosaic component. The ordered-film comparison applies the same calibrated coordinate map and finite profile integration to the measured and calculated detector quantities. The present main-text figures use this stage to compare feature locations and apparent profile shapes. Quantitative relative-intensity refinement requires a documented common normalization and retained direct arrays.
 
 For PbI$_2$, the ordered workflow is not discarded. It provides the geometry, projection, and mosaic baseline needed before diffuse scattering can be interpreted. The additional stacking-disorder stage asks whether a physically defined layer-correlation model accounts for the remaining diffuse intensity along fixed-$Q_R$ cylinders. This keeps the PbI$_2$ result tied to the same detector-space framework while making clear which extra parameters belong specifically to stacking faults.
 

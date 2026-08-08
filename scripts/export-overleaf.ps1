@@ -130,15 +130,25 @@ function Invoke-CommandChecked {
     )
 
     Push-Location -LiteralPath $WorkingDirectory
+    $previousErrorActionPreference = $ErrorActionPreference
     try {
+        # Windows PowerShell 5.1 converts redirected native stderr into
+        # ErrorRecord objects. latexmk writes normal first-pass diagnostics,
+        # including a temporarily missing .bbl, to stderr. With the script-wide
+        # preference set to Stop, that diagnostic otherwise aborts the command
+        # before latexmk can run BibTeX and finish the build.
+        $ErrorActionPreference = 'Continue'
         $commandOutput = & $Command @Arguments 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            $details = $commandOutput -join [Environment]::NewLine
-            throw "$Command $($Arguments -join ' ') failed with exit code $LASTEXITCODE.`n$details"
-        }
+        $exitCode = $LASTEXITCODE
     }
     finally {
+        $ErrorActionPreference = $previousErrorActionPreference
         Pop-Location
+    }
+
+    if ($exitCode -ne 0) {
+        $details = $commandOutput -join [Environment]::NewLine
+        throw "$Command $($Arguments -join ' ') failed with exit code $exitCode.`n$details"
     }
 }
 
