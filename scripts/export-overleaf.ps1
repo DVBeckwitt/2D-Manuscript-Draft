@@ -6,8 +6,9 @@ Creates a dependency-only, graphics-cached Overleaf package and ZIP.
 Copies the main manuscript and Supporting Information dependency closure into
 build_overleaf/overleaf. Referenced TikZ and raster graphics are losslessly
 pre-rendered as cached PDFs, so Overleaf does not rebuild or decode them on
-each LaTeX pass. Git metadata, scripts, existing PDFs, and LaTeX auxiliaries
-are not included. By default, both document entry points are compile-checked
+each LaTeX pass. The supplied supplemental note is built incrementally before
+dependency collection. Referenced PDFs are included, while review outputs,
+Git metadata, scripts, and LaTeX auxiliaries are excluded. Both entry points are compile-checked
 before build_overleaf/overleaf.zip is created.
 
 .EXAMPLE
@@ -395,9 +396,13 @@ Assert-GeneratedPath -Path $ArchivePath
 if (-not (Get-Command pdflatex -ErrorAction SilentlyContinue)) {
     throw 'pdflatex is required to pre-render the TikZ figures.'
 }
-if ((-not $SkipCompileCheck) -and (-not (Get-Command latexmk -ErrorAction SilentlyContinue))) {
-    throw 'latexmk is required for the package compile check.'
+if (-not (Get-Command latexmk -ErrorAction SilentlyContinue)) {
+    throw 'latexmk is required to build the supplemental note and check the package.'
 }
+
+# The SI includes this generated PDF. Build it before resolving dependencies,
+# including package-only exports, and retain its incremental cache locally.
+& (Join-Path $PSScriptRoot 'build-supplement.ps1') -NoteOnly
 
 $script:cacheHits = 0
 $script:cacheMisses = 0

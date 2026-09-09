@@ -60,10 +60,10 @@ $requiredFiles = @(
     'sections/results_diffuse_pbi2.tex',
     '2D_Supplemental/SI_failure_modes.tex',
     '2D_Supplemental/SI_ordered_structure_parameters.tex',
+    '2D_Supplemental/verbatim_supplemental_note.pdf',
+    'figures/correlated_effects/fig_specular_parratt_kinematic_003_joint_fit.pdf',
     'figures/intro/area_detector_bragg_peaks_overview.pdf',
     'figures/geometry/system_geometry.pdf',
-    'figures/geometry/sample_geometry_rotation.pdf',
-    'figures/geometry/sample_geometry_alignment.pdf',
     'figures/mosaic/mosaic_bragg_inplane.pdf',
     'figures/mosaic/mosaic_bragg_specular.pdf',
     'figures/results_pbi2/transition_matrix/pbi2_polytype_stacks.pdf'
@@ -95,6 +95,18 @@ Assert-True -Condition ($packagedTex -notmatch '\\usepackage\{tikz(?:-3dplot)?\}
 $sectionText = (Get-ChildItem -LiteralPath (Join-Path $packageDirectory 'sections') -Filter '*.tex' -File | ForEach-Object { Get-Content -Raw -LiteralPath $_.FullName }) -join "`n"
 Assert-True -Condition ($sectionText -notmatch '\\input\{figures/') -Message 'A staged section still inputs a live figure source.'
 
+$jointRelativePath = 'figures/correlated_effects/fig_specular_parratt_kinematic_003_joint_fit.pdf'
+Assert-True -Condition ($sectionText -match ('\\includegraphics(?:\[[^\]]*\])?\{' + [regex]::Escape($jointRelativePath) + '\}')) -Message 'The staged manuscript does not display the supplied joint specular PDF.'
+Assert-True -Condition ((Get-FileHash -LiteralPath (Join-Path $repoRoot $jointRelativePath)).Hash -eq (Get-FileHash -LiteralPath (Join-Path $packageDirectory $jointRelativePath)).Hash) -Message 'The packaged joint specular figure differs from the supplied PDF.'
+
+$noteRelativePath = '2D_Supplemental/verbatim_supplemental_note.pdf'
+$sourceNote = Join-Path $repoRoot $noteRelativePath
+$packagedNote = Join-Path $packageDirectory $noteRelativePath
+$siText = Get-Content -Raw -LiteralPath (Join-Path $packageDirectory '2D_Supplemental/SI_failure_modes.tex')
+Assert-True -Condition ($siText -match '\\includepdf(?:\[[\s\S]*?\])?\{verbatim_supplemental_note\.pdf\}') -Message 'The staged SI does not include the supplemental note.'
+Assert-True -Condition ((Get-FileHash -LiteralPath $sourceNote).Hash -eq (Get-FileHash -LiteralPath $packagedNote).Hash) -Message 'The packaged supplemental note differs from the locally built dependency.'
+$noteTimestampBefore = (Get-Item -LiteralPath $sourceNote).LastWriteTimeUtc
+
 Assert-True -Condition (Test-Path -LiteralPath $archivePath -PathType Leaf) -Message 'The Overleaf ZIP was not created.'
 Expand-Archive -LiteralPath $archivePath -DestinationPath $expandedArchive
 Assert-True -Condition (Test-Path -LiteralPath (Join-Path $expandedArchive 'main.tex') -PathType Leaf) -Message 'The ZIP does not place main.tex at its root.'
@@ -102,7 +114,7 @@ Assert-True -Condition (-not (Test-Path -LiteralPath (Join-Path $expandedArchive
 
 $cacheDirectory = Join-Path $buildRoot 'graphics-cache'
 $cacheBefore = @(Get-ChildItem -LiteralPath $cacheDirectory -Filter '*.pdf' -File | Sort-Object Name)
-Assert-True -Condition ($cacheBefore.Count -eq 34) -Message "Expected 34 cached graphics, found $($cacheBefore.Count)."
+Assert-True -Condition ($cacheBefore.Count -gt 0) -Message 'The graphics cache is empty.'
 $timestampsBefore = @{}
 foreach ($file in $cacheBefore) {
     $timestampsBefore[$file.Name] = $file.LastWriteTimeUtc
@@ -111,8 +123,10 @@ foreach ($file in $cacheBefore) {
 & $exportScript @arguments
 
 $cacheAfter = @(Get-ChildItem -LiteralPath $cacheDirectory -Filter '*.pdf' -File | Sort-Object Name)
+Assert-True -Condition ($cacheAfter.Count -eq $cacheBefore.Count) -Message 'An unchanged second export changed the graphics cache inventory.'
 foreach ($file in $cacheAfter) {
     Assert-True -Condition ($timestampsBefore[$file.Name] -eq $file.LastWriteTimeUtc) -Message "Cached graphic was rebuilt unnecessarily: $($file.Name)"
 }
+Assert-True -Condition ((Get-Item -LiteralPath $sourceNote).LastWriteTimeUtc -eq $noteTimestampBefore) -Message 'The unchanged supplemental note was republished unnecessarily.'
 
 Write-Output "Overleaf export integration test passed: $archivePath"

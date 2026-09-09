@@ -23,7 +23,7 @@ def range_mask(values, lower, upper):
     return (values >= lower) & (values <= upper)
 
 
-measured = pd.read_csv(HERE / "measured_m0_trace_from_figure9.csv")
+measured = pd.read_csv(HERE / "measured_r0_trace_from_figure9.csv")
 model = pd.read_csv(HERE / "parratt_kinematic_traces_from_previous_figure8.csv")
 
 L_data = measured["L"].to_numpy(float)

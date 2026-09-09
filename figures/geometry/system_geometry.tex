@@ -188,7 +188,7 @@
                                 {\FTRy},
                                 {\FTRz + 1.1*\rBetaArc*cos(\betamid)});
     \node[orange, scale=0.6, anchor=south east,
-          xshift=6pt, yshift=-5pt] at (betaLabel) {$\beta$};
+          xshift=6pt, yshift=-5pt] at (betaLabel) {$\beta_D$};
 
     %=========================
     % Gamma arc, lines, and label at top-right (display-only)
@@ -224,7 +224,7 @@
                                  {\FTRy + 0.7*sin(\alphamid)},
                                  {\FTRz});
     \node[oiPurple, scale=0.6, anchor=south west,
-          xshift=-18pt, yshift=-5pt] at (gammaLabel) {$\gamma$};
+          xshift=-18pt, yshift=-5pt] at (gammaLabel) {$\gamma_D$};
 
     %=========================
     % Sample and beams
@@ -277,7 +277,7 @@
     %=========================
     \tdplotsetrotatedcoords{0}{90}{90}
     \tdplotdrawarc[dashed,tdplot_rotated_coords, cyan]
-      {(0,0,-3)}{0.8}{20}{90}{anchor=north west, xshift = -8pt}{\tiny $\phi$}
+      {(0,0,-3)}{0.8}{20}{90}{anchor=north west, xshift = -8pt}{\tiny $\phi_f$}
 
     \tdplotsetrotatedcoords{90}{-20.56}{0}
     \tdplotdrawarc[dashed, green,tdplot_rotated_coords, line width=0.1mm]

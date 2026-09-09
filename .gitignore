@@ -27,6 +27,10 @@ __pycache__/
 *.pdf
 !main.pdf
 !2D_Supplemental/SI_failure_modes.pdf
+!2D_Supplemental/verbatim_supplemental_note.pdf
+!2D_Supplemental/verbatim_supplemental_note_source/base/bragg_rods_comments_refined_round15.pdf
+!2D_Supplemental/verbatim_supplemental_note_source/figures/fig_specular_detector_visible_round16.pdf
+!figures/correlated_effects/fig_specular_parratt_kinematic_003_joint_fit.pdf
 
 # Editor / OS temporary files.
 .DS_Store

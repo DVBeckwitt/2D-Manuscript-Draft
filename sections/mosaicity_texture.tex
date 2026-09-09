@@ -1,38 +1,60 @@
 \subsection{Mosaicity}
 \label{sec:mosaicity}
+A two-dimensional powder is already random in in-plane azimuth. Mosaicity adds a distribution of crystallite tilts about the mean film normal. Its role is visible in the measured detector image in Fig.~\ref{fig:hk0_low_l_star}, where it explains features that are otherwise incompatible with a single incident vector and one perfectly aligned crystallite.
 
-Mosaicity is the out-of-plane orientational spread of the layered crystallites about the mean film normal illustrated in Fig.~\ref{fig:intro_2x3}(f--h). It is distinct from the random in-plane rotation that defines the two-dimensional powder limit. Random in-plane rotation generates an $m$-indexed rod family at a common in-plane reciprocal-space radius $Q_R$, whereas mosaicity spreads each member over crystallite tilt. On an area detector, random azimuthal rotation generates paired off-specular arcs for $m\neq0$. Out-of-plane tilt broadens those arcs and distributes $m=0$ intensity in the transverse detector direction.
+Figure~\ref{fig:hk0_low_l_star} shows the $r=0$ region of a Bi$_2$Se$_3$ image collected at the nominal incident angle $\theta_i=5^\circ$. That incident condition places the Ewald intersection near the $003$ condition. Surprisingly, intensity is also visible near the $006$ location, at approximately twice the radial $2\theta$ coordinate of $003$. The $003$ feature is also strongly anisotropic: its long extension follows the radial $2\theta$ direction, whereas its transverse width follows the outgoing-ray azimuth $\phi$.
 
-Figure~\ref{fig:hk0_low_l_star} shows the low-$L$, $m=0$ region of a Bi$_2$Se$_3$ detector image collected at $\theta_i=5^\circ$. The $006$ feature occurs at approximately twice the radial $2\theta$ coordinate of $003$. The $003$ feature is strongly anisotropic. Its long extension follows the radial $2\theta$ direction, whereas its transverse width follows the detector-plane azimuth $\phi$. These two directions separate the dominant effects of wavelength dispersion and crystallite tilt.
+For the $003$ peak, the transverse $\phi$ width is primarily due to mosaicity, while the radial spread is better explained by wavelength dispersion. As discussed below, the unexpected $006$ intensity motivates testing a broad component in the mosaic distribution. The bright feature near $L=0$ is specular reflectivity, discussed separately in Sec.~\ref{sec:reflectivity}.
 
-Wavelength sampling changes the magnitude of the incident wavevector and therefore moves the wavelength-specific Ewald intersection along $2\theta$. In the common-scale $m=0$ calculation, the full wavelength distribution reproduces the enhanced $003$ signal and its radial extension. Replacing that distribution by the mean wavelength, while holding the geometry, structure factors, orientation density, background treatment, and detector mapping fixed, collapses the radial streak. The lower-order $003$ feature is especially visible because it lies closer to the strong low-$Q_z$ specular response, so the wavelength convolution samples a higher-intensity radial envelope than it does around $006$. The recorded $003$/$006$ contrast is therefore not determined by the two structure factors alone. We assign the extended radial component of $003$ primarily to wavelength dispersion.
-
-The transverse $\phi$ width behaves differently. It remains after the wavelength distribution is collapsed and changes with the crystallite-orientation distribution. The $\phi$ extent is therefore the cleaner constraint on mosaicity. The bright near-origin intensity belongs to the near-critical specular regime and is treated separately in Sec.~\ref{sec:reflectivity}. It is not used as evidence for the broad mosaic component.
 
 \begin{figure}[H]
   \centering
-  \textbf{Radial and transverse structure of the Bi$_2$Se$_3$ $m=0$ region}
+  \textbf{Radial and transverse structure of the Bi$_2$Se$_3$ $r=0$ region}
   \begin{minipage}{0.92\linewidth}
     \centering
     \includegraphics[width=\linewidth]{figures/results_ordered/00L_region_wavelength_mosaic_axes.png}
   \end{minipage}
-  \caption{Measured low-$L$, $m=0$ detector region from the $5^\circ$ Bi$_2$Se$_3$ image. The $006$ feature lies at approximately twice the radial $2\theta$ coordinate of $003$. The long $003$ extension is aligned with $2\theta$, the direction in which wavelength changes move the Ewald intersection. The transverse detector coordinate $\phi$ is the direction most directly associated with crystallite tilt and therefore provides the cleaner mosaic constraint. The full-spectrum versus mean-wavelength calculation used to assign these directions is described in Sec.~\ref{sec:correlated_effects}. The bright near-origin signal is treated separately as a near-critical specular response.}
+  \caption{Measured $r=0$ detector region from the $5^\circ$ Bi$_2$Se$_3$ image. The nominal incident condition lies near $003$, while intensity is also observed near the $006$ location at approximately twice its radial $2\theta$ coordinate. The $003$ feature has a long radial extension along $2\theta$, whereas its transverse $\phi$ width is the cleaner constraint on crystallite tilt. The bright near-origin feature is near-critical specular reflectivity discussed in Sec.~\ref{sec:reflectivity}.}
   \label{fig:hk0_low_l_star}
 \end{figure}
 
-The off-specular rod-family arcs and the transverse $\phi$ extent of off-condition $m=0$ features sample different angular ranges of the same orientation distribution. Strong off-specular arcs predominantly constrain crystallites close to the mean film normal. Weak transverse $m=0$ intensity away from the nominal specular direction is more sensitive to the low-probability population at larger tilt. The radial $003$ streak is not used for that inference because it is reproduced by the wavelength distribution. We represent the two mosaic scales with the compact phenomenological density
+As shown below, off-specular rod-family arcs and the transverse $\phi$ width of off-condition $r=0$ intensity probe different parts of the same orientation distribution. Strong off-specular arcs mainly constrain crystallites whose normals are close to the mean film normal. Weak $r=0$ intensity farther from the specular direction is more sensitive to the small population at larger tilt.
+
+To apply the crystallite mosaic tilt, we rotate each point on the powder cylinder through $\alpha$ about its local in-plane tilt axis,
 \begin{equation}
-  \omega_{\mathrm w}(\Delta\theta;p_{\mathrm{tail}},\Gamma,\sigma)
-  =p_{\mathrm{tail}} L_{\mathrm w}(\Delta\theta;\Gamma)
-  +(1-p_{\mathrm{tail}})G_{\mathrm w}(\Delta\theta;\sigma),
-  \qquad 0\le p_{\mathrm{tail}} \le 1 .
+  \mathbf Q_{hk}(\alpha,\beta,L)
+  =\mathbf R_{\widehat{\mathbf b}_t(\beta)}(\alpha)
+   \mathbf Q^{\mathrm{cyl}}_{hk}(\beta,L),
+  \label{eq:mosaic_orientation_map}
+\end{equation}
+where $\alpha$ is the crystallite-tilt magnitude and $\beta$ is the cylinder azimuth. The local unit tilt axis is
+\[
+  \widehat{\mathbf b}_t(\beta)
+  =\mathbf C\,\mathbf R_{\widehat{\mathbf c}^{\,*}}(\beta)
+   \widehat{\mathbf b}_t^{\,0},
+\]
+where $\widehat{\mathbf b}_t^{\,0}$ is the reference in-plane unit axis. Thus, the tilt axis rotates with the cylinder azimuth $\beta$. At $\alpha=0$, Eq.~\eqref{eq:mosaic_orientation_map} reduces to the powder cylinder in Eq.~\eqref{eq:powder_cylinder}.
+
+The data were reproduced by a distribution with long tails,
+\begin{equation}
+  \omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)
+  =p_{\mathrm{tail}}L_{\mathrm w}(\alpha;\Gamma)
+  +(1-p_{\mathrm{tail}})G_{\mathrm w}(\alpha;\sigma),
+  \qquad 0\le p_{\mathrm{tail}}\le1,
   \label{eq:mosaic_two_component_maintext}
 \end{equation}
-Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, $p_{\mathrm{tail}}$ is its weight, and $\Delta\theta$ is crystallite tilt relative to the mean layer normal. The two widths are independent and share one center. The Lorentzian-like form is a convenient broad-tailed parameterization, not a claim that the physical distribution is uniquely Lorentzian. The present overlays show that this two-component form can represent the selected profiles. Establishing necessity requires both a fixed-parameter no-tail counterfactual and a fairly re-optimized Gaussian-only comparison.
+with the normalized orientation density
+\begin{equation}
+  p_m(\alpha,\beta)=\frac{\omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)}{2\pi},
+  \qquad
+  \int_0^\pi\!\int_0^{2\pi}p_m(\alpha,\beta)\,d\beta\,d\alpha=1.
+  \label{eq:mosaic_orientation_density}
+\end{equation}
+Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, and $p_{\mathrm{tail}}$ is its weight. The two components share one center but have independent widths. The Lorentzian-like form is not a claim that the physical distribution is uniquely Lorentzian.
 
-Figure~\ref{fig:mosaic_combo} connects the two parts of Eq.~\eqref{eq:mosaic_two_component_maintext} to reciprocal-space observables. In panels~(a) and~(b), the compact purple segment marks the narrow core and the dashed orange extension marks the low-probability broad component. For $m\neq0$, the strong detector arcs primarily sample the compact region near the nominal reciprocal vector. For $m=0$, intensity displaced transversely from the film-normal direction requires larger crystallite tilts and is therefore more sensitive to the broad component. The same angular density generates both effects. The radial coordinate is folded onto $Q_R\geq0$, so opposite signed in-plane tilt components map to the same radial locus.
+Figure~\ref{fig:mosaic_combo} explains the geometric sensitivity to a broad component. For $r\neq0$, the strong detector arcs sample the orientation range near the nominal reciprocal vector. The transverse extent of off-condition $r=0$ intensity probes larger tilts. Establishing that the broad component is necessary still requires a same-fit no-tail comparison and a fairly re-optimized Gaussian-only model, with residuals and uncertainty across the measured incident angles.
 
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \captionsetup[subfigure]{list=false,labelsep=none}
 
@@ -53,21 +75,17 @@ Figure~\ref{fig:mosaic_combo} connects the two parts of Eq.~\eqref{eq:mosaic_two
 
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \paneltagged{(c)}{\draftfigureplaceholder{figures/mosaic/inplane_detector_band.png}{%
-      Three-dimensional reciprocal-space schematic for an off-specular $m\neq0$ family, showing mosaic-smeared Bragg-sphere intensity relative to the Ewald-sphere intersection.
-    }}
+    \paneltagged{(c)}{\includegraphics[width=\linewidth]{figures/mosaic/inplane_detector_band.png}}
     \phantomcaption
     \label{fig:mosaic_combo:img_inplane}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.48\linewidth}
     \centering
-    \paneltagged{(d)}{\draftfigureplaceholder{figures/mosaic/specular_detector_cap.png}{%
-      Three-dimensional reciprocal-space schematic for a specular $Q_R=0$ reflection, showing the corresponding Bragg-sphere and Ewald-sphere intersection.
-    }}
+    \paneltagged{(d)}{\includegraphics[width=\linewidth]{figures/mosaic/specular_detector_cap.png}}
     \phantomcaption
     \label{fig:mosaic_combo:img_specular}
   \end{subfigure}
 
-  \caption{How the two angular scales in Eq.~\eqref{eq:mosaic_two_component_maintext} enter the detector calculation. (a) For $m\neq0$, the reciprocal vector has radial and film-normal components $Q_R$ and $Q_z$. The purple segment identifies the narrow core that predominantly controls the strong off-specular arc width. The dashed orange extension identifies the broad, low-probability component. (b) For $m=0$, the same orientation distribution begins on the film-normal axis. Intensity displaced in the transverse $\phi$ direction samples larger crystallite tilts and is therefore more sensitive to the broad component. This transverse mosaic effect is distinct from the radial $2\theta$ streak through $003$, which is assigned to wavelength dispersion in Fig.~\ref{fig:hk0_low_l_star}. Opposite signed tilts fold onto the same $Q_R\geq0$ locus. (c,d) Three-dimensional views place the corresponding orientation distributions relative to the Ewald-sphere intersection. The schematics explain the geometric sensitivity of the two feature classes. They are not detector simulations and do not replace the no-tail and Gaussian-only controlled comparisons required to establish necessity.}
+  \caption{Geometric sensitivity to the narrow and broad crystallite-tilt components. (a) For $r\neq0$, the reciprocal vector has radial and film-normal components $Q_R$ and $Q_z$. The purple segment identifies the narrow core that predominantly controls the strong off-specular arc width, while the dashed orange extension identifies the broad, low-probability component. (b) For $r=0$, the same orientation distribution begins on the film-normal axis. Intensity displaced in the transverse $\phi$ direction samples larger crystallite tilts and is therefore more sensitive to the broad component. This transverse mosaic effect is distinct from the radial $2\theta$ streak through $003$, which is assigned primarily to wavelength dispersion in Fig.~\ref{fig:hk0_low_l_star}. Opposite tilts fold onto the same $Q_R\ge0$ locus. (c,d) Three-dimensional views place the corresponding orientation distributions relative to the Ewald-sphere intersection. The schematic illustrates sensitivity and does not replace a controlled mosaic-component comparison.}
   \label{fig:mosaic_combo}
 \end{figure}

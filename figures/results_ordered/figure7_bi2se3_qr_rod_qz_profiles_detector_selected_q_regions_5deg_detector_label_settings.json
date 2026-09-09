@@ -2,66 +2,66 @@
   "labels": [
     {
       "fontsize": 8.6,
-      "label_id": "m=1:-",
+      "label_id": "r=1:-",
       "label_xy": [
         1888.3693209574992,
         1552.5315095261358
       ],
-      "text": "m = 1 -"
+      "text": "r = 1 -"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=1:+",
+      "label_id": "r=1:+",
       "label_xy": [
         1046.9369809477282,
         1551.878358573522
       ],
-      "text": "m = 1 +"
+      "text": "r = 1 +"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=3:-",
+      "label_id": "r=3:-",
       "label_xy": [
         2201.9909623839762,
         1517.878358573522
       ],
-      "text": "m = 3 -"
+      "text": "r = 3 -"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=3:+",
+      "label_id": "r=3:+",
       "label_xy": [
         774.4279433317049,
         1526.8783585735223
       ],
-      "text": "m = 3 +"
+      "text": "r = 3 +"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=4:-",
+      "label_id": "r=4:-",
       "label_xy": [
         2532.8197361993157,
         1542.265754763068
       ],
-      "text": "m = 4 -"
+      "text": "r = 4 -"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=4:+",
+      "label_id": "r=4:+",
       "label_xy": [
         476.05862237420615,
         1540.9594528578407
       ],
-      "text": "m = 4 +"
+      "text": "r = 4 +"
     },
     {
       "fontsize": 8.6,
-      "label_id": "m=0",
+      "label_id": "r=0",
       "label_xy": [
         1448.175560865784,
         1182.5928885657236
       ],
-      "text": "m = 0"
+      "text": "r = 0"
     }
   ],
   "schema": "ra_sim.detector_label_settings.v1"

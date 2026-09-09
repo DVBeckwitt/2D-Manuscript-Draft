@@ -1,7 +1,7 @@
 # Near-critical reflectivity figure
 
 `fig_reflectivity_data_parratt_kinematic.png` overlays, on one semilog axis, the
-measured Bi2Se3 near-critical `m=0` profile, the Parratt reflectivity
+measured Bi2Se3 near-critical `r=0` profile, the Parratt reflectivity
 calculation, and the finite-stack kinematic calculation. The internal blended
 curve remains part of the model but is deliberately omitted from the figure.
 

@@ -13,6 +13,7 @@
 \ExplSyntaxOff
 \AtBeginDocument{\RenewCommandCopy\qty\SI}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \graphicspath{{figures/}{../figures/}{./}}
 \usepackage{subcaption}
 \usepackage{booktabs}
@@ -59,12 +60,19 @@ and provides expanded workflow notes and supplemental derivations.
 \section{Geometric ray acceptance, detector mapping, and calculation sequence}
 \label{sec:si_geometric_ray_acceptance}
 
-A weighted incident state supplies a ray origin $\mathbf r_0$, unit propagation direction $\hat{\mathbf s}_i$, wavelength $\lambda$, and source weight $w_s$. The incident line is
+An incident state $s$ supplies a ray origin $\mathbf r_{0,s}$ and an external incident vector
 \begin{equation}
-\mathbf r(u)=\mathbf r_0+u\hat{\mathbf s}_i,
+  \mathbf k_{i,s}=\mathbf k_i\!\left(|\mathbf k_{i,s}|,\theta_{i,s},\phi_{i,s}\right),
+  \qquad |\mathbf k_{i,s}|=\frac{2\pi}{\lambda_s}.
+  \label{eq:si_source_state_vector}
+\end{equation}
+The source-position and angular variables are sampled from the measured Gaussian beam distributions, while $\lambda_s$ is sampled from the retained wavelength spectrum. Writing $\hat{\mathbf s}_{i,s}=\mathbf k_{i,s}/|\mathbf k_{i,s}|$, the incident line is
+\begin{equation}
+\mathbf r_s(u)=\mathbf r_{0,s}+u\hat{\mathbf s}_{i,s},
 \qquad u\geq0.
 \label{eq:si_incident_ray}
 \end{equation}
+For the following single-ray geometry equations, the source-state subscript $s$ is suppressed.
 Let the sample entrance plane pass through $\mathbf r_s$ and have outward unit normal $\hat{\mathbf n}$. Solving $(\mathbf r-\mathbf r_s)\cdot\hat{\mathbf n}=0$ gives
 \begin{equation}
 u_{\mathrm{hit}}
@@ -149,6 +157,153 @@ The production calculation proceeds in the following order:
   \item Sum the source-weighted continuous detector-coordinate density and integrate it over the declared native pixels or finite angular bins.
 \end{enumerate}
 Convergence of the finite source representation is checked by increasing the source-state count and, where useful, repeating the seeded construction. The continuous mosaic integral and analytic Ewald roots are part of the deterministic forward measure rather than a second stochastic broadening mechanism. Numerical configurations, source revisions, and profile definitions must remain bound to each retained result.
+
+
+\subsection{Forward Ewald-surface chart and sequential Jacobians}
+\label{subsec:si_ewald_surface_chart}
+
+The incorporated Bragg-rod-to-detector note gives the complete measure-theoretic derivation of the reciprocal-volume, Ewald-crossing, and detector-coordinate factors. This subsection records the explicit local Ewald chart used in the main text and makes the order of the two surviving Jacobians unambiguous.
+
+For one rod, source state, and crystallite orientation, the rotated reciprocal rod is linear in the intrinsic coordinate $L$,
+\begin{equation}
+  \mathbf Q_{hk}(\alpha,\beta,L)
+  =\mathbf q_{hk}(\alpha,\beta)
+  +L\,\mathbf d_{hk}(\alpha,\beta),
+  \qquad
+  \mathbf q_{hk}=\mathbf Q_{hk}(\alpha,\beta,0),
+  \qquad
+  \mathbf d_{hk}=\frac{\partial\mathbf Q_{hk}}{\partial L}.
+  \label{eq:si_oriented_rod_affine_L}
+\end{equation}
+Let $\mathbf k'_{i,s}$ be the internal incident vector and $K_s=|\mathbf k'_{i,s}|$. Squaring the elastic condition gives
+\begin{equation}
+  \widetilde g_{hk,s}(\alpha,\beta,L)
+  =\left|\mathbf k'_{i,s}+\mathbf q_{hk}+L\mathbf d_{hk}\right|^2-K_s^2
+  =A L^2+B L+C,
+  \label{eq:si_ewald_quadratic}
+\end{equation}
+with
+\begin{equation}
+  A=\mathbf d_{hk}\cdot\mathbf d_{hk},
+  \qquad
+  B=2\mathbf d_{hk}\cdot\left(\mathbf k'_{i,s}+\mathbf q_{hk}\right),
+  \qquad
+  C=\left|\mathbf k'_{i,s}+\mathbf q_{hk}\right|^2-K_s^2.
+  \label{eq:si_ewald_quadratic_coefficients}
+\end{equation}
+For discriminant $\Delta=B^2-4AC\geq0$, the regular Ewald branches are
+\begin{equation}
+  L_{hk,j,s}(\alpha,\beta)
+  =\frac{-B\pm\sqrt{\Delta}}{2A},
+  \qquad
+  \mathbf Q^{E}_{hk,j,s}(\alpha,\beta)
+  =\mathbf Q_{hk}\!\left[\alpha,\beta,L_{hk,j,s}(\alpha,\beta)\right].
+  \label{eq:si_ewald_surface_chart}
+\end{equation}
+A negative discriminant means that the oriented rod misses the Ewald sphere, zero gives tangency, and a positive discriminant gives two algebraic branches. Equation~\eqref{eq:si_ewald_surface_chart} makes $(\alpha,\beta)$ the independent coordinates of a local two-dimensional Ewald-surface patch, while $L$ is the dependent coordinate selected by elasticity.
+
+For derivatives of the surface chart it is convenient to use the unsquared residual
+\begin{equation}
+  g_{hk,s}(\alpha,\beta,L)
+  =\left|\mathbf k'_{i,s}+\mathbf Q_{hk}(\alpha,\beta,L)\right|-K_s.
+  \label{eq:si_ewald_unsquared_residual}
+\end{equation}
+On a regular branch, implicit differentiation gives
+\begin{equation}
+  \frac{\partial L_j}{\partial\mu}
+  =-\frac{\partial_\mu g_{hk,s}}{\partial_L g_{hk,s}},
+  \qquad
+  \frac{\partial\mathbf Q^E}{\partial\mu}
+  =\frac{\partial\mathbf Q}{\partial\mu}
+  +\frac{\partial\mathbf Q}{\partial L}
+   \frac{\partial L_j}{\partial\mu},
+  \qquad \mu\in\{\alpha,\beta\}.
+  \label{eq:si_ewald_chart_tangents}
+\end{equation}
+The physical surface element is therefore
+\begin{equation}
+  dA_Q
+  =\left|
+  \frac{\partial\mathbf Q^E}{\partial\alpha}
+  \times
+  \frac{\partial\mathbf Q^E}{\partial\beta}
+  \right|d\alpha\,d\beta
+  =J_EJ_{\mathrm{vol},hk}\,d\alpha\,d\beta,
+  \label{eq:si_ewald_surface_area_chart}
+\end{equation}
+where
+\begin{equation}
+  J_{\mathrm{vol},hk}
+  =\left|
+  \det\!\left[
+  \partial_\alpha\mathbf Q_{hk},
+  \partial_\beta\mathbf Q_{hk},
+  \partial_L\mathbf Q_{hk}
+  \right]
+  \right|,
+  \qquad
+  J_E
+  =\frac{1}{|\partial_L g_{hk,s}|}
+  =\frac{K_s}{|\mathbf k'_{f,s}\cdot\mathbf d_{hk}|}.
+  \label{eq:si_ewald_and_volume_jacobians}
+\end{equation}
+The measure formulation keeps the four objects used in the main text separate: $S_{hk}(L;\lambda_s)$ is the structural rod intensity, $\mathbf Q_{hk}(\alpha,\beta,L)$ is the location map, $p_m(\alpha,\beta)$ is the orientation weight, and $J_{\mathrm{vol},hk}$ is the geometric change of measure. The pre-Ewald intensity measure is
+\begin{equation}
+  dI_{hk,s}^{\mathrm{pre}}
+  =p_m(\alpha,\beta)P_{hk}S_{hk}(L;\lambda_s)
+   \,d\alpha\,d\beta\,dL.
+  \label{eq:si_pre_ewald_measure}
+\end{equation}
+Restricting this measure to the regular roots gives
+\begin{equation}
+  dI_{hk,j,s}^{E}
+  =p_m(\alpha,\beta)P_{hk}S_{hk}(L_j;\lambda_s)
+   J_E\,d\alpha\,d\beta.
+  \label{eq:si_ewald_selected_measure}
+\end{equation}
+Dividing Eq.~\eqref{eq:si_ewald_selected_measure} by Eq.~\eqref{eq:si_ewald_surface_area_chart} cancels the line--sphere factor and gives the physical Ewald-surface density
+\begin{equation}
+  \rho_{Q,s}^{E}(\mathbf Q)
+  =\sum_{\substack{(h,k),j,\alpha,\beta\\
+  \mathbf Q^{E}_{hk,j,s}(\alpha,\beta)=\mathbf Q}}
+  W_{hk,j,s}
+  \frac{p_m(\alpha,\beta)P_{hk}S_{hk}(L_j;\lambda_s)}
+       {J_{\mathrm{vol},hk}}.
+  \label{eq:si_ewald_surface_density_explicit}
+\end{equation}
+Thus $J_E$ is required in the intermediate restricted measure but is not reapplied to the density per unit Ewald-surface area. The reciprocal-volume factor remains because it converts the original $(\alpha,\beta,L)$ measure into physical reciprocal-space density.
+
+For continuous detector coordinates $(c,r_d)$, define
+\begin{equation}
+  J_{Q\leftarrow cr,s}
+  =\left|
+  \frac{\partial\mathbf Q_s}{\partial c}
+  \times
+  \frac{\partial\mathbf Q_s}{\partial r_d}
+  \right|,
+  \qquad
+  dA_Q=J_{Q\leftarrow cr,s}\,dc\,dr_d.
+  \label{eq:si_detector_surface_jacobian}
+\end{equation}
+The source-resolved detector-coordinate density is then
+\begin{equation}
+  D_s(c,r_d)
+  =\sum_{\mathrm{compatible}}
+  W_{hk,j,s}
+  p_m(\alpha,\beta)P_{hk}S_{hk}(L;\lambda_s)
+  \frac{J_{Q\leftarrow cr,s}}{J_{\mathrm{vol},hk}},
+  \label{eq:si_detector_density_sequential_jacobians}
+\end{equation}
+and the final detector density and finite-pixel mass are
+\begin{equation}
+  D(c,r_d)=\sum_s w_sD_s(c,r_d),
+  \qquad
+  I_{pq}=\int_{\mathrm{pixel}\;pq}D(c,r_d)\,dc\,dr_d.
+  \label{eq:si_source_sum_and_pixel_mass}
+\end{equation}
+Equation~\eqref{eq:si_detector_density_sequential_jacobians} shows the sequential change of measure directly: the reciprocal-volume Jacobian enters first and the detector-coordinate Jacobian enters second, leaving the net geometric factor $J_{Q\leftarrow cr,s}/J_{\mathrm{vol},hk}$. The detector factor contains the pixel solid angle, detector pose and distance, source-point parallax, and the area change associated with exit refraction. It must not be followed by another independent solid-angle correction.
+
+Finally, the powder-cylinder factor $1/(2\pi Q_R)$ and the full determinant $J_{\mathrm{vol},hk}$ are two stages of the same azimuthal change of measure. The former expresses the density per cylinder area after distributing a rod uniformly in $\beta$. In the direct pushforward from $d\alpha\,d\beta\,dL$ to $d^3Q$, the same $\beta$-arc-length geometry is already contained in $J_{\mathrm{vol},hk}$. The circumference factor is not multiplied a second time.
 
 \section{Crystallographic displacement conventions and current implementation scope}
 \label{sec:si_structure_factor_conventions}
@@ -287,7 +442,7 @@ All detector images are dark-subtracted before fitting. Any additional flat-fiel
 \subsection{Coordinate remapping, projected profiles, and uncertainty propagation}
 \label{subsec:si_projection_uncertainty}
 
-The detector image remains the primary data object. The $2\theta$--$\phi$ representation is an overlap-weighted remapping used to evaluate fixed-$m$ or fixed-$Q_R$ trajectory masks and projected $Q_z$ or $L$ profiles. It is not treated as an independent measurement. The same remapping, masks, and profile extraction are applied to measured and calculated detector images.
+The detector image remains the primary data object. The $2\theta$--$\phi$ representation is an overlap-weighted remapping used to evaluate fixed-$r$ or fixed-$Q_R$ trajectory masks and projected $Q_z$ or $L$ profiles. It is not treated as an independent measurement. The same remapping, masks, and profile extraction are applied to measured and calculated detector images.
 
 The caked image is constructed with a sparse detector-to-cake operator
 \begin{equation}
@@ -314,7 +469,7 @@ Q_z=\mathbf Q\cdot \hat{\mathbf n},
 \qquad
 L=\frac{Q_z}{|\mathbf c^{*}|}=\frac{Q_z c}{2\pi},
 \end{equation}
-where $\hat{\mathbf n}$ is the film normal. For a hexagonal basal plane, the radial family index is $m=h^2+hk+k^2$. The index $m$ is a label, not a multiplicity. A selected fixed-$Q_R$ or fixed-$m$ family is retained when
+where $\hat{\mathbf n}$ is the film normal. For a hexagonal basal plane, the dimensionless radial-family index associated with $(h,k)$ is $r\equiv h^2+hk+k^2$. The index $r$ is a discrete family label, not a crystallographic multiplicity or a continuous radial coordinate. A selected fixed-$Q_R$ or fixed-$r$ family is retained when
 \begin{equation}
 |Q_R-Q_{R,0}|\le \Delta Q_R,
 \qquad
@@ -322,16 +477,16 @@ Q_{z,\min}\le Q_z\le Q_{z,\max}.
 \end{equation}
 This region is simple in the physical $Q_R$--$Q_z$ description but appears curved in the displayed $2\theta$--$\phi$ map because the coordinate transformation is nonlinear. The curved shape is therefore a consequence of the projection, not an additional physical model.
 
-For a selected profile coordinate $\ell$, let $r_{\ell b}$ be the mask or interpolation weight that assigns caked bin $b$ to that profile point. The profile is
+For a selected profile coordinate $\ell$, let $\mu_{\ell b}$ be the mask or interpolation weight that assigns caked bin $b$ to that profile point. The profile is
 \begin{equation}
 I_{\ell}^{\mathrm{ROI}}=
-\frac{\sum_b r_{\ell b}S_b}
-     {\sum_b r_{\ell b}N_b}
+\frac{\sum_b \mu_{\ell b}S_b}
+     {\sum_b \mu_{\ell b}N_b}
 =
 \frac{\sum_k a_{\ell k}s_k}
      {\sum_k a_{\ell k}n_k},
 \qquad
- a_{\ell k}=\sum_b r_{\ell b}M_{bk}.
+ a_{\ell k}=\sum_b \mu_{\ell b}M_{bk}.
 \end{equation}
 Each point in the plotted profile is therefore an average over a finite detector-space band. Its coordinate may be labeled by $Q_z$ or $L$, but the point represents a finite-bin projection rather than the intensity at one exact reciprocal-space coordinate.
 
@@ -384,9 +539,9 @@ Thus the same weights that define the projected profile also propagate the detec
 
 The displayed coordinate for a projected point can be represented by the same finite-band weighting. For example,
 \begin{equation}
-\bar L_{\ell}=\frac{\sum_b r_{\ell b}N_bL_b}{\sum_b r_{\ell b}N_b},
+\bar L_{\ell}=\frac{\sum_b \mu_{\ell b}N_bL_b}{\sum_b \mu_{\ell b}N_b},
 \qquad
-\sigma^2_{L,\ell}=\frac{\sum_b r_{\ell b}N_b(L_b-\bar L_{\ell})^2}{\sum_b r_{\ell b}N_b},
+\sigma^2_{L,\ell}=\frac{\sum_b \mu_{\ell b}N_b(L_b-\bar L_{\ell})^2}{\sum_b \mu_{\ell b}N_b},
 \end{equation}
 before adding calibration, incidence-angle, wavelength, divergence, and mosaic contributions. This width is a finite-bin projection effect. It is not a counting-statistical error bar.
 
@@ -558,7 +713,7 @@ principal contribution of the manuscript.
 \subsection{Parratt-to-kinematic crossover for the specular profile}
 \label{subsec:si_parratt_structure_crossover}
 
-The detector-derived $m=0$ profile spans two limiting regimes. The low-$Q_z$ response is described by standard Parratt reflectivity, while the higher-$Q_z$ Bragg response is described by a finite-stack kinematic term. The two branches are matched smoothly over a declared overlap interval. We refer to this matching as the Parratt-to-kinematic crossover. It is a practical connection between two limiting calculations, not a new scattering theory. The main-text figure slot is reserved for a direct-array comparison that places the low-$Q_z$ region and the $003$ peak on one coordinate transformation, one background treatment, and one intensity scale.
+The detector-derived $r=0$ profile spans two limiting regimes. The low-$Q_z$ response is described by standard Parratt reflectivity, while the higher-$Q_z$ Bragg response is described by a finite-stack kinematic term. The two branches are matched smoothly over a declared overlap interval. We refer to this matching as the Parratt-to-kinematic crossover. It is a practical connection between two limiting calculations, not a new scattering theory. The main-text figure slot is reserved for a direct-array comparison that places the low-$Q_z$ region and the $003$ peak on one coordinate transformation, one background treatment, and one intensity scale.
 
 The plotted coordinate is
 \begin{equation}
@@ -1041,22 +1196,29 @@ $K_{n,\Delta}=|F|^2$ for every allowed transition law.  Equation
  =\frac{|F|^2}{N}\left|\sum_{n=0}^{N-1}\xi^n\right|^2
  =\frac{|F|^2}{N}\frac{\sin^2(N\vartheta/2)}{\sin^2(\vartheta/2)},
  \qquad \xi=e^{i\vartheta}.
- \label{eq:si_pbi2_m0_laue}
+ \label{eq:si_pbi2_r0_laue}
 \end{equation}
-Thus the strong $m=0$ oscillations are finite-thickness fringes, not diffuse
+Thus the strong $r=0$ oscillations are finite-thickness fringes, not diffuse
 stacking-fault contrast.  Faults can still be present. This rod does not
 distinguish their registry or orientation path.
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[width=0.88\linewidth]{../figures/results_pbi2/transition_matrix/fig07_m0_fringes.png}
- \caption{Calculation-only check of the phase-insensitive $m=0$ condition.
+ \includegraphics[width=0.88\linewidth]{../figures/results_pbi2/transition_matrix/fig07_r0_fringes.png}
+ \caption{Calculation-only check of the phase-insensitive $r=0$ condition.
  Different parent-rich transition laws coincide because registry and
  orientation changes do not alter the local $00L$ amplitude. The remaining
  oscillations are controlled by finite stack length.}
- \label{fig:si_pbi2_m0_fringes}
+ \label{fig:si_pbi2_r0_fringes}
 \end{figure}
 % END PBI2_TRANSITION_MATRIX_DERIVATION
+
+\clearpage
+\includepdf[
+  pages=-,
+  pagecommand={\thispagestyle{empty}},
+  addtotoc={1,section,1,{From Bragg rods to detector intensity},sec:verbatim_bragg_rods}
+]{verbatim_supplemental_note.pdf}
 
 \bibliographystyle{apsrev4-2}
 \bibliography{../bibliography/references}

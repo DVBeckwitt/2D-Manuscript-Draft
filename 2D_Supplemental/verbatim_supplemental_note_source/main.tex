@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.72in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0.16em}
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\unitvect}[1]{\widehat{\bm{#1}}}
+
+\begin{document}
+
+% Pages not modified in this revision are imported from the previous clean PDF.
+\includepdf[pages=1-12,pagecommand={\thispagestyle{empty}}]{base/bragg_rods_comments_refined_round15.pdf}
+
+% Editable replacement for Figure 8 and its surrounding page.
+\setcounter{page}{13}
+\setcounter{section}{6}
+\setcounter{subsection}{1}
+\setcounter{equation}{39}
+\setcounter{figure}{7}
+\input{src/page13_round16.tex}
+\clearpage
+
+% Remaining unchanged pages.
+\includepdf[pages=14-16,pagecommand={\thispagestyle{empty}}]{base/bragg_rods_comments_refined_round15.pdf}
+
+\end{document}
