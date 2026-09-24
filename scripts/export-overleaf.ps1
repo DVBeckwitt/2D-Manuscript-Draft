@@ -371,22 +371,36 @@ function Invoke-PackageCompileCheck {
         throw 'The staged main manuscript did not produce main.pdf.'
     }
 
+    $manuscriptTimer = [System.Diagnostics.Stopwatch]::StartNew()
+    Invoke-CommandChecked -Command 'latexmk' -Arguments @(
+        '-pdf',
+        '-interaction=nonstopmode',
+        '-halt-on-error',
+        '-file-line-error',
+        'manuscript.tex'
+    ) -WorkingDirectory $validationRoot
+    $manuscriptTimer.Stop()
+    if (-not (Test-Path -LiteralPath (Join-Path $validationRoot 'manuscript.pdf') -PathType Leaf)) {
+        throw 'The standalone manuscript did not produce manuscript.pdf.'
+    }
+
     $siTimer = [System.Diagnostics.Stopwatch]::StartNew()
     Invoke-CommandChecked -Command 'latexmk' -Arguments @(
         '-pdf',
         '-interaction=nonstopmode',
         '-halt-on-error',
         '-file-line-error',
-        'Supporting_info.tex'
+        'supporting_information.tex'
     ) -WorkingDirectory $validationRoot
     $siTimer.Stop()
 
-    $siPdf = Join-Path $validationRoot 'Supporting_info.pdf'
+    $siPdf = Join-Path $validationRoot 'supporting_information.pdf'
     if (-not (Test-Path -LiteralPath $siPdf -PathType Leaf)) {
-        throw 'The staged Supporting Information did not produce Supporting_info.pdf.'
+        throw 'The standalone Supporting Information did not produce supporting_information.pdf.'
     }
 
     $script:mainCompileSeconds = $mainTimer.Elapsed.TotalSeconds
+    $script:manuscriptCompileSeconds = $manuscriptTimer.Elapsed.TotalSeconds
     $script:siCompileSeconds = $siTimer.Elapsed.TotalSeconds
     Remove-GeneratedItem -Path $validationRoot
 }
@@ -412,6 +426,7 @@ if (Select-String -LiteralPath (Join-Path $repoRoot '2D_Supplemental/SI_failure_
 $script:cacheHits = 0
 $script:cacheMisses = 0
 $script:mainCompileSeconds = $null
+$script:manuscriptCompileSeconds = $null
 $script:siCompileSeconds = $null
 
 Remove-GeneratedItem -Path $PackageDirectory
@@ -514,17 +529,17 @@ if ($liveFigureInputs) {
 }
 
 # Keep exactly three editable files at the project root. The wrapper lets
-# Overleaf use main.tex while the complete manuscript lives in Manuscript.tex.
-$manuscriptPath = Join-Path $PackageDirectory 'Manuscript.tex'
+# Overleaf use main.tex while the complete manuscript lives in manuscript.tex.
+$manuscriptPath = Join-Path $PackageDirectory 'manuscript.tex'
 Move-Item -LiteralPath (Join-Path $PackageDirectory 'main.tex') -Destination $manuscriptPath
-Set-Content -LiteralPath (Join-Path $PackageDirectory 'main.tex') -Value '\input{Manuscript.tex}' -Encoding utf8
+Set-Content -LiteralPath (Join-Path $PackageDirectory 'main.tex') -Value '\input{manuscript.tex}' -Encoding utf8
 
 $supplementPath = Join-Path $PackageDirectory '2D_Supplemental/SI_failure_modes.tex'
 $supplementText = Get-Content -Raw -LiteralPath $supplementPath
 $supplementText = $supplementText.Replace('\input{sections/', '\input{2D_Supplemental/sections/')
 $supplementText = $supplementText.Replace('\bibliography{../bibliography/references}', '\bibliography{bibliography/references}')
 $supplementText = $supplementText.Replace('\graphicspath{{figures/}{../figures/}{./}}', '\graphicspath{{2D_Supplemental/}{figures/}{./}}')
-Set-Content -LiteralPath (Join-Path $PackageDirectory 'Supporting_info.tex') -Value $supplementText -Encoding utf8
+Set-Content -LiteralPath (Join-Path $PackageDirectory 'supporting_information.tex') -Value $supplementText -Encoding utf8
 Remove-Item -LiteralPath $supplementPath
 
 # The preliminary table is outside the active supplement. The repository's
@@ -536,7 +551,7 @@ if (Test-Path -LiteralPath $unusedTable -PathType Leaf) {
 Remove-Item -LiteralPath (Join-Path $PackageDirectory 'latexmkrc')
 
 $rootFiles = @(Get-ChildItem -LiteralPath $PackageDirectory -File | ForEach-Object Name | Sort-Object)
-$expectedRootFiles = @('main.tex', 'Manuscript.tex', 'Supporting_info.tex') | Sort-Object
+$expectedRootFiles = @('main.tex', 'manuscript.tex', 'supporting_information.tex') | Sort-Object
 if (($rootFiles -join '|') -ne ($expectedRootFiles -join '|')) {
     throw "Unexpected Overleaf root files: $($rootFiles -join ', ')"
 }
@@ -556,5 +571,5 @@ Write-Output "Overleaf ZIP created: $ArchivePath"
 Write-Output ("Package files: {0}; ZIP size: {1:N2} MB" -f $packageFileCount, $archiveSizeMb)
 Write-Output "Graphics cache: $($script:cacheHits) hit(s), $($script:cacheMisses) rebuilt"
 if (-not $SkipCompileCheck) {
-    Write-Output ("Compile checks: main {0:N2}s; SI {1:N2}s" -f $script:mainCompileSeconds, $script:siCompileSeconds)
+    Write-Output ("Compile checks: main {0:N2}s; manuscript {1:N2}s; SI {2:N2}s" -f $script:mainCompileSeconds, $script:manuscriptCompileSeconds, $script:siCompileSeconds)
 }

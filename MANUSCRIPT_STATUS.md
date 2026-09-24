@@ -8,7 +8,7 @@ Former detailed documents are intentionally not required for active work; git hi
 
 ## Overleaf package - 2026-09-24
 
-`scripts/export-overleaf.ps1` now creates a ZIP with exactly three files at its root: `main.tex`, `Manuscript.tex`, and `Supporting_info.tex`. `main.tex` loads the manuscript; selecting `Supporting_info.tex` as Overleaf's main document builds the supplement. Shared sections, bibliography, and 15 precompiled figure PDFs remain in subfolders. The generated `build_overleaf/Manuscript_and_Supplement_Overleaf.zip` passed ZIP integrity and both entry-point compile checks. This packaging change does not alter the repository's manuscript or supplemental source text or scientific evidence status.
+`scripts/export-overleaf.ps1` now creates a ZIP with exactly three files at its root: `main.tex`, `manuscript.tex`, and `supporting_information.tex`. `main.tex` loads the manuscript by default. Both named documents have their own `\documentclass`, so opening either in Overleaf and clicking Recompile builds that document. Shared sections, bibliography, and 15 precompiled figure PDFs remain in subfolders. The generated `build_overleaf/Manuscript_and_Supplement_Overleaf.zip` passed ZIP integrity and all three entry-point compile checks. This packaging change does not alter the repository's manuscript or supplemental source text or scientific evidence status.
 
 ## Removal of SI Illustration and Data-Status Comments - 2026-09-24
 
