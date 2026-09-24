@@ -1,0 +1,9 @@
+From Bragg peaks to diffraction cylinders
+
+Suggested pace: 30 seconds. Click once to play the 26-second sequence, then advance after its final hold.
+
+A very thick ordered crystal gives narrow Bragg peaks. Finite normal thickness broadens those peaks and produces fringes along reciprocal rods. Random in-plane orientations sweep the rods into cylinders. Different crystal normals rotate those cylinders, and the Ewald sphere selects their scattering. Stacking disorder will change intensity along these existing rods.
+
+Source: Cylinder_Bridge.mp4, cylinder_bridge_v3, created in task codex://threads/01a08bed-6ea7-7721-934d-f260c5ed4faf. Matching static figure and full caption: output/cylinder_bridge_v3/Cylinder_Bridge.pdf and caption.txt.
+
+The smooth opening is an illustrative incoherent population of neighboring integer stack thicknesses, from mean N=512 to N=8, with peak normalization. Faster visible broadening is presentation timing, not an inferred layer-removal rate. The remaining geometry uses the fixed N=8 model. Mosaic and Ewald shading illustrate selected geometric contributions, not calibrated detector counts or fitted sample parameters.

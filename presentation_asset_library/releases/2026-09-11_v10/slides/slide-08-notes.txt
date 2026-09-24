@@ -1,0 +1,23 @@
+Beam Monte Carlo
+
+Suggested pace: 30 seconds.
+
+The sweep moved the mean incidence. At each chosen mean angle, we also average incident directions and weighted wavelengths using Monte Carlo or quasi-Monte Carlo source states. Each has its own Ewald sphere, and the footprint projects onto the detector. Wavelength spread strongly affects the radial extension near 003, while mosaicity affects the transverse width. Structure factors, finite thickness and optical corrections supply the intensity weights.
+
+Sources and figure interpretation
+- Manuscript sections/mosaicity_texture.tex, sections/correlated_effects.tex, and 2D_Supplemental/SI_failure_modes.tex, source-state construction and wavelength-control discussion.
+- Asset: figures/results_ordered/00L_region_wavelength_mosaic_axes.png. This slide displays measured data with explanatory axes, not the numerical full-spectrum control itself.
+- The current ordered-source construction uses seeded antithetic Latin-hypercube sampling and explicit weighted wavelength components. PbI2 B4 uses scrambled Sobol source states. Source sampling is distinct from a Markov model of layer stacking and from the continuous mosaic-density fit.
+- For the PbI2 detector image, beam position is integrated separately, conditional on incident direction. A direction-dependent projected Gaussian footprint preserves the fitted position–divergence correlation. The calculation evaluates scattering once per outgoing root, then uses positive 16×16 Gauss–Hermite position quadrature. Wavelength and divergence remain in the incident-state integration. This is physical beam averaging, not an image blur.
+- The PbI2 image uses 1,024 initial angular/wavelength states and 2,048 mosaic draws per state. Ordered full-beam reference images use 4,096 initial source states and 4,096 mosaic draws. Those preview draws are distinct from the Markov correlations of layer stacking.
+
+Additional provenance retained from v5 slide 8
+Sources and figure interpretation
+- SLATE-rMC figure: C:/Users/Kenpo/.codex/visualizations/2026/07/28/019fa948-8100-79b2-abc6-84b4e4747086/bi2se3-publication-visible-m0/bi2se3-10deg-projection-schematic-only.png and companion manifest.
+- Illustrative Bi2Se3 geometry at 10° with one mean source. Schematic inputs use Gaussian sigma 2°, Lorentzian HWHM 0.2°, broad-component weight 0.1 and an illustrative detector-tilt change of 20°. These are schematic settings, not fitted results shown on other slides.
+- The sphere and detector display different density measures and use separate display scales. Connecting rays teach the geometric map, not equality of colour intensity across those surfaces. The textured sphere includes the specular region.
+- Manuscript sections/modelling_methods.tex. The imported Ewald-equation implementation-parity gate remains separate from this visual illustration.
+
+Keep the measured wavelength/mosaic-direction image and the existing beam-source, wavelength-control and conditional position-integration notes from v5 slide 7. The short intensity-weighting explanation from v5 slide 8 moves into the narration, permitting its repetitive static projection slide to leave the main sequence. Its SLATE figure may remain in backup, with its original illustrative settings and separate sphere/detector density scales. Incident-source sampling is distinct from the Markov model of layer stacking. Each wavelength changes both Ewald center and radius.
+
+Keep the measured wavelength/mosaic-direction image and the existing beam-source, wavelength-control and conditional position-integration notes from v5 slide 7. The short intensity-weighting explanation from v5 slide 8 moves into the narration, permitting its repetitive static projection slide to leave the main sequence. Its SLATE figure may remain in backup, with its original illustrative settings and separate sphere/detector density scales. Incident-source sampling is distinct from the Markov model of layer stacking. Each wavelength changes both Ewald center and radius. The preceding incidence animation varied one mean incident direction at fixed wavelength. This slide now introduces averaging around the selected experimental condition, so the former opening claim that the beam was fixed is superseded. The incidence animation is not a demonstration of Monte Carlo sampling.

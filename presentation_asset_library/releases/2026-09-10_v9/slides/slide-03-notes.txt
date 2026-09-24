@@ -1,0 +1,33 @@
+Many crystallites, one pattern
+
+Suggested pace: 25 seconds.
+
+A real film contains many crystallites simultaneously. Different in-plane angles populate the rings. Different normal tilts spread the reciprocal features into bands and caps. The enlarged view makes that tilt visible. These orientations coexist in a stationary sample. We fit indexed positions first, before interpreting the widths.
+
+Playback cue
+Click once to start the 17-second clip. Narrate during playback, hold the final frame, and advance manually.
+
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/many_crystallites_clear_tilt.mp4, including the enlarged normal-tilt detail and L reference planes.
+- Presentation derivative removes only the constant upper100px title area from the1600x900 movie. Geometry, labels, timing and final hold remain. A native editable slide title replaces the baked-in title.
+- Twenty illustrative crystallites represent a larger orientation population. Real-space positions never translate reciprocal coordinates. The shared Gaussian-like per-solid-angle display law and its exact angular pushforward are documented in MANUSCRIPT_STATUS.md.
+- The gray L reference planes are guides, not scattering intensity. Generic reciprocal examples and separately normalized density shells do not assert selection rules or relative intensities.
+
+Additional provenance retained from v5 slide 2
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/sample_rotation_reciprocal_rings_indexed.mp4. The original MP4 is embedded without re-encoding.
+- Manuscript sections/modelling_methods.tex and sections/refinement_workflow.tex. Generic r=1 and L=1,2,3 schematic indices are not material-specific selection rules.
+- The moving sample illustrates the effect of changing in-plane orientation. The film can contain these orientations simultaneously without physically rotating during acquisition.
+
+Additional provenance retained from v5 slide 3
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/sample_mosaic_caps_and_bands.mp4. The original MP4 is embedded without re-encoding.
+- Manuscript sections/mosaicity_texture.tex. The animated teaching distribution is Gaussian-like per solid angle, sigma4.3deg with a tapered12deg cutoff, rather than the complete fitted Gaussian-plus-Lorentzian mixture.
+- These are illustrative display widths, not fitted material parameters. Per-shape peak normalization shows geometry, not relative reflection intensity. C18 remains open.
+- The starting frame matches the indexed-rotation final geometry. Fixed-|Q| caps and bands preserve the labels of the original reflections.
+
+Use many_crystallites_clear_tilt.mp4, 17 seconds. Its 30-second slide budget includes narration during playback and the final hold. The ensemble replaces the separate in-plane and single-mosaic demonstrations in the main talk. Retain the shared reciprocal-origin, illustrative tilt-law, generic-index, reference-plane and separately normalized-density caveats. Real crystallite positions do not translate reciprocal coordinates. The animation is a teaching construction, not a description of specimen motion during acquisition.
+
+Use many_crystallites_clear_tilt.mp4, 17 seconds. Its 30-second slide budget includes narration during playback and the final hold. The ensemble replaces the separate in-plane and single-mosaic demonstrations in the main talk. Retain the shared reciprocal-origin, illustrative tilt-law, generic-index, reference-plane and separately normalized-density caveats. Real crystallite positions do not translate reciprocal coordinates. The animation is a teaching construction, not a description of specimen motion during acquisition.
+
+The ensemble follows the restored single-orientation rotation in the main sequence. Its 17-second movie remains unchanged within a 25-second narration budget. This supersedes the earlier editorial note that the ensemble replaces both separate orientation demonstrations. Preserve all original physical and schematic interpretation notes.

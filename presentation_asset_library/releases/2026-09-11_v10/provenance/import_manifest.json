@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "release_id": "2026-09-11_v10",
+  "presentation": {
+    "path": "releases/2026-09-11_v10/presentation/Oriented_Powder_8min_Animated_v10.pptx",
+    "sha256": "14800b82faf4094013a0cfc4197fc4d0a9a2d2ad00243893f55c439e84326659",
+    "bytes": 14516116,
+    "slide_count": 26,
+    "embedded_movies": 8,
+    "native_charts": 8,
+    "native_tables": 1
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "A PbI₂ growth problem",
+      "texts": [
+        "A PbI₂ growth problem",
+        "Earlier reflectivity",
+        "Area-detector diffraction",
+        "The full detector pattern needed a physical explanation"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide1.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-01.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-01-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image2.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+          "format": "PNG",
+          "label": "image1.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image2.png",
+          "format": "PNG",
+          "label": "image2.png"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "In-plane orientations",
+      "texts": [
+        "In-plane orientations",
+        "Bi₂Se₃ and Bi₂Te₃",
+        "Points become rings"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide2.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-02.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-02-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image3.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "azimuthal-rings"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+          "format": "MP4",
+          "label": "media1.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+          "format": "PNG",
+          "label": "image3.png"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Many crystallites, one pattern",
+      "texts": [
+        "Many crystallites, one pattern"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide3.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-03.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-03-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image4.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "crystallite-ensemble"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+          "format": "MP4",
+          "label": "media2.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+          "format": "PNG",
+          "label": "image4.png"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Ewald intersections and mosaic spread",
+      "texts": [
+        "Ewald intersections and mosaic spread"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide4.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-04.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-04-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image5.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "ewald-mosaic"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+          "format": "MP4",
+          "label": "media3.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+          "format": "PNG",
+          "label": "image5.png"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Ewald surface to detector",
+      "texts": [
+        "Ewald surface to detector"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide5.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-05.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-05-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image6.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "ewald-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+          "format": "MP4",
+          "label": "media4.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+          "format": "PNG",
+          "label": "image6.png"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Mosaic tails in angular coordinates",
+      "texts": [
+        "Mosaic tails in angular coordinates"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide6.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-06.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-06-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image7.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "angular-mosaic-combined"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+          "format": "MP4",
+          "label": "media5.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+          "format": "PNG",
+          "label": "image7.png"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Incidence selects Bi₂Se₃ reflections",
+      "texts": [
+        "Incidence selects Bi₂Se₃ reflections",
+        "Illustrative mosaic: 50% Lorentzian"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide7.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-07.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-07-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image8.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "incidence-angular"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+          "format": "MP4",
+          "label": "media6.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+          "format": "PNG",
+          "label": "image8.png"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+      "texts": [
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+        "R=1",
+        "R=0"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide8.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-08.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-08-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+          "format": "PNG",
+          "label": "image9.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "image10.png"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Specular (r=0)",
+      "texts": [
+        "Specular (r=0)",
+        "Incident angle 5°. "
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide9.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-09.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-09-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image11.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "specular-wavelength"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image11.png",
+          "format": "PNG",
+          "label": "image11.png"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Bi₂Se₃: measured and simulated",
+      "texts": [
+        "Bi₂Se₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide10.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-10.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-10-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image12.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "image10.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image12.png",
+          "format": "PNG",
+          "label": "image12.png"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Bi₂Te₃: measured and simulated",
+      "texts": [
+        "Bi₂Te₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide11.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-11.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-11-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image14.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+          "format": "PNG",
+          "label": "image13.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image14.png",
+          "format": "PNG",
+          "label": "image14.png"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Bi₂Se₃: off-axis profiles",
+      "texts": [
+        "Bi₂Se₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and intensity scale",
+        "Retained profile fit, September 3–5",
+        "No error bars available. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide32.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-12.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-12-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+          "format": "PNG",
+          "label": "v9_se_r1_minus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png",
+          "format": "PNG",
+          "label": "v9_se_r1_plus.png"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Bi₂Se₃: the full axial profile",
+      "texts": [
+        "Bi₂Se₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Reflectivity and the 00L series",
+        "Retained profile fit, September 3–5",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide33.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-13.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-13-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png",
+          "format": "PNG",
+          "label": "v9_se_axial_full_00l.png"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Bi₂Te₃: off-axis profiles",
+      "texts": [
+        "Bi₂Te₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and surface parameters",
+        "Diagnostic state; no new joint fit selected",
+        "Bars: count and background uncertainty. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide13.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-14.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-14-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image16.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+          "format": "PNG",
+          "label": "image15.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image16.png",
+          "format": "PNG",
+          "label": "image16.png"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Bi₂Te₃: the full axial profile",
+      "texts": [
+        "Bi₂Te₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Differences remain between peaks",
+        "Diagnostic state; no new joint fit selected",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide14.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-15.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-15-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image17.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image17.png",
+          "format": "PNG",
+          "label": "image17.png"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Parameters behind the ordered-film images",
+      "texts": [
+        "Parameters behind the ordered-film images",
+        "Retained profile fits, 3 September",
+        "Fitted mosaic",
+        "Bi₂Se₃",
+        "Bi₂Te₃",
+        "Gaussian σ (°)",
+        "0.903",
+        "0.395",
+        "Lorentz half-width (°)",
+        "0.282",
+        "0.288",
+        "Lorentz weight",
+        "15.5%",
+        "74.5%",
+        "Structure-factor inputs held fixed",
+        "Bi z (fraction of c)",
+        "0.4008",
+        "0.4000",
+        "Outer X z (fraction of c)",
+        "0.2117",
+        "0.2095",
+        "Uiso (Å²)",
+        "0.019",
+        "0.000",
+        "Occupancy (all sites)",
+        "1",
+        "1",
+        "Stack length (c repeats)",
+        "17",
+        "16",
+        "X = Se or Te. Central X: z = 0 in both CIFs.",
+        "Curves include component weights. More than 97% of the angular probability lies in the plotted range."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide15.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-16.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-16-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart3.xml",
+        "ppt/charts/chart4.xml"
+      ],
+      "table_paths": [
+        "releases/2026-09-10_v9/data/native_tables/slide-16-table-1.csv"
+      ],
+      "asset_ids": [
+        "mosaic-parameters"
+      ],
+      "media_files": []
+    },
+    {
+      "number": 17,
+      "title": "Bi₂Te₃: termination changes near 003",
+      "texts": [
+        "Bi₂Te₃: termination changes near 003",
+        "Trial mixture (top / bottom): 97.6% Bi / outer-Te + 2.4% Bi / central-Te",
+        "Ends only: 2.5% less error",
+        "Joint refit: 85.6% less error",
+        "Ends only: 99.5% less error",
+        "Joint refit: 97.8% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Te₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide16.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-17.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-17-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image18.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart5.xml",
+        "ppt/charts/chart6.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-termination"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image18.png",
+          "format": "PNG",
+          "label": "image18.png"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Bi₂Se₃: termination changes near 003",
+      "texts": [
+        "Bi₂Se₃: termination changes near 003",
+        "Trial mixture (top / bottom): 92.8% outer-Se / Bi + 7.2% Bi / central-Se",
+        "Ends only: 45.6% more error",
+        "Joint refit: 3.0% more error",
+        "Ends only: 81.4% less error",
+        "Joint refit: 97.1% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Se₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide17.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-18.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-18-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image19.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart7.xml",
+        "ppt/charts/chart8.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-termination"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image19.png",
+          "format": "PNG",
+          "label": "image19.png"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "From Bragg peaks to diffraction cylinders",
+      "texts": [],
+      "hidden": false,
+      "part": "ppt/slides/slide34.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-19.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-19-notes.txt",
+      "media_paths": [
+        "releases/2026-09-11_v10/assets/cylinder_bridge_v3/storyboard/frame_00.0s.png",
+        "releases/2026-09-11_v10/assets/cylinder_bridge_v3/Cylinder_Bridge.mp4"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "cylinder-bridge"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-11_v10/assets/cylinder_bridge_v3/storyboard/frame_00.0s.png",
+          "format": "PNG",
+          "label": "frame_00.0s.png"
+        },
+        {
+          "path": "releases/2026-09-11_v10/assets/cylinder_bridge_v3/Cylinder_Bridge.mp4",
+          "format": "MP4",
+          "label": "Cylinder_Bridge.mp4"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Next: controlled PbI₂ growth",
+      "texts": [
+        "Next: controlled PbI₂ growth",
+        "Tune mosaicity",
+        "Tune the stacking sequence",
+        "Stacking sequence"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide18.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-20.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-20-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image20.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image20.png",
+          "format": "PNG",
+          "label": "image20.png"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "PbI₂: 2H stacking",
+      "texts": [
+        "PbI₂: 2H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide19.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-21.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-21-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image21.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-2h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image21.png",
+          "format": "PNG",
+          "label": "image21.png"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "PbI₂: 6H stacking",
+      "texts": [
+        "PbI₂: 6H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide20.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-22.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-22-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image22.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-6h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image22.png",
+          "format": "PNG",
+          "label": "image22.png"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "PbI₂: 4H stacking",
+      "texts": [
+        "PbI₂: 4H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide21.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-23.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-23-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image23.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-4h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image23.png",
+          "format": "PNG",
+          "label": "image23.png"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "PbI₂: stacking disorder and polytypes",
+      "texts": [
+        "PbI₂: stacking disorder and polytypes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide22.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-24.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-24-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image24.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-matrices"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+          "format": "MP4",
+          "label": "media7.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+          "format": "PNG",
+          "label": "image24.png"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "PbI₂: measured and simulated",
+      "texts": [
+        "PbI₂: measured and simulated",
+        "B4, incident angle 4°. Selected 2H + 6H parent model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide23.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-25.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-25-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image25.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-b4-comparison"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image25.png",
+          "format": "PNG",
+          "label": "image25.png"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Transition-matrix profiles",
+      "texts": [
+        "Transition-matrix profiles",
+        "Measured",
+        "Model",
+        "PbI₂ B4, r = 1",
+        "Selected 2H + 6H⁺ + 6H⁻ model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide24.xml",
+      "preview": "releases/2026-09-11_v10/slides/slide-26.png",
+      "notes_path": "releases/2026-09-11_v10/slides/slide-26-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart9.xml",
+        "ppt/charts/chart10.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-b4-comparison"
+      ],
+      "media_files": []
+    }
+  ],
+  "embedded_media": [
+    {
+      "part": "ppt/media/image1.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+      "sha256": "4b773a8d9e4397d2b58e25a4a46cc7f0c2181e52f00ba4a6042ed42ffa241a03",
+      "bytes": 198269,
+      "slides": [
+        1
+      ]
+    },
+    {
+      "part": "ppt/media/image2.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image2.png",
+      "sha256": "3ffe9507d5828523163ff95fe85b1d38009866c5fc73fe044bcb218fd40aad97",
+      "bytes": 1016359,
+      "slides": [
+        1
+      ]
+    },
+    {
+      "part": "ppt/media/media1.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+      "sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617",
+      "bytes": 731172,
+      "slides": [
+        2
+      ]
+    },
+    {
+      "part": "ppt/media/image3.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+      "sha256": "b65d04ed96298f7c81c72ea395c1b9d412d33a73d1fa8ebe5bcceddcbc381a70",
+      "bytes": 101998,
+      "slides": [
+        2
+      ]
+    },
+    {
+      "part": "ppt/media/media2.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+      "sha256": "d14cbe018412fb307bcf5d533100f6d471c924d2ca6533f854ca0a03976ba61a",
+      "bytes": 1455480,
+      "slides": [
+        3
+      ]
+    },
+    {
+      "part": "ppt/media/image4.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+      "sha256": "fd8f91156652170357e659f4188ac79ee59ed8f043853bfd68b49a438d9b9f89",
+      "bytes": 174640,
+      "slides": [
+        3
+      ]
+    },
+    {
+      "part": "ppt/media/media3.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+      "sha256": "fe22252dd93900c67d4711f770630e736d2cef820d670dcb4b2f8f71d4400a7b",
+      "bytes": 720582,
+      "slides": [
+        4
+      ]
+    },
+    {
+      "part": "ppt/media/image5.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+      "sha256": "d4fd1a7f556eaf23a84910fa67dfc5fdef9642300818830e3109e197f81dcd48",
+      "bytes": 98391,
+      "slides": [
+        4
+      ]
+    },
+    {
+      "part": "ppt/media/media4.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+      "sha256": "7bef2a859dd5a23fdad90bab164a8a7f587d6a3f05c6eb6101e9f1d9b4ab48c7",
+      "bytes": 766163,
+      "slides": [
+        5
+      ]
+    },
+    {
+      "part": "ppt/media/image6.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+      "sha256": "46176bde91f1955c02a9e27a9cb27bba13f4f006ebe0c36016dce492219a4d11",
+      "bytes": 204551,
+      "slides": [
+        5
+      ]
+    },
+    {
+      "part": "ppt/media/media5.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+      "sha256": "540b08d4b3d89f551922ebdeef45684d30b0f3d33967557e4d21c182ea87c1e3",
+      "bytes": 1665207,
+      "slides": [
+        6
+      ]
+    },
+    {
+      "part": "ppt/media/image7.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+      "sha256": "36fce743650ca6ae54f7d8e97ba72c5b015d3fbfd11852478665dc3037dba350",
+      "bytes": 126342,
+      "slides": [
+        6
+      ]
+    },
+    {
+      "part": "ppt/media/media6.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+      "sha256": "83ab049e4f74c6f109b1c013c141bc0a46509ba45fffad49cb52894509a9ed23",
+      "bytes": 1352715,
+      "slides": [
+        7
+      ]
+    },
+    {
+      "part": "ppt/media/image8.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+      "sha256": "456150854b321727acbcbc6afed25ccf261f0d098f52bebf4f7ae543e978f822",
+      "bytes": 520566,
+      "slides": [
+        7
+      ]
+    },
+    {
+      "part": "ppt/media/image9.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+      "sha256": "79dada54921fb6999547ed0fb9f30d1098434579f79bb382389e56a931783212",
+      "bytes": 2793,
+      "slides": [
+        8
+      ]
+    },
+    {
+      "part": "ppt/media/image10.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+      "sha256": "f5286f32eee00a3e097ed0093be21102026d2c42f325e2f80a0b1e5fae24668b",
+      "bytes": 325415,
+      "slides": [
+        8,
+        10
+      ]
+    },
+    {
+      "part": "ppt/media/image11.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image11.png",
+      "sha256": "695c2f670493fc5446d4a130879e0c054645c2c1358270d3eb9a3d4c30f7d24a",
+      "bytes": 354695,
+      "slides": [
+        9
+      ]
+    },
+    {
+      "part": "ppt/media/image12.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image12.png",
+      "sha256": "c88a1242002000b5aae428d96cc4acfae44e1fac928d21ac9609138e4083548b",
+      "bytes": 89265,
+      "slides": [
+        10
+      ]
+    },
+    {
+      "part": "ppt/media/image13.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+      "sha256": "d045cf36b05268e230ed06ae21cfdc71afcbd8650564fb1ddf608067a93c99a9",
+      "bytes": 288115,
+      "slides": [
+        11
+      ]
+    },
+    {
+      "part": "ppt/media/image14.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image14.png",
+      "sha256": "6fd13b0b5225b897c4a5ea211d3a411b0d08e371a8b535814e916ff04a4f215b",
+      "bytes": 104914,
+      "slides": [
+        11
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_r1_minus.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+      "sha256": "552e9b3866a4b3596cd318f096bfcc47ebb3de62571fb9bebe6f893631f6d729",
+      "bytes": 86817,
+      "slides": [
+        12
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_r1_plus.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png",
+      "sha256": "8695287a8a343694a38a515a7fe65ffcbf00639a38029ae458af1d4cb241cafb",
+      "bytes": 85888,
+      "slides": [
+        12
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_axial_full_00l.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png",
+      "sha256": "5899c097fd6fe4e3d748a8c2e8060e9b2c84e0db2137d35c9b140d5410e043c7",
+      "bytes": 117896,
+      "slides": [
+        13
+      ]
+    },
+    {
+      "part": "ppt/media/image15.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+      "sha256": "5d53395a7280c66e382296ed9301eba99300e52246def49699689589edea6df6",
+      "bytes": 81974,
+      "slides": [
+        14
+      ]
+    },
+    {
+      "part": "ppt/media/image16.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image16.png",
+      "sha256": "fe6aa6309cf55fb9241b033d55fe1c0f356053f661ac912b965b396e8e8577ad",
+      "bytes": 82550,
+      "slides": [
+        14
+      ]
+    },
+    {
+      "part": "ppt/media/image17.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image17.png",
+      "sha256": "322303b00d44229753ff5bc74c4dee21b9347f8bae037c5a3151f5d3b408531a",
+      "bytes": 129928,
+      "slides": [
+        15
+      ]
+    },
+    {
+      "part": "ppt/media/image18.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image18.png",
+      "sha256": "36c912d06c5f81cb4bfd836c97c73d0582e49d7e7262a148c29fa4a1a5f886f0",
+      "bytes": 79891,
+      "slides": [
+        17
+      ]
+    },
+    {
+      "part": "ppt/media/image19.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image19.png",
+      "sha256": "c3ca587729281090f99977285cefafda713a65c6b2bebcd2e6a662ea203bbfd1",
+      "bytes": 85514,
+      "slides": [
+        18
+      ]
+    },
+    {
+      "part": "ppt/media/cylinder_v3_image.png",
+      "path": "releases/2026-09-11_v10/assets/cylinder_bridge_v3/storyboard/frame_00.0s.png",
+      "sha256": "bb21ef502173f6f241b9dafa49a6128364eb2b9cc3096c0bf87e5ad436211f70",
+      "bytes": 68784,
+      "slides": [
+        19
+      ]
+    },
+    {
+      "part": "ppt/media/cylinder_v3_animation_01_4ba9e53e3bcf.mp4",
+      "path": "releases/2026-09-11_v10/assets/cylinder_bridge_v3/Cylinder_Bridge.mp4",
+      "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+      "bytes": 1156850,
+      "slides": [
+        19
+      ]
+    },
+    {
+      "part": "ppt/media/image20.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image20.png",
+      "sha256": "26bd56d3ddc294ae9d6abb9d206848ff607ca3463355fb3f57ad61f8110392f3",
+      "bytes": 30044,
+      "slides": [
+        20
+      ]
+    },
+    {
+      "part": "ppt/media/image21.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image21.png",
+      "sha256": "78a64afc0820881d8a0af258065f9256365e290cf96e0da3686ff25e63c9d7df",
+      "bytes": 115606,
+      "slides": [
+        21
+      ]
+    },
+    {
+      "part": "ppt/media/image22.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image22.png",
+      "sha256": "d2308ce01fa21a73eb748d848d1c2d06bf7e4966a5e77183a0130b637fb8fe59",
+      "bytes": 166611,
+      "slides": [
+        22
+      ]
+    },
+    {
+      "part": "ppt/media/image23.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image23.png",
+      "sha256": "721bde5c4084c01b6b0c35a90e0d442f3c45ab1e8f91f3e6c8c1e79421093b16",
+      "bytes": 144302,
+      "slides": [
+        23
+      ]
+    },
+    {
+      "part": "ppt/media/media7.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+      "sha256": "c5554ee0e836b1c3fc04927644ddf8ff2f49604ca6b536252ce2b0d7f4e96fab",
+      "bytes": 1152550,
+      "slides": [
+        24
+      ]
+    },
+    {
+      "part": "ppt/media/image24.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+      "sha256": "85a890432aa971564d41c98a502cd8cace1d3c41352b2d6db266005a2aba4218",
+      "bytes": 153196,
+      "slides": [
+        24
+      ]
+    },
+    {
+      "part": "ppt/media/image25.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image25.png",
+      "sha256": "2396a5ad4ffa7ba5e57777220c71a9e321413473017354beef1883c2cf764a44",
+      "bytes": 596126,
+      "slides": [
+        25
+      ]
+    }
+  ],
+  "deck_validation": [
+    "releases/2026-09-11_v10/provenance/deck_validation/final_validation.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/independent_package_audit.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/independent_render_audit.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/independent_sdk_audit.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/independent_visual_review.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/insertion_audit.json",
+    "releases/2026-09-11_v10/provenance/deck_validation/new_video_validation.json"
+  ]
+}

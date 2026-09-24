@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "direct_coherent_sum_max_error": 1.163513729807164e-13,
+  "mixture_period_area_max_error": 1.3877787807814457e-17,
+  "integer_boundary_difference_at_plus_minus_1e_8": 1.862686893616683e-09,
+  "initial_mean_layers": 512,
+  "final_mean_layers": 8,
+  "N512_samples_inside_half_height": 75,
+  "pacing": "Inverse mean thickness, hence visible width, accelerates over the opening. This is not a claim of accelerating physical layer-removal rate.",
+  "normalization": "Neighboring integer intensities mixed before peak normalization; period area is mean/peak, not generally1/mean.",
+  "scope": "Illustrative geometry and thickness population, not a new material fit.",
+  "files": {
+    "source/cylinder_bridge.py": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4",
+    "source/animate_bridge.py": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9",
+    "data/opening_profiles.npz": "c1e794f4192f90689686a8d7b4f0c7006e69a14c2a3c08be969d6e55c33293f6",
+    "data/model_arrays.npz": "da3d151f6b64f0ef27406cef62d2b44ba259b4f19721c0dbfe20f200d93dd1a5",
+    "caption.txt": "c77141419fc23e14162f434b32d23b52f7c2fb7d575fde31c2cd3edf59cf1f5a"
+  }
+}

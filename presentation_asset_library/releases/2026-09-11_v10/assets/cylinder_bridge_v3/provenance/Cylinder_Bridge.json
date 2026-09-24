@@ -1,0 +1,116 @@
+{
+  "schema": "cylinder-bridge-v3",
+  "title": "From narrow finite peaks to rods and Ewald-selected scattering",
+  "science_status": "generic finite ordered stack and qualitative geometric selection, not a fitted result",
+  "source": "source/cylinder_bridge.py",
+  "source_sha256": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4",
+  "portable_rebuild": "python source/cylinder_bridge.py",
+  "libraries": [
+    "numpy",
+    "matplotlib"
+  ],
+  "opening": {
+    "initial_state": "finite512-layer profile; same plotted curve geometry throughout the animation",
+    "static_ideal_reference": "unchanged symbolic gray delta arrows beside final N8 curve; no finite arrow height/weight interpretation",
+    "representative_mean_layers": [
+      512.0,
+      128.0,
+      32.0,
+      16.0,
+      8.5,
+      8.0
+    ],
+    "population_model": "mean=m+f; fractions1-f of integer m-layer stacks and f of integer(m+1)-layer stacks; incoherent intensity mixture, not fractional atomic layers",
+    "integer_profile": "S_N(L)=|sum(exp(2*pi*i*n*L),n=0..N-1)|^2/N^2",
+    "normalization": "S(L;mean)=[(1-f)*m^2*S_m+f*(m+1)^2*S_(m+1)]/D; D=(1-f)*m^2+f*(m+1)^2; peaks1; unit-period area mean/D",
+    "no_conserved_area_claim": true,
+    "delta_comb_normalization_for_comparison": "|sum|^2/N rather than the plotted |sum|^2/N^2",
+    "progress_to_mean_layers": "1/(1/512+(1/8-1/512)*clip(p,0,1))",
+    "movie_progress_reference": "p=u^2 during the opening broadening interval; final timing owned by animation source/manifest",
+    "opening_only_dense_grid": "32769 regular samples plus exact integer orders, neighboring-stack first zeros, and801 peak-local nodes per Bragg order over+/-6/mean",
+    "archive_grid": "union of representative opening grids; arbitrary means recreated from the portable source",
+    "integer_first_zero_width": "2/N only for pure integer stacks; neighboring thickness mixtures generally fill each other's zeros",
+    "original_N8_endpoint": "original rod grid and profile renderer retained at stage0,N8",
+    "data": "data/opening_profiles.npz",
+    "data_sha256": "c1e794f4192f90689686a8d7b4f0c7006e69a14c2a3c08be969d6e55c33293f6",
+    "normalization_csv": "data/opening_normalization.csv"
+  },
+  "parameters": {
+    "N": 8,
+    "R": 1.0,
+    "K": 3.4,
+    "incidence_degrees": 20.0,
+    "intrinsic_L_range": [
+      0.15,
+      3.55
+    ],
+    "core_sigma_degrees": 3.0,
+    "broad_sigma_degrees": 9.0,
+    "broad_probability": 0.18,
+    "maximum_tilt_degrees": 18.0,
+    "normal_quadrature": [
+      12,
+      32
+    ],
+    "orientation_measure": "positive polar Gauss-Legendre with sin(alpha) d(alpha), uniform independent normal azimuth psi; components normalized on retained nodes",
+    "powder_azimuth": "independent beta, analytically solved on each rigidly rotated cylinder",
+    "view_yaw_degrees": -45,
+    "view_elevation_degrees": 20
+  },
+  "display": {
+    "structural_contrast": "C(S)=asinh(S/0.02)/asinh(50)",
+    "opening_bragg_locators": "animation stage0 only; teal symbols s=11 at intrinsic L1,2,3; alpha=clip(1-64/mean,0,1); position guides for unresolved maxima, not additional intensity",
+    "selected_locus_opacity": "9 * orientation_mass * C(S); scene fade multiplies opacity",
+    "selected_locus_stroke_points": 1.15,
+    "coarea_or_detector_density": false,
+    "representative_cylinders": "mean plus six surfaces at illustrative 4/12 degree tilts; geometry guides, not the numerical normal quadrature",
+    "static_framing": "a-c same enlarged limits, d expands to whole sphere; camera fixed",
+    "missing_rods": "no r=0 response is drawn; Qz line is a coordinate axis"
+  },
+  "data": {
+    "npz": "data/model_arrays.npz",
+    "npz_sha256": "da3d151f6b64f0ef27406cef62d2b44ba259b4f19721c0dbfe20f200d93dd1a5",
+    "csv": [
+      "data/rod_profile.csv",
+      "data/orientation_quadrature.csv"
+    ],
+    "q_dimensions": [
+      "orientation",
+      "analytic_beta_branch",
+      "intrinsic_L_sample",
+      "xyz"
+    ],
+    "invalid_points": "q is NaN where valid is false; these are not selected scattering points"
+  },
+  "checks": {
+    "pass": true,
+    "retained_orientations": 384,
+    "valid_selected_points": 310820,
+    "max_ewald_radius_residual": 1.3322676295501878e-15,
+    "max_intrinsic_L_error": 8.881784197001252e-16,
+    "max_cylinder_radius_error": 4.440892098500626e-16,
+    "max_rotation_orthogonality_error": 2.220446049250313e-16,
+    "orientation_mass_sum": 1.0000000000000002,
+    "minimum_orientation_mass": 8.448342491254021e-05,
+    "ordered_peak_values": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "period_mean": 0.12499999999999999,
+    "expected_period_mean": 0.125,
+    "opening_max_period_mean_error": 2.7755575615628914e-17,
+    "opening_N8_matches_existing_profile": true,
+    "opening_mean_layers": {
+      "initial_finite": 512.0,
+      "final": 8.0
+    },
+    "opening_N512_half_height_samples_at_L1": 75,
+    "opening_archived_minimum_intensity": 3.746545763048544e-36,
+    "opening_max_integer_peak_error": 0.0
+  },
+  "caption_file": "caption.txt",
+  "caption": "From ideal Bragg peaks to finite rods and Ewald-selected scattering. This is a geometric teaching example, not a material-specific fit. (a) An ideal infinitely repeated crystal gives zero-width Bragg peaks at integer Bragg order ell, with L the continuous intrinsic coordinate. Symbolic delta(L-ell) arrows represent these peaks. The arrows specify positions and zero width, not finite height or integrated weight. Finite thickness replaces this ideal picture with broadened peaks and fringes. For N identical unit layers, each finite curve is separately peak normalized as S_N(L)=|sum from n=0 to N-1 of exp(2 pi i n L)|^2/N^2. The static comparison shows gray ideal delta arrows and a dark finite N=8 curve. The accompanying animation instead begins with a narrow but finite 512-layer profile and broadens continuously to N=8. A continuous mean layer count Nbar=m+f describes population fractions 1-f of m-layer stacks and f of (m+1)-layer stacks, where m is the integer floor of Nbar. Their incoherent intensities are mixed and then peak normalized: S(L;Nbar)=[(1-f)m^2 S_m(L)+f(m+1)^2 S_(m+1)(L)]/D, with D=(1-f)m^2+f(m+1)^2. The mean is a thickness-population mean, not fractional atomic layers. Inverse mean thickness increases linearly with rendering progress; the movie varies that progress quadratically in elapsed opening time. Small teal markers locate the three Bragg maxima while their rod widths are visually unresolved, and fade away by Nbar=64; these markers do not add structural intensity. This peak-normalized sequence is not a conserved-area transformation: each mixture has unit-period area Nbar/D, reducing to 1/N for a pure integer stack. Only pure integer stacks have first-zero full width 2/N; neighboring-stack mixtures can fill each other's zeros. The static ideal delta symbols use a separate schematic convention. A normalized delta-comb limit requires the pure coherent factor divided by N. No stacking faults are needed to produce these finite-stack fringes. L is the crystallite-frame rod coordinate, and in-plane periodicity remains ideal. (b) Uniform, independent in-plane azimuth beta distributes the off-axis rod over a thin cylinder of radius R=1 in arbitrary reciprocal units. The same S(L) decorates every azimuth, using the final N=8 profile S_8. The displayed r=1 is a representative basal reflection family, not a Bi2Se3 or Bi2Te3 allowed-reflection list. (c) Representative rigidly tilted cylinder surfaces illustrate mosaic orientations. Their intrinsic profiles rotate with the crystallites. Mosaicity is not a uniform radial blur, and intrinsic L is not laboratory Qz after tilt. (d) The dashed curve is the exact untilted cylinder/Ewald intersection. Teal loci show the orientation-weighted selection from the tilted cylinders. Each curve obeys |ki+Q|=|ki|, with sphere center -ki and radius 2 pi/lambda. The orange radius identifies one exact aligned exit vector kf. The 12-by-32 positive quadrature samples normal tilt alpha and its independent azimuth psi using the solid-angle measure. The illustrative law is an 82% Gaussian core of width 3 degrees and an 18% broader Gaussian of width 9 degrees, each normalized on the retained quadrature within an 18-degree cone. The profile plot is linear. Structural-color contrast is fixed at asinh(S/0.02)/asinh(50), and each selected curve receives its linear orientation weight after this contrast. Light cylinder edges and the dashed aligned curve are geometric guides. Qz is a reference axis, not an added specular rod. Panels a-c share an enlarged scale, while d zooms out without changing viewpoint. These are qualitative weighted loci, not Ewald-area or detector-count densities. Structure factors, coarea and detector Jacobians, optical response, beam spread and opaque-substrate acceptance are not included. Stacking faults would change S(L) on the existing rods, while retaining this orientation and selection framework."
+}

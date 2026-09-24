@@ -1,0 +1,136 @@
+{
+  "schema": "conditional-low-angle-parratt-restoration.v1",
+  "sample": "bi2se3",
+  "status": "PROVISIONAL_OPTICAL_STACK; NOT AN AUTHORITATIVE STRUCTURE REFIT",
+  "substrate_assumption": "Historical unverified SiO2 compatibility index held fixed",
+  "film_thickness_A": 500,
+  "top_roughness_A": 5.3555911321161505,
+  "bottom_roughness_A": 10,
+  "roughness_boundary_limited": false,
+  "scale_count_per_A2": 203286049.5778935,
+  "initial_cost": 0.059967265276528445,
+  "selected_cost": 0.057276893304546696,
+  "q8_initial_cost": 0.059972241832676285,
+  "q8_selected_cost": 0.057281093420091314,
+  "optimizer_success": true,
+  "optimizer_message": "Solution found.",
+  "low_angle_quadrature_relative_l2_q4_q8": 0.0001907389335783544,
+  "numerical_gate_pass": true,
+  "interface_assumption": "local_lamella_follows_mosaic.v1",
+  "objective": "Mean squared log10 simulation+fixed-background/data, 1<2theta<5 degrees; one frozen image scale",
+  "quadrature_relative_l2_q4_q8": 0.0003765518139315071,
+  "projector_revision": "sha256-8568d0a29bc7a43e3309667f3805e0067d99e1273ec031168041e76e706870d6.v1",
+  "compiler_authority": {
+    "classification": "EXACT_OPTIMIZED_GENERAL_CIF",
+    "scope": "continuous_angle_maps",
+    "structure_model_revision": "42518109a2fa57482bf247c42f1382af0a38c3f51b2a32f275392adf26f67702",
+    "exact_conventional_cell_repeats": 17,
+    "coordinate_transform": {
+      "kernel_L_per_CIF_L": 3,
+      "kernel_z_per_CIF_z": 0.3333333333333333
+    },
+    "finite_repeat_identity": "G_N(exp(2*pi*i*L))",
+    "general_cif_authority_preserved": true
+  },
+  "diagnostic": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.ra_diag.npz",
+  "diagnostic_sha256": "f70d1d8e6efcbfb55f5db0223a9aacb4644979ae466e7d4c27871ad0c5e29613",
+  "replay": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\restore_specular.py",
+    "sha256": "4508288eb96bdfb89b20d179ff1df4fec854787c155df98c3f6c9ffe46ec5fea"
+  },
+  "background_manifest": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\background_correction\\bi2se3_background_corrected.json",
+    "sha256": "a77f84d647f38e1bc7da5d1adecf32370fd4499c943980d092de13db3ad04c5b"
+  },
+  "background_diagnostic": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\background_correction\\bi2se3_background_corrected.ra_diag.npz",
+    "sha256": "af96d17278b8d77486aec9c91190045ef63298dfc0be88615a7b1ab7aaf7d12d"
+  },
+  "outputs": {
+    "png": {
+      "path": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\reflectivity_restored_continuous\\bi2se3_current_continuous_log.png",
+      "sha256": "ae5fb3507af5e149ed1cfa391cec6db2c012230e868fde36deb7da0233b8e405"
+    },
+    "pdf": {
+      "path": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\reflectivity_restored_continuous\\bi2se3_current_continuous_log.pdf",
+      "sha256": "a5c314dba8dc640439c0a4a18eb783f5e61900fef383f9a7e6c103d70106b96a"
+    }
+  },
+  "renderer": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\render_specular_figures.py",
+    "sha256": "d4e2b24a39093ef37aa435e5a446c00faf6d323d671745f873d7c8e8af2a6e6f"
+  },
+  "replay_fingerprint_at_result_save": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\restore_specular.py",
+    "sha256": "ddf7472f4c424e22193ea5fc4232ccce182a34c979db67f56ca4ea0636f23b04"
+  },
+  "replay_source_policy": "Save-time and handoff file fingerprints, not an attestation of loaded-module bytes. Cleanup removed only unused probe_bi; the rest of the module AST is identical.",
+  "cleanup_active_module_ast_sha256": "de4df4f3db99631671d1ac0d080cbe2ab13b4ebe4732ec2af3d13222a2ca2dc4",
+  "runtime": {
+    "executable": "C:\\Users\\Kenpo\\AppData\\Local\\uv\\cache\\archive-v0\\qOUkFM9aQkUBh5_P7moEr\\Scripts\\python.exe",
+    "python": "3.12.2",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0",
+    "numba": "0.66.0",
+    "matplotlib": "3.10.3"
+  },
+  "source_count": 256,
+  "selected_source_mass_divisor": 1,
+  "active_parameters": [
+    "top_roughness_A"
+  ],
+  "frozen_parameters": [
+    "detector and sample geometry",
+    "mosaic",
+    "atomic/stack strength and phase/disorder state",
+    "source/wavelength response",
+    "film thickness",
+    "substrate optical index",
+    "bottom roughness",
+    "common image intensity scale",
+    "native background field"
+  ],
+  "integration": {
+    "method": "deterministic continuous detector-area Gauss quadrature",
+    "theta_edges_deg": [
+      1,
+      30
+    ],
+    "theta_bin_count": 290,
+    "phi_edges_deg": [
+      -10,
+      10
+    ],
+    "phi_bin_count": 80,
+    "fit_theta_edges_deg": [
+      1,
+      5
+    ],
+    "initial_order": 4,
+    "final_order": 8
+  },
+  "engine_authority": [
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2x3-polar-line-refit\\src\\rasim_next\\reflectivity\\specular.py",
+      "sha256": "3c5c33d0572cbacd82dc0b66609916f1e9154e9a41b2830e9f37e38d2dd9d85c"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2x3-polar-line-refit\\src\\rasim_next\\pipeline\\_continuous_detector_kernel.py",
+      "sha256": "b6b1e05a6f824f71c759073e0b33b9f908905834217f5fe24a62d6e0be5fbac9"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2x3-polar-line-refit\\src\\rasim_next\\pipeline\\source_averaged_detector.py",
+      "sha256": "86cbcc9121ba1968fab1aaa368e1cc84e4ff8dbfd0009acf35166fd36cd25504"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2x3-polar-line-refit\\src\\rasim_next\\pipeline\\bragg_space.py",
+      "sha256": "83750d14b1ed42ea74a7dbffd1aaa0357225c6bdb5479379651e08df5c615494"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2x3-polar-line-refit\\src\\rasim_next\\pipeline\\continuous_detector.py",
+      "sha256": "20aacc8f88a835517019dfbd4cf0a3bad2a032500bbd809bf90bae66cb8bf9a1"
+    }
+  ],
+  "physical_fit_acceptance": "NOT_ACCEPTED: low-angle agreement improved but optical stack unverified; no roughness uncertainty or full-profile adequacy certification.",
+  "observation_correction": "Raw detector validity restores25 theta bins below3.55deg previously excluded by45px background-calibration support. Prior265 measured/background bins unchanged."
+}

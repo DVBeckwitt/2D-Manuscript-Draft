@@ -1,0 +1,184 @@
+{
+  "status": "pass",
+  "checks": {
+    "source_v9_unchanged": true,
+    "slide_counts_25_to_26": true,
+    "old_slide_order_preserved": true,
+    "no_hidden_slides": true,
+    "no_existing_parts_removed": true,
+    "only_package_metadata_changed": true,
+    "all_old_slide_xml_unchanged": true,
+    "all_old_slide_relationships_unchanged": true,
+    "old_notes_charts_workbooks_media_unchanged": true,
+    "movies_7_to_8": true,
+    "eight_native_charts_and_workbooks": true,
+    "one_native_table": true,
+    "new_movie_internal_single_target": true,
+    "new_movie_exact_v3_hash": true,
+    "movie_picture_exists": true,
+    "full_slide_movie_placement": true,
+    "video_timing_present": true,
+    "click_trigger_present": true,
+    "media_last_frame_hold": true,
+    "no_new_slide_auto_advance": true,
+    "all_internal_relationship_targets_exist": true,
+    "no_new_external_relationships": true
+  },
+  "failures": [],
+  "source_sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+  "candidate_sha256": "14800b82faf4094013a0cfc4197fc4d0a9a2d2ad00243893f55c439e84326659",
+  "source": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\presentation_asset_library\\releases\\2026-09-10_v9\\presentation\\Oriented_Powder_8min_Animated_v9.pptx",
+  "candidate": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\Oriented_Powder_8min_Animated_v10.pptx",
+  "new_slide_number": 19,
+  "new_slide_part": "ppt/slides/slide34.xml",
+  "old_slide_part_order": [
+    "ppt/slides/slide1.xml",
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide32.xml",
+    "ppt/slides/slide33.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide15.xml",
+    "ppt/slides/slide16.xml",
+    "ppt/slides/slide17.xml",
+    "ppt/slides/slide18.xml",
+    "ppt/slides/slide19.xml",
+    "ppt/slides/slide20.xml",
+    "ppt/slides/slide21.xml",
+    "ppt/slides/slide22.xml",
+    "ppt/slides/slide23.xml",
+    "ppt/slides/slide24.xml"
+  ],
+  "new_slide_part_order": [
+    "ppt/slides/slide1.xml",
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide32.xml",
+    "ppt/slides/slide33.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide15.xml",
+    "ppt/slides/slide16.xml",
+    "ppt/slides/slide17.xml",
+    "ppt/slides/slide34.xml",
+    "ppt/slides/slide18.xml",
+    "ppt/slides/slide19.xml",
+    "ppt/slides/slide20.xml",
+    "ppt/slides/slide21.xml",
+    "ppt/slides/slide22.xml",
+    "ppt/slides/slide23.xml",
+    "ppt/slides/slide24.xml"
+  ],
+  "changed_existing_parts": [
+    "[Content_Types].xml",
+    "docProps/app.xml",
+    "ppt/_rels/presentation.xml.rels",
+    "ppt/presentation.xml"
+  ],
+  "removed_parts": [],
+  "added_parts": [
+    "ppt/media/cylinder_v3_animation_01_4ba9e53e3bcf.mp4",
+    "ppt/media/cylinder_v3_image.png",
+    "ppt/notesSlides/_rels/notesSlide34.xml.rels",
+    "ppt/notesSlides/notesSlide34.xml",
+    "ppt/slides/_rels/slide34.xml.rels",
+    "ppt/slides/slide34.xml"
+  ],
+  "preserved_families": {
+    "ppt/notesSlides/": true,
+    "ppt/charts/": true,
+    "ppt/embeddings/": true,
+    "ppt/media/": true
+  },
+  "movie_source_sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+  "new_movie_targets": [
+    "ppt/media/cylinder_v3_animation_01_4ba9e53e3bcf.mp4"
+  ],
+  "movie_count": 8,
+  "native_chart_count": 8,
+  "embedded_workbook_count": 8,
+  "native_table_count": 1,
+  "new_slide_timing_conditions": [
+    {
+      "delay": "indefinite"
+    },
+    {
+      "delay": "0"
+    },
+    {
+      "delay": "0"
+    },
+    {
+      "evt": "onPrev",
+      "delay": "0"
+    },
+    {
+      "evt": "onNext",
+      "delay": "0"
+    },
+    {
+      "delay": "indefinite"
+    }
+  ],
+  "new_slide_time_nodes": [
+    {
+      "id": "1",
+      "dur": "indefinite",
+      "restart": "never",
+      "nodeType": "tmRoot"
+    },
+    {
+      "id": "2",
+      "dur": "indefinite",
+      "nodeType": "mainSeq"
+    },
+    {
+      "id": "3",
+      "fill": "hold"
+    },
+    {
+      "id": "4",
+      "fill": "hold"
+    },
+    {
+      "id": "5",
+      "presetID": "83",
+      "presetClass": "mediacall",
+      "presetSubtype": "0",
+      "fill": "hold",
+      "nodeType": "clickEffect"
+    },
+    {
+      "id": "6",
+      "dur": "1",
+      "fill": "hold"
+    },
+    {
+      "id": "7",
+      "dur": "26000",
+      "fill": "hold",
+      "repeatCount": "1000",
+      "display": "0"
+    }
+  ],
+  "broken_relationships": [],
+  "existing_external_relationships": [],
+  "limitation": "OpenXML and render checks do not constitute PowerPoint playback testing."
+}

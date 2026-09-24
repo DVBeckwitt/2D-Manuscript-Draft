@@ -1,0 +1,262 @@
+schema_version = "slate-fit-recipe-v1"
+case_id = "bi2te3"
+title = "Bi2Te3 fixed-angle geometry, mosaic, ordered intensity, and background"
+study_id = "ornl-2024-07-25-layered-chalcogenides"
+accepted_run_id = "bi2te3-2026-08-25-background-geometry-mosaic-sf"
+specimens = ["Bi2Te3"]
+
+[engine]
+repository_uri = "slate-active://"
+commit = "f67993d7a5890ebe231a4ba076b32d8f6814bc79"
+python_uri = "slate-active://.venv/Scripts/python.exe"
+lock_uri = "slate-active://uv.lock"
+lock_sha256 = "543d14f3bfeaa58a64ad0e55166242c3122ee805ea7feb9a921e4c2f749a1fd4"
+
+[geometry_contract]
+beam_center_column_row_px = [1453.12, 1596.422]
+active_parameters = [
+  "detector_column_tilt_rad",
+  "detector_row_tilt_rad",
+  "sample_normal_y_tilt_rad",
+  "goniometer_axis_pitch_rad",
+  "goniometer_axis_yaw_rad",
+  "sample_plane_normal_offset_m",
+  "goniometer_pivot_pitch_offset_m",
+  "detector_plane_normal_offset_m",
+  "incidence_angle_delta_rad",
+]
+fixed_parameters = [
+  "sample_normal_x_tilt_rad",
+  "goniometer_pivot_yaw_offset_m",
+  "detector_reference_column_offset_px",
+  "detector_reference_row_offset_px",
+]
+
+[scientific_claim]
+classification = "MODEL_LIMITED_CANDIDATE"
+canonical = false
+limitations = [
+  "The timed-dark duration is inferred from the experimental log rather than the OSC header.",
+  "The accepted geometry has two bound contacts.",
+  "The mosaic Gaussian and Lorentzian components are weakly separable.",
+  "The ordered-intensity candidate improves full-data WRMS by 3.02 percent but held-out 10-degree WRMS by only 0.53 percent; Te Uiso contacts its lower bound.",
+  "Strong diffuse and anisotropic mismatch remains, especially for L5 and L10.",
+]
+
+[replay]
+status = "REPLAYABLE"
+kind = "slate_project"
+operation = "run"
+project_uri = "library://recipes/bi2te3/project.yaml"
+working_directory_uri = "slate-active://"
+accepted_project_hash = "12c8d95b9840b57a8675e93065f72e6af3230500352e9b2a1c738cc9b7f478e1"
+
+[[stages]]
+id = "preprocess"
+status = "COMPLETED"
+method = "pedestal-separated exposure-scaled dark subtraction followed by frozen full-domain radial-background subtraction"
+
+[[stages]]
+id = "geometry"
+status = "MODEL_LIMITED"
+checkpoint_sha256 = "6c8198d58030c3d11e0f75ad9299c5f0315ff25af1f0356000d0a32431d6d8b9"
+
+[[stages]]
+id = "mosaic"
+status = "MODEL_LIMITED"
+checkpoint_sha256 = "3f17fb8d0ae97df1cae4f2be9523c88b78294b4ac4c1264712f8972b578e84d7"
+
+[[stages]]
+id = "ordered_intensity"
+status = "MODEL_LIMITED"
+checkpoint_sha256 = "302e69d4318bbdf02c09d67173b2c4379e2d78addecc65a1efa9fc1a859f8de0"
+
+[[stages]]
+id = "render"
+status = "COMPLETED"
+
+[[inputs]]
+role = "project_recipe"
+uri = "library://recipes/bi2te3/project.yaml"
+sha256 = "e7cbc90f96bea16639dcb1353e1d16bad57986d0bcf0e1ac857c5e5593d78893"
+size_bytes = 5781
+media_type = "application/yaml"
+
+[[inputs]]
+role = "structure_cif"
+uri = "slate-active://examples/bi2te3/structures/Bi2Te3_cod_9011962.cif"
+sha256 = "e1e5f42082bf0699b1a674b19fbf74cf1163b5c18dcb7d00142dd0b2dc4b1fe3"
+size_bytes = 731
+
+[[inputs]]
+role = "fixed_5deg_osc"
+uri = "slate-active://examples/bi2te3/osc/Bi2Te3_5m_5d.osc.gz"
+sha256 = "fa449a18b3fd4f2be99fffb7916e7808659000b24e07784316f5fd0446e08234"
+size_bytes = 4072655
+
+[[inputs]]
+role = "fixed_10deg_osc"
+uri = "slate-active://examples/bi2te3/osc/Bi2Te3_10d_5m.osc.gz"
+sha256 = "33664d156ba1626208edc90d1a7b05cbe428a16fe4eed9d4d16a14cafb369c9d"
+size_bytes = 3877091
+
+[[inputs]]
+role = "fixed_15deg_osc"
+uri = "slate-active://examples/bi2te3/osc/Bi2Te3_15d_5m.osc.gz"
+sha256 = "b683b32b185c1c0d9c373a7de242728edc2caf31afdb34da5646f4adaab6a154"
+size_bytes = 3862925
+
+[[inputs]]
+role = "timed_dark_osc"
+uri = "slate-active://examples/calibration/hbn/darkImg.osc.gz"
+sha256 = "7aebcef1dd1acf5bc9c7bfef4bdab88179952a9ebfc58360f7d7128b4b418e70"
+size_bytes = 1972826
+
+[[inputs]]
+role = "radial_background_calibration"
+uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_radial_background_full_domain.json"
+sha256 = "3641cfc08d8450b161312f871838e494a448b01781b72e86aea20a87623a2d23"
+size_bytes = 4814
+
+[[captures]]
+role = "project_recipe_snapshot"
+source_uri = "library://recipes/bi2te3/project.yaml"
+destination = "recipe/project.yaml"
+sha256 = "e7cbc90f96bea16639dcb1353e1d16bad57986d0bcf0e1ac857c5e5593d78893"
+size_bytes = 5781
+stage = "preprocess"
+
+[[captures]]
+role = "background_calibrator_source"
+source_uri = "library://recipes/bi2te3/executors/calibrate_background.py"
+destination = "executors/calibrate_background.py"
+sha256 = "0f60b58754c9012f555d0d902d82c321d887bb088460d0396e3bc9fc3c28a6c5"
+size_bytes = 14316
+stage = "preprocess"
+
+[[captures]]
+role = "renderer_source"
+source_uri = "library://recipes/bi2te3/executors/render_results.py"
+destination = "executors/render_results.py"
+sha256 = "5ed7d1ed6de7ce69c345f2f6e14c139936bacb95010e759e4c601c79fdfec394"
+size_bytes = 23074
+stage = "render"
+
+[[captures]]
+role = "report_builder_source"
+source_uri = "library://recipes/bi2te3/executors/build_report.py"
+destination = "executors/build_report.py"
+sha256 = "16ee44145f52fd5f1102412c8b75e30647875c76b4abee0321daed9d27a3c16b"
+size_bytes = 21764
+stage = "render"
+
+[[captures]]
+role = "bundle_builder_source"
+source_uri = "library://recipes/bi2te3/executors/bundle_results.py"
+destination = "executors/bundle_results.py"
+sha256 = "efc8fe1b4c7d0ca09cee46e9a2287834062f24f25a99f97a1218ae630313b069"
+size_bytes = 5160
+stage = "render"
+
+[[captures]]
+role = "accepted_artifact_bundle"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/Bi2Te3_background_geometry_mosaic_sf_results.zip"
+destination = "bundle/Bi2Te3_background_geometry_mosaic_sf_results.zip"
+sha256 = "401210be3c95020f618168639dc8f574b976a89468411443d554e4049bababe9"
+size_bytes = 11436890
+stage = "render"
+
+[[captures]]
+role = "accepted_bundle_manifest"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_results_bundle_manifest.json"
+destination = "bundle/manifest.json"
+sha256 = "71947f03cf772483fda611787b31157d28b3f4e3c2ca76794561e5589f6f7e47"
+size_bytes = 9076
+stage = "render"
+
+[[captures]]
+role = "fit_summary"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_fit_results_summary.json"
+destination = "summary/bi2te3_fit_results_summary.json"
+sha256 = "f8f40fc8efdbdf100d5ed17915ee0e0c6ae5cfc6ec103795c91d2eae499e23f9"
+size_bytes = 177745
+stage = "render"
+
+[[captures]]
+role = "fit_report_html"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_fit_report.html"
+destination = "summary/bi2te3_fit_report.html"
+sha256 = "4950f2481905eeb126f3c4a30b2a1ede0b6d55c53665c8f6cb73b9b952401990"
+size_bytes = 401352
+stage = "render"
+
+[[captures]]
+role = "fit_report_source"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_fit_report.artifact.json"
+destination = "summary/bi2te3_fit_report.artifact.json"
+sha256 = "a145aa34b044fef71ba8c9e2792650fd3e57f3f4914fa52f56a4e59fe372cbdc"
+size_bytes = 17590
+stage = "render"
+
+[[captures]]
+role = "background_calibration_arrays"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_full_domain_radial_background_calibration.npz"
+destination = "preprocess/full_domain_radial_background_calibration.npz"
+sha256 = "3dcf00f625156448233cb2531d59c76ace79573fb57a4253f38fb7d60d85905f"
+size_bytes = 219083
+stage = "preprocess"
+
+[[captures]]
+role = "background_calibration"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_radial_background_full_domain.json"
+destination = "preprocess/radial_background_full_domain.json"
+sha256 = "3641cfc08d8450b161312f871838e494a448b01781b72e86aea20a87623a2d23"
+size_bytes = 4814
+stage = "preprocess"
+
+[[captures]]
+role = "background_calibration_summary"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/bi2te3_radial_background_calibration_summary.json"
+destination = "preprocess/radial_background_calibration_summary.json"
+sha256 = "0a7a7b251c7fde53e244597020c28c05c9c0d69a3de837d084853182f04c46cd"
+size_bytes = 16080
+stage = "preprocess"
+
+[[captures]]
+role = "input_manifest"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/pipeline_refined/input_manifest.json"
+destination = "pipeline/input_manifest.json"
+sha256 = "82eba004d43e75e62a4804c58f96baaa2f711f201c8c3ad8f0d068fa9da87bd8"
+size_bytes = 4594
+stage = "preprocess"
+
+[[captures]]
+role = "pipeline_run_state"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/pipeline_refined/run_state.json"
+destination = "pipeline/run_state.json"
+sha256 = "e037b709c6fa863a25343b3ab3b67df409970eb3396281a7b7e3d4fa1a80aade"
+size_bytes = 11862
+
+[[captures]]
+role = "geometry_checkpoint"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/pipeline_refined/fits/geometry_fit.json"
+destination = "fits/geometry_fit.json"
+sha256 = "6c8198d58030c3d11e0f75ad9299c5f0315ff25af1f0356000d0a32431d6d8b9"
+size_bytes = 27729
+stage = "geometry"
+
+[[captures]]
+role = "mosaic_checkpoint"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/pipeline_refined/fits/mosaic_fit.json"
+destination = "fits/mosaic_fit.json"
+sha256 = "3f17fb8d0ae97df1cae4f2be9523c88b78294b4ac4c1264712f8972b578e84d7"
+size_bytes = 56050
+stage = "mosaic"
+
+[[captures]]
+role = "ordered_intensity_checkpoint"
+source_uri = "visualizations://2026/08/25/01a03963-32f1-7312-b089-5fc8b15dd460/bi2te3_background_geometry_mosaic_sf/pipeline_refined/fits/structure_fit.json"
+destination = "fits/structure_fit.json"
+sha256 = "302e69d4318bbdf02c09d67173b2c4379e2d78addecc65a1efa9fc1a859f8de0"
+size_bytes = 39963
+stage = "ordered_intensity"

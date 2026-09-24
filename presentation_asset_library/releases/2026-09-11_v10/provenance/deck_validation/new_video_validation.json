@@ -1,0 +1,49 @@
+{
+  "input": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v10\\bridge_slide.pptx",
+  "output": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v10\\bridge_with_video.pptx",
+  "output_bytes": 1231867,
+  "output_sha256": "63c914e0762a4fafa89a800b83cfc836e7bbe719d7c5c9eeb50880266b906f5d",
+  "checks": {
+    "embedded_video_count": 1,
+    "newly_embedded_video_count": 1,
+    "all_media_inventory": [
+      {
+        "slide_part": "ppt/slides/slide1.xml",
+        "shape_name": "Cylinder bridge v3",
+        "shape_id": "2",
+        "video_part": "ppt/media/animation_01_4ba9e53e3bcf.mp4",
+        "bytes": 1156850,
+        "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1"
+      }
+    ],
+    "all_media_bytes_match_sources": true,
+    "media_start": "presenter next click in main sequence",
+    "play_count": 1,
+    "media_fill": "hold",
+    "slide_advance": "manual",
+    "powerpoint_playback_verified": false,
+    "all_unrelated_input_parts_preserved": true
+  },
+  "videos": [
+    {
+      "slide_part": "ppt/slides/slide1.xml",
+      "shape_id": "2",
+      "shape_name": "Cylinder bridge v3",
+      "video_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\cylinder_bridge_v3\\Cylinder_Bridge.mp4",
+      "video_part": "ppt/media/animation_01_4ba9e53e3bcf.mp4",
+      "bytes": 1156850,
+      "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+      "probe": {
+        "codec_name": "h264",
+        "width": 1600,
+        "height": 900,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "20/1",
+        "duration": "26.000000",
+        "nb_frames": "520",
+        "duration_seconds": 26.0,
+        "duration_ms": 26000
+      }
+    }
+  ]
+}

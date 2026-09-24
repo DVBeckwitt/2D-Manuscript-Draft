@@ -1,0 +1,14 @@
+A PbI₂ growth problem
+
+Suggested pace: 20 seconds.
+
+We began with PbI₂ growth and the goal of reproducing promising films by chemical vapor deposition. Earlier reflectivity helped, but the area detector revealed unexplained arcs and intensity between peaks. We built a physical model, first using ordered Bi₂Se₃ and Bi₂Te₃ films.
+
+Sources and figure interpretation
+- Author handwritten notes, C:/Users/Kenpo/Downloads/1585.jpg, page 1, items 1–5. The historical project sequence is the author's account.
+- Earlier reflectivity figure: C:/Users/Kenpo/Downloads/X-ray Diffraction from oriented powders.pptx, slide 101, image279.png. The slide cites S. C. Klue (2021). Reproduced historical reference, not a new fit from this work. The source inset retains its original depth-axis unit typo and should not be used for a numerical depth claim.
+- PbI2 observation: figures/results_pbi2/PbI2_detector.png. The two panels represent different measurements and are not a joint reflectivity/diffraction validation.
+
+Retain the existing historical-source and reflectivity interpretation notes unchanged.
+
+Retain the existing historical-source and reflectivity interpretation notes unchanged.

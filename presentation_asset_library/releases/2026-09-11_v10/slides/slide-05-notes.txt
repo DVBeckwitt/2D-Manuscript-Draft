@@ -1,0 +1,29 @@
+Ewald surface to detector
+
+Suggested pace: 20 seconds.
+
+Each selected point defines an outgoing wavevector from the sphere center. The matching real-space ray leaves the sample and reaches the detector. Following the selected trace draws a detector curve. We then face the detector and label the reflections.
+
+Playback cue
+Click once to play this 18-second embedded MP4. Narrate during playback. It plays once and holds its final frame until manual slide advance.
+
+Sources and figure interpretation
+Source animation: output/presentations/animations/ewald_traces_to_detector_labeled.mp4. The ending identifies all eight connected r/L detector components. Its initial source frame matches the clean Ewald ending on the preceding slide.
+Projection uses kf=ki+Q followed by analytic intersection of a fixed outgoing ray with the detector plane. The camera changes view without changing the physical detector. Review sources: build_codex/slate_talk/ewald_detector_geometry.mjs and ewald_detector_labeled_animation/.
+The source uses schematic geometry and normalized qualitative trace weights. It does not calculate detector counts, a density Jacobian, optical response or substrate acceptance.
+The presentation derivative crops only the constant upper 100-pixel baked-in heading strip. It retains the full scientific content below it at the same aspect ratio and original motion speed. A native editable slide title replaces that strip.
+Replace the original 16-second projection with ewald_traces_to_detector_labeled.mp4, 18 seconds. The revised ending labels all eight connected detector components and has a longer final hold. Preserve the original ray-plane map, fixed-source convention, physical detector acceptance and qualitative-weight limitations.
+Input MP4 SHA256: 7fa09d4850fb63366bcd2703e3188a46a3d99b00853d19093eceb70c4dae30f4.
+
+Additional provenance retained from v5 slide 6
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/ewald_traces_to_detector.mp4, 16 seconds. Its opening source frame matches the preceding clean Ewald ending.
+- The presentation copy crops only the constant upper 100-pixel title strip from the 1600-by-900 movie. Scientific geometry, labels, timing and final hold remain. An editable slide heading replaces the baked-in heading.
+- Projection uses kf = ki + Q and analytic intersection of the outgoing unit ray with a fixed detector plane. The camera turns to face the detector without changing its physical coordinates. Generator and geometry checks: build_codex/slate_talk/animate_ewald_detector.mjs, ewald_detector_geometry.mjs and ewald_detector_animation/.
+- Detector geometry and normalized trace opacity are schematic. This animation does not calculate counts, a detector-density Jacobian, beam broadening, optical response or substrate acceptance. The following beam and SLATE slides supply the additional physical context.
+
+Replace the original 16-second projection with ewald_traces_to_detector_labeled.mp4, 18 seconds. The revised ending labels all eight connected detector components and has a longer final hold. Preserve the original ray-plane map, fixed-source convention, physical detector acceptance and qualitative-weight limitations.
+
+Replace the original 16-second projection with ewald_traces_to_detector_labeled.mp4, 18 seconds. The revised ending labels all eight connected detector components and has a longer final hold. Preserve the original ray-plane map, fixed-source convention, physical detector acceptance and qualitative-weight limitations.
+
+The unchanged 18-second labeled projection fits the revised 20-second slide budget. Start playback promptly and narrate over it. The movie already includes its final label hold; no playback speed change is needed.

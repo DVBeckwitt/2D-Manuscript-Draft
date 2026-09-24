@@ -1,0 +1,63 @@
+{
+  "sample": "bi2te3",
+  "status": "REFIT CANDIDATE; QUADRATURE QUALIFICATION PENDING",
+  "fitted": [
+    "one spherical mosaic",
+    "one exposure count scale",
+    "phase fractions for mixed PbI2"
+  ],
+  "fixed": [
+    "geometry",
+    "source and detector response",
+    "CIF coordinates and ADPs",
+    "finite stack count",
+    "phase transition probabilities",
+    "provisional optical stack",
+    "measured nonnegative background"
+  ],
+  "model": "spherical_wrapped_tied_orientation.v1",
+  "fit": {
+    "parameters": [
+      0.5693410466893173,
+      0.030000000000000047,
+      0.29619452557024295,
+      18.872312386992142
+    ],
+    "initial_parameters": [
+      0.39545795076954665,
+      0.28810887126398005,
+      0.7448433182525824,
+      19.190860343858695
+    ],
+    "common_scale": 157087319.99143273,
+    "fractions": [
+      1.0
+    ],
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 12,
+    "cost_before": 0.21626010737101253,
+    "cost_after": 0.06318863699012638
+  },
+  "proof": {
+    "interpolation_relative_l2": 2.2177703811344248e-06,
+    "terms": 212951464,
+    "seconds": 1080.863188599993,
+    "coordinate_count": 121202
+  },
+  "intensity": "full nonzero rods plus local stitched m0 at every coordinate; scale*simulation+background",
+  "data_support": "instrument-valid raw data; no simulation-dependent masks",
+  "input_sha256": "6c68e82f792875b76411845b294174dc273196fd6df17e4484d34a8d613952fd",
+  "diagnostic": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\full_physical_intensity_refit\\bi2te3_q4.ra_diag.npz",
+  "diagnostic_sha256": "b6c3457cd97772ea939034b99e19e6141bc709f757e1b1cb0460c62f89522aa3",
+  "order": 4,
+  "region_orders": {
+    "m1_minus": 4,
+    "m1_plus": 4,
+    "m3_minus": 4,
+    "m3_plus": 4,
+    "m4_minus": 4,
+    "m4_plus": 4,
+    "m0": 2
+  }
+}

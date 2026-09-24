@@ -1,0 +1,14 @@
+[
+  {
+    "material": "se",
+    "rows": 590,
+    "fields_checked": 7,
+    "all_values_exact": true
+  },
+  {
+    "material": "te",
+    "rows": 630,
+    "fields_checked": 5,
+    "all_values_exact": true
+  }
+]

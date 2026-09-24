@@ -1,0 +1,494 @@
+{
+  "schema": "bi2x3_reflectivity_thickness_experiment.v1",
+  "status": "COMPLETE_NO_QUALIFIED_THICKNESS_UPDATE",
+  "samples": {
+    "bi2se3": {
+      "initial_fit": {
+        "sample": "bi2se3",
+        "status": "CONDITIONAL_THICKNESS_PROFILE_COMPLETE",
+        "angular_order": 3,
+        "detector_order": 8,
+        "fit_2theta_deg": [
+          1,
+          5
+        ],
+        "check_2theta_deg": [
+          1,
+          8
+        ],
+        "substrate": "SiO2",
+        "replay_relative_L2": 7.36239181274784e-06,
+        "optical_lower_bound_A": 486.812,
+        "optical_upper_scan_A": 5000,
+        "baseline_cost": 110199.08241837425,
+        "preferred": [
+          486.812,
+          6.067630030213335,
+          15489.391140808606,
+          110840.33230085878
+        ],
+        "fixed_mosaic_scale_surface_parameters": [
+          0.39693369735181366,
+          0.1798526605774451,
+          0.012606252459707906,
+          19.02979603608243,
+          0.9281065083039822,
+          0.9999999991853421
+        ],
+        "conditions": "Optical thickness/top roughness profiled; coherent depth, mosaic, surface weights, global scale, background and bottom roughness held. No full joint acceptance claimed."
+      },
+      "refinement": {
+        "sample": "bi2se3",
+        "angular_order": 5,
+        "source_baseline_relative_L2": 0.0016648928745326723,
+        "source_check_preferred": [
+          486.812,
+          6.067630030213335,
+          15418.230331632745
+        ],
+        "handoff_checks": [
+          [
+            486.812,
+            513.0,
+            6.066947025956454,
+            15418.039684548323
+          ],
+          [
+            486.812,
+            2049.0,
+            6.040881680837918,
+            15539.937764779723
+          ],
+          [
+            486.812,
+            8193.0,
+            6.033192740821022,
+            15574.491063888725
+          ],
+          [
+            500.0,
+            513.0,
+            6.055534439427317,
+            15478.362698212979
+          ],
+          [
+            500.0,
+            2049.0,
+            6.047447997725343,
+            15513.830819377179
+          ],
+          [
+            500.0,
+            8193.0,
+            6.031380580247809,
+            15587.796809379332
+          ],
+          [
+            550.0,
+            513.0,
+            6.056988837368942,
+            15652.612065830275
+          ],
+          [
+            550.0,
+            2049.0,
+            6.045243747840531,
+            15702.341872507357
+          ],
+          [
+            550.0,
+            8193.0,
+            6.034236141690044,
+            15750.791144392468
+          ],
+          [
+            750.0,
+            513.0,
+            6.082376383415317,
+            16094.560570411304
+          ],
+          [
+            750.0,
+            2049.0,
+            6.055189692240628,
+            16215.395831066682
+          ],
+          [
+            750.0,
+            8193.0,
+            6.048935526478071,
+            16238.761731279516
+          ],
+          [
+            1500.0,
+            513.0,
+            6.095884962988316,
+            16464.278921801888
+          ],
+          [
+            1500.0,
+            2049.0,
+            6.072829338612206,
+            16567.16158118515
+          ],
+          [
+            1500.0,
+            8193.0,
+            6.058842575687287,
+            16634.00411591703
+          ],
+          [
+            5000.0,
+            513.0,
+            6.102121740037911,
+            16269.991875140673
+          ],
+          [
+            5000.0,
+            2049.0,
+            6.068869555774976,
+            16419.231233330083
+          ],
+          [
+            5000.0,
+            8193.0,
+            6.062051393730558,
+            16448.767267096107
+          ]
+        ],
+        "free_scale_preferred": [
+          486.812,
+          0.9937102468780826,
+          15407.970692888503
+        ],
+        "note": "Global scale sensitivity is conditional low-angle only; never promoted over diffraction guards."
+      },
+      "lower_bound_candidate_nm": 48.681200000000004,
+      "conditional_top_roughness_nm": 0.6033192740821022,
+      "refined_additional_thickness_cost_reduction_percent": 0.08536001369097157,
+      "conclusion": "Conditional scan minimum is at a imposed coherent-stack lower bound. Small preference over50nm is not numerically established. No new reliable thickness measurement; retain existing50nm setting.",
+      "accepted_library_updated": false,
+      "full_diffraction_guard_validation": false
+    },
+    "bi2te3": {
+      "initial_fit": {
+        "sample": "bi2te3",
+        "status": "CONDITIONAL_THICKNESS_PROFILE_COMPLETE",
+        "angular_order": 3,
+        "detector_order": 8,
+        "fit_2theta_deg": [
+          1,
+          5
+        ],
+        "check_2theta_deg": [
+          1,
+          8
+        ],
+        "substrate": "SiO2",
+        "replay_relative_L2": 1.8439671985797852e-05,
+        "optical_lower_bound_A": 487.952,
+        "optical_upper_scan_A": 5000,
+        "baseline_cost": 114984.61350724766,
+        "preferred": [
+          487.952,
+          4.074068571302453,
+          25083.527568593112,
+          116591.79765185255
+        ],
+        "fixed_mosaic_scale_surface_parameters": [
+          0.3329091562125395,
+          0.030000000000000002,
+          0.1270495360527901,
+          18.928883016459892,
+          0.9755495208155671,
+          2.8127755567036873e-13
+        ],
+        "conditions": "Optical thickness/top roughness profiled; coherent depth, mosaic, surface weights, global scale, background and bottom roughness held. No full joint acceptance claimed."
+      },
+      "refinement": {
+        "sample": "bi2te3",
+        "angular_order": 5,
+        "source_baseline_relative_L2": 0.0016943509470455339,
+        "source_check_preferred": [
+          487.952,
+          4.074068571302453,
+          25030.916331950084
+        ],
+        "handoff_checks": [
+          [
+            487.952,
+            513.0,
+            4.074080203331442,
+            25030.91133389123
+          ],
+          [
+            487.952,
+            2049.0,
+            4.093334819886362,
+            24937.59908783845
+          ],
+          [
+            487.952,
+            8193.0,
+            4.0751946262065175,
+            25021.679172105738
+          ],
+          [
+            500.0,
+            513.0,
+            4.060956085974904,
+            25128.72861849297
+          ],
+          [
+            500.0,
+            2049.0,
+            4.080192181440903,
+            24952.484820076494
+          ],
+          [
+            500.0,
+            8193.0,
+            4.062918564088868,
+            25035.271498943144
+          ],
+          [
+            550.0,
+            513.0,
+            4.079277719575706,
+            25103.1608204684
+          ],
+          [
+            550.0,
+            2049.0,
+            4.090082253224195,
+            25061.0683166474
+          ],
+          [
+            550.0,
+            8193.0,
+            4.079437440484548,
+            25099.912910383202
+          ],
+          [
+            750.0,
+            513.0,
+            4.078465474002826,
+            25428.23505888923
+          ],
+          [
+            750.0,
+            2049.0,
+            4.096398424564171,
+            25329.163805017735
+          ],
+          [
+            750.0,
+            8193.0,
+            4.089537273634638,
+            25383.664588373016
+          ],
+          [
+            1500.0,
+            513.0,
+            4.083228090612061,
+            25279.842397741988
+          ],
+          [
+            1500.0,
+            2049.0,
+            4.109618703263272,
+            25134.71558189999
+          ],
+          [
+            1500.0,
+            8193.0,
+            4.097922514605988,
+            25227.552490415183
+          ],
+          [
+            5000.0,
+            513.0,
+            4.092566103980883,
+            25121.651649100146
+          ],
+          [
+            5000.0,
+            2049.0,
+            4.111636105276515,
+            24989.604134317622
+          ],
+          [
+            5000.0,
+            8193.0,
+            4.097510138804742,
+            25076.77396041846
+          ]
+        ],
+        "free_scale_preferred": [
+          4613.404172952942,
+          0.9791818141683326,
+          24990.703107314792
+        ],
+        "note": "Global scale sensitivity is conditional low-angle only; never promoted over diffraction guards."
+      },
+      "lower_bound_candidate_nm": 48.7952,
+      "conditional_top_roughness_nm": 0.40751946262065175,
+      "refined_additional_thickness_cost_reduction_percent": 0.054292707941994145,
+      "conclusion": "Conditional scan minimum is at a imposed coherent-stack lower bound. Small preference over50nm is not numerically established. No new reliable thickness measurement; retain existing50nm setting.",
+      "accepted_library_updated": false,
+      "full_diffraction_guard_validation": false
+    }
+  },
+  "method": "Conditional Gaussian native pixel mass integration; positive angular Gaussian quadrature with both Cu lines; local-lamella spherical mosaic and recompilation of optical slab/handoff.",
+  "fit_region_2theta_deg": [
+    1,
+    5
+  ],
+  "computed_region_2theta_deg": [
+    1,
+    8
+  ],
+  "substrate_user_confirmation": "SiO2 only; no buffers",
+  "validation": {
+    "records": [
+      {
+        "sample": "bi2se3",
+        "thickness_A": 500.0,
+        "top_A": 5.3555911321161505,
+        "pointwise_factorization_relative_L2": 9.346450378423954e-13,
+        "stale_baseline_relative_L2": 0.0
+      },
+      {
+        "sample": "bi2se3",
+        "thickness_A": 486.812,
+        "top_A": 6.03,
+        "pointwise_factorization_relative_L2": 3.818186954010393e-12,
+        "stale_baseline_relative_L2": 0.7300411256965944
+      },
+      {
+        "sample": "bi2se3",
+        "thickness_A": 5000.0,
+        "top_A": 6.06,
+        "pointwise_factorization_relative_L2": 5.455550836540562e-13,
+        "stale_baseline_relative_L2": 0.7934813801037218
+      },
+      {
+        "sample": "bi2te3",
+        "thickness_A": 500.0,
+        "top_A": 2.7203872409514145,
+        "pointwise_factorization_relative_L2": 1.4786253696719292e-12,
+        "stale_baseline_relative_L2": 0.0
+      },
+      {
+        "sample": "bi2te3",
+        "thickness_A": 487.952,
+        "top_A": 4.08,
+        "pointwise_factorization_relative_L2": 2.221587581172476e-12,
+        "stale_baseline_relative_L2": 0.7244340480219482
+      },
+      {
+        "sample": "bi2te3",
+        "thickness_A": 5000.0,
+        "top_A": 4.1,
+        "pointwise_factorization_relative_L2": 1.03875388394193e-12,
+        "stale_baseline_relative_L2": 0.7620777392929773
+      }
+    ],
+    "seconds": 9.980220000026748,
+    "validation_process_peak_working_set_bytes": 799199232
+  },
+  "inputs_and_execution_dependencies": [
+    {
+      "path": "C:\\asr_work\\bi2x3_reflectivity_thickness_20260910\\run_thickness.py",
+      "key": "execution_dependency_0_bytes",
+      "sha256": "cddaa9bd3e95123c829fb1c48d33ba3cbdac377312fb75bbcc4466f0567b96d8"
+    },
+    {
+      "path": "C:\\asr_work\\bi2x3_reflectivity_thickness_20260910\\check_thickness.py",
+      "key": "execution_dependency_1_bytes",
+      "sha256": "a5dd720c997d8e62b4fefd3d5af3fc18bda301ae9d1c4d447dd7ffb5e1cc20b1"
+    },
+    {
+      "path": "C:\\asr_work\\bi2x3_reflectivity_thickness_20260910\\validate_points.py",
+      "key": "execution_dependency_2_bytes",
+      "sha256": "602bdb332627bc0f16ac0c227cb44b891ad11d3ca79ee6f508eba2fe40df181f"
+    },
+    {
+      "path": "C:\\asr_work\\bi2x3_reflectivity_thickness_20260910\\finalize.py",
+      "key": "execution_dependency_3_bytes",
+      "sha256": "0eae6eb1fe0dd4fc2edf3a6d13bfa615a83ce4f0ad4f97333f7b82d2567cf9ee"
+    },
+    {
+      "path": "C:\\asr_work\\bi2x3_reflectivity_thickness_20260910\\source_context.pkl",
+      "key": "execution_dependency_4_bytes",
+      "sha256": "6146733eab4d18282b40ea7e13f27b1d89acdcf7f75f2d797b64b005bc7320ea"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-source-position-kernel\\src\\rasim_next\\pipeline\\source_spatial.py",
+      "key": "execution_dependency_5_bytes",
+      "sha256": "630d4f674fb1841ac2d660f4f08546a41e5ea1722aef7a03d48c4384c01958f2"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2te3-qualified-fit\\src\\rasim_next\\pipeline\\_continuous_detector_kernel.py",
+      "key": "execution_dependency_6_bytes",
+      "sha256": "122a4ade0d101552592709f5d4c0f833c5266aa0ff7f5fa4124deb666b342926"
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\SLATE-rMC-bi2te3-qualified-fit\\src\\rasim_next\\reflectivity\\specular.py",
+      "key": "execution_dependency_7_bytes",
+      "sha256": "3c5c33d0572cbacd82dc0b66609916f1e9154e9a41b2830e9f37e38d2dd9d85c"
+    },
+    {
+      "archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_joint_roi_20260910.ra_diag.npz",
+      "key": "spatial_projection_source_bytes",
+      "sha256": "a064b9fff05097032f4fac6f2d81c6774f9bba23e47a1a36f2672bfb024f0339"
+    },
+    {
+      "archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_joint_roi_20260910.ra_diag.npz",
+      "key": "spatial_m0_refined_source_source_bytes",
+      "sha256": "34efc4a9794739cfa133836c1b51191203e53045f7cc42704a7d835d81134a00"
+    },
+    {
+      "archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_core_wing_refit_20260909.ra_diag.npz",
+      "key": "pixel_projection_source_bytes",
+      "sha256": "bbcb8e3a3f4ca69d569269c26058ffd22909a89b693ca1af73be6557d1050435"
+    },
+    {
+      "archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_material_surface_refit.ra_diag.npz",
+      "key": "execution_surface_all_fast_py",
+      "sha256": "0b101afc1172febe49c009a6e5c66b1b63f5a6fe4cf70389e63933d17ad592b6"
+    }
+  ],
+  "limitations": [
+    "No full joint diffraction refit or acceptance; accepted library parameters untouched.",
+    "Small thickness preference changes with numerical handoff quadrature; do not report fitted error bars.",
+    "Low-angle residual shape remains large; fitted top roughness is conditional on empirical optical/kinematic handoff and fixed diffraction parameters.",
+    "Se first8 background uncertainty modes retain the previous projected approximation;28 smooth modes and native counts were reprojected.",
+    "500nm ceiling is a computational scan limit, not a specimen prior.",
+    "Actual full-build peak memory was not sampled; recorded peak belongs to independent point-validation process."
+  ],
+  "diffraction_thickness_bound": "For fixed coherentN and nonzero rods, f(aT)=(1-exp(-aT))/(aT),a=2(kappa_i+kappa_f). Nonzero count ratio lies between min(1,500/T) and max(1,500/T) after positive native deposition. This does not certify localm0 contamination or all-branch guards; no trial promoted.",
+  "later_work": "Resolve residual low-angle shape and stable optical/kinematic normalization before claiming a jointly qualified optical thickness. Preserve all m0,m1,m3 guard checks in any subsequent fit.",
+  "build_wall_seconds_from_process_output": {
+    "bi2se3_GH3": 81.4270058,
+    "bi2te3_GH3": 83.5725641,
+    "bi2se3_GH5": 204.2876385,
+    "bi2te3_GH5": 211.9502206
+  },
+  "repository_checks": {
+    "base_commit": "19063b0",
+    "ruff_check": "PASS",
+    "ruff_format_check": "PASS;129files",
+    "permanent_suite": "478collected:477passed,1skipped across numerical and visualization environments. Two plotting-manifest tests first failed because numerical venv lacks Matplotlib; both passed in existing visualization venv.",
+    "new_permanent_tests": 0,
+    "production_code_changes": 0
+  },
+  "independent_archive_comparison": {
+    "Te_current_GH3_vs_prior_GH3_relative_L2": 0.00011000765619564301,
+    "Te_current_GH5_vs_prior_GH5_relative_L2": 9.356433923032038e-05,
+    "Te_current_GH5_vs_prior_GH7_relative_L2": 0.00040024292812184666
+  },
+  "archive_sha256": "6447cb39790904c6e0b09dd5106b31edf548454b89d4d99d0b8620d2b6f7cc96",
+  "handoff_commit": "913f80f33022a9db09472cf220d64cf3c8e6ce0a",
+  "handoff_worktree_clean": true
+}

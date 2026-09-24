@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "recipe": "rotation",
+  "recipe_definition": {
+    "script": "build_codex/slate_talk/animate_rotation.mjs",
+    "stem": "sample_rotation_reciprocal_rings_indexed",
+    "duration_seconds": 8.4,
+    "size": [
+      1080,
+      1080
+    ],
+    "fps": 30,
+    "args": [],
+    "inputs": [],
+    "proof_supported": false
+  },
+  "created_utc": "2026-09-11T01:52:15.939690+00:00",
+  "release": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\presentation_asset_library\\releases\\2026-09-10_v9",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "node": "v24.19.0",
+    "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+    "packages": {
+      "sharp": {
+        "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+        "version": "0.35.4",
+        "libraries": {
+          "aom": "3.14.1",
+          "archive": "3.8.9",
+          "cairo": "1.18.4",
+          "cgif": "0.5.3",
+          "exif": "0.6.26",
+          "expat": "2.8.3",
+          "ffi": "3.8.0",
+          "fontconfig": "2.18.3",
+          "freetype": "2.14.3",
+          "fribidi": "1.0.16",
+          "glib": "2.89.4",
+          "harfbuzz": "14.3.1",
+          "heif": "1.23.2",
+          "highway": "1.4.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.19.1",
+          "mozjpeg": "0826579",
+          "pango": "1.58.2",
+          "pixman": "0.46.4",
+          "png": "1.6.58",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.62.91",
+          "tiff": "4.7.2",
+          "uhdr": "2.0.2",
+          "vips": "8.18.6",
+          "webp": "1.6.0",
+          "xml2": "2.15.3",
+          "zlib-ng": "2.3.3",
+          "sharp": "0.35.4"
+        }
+      }
+    }
+  },
+  "scope": "Re-render from the current archived generator, not a byte-exact restoration of every historical variant or PPT edit. Uses archived predecessor frames and cached schematic grids where declared.",
+  "inputs": [
+    {
+      "path": "build_codex/slate_talk/animate_rotation.mjs",
+      "sha256": "84fa4329dd17e9ae388fd26b0845bf2d45516edd9bf8e9ca1ade5efb6186386d"
+    }
+  ],
+  "scratch_substitutions": [
+    {
+      "path": "build_codex/slate_talk/animate_rotation.mjs",
+      "source_sha256": "84fa4329dd17e9ae388fd26b0845bf2d45516edd9bf8e9ca1ade5efb6186386d",
+      "scratch_sha256": "aea7aab01e2d0a36abad56f207815f4442f8b83c221449a512e97a37a90ce1ce",
+      "changes": [
+        {
+          "type": "installed_package_entry",
+          "package": "sharp",
+          "occurrences": 1
+        },
+        {
+          "type": "ffmpeg_executable",
+          "occurrences": 1
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "exports": [
+    {
+      "path": "exports/sample_rotation_reciprocal_rings_indexed.gif",
+      "sha256": "9e3b95606e4eadc2ded45214ac2e200e70c4fe2b1b1b83cc6eb0860cf851d535"
+    },
+    {
+      "path": "exports/sample_rotation_reciprocal_rings_indexed.mp4",
+      "sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617"
+    },
+    {
+      "path": "exports/sample_rotation_reciprocal_rings_indexed_still.png",
+      "sha256": "dc31818b3a603636e296d76b4f4ff2bcd17d27703134634006427aa6c1b15939"
+    }
+  ],
+  "video_validation": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1080,
+    "avg_frame_rate": "30/1",
+    "duration": "8.400000",
+    "nb_read_frames": "252"
+  }
+}

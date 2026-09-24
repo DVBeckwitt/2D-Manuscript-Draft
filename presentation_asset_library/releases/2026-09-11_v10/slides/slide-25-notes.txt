@@ -1,0 +1,16 @@
+PbI₂: measured and simulated
+
+Suggested pace: 30 seconds.
+
+This is the fitted B4 PbI₂ example at four degrees, using 2H and both handed 6H parents. Measurement and simulation share the detector crop and color scale. The simulation includes the retained empirical background. Compare the paired sequences and central shape. The principal features correspond, while peaks and background still differ. The matched profiles make those differences more specific.
+
+Sources and figure interpretation
+- Stable source: C:/Users/Kenpo/Nextcloud/Obsidian/Research/Rigaku XRD/SLATE Fit Library/runs/pbi2-b4-joint-mosaic-sf-2026-09-02-detector-background/artifacts/detector/.
+- Final simulation: build_codex/slate_talk/pbi2_footprint_gh16_n1024_m2048/footprint_arrays.npz, manifest.json and display_validation.json. Diffraction is integrated into 6×6 native rectangles, then divided by 36 to express counts per native pixel. Measured_native_counts and the unchanged background_native_counts come from the archived detector NPZs.
+- Numerical check: against a separate full-position reference with 4,096 source states and 4,096 mosaic draws, the position-integrated render differs by 0.158% in total diffraction mass and 1.54% relative L2 at 6-pixel binning. Increasing the angular-source prefix from 512 to 1,024 changes the image by 1.48% L2, mosaic halves by 2.07%, and position quadrature from 8 to 16 points per axis by 0.96%. These are presentation-resolution numerical checks, not a new structural fit or an uncertainty interval.
+- Both panels use the same native-pixel crop, valid mask, 6×6 area averaging, magma colour map, and fixed logarithmic limits 1 to 106.41679166666533 counts per native pixel. No independent image normalization or cosmetic smoothing.
+- Background status: DISPLAY_ONLY_EMPIRICAL_BACKGROUND, frozen radial/horizon background. It does not establish a new diffraction fit. The underlying B4 fit records publication_ready false.
+
+Retain the frozen B4 state, direct detector-array provenance, beam-position integration and numerical checks, same-scale display, and empirical-background limitations. This is the actual selected 2H + 6H+ + 6H− fit. It is separate from the preceding illustrative 50/25/25 animation.
+
+Retain the frozen B4 state, direct detector-array provenance, beam-position integration and numerical checks, same-scale display, and empirical-background limitations. This is the actual selected 2H + 6H+ + 6H− fit. It is separate from the preceding illustrative 50/25/25 animation.

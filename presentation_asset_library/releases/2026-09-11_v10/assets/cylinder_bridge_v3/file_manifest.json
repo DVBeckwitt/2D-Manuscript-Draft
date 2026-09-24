@@ -1,0 +1,229 @@
+{
+  "name": "Cylinder bridge v3",
+  "date": "2026-09-11",
+  "description": "Near-delta finite peaks, smooth accelerating broadening, azimuthal cylinder, mosaic tilts and exact Ewald selection.",
+  "scope": "Static figure, 26-second animation, local source/data, captions and verification.",
+  "scientific_status": "Illustrative finite-stack geometry; not a new fit or detector-count prediction.",
+  "files": [
+    {
+      "path": "caption.txt",
+      "bytes": 3924,
+      "sha256": "c77141419fc23e14162f434b32d23b52f7c2fb7d575fde31c2cd3edf59cf1f5a"
+    },
+    {
+      "path": "Cylinder_Bridge.mp4",
+      "bytes": 1156850,
+      "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1"
+    },
+    {
+      "path": "Cylinder_Bridge.pdf",
+      "bytes": 6029443,
+      "sha256": "e7ecd1613fd32c10560727557f6d6525acf4e94c362e22e0b82a3dfc5fcb1d8f"
+    },
+    {
+      "path": "Cylinder_Bridge.png",
+      "bytes": 768704,
+      "sha256": "954edecb550877c6c502d65fe45999974c7b809b824ee13eec64b24e52eece1d"
+    },
+    {
+      "path": "Cylinder_Bridge.svg",
+      "bytes": 58199444,
+      "sha256": "ad61315e8a68b572482ce9e27c3d198f530135fd3f810222cdf663250eb51f87"
+    },
+    {
+      "path": "Cylinder_Bridge_poster.png",
+      "bytes": 162341,
+      "sha256": "559e1b0932584b4d1cc0e3cdea4b985f6a94fe7bc0f95d6e05fefbf73b18ee53"
+    },
+    {
+      "path": "data/model_arrays.npz",
+      "bytes": 6884403,
+      "sha256": "da3d151f6b64f0ef27406cef62d2b44ba259b4f19721c0dbfe20f200d93dd1a5"
+    },
+    {
+      "path": "data/opening_normalization.csv",
+      "bytes": 431,
+      "sha256": "967f6c3321390e85d589bb75c2423530c851cc7c1e38969b64aee37c650726de"
+    },
+    {
+      "path": "data/opening_profiles.npz",
+      "bytes": 1959183,
+      "sha256": "c1e794f4192f90689686a8d7b4f0c7006e69a14c2a3c08be969d6e55c33293f6"
+    },
+    {
+      "path": "data/orientation_quadrature.csv",
+      "bytes": 18835,
+      "sha256": "0cd6d7e4ceda102ab3fccbf254a2264d35d4a86e02074bab89cb89fdbd328e85"
+    },
+    {
+      "path": "data/retained_v2_movie.mp4",
+      "bytes": 1118305,
+      "sha256": "bf4c4829ff110c9f80b4519f07aa40ed2bab3d7483c85be7c1cb23171abcee8a"
+    },
+    {
+      "path": "data/rod_profile.csv",
+      "bytes": 17405,
+      "sha256": "a0838cb9e4168fd90540b713dd74c9bb69eef621d717b6860aeb9047c06e0539"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6176,
+      "sha256": "c545d4572529b5d8a72a126ccb67aaaccf80427af876227828671bfb66e409bd"
+    },
+    {
+      "path": "provenance/animation.json",
+      "bytes": 1328,
+      "sha256": "c353313cb03f1261ee422968309e62fde0890c816ca833df14913374b26bf510"
+    },
+    {
+      "path": "provenance/Cylinder_Bridge.json",
+      "bytes": 9126,
+      "sha256": "71fcd2de68e44c7dd833605103c8d4bdea7a02c2ec5676f1f79dc936051e71c0"
+    },
+    {
+      "path": "provenance/gallery_review.json",
+      "bytes": 398,
+      "sha256": "cfcdd9ce7abb4b80496583215ad93379e33aaf70146bf6028893ce5f25ef10c0"
+    },
+    {
+      "path": "provenance/science_review.json",
+      "bytes": 1209,
+      "sha256": "846ff58e90e16e07f5aabf63d45cd161477aca90a26baa560429c005ed34861b"
+    },
+    {
+      "path": "provenance/visual_portability_review.json",
+      "bytes": 12130,
+      "sha256": "38d1465b03549a60b1cf79b13d0065e087ce1aa8a8349f8b83667e2051d96ad3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3267,
+      "sha256": "a841c9ca0cf21f7feeddef7b5886f4214b25299ad13b74615e8def39d487cff5"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 169,
+      "sha256": "46cdf8566dfbbd13d57e9411da7d46ebc75a12c586c3df36439fc0cfebed4584"
+    },
+    {
+      "path": "source/animate_bridge.py",
+      "bytes": 9108,
+      "sha256": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9"
+    },
+    {
+      "path": "source/build_gallery.py",
+      "bytes": 2625,
+      "sha256": "43c8bb7af22179ade4f34ae371ada99bc1559bb916aead9e6aa2c2a2c9aaf8db"
+    },
+    {
+      "path": "source/cylinder_bridge.py",
+      "bytes": 30264,
+      "sha256": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4"
+    },
+    {
+      "path": "source/fonts/DejaVuSans-Bold.ttf",
+      "bytes": 704128,
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167"
+    },
+    {
+      "path": "source/fonts/DejaVuSans.ttf",
+      "bytes": 756072,
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22"
+    },
+    {
+      "path": "source/fonts/LICENSE_DEJAVU",
+      "bytes": 4816,
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e"
+    },
+    {
+      "path": "source/seal_release.py",
+      "bytes": 2174,
+      "sha256": "062d4ba92b10edb6c2472cbec8b092f38e16b7951637f134e9a0fccb7637abcc"
+    },
+    {
+      "path": "source/verify_science.py",
+      "bytes": 3023,
+      "sha256": "70e970932ade90604d9617574b05c13f11b492fcb40db22738eff8c1bc77b9fa"
+    },
+    {
+      "path": "storyboard/frame_00.0s.png",
+      "bytes": 68784,
+      "sha256": "bb21ef502173f6f241b9dafa49a6128364eb2b9cc3096c0bf87e5ad436211f70"
+    },
+    {
+      "path": "storyboard/frame_01.0s.png",
+      "bytes": 68784,
+      "sha256": "bb21ef502173f6f241b9dafa49a6128364eb2b9cc3096c0bf87e5ad436211f70"
+    },
+    {
+      "path": "storyboard/frame_01.2s.png",
+      "bytes": 73160,
+      "sha256": "5997e827e6eb47dbd76519bb270116a10754ae94da97eb139d15fff689f22186"
+    },
+    {
+      "path": "storyboard/frame_02.0s.png",
+      "bytes": 74401,
+      "sha256": "76bc381b015dc5b14f47710a7e23d0d7c21f1c4b44b99af1f97ea73d1642b976"
+    },
+    {
+      "path": "storyboard/frame_03.5s.png",
+      "bytes": 80899,
+      "sha256": "f80ee4784f8bc7a5b656c36ea54479b46e5a5f39ba3912807ff94f164551e899"
+    },
+    {
+      "path": "storyboard/frame_05.0s.png",
+      "bytes": 83822,
+      "sha256": "d9bba374efee40db1ce9bcf2c87a2699d299a4fc28e7ae4122ad84034b5e4e80"
+    },
+    {
+      "path": "storyboard/frame_06.0s.png",
+      "bytes": 86130,
+      "sha256": "7893d61b45f6b472308ed7bf10b1371196aa3e6be93bae29519eaa1af920b4ea"
+    },
+    {
+      "path": "storyboard/frame_06.8s.png",
+      "bytes": 87859,
+      "sha256": "7dcf4a58c1b6c4c811539ad166b7f6fb51dcfe5e28f75da608d85f00b2d8d9a4"
+    },
+    {
+      "path": "storyboard/frame_07.5s.png",
+      "bytes": 87859,
+      "sha256": "7dcf4a58c1b6c4c811539ad166b7f6fb51dcfe5e28f75da608d85f00b2d8d9a4"
+    },
+    {
+      "path": "storyboard/frame_09.5s.png",
+      "bytes": 153514,
+      "sha256": "972987430f8604121849b8a921086ca59b9674af53c16ef4e541c14133c8df70"
+    },
+    {
+      "path": "storyboard/frame_11.9s.png",
+      "bytes": 235291,
+      "sha256": "912f2b96a891532a605b38a0a5589b20acf98a7cc39bedec66cf57faba599d0c"
+    },
+    {
+      "path": "storyboard/frame_14.0s.png",
+      "bytes": 256374,
+      "sha256": "66e3abcf61aac24572d5d3cc2c47c6a38c93bc3743c37e7a4f190409fa461356"
+    },
+    {
+      "path": "storyboard/frame_16.5s.png",
+      "bytes": 270964,
+      "sha256": "bb427f8be44f21ae711401cda9dd6e77ef22fb6028cd329ec338fcc177d90e34"
+    },
+    {
+      "path": "storyboard/frame_19.0s.png",
+      "bytes": 218372,
+      "sha256": "f435bda51ab7a3af0411d8852aca24283f7a069f577b1f1eb4f515a47d6c916b"
+    },
+    {
+      "path": "storyboard/frame_21.5s.png",
+      "bytes": 150987,
+      "sha256": "18d8a9393dcd4e42583f75613873a8ed0653fdaea7bf2c8a75d43be7f2d343f9"
+    },
+    {
+      "path": "storyboard/frame_25.0s.png",
+      "bytes": 162341,
+      "sha256": "559e1b0932584b4d1cc0e3cdea4b985f6a94fe7bc0f95d6e05fefbf73b18ee53"
+    }
+  ]
+}

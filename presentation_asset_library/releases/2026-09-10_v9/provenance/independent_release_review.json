@@ -1,0 +1,327 @@
+{
+  "review_schema": "independent_asset_release_review.v1",
+  "reviewed_at": "2026-09-10T21:05:41.292245",
+  "complete": true,
+  "checks": [
+    {
+      "check": "exact latest v9 SHA256",
+      "passed": true,
+      "detail": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3"
+    },
+    {
+      "check": "25 ordered slides",
+      "passed": true,
+      "detail": [
+        "ppt/slides/slide1.xml",
+        "ppt/slides/slide2.xml",
+        "ppt/slides/slide3.xml",
+        "ppt/slides/slide4.xml",
+        "ppt/slides/slide5.xml",
+        "ppt/slides/slide6.xml",
+        "ppt/slides/slide7.xml",
+        "ppt/slides/slide8.xml",
+        "ppt/slides/slide9.xml",
+        "ppt/slides/slide10.xml",
+        "ppt/slides/slide11.xml",
+        "ppt/slides/slide32.xml",
+        "ppt/slides/slide33.xml",
+        "ppt/slides/slide13.xml",
+        "ppt/slides/slide14.xml",
+        "ppt/slides/slide15.xml",
+        "ppt/slides/slide16.xml",
+        "ppt/slides/slide17.xml",
+        "ppt/slides/slide18.xml",
+        "ppt/slides/slide19.xml",
+        "ppt/slides/slide20.xml",
+        "ppt/slides/slide21.xml",
+        "ppt/slides/slide22.xml",
+        "ppt/slides/slide23.xml",
+        "ppt/slides/slide24.xml"
+      ]
+    },
+    {
+      "check": "no hidden slides",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "7 embedded movies",
+      "passed": true,
+      "detail": [
+        "ppt/media/media1.mp4",
+        "ppt/media/media2.mp4",
+        "ppt/media/media3.mp4",
+        "ppt/media/media4.mp4",
+        "ppt/media/media5.mp4",
+        "ppt/media/media6.mp4",
+        "ppt/media/media7.mp4"
+      ]
+    },
+    {
+      "check": "all embedded media byte identical",
+      "passed": true,
+      "detail": {
+        "count": 35,
+        "failures": []
+      }
+    },
+    {
+      "check": "all charts package parts byte identical",
+      "passed": true,
+      "detail": {
+        "count": 16,
+        "failures": []
+      }
+    },
+    {
+      "check": "all workbooks package parts byte identical",
+      "passed": true,
+      "detail": {
+        "count": 8,
+        "failures": []
+      }
+    },
+    {
+      "check": "8 native workbooks",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "check": "workbook CSV preserves exact stored numeric strings and cell values",
+      "passed": true,
+      "detail": {
+        "cells": 4180,
+        "failures": []
+      }
+    },
+    {
+      "check": "one native table exact text/numbers preserved",
+      "passed": true,
+      "detail": {
+        "tables": 1,
+        "failures": []
+      }
+    },
+    {
+      "check": "source snapshot checksums and original bytes agree",
+      "passed": true,
+      "detail": {
+        "count": 747,
+        "failures": [],
+        "original_missing": []
+      }
+    },
+    {
+      "check": "source snapshot archive paths contained",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "correct user-edited v8 source included",
+      "passed": true,
+      "detail": [
+        {
+          "original_path": "C:\\Users\\Kenpo\\Downloads\\Oriented_Powder_8min_Animated_v8.pptx",
+          "archived_path": "source/original_presentation/User_edited_v8_source.pptx",
+          "bytes": 18486442,
+          "sha256": "03f7c853bc92153c675364db5a4f9aa055c5c488a8b17a9d6cf98614ae4e8136",
+          "role": "exact user-edited source of final v9; not interchangeable with project v8"
+        }
+      ]
+    },
+    {
+      "check": "bi2se3_retained_profiles_direct.npz expected direct source preserved",
+      "passed": true,
+      "detail": [
+        "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\bi2se3_retained_profiles_direct.npz"
+      ]
+    },
+    {
+      "check": "bi2se3_specular.ra_diag.npz expected direct source preserved",
+      "passed": true,
+      "detail": [
+        "source\\external\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.ra_diag.npz"
+      ]
+    },
+    {
+      "check": "bi2se3_specular.json expected direct source preserved",
+      "passed": true,
+      "detail": [
+        "source\\external\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.json"
+      ]
+    },
+    {
+      "check": "catalog local references exist without path escapes",
+      "passed": true,
+      "detail": {
+        "references": 478,
+        "missing": [],
+        "escapes": []
+      }
+    },
+    {
+      "check": "every public exported asset represented in catalog by identical bytes",
+      "passed": true,
+      "detail": {
+        "public_files": 121,
+        "uncovered": []
+      }
+    },
+    {
+      "check": "all exact deck movies have asset family",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "gallery local links media and anchors resolve inside archive",
+      "passed": true,
+      "detail": {
+        "references": 560,
+        "failures": []
+      }
+    },
+    {
+      "check": "gallery no external resources or links",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "README honestly states rebuild scientific and storage limits",
+      "passed": true,
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "check": "Se CSV values round-trip exactly to direct NPZ",
+      "passed": true,
+      "detail": {
+        "rows": 590,
+        "values": 4130,
+        "failures": []
+      }
+    },
+    {
+      "check": "Se full axial range retained",
+      "passed": true,
+      "detail": {
+        "bins": 290,
+        "first": 1.05,
+        "last": 29.95
+      }
+    },
+    {
+      "check": "Te CSV values round-trip exactly to direct NPZ",
+      "passed": true,
+      "detail": {
+        "rows": 630,
+        "values": 3150,
+        "failures": []
+      }
+    },
+    {
+      "check": "Te full axial range retained",
+      "passed": true,
+      "detail": {
+        "bins": 290,
+        "first": 1.05,
+        "last": 29.950000000000003
+      }
+    },
+    {
+      "check": "Te compact selected arrays agree with original 5.97 GB source array contents and dictionary",
+      "passed": true,
+      "detail": {
+        "arrays": 12,
+        "failures": []
+      }
+    },
+    {
+      "check": "Te original source generator exact bytes",
+      "passed": true,
+      "detail": {
+        "sha256": "ddfe90fe5bdf1b612511694f6ffc17be961a7f353016e55f0e56ba571a2a0416",
+        "verified_against_original_npz_bytes": true
+      }
+    },
+    {
+      "check": "Te direct displayed arrays match independent parent-bin counts and covariance aggregation",
+      "passed": true,
+      "detail": {
+        "max_abs_difference_count_units": 5.684341886080802e-14,
+        "failures": [],
+        "tolerance": "2e-13 relative plus 2e-13 absolute; alternate floating summation order"
+      }
+    },
+    {
+      "check": "catalog Se profile preferred family contains exact retained September 3 plus September 5 optics PNGs",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "source snapshot generated archive file hashes agree",
+      "passed": true,
+      "detail": {
+        "count": 19,
+        "failures": []
+      }
+    },
+    {
+      "check": "catalog uses cross-platform forward slash paths",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all SHA256SUMS entries independently match contents",
+      "passed": true,
+      "detail": {
+        "entries": 1057,
+        "failures": []
+      }
+    },
+    {
+      "check": "FILES inventory sizes and hashes agree",
+      "passed": true,
+      "detail": {
+        "entries": 1056,
+        "failures": []
+      }
+    },
+    {
+      "check": "file inventories cover release payload",
+      "passed": true,
+      "detail": {
+        "outside_SHA256SUMS": [
+          "SHA256SUMS.txt"
+        ],
+        "outside_FILES": [
+          "FILES.json",
+          "SHA256SUMS.txt"
+        ],
+        "exclusion": "Generated __pycache__ files are outside archival payload; final sealer excludes them from ZIP and manifests."
+      }
+    },
+    {
+      "check": "Te profile catalog uses exact retained deck raster panels",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "Se and Te direct data and dictionaries explicitly discoverable in family sources",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "final source snapshot copied and generated file hashes agree",
+      "passed": true,
+      "detail": {
+        "source_files": 747,
+        "created_files": 19,
+        "failures": []
+      }
+    }
+  ],
+  "passed": true,
+  "pending": [],
+  "scope_note": "Independent file/package/data/catalog audit at final pre-seal state. This report resides outside library during review; root will copy it and reseal manifests, then independently verify ZIP payload hashes. Browser playback and relocated ZIP extraction checks are separate receipts. Full simulation/refit not run or claimed."
+}

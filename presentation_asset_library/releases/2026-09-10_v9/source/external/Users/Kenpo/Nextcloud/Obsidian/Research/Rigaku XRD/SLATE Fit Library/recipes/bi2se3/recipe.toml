@@ -1,0 +1,251 @@
+schema_version = "slate-fit-recipe-v1"
+case_id = "bi2se3"
+title = "Bi2Se3 fixed-angle geometry, mosaic, ordered intensity, and background"
+study_id = "ornl-2024-07-25-layered-chalcogenides"
+accepted_run_id = "bi2se3-2026-08-24-full-domain-background"
+specimens = ["Bi2Se3"]
+
+[engine]
+repository_uri = "slate-active://"
+commit = "f67993d7a5890ebe231a4ba076b32d8f6814bc79"
+python_uri = "slate-active://.venv/Scripts/python.exe"
+lock_uri = "slate-active://uv.lock"
+lock_sha256 = "543d14f3bfeaa58a64ad0e55166242c3122ee805ea7feb9a921e4c2f749a1fd4"
+
+[geometry_contract]
+beam_center_column_row_px = [1453.12, 1596.422]
+active_parameters = [
+  "detector_column_tilt_rad",
+  "detector_row_tilt_rad",
+  "sample_normal_y_tilt_rad",
+  "goniometer_axis_pitch_rad",
+  "goniometer_axis_yaw_rad",
+  "sample_plane_normal_offset_m",
+  "goniometer_pivot_pitch_offset_m",
+  "detector_plane_normal_offset_m",
+  "incidence_angle_delta_rad",
+]
+fixed_parameters = [
+  "sample_normal_x_tilt_rad",
+  "goniometer_pivot_yaw_offset_m",
+  "detector_reference_column_offset_px",
+  "detector_reference_row_offset_px",
+]
+
+[scientific_claim]
+classification = "GENERIC_PIPELINE_READY_MODEL_LIMITED_FIXTURE"
+canonical = false
+limitations = [
+  "The empirical radial background is calibrated and frozen; the one-off calibrator source was not retained.",
+  "The mosaic decomposition is model-limited even though its effective profile is reusable.",
+  "The accepted ordered structure remains the full-occupancy CIF; free structure-factor changes were not accepted.",
+]
+
+[replay]
+status = "REPLAYABLE"
+kind = "slate_project"
+operation = "run"
+project_uri = "library://recipes/bi2se3/project.yaml"
+working_directory_uri = "slate-active://"
+accepted_project_hash = "1e2f92d9db4ad3586b45ed7e81ed065481345d169b077ce5be7fafec552cede2"
+
+[[stages]]
+id = "preprocess"
+status = "COMPLETED"
+method = "pedestal-separated exposure-scaled dark subtraction followed by frozen full-domain radial-background subtraction"
+
+[[stages]]
+id = "geometry"
+status = "COMPLETED"
+checkpoint_sha256 = "136c41851e12f0b96aab8af337cafbad989dee76d5e37f5ca3558ca7a871052f"
+
+[[stages]]
+id = "mosaic"
+status = "MODEL_LIMITED"
+checkpoint_sha256 = "d3d0c3588b448e6c9b9783d16b7aae43b6bbc2aa5e53202b676e04844f5098e4"
+
+[[stages]]
+id = "ordered_intensity"
+status = "BASELINE_RETAINED"
+checkpoint_sha256 = "779afb490020d8d086873234cbfa41d8209bb2fbef80d5fda712764fbedd8b24"
+
+[[stages]]
+id = "render"
+status = "COMPLETED"
+checkpoint_sha256 = "103f3a97dea2051a0e43f5939bd04034e8ba79125541f4dbbae6a6905921cbde"
+
+[[inputs]]
+role = "project_recipe"
+uri = "library://recipes/bi2se3/project.yaml"
+sha256 = "a7219491f8d1e4398eee6bdcc7d79f52dc6cbb4c86c78adc1536c522eaa63731"
+size_bytes = 5486
+media_type = "application/yaml"
+
+[[inputs]]
+role = "structure_cif"
+uri = "slate-active://examples/bi2se3/structures/Bi2Se3_vesta.cif"
+sha256 = "2a02dfceb6b302810229076479c54515382b3adcd558e3d9f874192dcd6b539f"
+size_bytes = 2057
+media_type = "chemical/x-cif"
+
+[[inputs]]
+role = "fixed_5deg_osc"
+uri = "slate-active://examples/bi2se3/osc/Bi2Se3_5m_5d.osc.gz"
+sha256 = "cba9d38d9cae1e8e3be3c2ad58ad130e04ce1958f0d2d986a947ab3a90818e36"
+size_bytes = 5008085
+
+[[inputs]]
+role = "fixed_10deg_osc"
+uri = "slate-active://examples/bi2se3/osc/Bi2Se3_10d_5m.osc.gz"
+sha256 = "faaa8f77785ddcd51c741d3b53c3ab7694fb8dacb961cd414d20daa5c21ccd67"
+size_bytes = 5133079
+
+[[inputs]]
+role = "fixed_15deg_osc"
+uri = "slate-active://examples/bi2se3/osc/Bi2Se3_15d_5m.osc.gz"
+sha256 = "6cfed1e0e7a00ecc3c3d4d2d18de7de4696c78a11de5ad842e31368d5e986fd1"
+size_bytes = 4816096
+
+[[inputs]]
+role = "integrated_5to25deg_osc"
+uri = "research://ORNL.07.25.2024/Varying/Images/Bi2Se3_5to20_20m.osc"
+sha256 = "873fd7b64e30bdd9c75e0b66a31bb32ec00324b1a984aaac366fd941400c3ed2"
+size_bytes = 18006000
+
+[[inputs]]
+role = "timed_dark_osc"
+uri = "slate-active://examples/calibration/hbn/darkImg.osc.gz"
+sha256 = "7aebcef1dd1acf5bc9c7bfef4bdab88179952a9ebfc58360f7d7128b4b418e70"
+size_bytes = 1972826
+
+[[inputs]]
+role = "radial_background_calibration"
+uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/radial_background_full_domain.json"
+sha256 = "69fe496dbb39b5a1c9a5f9c513394c5e588712baa43d995222e3c45bfd861b6a"
+size_bytes = 4830
+
+[[inputs]]
+role = "fixed_feature_catalog"
+uri = "visualizations://2026/08/20/01a020d4-c0b1-7652-8793-349f6665203f/raw_osc_joint_geometry_v3/raw_geometry_feature_catalog.json"
+sha256 = "976009102a45cbbd7293b9ae1ab5781ac536788e8f75ee2595b60b12fa424513"
+size_bytes = 202346
+
+[[captures]]
+role = "project_recipe_snapshot"
+source_uri = "library://recipes/bi2se3/project.yaml"
+destination = "recipe/project.yaml"
+sha256 = "a7219491f8d1e4398eee6bdcc7d79f52dc6cbb4c86c78adc1536c522eaa63731"
+size_bytes = 5486
+stage = "preprocess"
+
+[[captures]]
+role = "accepted_artifact_bundle"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/bi2se3_background_and_fit_update_artifacts.zip"
+destination = "bundle/bi2se3_background_and_fit_update_artifacts.zip"
+sha256 = "069b7ccb45003eae8fa8f3aed12815cec941fc407bd1178bdc04ce3f2040cfb2"
+size_bytes = 9411383
+media_type = "application/zip"
+stage = "render"
+
+[[captures]]
+role = "accepted_bundle_manifest"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/background_and_fit_update_bundle_manifest.json"
+destination = "bundle/manifest.json"
+sha256 = "3e292186d28408c52ff1c5fbc8ed6f6e94a25cb45718321e7da1c390e6314907"
+size_bytes = 13464
+media_type = "application/json"
+stage = "render"
+
+[[captures]]
+role = "fit_update_summary"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/background_and_fit_update.json"
+destination = "summary/background_and_fit_update.json"
+sha256 = "6e7c8349f575d85e96e7b3e04dce7dd518644cdce68f4ecfd3efe96fdda2889c"
+size_bytes = 30269
+stage = "render"
+
+[[captures]]
+role = "fit_update_report"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/background_and_fit_update.md"
+destination = "summary/background_and_fit_update.md"
+sha256 = "bd949fbdacc060a0c9795f86da1d2ce564bebd2637ba177d4f4482f9db369a8c"
+size_bytes = 5723
+stage = "render"
+
+[[captures]]
+role = "background_calibration_arrays"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/full_domain_radial_background_calibration.npz"
+destination = "preprocess/full_domain_radial_background_calibration.npz"
+sha256 = "abf69658209765d8116341ef63e663f5dc110edfb7d128a7df04d48b9e5bae4c"
+size_bytes = 266267
+stage = "preprocess"
+
+[[captures]]
+role = "background_calibration"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/radial_background_full_domain.json"
+destination = "preprocess/radial_background_full_domain.json"
+sha256 = "69fe496dbb39b5a1c9a5f9c513394c5e588712baa43d995222e3c45bfd861b6a"
+size_bytes = 4830
+stage = "preprocess"
+
+[[captures]]
+role = "input_manifest"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/input_manifest.json"
+destination = "pipeline/input_manifest.json"
+sha256 = "cf7d7856a7dd45d286ece2592bc205b4de7b88ff4538663abc58f6d2f3583235"
+size_bytes = 5834
+stage = "preprocess"
+
+[[captures]]
+role = "pipeline_run_state"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/run_state.json"
+destination = "pipeline/run_state.json"
+sha256 = "dd97cd48e6dfb428db65a8b08b88a161ecb97edb271f72fee1eb85f712281ad5"
+size_bytes = 47643
+
+[[captures]]
+role = "pipeline_validation"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/validation.json"
+destination = "pipeline/validation.json"
+sha256 = "23ba712badeab94fb0197251958c6fb2cc812e3c2c24ec2f5a528fc46e45d263"
+size_bytes = 674
+
+[[captures]]
+role = "geometry_checkpoint"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/fits/geometry_fit.json"
+destination = "fits/geometry_fit.json"
+sha256 = "136c41851e12f0b96aab8af337cafbad989dee76d5e37f5ca3558ca7a871052f"
+size_bytes = 22305
+stage = "geometry"
+
+[[captures]]
+role = "mosaic_checkpoint"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/fits/mosaic_fit.json"
+destination = "fits/mosaic_fit.json"
+sha256 = "d3d0c3588b448e6c9b9783d16b7aae43b6bbc2aa5e53202b676e04844f5098e4"
+size_bytes = 38768
+stage = "mosaic"
+
+[[captures]]
+role = "ordered_intensity_checkpoint"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/fits/structure_fit.json"
+destination = "fits/structure_fit.json"
+sha256 = "779afb490020d8d086873234cbfa41d8209bb2fbef80d5fda712764fbedd8b24"
+size_bytes = 27221
+stage = "ordered_intensity"
+
+[[captures]]
+role = "final_checkpoint"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/fits/final_fit.json"
+destination = "fits/final_fit.json"
+sha256 = "103f3a97dea2051a0e43f5939bd04034e8ba79125541f4dbbae6a6905921cbde"
+size_bytes = 176163
+stage = "render"
+
+[[captures]]
+role = "pipeline_report"
+source_uri = "visualizations://2026/08/24/bi2se3_background_and_physics_update/pipeline_full_domain_background/report.md"
+destination = "pipeline/report.md"
+sha256 = "5d4608d674ccde05a7c476d7291a7f6ba80c6b1d20dd3217a6c164910f80a2ad"
+size_bytes = 1742
+stage = "render"

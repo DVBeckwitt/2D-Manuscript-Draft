@@ -1,0 +1,282 @@
+{
+  "schema": "cylinder-bridge-v3-independent-visual-portability-review.v1",
+  "status": "PASS_WITH_FRAMING_NOTE",
+  "fresh_v3_review": true,
+  "reviewed_utc": "2026-09-11T12:23:19.464086+00:00",
+  "reviewed_files": {
+    "Cylinder_Bridge.mp4": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+    "Cylinder_Bridge.png": "954edecb550877c6c502d65fe45999974c7b809b824ee13eec64b24e52eece1d",
+    "Cylinder_Bridge.pdf": "e7ecd1613fd32c10560727557f6d6525acf4e94c362e22e0b82a3dfc5fcb1d8f",
+    "Cylinder_Bridge.svg": "ad61315e8a68b572482ce9e27c3d198f530135fd3f810222cdf663250eb51f87",
+    "Cylinder_Bridge_poster.png": "559e1b0932584b4d1cc0e3cdea4b985f6a94fe7bc0f95d6e05fefbf73b18ee53",
+    "caption.txt": "c77141419fc23e14162f434b32d23b52f7c2fb7d575fde31c2cd3edf59cf1f5a",
+    "source/cylinder_bridge.py": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4",
+    "source/animate_bridge.py": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9",
+    "data/retained_v2_movie.mp4": "bf4c4829ff110c9f80b4519f07aa40ed2bab3d7483c85be7c1cb23171abcee8a"
+  },
+  "visual_review": {
+    "opening_seconds": [
+      0,
+      1,
+      1.2,
+      2,
+      3.5,
+      5,
+      6,
+      6.8
+    ],
+    "opening": "PASS: actual narrow N=512 finite peaks broaden continuously to mean N=8. Peak profiles, mean-thickness labels and reciprocal L=1,2,3 positions remain legible. Fading Bragg-center locators make unresolved reciprocal maxima visible without a symbolic-arrow handoff. Wider peaks and fringes grow most visibly near the end of the opening.",
+    "locator_scope": "Small teal center symbols are position guides only; opacity clips 1-64/meanN to [0,1], vanishing at meanN<=64. This overlay is identified in source provenance/caption and is not additional intensity.",
+    "encoded_review": "PASS: opening and stage-boundary encoded frames retain legible labels and continuous geometric states. The N8 endpoint passes into the azimuth sweep, completed cylinder into mosaic tilt, and mosaic geometry into Ewald selection.",
+    "encoded_frames_inspected": [
+      0,
+      24,
+      70,
+      120,
+      136,
+      159,
+      160,
+      243,
+      244,
+      339,
+      340,
+      380,
+      430,
+      519
+    ],
+    "framing_note": "At 19.0 s the sphere rim intersects the top and bottom of the axes during the inherited zoom-out reveal. Text is not clipped; the final sphere and labels fit entirely. Hollow cylinder guides do not obscure the final sphere or weighted patch.",
+    "static_scope": "PNG/PDF/SVG hashes match the independently rendered and inspected v2 static assets exactly. No new v3 PDF was authored or rendered for this animation-only revision.",
+    "scientific_scope": "Opening uses an illustrative incoherent mixture of neighboring integer thickness populations, normalized by the mixture peak. Mean layer count is not a literal fractional stack; displayed area is not conserved. Later scattering shading remains a qualitative geometric selection, not detector counts or Ewald-area-normalized density."
+  },
+  "static_byte_preservation": {
+    "Cylinder_Bridge.png": {
+      "v3_sha256": "954edecb550877c6c502d65fe45999974c7b809b824ee13eec64b24e52eece1d",
+      "v2_sha256": "954edecb550877c6c502d65fe45999974c7b809b824ee13eec64b24e52eece1d"
+    },
+    "Cylinder_Bridge.pdf": {
+      "v3_sha256": "e7ecd1613fd32c10560727557f6d6525acf4e94c362e22e0b82a3dfc5fcb1d8f",
+      "v2_sha256": "e7ecd1613fd32c10560727557f6d6525acf4e94c362e22e0b82a3dfc5fcb1d8f"
+    },
+    "Cylinder_Bridge.svg": {
+      "v3_sha256": "ad61315e8a68b572482ce9e27c3d198f530135fd3f810222cdf663250eb51f87",
+      "v2_sha256": "ad61315e8a68b572482ce9e27c3d198f530135fd3f810222cdf663250eb51f87"
+    }
+  },
+  "independent_opening_numerical_checks": {
+    "direct_incoherent_neighbor_integer_sum_max_error": 9.731104810839497e-14,
+    "integer_boundaries_checked": [
+      9,
+      16,
+      64,
+      256,
+      511
+    ],
+    "max_curve_step_across_integer_boundary_at_1e-7_meanN": 1.8628316555968638e-08,
+    "opening_start_meanN": 512.0,
+    "opening_end_meanN": 8.0,
+    "monotone_decreasing_meanN": true,
+    "inverse_meanN_increments_accelerate": true,
+    "N8_endpoint_exact_original": true,
+    "peak_normalization_not_area_normalization": true
+  },
+  "portability": {
+    "status": "PASS",
+    "isolated_copy": "build_codex/cylinder_bridge_v3_review/portable",
+    "copied_inputs": "Local Python sources only for independent selected-frame rebuild. Bundled v2 movie tail separately hash-bound and fully decoded via delivered final movie.",
+    "original_project_access_blocked": true,
+    "external_project_access_attempts": [],
+    "run": {
+      "returncode": 0,
+      "seconds": 4.812999999965541,
+      "stdout": "FRAME 0\nFRAME 1\nFRAME 1.2\nFRAME 2\nFRAME 3.5\nFRAME 5\nFRAME 6\nFRAME 6.8\nFRAME 9.5\nFRAME 25\n",
+      "stderr": "",
+      "copied_source_sha256": {
+        "animate_bridge.py": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9",
+        "build_gallery.py": "43c8bb7af22179ade4f34ae371ada99bc1559bb916aead9e6aa2c2a2c9aaf8db",
+        "cylinder_bridge.py": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4",
+        "seal_release.py": "062d4ba92b10edb6c2472cbec8b092f38e16b7951637f134e9a0fccb7637abcc"
+      },
+      "frame_comparisons": {
+        "frame_00.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_01.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_01.2s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_02.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_03.5s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_05.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_06.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_06.8s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_09.5s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        },
+        "frame_25.0s.png": {
+          "exact_pixels": true,
+          "exact_bytes": true
+        }
+      }
+    },
+    "final_scientific_source_binding": {
+      "cylinder_bridge.py": {
+        "isolated_sha256": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4",
+        "delivered_sha256": "2fcdbf8274a695d2b7ad67d367641be2d531f09a466688b0bd6810e49f585ef4"
+      },
+      "animate_bridge.py": {
+        "isolated_sha256": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9",
+        "delivered_sha256": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9"
+      }
+    },
+    "default_source_read_review": "Geometry draws from local constants/functions, animation imports its adjacent geometry module and uses ROOT/data/retained_v2_movie.mp4 for the default tail. Tail SHA256 is verified before use. FFmpeg is discovered through FFMPEG_BIN/PATH, with an optional existing C:/ffmpeg fallback; this fallback is an executable locator, not a scientific input. --full-render bypasses the retained tail.",
+    "dependencies": {
+      "python": "3.12.2",
+      "numpy": "2.4.6",
+      "matplotlib": "3.10.3",
+      "Pillow": "11.2.1",
+      "movie": "FFmpeg with libx264 and ffprobe for QA"
+    },
+    "bounded_scope": "Rebuilt eight requested opening frames plus 9.5 s and 25 s; all ten PNGs exact. Did not rerender all heavy Ewald animation frames, static exports, gallery or release builder. Later model mathematics and static assets were independently checked in v2; current selected later frames are reproduced from current v3 source."
+  },
+  "movie": {
+    "file": "Cylinder_Bridge.mp4",
+    "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+    "bytes": 1156850,
+    "full_decode_returncode": 0,
+    "full_decode_stderr": "",
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "width": 1600,
+    "height": 900,
+    "fps": "20/1",
+    "duration_seconds": 26.0,
+    "frames": 520,
+    "audio": false,
+    "encoded_frame_comparisons": {
+      "0": {
+        "frame_index": 0,
+        "mean_absolute_RGB_error_0_255": 0.1511800925925926,
+        "pixel_max_RGB_error_0_255": 86.0
+      },
+      "1": {
+        "frame_index": 20,
+        "mean_absolute_RGB_error_0_255": 0.1471474537037037,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "1.2": {
+        "frame_index": 24,
+        "mean_absolute_RGB_error_0_255": 0.15982685185185186,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "2": {
+        "frame_index": 40,
+        "mean_absolute_RGB_error_0_255": 0.1590564814814815,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "3.5": {
+        "frame_index": 70,
+        "mean_absolute_RGB_error_0_255": 0.16687037037037036,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "5": {
+        "frame_index": 100,
+        "mean_absolute_RGB_error_0_255": 0.17435694444444444,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "6": {
+        "frame_index": 120,
+        "mean_absolute_RGB_error_0_255": 0.17730416666666668,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "6.8": {
+        "frame_index": 136,
+        "mean_absolute_RGB_error_0_255": 0.17920046296296296,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "7.5": {
+        "frame_index": 150,
+        "mean_absolute_RGB_error_0_255": 0.17872569444444444,
+        "pixel_max_RGB_error_0_255": 66.0
+      },
+      "9.5": {
+        "frame_index": 190,
+        "mean_absolute_RGB_error_0_255": 0.32116828703703704,
+        "pixel_max_RGB_error_0_255": 83.0
+      },
+      "11.9": {
+        "frame_index": 238,
+        "mean_absolute_RGB_error_0_255": 0.4493152777777778,
+        "pixel_max_RGB_error_0_255": 83.0
+      },
+      "14": {
+        "frame_index": 280,
+        "mean_absolute_RGB_error_0_255": 0.40630648148148146,
+        "pixel_max_RGB_error_0_255": 71.0
+      },
+      "16.5": {
+        "frame_index": 330,
+        "mean_absolute_RGB_error_0_255": 0.40167152777777776,
+        "pixel_max_RGB_error_0_255": 71.0
+      },
+      "19": {
+        "frame_index": 380,
+        "mean_absolute_RGB_error_0_255": 0.6803768518518518,
+        "pixel_max_RGB_error_0_255": 80.0
+      },
+      "21.5": {
+        "frame_index": 430,
+        "mean_absolute_RGB_error_0_255": 0.5452185185185185,
+        "pixel_max_RGB_error_0_255": 86.0
+      },
+      "25": {
+        "frame_index": 500,
+        "mean_absolute_RGB_error_0_255": 0.6092263888888889,
+        "pixel_max_RGB_error_0_255": 82.0
+      }
+    },
+    "retained_v2_tail_comparisons": {
+      "9.5": {
+        "mean_absolute_RGB_error_0_255": 0.13743287037037036,
+        "pixel_max_RGB_error_0_255": 29.0
+      },
+      "14": {
+        "mean_absolute_RGB_error_0_255": 0.19666597222222224,
+        "pixel_max_RGB_error_0_255": 18.0
+      },
+      "19": {
+        "mean_absolute_RGB_error_0_255": 0.35598125,
+        "pixel_max_RGB_error_0_255": 24.0
+      },
+      "25": {
+        "mean_absolute_RGB_error_0_255": 0.2744756944444444,
+        "pixel_max_RGB_error_0_255": 50.0
+      }
+    },
+    "encoding_scope": "Opening encoded from fresh RGB sources. Tail >=8s decoded from the bundled v2 MP4 and re-encoded once.",
+    "comparison_units": "Mean absolute RGB channel error on the 0\u2013255 scale; lossy MP4 is not expected to be pixel-identical.",
+    "maximum_source_to_encoded_mean_absolute_RGB_error": 0.6803768518518518,
+    "maximum_extra_tail_generation_mean_absolute_RGB_error": 0.35598125
+  },
+  "root_owned_checks": "Root separately checks the local gallery and playback. This receipt does not claim to repeat browser or release-seal validation."
+}

@@ -1,0 +1,14 @@
+Next: controlled PbI₂ growth
+
+Suggested pace: 15 seconds.
+
+Next, we want to tune PbI₂’s mosaic spread and stacking sequence, then use the same diffraction model to compare the resulting films and connect their patterns to growth conditions.
+
+Sources and figure interpretation
+- Author handwritten page 3: C:/Users/Kenpo/Downloads/1587.jpg, final paragraph on growing PbI2 to control polytypism and mosaic/stacking-fault growth.
+- 4H parent illustration: figures/results_pbi2/transition_matrix/pbi2_polytype_stacks.png. This is a schematic extension, not an inferred population in B4.
+- No growth recipe, controlled growth trend or achieved causal control is claimed.
+
+Retain the author's future-growth motivation and the original ending's interpretation limits. No achieved growth control, recipe or measured causal trend is asserted.
+
+Retain the author's future-growth motivation and the original ending's interpretation limits. No achieved growth control, recipe or measured causal trend is asserted.

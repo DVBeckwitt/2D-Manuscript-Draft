@@ -1,0 +1,146 @@
+[
+  {
+    "part": "ppt/charts/chart9.xml",
+    "slides": [
+      26
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart9.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet8.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet8"
+      }
+    ],
+    "chart_text": [
+      "Left detector side",
+      "Net intensity",
+      "Qz (Å⁻¹)"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart10.xml",
+    "slides": [
+      26
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart10.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet9.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet9"
+      }
+    ],
+    "chart_text": [
+      "Right detector side",
+      "Net intensity",
+      "Qz (Å⁻¹)"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart3.xml",
+    "slides": [
+      16
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart3.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet2"
+      }
+    ],
+    "chart_text": [
+      "Bi₂Se₃",
+      "Density (deg⁻¹)",
+      "Absolute mosaic angle (°)"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart4.xml",
+    "slides": [
+      16
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart4.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet3"
+      }
+    ],
+    "chart_text": [
+      "Bi₂Te₃",
+      "Density (deg⁻¹)",
+      "Absolute mosaic angle (°)"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart5.xml",
+    "slides": [
+      17
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart5.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet4"
+      }
+    ],
+    "chart_text": [
+      "003 core",
+      "Counts / pixel",
+      "Nominal L"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart6.xml",
+    "slides": [
+      17
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart6.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet5"
+      }
+    ],
+    "chart_text": [
+      "Post-003 wing",
+      "Counts / pixel",
+      "Nominal L"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart7.xml",
+    "slides": [
+      18
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart7.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet6"
+      }
+    ],
+    "chart_text": [
+      "003 core",
+      "Counts / pixel",
+      "Nominal L"
+    ]
+  },
+  {
+    "part": "ppt/charts/chart8.xml",
+    "slides": [
+      18
+    ],
+    "archived_xml": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart8.xml",
+    "workbooks": [
+      {
+        "xlsx": "releases/2026-09-10_v9/data/native_chart_packages/ppt/embeddings/Microsoft_Excel_Worksheet7.xlsx",
+        "csv_directory": "releases/2026-09-10_v9/data/native_chart_csv/Microsoft_Excel_Worksheet7"
+      }
+    ],
+    "chart_text": [
+      "Post-003 wing",
+      "Counts / pixel",
+      "Nominal L"
+    ]
+  }
+]

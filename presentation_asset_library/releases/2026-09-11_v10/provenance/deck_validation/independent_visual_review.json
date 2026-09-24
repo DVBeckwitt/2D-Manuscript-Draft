@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "final_pptx_sha256": "14800b82faf4094013a0cfc4197fc4d0a9a2d2ad00243893f55c439e84326659",
+  "candidate_final_byte_identical": true,
+  "visually_inspected_slides": [
+    18,
+    19,
+    20
+  ],
+  "all_25_retained_slides_pixel_identical": true,
+  "new_slide_19": {
+    "composition": "One opening-frame image and embedded v3 movie filling the 16:9 slide",
+    "placement": "After Bi2Se3 end-plane comparison and before controlled PbI2 growth",
+    "title_and_labels_readable": true,
+    "no_added_overlay_or_crop": true,
+    "poster_size": [
+      1600,
+      900
+    ],
+    "slide_render_size": [
+      1920,
+      1080
+    ],
+    "title_top_dark_pixel_y_1920_render": 35,
+    "title_top_dark_pixel_y_1_2x_scaled_source": 35,
+    "title_margin_matches_scale": true,
+    "notes": "Suggested 30-second pace, one-click 26-second play, final hold; finite-thickness population assumption and qualitative-intensity scope stated",
+    "semantic_match": "Smooth v3 near-delta opening progresses through rods, azimuthal cylinders, mosaic tilt and Ewald selection"
+  },
+  "sdk_validation": "Independent whole-package Office2016 OpenXML SDK audit has zero errors; candidate and final bytes match",
+  "limitation": "Static ArtifactTool and package validation only; no PowerPoint application playback was performed"
+}

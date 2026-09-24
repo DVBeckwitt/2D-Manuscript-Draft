@@ -1,0 +1,107 @@
+{
+  "pass": true,
+  "check_count": 44,
+  "checks": [
+    "m0_x",
+    "m0_valid",
+    "m0_measured",
+    "m0_background",
+    "m0_model_total",
+    "m0_net_measured",
+    "m0_net_model",
+    "m1_minus_x",
+    "m1_minus_valid",
+    "m1_minus_measured",
+    "m1_minus_background",
+    "m1_minus_model_total",
+    "m1_minus_net_measured",
+    "m1_minus_net_model",
+    "m1_plus_x",
+    "m1_plus_valid",
+    "m1_plus_measured",
+    "m1_plus_background",
+    "m1_plus_model_total",
+    "m1_plus_net_measured",
+    "m1_plus_net_model",
+    "m3_minus_x",
+    "m3_minus_valid",
+    "m3_minus_measured",
+    "m3_minus_background",
+    "m3_minus_model_total",
+    "m3_minus_net_measured",
+    "m3_minus_net_model",
+    "m3_plus_x",
+    "m3_plus_valid",
+    "m3_plus_measured",
+    "m3_plus_background",
+    "m3_plus_model_total",
+    "m3_plus_net_measured",
+    "m3_plus_net_model",
+    "source_archive_hash",
+    "source_manifest_hash",
+    "se_axial_full_00l.png_hash",
+    "se_r1_minus.png_hash",
+    "se_r1_plus.png_hash",
+    "se_legend.png_hash",
+    "bi2se3_retained_profiles_direct.npz_hash",
+    "render_se_retained_profiles.py_hash",
+    "same_archived_mosaic_vector"
+  ],
+  "source_archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.ra_diag.npz",
+  "direct_arrays": {
+    "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\bi2se3_retained_profiles_direct.npz",
+    "sha256": "d3f87639c9b03d3c4479cc22f0b4c5b3952ece53255069cd6ad50d36e13b92d1"
+  },
+  "reviewed_figures": [
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_axial_full_00l.png",
+      "sha256": "5899c097fd6fe4e3d748a8c2e8060e9b2c84e0db2137d35c9b140d5410e043c7",
+      "pixels": [
+        2485,
+        642
+      ],
+      "bbox": [
+        25,
+        340,
+        2510,
+        982
+      ]
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_minus.png",
+      "sha256": "552e9b3866a4b3596cd318f096bfcc47ebb3de62571fb9bebe6f893631f6d729",
+      "pixels": [
+        1235,
+        579
+      ],
+      "bbox": [
+        25,
+        1038,
+        1260,
+        1617
+      ]
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_plus.png",
+      "sha256": "8695287a8a343694a38a515a7fe65ffcbf00639a38029ae458af1d4cb241cafb",
+      "pixels": [
+        1230,
+        579
+      ],
+      "bbox": [
+        1280,
+        1038,
+        2510,
+        1617
+      ]
+    }
+  ],
+  "visual_review": "All three requested final PNG panels individually viewed; no clipped labels, full axial range and unresolved 006 mismatch visible; matched off-axis y axes.",
+  "caveats_preserved": [
+    "No universal best claim",
+    "No transferred or invented error bars",
+    "Conditional optical stack",
+    "Retained Se and later Te analysis stages differ"
+  ],
+  "fit_or_source_mutation": false
+}

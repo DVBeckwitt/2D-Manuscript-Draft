@@ -1,0 +1,28 @@
+{
+  "schema": "oriented-powder-replot-verification.v1",
+  "material": "se",
+  "all_pixel_equal": true,
+  "comparisons": [
+    {
+      "output": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\asset_archive_work\\verified_se\\se\\se_axial_full_00l.png",
+      "reference": "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_axial_full_00l.png",
+      "pixel_equal": true
+    },
+    {
+      "output": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\asset_archive_work\\verified_se\\se\\se_r1_minus.png",
+      "reference": "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_minus.png",
+      "pixel_equal": true
+    },
+    {
+      "output": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\asset_archive_work\\verified_se\\se\\se_r1_plus.png",
+      "reference": "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_plus.png",
+      "pixel_equal": true
+    },
+    {
+      "output": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\asset_archive_work\\verified_se\\se\\se_legend.png",
+      "reference": "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_legend.png",
+      "pixel_equal": true
+    }
+  ],
+  "note": "Pixel identity depends on Matplotlib/Pillow/font versions. Data and checksums are authoritative across runtimes; outputs never overwrite the archived final."
+}

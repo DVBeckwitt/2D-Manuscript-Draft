@@ -1,0 +1,15 @@
+In-plane orientations
+
+Suggested pace: 20 seconds.
+
+Start with one aligned layer normal. As the in-plane orientation changes, off-axis reciprocal points trace rings while the 00L points stay on the normal. The animation reveals the available orientations. A real film contains many of them at once.
+
+Playback cue
+Click once to start the 8.4-second clip. Narrate during playback, hold the final frame, and advance manually.
+
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/sample_rotation_reciprocal_rings_indexed.mp4. The original MP4 is embedded without re-encoding.
+- Manuscript sections/modelling_methods.tex and sections/refinement_workflow.tex. Generic r=1 and L=1,2,3 schematic indices are not material-specific selection rules.
+- The moving sample illustrates the effect of changing in-plane orientation. The film can contain these orientations simultaneously without physically rotating during acquisition.
+
+Restored from v7 hidden slide 18 as main slide 2. Retain its 8.4-second indexed-rotation movie, original geometry, labels and source notes. The movement illustrates in-plane orientation averaging, not required physical specimen motion during acquisition. Narrate during playback and hold the final frame within the 20-second budget. The next main slide develops the crystallite population.

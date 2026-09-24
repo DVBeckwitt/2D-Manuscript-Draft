@@ -1,0 +1,113 @@
+schema_version = "slate-fit-recipe-v1"
+case_id = "bi2x3_signed_polar_line_refit"
+title = "Bi2Se3 and Bi2Te3 fixed-image signed-polar-line geometry, mosaic, and pure-CIF refit"
+study_id = "ornl-2024-07-25-bi2x3-signed-polar-line-refit"
+accepted_run_id = "bi2x3-signed-polar-line-refit-2026-09-03"
+specimens = ["Bi2Se3", "Bi2Te3"]
+
+[engine]
+repository_uri = "slate-bi2x3-refit://"
+commit = "ae02ee19946d5b5b1140b6b5a23d1b57b97c65aa"
+python_uri = "slate-bi2x3-refit://.venv/Scripts/python.exe"
+lock_uri = "slate-bi2x3-refit://uv.lock"
+lock_sha256 = "543d14f3bfeaa58a64ad0e55166242c3122ee805ea7feb9a921e4c2f749a1fd4"
+
+[geometry_contract]
+beam_center_column_row_px = [1453.12, 1596.422]
+beam_center_definition = "Nominal detector reference point; each film's direct-ray projection is archived separately after its local correction."
+training_images = ["fixed_5deg", "fixed_10deg"]
+conditional_holdout_images = ["fixed_15deg"]
+continuous_scans_used = false
+global_parameters = [
+  "detector_column_tilt_rad",
+  "detector_row_tilt_rad",
+  "detector_reference_column_offset_px",
+  "detector_reference_row_offset_px",
+  "detector_plane_normal_offset_m",
+]
+local_parameters_per_film = [
+  "sample_normal_x_tilt_rad",
+  "sample_normal_y_tilt_rad",
+  "sample_plane_normal_offset_m",
+]
+active_parameters = [
+  "detector_column_tilt_rad",
+  "detector_row_tilt_rad",
+  "detector_reference_column_offset_px",
+  "detector_reference_row_offset_px",
+  "detector_plane_normal_offset_m",
+  "bi2se3_sample_normal_x_tilt_rad",
+  "bi2se3_sample_normal_y_tilt_rad",
+  "bi2se3_sample_plane_normal_offset_m",
+  "bi2te3_sample_normal_x_tilt_rad",
+  "bi2te3_sample_normal_y_tilt_rad",
+  "bi2te3_sample_plane_normal_offset_m",
+]
+fixed_parameters = [
+  "goniometer_axis_pitch_rad",
+  "goniometer_axis_yaw_rad",
+  "goniometer_pivot_pitch_offset_m",
+  "goniometer_pivot_yaw_offset_m",
+  "incidence_angle_delta_rad",
+  "crystal_cell",
+]
+
+[scientific_claim]
+classification = "CORRECTED_SIGNED_POLAR_LINE_PURE_CIF_REFIT"
+canonical = false
+limitations = [
+  "The result is conditional on the fixed lattice, source, optics, detector, and peak-support contracts archived by the run.",
+  "The 15 degree images are conditional transfer checks: geometry, mosaic, support, and pure-CIF structure are frozen, while each image's common scale and affine sideband backgrounds are profiled.",
+  "Intensity scores use descriptive robust scales rather than a calibrated covariance likelihood.",
+  "The pure-CIF finite-stack structure is not refined: atomic coordinates, occupancies, displacement factors, disorder, and phase fractions remain fixed.",
+  "Detector-angle display acceleration may be used only after a deterministic selected-angle-support comparison bounds it against the exact general-CIF response; fitting and detector-native SF evidence remain exact general-CIF calculations.",
+]
+
+[replay]
+status = "CAPTURED_ONLY"
+reason = "The run-local executor, exact inputs, source snapshot, environment, stages, and figures are hash-bound, but this staged workflow is not exposed as a typed slate_project operation."
+
+[[stages]]
+id = "preprocess"
+status = "PLANNED"
+method = "Hash-bound fixed 5, 10, and 15 degree OSC decoding with the canonical once-only clockwise orientation; no continuous scans."
+
+[[stages]]
+id = "geometry"
+status = "PLANNED"
+method = "Joint five-global geometry across both films on 5 and 10 degree images, followed by three local parameters per film; 15 degrees is a conditional holdout."
+
+[[stages]]
+id = "mosaic"
+status = "PLANNED"
+method = "Signed m=1 rod-polar-line pseudo-Voigt shape fit with all-admitted paired-bootstrap, source, quadrature, radial-support, and fixed-state qualification gates."
+
+[[stages]]
+id = "ordered_intensity"
+status = "PLANNED"
+method = "Unmodified pure-CIF finite-stack response with one nonnegative scale per image shared by m=0 and m=1 and peak-local affine sideband backgrounds; no disorder or structure refinement."
+
+[[stages]]
+id = "render"
+status = "PLANNED"
+method = "Same-support detector-native, m=0, m=1, and -10<phi<10 plus 1<2theta<30 comparisons including the frozen radial background."
+
+[method]
+orientation = "m=0 folded alpha on [0,pi]; nonzero rods use signed delta on (-pi,pi] and full beta with declared spherical probability measures"
+geometry = "joint global calibration on Bi2Se3 and Bi2Te3 fixed 5/10 degree images, then film-local correction; 15 degree conditional holdout"
+mosaic = "m=1 shape only, with profile amplitudes and affine backgrounds treated as nuisance coordinates"
+structure_factor = "pure CIF, one shared image scale across m=0 and m=1, peak-local affine sideband backgrounds, grouped leave-(m,L)-out and source/quadrature convergence"
+display = "native detector and angle-coordinate comparisons using the same fixed geometry, mosaic, structure, normalization, and radial background"
+
+[constraints]
+global_geometry_parameter_count = 5
+local_geometry_parameter_count_per_film = 3
+profile_amplitudes_are_nuisance = true
+profile_background_is_affine_nuisance = true
+sf_scale_per_image = true
+sf_scale_shared_across_m0_m1 = true
+pure_cif = true
+structure_parameters_refitted = false
+disorder_fitted = false
+continuous_scans_used = false
+canonical_update = false

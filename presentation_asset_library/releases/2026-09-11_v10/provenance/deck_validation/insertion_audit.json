@@ -1,0 +1,154 @@
+{
+  "source": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\presentation_asset_library\\releases\\2026-09-10_v9\\presentation\\Oriented_Powder_8min_Animated_v9.pptx",
+  "candidate": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v10\\candidate.pptx",
+  "source_sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+  "candidate_sha256": "14800b82faf4094013a0cfc4197fc4d0a9a2d2ad00243893f55c439e84326659",
+  "insertion_index": 19,
+  "new_slide_part": "ppt/slides/slide34.xml",
+  "new_notes_part": "ppt/notesSlides/notesSlide34.xml",
+  "title": "From Bragg peaks to diffraction cylinders",
+  "old_slide_order_preserved": true,
+  "all_old_slides_notes_charts_workbooks_media_byte_preserved": true,
+  "changed_existing_parts": [
+    "[Content_Types].xml",
+    "ppt/presentation.xml",
+    "ppt/_rels/presentation.xml.rels",
+    "docProps/app.xml"
+  ],
+  "added_parts": [
+    "ppt/media/cylinder_v3_animation_01_4ba9e53e3bcf.mp4",
+    "ppt/media/cylinder_v3_image.png",
+    "ppt/notesSlides/_rels/notesSlide34.xml.rels",
+    "ppt/notesSlides/notesSlide34.xml",
+    "ppt/slides/_rels/slide34.xml.rels",
+    "ppt/slides/slide34.xml"
+  ],
+  "new_movie_sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+  "slide_mapping": [
+    {
+      "old": 1,
+      "new": 1,
+      "part": "ppt/slides/slide1.xml"
+    },
+    {
+      "old": 2,
+      "new": 2,
+      "part": "ppt/slides/slide2.xml"
+    },
+    {
+      "old": 3,
+      "new": 3,
+      "part": "ppt/slides/slide3.xml"
+    },
+    {
+      "old": 4,
+      "new": 4,
+      "part": "ppt/slides/slide4.xml"
+    },
+    {
+      "old": 5,
+      "new": 5,
+      "part": "ppt/slides/slide5.xml"
+    },
+    {
+      "old": 6,
+      "new": 6,
+      "part": "ppt/slides/slide6.xml"
+    },
+    {
+      "old": 7,
+      "new": 7,
+      "part": "ppt/slides/slide7.xml"
+    },
+    {
+      "old": 8,
+      "new": 8,
+      "part": "ppt/slides/slide8.xml"
+    },
+    {
+      "old": 9,
+      "new": 9,
+      "part": "ppt/slides/slide9.xml"
+    },
+    {
+      "old": 10,
+      "new": 10,
+      "part": "ppt/slides/slide10.xml"
+    },
+    {
+      "old": 11,
+      "new": 11,
+      "part": "ppt/slides/slide11.xml"
+    },
+    {
+      "old": 12,
+      "new": 12,
+      "part": "ppt/slides/slide32.xml"
+    },
+    {
+      "old": 13,
+      "new": 13,
+      "part": "ppt/slides/slide33.xml"
+    },
+    {
+      "old": 14,
+      "new": 14,
+      "part": "ppt/slides/slide13.xml"
+    },
+    {
+      "old": 15,
+      "new": 15,
+      "part": "ppt/slides/slide14.xml"
+    },
+    {
+      "old": 16,
+      "new": 16,
+      "part": "ppt/slides/slide15.xml"
+    },
+    {
+      "old": 17,
+      "new": 17,
+      "part": "ppt/slides/slide16.xml"
+    },
+    {
+      "old": 18,
+      "new": 18,
+      "part": "ppt/slides/slide17.xml"
+    },
+    {
+      "old": 19,
+      "new": 20,
+      "part": "ppt/slides/slide18.xml"
+    },
+    {
+      "old": 20,
+      "new": 21,
+      "part": "ppt/slides/slide19.xml"
+    },
+    {
+      "old": 21,
+      "new": 22,
+      "part": "ppt/slides/slide20.xml"
+    },
+    {
+      "old": 22,
+      "new": 23,
+      "part": "ppt/slides/slide21.xml"
+    },
+    {
+      "old": 23,
+      "new": 24,
+      "part": "ppt/slides/slide22.xml"
+    },
+    {
+      "old": 24,
+      "new": 25,
+      "part": "ppt/slides/slide23.xml"
+    },
+    {
+      "old": 25,
+      "new": 26,
+      "part": "ppt/slides/slide24.xml"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "errors": [],
+  "networkRequests": [],
+  "viewports": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false
+    }
+  ],
+  "videos": [
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+      "width": 1080,
+      "height": 1080,
+      "duration": 8.4,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+      "width": 1600,
+      "height": 800,
+      "duration": 17,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+      "width": 1600,
+      "height": 800,
+      "duration": 16,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+      "width": 1600,
+      "height": 800,
+      "duration": 18,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+      "width": 1600,
+      "height": 800,
+      "duration": 30.5,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 24,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+      "width": 1600,
+      "height": 800,
+      "duration": 24,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 18,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 24,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 14.2,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 14,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 14,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 14,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c.mp4",
+      "width": 1600,
+      "height": 900,
+      "duration": 18,
+      "readyState": 4
+    },
+    {
+      "src": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands.mp4",
+      "width": 1080,
+      "height": 1080,
+      "duration": 12,
+      "readyState": 4
+    }
+  ],
+  "initialVisible": 20,
+  "slidesVisible": 25,
+  "allFamilies": 31,
+  "emptyVisible": true,
+  "materialSearchCount": 5,
+  "jumpShowsSlide": true,
+  "playbackAdvanced": true,
+  "missingLocalPaths": [],
+  "withoutJavaScript": {
+    "families": 31,
+    "slides": 25
+  },
+  "ok": true
+}

@@ -1,0 +1,1374 @@
+{
+  "active_parameters": [
+    "bi_delta_z_fractional",
+    "outer_te_delta_z_fractional",
+    "outer_te_occupancy",
+    "bi_u_iso_A2",
+    "te_u_iso_A2"
+  ],
+  "bound_contacts": [
+    "te_u_iso_A2"
+  ],
+  "data_objective_half_chi_squared": 76109.86750926712,
+  "dataset_scales": {
+    "fixed_10deg": 196185833.8483047,
+    "fixed_15deg": 184416289.87961376,
+    "fixed_5deg": 160257027.54295388
+  },
+  "excluded_scan_acquisition_ids": [],
+  "experimental_interpretation": "PREDICTIVE_DIAGNOSTIC_NOT_WORSENED",
+  "first_order_optimality": 0.6414821561294106,
+  "fit_acquisition_ids": [
+    "fixed_5deg",
+    "fixed_10deg",
+    "fixed_15deg"
+  ],
+  "function_evaluations": 99,
+  "geometry_fixed": true,
+  "heldout_intensity_diagnostic": {
+    "baseline": {
+      "dataset_scales": {
+        "fixed_10deg": 179367963.30753246
+      },
+      "maximum_absolute_normalized_residual": 241.50605137315438,
+      "median_absolute_normalized_residual": 22.4100979612549,
+      "per_roi": [
+        {
+          "absolute_weighted_residual": 22.2284219523645,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L10.b2.s+1",
+          "weighted_residual": -22.2284219523645
+        },
+        {
+          "absolute_weighted_residual": 27.62030894867388,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L10.b2.s-1",
+          "weighted_residual": -27.62030894867388
+        },
+        {
+          "absolute_weighted_residual": 17.01176098768792,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L11.b2.s+1",
+          "weighted_residual": -17.01176098768792
+        },
+        {
+          "absolute_weighted_residual": 10.955467488430202,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L11.b2.s-1",
+          "weighted_residual": -10.955467488430202
+        },
+        {
+          "absolute_weighted_residual": 28.257297200272163,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L13.b2.s+1",
+          "weighted_residual": -28.257297200272163
+        },
+        {
+          "absolute_weighted_residual": 22.591773970145297,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L13.b2.s-1",
+          "weighted_residual": -22.591773970145297
+        },
+        {
+          "absolute_weighted_residual": 71.74569703648632,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L16.b2.s+1",
+          "weighted_residual": -71.74569703648632
+        },
+        {
+          "absolute_weighted_residual": 81.03761991644343,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L16.b2.s-1",
+          "weighted_residual": -81.03761991644343
+        },
+        {
+          "absolute_weighted_residual": 1.7260283630559172,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L4.b2.s+1",
+          "weighted_residual": 1.7260283630559172
+        },
+        {
+          "absolute_weighted_residual": 1.351767461413873,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L4.b2.s-1",
+          "weighted_residual": 1.351767461413873
+        },
+        {
+          "absolute_weighted_residual": 241.50605137315438,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L5.b2.s+1",
+          "weighted_residual": 241.50605137315438
+        },
+        {
+          "absolute_weighted_residual": 43.21934580206414,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L5.b2.s-1",
+          "weighted_residual": -43.21934580206414
+        },
+        {
+          "absolute_weighted_residual": 9.675430971048492,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L8.b2.s+1",
+          "weighted_residual": -9.675430971048492
+        },
+        {
+          "absolute_weighted_residual": 5.571233170549142,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L8.b2.s-1",
+          "weighted_residual": -5.571233170549142
+        }
+      ],
+      "roi_wrms": 73.1985334669485
+    },
+    "baseline_cif_parameters": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "baseline_definition": "unmodified CIF parameters with held-out image scale profiled",
+    "families_improved": [
+      "L11",
+      "L16"
+    ],
+    "families_worsened": [
+      "L4",
+      "L5",
+      "L8",
+      "L10",
+      "L13"
+    ],
+    "features_improved": [
+      "m1.L11.b2.s+1",
+      "m1.L11.b2.s-1",
+      "m1.L16.b2.s+1",
+      "m1.L16.b2.s-1",
+      "m1.L5.b2.s+1"
+    ],
+    "features_worsened": [
+      "m1.L10.b2.s+1",
+      "m1.L10.b2.s-1",
+      "m1.L13.b2.s+1",
+      "m1.L13.b2.s-1",
+      "m1.L4.b2.s+1",
+      "m1.L4.b2.s-1",
+      "m1.L5.b2.s-1",
+      "m1.L8.b2.s+1",
+      "m1.L8.b2.s-1"
+    ],
+    "fitted_structure": {
+      "dataset_scales": {
+        "fixed_10deg": 180293441.25170112
+      },
+      "maximum_absolute_normalized_residual": 240.7585381515358,
+      "median_absolute_normalized_residual": 22.499675677495468,
+      "per_roi": [
+        {
+          "absolute_weighted_residual": 22.378533606615576,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L10.b2.s+1",
+          "weighted_residual": -22.378533606615576
+        },
+        {
+          "absolute_weighted_residual": 27.768648989288693,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L10.b2.s-1",
+          "weighted_residual": -27.768648989288693
+        },
+        {
+          "absolute_weighted_residual": 16.203299650259567,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L11.b2.s+1",
+          "weighted_residual": -16.203299650259567
+        },
+        {
+          "absolute_weighted_residual": 10.154093796358922,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L11.b2.s-1",
+          "weighted_residual": -10.154093796358922
+        },
+        {
+          "absolute_weighted_residual": 28.289100016027206,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L13.b2.s+1",
+          "weighted_residual": -28.289100016027206
+        },
+        {
+          "absolute_weighted_residual": 22.62081774837536,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L13.b2.s-1",
+          "weighted_residual": -22.62081774837536
+        },
+        {
+          "absolute_weighted_residual": 70.05260961678198,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L16.b2.s+1",
+          "weighted_residual": -70.05260961678198
+        },
+        {
+          "absolute_weighted_residual": 79.27778566739993,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L16.b2.s-1",
+          "weighted_residual": -79.27778566739993
+        },
+        {
+          "absolute_weighted_residual": 1.755560123971188,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L4.b2.s+1",
+          "weighted_residual": 1.755560123971188
+        },
+        {
+          "absolute_weighted_residual": 1.407127995428521,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L4.b2.s-1",
+          "weighted_residual": 1.407127995428521
+        },
+        {
+          "absolute_weighted_residual": 240.7585381515358,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L5.b2.s+1",
+          "weighted_residual": 240.7585381515358
+        },
+        {
+          "absolute_weighted_residual": 44.481885431017304,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L5.b2.s-1",
+          "weighted_residual": -44.481885431017304
+        },
+        {
+          "absolute_weighted_residual": 9.903627664975488,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L8.b2.s+1",
+          "weighted_residual": -9.903627664975488
+        },
+        {
+          "absolute_weighted_residual": 5.778951589865869,
+          "acquisition_id": "fixed_10deg",
+          "feature_id": "m1.L8.b2.s-1",
+          "weighted_residual": -5.778951589865869
+        }
+      ],
+      "roi_wrms": 72.81174900803887
+    },
+    "fitted_training_parameters": [
+      0.00025632631738620637,
+      -7.858627993902058e-05,
+      0.9978188391379911,
+      0.0009738535876778268,
+      1.1975277385162664e-36
+    ],
+    "heldout_acquisition_id": "fixed_10deg",
+    "heldout_used_in_fit": false,
+    "materially_worsened": false,
+    "status": "COMPLETED",
+    "training_acquisition_ids": [
+      "fixed_15deg",
+      "fixed_5deg"
+    ],
+    "training_condition": 415.6174385573564,
+    "training_rank": 5,
+    "training_singular_values": [
+      30.3519874059092,
+      16.192512715568476,
+      3.5813485884997367,
+      0.26032631639085047,
+      0.07302866672597651
+    ]
+  },
+  "jacobian_evaluations": 86,
+  "model": "configured_ordered_structure",
+  "monte_carlo_used": false,
+  "mosaic_fixed": true,
+  "mosaic_values": {
+    "gaussian_sigma_deg": 0.18421818031306317,
+    "lorentzian_hwhm_deg": 0.11862065092662501,
+    "lorentzian_probability": 0.37354600908399255
+  },
+  "objective_half_chi_squared": 76109.86750926712,
+  "observation_mode": "measured_regions",
+  "occupancy_gauge": {
+    "reference_parameter": "bi_occupancy_reference",
+    "rule": "fixed_reference_occupancy"
+  },
+  "optimizer_message": "`ftol` termination condition is satisfied.",
+  "parameter_correlation": [
+    [
+      1.0,
+      0.5331957645944442,
+      -0.21294163085942497,
+      -0.011882251094609032,
+      -0.8877403321317292
+    ],
+    [
+      0.5331957645944397,
+      0.9999999999999998,
+      -0.9099763490009586,
+      0.8190730752221872,
+      -0.20690222572665465
+    ],
+    [
+      -0.21294163085942053,
+      -0.9099763490009574,
+      1.0000000000000002,
+      -0.9213508931025017,
+      -0.11728464908114614
+    ],
+    [
+      -0.011882251094613631,
+      0.8190730752221845,
+      -0.9213508931025001,
+      1.0,
+      0.336181819273141
+    ],
+    [
+      -0.8877403321317306,
+      -0.20690222572665945,
+      -0.11728464908114138,
+      0.3361818192731364,
+      1.0
+    ]
+  ],
+  "parameter_covariance": [
+    [
+      5.091175770691287e-07,
+      2.9287915789224844e-07,
+      -1.3608674311611206e-06,
+      -1.0562968645455135e-08,
+      -9.472540456580808e-07
+    ],
+    [
+      2.92879157892246e-07,
+      5.926324955338544e-07,
+      -6.274354237937288e-06,
+      7.855857554306154e-07,
+      -2.3819320334452805e-07
+    ],
+    [
+      -1.3608674311610922e-06,
+      -6.2743542379372796e-06,
+      8.022179920866216e-05,
+      -1.0281334279055806e-05,
+      -1.5709372713139221e-06
+    ],
+    [
+      -1.0562968645459223e-08,
+      7.855857554306127e-07,
+      -1.0281334279055788e-05,
+      1.5522313087124587e-06,
+      6.263598543316929e-07
+    ],
+    [
+      -9.472540456580824e-07,
+      -2.3819320334453355e-07,
+      -1.5709372713138584e-06,
+      6.263598543316843e-07,
+      2.236366323408732e-06
+    ]
+  ],
+  "parameter_declarations": [
+    {
+      "bounds": [
+        -0.01,
+        0.01
+      ],
+      "description": "Explicit site fractional shift for CIF sites Bi",
+      "gauge_role": null,
+      "initial": 0.0,
+      "name": "bi_delta_z_fractional",
+      "optimizer_scale": 0.001,
+      "owner": "configured_ordered_structure",
+      "refine": true,
+      "units": "fractional"
+    },
+    {
+      "bounds": [
+        -0.01,
+        0.01
+      ],
+      "description": "Explicit site fractional shift for CIF sites Te2",
+      "gauge_role": null,
+      "initial": 0.0,
+      "name": "outer_te_delta_z_fractional",
+      "optimizer_scale": 0.001,
+      "owner": "configured_ordered_structure",
+      "refine": true,
+      "units": "fractional"
+    },
+    {
+      "bounds": [
+        0.97,
+        1.0
+      ],
+      "description": "Explicit site occupancy for CIF sites Te2",
+      "gauge_role": null,
+      "initial": 0.99,
+      "name": "outer_te_occupancy",
+      "optimizer_scale": 0.01,
+      "owner": "configured_ordered_structure",
+      "refine": true,
+      "units": "fraction"
+    },
+    {
+      "bounds": [
+        0.0,
+        0.1
+      ],
+      "description": "Explicit site u iso A2 for CIF sites Bi",
+      "gauge_role": null,
+      "initial": 0.0205,
+      "name": "bi_u_iso_A2",
+      "optimizer_scale": 0.01,
+      "owner": "configured_ordered_structure",
+      "refine": true,
+      "units": "A^2"
+    },
+    {
+      "bounds": [
+        0.0,
+        0.1
+      ],
+      "description": "Explicit site u iso A2 for CIF sites Te1, Te2",
+      "gauge_role": null,
+      "initial": 0.02,
+      "name": "te_u_iso_A2",
+      "optimizer_scale": 0.01,
+      "owner": "configured_ordered_structure",
+      "refine": true,
+      "units": "A^2"
+    }
+  ],
+  "parameter_standard_uncertainty": [
+    0.0007135247557507228,
+    0.0007698262762038293,
+    0.008956662280596614,
+    0.0012458857526725549,
+    0.0014954485358609744
+  ],
+  "parameter_values": {
+    "bi_delta_z_fractional": 0.0024896673500804482,
+    "bi_u_iso_A2": 0.02192871987025472,
+    "outer_te_delta_z_fractional": -0.0012930770103042476,
+    "outer_te_occupancy": 0.9999971523208574,
+    "te_u_iso_A2": 4.38023632448476e-37
+  },
+  "per_family": {
+    "L10": {
+      "maximum_absolute_weighted_residual": 92.86444417182145,
+      "median_absolute_weighted_residual": 23.83778224285774,
+      "roi_count": 6,
+      "weighted_rms": 42.0655074645943
+    },
+    "L11": {
+      "maximum_absolute_weighted_residual": 33.62102723453498,
+      "median_absolute_weighted_residual": 9.79462557346693,
+      "roi_count": 6,
+      "weighted_rms": 19.22649973979909
+    },
+    "L13": {
+      "maximum_absolute_weighted_residual": 24.430019021833886,
+      "median_absolute_weighted_residual": 10.38354243096877,
+      "roi_count": 6,
+      "weighted_rms": 14.759400017087147
+    },
+    "L16": {
+      "maximum_absolute_weighted_residual": 42.224683506278126,
+      "median_absolute_weighted_residual": 29.131542276948835,
+      "roi_count": 4,
+      "weighted_rms": 30.50030914886321
+    },
+    "L4": {
+      "maximum_absolute_weighted_residual": 5.80449604355011,
+      "median_absolute_weighted_residual": 3.206272410937843,
+      "roi_count": 4,
+      "weighted_rms": 3.932459613451357
+    },
+    "L5": {
+      "maximum_absolute_weighted_residual": 223.58082960616582,
+      "median_absolute_weighted_residual": 198.45077139480594,
+      "roi_count": 4,
+      "weighted_rms": 183.14565781555083
+    },
+    "L8": {
+      "maximum_absolute_weighted_residual": 9.604787371465434,
+      "median_absolute_weighted_residual": 1.159161421772172,
+      "roi_count": 6,
+      "weighted_rms": 4.57245609499528
+    }
+  },
+  "per_image": {
+    "fixed_10deg": {
+      "maximum_absolute_weighted_residual": 223.58082960616582,
+      "median_absolute_weighted_residual": 20.12740717416439,
+      "roi_count": 14,
+      "weighted_rms": 65.82188683469052
+    },
+    "fixed_15deg": {
+      "maximum_absolute_weighted_residual": 23.909519022957383,
+      "median_absolute_weighted_residual": 9.282866062956732,
+      "roi_count": 10,
+      "weighted_rms": 11.114746312020836
+    },
+    "fixed_5deg": {
+      "maximum_absolute_weighted_residual": 200.7684443018295,
+      "median_absolute_weighted_residual": 18.476272158699217,
+      "roi_count": 12,
+      "weighted_rms": 86.76071891127977
+    }
+  },
+  "per_roi": [
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L10.b2.s+1",
+      "measured_count": 630529.470899471,
+      "predicted_background_count": 30981.787376331027,
+      "predicted_signal_count": 521203.41726915364,
+      "signal_family": 0,
+      "weighted_residual": 92.86444417182145
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L10.b2.s-1",
+      "measured_count": 632917.3121693123,
+      "predicted_background_count": 28478.23893307346,
+      "predicted_signal_count": 580998.7847749222,
+      "signal_family": 1,
+      "weighted_residual": 27.731522786876553
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L11.b2.s+1",
+      "measured_count": 99178.34920634917,
+      "predicted_background_count": 14371.354855761883,
+      "predicted_signal_count": 73460.14283850469,
+      "signal_family": 2,
+      "weighted_residual": 29.24439157515897
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L11.b2.s-1",
+      "measured_count": 96339.8095238095,
+      "predicted_background_count": 13573.279672547465,
+      "predicted_signal_count": 69798.70373977136,
+      "signal_family": 3,
+      "weighted_residual": 33.62102723453498
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L13.b2.s+1",
+      "measured_count": 42601.80952380951,
+      "predicted_background_count": 10759.398900231232,
+      "predicted_signal_count": 33828.03835003303,
+      "signal_family": 4,
+      "weighted_residual": -6.606560143051524
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L13.b2.s-1",
+      "measured_count": 44899.31216931216,
+      "predicted_background_count": 10974.02428584229,
+      "predicted_signal_count": 36786.5116445497,
+      "signal_family": 5,
+      "weighted_residual": -9.221021530521881
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L4.b2.s+1",
+      "measured_count": 24580.756613756617,
+      "predicted_background_count": 17947.197601054577,
+      "predicted_signal_count": 7582.549081337981,
+      "signal_family": 6,
+      "weighted_residual": -3.3901671342411497
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L4.b2.s-1",
+      "measured_count": 25156.439153439154,
+      "predicted_background_count": 18794.879487737766,
+      "predicted_signal_count": 4710.979606260133,
+      "signal_family": 7,
+      "weighted_residual": 5.80449604355011
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L5.b2.s+1",
+      "measured_count": 944754.7566137565,
+      "predicted_background_count": 28319.079717131925,
+      "predicted_signal_count": 1118899.7064351977,
+      "signal_family": 8,
+      "weighted_residual": -200.7684443018295
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L5.b2.s-1",
+      "measured_count": 927574.2857142857,
+      "predicted_background_count": 31026.66639436595,
+      "predicted_signal_count": 699524.1221695391,
+      "signal_family": 9,
+      "weighted_residual": 196.13309848778238
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L8.b2.s+1",
+      "measured_count": 38354.29629629629,
+      "predicted_background_count": 14619.14321350339,
+      "predicted_signal_count": 23953.67073568967,
+      "signal_family": 10,
+      "weighted_residual": -0.7276588737075826
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "feature_id": "m1.L8.b2.s-1",
+      "measured_count": 37746.3492063492,
+      "predicted_background_count": 14932.84662092392,
+      "predicted_signal_count": 22732.24488993935,
+      "signal_family": 11,
+      "weighted_residual": 0.26186629981899046
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L10.b2.s+1",
+      "measured_count": 322146.2380952381,
+      "predicted_background_count": 14619.616359336076,
+      "predicted_signal_count": 320322.0380192969,
+      "signal_family": 12,
+      "weighted_residual": -21.132450190650445
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L10.b2.s-1",
+      "measured_count": 315329.2698412698,
+      "predicted_background_count": 17397.931132067017,
+      "predicted_signal_count": 313901.8797403092,
+      "signal_family": 13,
+      "weighted_residual": -26.54311429506504
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L11.b2.s+1",
+      "measured_count": 50152.206349206346,
+      "predicted_background_count": 7807.73348929757,
+      "predicted_signal_count": 42094.50246002509,
+      "signal_family": 14,
+      "weighted_residual": 0.8577786487844605
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L11.b2.s-1",
+      "measured_count": 49424.238095238084,
+      "predicted_background_count": 7113.101728326883,
+      "predicted_signal_count": 40404.715071903156,
+      "signal_family": 15,
+      "weighted_residual": 6.760585991674446
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L13.b2.s+1",
+      "measured_count": 22293.75661375661,
+      "predicted_background_count": 5705.978526417274,
+      "predicted_signal_count": 22110.099857251123,
+      "signal_family": 16,
+      "weighted_residual": -24.430019021833886
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L13.b2.s-1",
+      "measured_count": 22783.571428571428,
+      "predicted_background_count": 5990.448659259956,
+      "predicted_signal_count": 21402.41499762375,
+      "signal_family": 17,
+      "weighted_residual": -19.122364157678334
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L16.b2.s+1",
+      "measured_count": 44787.29629629629,
+      "predicted_background_count": 9818.992167839153,
+      "predicted_signal_count": 45202.180345224,
+      "signal_family": 18,
+      "weighted_residual": -34.35356553094029
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L16.b2.s-1",
+      "measured_count": 43523.29629629629,
+      "predicted_background_count": 9824.050964229846,
+      "predicted_signal_count": 46059.42338131774,
+      "signal_family": 19,
+      "weighted_residual": -42.224683506278126
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L4.b2.s+1",
+      "measured_count": 15703.269841269841,
+      "predicted_background_count": 12990.89061315107,
+      "predicted_signal_count": 2043.6521509787817,
+      "signal_family": 20,
+      "weighted_residual": 2.745319661044075
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L4.b2.s-1",
+      "measured_count": 14198.883597883598,
+      "predicted_background_count": 10989.807726959029,
+      "predicted_signal_count": 2535.6673021280712,
+      "signal_family": 21,
+      "weighted_residual": 3.0223776876345365
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L5.b2.s+1",
+      "measured_count": 463919.66666666657,
+      "predicted_background_count": 14266.18511034115,
+      "predicted_signal_count": 290934.2106826917,
+      "signal_family": 22,
+      "weighted_residual": 223.58082960616582
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L5.b2.s-1",
+      "measured_count": 450866.4444444444,
+      "predicted_background_count": 16295.060549892916,
+      "predicted_signal_count": 486134.47325911757,
+      "signal_family": 23,
+      "weighted_residual": -73.51720879894049
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L8.b2.s+1",
+      "measured_count": 19887.883597883592,
+      "predicted_background_count": 8649.307739793483,
+      "predicted_signal_count": 13459.981027528163,
+      "signal_family": 24,
+      "weighted_residual": -9.604787371465434
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "feature_id": "m1.L8.b2.s-1",
+      "measured_count": 19269.883597883592,
+      "predicted_background_count": 8253.219156794636,
+      "predicted_signal_count": 12270.036100051631,
+      "signal_family": 25,
+      "weighted_residual": -5.482653497484378
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L10.b2.s+1",
+      "measured_count": 211140.20634920633,
+      "predicted_background_count": 11396.783774601696,
+      "predicted_signal_count": 195471.74198993028,
+      "signal_family": 26,
+      "weighted_residual": 8.527813029489153
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L10.b2.s-1",
+      "measured_count": 209817.26984126982,
+      "predicted_background_count": 10907.96856771264,
+      "predicted_signal_count": 198610.17238260616,
+      "signal_family": 27,
+      "weighted_residual": 0.598497698826975
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L11.b2.s+1",
+      "measured_count": 35097.206349206346,
+      "predicted_background_count": 6311.103245583874,
+      "predicted_signal_count": 25462.381492690638,
+      "signal_family": 28,
+      "weighted_residual": 12.828665155259415
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L11.b2.s-1",
+      "measured_count": 33881.23809523809,
+      "predicted_background_count": 6192.25435382695,
+      "predicted_signal_count": 26521.491028415396,
+      "signal_family": 29,
+      "weighted_residual": 4.617995856807667
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L13.b2.s+1",
+      "measured_count": 15931.439153439154,
+      "predicted_background_count": 5082.972454823221,
+      "predicted_signal_count": 13194.862010256142,
+      "signal_family": 30,
+      "weighted_residual": -10.72916576551323
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L13.b2.s-1",
+      "measured_count": 15504.756613756614,
+      "predicted_background_count": 4556.378317582159,
+      "predicted_signal_count": 13083.951506106881,
+      "signal_family": 31,
+      "weighted_residual": -10.03791909642431
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L16.b2.s+1",
+      "measured_count": 30126.296296296292,
+      "predicted_background_count": 5786.861949185083,
+      "predicted_signal_count": 27873.329032539474,
+      "signal_family": 32,
+      "weighted_residual": -13.649870728391136
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L16.b2.s-1",
+      "measured_count": 27867.285714285714,
+      "predicted_background_count": 6286.668170911012,
+      "predicted_signal_count": 27572.590872975794,
+      "signal_family": 33,
+      "weighted_residual": -23.909519022957383
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L8.b2.s+1",
+      "measured_count": 15142.883597883596,
+      "predicted_background_count": 7912.334111275008,
+      "predicted_signal_count": 6890.9291637171345,
+      "signal_family": 34,
+      "weighted_residual": 1.5906639698367613
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "feature_id": "m1.L8.b2.s-1",
+      "measured_count": 13824.888888888887,
+      "predicted_background_count": 6341.02550023277,
+      "predicted_signal_count": 7470.067427629938,
+      "signal_family": 35,
+      "weighted_residual": 0.06652337193952462
+    }
+  ],
+  "radial_background": {
+    "input_measure": "raw_minus_pedestal_scaled_dark.v1",
+    "parameter_covariance_propagated": true,
+    "revision": "sha256-c2efd5092c77423cd5760d2154044e5c7992bb606760e0cfdfe17cad85454f0f",
+    "status": "APPLIED",
+    "subtracted_exactly_once_by": "fixed_baseline_before_adjacent_anchor_conditioning"
+  },
+  "roi_audit": [
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        261,
+        232
+      ],
+      "feature_id": "m1.L10.b2.s+1",
+      "signal_center_column_row_px": [
+        1105.655822996011,
+        1130.8689234557942
+      ],
+      "signal_pixel_count": 841,
+      "signal_row": 0
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        279,
+        279
+      ],
+      "feature_id": "m1.L10.b2.s-1",
+      "signal_center_column_row_px": [
+        1814.977838367963,
+        1124.919772494866
+      ],
+      "signal_pixel_count": 961,
+      "signal_row": 3
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        270,
+        270
+      ],
+      "feature_id": "m1.L11.b2.s+1",
+      "signal_center_column_row_px": [
+        1104.087088253801,
+        1066.7935023083216
+      ],
+      "signal_pixel_count": 870,
+      "signal_row": 6
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        270,
+        270
+      ],
+      "feature_id": "m1.L11.b2.s-1",
+      "signal_center_column_row_px": [
+        1816.596712014912,
+        1059.8202180877506
+      ],
+      "signal_pixel_count": 900,
+      "signal_row": 9
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        270,
+        270
+      ],
+      "feature_id": "m1.L13.b2.s+1",
+      "signal_center_column_row_px": [
+        1108.217459059483,
+        914.747578773261
+      ],
+      "signal_pixel_count": 900,
+      "signal_row": 12
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        279,
+        279
+      ],
+      "feature_id": "m1.L13.b2.s-1",
+      "signal_center_column_row_px": [
+        1813.9963340653958,
+        906.1897769707072
+      ],
+      "signal_pixel_count": 961,
+      "signal_row": 15
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        175,
+        175
+      ],
+      "feature_id": "m1.L4.b2.s+1",
+      "signal_center_column_row_px": [
+        1124.198657953604,
+        1432.9467404890806
+      ],
+      "signal_pixel_count": 625,
+      "signal_row": 18
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        182,
+        208
+      ],
+      "feature_id": "m1.L4.b2.s-1",
+      "signal_center_column_row_px": [
+        1791.6647730839034,
+        1433.568244255177
+      ],
+      "signal_pixel_count": 676,
+      "signal_row": 21
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        175,
+        175
+      ],
+      "feature_id": "m1.L5.b2.s+1",
+      "signal_center_column_row_px": [
+        1121.0795263684174,
+        1388.7080410678313
+      ],
+      "signal_pixel_count": 625,
+      "signal_row": 24
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        216,
+        189
+      ],
+      "feature_id": "m1.L5.b2.s-1",
+      "signal_center_column_row_px": [
+        1794.6677636648972,
+        1388.7454873485033
+      ],
+      "signal_pixel_count": 729,
+      "signal_row": 27
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        224,
+        224
+      ],
+      "feature_id": "m1.L8.b2.s+1",
+      "signal_center_column_row_px": [
+        1111.532876574102,
+        1244.520590080001
+      ],
+      "signal_pixel_count": 784,
+      "signal_row": 30
+    },
+    {
+      "acquisition_id": "fixed_5deg",
+      "background_pixel_count": [
+        261,
+        232
+      ],
+      "feature_id": "m1.L8.b2.s-1",
+      "signal_center_column_row_px": [
+        1807.3324315185616,
+        1241.002025407419
+      ],
+      "signal_pixel_count": 870,
+      "signal_row": 33
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        168,
+        168
+      ],
+      "feature_id": "m1.L10.b2.s+1",
+      "signal_center_column_row_px": [
+        1092.1339645682633,
+        1144.1615225071937
+      ],
+      "signal_pixel_count": 576,
+      "signal_row": 36
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        168,
+        168
+      ],
+      "feature_id": "m1.L10.b2.s-1",
+      "signal_center_column_row_px": [
+        1830.0096635528885,
+        1139.693176110594
+      ],
+      "signal_pixel_count": 552,
+      "signal_row": 39
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        168,
+        168
+      ],
+      "feature_id": "m1.L11.b2.s+1",
+      "signal_center_column_row_px": [
+        1085.9651745205247,
+        1082.6671440133848
+      ],
+      "signal_pixel_count": 600,
+      "signal_row": 42
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        168,
+        192
+      ],
+      "feature_id": "m1.L11.b2.s-1",
+      "signal_center_column_row_px": [
+        1837.6399159293608,
+        1076.3879231235803
+      ],
+      "signal_pixel_count": 576,
+      "signal_row": 45
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        200,
+        200
+      ],
+      "feature_id": "m1.L13.b2.s+1",
+      "signal_center_column_row_px": [
+        1075.0629250835393,
+        939.882069314338
+      ],
+      "signal_pixel_count": 625,
+      "signal_row": 48
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        182,
+        208
+      ],
+      "feature_id": "m1.L13.b2.s-1",
+      "signal_center_column_row_px": [
+        1851.0999719314775,
+        929.5287752403515
+      ],
+      "signal_pixel_count": 702,
+      "signal_row": 51
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        224,
+        224
+      ],
+      "feature_id": "m1.L16.b2.s+1",
+      "signal_center_column_row_px": [
+        1080.3051811963487,
+        642.4637775143945
+      ],
+      "signal_pixel_count": 784,
+      "signal_row": 54
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        252,
+        224
+      ],
+      "feature_id": "m1.L16.b2.s-1",
+      "signal_center_column_row_px": [
+        1850.3271673268703,
+        626.1020216457697
+      ],
+      "signal_pixel_count": 784,
+      "signal_row": 57
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        138,
+        161
+      ],
+      "feature_id": "m1.L4.b2.s+1",
+      "signal_center_column_row_px": [
+        1122.6204388045649,
+        1437.7472492506504
+      ],
+      "signal_pixel_count": 552,
+      "signal_row": 60
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        161,
+        161
+      ],
+      "feature_id": "m1.L4.b2.s-1",
+      "signal_center_column_row_px": [
+        1792.9710744635865,
+        1439.5960044179517
+      ],
+      "signal_pixel_count": 529,
+      "signal_row": 63
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        126,
+        126
+      ],
+      "feature_id": "m1.L5.b2.s+1",
+      "signal_center_column_row_px": [
+        1118.9792708782468,
+        1394.8534877546276
+      ],
+      "signal_pixel_count": 441,
+      "signal_row": 66
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        126,
+        126
+      ],
+      "feature_id": "m1.L5.b2.s-1",
+      "signal_center_column_row_px": [
+        1797.488399820459,
+        1396.1246608624992
+      ],
+      "signal_pixel_count": 420,
+      "signal_row": 69
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        138,
+        161
+      ],
+      "feature_id": "m1.L8.b2.s+1",
+      "signal_center_column_row_px": [
+        1104.2562761320294,
+        1253.820015598587
+      ],
+      "signal_pixel_count": 529,
+      "signal_row": 72
+    },
+    {
+      "acquisition_id": "fixed_10deg",
+      "background_pixel_count": [
+        138,
+        161
+      ],
+      "feature_id": "m1.L8.b2.s-1",
+      "signal_center_column_row_px": [
+        1815.2656056461826,
+        1251.9523186170904
+      ],
+      "signal_pixel_count": 529,
+      "signal_row": 75
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        175,
+        175
+      ],
+      "feature_id": "m1.L10.b2.s+1",
+      "signal_center_column_row_px": [
+        1083.604167483229,
+        1153.0444028219435
+      ],
+      "signal_pixel_count": 600,
+      "signal_row": 78
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        138,
+        161
+      ],
+      "feature_id": "m1.L10.b2.s-1",
+      "signal_center_column_row_px": [
+        1840.9030096370932,
+        1150.052530133414
+      ],
+      "signal_pixel_count": 552,
+      "signal_row": 81
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        168,
+        168
+      ],
+      "feature_id": "m1.L11.b2.s+1",
+      "signal_center_column_row_px": [
+        1073.8764878426548,
+        1093.3198111566223
+      ],
+      "signal_pixel_count": 600,
+      "signal_row": 84
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        168,
+        168
+      ],
+      "feature_id": "m1.L11.b2.s-1",
+      "signal_center_column_row_px": [
+        1852.209381240185,
+        1088.8592977765209
+      ],
+      "signal_pixel_count": 576,
+      "signal_row": 87
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        182,
+        208
+      ],
+      "feature_id": "m1.L13.b2.s+1",
+      "signal_center_column_row_px": [
+        1052.7972558877436,
+        955.8293154112487
+      ],
+      "signal_pixel_count": 676,
+      "signal_row": 90
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        175,
+        175
+      ],
+      "feature_id": "m1.L13.b2.s-1",
+      "signal_center_column_row_px": [
+        1877.0646931197512,
+        947.1763605626621
+      ],
+      "signal_pixel_count": 625,
+      "signal_row": 93
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        224,
+        224
+      ],
+      "feature_id": "m1.L16.b2.s+1",
+      "signal_center_column_row_px": [
+        1021.4708469159439,
+        673.62052398831
+      ],
+      "signal_pixel_count": 784,
+      "signal_row": 96
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        216,
+        216
+      ],
+      "feature_id": "m1.L16.b2.s-1",
+      "signal_center_column_row_px": [
+        1916.1638786337064,
+        655.2575022466715
+      ],
+      "signal_pixel_count": 729,
+      "signal_row": 99
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        161,
+        161
+      ],
+      "feature_id": "m1.L8.b2.s+1",
+      "signal_center_column_row_px": [
+        1099.9757631790835,
+        1260.1558708005525
+      ],
+      "signal_pixel_count": 529,
+      "signal_row": 102
+    },
+    {
+      "acquisition_id": "fixed_15deg",
+      "background_pixel_count": [
+        126,
+        126
+      ],
+      "feature_id": "m1.L8.b2.s-1",
+      "signal_center_column_row_px": [
+        1821.1998812313382,
+        1259.8455746235575
+      ],
+      "signal_pixel_count": 462,
+      "signal_row": 105
+    }
+  ],
+  "roi_definition": "prepared signal box plus fixed left/right sideband boxes",
+  "schema_version": "diffraction-project-structure-fit-v2",
+  "sensitivity_condition": 46.79639438512267,
+  "sensitivity_numerical_rank": 5,
+  "sensitivity_rank": 5,
+  "sensitivity_singular_values": [
+    39.00138494554638,
+    20.395757674875266,
+    7.306548314763074,
+    1.4427968594366665,
+    0.833427135957841
+  ],
+  "status": "CONVERGED",
+  "success": true,
+  "synthetic_recovery": null,
+  "unsupported_channels": []
+}

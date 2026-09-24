@@ -1,0 +1,13 @@
+Bi2Se3: the full axial profile
+Suggested pace: 30 seconds.
+The axial comparison includes the low-angle reflectivity and the full measured angular range. The calculation captures the strong 003 feature, but differences remain in its wings and the higher orders. In particular, 006 is still too weak in this retained model. This is where the model needs further refinement.
+Scientific source and scope:
+Bi2Se3 at nominal 5-degree incidence. Direct measured and calculated arrays, preserved without smoothing, peak rescaling or reconstruction.
+The complete retained September 5 profile state uses the September 3 mosaic_final core plus its compatible low-angle Parratt-to-kinematic restoration. The same source geometry, mosaic, finite stack and one intensity scale apply across the Se branches. These core and optical parameters also underlie the retained Se detector images and parameter-table entry.
+Selection is the best documented coherent retained full-profile state among the audited candidates, not a proven global optimum across incompatible historical objectives and observation operators. The later September 9 termination trial improves its post-003 wing but worsens overall axial and off-axis agreement. No new fit or hybrid of different selected states was made.
+The full axial curve includes low-angle reflectivity. The 006 peak remains substantially underestimated, approximately 15 calculated versus 162 measured net counts per pixel area. No unique mosaic or termination determination, uncertainty interval, or all-peak agreement is claimed.
+Measured minus the archived empirical background is dark blue, with circles at the original evaluated bins. The calculated diffraction signal is orange. The asinh scale retains actual negative values. Missing bins remain missing. This archive does not provide compatible count/background uncertainties, so no error bars are invented or borrowed from another analysis.
+The preserved Te profiles are a later September 10 spatial-integration diagnostic state. The materials share the visual comparison format but not an identical optimization stage. The subsequent termination-sensitivity slides remain separate conditional trials.
+Source arrays: C:\Users\Kenpo\.codex\visualizations\2026\09\05\specular_restore\bi2se3_specular.ra_diag.npz; SHA256 f70d1d8e6efcbfb55f5db0223a9aacb4644979ae466e7d4c27871ad0c5e29613
+Source record: C:\Users\Kenpo\.codex\visualizations\2026\09\05\specular_restore\bi2se3_specular.json; SHA256 1e774a78ff888d1f5de510174fa159282f93f921ae5d91187ab7f7c984e39ee9
+Private plotting provenance: C:\Users\Kenpo\Nextcloud\Git Projects\2D-Manuscript-Draft\build_codex\slate_talk\animated_deck_v9\figures\se_retained\se_retained_profiles_manifest.private.json

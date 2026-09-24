@@ -1,0 +1,104 @@
+{
+  "chart_count": 8,
+  "embedded_workbook_count": 8,
+  "tables": [
+    {
+      "slide": "ppt/slides/slide15.xml",
+      "count": 1,
+      "rows": [
+        10
+      ]
+    }
+  ],
+  "timing": [
+    {
+      "slide": "ppt/slides/slide2.xml",
+      "targets": [
+        "8",
+        "8"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    },
+    {
+      "slide": "ppt/slides/slide3.xml",
+      "targets": [
+        "4",
+        "4"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    },
+    {
+      "slide": "ppt/slides/slide4.xml",
+      "targets": [
+        "4",
+        "4"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    },
+    {
+      "slide": "ppt/slides/slide5.xml",
+      "targets": [
+        "4",
+        "4"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    },
+    {
+      "slide": "ppt/slides/slide6.xml",
+      "targets": [
+        "4",
+        "4"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    },
+    {
+      "slide": "ppt/slides/slide16.xml",
+      "targets": [
+        "16",
+        "16"
+      ],
+      "all_targets_valid": true,
+      "animEffects": [
+        {
+          "filter": "fade",
+          "transition": "out",
+          "durations": [
+            "400"
+          ]
+        }
+      ]
+    },
+    {
+      "slide": "ppt/slides/slide17.xml",
+      "targets": [
+        "16",
+        "16"
+      ],
+      "all_targets_valid": true,
+      "animEffects": [
+        {
+          "filter": "fade",
+          "transition": "out",
+          "durations": [
+            "400"
+          ]
+        }
+      ]
+    },
+    {
+      "slide": "ppt/slides/slide22.xml",
+      "targets": [
+        "6",
+        "6"
+      ],
+      "all_targets_valid": true,
+      "animEffects": []
+    }
+  ],
+  "pass": true
+}

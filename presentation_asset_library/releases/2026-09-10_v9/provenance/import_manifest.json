@@ -1,0 +1,2148 @@
+{
+  "schema_version": 1,
+  "release_id": "2026-09-10_v9",
+  "presentation": {
+    "path": "releases/2026-09-10_v9/presentation/Oriented_Powder_8min_Animated_v9.pptx",
+    "sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+    "bytes": 13310844,
+    "slide_count": 25
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "A PbI₂ growth problem",
+      "texts": [
+        "A PbI₂ growth problem",
+        "Earlier reflectivity",
+        "Area-detector diffraction",
+        "The full detector pattern needed a physical explanation"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide1.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-01.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-01-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image2.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 2,
+      "title": "In-plane orientations",
+      "texts": [
+        "In-plane orientations",
+        "Bi₂Se₃ and Bi₂Te₃",
+        "Points become rings"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide2.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-02.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-02-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image3.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 3,
+      "title": "Many crystallites, one pattern",
+      "texts": [
+        "Many crystallites, one pattern"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide3.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-03.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-03-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image4.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 4,
+      "title": "Ewald intersections and mosaic spread",
+      "texts": [
+        "Ewald intersections and mosaic spread"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide4.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-04.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-04-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image5.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 5,
+      "title": "Ewald surface to detector",
+      "texts": [
+        "Ewald surface to detector"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide5.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-05.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-05-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image6.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 6,
+      "title": "Mosaic tails in angular coordinates",
+      "texts": [
+        "Mosaic tails in angular coordinates"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide6.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-06.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-06-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image7.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 7,
+      "title": "Incidence selects Bi₂Se₃ reflections",
+      "texts": [
+        "Incidence selects Bi₂Se₃ reflections",
+        "Illustrative mosaic: 50% Lorentzian"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide7.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-07.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-07-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image8.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 8,
+      "title": "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+      "texts": [
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+        "R=1",
+        "R=0"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide8.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-08.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-08-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 9,
+      "title": "Specular (r=0)",
+      "texts": [
+        "Specular (r=0)",
+        "Incident angle 5°. "
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide9.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-09.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-09-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image11.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 10,
+      "title": "Bi₂Se₃: measured and simulated",
+      "texts": [
+        "Bi₂Se₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide10.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-10.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-10-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image12.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 11,
+      "title": "Bi₂Te₃: measured and simulated",
+      "texts": [
+        "Bi₂Te₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide11.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-11.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-11-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image14.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 12,
+      "title": "Bi₂Se₃: off-axis profiles",
+      "texts": [
+        "Bi₂Se₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and intensity scale",
+        "Retained profile fit, September 3–5",
+        "No error bars available. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide32.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-12.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-12-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 13,
+      "title": "Bi₂Se₃: the full axial profile",
+      "texts": [
+        "Bi₂Se₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Reflectivity and the 00L series",
+        "Retained profile fit, September 3–5",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide33.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-13.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-13-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 14,
+      "title": "Bi₂Te₃: off-axis profiles",
+      "texts": [
+        "Bi₂Te₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and surface parameters",
+        "Diagnostic state; no new joint fit selected",
+        "Bars: count and background uncertainty. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide13.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-14.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-14-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image16.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 15,
+      "title": "Bi₂Te₃: the full axial profile",
+      "texts": [
+        "Bi₂Te₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Differences remain between peaks",
+        "Diagnostic state; no new joint fit selected",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide14.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-15.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-15-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image17.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 16,
+      "title": "Parameters behind the ordered-film images",
+      "texts": [
+        "Parameters behind the ordered-film images",
+        "Retained profile fits, 3 September",
+        "Fitted mosaic",
+        "Bi₂Se₃",
+        "Bi₂Te₃",
+        "Gaussian σ (°)",
+        "0.903",
+        "0.395",
+        "Lorentz half-width (°)",
+        "0.282",
+        "0.288",
+        "Lorentz weight",
+        "15.5%",
+        "74.5%",
+        "Structure-factor inputs held fixed",
+        "Bi z (fraction of c)",
+        "0.4008",
+        "0.4000",
+        "Outer X z (fraction of c)",
+        "0.2117",
+        "0.2095",
+        "Uiso (Å²)",
+        "0.019",
+        "0.000",
+        "Occupancy (all sites)",
+        "1",
+        "1",
+        "Stack length (c repeats)",
+        "17",
+        "16",
+        "X = Se or Te. Central X: z = 0 in both CIFs.",
+        "Curves include component weights. More than 97% of the angular probability lies in the plotted range."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide15.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-16.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-16-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart3.xml",
+        "ppt/charts/chart4.xml"
+      ],
+      "table_paths": [
+        "releases/2026-09-10_v9/data/native_tables/slide-16-table-1.csv"
+      ],
+      "asset_ids": []
+    },
+    {
+      "number": 17,
+      "title": "Bi₂Te₃: termination changes near 003",
+      "texts": [
+        "Bi₂Te₃: termination changes near 003",
+        "Trial mixture (top / bottom): 97.6% Bi / outer-Te + 2.4% Bi / central-Te",
+        "Ends only: 2.5% less error",
+        "Joint refit: 85.6% less error",
+        "Ends only: 99.5% less error",
+        "Joint refit: 97.8% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Te₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide16.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-17.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-17-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image18.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart5.xml",
+        "ppt/charts/chart6.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 18,
+      "title": "Bi₂Se₃: termination changes near 003",
+      "texts": [
+        "Bi₂Se₃: termination changes near 003",
+        "Trial mixture (top / bottom): 92.8% outer-Se / Bi + 7.2% Bi / central-Se",
+        "Ends only: 45.6% more error",
+        "Joint refit: 3.0% more error",
+        "Ends only: 81.4% less error",
+        "Joint refit: 97.1% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Se₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide17.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-18.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-18-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image19.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart7.xml",
+        "ppt/charts/chart8.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 19,
+      "title": "Next: controlled PbI₂ growth",
+      "texts": [
+        "Next: controlled PbI₂ growth",
+        "Tune mosaicity",
+        "Tune the stacking sequence",
+        "Stacking sequence"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide18.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-19.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-19-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image20.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 20,
+      "title": "PbI₂: 2H stacking",
+      "texts": [
+        "PbI₂: 2H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide19.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-20.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-20-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image21.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 21,
+      "title": "PbI₂: 6H stacking",
+      "texts": [
+        "PbI₂: 6H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide20.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-21.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-21-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image22.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 22,
+      "title": "PbI₂: 4H stacking",
+      "texts": [
+        "PbI₂: 4H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide21.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-22.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-22-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image23.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 23,
+      "title": "PbI₂: stacking disorder and polytypes",
+      "texts": [
+        "PbI₂: stacking disorder and polytypes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide22.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-23.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-23-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image24.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 24,
+      "title": "PbI₂: measured and simulated",
+      "texts": [
+        "PbI₂: measured and simulated",
+        "B4, incident angle 4°. Selected 2H + 6H parent model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide23.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-24.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-24-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image25.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": []
+    },
+    {
+      "number": 25,
+      "title": "Transition-matrix profiles",
+      "texts": [
+        "Transition-matrix profiles",
+        "Measured",
+        "Model",
+        "PbI₂ B4, r = 1",
+        "Selected 2H + 6H⁺ + 6H⁻ model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide24.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-25.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-25-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart9.xml",
+        "ppt/charts/chart10.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": []
+    }
+  ],
+  "embedded_media": [
+    {
+      "part": "ppt/media/image1.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+      "sha256": "4b773a8d9e4397d2b58e25a4a46cc7f0c2181e52f00ba4a6042ed42ffa241a03",
+      "bytes": 198269,
+      "slides": [
+        1
+      ]
+    },
+    {
+      "part": "ppt/media/image2.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image2.png",
+      "sha256": "3ffe9507d5828523163ff95fe85b1d38009866c5fc73fe044bcb218fd40aad97",
+      "bytes": 1016359,
+      "slides": [
+        1
+      ]
+    },
+    {
+      "part": "ppt/media/media1.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+      "sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617",
+      "bytes": 731172,
+      "slides": [
+        2
+      ]
+    },
+    {
+      "part": "ppt/media/image3.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+      "sha256": "b65d04ed96298f7c81c72ea395c1b9d412d33a73d1fa8ebe5bcceddcbc381a70",
+      "bytes": 101998,
+      "slides": [
+        2
+      ]
+    },
+    {
+      "part": "ppt/media/media2.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+      "sha256": "d14cbe018412fb307bcf5d533100f6d471c924d2ca6533f854ca0a03976ba61a",
+      "bytes": 1455480,
+      "slides": [
+        3
+      ]
+    },
+    {
+      "part": "ppt/media/image4.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+      "sha256": "fd8f91156652170357e659f4188ac79ee59ed8f043853bfd68b49a438d9b9f89",
+      "bytes": 174640,
+      "slides": [
+        3
+      ]
+    },
+    {
+      "part": "ppt/media/media3.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+      "sha256": "fe22252dd93900c67d4711f770630e736d2cef820d670dcb4b2f8f71d4400a7b",
+      "bytes": 720582,
+      "slides": [
+        4
+      ]
+    },
+    {
+      "part": "ppt/media/image5.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+      "sha256": "d4fd1a7f556eaf23a84910fa67dfc5fdef9642300818830e3109e197f81dcd48",
+      "bytes": 98391,
+      "slides": [
+        4
+      ]
+    },
+    {
+      "part": "ppt/media/media4.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+      "sha256": "7bef2a859dd5a23fdad90bab164a8a7f587d6a3f05c6eb6101e9f1d9b4ab48c7",
+      "bytes": 766163,
+      "slides": [
+        5
+      ]
+    },
+    {
+      "part": "ppt/media/image6.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+      "sha256": "46176bde91f1955c02a9e27a9cb27bba13f4f006ebe0c36016dce492219a4d11",
+      "bytes": 204551,
+      "slides": [
+        5
+      ]
+    },
+    {
+      "part": "ppt/media/media5.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+      "sha256": "540b08d4b3d89f551922ebdeef45684d30b0f3d33967557e4d21c182ea87c1e3",
+      "bytes": 1665207,
+      "slides": [
+        6
+      ]
+    },
+    {
+      "part": "ppt/media/image7.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+      "sha256": "36fce743650ca6ae54f7d8e97ba72c5b015d3fbfd11852478665dc3037dba350",
+      "bytes": 126342,
+      "slides": [
+        6
+      ]
+    },
+    {
+      "part": "ppt/media/media6.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+      "sha256": "83ab049e4f74c6f109b1c013c141bc0a46509ba45fffad49cb52894509a9ed23",
+      "bytes": 1352715,
+      "slides": [
+        7
+      ]
+    },
+    {
+      "part": "ppt/media/image8.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+      "sha256": "456150854b321727acbcbc6afed25ccf261f0d098f52bebf4f7ae543e978f822",
+      "bytes": 520566,
+      "slides": [
+        7
+      ]
+    },
+    {
+      "part": "ppt/media/image9.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+      "sha256": "79dada54921fb6999547ed0fb9f30d1098434579f79bb382389e56a931783212",
+      "bytes": 2793,
+      "slides": [
+        8
+      ]
+    },
+    {
+      "part": "ppt/media/image10.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+      "sha256": "f5286f32eee00a3e097ed0093be21102026d2c42f325e2f80a0b1e5fae24668b",
+      "bytes": 325415,
+      "slides": [
+        8,
+        10
+      ]
+    },
+    {
+      "part": "ppt/media/image11.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image11.png",
+      "sha256": "695c2f670493fc5446d4a130879e0c054645c2c1358270d3eb9a3d4c30f7d24a",
+      "bytes": 354695,
+      "slides": [
+        9
+      ]
+    },
+    {
+      "part": "ppt/media/image12.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image12.png",
+      "sha256": "c88a1242002000b5aae428d96cc4acfae44e1fac928d21ac9609138e4083548b",
+      "bytes": 89265,
+      "slides": [
+        10
+      ]
+    },
+    {
+      "part": "ppt/media/image13.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+      "sha256": "d045cf36b05268e230ed06ae21cfdc71afcbd8650564fb1ddf608067a93c99a9",
+      "bytes": 288115,
+      "slides": [
+        11
+      ]
+    },
+    {
+      "part": "ppt/media/image14.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image14.png",
+      "sha256": "6fd13b0b5225b897c4a5ea211d3a411b0d08e371a8b535814e916ff04a4f215b",
+      "bytes": 104914,
+      "slides": [
+        11
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_r1_minus.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+      "sha256": "552e9b3866a4b3596cd318f096bfcc47ebb3de62571fb9bebe6f893631f6d729",
+      "bytes": 86817,
+      "slides": [
+        12
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_r1_plus.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png",
+      "sha256": "8695287a8a343694a38a515a7fe65ffcbf00639a38029ae458af1d4cb241cafb",
+      "bytes": 85888,
+      "slides": [
+        12
+      ]
+    },
+    {
+      "part": "ppt/media/v9_se_axial_full_00l.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png",
+      "sha256": "5899c097fd6fe4e3d748a8c2e8060e9b2c84e0db2137d35c9b140d5410e043c7",
+      "bytes": 117896,
+      "slides": [
+        13
+      ]
+    },
+    {
+      "part": "ppt/media/image15.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+      "sha256": "5d53395a7280c66e382296ed9301eba99300e52246def49699689589edea6df6",
+      "bytes": 81974,
+      "slides": [
+        14
+      ]
+    },
+    {
+      "part": "ppt/media/image16.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image16.png",
+      "sha256": "fe6aa6309cf55fb9241b033d55fe1c0f356053f661ac912b965b396e8e8577ad",
+      "bytes": 82550,
+      "slides": [
+        14
+      ]
+    },
+    {
+      "part": "ppt/media/image17.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image17.png",
+      "sha256": "322303b00d44229753ff5bc74c4dee21b9347f8bae037c5a3151f5d3b408531a",
+      "bytes": 129928,
+      "slides": [
+        15
+      ]
+    },
+    {
+      "part": "ppt/media/image18.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image18.png",
+      "sha256": "36c912d06c5f81cb4bfd836c97c73d0582e49d7e7262a148c29fa4a1a5f886f0",
+      "bytes": 79891,
+      "slides": [
+        17
+      ]
+    },
+    {
+      "part": "ppt/media/image19.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image19.png",
+      "sha256": "c3ca587729281090f99977285cefafda713a65c6b2bebcd2e6a662ea203bbfd1",
+      "bytes": 85514,
+      "slides": [
+        18
+      ]
+    },
+    {
+      "part": "ppt/media/image20.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image20.png",
+      "sha256": "26bd56d3ddc294ae9d6abb9d206848ff607ca3463355fb3f57ad61f8110392f3",
+      "bytes": 30044,
+      "slides": [
+        19
+      ]
+    },
+    {
+      "part": "ppt/media/image21.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image21.png",
+      "sha256": "78a64afc0820881d8a0af258065f9256365e290cf96e0da3686ff25e63c9d7df",
+      "bytes": 115606,
+      "slides": [
+        20
+      ]
+    },
+    {
+      "part": "ppt/media/image22.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image22.png",
+      "sha256": "d2308ce01fa21a73eb748d848d1c2d06bf7e4966a5e77183a0130b637fb8fe59",
+      "bytes": 166611,
+      "slides": [
+        21
+      ]
+    },
+    {
+      "part": "ppt/media/image23.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image23.png",
+      "sha256": "721bde5c4084c01b6b0c35a90e0d442f3c45ab1e8f91f3e6c8c1e79421093b16",
+      "bytes": 144302,
+      "slides": [
+        22
+      ]
+    },
+    {
+      "part": "ppt/media/media7.mp4",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+      "sha256": "c5554ee0e836b1c3fc04927644ddf8ff2f49604ca6b536252ce2b0d7f4e96fab",
+      "bytes": 1152550,
+      "slides": [
+        23
+      ]
+    },
+    {
+      "part": "ppt/media/image24.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+      "sha256": "85a890432aa971564d41c98a502cd8cace1d3c41352b2d6db266005a2aba4218",
+      "bytes": 153196,
+      "slides": [
+        23
+      ]
+    },
+    {
+      "part": "ppt/media/image25.png",
+      "path": "releases/2026-09-10_v9/assets/deck_embedded/image25.png",
+      "sha256": "2396a5ad4ffa7ba5e57777220c71a9e321413473017354beef1883c2cf764a44",
+      "bytes": 596126,
+      "slides": [
+        24
+      ]
+    }
+  ],
+  "imports": [
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta.gif",
+      "sha256": "3c1f52d798d462e5e64e8f802734b383a61e2441d8116d13642aa48e7e663e62",
+      "bytes": 6315556,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta.mp4",
+      "sha256": "83ab049e4f74c6f109b1c013c141bc0a46509ba45fffad49cb52894509a9ed23",
+      "bytes": 1352715,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_first_order.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_first_order.png",
+      "sha256": "b99ceb3f699f68996b8731aefb6adf7ea9a4f4ed2afe93048fec78bb23eac44a",
+      "bytes": 331015,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_25.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_lorentzian_25.gif",
+      "sha256": "c0cfda60af73b0b0d246e5c276f25252a44d74538525a17086c94dde843cc078",
+      "bytes": 6572358,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_25.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_lorentzian_25.mp4",
+      "sha256": "9f55aefc2b343ff64f6ea31d8e490a0f2afa65dfeac22fa4a9ad9b05feaa6abb",
+      "bytes": 1225005,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_50.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_lorentzian_50.gif",
+      "sha256": "57afa46c00f6e73d2dc145e28ce8d1d87ae5a840eb72ec00924e8cbb50362dbe",
+      "bytes": 6479195,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_50.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_lorentzian_50.mp4",
+      "sha256": "d0c46390bd1538497216fdd088bef5df3f0216f7eb5a951818edf230efd53a90",
+      "bytes": 1255965,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_r0_r1_r3.gif",
+      "sha256": "3c1f52d798d462e5e64e8f802734b383a61e2441d8116d13642aa48e7e663e62",
+      "bytes": 6315556,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_r0_r1_r3.mp4",
+      "sha256": "83ab049e4f74c6f109b1c013c141bc0a46509ba45fffad49cb52894509a9ed23",
+      "bytes": 1352715,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_r0_r1_r3_still.png",
+      "sha256": "8fffec70e5b5470d8b561ae2501d24b04496b4353eb82e38c2a697a304ec2ee3",
+      "bytes": 331326,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_second_order.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_second_order.png",
+      "sha256": "fc78cd1c8cb0fdd7290cd07589c62c8100d6d6e589c64e311036d130ba2dc9bd",
+      "bytes": 333321,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_still.png",
+      "sha256": "0454a57d77755d0583b22060797bf83e52930f6c8d69a279483a27e6e4a51827",
+      "bytes": 327776,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_third_order.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_phi_2theta_third_order.png",
+      "sha256": "8fffec70e5b5470d8b561ae2501d24b04496b4353eb82e38c2a697a304ec2ee3",
+      "bytes": 331326,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_sweep_00l.gif",
+      "sha256": "6d6952cdfb6badc2b648360538a7f8485aba9a19515b10b86898772535c14c83",
+      "bytes": 5621126,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_sweep_00l.mp4",
+      "sha256": "528c17647f06e1c94c5d442d1e64610e05474530e3b87a312d53da42f20ac690",
+      "bytes": 1107122,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_first_order.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_sweep_00l_first_order.png",
+      "sha256": "abec1527c0a4a592d70d2b766d69b374610b9431813d739ecc9d00ccc99cd3c0",
+      "bytes": 212422,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_second_order.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_sweep_00l_second_order.png",
+      "sha256": "d92a9d2c23b9a43e017a905391abfc64a0b9aa0d2af4cbc260d831458e0e37ee",
+      "bytes": 214964,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\bi2se3_incidence_sweep_00l_still.png",
+      "sha256": "39ac673678259519dd81487163114da4b3fe6742b0e0c4a80ef14af5888ea4fa",
+      "bytes": 216790,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta.gif",
+      "sha256": "6b97f591bab111f1b841d4ef9fb50b23c3a269f0bbc5627b0531836c2cddd4d8",
+      "bytes": 3934929,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta.mp4",
+      "sha256": "41a1672f6d6be6ffdb3e2b1a552efe8fa569b2165727db4dfd6ad9b279313d24",
+      "bytes": 789136,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_labeled.gif",
+      "sha256": "ac3a522ee36e53195edea29eea15ce99c6040f7f35734d1cdbb73b85ec67f819",
+      "bytes": 3798312,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_labeled.mp4",
+      "sha256": "5caf76022c1225d1907af862683afec1931bde726eee88437895561a326958b9",
+      "bytes": 974484,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_labeled_mapping.png",
+      "sha256": "4bce5a65bf852b048f3f00860de39939ef159d2e65f241ad30ed92ed133b8ed4",
+      "bytes": 126572,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_labeled_still.png",
+      "sha256": "7087bbb24a0bc97c3acbd3dc78c1dc9f929f706ad42a41f09bc3c66031fbbeaf",
+      "bytes": 118075,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_mapping.png",
+      "sha256": "6850b1e0ad02216366caaba0d8c07d11dd92e5983eb401b3d273ecd53fdea917",
+      "bytes": 114687,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_phi_2theta_still.png",
+      "sha256": "4758c5f1c150244ae42ce8330627c8b80ecf282f39cc00e1db54dd53387c9d99",
+      "bytes": 105729,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr.gif",
+      "sha256": "9cdb6f361ea9b05b773b554c3fa2aae4c4161b186cf952208294c559cd27e8f9",
+      "bytes": 4003044,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr.mp4",
+      "sha256": "220a27e0205766b91b2546a169fe38660f61f885851c2db7886374b9130e8cdb",
+      "bytes": 791686,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_labeled.gif",
+      "sha256": "e4049b472c52dd198c5403c3750544a84afa8748471de7834241c64f1f6f53cc",
+      "bytes": 4538342,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_labeled.mp4",
+      "sha256": "71f8aa9e1d1294fc7b034b656bb3e064b2320678366730c09d66a15260c61c9f",
+      "bytes": 953986,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_labeled_mapping.png",
+      "sha256": "46eca48cec32ba98ef3f2c9cd8c8c7073e69927c4c5cb611bfae3e8263fe05cc",
+      "bytes": 137755,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_labeled_still.png",
+      "sha256": "b89b64fd5998e490011e64307fef85fb904699883d210c5c8767e5b16076611c",
+      "bytes": 105682,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_mapping.png",
+      "sha256": "da6f104614b77d4089acb369297e50f7e4244f2b52ae0ed2d3743eecf8cf7085",
+      "bytes": 130962,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\detector_to_qz_qr_still.png",
+      "sha256": "18a935b32f2cf0b78289d0e6ddab52ae12ab40ff4301a916c7b1471018d0cabe",
+      "bytes": 98935,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic.gif",
+      "sha256": "1e85bcf5fd610435ecae74f8dca93e533fe1b0f4fb65c4eb64da90ae1a06472b",
+      "bytes": 2662530,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic.mp4",
+      "sha256": "3e1b59cc159d6366752dbe10b45efb7989bb1d3f50ba513fc284273d13601627",
+      "bytes": 687556,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_aligned.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_aligned.png",
+      "sha256": "c5461038255048144850d2bdc3bfca7646d2e019c2f48bb803f089c8a72d3ac6",
+      "bytes": 165403,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_clean_end.gif",
+      "sha256": "d542c9ada0a6c0d7807f575c318fb5ea2daa74ffdc0975160a0ffcc1f99a56f8",
+      "bytes": 2816176,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_clean_end.mp4",
+      "sha256": "307f5feb469c25b8ed47cab27e3fbdd5c35ec985e7f4c41e3f2241f9a9c70188",
+      "bytes": 706063,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end_aligned.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_clean_end_aligned.png",
+      "sha256": "c5461038255048144850d2bdc3bfca7646d2e019c2f48bb803f089c8a72d3ac6",
+      "bytes": 165403,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_clean_end_still.png",
+      "sha256": "65e23917a367711bc9748f0f10c674772411cce1d1253a70d12e8c0c72726605",
+      "bytes": 153374,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end_tilt.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_clean_end_tilt.png",
+      "sha256": "1c345f53062a619413d459b205c9d79082fa83c3999756aabb814ae6b769ef24",
+      "bytes": 206359,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_still.png",
+      "sha256": "3b8ee6ccf48f67905628ac341be080ed587619cb9be9530bc3c2e50b4d17ae29",
+      "bytes": 198207,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_tilt.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_intersections_then_mosaic_tilt.png",
+      "sha256": "1c345f53062a619413d459b205c9d79082fa83c3999756aabb814ae6b769ef24",
+      "bytes": 206359,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector.gif",
+      "sha256": "2a6e328b904e280cceecc9fb0f6d29088b74b7e050fa917cf8a4d371b239a92c",
+      "bytes": 3582833,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector.mp4",
+      "sha256": "40c8b11b7f674223f613e555b7b3612bb643f5444fff467b6ca168515ac6c75d",
+      "bytes": 714300,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_labeled.gif",
+      "sha256": "2099bdebb55a0ed21e0e7f816c7c0e5b1ec920ee121842b339cc3c01f9d96ffa",
+      "bytes": 3696537,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_labeled.mp4",
+      "sha256": "7fa09d4850fb63366bcd2703e3188a46a3d99b00853d19093eceb70c4dae30f4",
+      "bytes": 782408,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_labeled_mapping.png",
+      "sha256": "f86d9ebdf26d74104e644d7ceb6db252e0eec974acfd760943e1c73708ff104e",
+      "bytes": 139843,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_labeled_still.png",
+      "sha256": "07de386bd3d6041565d7f09403ebc8b382f38d0f21d1697e30d722bc4eaaf00b",
+      "bytes": 95354,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_mapping.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_mapping.png",
+      "sha256": "f86d9ebdf26d74104e644d7ceb6db252e0eec974acfd760943e1c73708ff104e",
+      "bytes": 139843,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\ewald_traces_to_detector_still.png",
+      "sha256": "84f9d9457bd033cdd703c2698eb88840b3ad7e19dbc0d2b378d27e73087dae8c",
+      "bytes": 84522,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta.gif",
+      "sha256": "7cf3207953aa393e1ff7671b067b18fe71e98920e90e2e1b01ac5ed0d7efc96c",
+      "bytes": 3025523,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta.mp4",
+      "sha256": "66303822d3092a395fac6f3102d7911943c1483f647dc6ad6ce930d9d7f2b867",
+      "bytes": 766415,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_gaussian.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_gaussian.png",
+      "sha256": "a66aa28544af76270d64efc1d5966cab32f914743f75dfd09471359508baa156",
+      "bytes": 130128,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_larger_c.gif",
+      "sha256": "3915923c5aec335f1a44755ef362cf7549689960cc1072ad938924bc56f13ed9",
+      "bytes": 3049451,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_larger_c.mp4",
+      "sha256": "d027ffd9eb7437c85946aa65db95e2ef9c1e2e1483e5ee97552e603ac446f313",
+      "bytes": 758466,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_gaussian.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_larger_c_gaussian.png",
+      "sha256": "b975afab3529eda2cc2ff8df8892a899407e5faa47beb1cab9d58f82a1370047",
+      "bytes": 130073,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_larger_c_midpoint.png",
+      "sha256": "8956e6fe34784fc557ae49584b328ef22f017f0e2928da290f68b4fa6b97cd31",
+      "bytes": 145225,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_larger_c_still.png",
+      "sha256": "431059c95632ccbc1019c62713b927c130e88cb322c9ca5837448b111b844181",
+      "bytes": 145658,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_midpoint.png",
+      "sha256": "b75fed7b24e2f74f53172fd0ed0ac73a39a84e2410aa26d88c6239fc641e9fb7",
+      "bytes": 143525,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\lorentzian_mosaic_phi_2theta_still.png",
+      "sha256": "9366a82fdef1bdf40d1d635ec4e9a583e59b76c2c75fdd67c6d885752a4cc1b5",
+      "bytes": 144069,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_clear_tilt.gif",
+      "sha256": "2a38cfe9242a2531b1d5853f491ab1877fc7c4578e4fc0c148580c459e2fe20f",
+      "bytes": 3308590,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_clear_tilt.mp4",
+      "sha256": "27a7345f41ddd2b78abb5c629631b884ee860252ff3a8cb0f5a191a967addbba",
+      "bytes": 1454249,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_clear_tilt_still.png",
+      "sha256": "f4399e6ff97b25142b808350d61d50796891328d1edcf913b58845a7d9aca1a5",
+      "bytes": 217095,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt_tilt_detail.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_clear_tilt_tilt_detail.png",
+      "sha256": "f35f70720430f8eb66063ae64d42b0de673cbecfb71dee52ce3e6c1f754f2221",
+      "bytes": 240015,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_one_pattern.gif",
+      "sha256": "8ef1754a27dc7a7ea6a11e6bad3c21295f0cb79806af6900aab69020abcfb663",
+      "bytes": 2816467,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_one_pattern.mp4",
+      "sha256": "0381f68299bd2f5f333cd40abadfdd226f467ff9460de6bd098fdb346e7d44e0",
+      "bytes": 1246741,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\many_crystallites_one_pattern_still.png",
+      "sha256": "1149e6232e06035cadf37060412bda364520b7f0999ce207e15631efb7f49d30",
+      "bytes": 231994,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture.gif",
+      "sha256": "34c80f7f824ef9dd99120afbe1187b0ac160f29774c9d578c16fa59c9fc005b4",
+      "bytes": 2007893,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture.mp4",
+      "sha256": "62fed8524c4f1b7c45347bfea9d1c16cdf2547d05fb8eb3c3e5e9566a16c754d",
+      "bytes": 478807,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_matrices.gif",
+      "sha256": "0e2ab1f9e8810c9fda43c730ff60c881e5d4a7e0baf95ce8478f458a4cb17a2b",
+      "bytes": 2435349,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_matrices.mp4",
+      "sha256": "1ef38314ffdf8f0f64d59e6aa1818fa0e93807f3c1a896f53fae553c743591b2",
+      "bytes": 619269,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_matrices_midpoint.png",
+      "sha256": "b1184209cc2403d6303e7ec708d4219074cbea7ce1b0d46c7f0e3897e52b4688",
+      "bytes": 206163,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_matrices_still.png",
+      "sha256": "2fca7e6c9349f2abc12b89197790e93e81493ebcf2e348a3152f9d727f21564d",
+      "bytes": 204629,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_midpoint.png",
+      "sha256": "6bd05ec0546a24b14862aa11c0689ff39ebda3b6a63fa3278fb15a1b86e58a13",
+      "bytes": 246285,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_disorder_to_polytype_mixture_still.png",
+      "sha256": "4b45e0588acdd21f3111d796c2dc4ecb20917bba54785d0bb9b3270384b01ba7",
+      "bytes": 242672,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder.gif",
+      "sha256": "de389bf496ada0396bc9553f157a1e965d5ef152efe798abe49ce5e42b3c8eca",
+      "bytes": 2314900,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder.mp4",
+      "sha256": "f0d3205cb46e1d84fe09870934f216fba5929864d7aaec617ef2d6ef939eadb8",
+      "bytes": 345322,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_matrices.gif",
+      "sha256": "33393c333f3cf1d98ee39b2434b265ec2faacd352275ad59da4903cbda25130f",
+      "bytes": 3518191,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_matrices.mp4",
+      "sha256": "8253828d275ee53e3ae70feff557b1539c7b412b12cbbce123d9c896bed7f80b",
+      "bytes": 734008,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_matrices_midpoint.png",
+      "sha256": "328ef64e1082b319869478145c9d123dbf22a679a83726505e8620d8e17dd49d",
+      "bytes": 161662,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_matrices_still.png",
+      "sha256": "20a6c432d16c9fbde16b3d69f44e15562733d8c64134a14364f02a9848b68368",
+      "bytes": 147118,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_midpoint.png",
+      "sha256": "b9421088a4ea59ee4e0a3cf8e8f85ea1d3583fc646d130633c9911820bc64084",
+      "bytes": 165631,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_general_stacking_disorder_still.png",
+      "sha256": "c4f1192fc3b0c5d60bfb25735c43deb0b0f840a4799dc2992cd961debd9b1ba1",
+      "bytes": 138918,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_stacking_disorder_and_polytypes_matrices.gif",
+      "sha256": "0bc3e51567699b7d03a5b0c50d8aef4efd69001d860ce0edd4b4d40a020fe170",
+      "bytes": 5084631,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_stacking_disorder_and_polytypes_matrices.mp4",
+      "sha256": "4f6787c140704b5955166142c954383fda030488ddee60637a20b200874079a7",
+      "bytes": 1174063,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices_midpoint.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_stacking_disorder_and_polytypes_matrices_midpoint.png",
+      "sha256": "e25691253b48782112bf42f4cc12416e2d9b771ff6e3f5a0c99058178c746824",
+      "bytes": 214669,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\pbi2_stacking_disorder_and_polytypes_matrices_still.png",
+      "sha256": "963ef64a679e4ff51a929ad888c952cfe80b6995204433e519b1e9b0e3314196",
+      "bytes": 213442,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_mosaic_caps_and_bands.gif",
+      "sha256": "9f446298cc31cd1ad3df29eba4a4af98338fa436ce9c756df8b5c6c3b180b11d",
+      "bytes": 6555490,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_mosaic_caps_and_bands.mp4",
+      "sha256": "5f130b5db09fbaefa2e42f8935dfc69d4df095c843e9e418705b32a479fe6c65",
+      "bytes": 1906377,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_mosaic_caps_and_bands_still.png",
+      "sha256": "c1e3e6b1f223930f56e17e0c2e7988ff6050dcfb653e4959e50c30bc96ad37b5",
+      "bytes": 196612,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings.gif",
+      "sha256": "3d524994c11bc242a45700a4fb91623561eca96ed8220ee1ac2508c66bec8740",
+      "bytes": 2664704,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings.mp4",
+      "sha256": "ed5ac04011f0ead5e2921078045fc747a5ffc7b238e6e93d2db59da9c239e643",
+      "bytes": 578221,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_indexed.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_indexed.gif",
+      "sha256": "9e3b95606e4eadc2ded45214ac2e200e70c4fe2b1b1b83cc6eb0860cf851d535",
+      "bytes": 2890380,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_indexed.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_indexed.mp4",
+      "sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617",
+      "bytes": 731172,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_indexed_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_indexed_still.png",
+      "sha256": "dc31818b3a603636e296d76b4f4ff2bcd17d27703134634006427aa6c1b15939",
+      "bytes": 70131,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled.gif",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_labeled.gif",
+      "sha256": "e8f7717c1430e1c6ef9ff31f1e06906afe4de83f335c07493bcf9776d571fea9",
+      "bytes": 2609300,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_labeled.mp4",
+      "sha256": "ab617446d28fd535f59671b6964306a640ed8b0ed18b27de8dbec04f6005f99b",
+      "bytes": 600755,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_labeled_still.png",
+      "sha256": "fbfef4f1cf8bacfad40033fde73d7db0c6eb425bc716967f4ffb02d5a94535ec",
+      "bytes": 70342,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_still.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_reciprocal_rings_still.png",
+      "sha256": "c143d5c4d75036f0f476b057fc7e5af1e289e35d3df97e0654f3e6389e2ebfea",
+      "bytes": 64262,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_then_mosaic.mp4",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\animations\\sample_rotation_then_mosaic.mp4",
+      "sha256": "44e04b149d6df9c3270ea4c731d74fa2cd750fc75e038207872c9e3ead436bbd",
+      "bytes": 2636862,
+      "role": "exported_animations"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Bi2Te3_Mosaic_Parameters.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Se3_Bi2Te3_Mosaic_Parameters.png",
+      "sha256": "088a27b4bc6f35bbd7daf47efc39772b5051c269726262f26c58ff2088d868a6",
+      "bytes": 173465,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Measured_Simulated_Reflectivity_v8.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Se3_Measured_Simulated_Reflectivity_v8.png",
+      "sha256": "c7fcd75d9ed5b0dd84d78bd6b7e3bfe1b9af8591e6c4b2418e627d98e6c25e51",
+      "bytes": 586104,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Termination_Comparison.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Se3_Termination_Comparison.png",
+      "sha256": "34ee23f5106c2c873073137149ac8f89b87163e631d1c7d597f13aa179cb956f",
+      "bytes": 142100,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Measured_Simulated_Reflectivity_v8.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Te3_Measured_Simulated_Reflectivity_v8.png",
+      "sha256": "ad128e614a0ddb08a51c87a59a3fa4721bffebd687d15261bd7e20189d76deb1",
+      "bytes": 557744,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Termination_Comparison.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Te3_Termination_Comparison.png",
+      "sha256": "485b6ea073c8114e6c23183cd046a0a04f647e2d1b4d807976b14c4805e2bd6a",
+      "bytes": 137306,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Termination_Sensitivity.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\Bi2Te3_Termination_Sensitivity.png",
+      "sha256": "169845f473c8494a8d0cc2ceb7e145d32565c60daf3206ebfc97bf53c503f67b",
+      "bytes": 133375,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_2h.png",
+      "sha256": "21b7abd13b2509c6c79e0596bb14f3b0cf7201172515c1fba0b4073a5185e9e1",
+      "bytes": 204399,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_2h.svg",
+      "sha256": "80510714f4fda504de94347a98ad1a1547712a8a5dc8bb64cdee604379651462",
+      "bytes": 18700,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h_clean.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_2h_clean.png",
+      "sha256": "991a3e6bfd8bba5d4306c64e6211950657163b03fd8f5e44a8f731f3ac78f20a",
+      "bytes": 131927,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h_clean.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_2h_clean.svg",
+      "sha256": "8e629ef3c36a304bc5f7c24d02055e210012ccf194fffe78cd916fd1fb8cb5fc",
+      "bytes": 17926,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_4h.png",
+      "sha256": "1a4af489c0fb462b47cd090d9e4c89f0f94e8243bd90ec1ce507bed8902c92c4",
+      "bytes": 230849,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_4h.svg",
+      "sha256": "3412576719a9696d469fe87bd2d3a8aa9cb0a319d2e709bce019f76412c523db",
+      "bytes": 52228,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h_clean.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_4h_clean.png",
+      "sha256": "1e3788eb0119556b9ce1f373724a064326e77973895ce907a9c9aeccf92d5ad3",
+      "bytes": 160276,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h_clean.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_4h_clean.svg",
+      "sha256": "a4e49b2e0caeadb0c59631c376291148428f753cdef26fa4649d481461e5e8c2",
+      "bytes": 54953,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_6h.png",
+      "sha256": "4bc011ddcdc4b9c26cc14be9efba34e9ea081188f9bb62ed8e28b3c57fb8a730",
+      "bytes": 248628,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_6h.svg",
+      "sha256": "be1550e8ec34c23d68d9979ac8ce0dc68229a18f50fb45a1d377ef578a124c0d",
+      "bytes": 67299,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h_clean.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_6h_clean.png",
+      "sha256": "e66ba3455b47b989ca8907bac4e198442c42938801adbeb90405bfc491b2897c",
+      "bytes": 183372,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h_clean.svg",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_6h_clean.svg",
+      "sha256": "09906470deeeb7d05c2e6ebb1bc8e32b6971df04b3781a944f7285c4495090ba",
+      "bytes": 70833,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_captions.md",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\figures\\pbi2_matrix_to_stack_captions.md",
+      "sha256": "382c75cfe91274f5cde79aaec1d4ea4284a381f708fd687975633712b21e7ea8",
+      "bytes": 1584,
+      "role": "exported_figures"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/interactive/surface-population-explorer.html",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\output\\presentations\\interactive\\surface-population-explorer.html",
+      "sha256": "d8f03af38695fad68b0be98a4c34b81cb6f255f34805ff99a5e6d128f538dbf7",
+      "bytes": 297320,
+      "role": "exported_interactive"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_profiles/bi2se3_retained_model.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\bi2se3_retained_model.png",
+      "sha256": "e3178e8b494385897a977f19624138080f96ccf43962930fb32c5c1726193d8a",
+      "bytes": 449267,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_profiles/se_axial_full_00l.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_axial_full_00l.png",
+      "sha256": "5899c097fd6fe4e3d748a8c2e8060e9b2c84e0db2137d35c9b140d5410e043c7",
+      "bytes": 117896,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_profiles/se_legend.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_legend.png",
+      "sha256": "af34f932e4a06a7cc16948b3aa5e6346a1508e290bd935201b617ae703fc3907",
+      "bytes": 10864,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_profiles/se_r1_minus.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_minus.png",
+      "sha256": "552e9b3866a4b3596cd318f096bfcc47ebb3de62571fb9bebe6f893631f6d729",
+      "bytes": 86817,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_profiles/se_r1_plus.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\se_r1_plus.png",
+      "sha256": "8695287a8a343694a38a515a7fe65ffcbf00639a38029ae458af1d4cb241cafb",
+      "bytes": 85888,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_profiles/te_axial_full_00l.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_axial_full_00l.png",
+      "sha256": "322303b00d44229753ff5bc74c4dee21b9347f8bae037c5a3151f5d3b408531a",
+      "bytes": 129928,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_profiles/te_legend.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_legend.png",
+      "sha256": "6a6626efd2777dc509760d965aea3f74b56f78d2719437c4955125cf4d9696ff",
+      "bytes": 13572,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_profiles/te_r1_minus.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_r1_minus.png",
+      "sha256": "5d53395a7280c66e382296ed9301eba99300e52246def49699689589edea6df6",
+      "bytes": 81974,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_profiles/te_r1_plus.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_r1_plus.png",
+      "sha256": "fe6aa6309cf55fb9241b033d55fe1c0f356053f661ac912b965b396e8e8577ad",
+      "bytes": 82550,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_profiles/te_source_footnotes.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_source_footnotes.png",
+      "sha256": "a453184399a98c836250cbd8e97a1820dfc5ddb45daa7dc65592c84c7635e92a",
+      "bytes": 26188,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/calculated_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\calculated_panel.png",
+      "sha256": "c88a1242002000b5aae428d96cc4acfae44e1fac928d21ac9609138e4083548b",
+      "bytes": 89265,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/measured_calculated.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\measured_calculated.png",
+      "sha256": "c7fcd75d9ed5b0dd84d78bd6b7e3bfe1b9af8591e6c4b2418e627d98e6c25e51",
+      "bytes": 586104,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/measured_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\measured_panel.png",
+      "sha256": "f5286f32eee00a3e097ed0093be21102026d2c42f325e2f80a0b1e5fae24668b",
+      "bytes": 325415,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/q2_preview_calculated_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\q2_preview_calculated_panel.png",
+      "sha256": "cbec6f1ad67cdc2dd913d22bdf407ef824121eb611fe09ef6cf255be5e540906",
+      "bytes": 89229,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/q2_preview_measured_calculated.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\q2_preview_measured_calculated.png",
+      "sha256": "34e29ef35d87618e934a3409641d6bdb3153b10a21900ac6484f5a2f37a35dc5",
+      "bytes": 583141,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/q2_preview_measured_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\q2_preview_measured_panel.png",
+      "sha256": "f5286f32eee00a3e097ed0093be21102026d2c42f325e2f80a0b1e5fae24668b",
+      "bytes": 325415,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/q2_preview_shared_colorbar.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\q2_preview_shared_colorbar.png",
+      "sha256": "f847a9c865092573116842f6908d4b36a5e0f1053cf54ba9cb36329af1a128e3",
+      "bytes": 9678,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/shared_colorbar.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2se3\\shared_colorbar.png",
+      "sha256": "3eb8eb57a0acb23e6da2e2742385533ad98424b58e20f96c557fcdbd50e9fa5f",
+      "bytes": 13952,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/calculated_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\calculated_panel.png",
+      "sha256": "6fd13b0b5225b897c4a5ea211d3a411b0d08e371a8b535814e916ff04a4f215b",
+      "bytes": 104914,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/measured_calculated.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\measured_calculated.png",
+      "sha256": "ad128e614a0ddb08a51c87a59a3fa4721bffebd687d15261bd7e20189d76deb1",
+      "bytes": 557744,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/measured_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\measured_panel.png",
+      "sha256": "d045cf36b05268e230ed06ae21cfdc71afcbd8650564fb1ddf608067a93c99a9",
+      "bytes": 288115,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/q2_preview_calculated_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\q2_preview_calculated_panel.png",
+      "sha256": "1bcecdc0a8812e18e7deaea9ea838e9f0c6601e601c56f30f7b997fcd96df799",
+      "bytes": 104933,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/q2_preview_measured_calculated.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\q2_preview_measured_calculated.png",
+      "sha256": "2097e45d8c6bcac25a1e5ddba4cf316638469a41de0d0e6c4c966c250421cdfc",
+      "bytes": 551670,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/q2_preview_measured_panel.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\q2_preview_measured_panel.png",
+      "sha256": "d045cf36b05268e230ed06ae21cfdc71afcbd8650564fb1ddf608067a93c99a9",
+      "bytes": 288115,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/q2_preview_shared_colorbar.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\q2_preview_shared_colorbar.png",
+      "sha256": "96d953975f88338c028a37719fadea167e5d9ad65dbb8224e446c3bc317fdaf1",
+      "bytes": 9658,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/shared_colorbar.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v8\\ordered_render\\bi2te3\\shared_colorbar.png",
+      "sha256": "db2ce497e3bd7e3a12a6e1f6f433b4f8f029a5bcd472da08af7153a1f1cea53f",
+      "bytes": 13964,
+      "role": "final_figure_panel"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-01.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-01.png",
+      "sha256": "93a03b7792c577015da0dde5e0b1ee95e7af84339d5f619122102281c69699b3",
+      "bytes": 876447,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-02.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-02.png",
+      "sha256": "ab6b1f8cadf02dd3332a2d075fa77af9868db5488d45883bf7408a2ce645e077",
+      "bytes": 145380,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-03.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-03.png",
+      "sha256": "0c4fdc96329449299791983e381af121d6346ecf5a52798a6d33d8b92b08a1a9",
+      "bytes": 300056,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-04.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-04.png",
+      "sha256": "1930bfde29265c4efc829e0a43ae19d7a255a4133beba3d0898edc2d89fa6430",
+      "bytes": 176180,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-05.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-05.png",
+      "sha256": "19b314cbfc24f00544cc482a869ab1abc50a005663f438597fad4b0a79f44aa0",
+      "bytes": 322699,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-06.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-06.png",
+      "sha256": "08c4930b9207a3bd90f67cd9b029bc89a00663dc3cdd84db8349f50f1bbe1fce",
+      "bytes": 200398,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-07.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-07.png",
+      "sha256": "4fa7923fd41520135a11b5d15c536c87d311c4644b8ae72feb2210ef0aaf27f4",
+      "bytes": 620166,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-08.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-08.png",
+      "sha256": "edd22f3b74864ba35c9cc155021a9fc8915660ba03176eef634d67a21a9a3038",
+      "bytes": 1169890,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-09.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-09.png",
+      "sha256": "02f292bf45e4762cbee594f5a919370f2f6dd980ccadf8fe57d4233f29d3f3fa",
+      "bytes": 542130,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-10.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-10.png",
+      "sha256": "8797b62975fcc91f95139013ca953d51e5eddd34a7a68836bae3d3b3148461b7",
+      "bytes": 883734,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-11.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-11.png",
+      "sha256": "b897aad0bf9477a3b9d0d692c1c24aac21684af25812b991943fade075d4058a",
+      "bytes": 820058,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-12.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-12.png",
+      "sha256": "ac2ecf5bdcb76f5d33de0f8045db704880987100a303ce94566356dd7adee1b3",
+      "bytes": 216186,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-13.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-13.png",
+      "sha256": "1ea91b201a85cef924980ba8f7e422b42a77071cee679e38b6dca73ef943c1dc",
+      "bytes": 181345,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-14.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-14.png",
+      "sha256": "5e5ef54f84dbb119fc9e53d690d0b92ef6b05fd9c699fc1fb3a00a2cc5f912d5",
+      "bytes": 217342,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-15.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-15.png",
+      "sha256": "4b439c7a53580949ed55527408557f0998cfa5fa09bc2c26dedf0b5f6df362d2",
+      "bytes": 214239,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-16.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-16.png",
+      "sha256": "088a27b4bc6f35bbd7daf47efc39772b5051c269726262f26c58ff2088d868a6",
+      "bytes": 173465,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-17.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-17.png",
+      "sha256": "ee7cdebebd91e03a4d7ab7e1bf1c1f5a0e6840b9928ad8aa1c77ea85ccba50e9",
+      "bytes": 246141,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-18.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-18.png",
+      "sha256": "82317b123561850ae9e51616c6f5a97b1f3535b0fb62f6d698ca3897c9da3e31",
+      "bytes": 261428,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-19.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-19.png",
+      "sha256": "dc87b75322b499fc2328d157f6687730699c75c56445117bf1b1da3f919a61be",
+      "bytes": 113571,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-20.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-20.png",
+      "sha256": "f4b3ca508088527c349ac6ea83577968efbfcee68cbc9ec013f0fd22bffbe866",
+      "bytes": 97974,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-21.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-21.png",
+      "sha256": "9f63467fb49b1b4f3e0be30885e81a98460773bb1675fd7f235500903d70734d",
+      "bytes": 147658,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-22.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-22.png",
+      "sha256": "3e9ade6c5c28709fff8643ecd95b204a3f693bcb531efb4099b61d990b112eb2",
+      "bytes": 115994,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-23.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-23.png",
+      "sha256": "dbfb4c9f210bba8768ef961841f17deec574ced0a8c3bf8373c59f30173c1f54",
+      "bytes": 253652,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-24.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-24.png",
+      "sha256": "d32c3e00bb78dcdf9bbb49525ea3cb05bb1b966444a2d8d6d06466b1f7943cbe",
+      "bytes": 537078,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/slides/slide-25.png",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_renders\\slide-25.png",
+      "sha256": "c59656cccf997f72d031d46d717460036edae1564326112ead56d91fb0c624e0",
+      "bytes": 94188,
+      "role": "verified_slide_render"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/final_validation_verified.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_validation_verified.json",
+      "sha256": "f712aaf6a13b340ba0de16fa9e06b3efea30411d2d8901b5c776849b00f151a9",
+      "bytes": 12318,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/final_sdk_validation.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_sdk_validation.json",
+      "sha256": "3fef5928545961f617b3a3da7a77ea67ef36429371416cbe199a443e23d15fc6",
+      "bytes": 348,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/final_visual_review.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_visual_review.private.json",
+      "sha256": "16a1dacbb639e16d094c916ab1ead73b75e4d247169f59766d3d34ea43d082bb",
+      "bytes": 2496,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/candidate_independent_audit.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\candidate_independent_audit.private.json",
+      "sha256": "02e00942e7eb0eeb3b080efdcf45fc6e539530fd79435b9a67761594167b4db9",
+      "bytes": 62739,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/candidate_media_editability_audit.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\candidate_media_editability_audit.private.json",
+      "sha256": "77bb35952fdea35610dcf96586d20307e3a3b00d9b6ff550d0c728dd8139202a",
+      "bytes": 1909,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/final_independent_pixel_review.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\final_independent_pixel_review.private.json",
+      "sha256": "9410d578aa9c5fcb370b4fa7407e963f5864cbfe28ec2debc7a00ca932f9c6ef",
+      "bytes": 4508,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/chart_cache_precision_audit.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\chart_cache_precision_audit.private.json",
+      "sha256": "cf7b3fd74661cee4f89124d5770559e3768ad16f493dc4858a958c34e8eeef58",
+      "bytes": 828325,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/se_final_arrays_review.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\se_final_arrays_review.private.json",
+      "sha256": "3e848f550b8330e95d9879010782aabc3ba93e8171a5d56e3a7801b0ca24de50",
+      "bytes": 3298,
+      "role": "historical_validation_receipt"
+    },
+    {
+      "path": "releases/2026-09-10_v9/provenance/deck_validation/se_retained_selection_review.private.json",
+      "original_path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\se_retained_selection_review.private.json",
+      "sha256": "03262ea80e6c2e39d42b88477b752d33eb4dad1deba6f995a86663d38221bb48",
+      "bytes": 10505,
+      "role": "historical_validation_receipt"
+    }
+  ]
+}

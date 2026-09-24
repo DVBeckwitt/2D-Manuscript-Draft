@@ -1,0 +1,15 @@
+Transition-matrix profiles
+
+Suggested pace: 30 seconds.
+
+These PbI₂ profiles use the same detector integration for measurement and calculation. The saved transition-matrix model captures the main peak positions and modulated intensity between them on both sides. This is the selected B4 trial with 2H and both handed 6H parents. The corresponding line profiles provide a stronger comparison than the detector picture alone. Visible differences remain. The growth objective is to control both crystallite orientation and stacking sequence.
+
+Sources and figure interpretation
+- Direct data/model source: SLATE Fit Library/runs/pbi2-b4-joint-mosaic-sf-2026-09-02-detector-background/artifacts/final/pbi2_b4_m0_joint_continuous_angle_sobol1024_6d472310d160.ra_diag.npz.
+- Direct extraction: build_codex/slate_talk/extract_pbi2_m1_curves.py and pbi2_m1_curves.npz. Each displayed bin is the mean of its original nine native samples. Measured values use raw minus retained background. Model values use retained signal. No independent rescaling, clipping, smoothing or reconstructed curve.
+- Group indexing is verified against the original plot: groups 0–6 correspond to native right, and groups 7–13 to native left. Qz = 2πL/6.986 Å. These are continuous-profile fit outputs, not profiles extracted from the Monte Carlo detector preview.
+- Frozen selected fit: pbi2_b4_joint_shared_intensity_sobol1024_7dd201c47e33.json, 72 layers, 2H/6H+/6H− parents. The saved fit source count is 1024. Denser-source detector display rerenders do not change these original fitted profiles or establish a 4H fit.
+
+Retain the direct saved continuous-profile provenance, physical shared intensity scale, matched integration, detector-side definitions and fitted-condition limitations. These profiles are not extracted from the schematic animations or the Monte Carlo preview.
+
+Retain the direct saved continuous-profile provenance, physical shared intensity scale, matched integration, detector-side definitions and fitted-condition limitations. These profiles are not extracted from the schematic animations or the Monte Carlo preview.

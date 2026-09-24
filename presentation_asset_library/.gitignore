@@ -1,0 +1,19 @@
+# Large archival payloads live in the library and its checked ZIP snapshot.
+# Keep catalog, documentation, source code, recipes and small metadata Git-ready.
+*.pptx
+*.mp4
+*.gif
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.npz
+*.npy
+*.xlsx
+*.zip
+*.pdf
+*.gz
+__pycache__/
+*.pyc
+node_modules/

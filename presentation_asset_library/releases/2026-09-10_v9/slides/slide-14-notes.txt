@@ -1,0 +1,278 @@
+Backup: outside the 8-minute talk.
+
+Bi₂Te₃: off-axis profiles
+
+Backup. Excluded from the eight-minute main talk.
+
+Both sides use matched finite detector integration. Peak agreement varies by region. The stricter joint search retained the existing shared physical parameters.
+
+Sources and interpretation
+{
+  "operation": "Lossless crops of user-selected existing scientific figures. No resampling, smoothing, recoloring, reconstruction or model rerun.",
+  "records": {
+    "te": {
+      "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_joint_roi_20260910.json",
+      "sha256": "b11b657272b2bd36fde5147bda779c02077256f30a6e8bcdfa2fc4faa7586e1d",
+      "snapshot": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_source_record.private.json"
+    },
+    "thickness": {
+      "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2x3-reflectivity-thickness.json",
+      "sha256": "242aa5f0b3abdbfdfccf817162dd61d4b4bf7fb91c49b866e767b6a9e569f4dc",
+      "snapshot": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\thickness_source_record.private.json"
+    }
+  },
+  "assets": [
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_axial_full_00l.png",
+      "sha256": "322303b00d44229753ff5bc74c4dee21b9347f8bae037c5a3151f5d3b408531a",
+      "source": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\bi2te3_spatial_fit_2026_09_10\\bi2te3_current_physical_fit.png",
+      "source_sha256": "26d6cafb4c51efd23c6ba6ed3c70bea435465400ddd2ecf1b08b358c396e91d8",
+      "source_dimensions_px": [
+        2520,
+        2340
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        25,
+        340,
+        2510,
+        982
+      ],
+      "output_dimensions_px": [
+        2485,
+        642
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Full axial row, including source m=0 title, axes, ticks, data, model and error bars."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_r1_minus.png",
+      "sha256": "5d53395a7280c66e382296ed9301eba99300e52246def49699689589edea6df6",
+      "source": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\bi2te3_spatial_fit_2026_09_10\\bi2te3_current_physical_fit.png",
+      "source_sha256": "26d6cafb4c51efd23c6ba6ed3c70bea435465400ddd2ecf1b08b358c396e91d8",
+      "source_dimensions_px": [
+        2520,
+        2340
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        25,
+        1038,
+        1260,
+        1617
+      ],
+      "output_dimensions_px": [
+        1235,
+        579
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Middle left off-specular row. Original source label is m=1, minus side."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_r1_plus.png",
+      "sha256": "fe6aa6309cf55fb9241b033d55fe1c0f356053f661ac912b965b396e8e8577ad",
+      "source": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\bi2te3_spatial_fit_2026_09_10\\bi2te3_current_physical_fit.png",
+      "source_sha256": "26d6cafb4c51efd23c6ba6ed3c70bea435465400ddd2ecf1b08b358c396e91d8",
+      "source_dimensions_px": [
+        2520,
+        2340
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        1280,
+        1038,
+        2510,
+        1617
+      ],
+      "output_dimensions_px": [
+        1230,
+        579
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Middle right off-specular row. Original source label is m=1, plus side."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_legend.png",
+      "sha256": "6a6626efd2777dc509760d965aea3f74b56f78d2719437c4955125cf4d9696ff",
+      "source": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\bi2te3_spatial_fit_2026_09_10\\bi2te3_current_physical_fit.png",
+      "source_sha256": "26d6cafb4c51efd23c6ba6ed3c70bea435465400ddd2ecf1b08b358c396e91d8",
+      "source_dimensions_px": [
+        2520,
+        2340
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        25,
+        192,
+        2510,
+        253
+      ],
+      "output_dimensions_px": [
+        2485,
+        61
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Original two-series legend preserved for optional reuse."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\te_source_footnotes.png",
+      "sha256": "a453184399a98c836250cbd8e97a1820dfc5ddb45daa7dc65592c84c7635e92a",
+      "source": "C:\\Users\\Kenpo\\Downloads\\2D_Manuscript\\figures\\bi2te3_spatial_fit_2026_09_10\\bi2te3_current_physical_fit.png",
+      "source_sha256": "26d6cafb4c51efd23c6ba6ed3c70bea435465400ddd2ecf1b08b358c396e91d8",
+      "source_dimensions_px": [
+        2520,
+        2340
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        150,
+        2245,
+        2470,
+        2325
+      ],
+      "output_dimensions_px": [
+        2320,
+        80
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Source interpretation and error-bar footnotes preserved for optional reuse."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\bi2x3_thickness_no_heading.png",
+      "sha256": "14df627017fafac590bc558c1dd79325cf7d5d5a735c50f8b3d3cf8abea83cf6",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2x3-reflectivity-thickness.png",
+      "source_sha256": "d3221b391e1f668f70db2682d26112fa067f144e6945fa83de89273f615f3186",
+      "source_dimensions_px": [
+        2160,
+        1440
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        0,
+        58,
+        2160,
+        1440
+      ],
+      "output_dimensions_px": [
+        2160,
+        1382
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Only the baked overarching heading is removed; all four panels, material headings, curves, legends and scientific footnotes retained."
+    },
+    {
+      "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v7\\diagnostics\\bi2x3_thickness_top_panels.png",
+      "sha256": "dc4a929e02b896357b68dbaf6a61ce3b5b20e7da4dbf7df9dceb525e53f81994",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2x3-reflectivity-thickness.png",
+      "source_sha256": "d3221b391e1f668f70db2682d26112fa067f144e6945fa83de89273f615f3186",
+      "source_dimensions_px": [
+        2160,
+        1440
+      ],
+      "bbox_left_top_right_bottom_exclusive_px": [
+        0,
+        58,
+        2160,
+        791
+      ],
+      "output_dimensions_px": [
+        2160,
+        733
+      ],
+      "exact_source_pixel_equality": true,
+      "meaning": "Paired top reflectivity panels only. Material headings, axes, legends, visible conditional-fit caveat and all exact curve pixels retained; full figure is linked in notes."
+    }
+  ],
+  "te": {
+    "status": "Conditional spatial integration adopted in Te fit; refit complete, shared improvement not found; no library promotion.",
+    "physical_model_changed": false,
+    "source_position_kernel": true,
+    "active_fit_response": {
+      "status": "COMPLETE",
+      "method": "conditional_spatial_gaussian_native_pixel_mass.v1",
+      "measure": "native_pixel_count_mass",
+      "generation": "gh5",
+      "source_validation_complete": true,
+      "beam_position_draws": 0,
+      "fine_bank_key": "spatial_joint_fine_bank",
+      "check_bank_key": "spatial_joint_check_bank",
+      "observation_identity": "b8d2be86cb41d999e75de657748146feae141900a2152d099893a3f5b25ef9dc",
+      "fine_divergence_order": 5,
+      "check_divergence_order": 3,
+      "m0_divergence_order": 5,
+      "m0_low_angle_divergence_order": 7,
+      "spectral_model": "Cu Kalpha1 and Kalpha2 with original probabilities and zero individual linewidth",
+      "source_correlations": "original joint Gaussian retained",
+      "physical_model": "original complete CIF, N16, 500 A optical slab, 3 surface cuts; shared spherical mosaic; all 84 nonzero rods plus full signed local m0",
+      "count_components": "all nonzero rods on every retained primitive; local m0 in central observations plus all offaxis observations including below-critical strip",
+      "reference_support": "direction-dependent conditional Gaussian on continuous unbounded detector plane, P applied after native pixel integration; no image blur",
+      "kernel_source_sha256": "630d4f674fb1841ac2d660f4f08546a41e5ea1722aef7a03d48c4384c01958f2"
+    },
+    "source_param_path": "spatial_monotone_search.parameters",
+    "raw_parameters": [
+      -1.0998856303860667,
+      -3.506557897319982,
+      0.1270495360527901,
+      0.024450479184432883,
+      0.9755495208152927,
+      2.744001846504022e-13
+    ],
+    "decoded_parameters": {
+      "gaussian_sigma_deg": 0.3329091562125396,
+      "lorentzian_width_deg": 0.029999999999999995,
+      "lorentzian_weight": 0.1270495360527901,
+      "finite_stack_weights_W_A_B": [
+        0.024450479184432883,
+        0.9755495208152927,
+        2.744001846504022e-13
+      ]
+    },
+    "shared_parameters_changed": false,
+    "selected_relative_parameter_improvement": 0.0,
+    "library_promoted": false,
+    "limitations": [
+      "No improved joint parameters selected. Full displayed-profile convergence is small, but the stricter primitive-bin source tolerance fails in24 of1268 bins; this residual qualification remains explicit.",
+      "Current source figure is a conditional physical model, not an accepted new joint best fit.",
+      "Error bars show count plus background uncertainty scale, not confidence intervals.",
+      "Asinh axes retain negative background-subtracted data and faint peaks. No smoothing or data clipping.",
+      "Original source uses m=0 and m=1 labels; crops preserve these labels exactly."
+    ],
+    "residuals": [
+      "m1 longitudinal tails remain low; transverse centers low and shoulders high",
+      "m0 low-angle deficit and003 shape mismatch",
+      "m3-minus broad negative background-subtracted patch"
+    ]
+  },
+  "thickness": {
+    "status": "COMPLETE_NO_QUALIFIED_THICKNESS_UPDATE",
+    "method": "Conditional Gaussian native pixel mass integration; positive angular Gaussian quadrature with both Cu lines; local-lamella spherical mosaic and recompilation of optical slab/handoff.",
+    "fit_region_2theta_deg": [
+      1,
+      5
+    ],
+    "substrate_confirmation": "SiO2 only; no buffers",
+    "samples": {
+      "bi2se3": {
+        "lower_bound_candidate_nm": 48.681200000000004,
+        "conditional_top_roughness_nm": 0.6033192740821022,
+        "refined_additional_thickness_cost_reduction_percent": 0.08536001369097157,
+        "conclusion": "Conditional scan minimum is at a imposed coherent-stack lower bound. Small preference over50nm is not numerically established. No new reliable thickness measurement; retain existing50nm setting.",
+        "accepted_library_updated": false,
+        "full_diffraction_guard_validation": false
+      },
+      "bi2te3": {
+        "lower_bound_candidate_nm": 48.7952,
+        "conditional_top_roughness_nm": 0.40751946262065175,
+        "refined_additional_thickness_cost_reduction_percent": 0.054292707941994145,
+        "conclusion": "Conditional scan minimum is at a imposed coherent-stack lower bound. Small preference over50nm is not numerically established. No new reliable thickness measurement; retain existing50nm setting.",
+        "accepted_library_updated": false,
+        "full_diffraction_guard_validation": false
+      }
+    },
+    "limitations": [
+      "No full joint diffraction refit or acceptance; accepted library parameters untouched.",
+      "Small thickness preference changes with numerical handoff quadrature; do not report fitted error bars.",
+      "Low-angle residual shape remains large; fitted top roughness is conditional on empirical optical/kinematic handoff and fixed diffraction parameters.",
+      "Se first8 background uncertainty modes retain the previous projected approximation;28 smooth modes and native counts were reprojected.",
+      "500nm ceiling is a computational scan limit, not a specimen prior.",
+      "Actual full-build peak memory was not sampled; recorded peak belongs to independent point-validation process."
+    ]
+  }
+}
+These user-selected source figures are reproduced through exact pixel crops rather than tracing or regenerating quantitative curves. Source m labels are retained. Axes use the source asinh scale, preserving negative background-subtracted values. Error bars are count-plus-background uncertainty, not statistical confidence intervals. The state uses analytic conditional beam-position integration.
+These later Te-only diagnostics are kept separate from the parallel Se/Te detector images, original matched-profile comparison and associated September 3 parameter table.
+

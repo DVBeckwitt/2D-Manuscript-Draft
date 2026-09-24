@@ -1,0 +1,21 @@
+Ewald intersections and mosaic spread
+
+Suggested pace: 20 seconds.
+
+For one incident direction and wavelength, the Ewald sphere is fixed. Only features on its surface satisfy elastic scattering. Mosaic tilt spreads the reciprocal features into caps and bands, creating extended intersections. We now follow those selected traces to the detector.
+
+Playback cue
+Click once to start the 16-second clip. Narrate during playback, hold the final frame, and advance manually.
+
+Sources and figure interpretation
+- Author-approved animation: output/presentations/animations/ewald_intersections_then_mosaic_clean_end.mp4, 16 seconds. Its ending removes the surrounding reciprocal shapes and retains the selected Ewald traces.
+- The presentation copy crops only the constant upper 100-pixel title strip from the 1600-by-900 movie. Scientific geometry, labels, timing and final hold remain. An editable slide heading replaces the baked-in heading.
+- The Ewald center is minus ki and its radius is |ki| = 2pi/lambda. The camera and incident beam state remain fixed while reciprocal orientations change. Exact intersections are documented in build_codex/slate_talk/ewald_mosaic_animation/geometry_checks.json.
+- This is an orientation-geometry schematic with normalized shell weights, not a complete detector-intensity calculation. The illustrative beam selects the middle axial order; no artificial acceptance width makes the other axial examples intersect.
+- The next animation continues from this final geometry. The display widths and generic r=1, L=1,2,3 labels are not material-specific fitted parameters or selection rules.
+
+Retain the clean-ending Ewald animation and its exact-intersection checks. The fixed sphere and normalized trace visibility do not represent beam bandwidth, a finite acceptance tolerance or a complete detector intensity calculation.
+
+Retain the clean-ending Ewald animation and its exact-intersection checks. The fixed sphere and normalized trace visibility do not represent beam bandwidth, a finite acceptance tolerance or a complete detector intensity calculation.
+
+The unchanged 16-second clean-ending movie fits the revised 20-second slide budget. Preserve its exact-intersection and illustrative-density limitations.

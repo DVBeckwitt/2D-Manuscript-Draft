@@ -23,6 +23,12 @@ __pycache__/
 *.pyc
 .ruff_cache/
 
+# Generated previews, package builds, and local chart-editing snapshots.
+output/
+tmp/
+.chart-data-*/
+presentation_asset_library/releases/2026-09-11_v10/assets/cylinder_bridge_v3/Cylinder_Bridge.svg
+
 # PDFs: keep rendered outputs for review, ignore everything else.
 *.pdf
 !main.pdf

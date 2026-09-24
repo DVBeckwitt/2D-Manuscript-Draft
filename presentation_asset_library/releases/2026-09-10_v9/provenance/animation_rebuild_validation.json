@@ -1,0 +1,1385 @@
+{
+  "schema": "oriented-powder-animation-rebuild-validation.v1",
+  "runner": "tools/rebuild_animation.py",
+  "validated_utc": "2026-09-11T01:56:40.189942+00:00",
+  "recipe_count": 14,
+  "runs": [
+    {
+      "recipe": "angular-coordinates",
+      "run": "angular-coordinates",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_angles_labeled_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "crystallites",
+      "run": "crystallites",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ensemble_tilt_detail/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "detector",
+      "run": "detector",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_detector_labeled_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "ewald",
+      "run": "ewald",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/ewald_mosaic_clean_end/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "incidence-angular",
+      "run": "incidence-angular-closed",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_10.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_11.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_angular_animation/frame_9.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          },
+          "@napi-rs/canvas": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\@napi-rs\\canvas\\index.js",
+            "version": "0.1.100",
+            "libraries": null
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "incidence-axial",
+      "run": "incidence-axial",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        },
+        {
+          "path": "build_codex/slate_talk/incidence_mosaic_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": false
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "mosaic",
+      "run": "mosaic",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/mosaic_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "mosaic-tails",
+      "run": "mosaic-tails",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "mosaic-tails-larger-c",
+      "run": "mosaic-tails-larger-c",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "pbi2-disorder",
+      "run": "pbi2-disorder",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_disorder_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "pbi2-matrices",
+      "run": "pbi2-matrices",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_matrix_animations/combined/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "pbi2-mixture",
+      "run": "pbi2-mixture",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/pbi2_polytype_mixture_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "reciprocal-coordinates",
+      "run": "reciprocal-coordinates",
+      "mode": "proof frames",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_6.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_7.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/detector_q_labeled_animation/frame_8.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": null
+    },
+    {
+      "recipe": "rotation",
+      "run": "rotation",
+      "mode": "full render",
+      "status": "complete",
+      "frame_checks": [
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_0.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_1.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_2.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_3.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_4.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        },
+        {
+          "path": "build_codex/slate_talk/rotation_animation_indexed/frame_5.png",
+          "historical_frame_present": true,
+          "byte_identical": true
+        }
+      ],
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+        "node": "v24.19.0",
+        "ffmpeg": "ffmpeg version 2024-10-13-git-e347b4ff31-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+        "packages": {
+          "sharp": {
+            "entry": "C:\\Users\\Kenpo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\sharp\\dist\\index.cjs",
+            "version": "0.35.4",
+            "libraries": {
+              "aom": "3.14.1",
+              "archive": "3.8.9",
+              "cairo": "1.18.4",
+              "cgif": "0.5.3",
+              "exif": "0.6.26",
+              "expat": "2.8.3",
+              "ffi": "3.8.0",
+              "fontconfig": "2.18.3",
+              "freetype": "2.14.3",
+              "fribidi": "1.0.16",
+              "glib": "2.89.4",
+              "harfbuzz": "14.3.1",
+              "heif": "1.23.2",
+              "highway": "1.4.0",
+              "imagequant": "2.4.1",
+              "lcms": "2.19.1",
+              "mozjpeg": "0826579",
+              "pango": "1.58.2",
+              "pixman": "0.46.4",
+              "png": "1.6.58",
+              "proxy-libintl": "0.5",
+              "rsvg": "2.62.91",
+              "tiff": "4.7.2",
+              "uhdr": "2.0.2",
+              "vips": "8.18.6",
+              "webp": "1.6.0",
+              "xml2": "2.15.3",
+              "zlib-ng": "2.3.3",
+              "sharp": "0.35.4"
+            }
+          }
+        }
+      },
+      "video_validation": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1080,
+        "avg_frame_rate": "30/1",
+        "duration": "8.400000",
+        "nb_read_frames": "252"
+      }
+    }
+  ],
+  "rotation_exact_export_comparison": {
+    "sample_rotation_reciprocal_rings_indexed.mp4": {
+      "original_sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617",
+      "rebuilt_sha256": "2057fb29964395f87a1b24537074331fb3f1701984923a6ecf5d5d42ade99617",
+      "byte_identical": true
+    },
+    "sample_rotation_reciprocal_rings_indexed.gif": {
+      "original_sha256": "9e3b95606e4eadc2ded45214ac2e200e70c4fe2b1b1b83cc6eb0860cf851d535",
+      "rebuilt_sha256": "9e3b95606e4eadc2ded45214ac2e200e70c4fe2b1b1b83cc6eb0860cf851d535",
+      "byte_identical": true
+    },
+    "sample_rotation_reciprocal_rings_indexed_still.png": {
+      "original_sha256": "dc31818b3a603636e296d76b4f4ff2bcd17d27703134634006427aa6c1b15939",
+      "rebuilt_sha256": "dc31818b3a603636e296d76b4f4ff2bcd17d27703134634006427aa6c1b15939",
+      "byte_identical": true
+    }
+  },
+  "scope": "Full rotation encoded and decoded frame-count checked; all remaining recipes ran their own proof generation and geometry checks. Historical proof frame equality is separately reported. This does not certify every original video can be reproduced byte-for-byte on another runtime, nor regenerate historical parameter variants or edited/merged PPT clips.",
+  "runner_sha256": "2211529c32db6185a3a8682c941e4d170c38a9be64dc9fbf766eef38f653c307",
+  "historical_frame_comparison": {
+    "checked": 124,
+    "identical": 116,
+    "mismatch_recipe": "incidence-axial",
+    "mismatch_count": 8,
+    "meaning": "Current archived incidence helper reads the updated actual Bi2Se3 lattice/configuration. Eight proof frames for the older axial-response recipe differ from its historical export. Preserve historical media as the approved appearance; current-source rerender is an alternative. No full-video match is claimed for other recipes."
+  },
+  "proof_export_smoke_check": {
+    "status": "complete",
+    "proof_count": 9,
+    "hashes_verified": true
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "oriented-powder-compact-te-profiles.v1",
+  "source_npz": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_joint_roi_20260910.ra_diag.npz",
+  "source_npz_bytes": 5972434229,
+  "source_npz_sha256": "93a95f48d6902d16dcc839635ff7108669fcb05116d55ae0e49b7021e008e622",
+  "source_packet": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\full_physical_intensity_refit\\bi2te3_inputs.pkl",
+  "source_packet_sha256": "6c68e82f792875b76411845b294174dc273196fd6df17e4484d34a8d613952fd",
+  "compact_array_keys": {
+    "joint_parent": {
+      "shape": [
+        1322
+      ],
+      "dtype": "int64",
+      "raw_c_order_sha256": "39d5c98682145e1bf5a6e53a5d340524fadedfd183eaeb431ebb3decd5e8093b"
+    },
+    "joint_radial": {
+      "shape": [
+        1322
+      ],
+      "dtype": "int64",
+      "raw_c_order_sha256": "ea5bd36d3f46169a7fb65b09bc19752bc4cd2c47a3ebfa9b3f46a09346423959"
+    },
+    "joint_measured": {
+      "shape": [
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "a431817db194d4328d3f3c4fb89207ef3c1fa23513057174558eef974cb161c6"
+    },
+    "joint_background": {
+      "shape": [
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "938e905a9229c59c5f5dcd7faa01d068cb833fdf997246152a8702d84c3e890f"
+    },
+    "joint_selected": {
+      "shape": [
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "7c6845e640c05151c5f6f51ddca7ae27bc2cfc8845c021836781f3a30f290015"
+    },
+    "joint_area": {
+      "shape": [
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "48120a0bb9cb768265ec62df36d19197f9c4730d3cd578fd711af91f16fca30a"
+    },
+    "joint_parent_density_area": {
+      "shape": [
+        800
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "80c1b22b31e312c3e97006e870cdd846e7c961ecffb4dfdfe70e76ea07353fb1"
+    },
+    "joint_valid": {
+      "shape": [
+        1322
+      ],
+      "dtype": "bool",
+      "raw_c_order_sha256": "e8a07d5226a9421bc508de2b53b0cdbc800ec7740905eb0a877e68525e53585e"
+    },
+    "joint_count_covariance": {
+      "shape": [
+        1322,
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "f9381f4f9ffbee88aef3eb56e484185ed29b1fbfc427ad8c256ad386be7aa0d2"
+    },
+    "joint_background_modes": {
+      "shape": [
+        36,
+        1322
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "90683ef85d989fd4649e112a3fb7619f2e38823f2088b3b27a3d8845872f8152"
+    },
+    "joint_m1_minus_fine_report_edges": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "1c48ebe21fa746dfdc3b26db98d8770f542ab31e1c961218daa535e2a03ce1ee"
+    },
+    "joint_m1_plus_fine_report_edges": {
+      "shape": [
+        11
+      ],
+      "dtype": "float64",
+      "raw_c_order_sha256": "1c48ebe21fa746dfdc3b26db98d8770f542ab31e1c961218daa535e2a03ce1ee"
+    }
+  },
+  "original_generator_sha256": "ddfe90fe5bdf1b612511694f6ffc17be961a7f353016e55f0e56ba571a2a0416",
+  "coordinate_operation": "Exact L/theta coordinate arrays extracted from source packet. No pickle needed to rebuild figures.",
+  "array_operation": "Exact selected arrays copied without any recomputation. Displayed curves and uncertainty use the original generator linear aggregation and covariance formula.",
+  "csv_precision": ".17g IEEE754 binary64 round-trip; nan is retained, no values clipped",
+  "limitations": [
+    "Conditional spatial-integration model, no accepted new joint best fit.",
+    "Original full numerical integration bank omitted (5.97GB); original source hash retained.",
+    "Error bars are count+background uncertainty scale, not confidence intervals."
+  ],
+  "original_png_pixel_reproduction_verified": true,
+  "replot_runtime": "Python3.12.2, numpy2.4.6, Matplotlib3.11.1, Pillow12.3.0"
+}

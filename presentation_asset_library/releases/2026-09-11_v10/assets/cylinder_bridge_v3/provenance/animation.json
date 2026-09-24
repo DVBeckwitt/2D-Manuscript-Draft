@@ -1,0 +1,32 @@
+{
+  "file": "Cylinder_Bridge.mp4",
+  "sha256": "4ba9e53e3bcf6a4dc351a82ce1d22d3c3adc30269b1c4e6bd0d51a58602dd5d1",
+  "duration_seconds": 26.0,
+  "frames": 520,
+  "fps": 20,
+  "width": 1600,
+  "height": 900,
+  "codec": "H.264",
+  "pixel_format": "yuv420p",
+  "audio": false,
+  "timeline_seconds": [
+    0.0,
+    8.0,
+    12.2,
+    17.0,
+    26.0
+  ],
+  "geometry_source": "source/cylinder_bridge.py",
+  "intensity_model": "See shared geometry provenance",
+  "opening": "Near-delta N=512 finite peaks followed by a continuous neighboring-integer thickness population down to mean N=8. Peak-normalized display.",
+  "continuous_progress": "Actual azimuth sweep and scaled rigid mosaic rotations after the thickness opening; N=8 and source state then remain fixed.",
+  "opening_pacing": "Hold 0\u20131s; inverse mean thickness advances as u\u00b2 over 1\u20136.8s; hold final N8 to8s. Visible broadening accelerates.",
+  "rendered_scenes": 117,
+  "identical_hold_frames_reused": 43,
+  "retained_tail_frames": 360,
+  "retained_tail_source": "data/retained_v2_movie.mp4",
+  "retained_tail_sha256": "bf4c4829ff110c9f80b4519f07aa40ed2bab3d7483c85be7c1cb23171abcee8a",
+  "generator_sha256": "92a283d612f92d5255a2c1b59996dfb57a0679b310470ee83b2280ea118d83e9",
+  "matplotlib": "3.10.3",
+  "numpy": "2.4.6"
+}

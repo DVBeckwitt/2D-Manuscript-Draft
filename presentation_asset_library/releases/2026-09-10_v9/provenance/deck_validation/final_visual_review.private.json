@@ -1,0 +1,126 @@
+{
+  "final_sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+  "retained_slides": [
+    {
+      "source_slide": 1,
+      "final_slide": 1,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 2,
+      "final_slide": 2,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 3,
+      "final_slide": 3,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 4,
+      "final_slide": 4,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 5,
+      "final_slide": 5,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 6,
+      "final_slide": 6,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 7,
+      "final_slide": 7,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 8,
+      "final_slide": 8,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 9,
+      "final_slide": 9,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 10,
+      "final_slide": 10,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 11,
+      "final_slide": 11,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 13,
+      "final_slide": 14,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 14,
+      "final_slide": 15,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 15,
+      "final_slide": 16,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 16,
+      "final_slide": 17,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 17,
+      "final_slide": 18,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 18,
+      "final_slide": 19,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 19,
+      "final_slide": 20,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 20,
+      "final_slide": 21,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 21,
+      "final_slide": 22,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 22,
+      "final_slide": 23,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 23,
+      "final_slide": 24,
+      "pixel_identical": true
+    },
+    {
+      "source_slide": 24,
+      "final_slide": 25,
+      "pixel_identical": true
+    }
+  ],
+  "new_slides_reviewed": [
+    12,
+    13
+  ],
+  "rendered_slides": 25,
+  "all_retained_pixel_identical": true
+}

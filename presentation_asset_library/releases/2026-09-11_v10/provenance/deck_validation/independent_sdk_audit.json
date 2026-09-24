@@ -1,0 +1,10 @@
+{
+  "input": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v10\\candidate.pptx",
+  "sdk": "DocumentFormat.OpenXml 3.0.1",
+  "target": "Office2016",
+  "package_opened": true,
+  "selected_parts": [],
+  "selected_error_count": 0,
+  "whole_package_error_count": 0,
+  "errors": []
+}

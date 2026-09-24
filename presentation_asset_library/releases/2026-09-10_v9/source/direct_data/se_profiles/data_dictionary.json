@@ -1,0 +1,117 @@
+{
+  "schema": "oriented-powder-se-profiles-csv.v1",
+  "source_npz": "source\\workspace\\build_codex\\slate_talk\\animated_deck_v9\\figures\\se_retained\\bi2se3_retained_profiles_direct.npz",
+  "source_sha256": "d3f87639c9b03d3c4479cc22f0b4c5b3952ece53255069cd6ad50d36e13b92d1",
+  "array_shapes": {
+    "m1_minus_x": [
+      75
+    ],
+    "m1_minus_valid": [
+      75
+    ],
+    "m1_minus_measured": [
+      75
+    ],
+    "m1_minus_background": [
+      75
+    ],
+    "m1_minus_net_measured": [
+      75
+    ],
+    "m1_minus_model_total": [
+      75
+    ],
+    "m1_minus_net_model": [
+      75
+    ],
+    "m1_plus_x": [
+      75
+    ],
+    "m1_plus_valid": [
+      75
+    ],
+    "m1_plus_measured": [
+      75
+    ],
+    "m1_plus_background": [
+      75
+    ],
+    "m1_plus_net_measured": [
+      75
+    ],
+    "m1_plus_model_total": [
+      75
+    ],
+    "m1_plus_net_model": [
+      75
+    ],
+    "m3_minus_x": [
+      75
+    ],
+    "m3_minus_valid": [
+      75
+    ],
+    "m3_minus_measured": [
+      75
+    ],
+    "m3_minus_background": [
+      75
+    ],
+    "m3_minus_net_measured": [
+      75
+    ],
+    "m3_minus_model_total": [
+      75
+    ],
+    "m3_minus_net_model": [
+      75
+    ],
+    "m3_plus_x": [
+      75
+    ],
+    "m3_plus_valid": [
+      75
+    ],
+    "m3_plus_measured": [
+      75
+    ],
+    "m3_plus_background": [
+      75
+    ],
+    "m3_plus_net_measured": [
+      75
+    ],
+    "m3_plus_model_total": [
+      75
+    ],
+    "m3_plus_net_model": [
+      75
+    ],
+    "m0_x": [
+      290
+    ],
+    "m0_valid": [
+      290
+    ],
+    "m0_measured": [
+      290
+    ],
+    "m0_background": [
+      290
+    ],
+    "m0_net_measured": [
+      290
+    ],
+    "m0_model_total": [
+      290
+    ],
+    "m0_net_model": [
+      290
+    ]
+  },
+  "counts_unit": "counts per pixel area",
+  "x_unit": "m0 detector2theta degrees; other branches L reciprocal-lattice units",
+  "valid": "1=evaluated valid bin,0=invalid; no implicit dropping",
+  "csv_precision": ".17g IEEE754 binary64 round-trip; negative values and nan retained",
+  "uncertainty": "Unavailable; no manufactured error bars"
+}

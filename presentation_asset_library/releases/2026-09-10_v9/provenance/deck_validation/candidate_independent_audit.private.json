@@ -1,0 +1,2490 @@
+{
+  "candidate": "output\\presentations\\Oriented_Powder_8min_Animated_v9.pptx",
+  "sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+  "bytes": 13310844,
+  "source_sha256": "03f7c853bc92153c675364db5a4f9aa055c5c488a8b17a9d6cf98614ae4e8136",
+  "pass": true,
+  "checks_count": 361,
+  "failures": [],
+  "checks": [
+    {
+      "name": "25 slides",
+      "pass": true,
+      "actual": 25,
+      "expected": 25
+    },
+    {
+      "name": "No hidden slide flags",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Unique slide ids",
+      "pass": true,
+      "actual": 25,
+      "expected": 25
+    },
+    {
+      "name": "Removed original slide 12 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 12 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 12 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 12 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 12 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 25 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 25 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 25 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 25 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 25 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 26 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 26 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 26 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 26 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 26 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 27 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 27 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 27 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 27 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 27 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 28 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 28 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 28 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 28 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 28 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 29 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 29 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 29 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 29 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 29 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 30 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 30 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 30 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 30 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 30 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 31 id",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 31 part",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 31 rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 31 notes",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Removed original slide 31 notes rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 direct dependent ppt/media/image1.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 direct dependent ppt/notesSlides/notesSlide1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 1 direct dependent ppt/media/image2.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 direct dependent ppt/slideLayouts/slideLayout2.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 direct dependent ppt/media/media1.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 direct dependent ppt/media/media1.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 direct dependent ppt/media/image3.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 direct dependent ppt/notesSlides/notesSlide2.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 2 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 direct dependent ppt/slideLayouts/slideLayout2.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 direct dependent ppt/media/media2.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 direct dependent ppt/media/media2.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 direct dependent ppt/media/image4.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 direct dependent ppt/notesSlides/notesSlide3.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 3 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 direct dependent ppt/slideLayouts/slideLayout3.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 direct dependent ppt/media/media3.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 direct dependent ppt/media/media3.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 direct dependent ppt/media/image5.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 direct dependent ppt/notesSlides/notesSlide4.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 4 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 direct dependent ppt/slideLayouts/slideLayout6.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 direct dependent ppt/media/media4.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 direct dependent ppt/media/media4.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 direct dependent ppt/media/image6.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 direct dependent ppt/notesSlides/notesSlide5.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 5 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 direct dependent ppt/slideLayouts/slideLayout6.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 direct dependent ppt/media/media5.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 direct dependent ppt/media/media5.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 direct dependent ppt/media/image7.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 direct dependent ppt/notesSlides/notesSlide6.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 6 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 direct dependent ppt/media/media6.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 direct dependent ppt/media/media6.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 direct dependent ppt/media/image8.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 direct dependent ppt/notesSlides/notesSlide7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 7 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 direct dependent ppt/media/image9.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 direct dependent ppt/notesSlides/notesSlide8.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 8 direct dependent ppt/media/image10.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 direct dependent ppt/media/image11.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 direct dependent ppt/notesSlides/notesSlide9.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 9 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 direct dependent ppt/media/image10.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 direct dependent ppt/notesSlides/notesSlide10.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 10 direct dependent ppt/media/image12.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 direct dependent ppt/media/image13.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 direct dependent ppt/notesSlides/notesSlide11.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 11 direct dependent ppt/media/image14.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 direct dependent ppt/media/image15.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 direct dependent ppt/notesSlides/notesSlide13.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 13 direct dependent ppt/media/image16.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 direct dependent ppt/media/image17.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 direct dependent ppt/notesSlides/notesSlide14.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 14 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 direct dependent ppt/charts/chart3.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 direct dependent ppt/notesSlides/notesSlide15.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 direct dependent ppt/slideLayouts/slideLayout5.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 15 direct dependent ppt/charts/chart4.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 direct dependent ppt/charts/chart5.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 direct dependent ppt/notesSlides/notesSlide16.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 direct dependent ppt/slideLayouts/slideLayout4.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 direct dependent ppt/media/image18.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 16 direct dependent ppt/charts/chart6.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 direct dependent ppt/charts/chart7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 direct dependent ppt/notesSlides/notesSlide17.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 direct dependent ppt/slideLayouts/slideLayout4.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 direct dependent ppt/media/image19.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 17 direct dependent ppt/charts/chart8.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 direct dependent ppt/media/image20.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 direct dependent ppt/notesSlides/notesSlide18.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 18 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 direct dependent ppt/media/image21.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 direct dependent ppt/notesSlides/notesSlide19.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 19 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 direct dependent ppt/media/image22.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 direct dependent ppt/notesSlides/notesSlide20.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 20 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 direct dependent ppt/media/image23.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 direct dependent ppt/notesSlides/notesSlide21.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 21 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 direct dependent ppt/slideLayouts/slideLayout7.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 direct dependent ppt/media/media7.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 direct dependent ppt/media/media7.mp4 preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 direct dependent ppt/media/image24.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 direct dependent ppt/notesSlides/notesSlide22.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 22 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 direct dependent ppt/media/image25.png preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 direct dependent ppt/notesSlides/notesSlide23.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 23 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 retained",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 XML preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 timing tree",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 direct dependent ppt/charts/chart9.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 direct dependent ppt/notesSlides/notesSlide24.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 notes rels byte exact",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 direct dependent ppt/slideLayouts/slideLayout1.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original slide 24 direct dependent ppt/charts/chart10.xml preservation",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Retained source relative order",
+      "pass": true,
+      "actual": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "No dangling package relationships",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "No stale content type overrides",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "No unreachable package parts",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster1.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster2.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster3.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster4.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster5.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster6.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/slideMaster7.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster4.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster5.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster6.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster7.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout1.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout2.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout3.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout4.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout5.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout6.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/slideLayout7.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout1.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout2.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout3.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout4.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout5.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout6.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideLayouts/_rels/slideLayout7.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster1.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster2.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/slideMasters/_rels/slideMaster3.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart5.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart9.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme1.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart10.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme2.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme3.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme4.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme5.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme6.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme7.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/theme/theme8.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image1.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image2.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart9.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image3.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image4.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet8.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image5.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart10.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image6.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet9.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image7.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image8.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image9.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image10.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image11.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image12.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image13.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image14.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image15.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image16.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart3.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart4.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart5.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart6.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image18.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart7.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/chart8.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/embeddings/Microsoft_Excel_Worksheet7.xlsx",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image19.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image20.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image22.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image21.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart3.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart4.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image24.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image17.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart6.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart7.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Preserved dependent ppt/charts/_rels/chart8.xml.rels",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image25.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/image23.png",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media1.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media2.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media3.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media4.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media5.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media6.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Original media exact ppt/media/media7.mp4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Metadata Slides",
+      "pass": true,
+      "actual": "25",
+      "expected": "25"
+    },
+    {
+      "name": "Metadata Notes",
+      "pass": true,
+      "actual": "25",
+      "expected": "25"
+    },
+    {
+      "name": "Metadata HiddenSlides",
+      "pass": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "name": "7 retained movies",
+      "pass": true,
+      "actual": 7,
+      "expected": 7
+    },
+    {
+      "name": "No explorer external links",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart10.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart3.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart4.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart5.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart6.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart7.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart8.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "Final chart exact Decimal equality with own workbook ppt/charts/chart9.xml",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "mapping": [
+    {
+      "source": 1,
+      "final": 1,
+      "source_part": "ppt/slides/slide1.xml",
+      "final_part": "ppt/slides/slide1.xml"
+    },
+    {
+      "source": 2,
+      "final": 2,
+      "source_part": "ppt/slides/slide2.xml",
+      "final_part": "ppt/slides/slide2.xml"
+    },
+    {
+      "source": 3,
+      "final": 3,
+      "source_part": "ppt/slides/slide3.xml",
+      "final_part": "ppt/slides/slide3.xml"
+    },
+    {
+      "source": 4,
+      "final": 4,
+      "source_part": "ppt/slides/slide4.xml",
+      "final_part": "ppt/slides/slide4.xml"
+    },
+    {
+      "source": 5,
+      "final": 5,
+      "source_part": "ppt/slides/slide5.xml",
+      "final_part": "ppt/slides/slide5.xml"
+    },
+    {
+      "source": 6,
+      "final": 6,
+      "source_part": "ppt/slides/slide6.xml",
+      "final_part": "ppt/slides/slide6.xml"
+    },
+    {
+      "source": 7,
+      "final": 7,
+      "source_part": "ppt/slides/slide7.xml",
+      "final_part": "ppt/slides/slide7.xml"
+    },
+    {
+      "source": 8,
+      "final": 8,
+      "source_part": "ppt/slides/slide8.xml",
+      "final_part": "ppt/slides/slide8.xml"
+    },
+    {
+      "source": 9,
+      "final": 9,
+      "source_part": "ppt/slides/slide9.xml",
+      "final_part": "ppt/slides/slide9.xml"
+    },
+    {
+      "source": 10,
+      "final": 10,
+      "source_part": "ppt/slides/slide10.xml",
+      "final_part": "ppt/slides/slide10.xml"
+    },
+    {
+      "source": 11,
+      "final": 11,
+      "source_part": "ppt/slides/slide11.xml",
+      "final_part": "ppt/slides/slide11.xml"
+    },
+    {
+      "source": 13,
+      "final": 14,
+      "source_part": "ppt/slides/slide13.xml",
+      "final_part": "ppt/slides/slide13.xml"
+    },
+    {
+      "source": 14,
+      "final": 15,
+      "source_part": "ppt/slides/slide14.xml",
+      "final_part": "ppt/slides/slide14.xml"
+    },
+    {
+      "source": 15,
+      "final": 16,
+      "source_part": "ppt/slides/slide15.xml",
+      "final_part": "ppt/slides/slide15.xml"
+    },
+    {
+      "source": 16,
+      "final": 17,
+      "source_part": "ppt/slides/slide16.xml",
+      "final_part": "ppt/slides/slide16.xml"
+    },
+    {
+      "source": 17,
+      "final": 18,
+      "source_part": "ppt/slides/slide17.xml",
+      "final_part": "ppt/slides/slide17.xml"
+    },
+    {
+      "source": 18,
+      "final": 19,
+      "source_part": "ppt/slides/slide18.xml",
+      "final_part": "ppt/slides/slide18.xml"
+    },
+    {
+      "source": 19,
+      "final": 20,
+      "source_part": "ppt/slides/slide19.xml",
+      "final_part": "ppt/slides/slide19.xml"
+    },
+    {
+      "source": 20,
+      "final": 21,
+      "source_part": "ppt/slides/slide20.xml",
+      "final_part": "ppt/slides/slide20.xml"
+    },
+    {
+      "source": 21,
+      "final": 22,
+      "source_part": "ppt/slides/slide21.xml",
+      "final_part": "ppt/slides/slide21.xml"
+    },
+    {
+      "source": 22,
+      "final": 23,
+      "source_part": "ppt/slides/slide22.xml",
+      "final_part": "ppt/slides/slide22.xml"
+    },
+    {
+      "source": 23,
+      "final": 24,
+      "source_part": "ppt/slides/slide23.xml",
+      "final_part": "ppt/slides/slide23.xml"
+    },
+    {
+      "source": 24,
+      "final": 25,
+      "source_part": "ppt/slides/slide24.xml",
+      "final_part": "ppt/slides/slide24.xml"
+    }
+  ],
+  "new_slides": [
+    {
+      "index": 12,
+      "title": [
+        "Bi₂Se₃: off-axis profiles",
+        "Measured − background",
+        "Current model"
+      ],
+      "part": "ppt/slides/slide32.xml"
+    },
+    {
+      "index": 13,
+      "title": [
+        "Bi₂Se₃: the full axial profile",
+        "Measured − background",
+        "Current model"
+      ],
+      "part": "ppt/slides/slide33.xml"
+    }
+  ],
+  "movies": [
+    "ppt/media/media1.mp4",
+    "ppt/media/media2.mp4",
+    "ppt/media/media3.mp4",
+    "ppt/media/media4.mp4",
+    "ppt/media/media5.mp4",
+    "ppt/media/media6.mp4",
+    "ppt/media/media7.mp4"
+  ],
+  "allowed_compatibility_repairs": [
+    {
+      "part": "ppt/slides/slide7.xml",
+      "allowed_change": "Only existing shape10 ppaction://media empty hyperlink r:id bound to its own existing videoFile rId2; rId2 and p14:media rId1 resolve identical embedded video; relationships and every other slide byte unchanged"
+    },
+    {
+      "part": "ppt/charts/chart3.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 700
+    },
+    {
+      "part": "ppt/charts/chart4.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 719
+    },
+    {
+      "part": "ppt/charts/chart5.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 52
+    },
+    {
+      "part": "ppt/charts/chart6.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 250
+    },
+    {
+      "part": "ppt/charts/chart7.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 61
+    },
+    {
+      "part": "ppt/charts/chart8.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 280
+    },
+    {
+      "part": "ppt/charts/chart9.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 322
+    },
+    {
+      "part": "ppt/charts/chart10.xml",
+      "allowed_change": "Numeric cache text only; every IEEE754 binary64 value unchanged; all other XML semantics identical",
+      "changed_strings": 325
+    }
+  ],
+  "exact_workbook_reconciliation": [
+    {
+      "part": "ppt/charts/chart10.xml",
+      "verified_numeric_points": 472,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet9.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart3.xml",
+      "verified_numeric_points": 1206,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart4.xml",
+      "verified_numeric_points": 1206,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart5.xml",
+      "verified_numeric_points": 72,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart6.xml",
+      "verified_numeric_points": 304,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart7.xml",
+      "verified_numeric_points": 72,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart8.xml",
+      "verified_numeric_points": 320,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet7.xlsx",
+      "workbook_byte_exact": true
+    },
+    {
+      "part": "ppt/charts/chart9.xml",
+      "verified_numeric_points": 476,
+      "workbook": "ppt/embeddings/Microsoft_Excel_Worksheet8.xlsx",
+      "workbook_byte_exact": true
+    }
+  ]
+}

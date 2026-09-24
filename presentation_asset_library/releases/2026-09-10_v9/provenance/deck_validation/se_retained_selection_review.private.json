@@ -1,0 +1,209 @@
+{
+  "schema": "private-bounded-presentation-Se-retained-selection.v1",
+  "decision": "Use the complete September 5 restored axial and off-axis Se profile state, with its September 3 retained mosaic_final input. All three requested branches use the same archived model, background, scale and source stage.",
+  "universal_best_established": false,
+  "selection_reason": "The retained state better reproduces the strong off-axis and axial features in the displayed profile range. The later trial improves the post-003 wing but substantially worsens overall strong-profile agreement. This tradeoff is visible; the figures must not conceal it.",
+  "ranking_caveat": "These are descriptive errors on each archive's actual valid bins and own background. Historical objectives, probability measures, source and profile operators, masks, off-axis bin counts (75 versus 77 valid bins) and backgrounds differ. Raw fit objectives or these descriptive metrics do not establish a fair universal ranking or statistical significance.",
+  "remaining_mismatch": "The retained state still underpredicts 006: 15.09979 calculated versus 162.01042 measured net counts at the measured maximum in 5.7<=nominal L<6.3. Preserve the full axial range and this discrepancy. The figure is not proof of complete structural refinement.",
+  "errorbar_policy": "The retained archive has no per-bin uncertainty arrays. Do not invent bars or transfer September 9 errors onto September 5 data.",
+  "source_fit": {
+    "path": "C:\\Users\\Kenpo\\Nextcloud\\Obsidian\\Research\\Rigaku XRD\\SLATE Fit Library\\runs\\bi2x3-signed-polar-line-refit-2026-09-03\\artifacts\\bi2x3-signed-polar-line-refit.ra_diag.npz",
+    "sha256": "10bda11ec46ce258fa603beb22314c72e16fade32884ce259a297ee33d2cc195",
+    "stage": "films.bi2se3.mosaic_final",
+    "fitted_mosaic_deg": [
+      0.9034365805204533,
+      0.28187877031599856,
+      0.15479764405967122
+    ],
+    "parameter_order": [
+      "gaussian_sigma_deg",
+      "lorentzian_hwhm_deg",
+      "lorentzian_probability"
+    ],
+    "source_count": 256,
+    "stage_map_source": {
+      "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\04\\bi2x3_requested_regions\\render_current_continuous_regions.py",
+      "sha256": "f1e16d78e17df284431d1bc290fd79216af4ed621e12f21f5deea37101dad7ac"
+    }
+  },
+  "optical_metadata": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.json",
+    "sha256": "1e774a78ff888d1f5de510174fa159282f93f921ae5d91187ab7f7c984e39ee9",
+    "film_thickness_A": 500,
+    "top_roughness_A": 5.3555911321161505,
+    "bottom_roughness_A": 10,
+    "scale_count_per_A2": 203286049.5778935,
+    "quadrature_q4_q8_relative_l2": 0.0003765518139315071,
+    "physical_fit_acceptance": "NOT_ACCEPTED: low-angle agreement improved but optical stack unverified; no roughness uncertainty or full-profile adequacy certification."
+  },
+  "comparison_metadata": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_material_mixed_thickness_refit_20260909.json",
+    "sha256": "d09a24835859aa06a96c350f6742bdfa5fa9864d107f87e67d1d8d97e97438d6"
+  },
+  "candidates": {
+    "September5_retained": {
+      "source": {
+        "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\05\\specular_restore\\bi2se3_specular.ra_diag.npz",
+        "sha256": "f70d1d8e6efcbfb55f5db0223a9aacb4644979ae466e7d4c27871ad0c5e29613"
+      },
+      "profiles": {
+        "m0": {
+          "valid_bins": 290,
+          "net_count_mse": 134022.62729481366,
+          "net_count_relative_l2": 0.28068415518662504,
+          "asinh_linear_width_3_mse": 1.9718137320282354,
+          "measured_net_max": 11317.128764718967,
+          "model_net_max": 9468.185352347651,
+          "windows": {
+            "0_to_3_nominal_L": {
+              "valid_bins": 83,
+              "net_count_mse": 263647.8236179956,
+              "net_count_relative_l2": 0.2623276984173202,
+              "asinh_linear_width_3_mse": 3.6591435680697812,
+              "measured_net_max": 11317.128764718967,
+              "model_net_max": 9233.590432286277,
+              "model_at_measured_max": 9111.897608376608
+            },
+            "2.9_to_3.2_nominal_L": {
+              "valid_bins": 9,
+              "net_count_mse": 2030568.5000290805,
+              "net_count_relative_l2": 0.26937600079868634,
+              "asinh_linear_width_3_mse": 0.27530911661093893,
+              "measured_net_max": 10952.11715508974,
+              "model_net_max": 9468.185352347651,
+              "model_at_measured_max": 9468.185352347651
+            },
+            "3.2_to_4.5_nominal_L": {
+              "valid_bins": 40,
+              "net_count_mse": 10632.74970442778,
+              "net_count_relative_l2": 3.503126276463935,
+              "asinh_linear_width_3_mse": 2.3394400073064965,
+              "measured_net_max": 130.6449241573044,
+              "model_net_max": 295.46111710986406,
+              "model_at_measured_max": 271.03819363927767
+            },
+            "5.7_to_6.3_nominal_L": {
+              "valid_bins": 18,
+              "net_count_mse": 4322.704510456287,
+              "net_count_relative_l2": 0.9014588754921664,
+              "asinh_linear_width_3_mse": 3.6857767811430255,
+              "measured_net_max": 162.01041568148287,
+              "model_net_max": 15.099790014193772,
+              "model_at_measured_max": 15.099790014193772
+            },
+            "8.7_to_9.3_nominal_L": {
+              "valid_bins": 19,
+              "net_count_mse": 2.469694966906761,
+              "net_count_relative_l2": 0.9783467531040252,
+              "asinh_linear_width_3_mse": 0.2489256534137277,
+              "measured_net_max": 2.1461778957430795,
+              "model_net_max": 0.07626367957230684,
+              "model_at_measured_max": 0.004623757843660314
+            }
+          }
+        },
+        "m1_minus": {
+          "valid_bins": 75,
+          "net_count_mse": 55.32249472720707,
+          "net_count_relative_l2": 0.1723363433807824,
+          "asinh_linear_width_3_mse": 0.36168788050143075,
+          "measured_net_max": 255.60119663352913,
+          "model_net_max": 246.7191698238619
+        },
+        "m1_plus": {
+          "valid_bins": 75,
+          "net_count_mse": 52.72958008542222,
+          "net_count_relative_l2": 0.15699677659009242,
+          "asinh_linear_width_3_mse": 0.4527361924942666,
+          "measured_net_max": 265.4014052040999,
+          "model_net_max": 263.0468543557935
+        }
+      }
+    },
+    "September9_conditional": {
+      "source": {
+        "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_material_mixed_thickness_refit_20260909.ra_diag.npz",
+        "sha256": "3672e21a9a267c4ff4adbdac1cb46c829ce5337f1dc48a348ebbaa790086903a"
+      },
+      "profiles": {
+        "m0": {
+          "valid_bins": 290,
+          "net_count_mse": 422870.97667385783,
+          "net_count_relative_l2": 0.4977600955992589,
+          "asinh_linear_width_3_mse": 1.4791941855596271,
+          "measured_net_max": 11217.152990718541,
+          "model_net_max": 9686.507539735469,
+          "windows": {
+            "0_to_3_nominal_L": {
+              "valid_bins": 83,
+              "net_count_mse": 1169603.1328580796,
+              "net_count_relative_l2": 0.5571450239811483,
+              "asinh_linear_width_3_mse": 3.4520820380425055,
+              "measured_net_max": 11217.152990718541,
+              "model_net_max": 9686.507539735469,
+              "model_at_measured_max": 4719.285772805293
+            },
+            "2.9_to_3.2_nominal_L": {
+              "valid_bins": 9,
+              "net_count_mse": 3205026.977824485,
+              "net_count_relative_l2": 0.33526084545585494,
+              "asinh_linear_width_3_mse": 0.48636755497013656,
+              "measured_net_max": 10805.593535311262,
+              "model_net_max": 9686.507539735469,
+              "model_at_measured_max": 9294.750171283284
+            },
+            "3.2_to_4.5_nominal_L": {
+              "valid_bins": 40,
+              "net_count_mse": 45.78466354672188,
+              "net_count_relative_l2": 0.24085206693400152,
+              "asinh_linear_width_3_mse": 0.14569169769881624,
+              "measured_net_max": 127.42012978303285,
+              "model_net_max": 102.3653074485496,
+              "model_at_measured_max": 102.3653074485496
+            },
+            "5.7_to_6.3_nominal_L": {
+              "valid_bins": 18,
+              "net_count_mse": 4674.788643554718,
+              "net_count_relative_l2": 0.9669704368535852,
+              "asinh_linear_width_3_mse": 5.677071309491006,
+              "measured_net_max": 158.8243095857271,
+              "model_net_max": 4.915216532775439,
+              "model_at_measured_max": 4.891867192330508
+            },
+            "8.7_to_9.3_nominal_L": {
+              "valid_bins": 19,
+              "net_count_mse": 0.30380529116498517,
+              "net_count_relative_l2": 0.9149237171829003,
+              "asinh_linear_width_3_mse": 0.032981961133762436,
+              "measured_net_max": 0.9615053467972672,
+              "model_net_max": 0.22404181692321146,
+              "model_at_measured_max": 0.058355637813143346
+            }
+          }
+        },
+        "m1_minus": {
+          "valid_bins": 77,
+          "net_count_mse": 172.7097762503298,
+          "net_count_relative_l2": 0.3083996876123723,
+          "asinh_linear_width_3_mse": 0.6897049379917959,
+          "measured_net_max": 255.7855523952456,
+          "model_net_max": 262.22437820064584
+        },
+        "m1_plus": {
+          "valid_bins": 77,
+          "net_count_mse": 165.45239788557143,
+          "net_count_relative_l2": 0.2848131133457744,
+          "asinh_linear_width_3_mse": 0.6690431169429921,
+          "measured_net_max": 262.9541124100524,
+          "model_net_max": 284.7150098561122
+        }
+      }
+    }
+  },
+  "source_data_mutated": false,
+  "new_fit_performed": false,
+  "generator": {
+    "path": "C:\\Users\\Kenpo\\Nextcloud\\Git Projects\\2D-Manuscript-Draft\\build_codex\\slate_talk\\animated_deck_v9\\audit_se_retained_selection.py",
+    "sha256": "9ce0122aa180698a98487e3ba9a83c35c3a88ceee61abd086eefa83a7a4d6151"
+  }
+}

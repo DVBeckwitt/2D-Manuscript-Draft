@@ -1,0 +1,165 @@
+{
+  "purpose": "Read-only isolated termination comparison at Bi2Se3 003; no refitting or production changes.",
+  "source_manifest": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_material_surface_refit.json",
+  "source_manifest_sha256": "f46ebb41cc665443f3f5605a3319cf618d9cdbf2864f2a9164956be592b2f9f5",
+  "source_archive": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_material_surface_refit.ra_diag.npz",
+  "source_fields": [
+    "bi2se3_response_exact",
+    "bi2se3_m0_*"
+  ],
+  "method": "Exact archived per-termination source sum at prior mosaic, multiplied by the same prior common scale. Add same archived background once. Apply saved free A/B mixture weights. Joint-refit curve comes from archived trial.",
+  "units": "mean native detector counts per pixel squared; integrated net counts use archived bin area",
+  "prior_mosaic_and_scale": {
+    "parameters": [
+      1.0940746350211699,
+      21.61700983697323,
+      0.07777364439611219,
+      19.22355489752627,
+      0.0,
+      0.5
+    ],
+    "gaussian_sigma_deg": 1.0940746350211699,
+    "gaussian_nominal_unwrapped_fwhm_deg": 2.5763488813077706,
+    "lorentzian_width_parameter_deg": 21.61700983697323,
+    "lorentzian_wrapped_fwhm_deg": 43.756247063910955,
+    "eta_lorentzian": 0.07777364439611219,
+    "surface_fractions": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "phase_fractions": [
+      1.0
+    ],
+    "common_scale": 223194667.60473856
+  },
+  "joint_fit_mosaic_scale_and_fractions": {
+    "parameters": [
+      0.39693369735181366,
+      0.1798526605774451,
+      0.012606252459707906,
+      19.02979603608243,
+      0.9281065083039822,
+      0.9999999991853421
+    ],
+    "gaussian_sigma_deg": 0.39693369735181366,
+    "gaussian_nominal_unwrapped_fwhm_deg": 0.934707427072299,
+    "lorentzian_width_parameter_deg": 0.1798526605774451,
+    "lorentzian_wrapped_fwhm_deg": 0.35970561652047206,
+    "eta_lorentzian": 0.012606252459707906,
+    "surface_fractions": [
+      0.07189349169601778,
+      7.560892959659165e-10,
+      0.9281065075478929
+    ],
+    "phase_fractions": [
+      1.0
+    ],
+    "common_scale": 183880387.4686904
+  },
+  "prior_exact_vs_archived_angular_bank_relative_l2": 7.384739026778374e-06,
+  "source_state_count": 256,
+  "metrics": {
+    "003_core": {
+      "theta_range_deg": [
+        8.8,
+        9.9
+      ],
+      "projected_L_centers": [
+        2.8646607418203476,
+        3.187594225995005
+      ],
+      "bin_count": 11,
+      "measured_net_counts": 2065643.4694559844,
+      "scores": {
+        "reference_total": {
+          "density_mse": 2560016.329252306,
+          "net_integrated_counts": 1944173.5262444613,
+          "mse_ratio_to_reference": 1.0
+        },
+        "mixture_total": {
+          "density_mse": 3711745.7267565443,
+          "net_integrated_counts": 1921332.6391124432,
+          "mse_ratio_to_reference": 1.4498914262162614
+        },
+        "trial": {
+          "density_mse": 2634481.4999164166,
+          "net_integrated_counts": 1625869.885146221,
+          "mse_ratio_to_reference": 1.0290877717509948
+        }
+      }
+    },
+    "post003_wing": {
+      "theta_range_deg": [
+        9.9,
+        14.0
+      ],
+      "projected_L_centers": [
+        3.2198746289166897,
+        4.50881821549847
+      ],
+      "bin_count": 41,
+      "measured_net_counts": 39609.95603038965,
+      "scores": {
+        "reference_total": {
+          "density_mse": 1374.4215406654125,
+          "net_integrated_counts": 128250.58401064198,
+          "mse_ratio_to_reference": 1.0
+        },
+        "mixture_total": {
+          "density_mse": 255.33752729715508,
+          "net_integrated_counts": 21602.027762993235,
+          "mse_ratio_to_reference": 0.185778176303564
+        },
+        "trial": {
+          "density_mse": 39.82649512892998,
+          "net_integrated_counts": 38156.70522111095,
+          "mse_ratio_to_reference": 0.028976914251248112
+        }
+      }
+    },
+    "006_region": {
+      "theta_range_deg": [
+        18.0,
+        19.1
+      ],
+      "projected_L_centers": [
+        5.824270835868442,
+        6.144046209889661
+      ],
+      "bin_count": 11,
+      "measured_net_counts": 107540.7011377646,
+      "scores": {
+        "reference_total": {
+          "density_mse": 6246.723039781902,
+          "net_integrated_counts": 16786.265936937016,
+          "mse_ratio_to_reference": 1.0
+        },
+        "mixture_total": {
+          "density_mse": 6255.083708317031,
+          "net_integrated_counts": 16659.648088393973,
+          "mse_ratio_to_reference": 1.001338408711557
+        },
+        "trial": {
+          "density_mse": 8008.518538785807,
+          "net_integrated_counts": 3702.2016651723266,
+          "mse_ratio_to_reference": 1.2820351547177633
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Joint fit changed mosaic and scale in addition to terminations.",
+    "No statistical inference from this plot.",
+    "Source-specific fold and full quadrature convergence remain unqualified.",
+    "Archived pre-background-refit background used consistently for causal comparison."
+  ],
+  "artifact": {
+    "path": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2se3-003-termination-comparison.ra_diag.npz",
+    "sha256": "15b0ae3ece67b920862e6f0cad9c8f3530e25e8ec7e0ff6a474be1c0258c027b"
+  },
+  "figures": [
+    "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2se3-003-termination-comparison.png",
+    "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\10\\01a08c04-77c7-7940-8796-ba2d15999bc6\\bi2se3-003-termination-comparison.pdf"
+  ]
+}

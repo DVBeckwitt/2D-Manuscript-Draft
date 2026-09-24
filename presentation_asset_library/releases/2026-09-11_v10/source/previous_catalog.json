@@ -1,0 +1,3209 @@
+{
+  "schema_version": 1,
+  "release_id": "2026-09-10_v9",
+  "title": "Oriented-powder presentation library",
+  "description": "The exact edited v9 presentation, its figures and animations, and the source material preserved for reuse.",
+  "presentation": {
+    "path": "releases/2026-09-10_v9/presentation/Oriented_Powder_8min_Animated_v9.pptx",
+    "sha256": "0feca65d8e57c764666012cc75cd880da660fd1fea12eedba0cec69193c2cec3",
+    "bytes": 13310844,
+    "slide_count": 25
+  },
+  "slides": [
+    {
+      "number": 1,
+      "title": "A PbI₂ growth problem",
+      "texts": [
+        "A PbI₂ growth problem",
+        "Earlier reflectivity",
+        "Area-detector diffraction",
+        "The full detector pattern needed a physical explanation"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide1.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-01.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-01-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image2.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+          "format": "PNG",
+          "label": "image1.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image2.png",
+          "format": "PNG",
+          "label": "image2.png"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "In-plane orientations",
+      "texts": [
+        "In-plane orientations",
+        "Bi₂Se₃ and Bi₂Te₃",
+        "Points become rings"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide2.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-02.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-02-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image3.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "azimuthal-rings"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+          "format": "MP4",
+          "label": "media1.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+          "format": "PNG",
+          "label": "image3.png"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Many crystallites, one pattern",
+      "texts": [
+        "Many crystallites, one pattern"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide3.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-03.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-03-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image4.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "crystallite-ensemble"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+          "format": "MP4",
+          "label": "media2.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+          "format": "PNG",
+          "label": "image4.png"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Ewald intersections and mosaic spread",
+      "texts": [
+        "Ewald intersections and mosaic spread"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide4.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-04.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-04-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image5.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "ewald-mosaic"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+          "format": "MP4",
+          "label": "media3.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+          "format": "PNG",
+          "label": "image5.png"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Ewald surface to detector",
+      "texts": [
+        "Ewald surface to detector"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide5.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-05.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-05-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image6.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "ewald-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+          "format": "MP4",
+          "label": "media4.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+          "format": "PNG",
+          "label": "image6.png"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Mosaic tails in angular coordinates",
+      "texts": [
+        "Mosaic tails in angular coordinates"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide6.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-06.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-06-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image7.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "angular-mosaic-combined"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+          "format": "MP4",
+          "label": "media5.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+          "format": "PNG",
+          "label": "image7.png"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Incidence selects Bi₂Se₃ reflections",
+      "texts": [
+        "Incidence selects Bi₂Se₃ reflections",
+        "Illustrative mosaic: 50% Lorentzian"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide7.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-07.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-07-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image8.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "incidence-angular"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+          "format": "MP4",
+          "label": "media6.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+          "format": "PNG",
+          "label": "image8.png"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+      "texts": [
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included.",
+        "R=1",
+        "R=0"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide8.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-08.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-08-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+          "format": "PNG",
+          "label": "image9.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "image10.png"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Specular (r=0)",
+      "texts": [
+        "Specular (r=0)",
+        "Incident angle 5°. "
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide9.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-09.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-09-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image11.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "specular-wavelength"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image11.png",
+          "format": "PNG",
+          "label": "image11.png"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Bi₂Se₃: measured and simulated",
+      "texts": [
+        "Bi₂Se₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide10.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-10.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-10-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image12.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "image10.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image12.png",
+          "format": "PNG",
+          "label": "image12.png"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Bi₂Te₃: measured and simulated",
+      "texts": [
+        "Bi₂Te₃: measured and simulated",
+        "Measured",
+        "Simulation + background",
+        "Incident angle 5°. Shared capped scale. Low-Qz reflectivity included."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide11.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-11.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-11-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image14.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-detector"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+          "format": "PNG",
+          "label": "image13.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image14.png",
+          "format": "PNG",
+          "label": "image14.png"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Bi₂Se₃: off-axis profiles",
+      "texts": [
+        "Bi₂Se₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and intensity scale",
+        "Retained profile fit, September 3–5",
+        "No error bars available. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide32.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-12.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-12-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+          "format": "PNG",
+          "label": "v9_se_r1_minus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png",
+          "format": "PNG",
+          "label": "v9_se_r1_plus.png"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Bi₂Se₃: the full axial profile",
+      "texts": [
+        "Bi₂Se₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Reflectivity and the 00L series",
+        "Retained profile fit, September 3–5",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide33.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-13.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-13-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png",
+          "format": "PNG",
+          "label": "v9_se_axial_full_00l.png"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Bi₂Te₃: off-axis profiles",
+      "texts": [
+        "Bi₂Te₃: off-axis profiles",
+        "Measured − background",
+        "Current model",
+        "Shared mosaic and surface parameters",
+        "Diagnostic state; no new joint fit selected",
+        "Bars: count and background uncertainty. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide13.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-14.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-14-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+        "releases/2026-09-10_v9/assets/deck_embedded/image16.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+          "format": "PNG",
+          "label": "image15.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image16.png",
+          "format": "PNG",
+          "label": "image16.png"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Bi₂Te₃: the full axial profile",
+      "texts": [
+        "Bi₂Te₃: the full axial profile",
+        "Measured − background",
+        "Current model",
+        "Differences remain between peaks",
+        "Diagnostic state; no new joint fit selected",
+        "Asinh scale preserves negative net counts. Source image, not editable."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide14.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-15.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-15-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image17.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-profiles"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image17.png",
+          "format": "PNG",
+          "label": "image17.png"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Parameters behind the ordered-film images",
+      "texts": [
+        "Parameters behind the ordered-film images",
+        "Retained profile fits, 3 September",
+        "Fitted mosaic",
+        "Bi₂Se₃",
+        "Bi₂Te₃",
+        "Gaussian σ (°)",
+        "0.903",
+        "0.395",
+        "Lorentz half-width (°)",
+        "0.282",
+        "0.288",
+        "Lorentz weight",
+        "15.5%",
+        "74.5%",
+        "Structure-factor inputs held fixed",
+        "Bi z (fraction of c)",
+        "0.4008",
+        "0.4000",
+        "Outer X z (fraction of c)",
+        "0.2117",
+        "0.2095",
+        "Uiso (Å²)",
+        "0.019",
+        "0.000",
+        "Occupancy (all sites)",
+        "1",
+        "1",
+        "Stack length (c repeats)",
+        "17",
+        "16",
+        "X = Se or Te. Central X: z = 0 in both CIFs.",
+        "Curves include component weights. More than 97% of the angular probability lies in the plotted range."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide15.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-16.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-16-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart3.xml",
+        "ppt/charts/chart4.xml"
+      ],
+      "table_paths": [
+        "releases/2026-09-10_v9/data/native_tables/slide-16-table-1.csv"
+      ],
+      "asset_ids": [
+        "mosaic-parameters"
+      ],
+      "media_files": []
+    },
+    {
+      "number": 17,
+      "title": "Bi₂Te₃: termination changes near 003",
+      "texts": [
+        "Bi₂Te₃: termination changes near 003",
+        "Trial mixture (top / bottom): 97.6% Bi / outer-Te + 2.4% Bi / central-Te",
+        "Ends only: 2.5% less error",
+        "Joint refit: 85.6% less error",
+        "Ends only: 99.5% less error",
+        "Joint refit: 97.8% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Te₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide16.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-17.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-17-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image18.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart5.xml",
+        "ppt/charts/chart6.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2te3-termination"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image18.png",
+          "format": "PNG",
+          "label": "image18.png"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Bi₂Se₃: termination changes near 003",
+      "texts": [
+        "Bi₂Se₃: termination changes near 003",
+        "Trial mixture (top / bottom): 92.8% outer-Se / Bi + 7.2% Bi / central-Se",
+        "Ends only: 45.6% more error",
+        "Joint refit: 3.0% more error",
+        "Ends only: 81.4% less error",
+        "Joint refit: 97.1% less error",
+        "Error = mean squared error vs baseline. r = 1 peak changes little with ends alone. Conditional termination weights.",
+        "Bi₂Se₃: changing the end planes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide17.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-18.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-18-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image19.png"
+      ],
+      "chart_parts": [
+        "ppt/charts/chart7.xml",
+        "ppt/charts/chart8.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "bi2se3-termination"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image19.png",
+          "format": "PNG",
+          "label": "image19.png"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Next: controlled PbI₂ growth",
+      "texts": [
+        "Next: controlled PbI₂ growth",
+        "Tune mosaicity",
+        "Tune the stacking sequence",
+        "Stacking sequence"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide18.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-19.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-19-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image20.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "author-context"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image20.png",
+          "format": "PNG",
+          "label": "image20.png"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "PbI₂: 2H stacking",
+      "texts": [
+        "PbI₂: 2H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide19.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-20.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-20-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image21.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-2h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image21.png",
+          "format": "PNG",
+          "label": "image21.png"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "PbI₂: 6H stacking",
+      "texts": [
+        "PbI₂: 6H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide20.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-21.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-21-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image22.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-6h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image22.png",
+          "format": "PNG",
+          "label": "image22.png"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "PbI₂: 4H stacking",
+      "texts": [
+        "PbI₂: 4H stacking",
+        "Pb",
+        "I"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide21.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-22.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-22-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image23.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-stack-4h"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image23.png",
+          "format": "PNG",
+          "label": "image23.png"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "PbI₂: stacking disorder and polytypes",
+      "texts": [
+        "PbI₂: stacking disorder and polytypes"
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide22.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-23.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-23-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+        "releases/2026-09-10_v9/assets/deck_embedded/image24.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-matrices"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+          "format": "MP4",
+          "label": "media7.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+          "format": "PNG",
+          "label": "image24.png"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "PbI₂: measured and simulated",
+      "texts": [
+        "PbI₂: measured and simulated",
+        "B4, incident angle 4°. Selected 2H + 6H parent model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide23.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-24.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-24-notes.txt",
+      "media_paths": [
+        "releases/2026-09-10_v9/assets/deck_embedded/image25.png"
+      ],
+      "chart_parts": [],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-b4-comparison"
+      ],
+      "media_files": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image25.png",
+          "format": "PNG",
+          "label": "image25.png"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Transition-matrix profiles",
+      "texts": [
+        "Transition-matrix profiles",
+        "Measured",
+        "Model",
+        "PbI₂ B4, r = 1",
+        "Selected 2H + 6H⁺ + 6H⁻ model."
+      ],
+      "hidden": false,
+      "part": "ppt/slides/slide24.xml",
+      "preview": "releases/2026-09-10_v9/slides/slide-25.png",
+      "notes_path": "releases/2026-09-10_v9/slides/slide-25-notes.txt",
+      "media_paths": [],
+      "chart_parts": [
+        "ppt/charts/chart9.xml",
+        "ppt/charts/chart10.xml"
+      ],
+      "table_paths": [],
+      "asset_ids": [
+        "pbi2-b4-comparison"
+      ],
+      "media_files": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "author-context",
+      "title": "Author-selected observations and growth context",
+      "kind": "figure",
+      "description": "Opening PbI2 reflectivity/detector observations, added detector annotations and the controlled-growth illustration are retained from the edited source deck.",
+      "usage": "Use exact embedded images and slide previews to preserve the author layout.",
+      "limitations": [
+        "Unmatched embedded images are not direct scientific-data exports; preserve attribution and investigate provenance before quantitative reuse."
+      ],
+      "status": "Embedded pixels are archival authority where no separate source matches.",
+      "slide_uses": [
+        1,
+        8,
+        19
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/slides/slide-01.png",
+        "format": "PNG",
+        "label": "Exact rendered slide",
+        "preview": "releases/2026-09-10_v9/slides/slide-01.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image1.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image1.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image2.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image2.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image9.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image9.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image10.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image20.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image20.png"
+        }
+      ],
+      "sources": [],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "azimuthal-rings",
+      "title": "In-plane rotation: points become rings",
+      "kind": "animation",
+      "description": "A flat sample and its printed In-Plane Direction arrow rotate counterclockwise. Off-axis reciprocal dots trace r=1 rings while axial 00L spots remain fixed. Individual L=1,2,3 labels establish the order heights.",
+      "usage": "Introduce in-plane averaging before mosaic tilt or many crystallites.",
+      "limitations": [
+        "Generic r/L labels are not material-specific selection rules. Rotation visualizes an orientation population, not a requirement to rotate the specimen during acquisition."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [
+        2
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media1.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+        "duration_seconds": 8.4
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_indexed.mp4",
+          "format": "MP4",
+          "label": "sample_rotation_reciprocal_rings_indexed.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_indexed.gif",
+          "format": "GIF",
+          "label": "sample_rotation_reciprocal_rings_indexed.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/sample_rotation_reciprocal_rings_indexed_still.png",
+          "format": "PNG",
+          "label": "sample_rotation_reciprocal_rings_indexed_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled.mp4",
+          "format": "MP4",
+          "label": "sample_rotation_reciprocal_rings_labeled.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled.gif",
+          "format": "GIF",
+          "label": "sample_rotation_reciprocal_rings_labeled.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_labeled_still.png",
+          "format": "PNG",
+          "label": "sample_rotation_reciprocal_rings_labeled_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings.mp4",
+          "format": "MP4",
+          "label": "sample_rotation_reciprocal_rings.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings.gif",
+          "format": "GIF",
+          "label": "sample_rotation_reciprocal_rings.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_reciprocal_rings_still.png",
+          "format": "PNG",
+          "label": "sample_rotation_reciprocal_rings_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image3.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image3.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_rotation.mjs",
+          "format": "MJS",
+          "label": "animate_rotation.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/rotation_animation_indexed/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "One sample, discrete reciprocal dots.",
+      "ending_state": "Completed rings; axial points stay fixed.",
+      "related_asset_ids": [
+        "single-crystal-mosaic",
+        "crystallite-ensemble"
+      ]
+    },
+    {
+      "id": "crystallite-ensemble",
+      "title": "Many crystallites: independent azimuths and visible tilt",
+      "kind": "animation",
+      "description": "Twenty crystallites share one reciprocal-space view. Independent in-plane angles form rings; normal tilts form caps and bands. The preferred revision links one highlighted grain to its reciprocal points, adds an enlarged side view with tilt arc and provides initial L reference planes.",
+      "usage": "Show that a measured pattern comes from a population.",
+      "limitations": [
+        "The 20 illustrated grains represent a continuous schematic distribution with sigma 4.3 degrees and 12-degree support.",
+        "Real-space grain positions never translate reciprocal points. Each reflection surface has its own opacity normalization."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [
+        3
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media2.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+        "duration_seconds": 17.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt.mp4",
+          "format": "MP4",
+          "label": "many_crystallites_clear_tilt.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt.gif",
+          "format": "GIF",
+          "label": "many_crystallites_clear_tilt.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt_still.png",
+          "format": "PNG",
+          "label": "many_crystallites_clear_tilt_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_clear_tilt_tilt_detail.png",
+          "format": "PNG",
+          "label": "many_crystallites_clear_tilt_tilt_detail.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern.mp4",
+          "format": "MP4",
+          "label": "many_crystallites_one_pattern.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern.gif",
+          "format": "GIF",
+          "label": "many_crystallites_one_pattern.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/many_crystallites_one_pattern_still.png",
+          "format": "PNG",
+          "label": "many_crystallites_one_pattern_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image4.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image4.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_ensemble_tilt_detail.mjs",
+          "format": "MJS",
+          "label": "animate_ensemble_tilt_detail.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_ensemble.mjs",
+          "format": "MJS",
+          "label": "animate_ensemble.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ensemble_density.mjs",
+          "format": "MJS",
+          "label": "ensemble_density.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ensemble_tilt_detail/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Aligned grain population and L reference planes.",
+      "ending_state": "Tilted ensemble and continuous caps and bands.",
+      "related_asset_ids": [
+        "ewald-mosaic"
+      ]
+    },
+    {
+      "id": "ewald-mosaic",
+      "title": "Ewald selection before and after mosaic tilt",
+      "kind": "animation",
+      "description": "A fixed Ewald sphere intersects indexed rings and axial points. Highlighted aligned intersections broaden as mosaic orientations populate caps and bands. The clean ending fades unselected density, leaving the selected Ewald traces.",
+      "usage": "Connect orientation distributions to elastic selection, then continue to detector projection.",
+      "limitations": [
+        "Fixed wavelength and source direction in schematic units. No source broadening, structure factors or detector counts.",
+        "Axial example points are highlighted only at elastic equality, without an invented acceptance width."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [
+        4
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media3.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+        "duration_seconds": 16.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end.mp4",
+          "format": "MP4",
+          "label": "ewald_intersections_then_mosaic_clean_end.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end.gif",
+          "format": "GIF",
+          "label": "ewald_intersections_then_mosaic_clean_end.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/ewald_intersections_then_mosaic_clean_end_still.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_clean_end_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end_aligned.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_clean_end_aligned.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_clean_end_tilt.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_clean_end_tilt.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic.mp4",
+          "format": "MP4",
+          "label": "ewald_intersections_then_mosaic.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic.gif",
+          "format": "GIF",
+          "label": "ewald_intersections_then_mosaic.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_still.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_aligned.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_aligned.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_intersections_then_mosaic_tilt.png",
+          "format": "PNG",
+          "label": "ewald_intersections_then_mosaic_tilt.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image5.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image5.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_ewald_mosaic.mjs",
+          "format": "MJS",
+          "label": "animate_ewald_mosaic.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ewald_mosaic_geometry.mjs",
+          "format": "MJS",
+          "label": "ewald_mosaic_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ewald_mosaic_clean_end/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Indexed rings and axial dots, no crystallites.",
+      "ending_state": "Selected Ewald traces and Ewald construction only.",
+      "related_asset_ids": [
+        "ewald-detector"
+      ]
+    },
+    {
+      "id": "ewald-detector",
+      "title": "Selected Ewald traces project onto the detector",
+      "kind": "animation",
+      "description": "A selected reciprocal point defines k_f=k_i+Q. Its real-space outgoing ray reaches a flat detector; a moving marker draws the projected curve. Other traces follow, then the camera faces the detector. Final r/L callouts label the features.",
+      "usage": "Explain how the decorated Ewald sphere produces detector features before coordinate remapping.",
+      "limitations": [
+        "Schematic detector calibration and analytic ray-plane map.",
+        "Qualitative weights only: no count-density Jacobian, optical response, source spread or opaque-substrate exit mask."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [
+        5
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media4.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+        "duration_seconds": 18.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled.mp4",
+          "format": "MP4",
+          "label": "ewald_traces_to_detector_labeled.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled.gif",
+          "format": "GIF",
+          "label": "ewald_traces_to_detector_labeled.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/ewald_traces_to_detector_labeled_still.png",
+          "format": "PNG",
+          "label": "ewald_traces_to_detector_labeled_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_labeled_mapping.png",
+          "format": "PNG",
+          "label": "ewald_traces_to_detector_labeled_mapping.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector.mp4",
+          "format": "MP4",
+          "label": "ewald_traces_to_detector.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector.gif",
+          "format": "GIF",
+          "label": "ewald_traces_to_detector.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/ewald_traces_to_detector_still.png",
+          "format": "PNG",
+          "label": "ewald_traces_to_detector_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/ewald_traces_to_detector_mapping.png",
+          "format": "PNG",
+          "label": "ewald_traces_to_detector_mapping.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image6.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image6.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_ewald_detector.mjs",
+          "format": "MJS",
+          "label": "animate_ewald_detector.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ewald_detector_geometry.mjs",
+          "format": "MJS",
+          "label": "ewald_detector_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/ewald_detector_labeled_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Exact source opening follows the clean Ewald ending.",
+      "ending_state": "Labeled head-on detector.",
+      "related_asset_ids": [
+        "detector-angular",
+        "detector-q"
+      ]
+    },
+    {
+      "id": "angular-mosaic-combined",
+      "title": "Coordinate morph followed by mosaic tails",
+      "kind": "animation",
+      "description": "The labeled detector-to-angle morph flows into the broad-component demonstration, shortening duplicate holds and cropping the constant title strip for an editable slide heading.",
+      "usage": "Exact combined slide 6 movie; standalone parts support slower teaching.",
+      "limitations": [
+        "Same limitations as both source clips. All physical motion remains at normal speed. A0.5-second overlap fades labels at the join."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [
+        6
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media5.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+        "duration_seconds": 30.5
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/additional/phi_to_lorentzian_combined.mp4",
+          "format": "MP4",
+          "label": "phi_to_lorentzian_combined.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image7.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image7.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v6/media/combined_media_manifest.json",
+          "format": "JSON",
+          "label": "combined_media_manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "detector-angular",
+        "lorentzian-mosaic"
+      ]
+    },
+    {
+      "id": "incidence-angular",
+      "title": "Bi2Se3 incidence sweep with r=0,1,3 features",
+      "kind": "animation",
+      "description": "The Ewald-sphere center moves as incidence sweeps 1 to 20 degrees. A synchronized angular image shows selected Bi2Se3 features; paired flashes mark 003,006 and 009 alignment. Verified r=1 and r=3 branches supply off-axis context.",
+      "usage": "Preferred material-specific incidence movie and exact slide 7 media. Describe its actual 25% illustrative fraction.",
+      "limitations": [
+        "Latest movie uses 25% Lorentzian, sigma 4.3 degrees and gamma 6 degrees; these are not fitted Bi2Se3 parameters.",
+        "Thirteen selected reflections are not a complete pattern. No structure factors, count normalization, detector acceptance or opaque-sample exit mask. The 110 ring can point below the sample.",
+        "Uniform independent in-plane spin differs from tied-rotation SLATE broadened marginals. Bragg geometry is verified; image weights remain schematic.",
+        "Inherited slide 7 caption says 50% although the exact embedded movie and hash-matched current manifest use 25%. Preserve exact deck and correct the caption in a future content revision."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [
+        7
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media6.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+        "duration_seconds": 24.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3.mp4",
+          "format": "MP4",
+          "label": "bi2se3_incidence_phi_2theta_r0_r1_r3.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3.gif",
+          "format": "GIF",
+          "label": "bi2se3_incidence_phi_2theta_r0_r1_r3.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_r0_r1_r3_still.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_phi_2theta_r0_r1_r3_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta.mp4",
+          "format": "MP4",
+          "label": "bi2se3_incidence_phi_2theta.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta.gif",
+          "format": "GIF",
+          "label": "bi2se3_incidence_phi_2theta.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_still.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_phi_2theta_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_first_order.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_phi_2theta_first_order.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_second_order.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_phi_2theta_second_order.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_third_order.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_phi_2theta_third_order.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_25.mp4",
+          "format": "MP4",
+          "label": "bi2se3_incidence_phi_2theta_lorentzian_25.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_25.gif",
+          "format": "GIF",
+          "label": "bi2se3_incidence_phi_2theta_lorentzian_25.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_50.mp4",
+          "format": "MP4",
+          "label": "bi2se3_incidence_phi_2theta_lorentzian_50.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_phi_2theta_lorentzian_50.gif",
+          "format": "GIF",
+          "label": "bi2se3_incidence_phi_2theta_lorentzian_50.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image8.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image8.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_incidence_angular.mjs",
+          "format": "MJS",
+          "label": "animate_incidence_angular.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_angular_geometry.mjs",
+          "format": "MJS",
+          "label": "incidence_angular_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/bi2se3_animation_lattice.mjs",
+          "format": "MJS",
+          "label": "bi2se3_animation_lattice.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_mosaic_geometry.mjs",
+          "format": "MJS",
+          "label": "incidence_mosaic_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_angular_animation/animation_manifest.json",
+          "format": "JSON",
+          "label": "animation_manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_angular_animation/media_verification.json",
+          "format": "JSON",
+          "label": "media_verification.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "incidence-response"
+      ]
+    },
+    {
+      "id": "specular-wavelength",
+      "title": "Specular r=0 geometry and wavelength illustration",
+      "kind": "figure",
+      "description": "The author-retained slide 9 uses the archived wavelength image as the specular/r=0 explanation.",
+      "usage": "Keep the exact selected image and source slide notes.",
+      "limitations": [
+        "Do not extract quantitative curves from image pixels."
+      ],
+      "status": "Retained illustration; interpretation depends on original source context.",
+      "slide_uses": [
+        9
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/image11.png",
+        "format": "PNG",
+        "label": "image11.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-09.png"
+      },
+      "variants": [],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/prepare_assets.mjs",
+          "format": "MJS",
+          "label": "prepare_assets.mjs"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2se3-detector",
+      "title": "Bi2Se3: measured and simulated detector with reflectivity",
+      "kind": "figure",
+      "description": "Measured detector counts are compared with the common-scale simulation plus archived background, including restored near-origin r=0 reflectivity and the axial series.",
+      "usage": "Use the overview before the corresponding off-axis and full-axial profiles.",
+      "limitations": [
+        "Frozen September 3 structure/source/mosaic state with compatible September 5 conditional optical restoration; not a new joint fit or thickness measurement.",
+        "Shared 6x6 native-pixel area averages,crop and capped magma/asinh scale within each pair. Raw arrays remain unclipped; no independent panel normalization or image smoothing.",
+        "Off-axis signal uses 4096 incident states and 16384 native mosaic draws per state. Full r=0 detector-area optical integration replaces the unstitched axial signal rather than double-counting it."
+      ],
+      "status": "Direct measured/model arrays; presentation rendering of a retained fit state.",
+      "slide_uses": [
+        10
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Measured_Simulated_Reflectivity_v8.png",
+        "format": "PNG",
+        "label": "Bi2Se3_Measured_Simulated_Reflectivity_v8.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-10.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/measured_panel.png",
+          "format": "PNG",
+          "label": "measured_panel.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/calculated_panel.png",
+          "format": "PNG",
+          "label": "calculated_panel.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_detector/shared_colorbar.png",
+          "format": "PNG",
+          "label": "shared_colorbar.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image10.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image10.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image12.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image12.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/render_stitched_executed.py",
+          "format": "PY",
+          "label": "render_stitched_executed.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/assemble_figures.py",
+          "format": "PY",
+          "label": "assemble_figures.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/bi2se3/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/bi2se3/detector_comparison_arrays.npz",
+          "format": "NPZ",
+          "label": "detector_comparison_arrays.npz"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2te3-detector",
+      "title": "Bi2Te3: measured and simulated detector with reflectivity",
+      "kind": "figure",
+      "description": "Measured detector counts are compared with the common-scale simulation plus archived background, including restored near-origin r=0 reflectivity and the axial series.",
+      "usage": "Use the overview before the corresponding off-axis and full-axial profiles.",
+      "limitations": [
+        "Frozen September 3 structure/source/mosaic state with compatible September 5 conditional optical restoration; not a new joint fit or thickness measurement.",
+        "Shared 6x6 native-pixel area averages,crop and capped magma/asinh scale within each pair. Raw arrays remain unclipped; no independent panel normalization or image smoothing.",
+        "Off-axis signal uses 4096 incident states and 16384 native mosaic draws per state. Full r=0 detector-area optical integration replaces the unstitched axial signal rather than double-counting it.",
+        "Five bright-origin axial cells miss the internal 0.25% local-count target. Order 64-to 128 changes no displayed RGB pixel and total axial mass by0.00703%; presentation-resolution convergence passed, stricter raw-count use remains provisional."
+      ],
+      "status": "Direct measured/model arrays; presentation rendering of a retained fit state.",
+      "slide_uses": [
+        11
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Measured_Simulated_Reflectivity_v8.png",
+        "format": "PNG",
+        "label": "Bi2Te3_Measured_Simulated_Reflectivity_v8.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-11.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/measured_panel.png",
+          "format": "PNG",
+          "label": "measured_panel.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/calculated_panel.png",
+          "format": "PNG",
+          "label": "calculated_panel.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_detector/shared_colorbar.png",
+          "format": "PNG",
+          "label": "shared_colorbar.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image13.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image13.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image14.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image14.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/render_stitched_executed.py",
+          "format": "PY",
+          "label": "render_stitched_executed.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/assemble_figures.py",
+          "format": "PY",
+          "label": "assemble_figures.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/bi2te3/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v8/ordered_render/bi2te3/detector_comparison_arrays.npz",
+          "format": "NPZ",
+          "label": "detector_comparison_arrays.npz"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2se3-profiles",
+      "title": "Bi2Se3: off-axis sides and complete axial profile",
+      "kind": "figure",
+      "description": "Two off-axis r=1 sides and the full axial 00L profile compare measured-minus-background points with the net model. Low-angle reflectivity and the observed 006 mismatch are retained.",
+      "usage": "Preferred Se panels on slides 12 and 13, parallel to the preserved Te diagnostics.",
+      "limitations": [
+        "All 75 bins per side and 290 axial bins over two-theta 1.05–29.95 degrees are retained. Asinh width 3 preserves negative values without smoothing or separate scaling.",
+        "Compatible uncertainties are absent, so no error bars are fabricated.",
+        "Se 006 remains underpredicted: approximately 15 calculated versus 162 measured net counts near its measured maximum. Retained-state preference is a bounded archive comparison, not universal best-fit ranking.",
+        "Te uses a later spatial-integration diagnostic, not the same optimization stage."
+      ],
+      "status": "Direct coherent September 3 retained profile state plus compatible September 5 optics.",
+      "slide_uses": [
+        12,
+        13
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/se_r1_minus.png",
+        "format": "PNG",
+        "label": "se_r1_minus.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-12.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/se_r1_plus.png",
+          "format": "PNG",
+          "label": "se_r1_plus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/se_axial_full_00l.png",
+          "format": "PNG",
+          "label": "se_axial_full_00l.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/se_legend.png",
+          "format": "PNG",
+          "label": "se_legend.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_minus.png",
+          "format": "PNG",
+          "label": "Exact embedded image: v9_se_r1_minus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_r1_plus.png",
+          "format": "PNG",
+          "label": "Exact embedded image: v9_se_r1_plus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/v9_se_axial_full_00l.png",
+          "format": "PNG",
+          "label": "Exact embedded image: v9_se_axial_full_00l.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/render_se_retained_profiles.py",
+          "format": "PY",
+          "label": "render_se_retained_profiles.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/se_retained_profiles_manifest.private.json",
+          "format": "JSON",
+          "label": "se_retained_profiles_manifest.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/se_retained_selection_review.private.json",
+          "format": "JSON",
+          "label": "se_retained_selection_review.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v9/figures/se_retained/bi2se3_retained_profiles_direct.npz",
+          "format": "NPZ",
+          "label": "bi2se3_retained_profiles_direct.npz"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/rebuild/replot_profiles.py",
+          "format": "PY",
+          "label": "Portable profile replot adapter"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/README.md",
+          "format": "MD",
+          "label": "Replot instructions and scientific provenance"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/rebuild/requirements-se.txt",
+          "format": "TXT",
+          "label": "Pinned plotting dependencies"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/se_profiles/bi2se3_displayed_profiles.csv",
+          "format": "CSV",
+          "label": "bi2se3_displayed_profiles.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/se_profiles/data_dictionary.json",
+          "format": "JSON",
+          "label": "data_dictionary.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2te3-profiles",
+      "title": "Bi2Te3: off-axis sides and complete axial profile",
+      "kind": "figure",
+      "description": "Lossless crops of the conditional spatial-integration diagnostic show both r=1 sides and the full r=0 profile with count-plus-background uncertainty bars, retaining negative net counts and original source axes.",
+      "usage": "Use exactly as retained on slides 14 and 15, together with the full source figure and parameter record.",
+      "limitations": [
+        "Raster crops are not editable charts. No resampling,smoothing or curve reconstruction.",
+        "Bars show count-plus-background uncertainty scale, not parameter intervals. Stricter primitive-bin tolerance fails in 24 of1268 bins despite small displayed-profile changes.",
+        "Off-axis tails, axial low-angle deficit and 003 shape mismatch remain. No accepted library promotion."
+      ],
+      "status": "Conditional September 10 spatial-integration diagnostic; no improved joint fit selected.",
+      "slide_uses": [
+        14,
+        15
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_r1_minus.png",
+        "format": "PNG",
+        "label": "te_r1_minus.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-14.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_r1_plus.png",
+          "format": "PNG",
+          "label": "te_r1_plus.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_axial_full_00l.png",
+          "format": "PNG",
+          "label": "te_axial_full_00l.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_legend.png",
+          "format": "PNG",
+          "label": "te_legend.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_source_footnotes.png",
+          "format": "PNG",
+          "label": "te_source_footnotes.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image15.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image15.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image16.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image16.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image17.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image17.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/prepare_diagnostic_crops.py",
+          "format": "PY",
+          "label": "prepare_diagnostic_crops.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/diagnostic_crops_manifest.private.json",
+          "format": "JSON",
+          "label": "diagnostic_crops_manifest.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/te_source_record.private.json",
+          "format": "JSON",
+          "label": "te_source_record.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/rebuild/replot_profiles.py",
+          "format": "PY",
+          "label": "Portable profile replot adapter"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/README.md",
+          "format": "MD",
+          "label": "Replot instructions and scientific provenance"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/rebuild/requirements-te.txt",
+          "format": "TXT",
+          "label": "Pinned plotting dependencies"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/bi2te3_displayed_profiles.csv",
+          "format": "CSV",
+          "label": "bi2te3_displayed_profiles.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/bi2te3_displayed_profiles_direct.npz",
+          "format": "NPZ",
+          "label": "bi2te3_displayed_profiles_direct.npz"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/bi2te3_profiles.json",
+          "format": "JSON",
+          "label": "bi2te3_profiles.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/bi2te3_profiles.ra_diag.npz",
+          "format": "NPZ",
+          "label": "bi2te3_profiles.ra_diag.npz"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/coordinates.json",
+          "format": "JSON",
+          "label": "coordinates.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/direct_data/te_profiles/data_dictionary.json",
+          "format": "JSON",
+          "label": "data_dictionary.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "mosaic-parameters",
+      "title": "Retained mosaic parameters and component contributions",
+      "kind": "figure",
+      "description": "Parallel weighted Gaussian,Lorentzian and summed angular-line curves accompany an editable parameter table. Se has a broader Gaussian; Te has greater Lorentzian weight in these retained states.",
+      "usage": "Use after detector/profile comparisons with the retained-state date visible.",
+      "limitations": [
+        "Wrapped angular-line density differs from per-solid-angle schematic animations. Full-support areas are 1-eta and eta; plotted 0–5 degrees retain 99.4454% Se and 97.2724% Te without renormalizing.",
+        "Se sigma 0.90343658 degrees,gamma 0.28187877 degrees,eta 0.154797644; Te sigma 0.39545795 degrees,gamma 0.28810887 degrees,eta 0.744843318.",
+        "Structure-factor coordinates,Uiso,occupancies and stack lengths are fixed inputs, not fitted structural discoveries. Both selected states fail their stored width gate and lack formal intervals."
+      ],
+      "status": "Best documented retained profile states for these images; no universal historical ranking.",
+      "slide_uses": [
+        16
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Bi2Te3_Mosaic_Parameters.png",
+        "format": "PNG",
+        "label": "Bi2Se3_Bi2Te3_Mosaic_Parameters.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-16.png"
+      },
+      "variants": [],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/export_fit_selection.py",
+          "format": "PY",
+          "label": "export_fit_selection.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/mosaic_contributions.py",
+          "format": "PY",
+          "label": "mosaic_contributions.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/build_parameters.mjs",
+          "format": "MJS",
+          "label": "build_parameters.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/fit_selection.private.json",
+          "format": "JSON",
+          "label": "fit_selection.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/mosaic_curves.private.json",
+          "format": "JSON",
+          "label": "mosaic_curves.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/displayed_values.private.json",
+          "format": "JSON",
+          "label": "displayed_values.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/bi2se3_mosaic_components.csv",
+          "format": "CSV",
+          "label": "bi2se3_mosaic_components.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/best_fit_parameters/bi2te3_mosaic_components.csv",
+          "format": "CSV",
+          "label": "bi2te3_mosaic_components.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart3.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart4.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_index.json",
+          "format": "JSON",
+          "label": "Chart-to-workbook and CSV index"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2te3-termination",
+      "title": "Bi2Te3: end planes and 003 sensitivity",
+      "kind": "figure",
+      "description": "An atomic diagram for 97.6% Bi/outer-Te plus 2.4% Bi/central-Te fades on click to measured/baseline/endings-only/joint-trial comparisons of003 core and wing. Both wings are sensitive; the Se endings-only change worsens its core.",
+      "usage": "Use controlled endings-only changes to demonstrate information beyond bulk Bragg peaks alone, keeping the parallel material comparison.",
+      "limitations": [
+        "Top/bottom use positive c as top. Hollow central-chalcogen symbols do not mean vacancies.",
+        "Common descriptive windows: core nominal L 2.9–3.2 and wing 3.2–4.5. NominalL is |Q|/|c*|, not projected Qz.",
+        "The strongest r=1 control changes little with endings alone, but finite-bin wings need not be invariant.",
+        "Fold convergence and statistical significance remain unqualified. Surface diffraction also probes termination; do not claim unique capability unavailable to conventional techniques."
+      ],
+      "status": "Conditional unaccepted termination trials, not unique specimen assignments.",
+      "slide_uses": [
+        17
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Termination_Comparison.png",
+        "format": "PNG",
+        "label": "Bi2Te3_Termination_Comparison.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-17.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image18.png",
+          "format": "PNG",
+          "label": "bi2te3_endings.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/bi2te3_endings.svg",
+          "format": "SVG",
+          "label": "bi2te3_endings.svg"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/Bi2Te3_Termination_Sensitivity.png",
+          "format": "PNG",
+          "label": "Bi2Te3_Termination_Sensitivity.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/export_direct.py",
+          "format": "PY",
+          "label": "export_direct.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/prepare_chart_input.py",
+          "format": "PY",
+          "label": "prepare_chart_input.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/build_comparison.mjs",
+          "format": "MJS",
+          "label": "build_comparison.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/build_termination_schematics.py",
+          "format": "PY",
+          "label": "build_termination_schematics.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/termination_parallel_direct_export.private.json",
+          "format": "JSON",
+          "label": "termination_parallel_direct_export.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/termination_schematics.private.json",
+          "format": "JSON",
+          "label": "termination_schematics.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/bi2te3_m0_direct_curves.csv",
+          "format": "CSV",
+          "label": "bi2te3_m0_direct_curves.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/bi2te3_m1_plus_direct_curves.csv",
+          "format": "CSV",
+          "label": "bi2te3_m1_plus_direct_curves.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart5.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart6.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_index.json",
+          "format": "JSON",
+          "label": "Chart-to-workbook and CSV index"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "bi2se3-termination",
+      "title": "Bi2Se3: end planes and 003 sensitivity",
+      "kind": "figure",
+      "description": "An atomic diagram for 92.8% outer-Se/Bi plus 7.2% Bi/central-Se fades on click to measured/baseline/endings-only/joint-trial comparisons of003 core and wing. Both wings are sensitive; the Se endings-only change worsens its core.",
+      "usage": "Use controlled endings-only changes to demonstrate information beyond bulk Bragg peaks alone, keeping the parallel material comparison.",
+      "limitations": [
+        "Top/bottom use positive c as top. Hollow central-chalcogen symbols do not mean vacancies.",
+        "Common descriptive windows: core nominal L 2.9–3.2 and wing 3.2–4.5. NominalL is |Q|/|c*|, not projected Qz.",
+        "The strongest r=1 control changes little with endings alone, but finite-bin wings need not be invariant.",
+        "Fold convergence and statistical significance remain unqualified. Surface diffraction also probes termination; do not claim unique capability unavailable to conventional techniques."
+      ],
+      "status": "Conditional unaccepted termination trials, not unique specimen assignments.",
+      "slide_uses": [
+        18
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/Bi2Se3_Termination_Comparison.png",
+        "format": "PNG",
+        "label": "Bi2Se3_Termination_Comparison.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-18.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image19.png",
+          "format": "PNG",
+          "label": "bi2se3_endings.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/bi2se3_endings.svg",
+          "format": "SVG",
+          "label": "bi2se3_endings.svg"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/export_direct.py",
+          "format": "PY",
+          "label": "export_direct.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/prepare_chart_input.py",
+          "format": "PY",
+          "label": "prepare_chart_input.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/build_comparison.mjs",
+          "format": "MJS",
+          "label": "build_comparison.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/build_termination_schematics.py",
+          "format": "PY",
+          "label": "build_termination_schematics.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/termination_parallel_direct_export.private.json",
+          "format": "JSON",
+          "label": "termination_parallel_direct_export.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/termination/termination_schematics.private.json",
+          "format": "JSON",
+          "label": "termination_schematics.private.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/bi2se3_m0_direct_curves.csv",
+          "format": "CSV",
+          "label": "bi2se3_m0_direct_curves.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/termination_comparison/bi2se3_m1_plus_direct_curves.csv",
+          "format": "CSV",
+          "label": "bi2se3_m1_plus_direct_curves.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart7.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart8.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_index.json",
+          "format": "JSON",
+          "label": "Chart-to-workbook and CSV index"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "pbi2-stack-2h",
+      "title": "PbI2 2H: matrix to atomic stacking",
+      "kind": "figure",
+      "description": "Numbered matrix transitions match sequence arrows and bottom-to-top atomic interfaces, showing one same-state repeat. Each stack brackets one repeat and shows two repeats plus a faded next trilayer.",
+      "usage": "Use clean PNGs in slides, retain SVGs for scalable editing and the separate captions for explanation.",
+      "limitations": [
+        "Drawing scales are schematic; basal y is projected out.",
+        "State-orientation signs differ from parent-handedness signs. Unnumbered filled cells describe other starting cycles; no vacancy is implied."
+      ],
+      "status": "Verified schematic parent matrices and SI atomic coordinates.",
+      "slide_uses": [
+        20
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h_clean.png",
+        "format": "PNG",
+        "label": "pbi2_matrix_to_stack_2h_clean.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-20.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h_clean.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_2h_clean.svg"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image21.png",
+          "format": "PNG",
+          "label": "stack_2h_no_heading.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h.png",
+          "format": "PNG",
+          "label": "pbi2_matrix_to_stack_2h.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_2h.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_2h.svg"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/make_pbi2_stack_figures.mjs",
+          "format": "MJS",
+          "label": "make_pbi2_stack_figures.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_atomic_layers.mjs",
+          "format": "MJS",
+          "label": "pbi2_atomic_layers.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_panels.mjs",
+          "format": "MJS",
+          "label": "pbi2_matrix_panels.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_stack_order_figures/clean/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_captions.md",
+          "format": "MD",
+          "label": "Stacking-figure captions"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "pbi2-stack-6h",
+      "title": "PbI2 6H: matrix to atomic stacking",
+      "kind": "figure",
+      "description": "Numbered matrix transitions match sequence arrows and bottom-to-top atomic interfaces, showing both handed three-trilayer cycles. Each stack brackets one repeat and shows two repeats plus a faded next trilayer.",
+      "usage": "Use clean PNGs in slides, retain SVGs for scalable editing and the separate captions for explanation.",
+      "limitations": [
+        "Drawing scales are schematic; basal y is projected out.",
+        "State-orientation signs differ from parent-handedness signs. Unnumbered filled cells describe other starting cycles; no vacancy is implied."
+      ],
+      "status": "Verified schematic parent matrices and SI atomic coordinates.",
+      "slide_uses": [
+        21
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h_clean.png",
+        "format": "PNG",
+        "label": "pbi2_matrix_to_stack_6h_clean.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-21.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h_clean.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_6h_clean.svg"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image22.png",
+          "format": "PNG",
+          "label": "stack_6h_no_heading.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h.png",
+          "format": "PNG",
+          "label": "pbi2_matrix_to_stack_6h.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_6h.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_6h.svg"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/make_pbi2_stack_figures.mjs",
+          "format": "MJS",
+          "label": "make_pbi2_stack_figures.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_atomic_layers.mjs",
+          "format": "MJS",
+          "label": "pbi2_atomic_layers.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_panels.mjs",
+          "format": "MJS",
+          "label": "pbi2_matrix_panels.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_stack_order_figures/clean/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_captions.md",
+          "format": "MD",
+          "label": "Stacking-figure captions"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "pbi2-stack-4h",
+      "title": "PbI2 4H: matrix to atomic stacking",
+      "kind": "figure",
+      "description": "Numbered matrix transitions match sequence arrows and bottom-to-top atomic interfaces, showing both handed two-trilayer cycles. Each stack brackets one repeat and shows two repeats plus a faded next trilayer.",
+      "usage": "Use clean PNGs in slides, retain SVGs for scalable editing and the separate captions for explanation.",
+      "limitations": [
+        "Drawing scales are schematic; basal y is projected out.",
+        "State-orientation signs differ from parent-handedness signs. Unnumbered filled cells describe other starting cycles; no vacancy is implied."
+      ],
+      "status": "Verified schematic parent matrices and SI atomic coordinates.",
+      "slide_uses": [
+        22
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h_clean.png",
+        "format": "PNG",
+        "label": "pbi2_matrix_to_stack_4h_clean.png",
+        "preview": "releases/2026-09-10_v9/slides/slide-22.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h_clean.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_4h_clean.svg"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image23.png",
+          "format": "PNG",
+          "label": "stack_4h_no_heading.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h.png",
+          "format": "PNG",
+          "label": "pbi2_matrix_to_stack_4h.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_4h.svg",
+          "format": "SVG",
+          "label": "pbi2_matrix_to_stack_4h.svg"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/make_pbi2_stack_figures.mjs",
+          "format": "MJS",
+          "label": "make_pbi2_stack_figures.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_atomic_layers.mjs",
+          "format": "MJS",
+          "label": "pbi2_atomic_layers.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_panels.mjs",
+          "format": "MJS",
+          "label": "pbi2_matrix_panels.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_stack_order_figures/clean/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/figures/pbi2_matrix_to_stack_captions.md",
+          "format": "MD",
+          "label": "Stacking-figure captions"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "pbi2-matrices",
+      "title": "Transition matrices, disorder and polytype populations",
+      "kind": "animation",
+      "description": "A fixed probability key connects the evolving general six-state matrix to diffuse scattering. Parent matrices then stay fixed while 2H,6H and 4H populations change. The combined sequence reframes once and preserves the shared endpoint.",
+      "usage": "Preferred combined explanation; exact cropped version is slide 23.",
+      "limitations": [
+        "N 72,equal unit amplitudes and arbitrary reciprocal metric are teaching choices.",
+        "The 50/25/25 final mixture is not the B4 fit. General transition probabilities and ordered-parent population weights are different operations."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [
+        23
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/deck_embedded/media7.mp4",
+        "format": "MP4",
+        "label": "Exact movie embedded in v9",
+        "preview": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+        "duration_seconds": 24.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices.mp4",
+          "format": "MP4",
+          "label": "pbi2_stacking_disorder_and_polytypes_matrices.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices.gif",
+          "format": "GIF",
+          "label": "pbi2_stacking_disorder_and_polytypes_matrices.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices_still.png",
+          "format": "PNG",
+          "label": "pbi2_stacking_disorder_and_polytypes_matrices_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_stacking_disorder_and_polytypes_matrices_midpoint.png",
+          "format": "PNG",
+          "label": "pbi2_stacking_disorder_and_polytypes_matrices_midpoint.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices.mp4",
+          "format": "MP4",
+          "label": "pbi2_general_stacking_disorder_matrices.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices.gif",
+          "format": "GIF",
+          "label": "pbi2_general_stacking_disorder_matrices.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices_still.png",
+          "format": "PNG",
+          "label": "pbi2_general_stacking_disorder_matrices_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_matrices_midpoint.png",
+          "format": "PNG",
+          "label": "pbi2_general_stacking_disorder_matrices_midpoint.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices.mp4",
+          "format": "MP4",
+          "label": "pbi2_disorder_to_polytype_mixture_matrices.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices.gif",
+          "format": "GIF",
+          "label": "pbi2_disorder_to_polytype_mixture_matrices.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices_still.png",
+          "format": "PNG",
+          "label": "pbi2_disorder_to_polytype_mixture_matrices_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_matrices_midpoint.png",
+          "format": "PNG",
+          "label": "pbi2_disorder_to_polytype_mixture_matrices_midpoint.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image24.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image24.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_pbi2_matrices.mjs",
+          "format": "MJS",
+          "label": "animate_pbi2_matrices.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_panels.mjs",
+          "format": "MJS",
+          "label": "pbi2_matrix_panels.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_animations/combined/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_animations/general/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_matrix_animations/mixture/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "pbi2-stack-2h",
+        "pbi2-stack-6h",
+        "pbi2-stack-4h"
+      ]
+    },
+    {
+      "id": "pbi2-b4-comparison",
+      "title": "PbI2 B4 detector comparison and transition-matrix profiles",
+      "kind": "figure",
+      "description": "The measured/simulated detector image is followed by native editable r=1 profiles from direct saved observations and the selected 2H+6H-positive+6H-negative model.",
+      "usage": "Keep after the illustrative stacking sequence, distinguishing its illustrative 4H population from fitted B4 parents.",
+      "limitations": [
+        "No displayed 4H fitted weight. The animation 50/25/25 population is a separate teaching example.",
+        "Detector position integration uses a direction-dependent conditional Gaussian footprint, preserving position/divergence correlation, not a uniform image blur.",
+        "Charts use saved continuous-profile arrays, not profiles extracted from the Monte Carlo preview."
+      ],
+      "status": "Retained B4 fit and numerical presentation rendering.",
+      "slide_uses": [
+        24,
+        25
+      ],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/slides/slide-24.png",
+        "format": "PNG",
+        "label": "Exact rendered slide",
+        "preview": "releases/2026-09-10_v9/slides/slide-24.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/deck_embedded/image25.png",
+          "format": "PNG",
+          "label": "Exact embedded image: image25.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/extract_pbi2_m1_curves.py",
+          "format": "PY",
+          "label": "extract_pbi2_m1_curves.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/render_footprint.py",
+          "format": "PY",
+          "label": "render_footprint.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/beam_footprint.py",
+          "format": "PY",
+          "label": "beam_footprint.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/finish_footprint_figures.py",
+          "format": "PY",
+          "label": "finish_footprint_figures.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/plot_pbi2.py",
+          "format": "PY",
+          "label": "plot_pbi2.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_footprint_gh16_n1024_m2048/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/footprint_quadrature_validation.json",
+          "format": "JSON",
+          "label": "footprint_quadrature_validation.json"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_m1_curves.npz",
+          "format": "NPZ",
+          "label": "pbi2_m1_curves.npz"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_m1_left.csv",
+          "format": "CSV",
+          "label": "pbi2_m1_left.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_m1_right.csv",
+          "format": "CSV",
+          "label": "pbi2_m1_right.csv"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart9.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_packages/ppt/charts/chart10.xml",
+          "format": "XML",
+          "label": "Original editable chart XML"
+        },
+        {
+          "path": "releases/2026-09-10_v9/data/native_chart_index.json",
+          "format": "JSON",
+          "label": "Chart-to-workbook and CSV index"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "lorentzian-mosaic",
+      "title": "Adding a broad mosaic component",
+      "kind": "animation",
+      "description": "The angular chart moves beside weighted Gaussian, Lorentzian and summed density curves. The illustrative Lorentzian fraction rises from 0 to 65% at fixed widths and display scales, extending phi tails while redistributing central density.",
+      "usage": "Explain a broad component after angular mapping; preferred clip removes individual reflection labels for readability.",
+      "limitations": [
+        "Per-solid-angle spherical teaching density differs from the retained fit angular-line measure. Sigma 4.3 degrees and gamma 6 degrees are illustrative.",
+        "No controlled same-fit or re-optimized Gaussian-only comparison. This does not establish necessity of the Lorentzian."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta.mp4",
+        "format": "MP4",
+        "label": "lorentzian_mosaic_phi_2theta.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_still.png",
+        "duration_seconds": 18.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta.gif",
+          "format": "GIF",
+          "label": "lorentzian_mosaic_phi_2theta.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_still.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_gaussian.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_gaussian.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_midpoint.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_midpoint.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_lorentzian_mosaic.mjs",
+          "format": "MJS",
+          "label": "animate_lorentzian_mosaic.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/lorentzian_mosaic_geometry.mjs",
+          "format": "MJS",
+          "label": "lorentzian_mosaic_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/lorentzian_mosaic_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Angular chart with unchanged geometry.",
+      "ending_state": "Broader tails and weighted curves at65%.",
+      "related_asset_ids": [
+        "angular-mosaic-combined",
+        "lorentzian-larger-c"
+      ]
+    },
+    {
+      "id": "incidence-response",
+      "title": "Bi2Se3 incidence sweep with axial response curves",
+      "kind": "animation",
+      "description": "The material-specific Ewald construction sweeps incidence while synchronized curves track 003,006 and 009 orientation-intersection weights relative to the Gaussian reference.",
+      "usage": "Alternative when response versus incidence is clearer than the full angular image.",
+      "limitations": [
+        "Illustrative 65% Lorentzian mixture; response is peak continuous-circle orientation density, not integrated intensity or detector counts.",
+        "No structure factors, Kalpha 2 component, beam spread, detector acceptance or substrate exit mask."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l.mp4",
+        "format": "MP4",
+        "label": "bi2se3_incidence_sweep_00l.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_still.png",
+        "duration_seconds": 24.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l.gif",
+          "format": "GIF",
+          "label": "bi2se3_incidence_sweep_00l.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_still.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_sweep_00l_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_first_order.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_sweep_00l_first_order.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/bi2se3_incidence_sweep_00l_second_order.png",
+          "format": "PNG",
+          "label": "bi2se3_incidence_sweep_00l_second_order.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_incidence_mosaic.mjs",
+          "format": "MJS",
+          "label": "animate_incidence_mosaic.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_mosaic_geometry.mjs",
+          "format": "MJS",
+          "label": "incidence_mosaic_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/incidence_mosaic_animation/animation_manifest.json",
+          "format": "JSON",
+          "label": "animation_manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "detector-angular",
+      "title": "Detector image to phi and two-theta",
+      "kind": "animation",
+      "description": "Angular guides appear on the fixed detector. The footprint and traces morph to an angular chart while r/L callouts retain their identities. The preferred revision removes the opening camera flip.",
+      "usage": "Explain why fixed-|Q| features become vertical angular segments; first part of slide 6.",
+      "limitations": [
+        "Coordinate mapping only, not count rebinning or an intensity Jacobian. Phi follows the checked source-facing SLATE angular convention."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled.mp4",
+        "format": "MP4",
+        "label": "detector_to_phi_2theta_labeled.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled_still.png",
+        "duration_seconds": 14.2
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled.gif",
+          "format": "GIF",
+          "label": "detector_to_phi_2theta_labeled.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled_still.png",
+          "format": "PNG",
+          "label": "detector_to_phi_2theta_labeled_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_labeled_mapping.png",
+          "format": "PNG",
+          "label": "detector_to_phi_2theta_labeled_mapping.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta.mp4",
+          "format": "MP4",
+          "label": "detector_to_phi_2theta.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta.gif",
+          "format": "GIF",
+          "label": "detector_to_phi_2theta.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_still.png",
+          "format": "PNG",
+          "label": "detector_to_phi_2theta_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_phi_2theta_mapping.png",
+          "format": "PNG",
+          "label": "detector_to_phi_2theta_mapping.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_detector_angles.mjs",
+          "format": "MJS",
+          "label": "animate_detector_angles.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/detector_angular_geometry.mjs",
+          "format": "MJS",
+          "label": "detector_angular_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/detector_angles_labeled_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Labeled detector held at its original head-on orientation.",
+      "ending_state": "Phi-versus-two-theta chart with coverage boundary.",
+      "related_asset_ids": [
+        "lorentzian-mosaic",
+        "angular-mosaic-combined"
+      ]
+    },
+    {
+      "id": "detector-q",
+      "title": "Detector image to radial Q and Qz",
+      "kind": "animation",
+      "description": "A reciprocal grid overlays the detector. Both halves fold onto nonnegative Q_R, merging symmetric markers and consolidating labels. Constant-|Q| features remain curved.",
+      "usage": "Introduce reciprocal coordinates before stacking disorder.",
+      "limitations": [
+        "One preferred displayed unit equals the original schematic r=1 ring radius; normalizedQ_R is not generally the discrete family index.",
+        "Fixed-source geometric mapping, not quantitative signal/normalization rebinning. No feature is snapped to ideal L height."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled.mp4",
+        "format": "MP4",
+        "label": "detector_to_qz_qr_labeled.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled_still.png",
+        "duration_seconds": 14.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled.gif",
+          "format": "GIF",
+          "label": "detector_to_qz_qr_labeled.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/detector_to_qz_qr_labeled_still.png",
+          "format": "PNG",
+          "label": "detector_to_qz_qr_labeled_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_labeled_mapping.png",
+          "format": "PNG",
+          "label": "detector_to_qz_qr_labeled_mapping.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr.mp4",
+          "format": "MP4",
+          "label": "detector_to_qz_qr.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr.gif",
+          "format": "GIF",
+          "label": "detector_to_qz_qr.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_still.png",
+          "format": "PNG",
+          "label": "detector_to_qz_qr_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/detector_to_qz_qr_mapping.png",
+          "format": "PNG",
+          "label": "detector_to_qz_qr_mapping.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_detector_q.mjs",
+          "format": "MJS",
+          "label": "animate_detector_q.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/detector_q_geometry.mjs",
+          "format": "MJS",
+          "label": "detector_q_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/detector_q_labeled_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Labeled head-on detector.",
+      "ending_state": "Normalized Q_R/Qz chart with symmetric markers coincident.",
+      "related_asset_ids": [
+        "pbi2-disorder",
+        "pbi2-matrices"
+      ]
+    },
+    {
+      "id": "pbi2-mixture",
+      "title": "Diffuse stacking to an ordered-polytype mixture",
+      "kind": "animation",
+      "description": "Ordered 2H,6H and 4H populations develop from the random allowed-stacking response, populating their characteristic off-axis maxima while the axial geometry stays fixed.",
+      "usage": "Distinguish diffuse correlations from a population of ordered parents.",
+      "limitations": [
+        "Illustrative 50%2H,25%6H,25%4H mixture, not the measured B4 model.",
+        "The displayed B4 fit contains 2H and both handed 6H parents, without a displayed fitted 4H weight."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture.mp4",
+        "format": "MP4",
+        "label": "pbi2_disorder_to_polytype_mixture.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_still.png",
+        "duration_seconds": 14.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture.gif",
+          "format": "GIF",
+          "label": "pbi2_disorder_to_polytype_mixture.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_still.png",
+          "format": "PNG",
+          "label": "pbi2_disorder_to_polytype_mixture_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_disorder_to_polytype_mixture_midpoint.png",
+          "format": "PNG",
+          "label": "pbi2_disorder_to_polytype_mixture_midpoint.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_pbi2_polytype_mixture.mjs",
+          "format": "MJS",
+          "label": "animate_pbi2_polytype_mixture.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_polytype_mixture_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "pbi2-matrices",
+        "pbi2-b4-comparison"
+      ]
+    },
+    {
+      "id": "pbi2-disorder",
+      "title": "General stacking disorder makes diffuse off-axis intensity",
+      "kind": "animation",
+      "description": "The r=1 geometric traces transition to finite ordered 2H stacking-factor peaks, then diffuse intensity as allowed-event disorder increases. The r=0 geometry remains fixed.",
+      "usage": "Use after the Q-coordinate morph to isolate disorder before adding other polytypes.",
+      "limitations": [
+        "N 72 and equal unit trilayer amplitudes isolate interference in arbitrary reciprocal units; no Pb/I form factors or calibrated lattice.",
+        "Epsilon 0.8 equalizes five allowed events. The forbidden event leaves short-range correlation, so the diffuse endpoint is not flat or amorphous."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder.mp4",
+        "format": "MP4",
+        "label": "pbi2_general_stacking_disorder.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_still.png",
+        "duration_seconds": 14.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder.gif",
+          "format": "GIF",
+          "label": "pbi2_general_stacking_disorder.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/output/presentations/animations/pbi2_general_stacking_disorder_still.png",
+          "format": "PNG",
+          "label": "pbi2_general_stacking_disorder_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/pbi2_general_stacking_disorder_midpoint.png",
+          "format": "PNG",
+          "label": "pbi2_general_stacking_disorder_midpoint.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/additional/q_to_disorder_combined.mp4",
+          "format": "MP4",
+          "label": "q_to_disorder_combined.mp4"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/additional/ppt_q_disorder.mp4",
+          "format": "MP4",
+          "label": "ppt_q_disorder.mp4"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_pbi2_disorder.mjs",
+          "format": "MJS",
+          "label": "animate_pbi2_disorder.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/pbi2_disorder_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "pbi2-mixture",
+        "pbi2-matrices"
+      ]
+    },
+    {
+      "id": "lorentzian-larger-c",
+      "title": "Larger real-space c changes axial sensitivity",
+      "kind": "animation",
+      "description": "The Lorentzian-mixture change is repeated with c increased 25%, lowering reciprocal heights while source, in-plane radius and detector stay fixed. Axial cores and tails respond differently.",
+      "usage": "Optional controlled schematic variation for geometric sensitivity.",
+      "limitations": [
+        "Not a material-specific lattice or fitted result.",
+        "The r=0,L=1 Gaussian-only absence partly follows from the 12-degree taper; an untapered Gaussian retains a small response. Not proof of Lorentzian necessity or universal axial increase."
+      ],
+      "status": "Illustrative scientific teaching animation; not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c.mp4",
+        "format": "MP4",
+        "label": "lorentzian_mosaic_phi_2theta_larger_c.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_still.png",
+        "duration_seconds": 18.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c.gif",
+          "format": "GIF",
+          "label": "lorentzian_mosaic_phi_2theta_larger_c.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_still.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_larger_c_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_gaussian.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_larger_c_gaussian.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/lorentzian_mosaic_phi_2theta_larger_c_midpoint.png",
+          "format": "PNG",
+          "label": "lorentzian_mosaic_phi_2theta_larger_c_midpoint.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_lorentzian_mosaic.mjs",
+          "format": "MJS",
+          "label": "animate_lorentzian_mosaic.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/lorentzian_mosaic_geometry.mjs",
+          "format": "MJS",
+          "label": "lorentzian_mosaic_geometry.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/lorentzian_mosaic_larger_c_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "single-crystal-mosaic",
+      "title": "Normal tilt: rings become bands and points become caps",
+      "kind": "animation",
+      "description": "The sample normal tilts and precesses around the mean direction. A cone and reference normal expose the motion; accumulated orientations produce r=0 caps and r=1 bands.",
+      "usage": "Slower single-crystal explanation or direct continuation of the indexed-ring clip.",
+      "limitations": [
+        "Illustrative per-solid-angle density: sigma 4.3 degrees with tapered 12-degree cutoff.",
+        "Each surface opacity is normalized separately for shape visibility. No relative reflection intensities or detector line profiles."
+      ],
+      "status": "Illustrative geometry or orientation density, not a fitted detector-count result.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands.mp4",
+        "format": "MP4",
+        "label": "sample_mosaic_caps_and_bands.mp4",
+        "preview": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands_still.png",
+        "duration_seconds": 12.0
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands.gif",
+          "format": "GIF",
+          "label": "sample_mosaic_caps_and_bands.gif"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_mosaic_caps_and_bands_still.png",
+          "format": "PNG",
+          "label": "sample_mosaic_caps_and_bands_still.png"
+        },
+        {
+          "path": "releases/2026-09-10_v9/assets/animations/sample_rotation_then_mosaic.mp4",
+          "format": "MP4",
+          "label": "sample_rotation_then_mosaic.mp4"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animate_mosaic.mjs",
+          "format": "MJS",
+          "label": "animate_mosaic.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/mosaic_animation/manifest.json",
+          "format": "JSON",
+          "label": "manifest.json"
+        }
+      ],
+      "opening_state": "Exact source opening continues the indexed-ring ending.",
+      "ending_state": "Mean orientation restored with accumulated caps and bands.",
+      "related_asset_ids": [
+        "crystallite-ensemble",
+        "ewald-mosaic"
+      ]
+    },
+    {
+      "id": "decorated-ewald-static",
+      "title": "Decorated Ewald surface and detector projection",
+      "kind": "figure",
+      "description": "The retained static projection schematic places selected reciprocal-surface intensity beside its detector-space mapping. It was available as a hidden backup before hidden slides were removed.",
+      "usage": "Optional still for a paused explanation or handout; the animated Ewald-to-detector sequence is the current deck version.",
+      "limitations": [
+        "The archived presentation image is a crop/downsample of the original source illustration. Do not reconstruct quantitative detector arrays from it.",
+        "Preserve the original figure interpretation and source geometry; this is separate from the generic indexed-ring animations."
+      ],
+      "status": "Retained projection schematic, not a new numerical comparison.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/additional/ewald_projection.png",
+        "format": "PNG",
+        "label": "ewald_projection.png"
+      },
+      "variants": [],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/prepare_assets.mjs",
+          "format": "MJS",
+          "label": "prepare_assets.mjs"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/assets/asset_provenance.json",
+          "format": "JSON",
+          "label": "asset_provenance.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "ewald-mosaic",
+        "ewald-detector"
+      ]
+    },
+    {
+      "id": "optical-thickness-diagnostic",
+      "title": "Parallel low-angle reflectivity and thickness diagnostic",
+      "kind": "figure",
+      "description": "Optional Se/Te low-angle profiles and thickness scans explain why 50nm remains the optical-thickness input.",
+      "usage": "Historical optional diagnostic removed with hidden slides; retain in the library without reintroducing into the exact current PPT.",
+      "limitations": [
+        "Shallow minima sit at imposed coherent-stack lower bounds; small preference over 50nm is not numerically established.",
+        "No new thickness measurement, fitted error bars or accepted joint update."
+      ],
+      "status": "Conditional diagnostic with no qualified thickness update.",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/bi2x3_thickness_no_heading.png",
+        "format": "PNG",
+        "label": "bi2x3_thickness_no_heading.png"
+      },
+      "variants": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/bi2x3_thickness_top_panels.png",
+          "format": "PNG",
+          "label": "bi2x3_thickness_top_panels.png"
+        }
+      ],
+      "sources": [
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/prepare_diagnostic_crops.py",
+          "format": "PY",
+          "label": "prepare_diagnostic_crops.py"
+        },
+        {
+          "path": "releases/2026-09-10_v9/source/workspace/build_codex/slate_talk/animated_deck_v7/diagnostics/thickness_source_record.private.json",
+          "format": "JSON",
+          "label": "thickness_source_record.private.json"
+        }
+      ],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": []
+    },
+    {
+      "id": "surface-population-explorer",
+      "title": "Surface-population explorer",
+      "kind": "interactive",
+      "description": "Archived interactive companion for exploring surface-termination populations.",
+      "usage": "Optional historical exploration, retained separately from the current slide selections.",
+      "limitations": [
+        "This companion contains earlier conditional trials. It is not an accepted joint refit and is not linked from the current v9 PPT."
+      ],
+      "status": "Historical interactive companion",
+      "slide_uses": [],
+      "preferred": {
+        "path": "releases/2026-09-10_v9/assets/interactive/surface-population-explorer.html",
+        "format": "HTML",
+        "label": "surface-population-explorer.html"
+      },
+      "variants": [],
+      "sources": [],
+      "opening_state": null,
+      "ending_state": null,
+      "related_asset_ids": [
+        "bi2se3-termination",
+        "bi2te3-termination"
+      ]
+    }
+  ],
+  "documentation_path": "README.md",
+  "checksums_path": "SHA256SUMS.txt",
+  "notices": [
+    {
+      "title": "Preserved label discrepancy on slide 7",
+      "text": "The slide says 50% Lorentzian. Its embedded r = 0, 1, 3 incidence animation uses 25%, verified against the matching source manifest and media hash. The archived PPT is unchanged."
+    }
+  ],
+  "source_manifest": "releases/2026-09-10_v9/provenance/source_snapshot.json",
+  "file_inventory_path": "FILES.json"
+}

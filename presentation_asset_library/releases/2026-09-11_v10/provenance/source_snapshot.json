@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "release_id": "2026-09-11_v10",
+  "source_thread": "codex://threads/01a08bed-6ea7-7721-934d-f260c5ed4faf",
+  "inherited_source_manifest": "releases/2026-09-10_v9/provenance/source_snapshot.json",
+  "inherited_release_immutable": true,
+  "cylinder_source_root": "releases/2026-09-11_v10/assets/cylinder_bridge_v3",
+  "cylinder_package": "releases/2026-09-11_v10/assets/Cylinder_Bridge_v3.zip",
+  "cylinder_package_sha256": "4c20081009b51f2b5f1495ac324772da6deab15f92da02bbf786e58664992bc3",
+  "cylinder_source_verification": {
+    "ok": true,
+    "checked": 45,
+    "failures": [],
+    "scope": "Every listed archive file; SHA256SUMS.txt is anchored by the external ZIP checksum."
+  },
+  "note": "The complete sealed cylinder v3 package is preserved. Existing scientific sources remain in immutable v9. This release adds one slide and performs no scientific refit."
+}

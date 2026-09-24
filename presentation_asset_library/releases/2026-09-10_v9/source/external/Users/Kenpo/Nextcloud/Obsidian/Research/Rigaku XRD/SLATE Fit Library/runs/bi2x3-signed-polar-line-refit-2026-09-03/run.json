@@ -1,0 +1,58 @@
+{
+  "artifact": "C:\\Users\\Kenpo\\Nextcloud\\Obsidian\\Research\\Rigaku XRD\\SLATE Fit Library\\runs\\bi2x3-signed-polar-line-refit-2026-09-03\\artifacts\\bi2x3-signed-polar-line-refit.ra_diag.npz",
+  "artifact_sha256": "10bda11ec46ce258fa603beb22314c72e16fade32884ce259a297ee33d2cc195",
+  "candidate_accepted": false,
+  "continuous_scans_used": false,
+  "films": {
+    "bi2se3": {
+      "completed_stages": [
+        "mosaic",
+        "mosaic_final",
+        "prepared"
+      ],
+      "mosaic_metrics": {
+        "interior_gate": true,
+        "median_absolute_model_asymmetry": 0.04417230532507651,
+        "median_measured_to_model_fwhm_ratio": 0.9869581640622747,
+        "median_profile_relative_l2": 0.09744894648345095,
+        "p95_profile_relative_l2": 0.16837510391972751,
+        "profile_gate": true,
+        "rank_gate": true,
+        "width_gate": false
+      },
+      "reported_mosaic_stage": "mosaic_final"
+    },
+    "bi2te3": {
+      "completed_stages": [
+        "mosaic",
+        "mosaic_pre_caustic",
+        "prepared"
+      ],
+      "mosaic_metrics": {
+        "interior_gate": true,
+        "median_absolute_model_asymmetry": 0.08134689566882117,
+        "median_measured_to_model_fwhm_ratio": 0.9611796746084551,
+        "median_profile_relative_l2": 0.10090571751440014,
+        "p95_profile_relative_l2": 0.1776150287728181,
+        "profile_gate": true,
+        "rank_gate": true,
+        "width_gate": false
+      },
+      "reported_mosaic_stage": "mosaic"
+    }
+  },
+  "holdout_angles_deg": [
+    15.0
+  ],
+  "orientation_contract": {
+    "coordinate_semantics_id": "painted_ewald.m0_folded_alpha_nonzero_signed_delta_rod_local_beta.v1",
+    "orientation_model_id": "painted_ewald.m0_folded_nonzero_signed_polar_line.v1",
+    "probability_measure_id": "m0_dalpha_nonzero_ddelta_dbeta_probability.v2"
+  },
+  "schema": "bi2x3-signed-polar-line-refit.v1",
+  "stage_gate": "bi2te3_mosaic_pre_caustic_complete",
+  "training_angles_deg": [
+    5.0,
+    10.0
+  ]
+}
