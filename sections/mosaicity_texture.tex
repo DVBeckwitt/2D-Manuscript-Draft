@@ -4,7 +4,7 @@ A two-dimensional powder is already random in in-plane azimuth. Mosaicity adds a
 
 Figure~\ref{fig:hk0_low_l_star} shows the $r=0$ region of a Bi$_2$Se$_3$ image collected at the nominal incident angle $\theta_i=5^\circ$. That incident condition places the Ewald intersection near the $003$ condition. Surprisingly, intensity is also visible near the $006$ location, at approximately twice the radial $2\theta$ coordinate of $003$. The $003$ feature is also strongly anisotropic: its long extension follows the radial $2\theta$ direction, whereas its transverse width follows the outgoing-ray azimuth $\phi_f$.
 
-For the $003$ peak, the transverse $\phi_f$ width constrains mosaicity. The radial extension is a separate observable whose interpretation must account for finite-stack scattering and instrumental broadening. The unexpected $006$ intensity motivates testing a broad component in the mosaic distribution. The bright feature near $L=0$ is specular reflectivity, discussed separately in Sec.~\ref{sec:reflectivity}.
+For the $003$ peak, the transverse $\phi_f$ width constrains mosaicity. The radial extension is a separate observable whose interpretation must account for finite-stack scattering and instrumental broadening. The unexpected $006$ intensity motivates testing a broad component in the mosaic distribution. The strong low-angle feature is treated separately in Sec.~\ref{sec:reflectivity}.
 
 
 \begin{figure}[H]
@@ -13,7 +13,7 @@ For the $003$ peak, the transverse $\phi_f$ width constrains mosaicity. The radi
     \centering
     \includegraphics[width=\linewidth]{figures/results_ordered/00L_region_compact.pdf}
   \end{minipage}
-  \caption{Measured axial ($r=0$) scattering from Bi$_2$Se$_3$ at nominal incidence $\theta_i=5^\circ$. The bracket identifies the extended radial streak beside $003$ along $2\theta$. The double-headed arrow marks its transverse mosaic width along the outgoing-ray azimuth $\phi_f$, which is sensitive to the spread of crystallite tilts. In the retained model, finite-stack axial scattering between Bragg positions is concentrated near the mean specular direction by crystallite-orientation weighting and detector projection, producing the radial streak. Intensity is also visible near $006$. The bright left-hand feature is near-critical specular reflectivity (Sec.~\ref{sec:reflectivity}). The image retains its original color mapping.}
+  \caption{Measured axial ($r=0$) scattering from Bi$_2$Se$_3$ at nominal incidence $\theta_i=5^\circ$. The bracket identifies the extended radial streak beside $003$ along $2\theta$. The double-headed arrow marks its transverse mosaic width along the outgoing-ray azimuth $\phi_f$, which is sensitive to the spread of crystallite tilts. In the retained model, finite-stack axial scattering between Bragg positions is concentrated near the mean specular direction by crystallite-orientation weighting and detector projection, producing the radial streak. Intensity is also visible near $006$. The strong low-angle feature on the left is treated in Sec.~\ref{sec:reflectivity}. The image retains its original color mapping.}
   \label{fig:hk0_low_l_star}
 \end{figure}
 
@@ -42,14 +42,14 @@ We parameterize the tilt profile with a narrow core and a broad component,
   \qquad 0\le p_{\mathrm{tail}}\le1,
   \label{eq:mosaic_two_component_maintext}
 \end{equation}
-with the normalized orientation density
+with the normalized angular probability density
 \begin{equation}
   p_m(\alpha,\beta)=\frac{2\omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)}{2\pi},
   \qquad
   \int_0^\pi\!\int_0^{2\pi}p_m(\alpha,\beta)\,d\beta\,d\alpha=1.
   \label{eq:mosaic_orientation_density}
 \end{equation}
-Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, and $p_{\mathrm{tail}}$ is its weight. Both wrapped components are normalized on the signed angular domain. The factor two folds their even density onto the nonnegative tilt magnitude $\alpha$ (Supporting Information Sec.~S3). The two components share one center but have independent widths. The Lorentzian-like form provides a phenomenological description of the broad component.
+The product $p_m\,d\alpha\,d\beta$ gives the probability of a crystallite orientation within that angular interval. Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, and $p_{\mathrm{tail}}$ is its weight. Both wrapped components are normalized on the signed angular domain. The factor two folds their even density onto the nonnegative tilt magnitude $\alpha$ (Supporting Information Sec.~S3). The two components share one center but have independent widths. The Lorentzian-like form provides a phenomenological description of the broad component.
 
 Figure~\ref{fig:mosaic_combo} explains the geometric sensitivity to a broad component. For $r\neq0$, the strong detector arcs sample the orientation range near the nominal reciprocal vector. The transverse extent of off-condition axial intensity probes larger tilts. Establishing that the broad component is necessary still requires a same-fit no-tail comparison and a fairly re-optimized Gaussian-only model, with residuals and uncertainty across the measured incident angles.
 

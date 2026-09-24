@@ -76,7 +76,7 @@ The transformed-coordinate uncertainty has two parts: uncertainty in the coordin
 \sigma_{\phi_f,\mathrm{pix}}(2\theta)=
 \frac{p_{\mathrm{pix}}}{\sqrt{12}\,D\tan(2\theta)}.
 \end{equation}
-The radial term is finite and largest near the direct beam. The azimuthal term scales as $1/\tan(2\theta)$, so the problematic regime is confined to the near-specular, low-$2\theta$ region where azimuth is poorly conditioned.
+The radial term is finite and largest near the direct beam. The azimuthal term scales as $1/\tan(2\theta)$, so azimuth is poorly conditioned near the direct-beam direction, where $2\theta$ approaches zero.
 
 For the $D=75$ mm and $p_{\mathrm{pix}}=300\,\mu\mathrm{m}$ geometry used in the uncertainty calculation, the maximum radial coordinate uncertainty is approximately $0.066^{\circ}$. The azimuthal coordinate uncertainty falls below $1^{\circ}$ above $2\theta\approx3.8^{\circ}$, below $0.5^{\circ}$ above $2\theta\approx7.5^{\circ}$, and below $0.25^{\circ}$ above $2\theta\approx14.9^{\circ}$. More generally, the threshold for a target azimuthal width $w_{\phi_f}$ is
 \begin{equation}
@@ -125,7 +125,7 @@ Here $\bar L_{\mathrm{proj},\nu}$ is the weighted coordinate mean, $\sigma^2_{L_
 
 These projection uncertainties are coupled to model-parameter correlations. Peak positions are sensitive to detector distance, beam center, detector tilt, sample height, and incidence angle. Profile widths are sensitive to both beam divergence and the Gaussian mosaic core. Off-condition profiles are sensitive to the broad mosaic component together with bandwidth, divergence, alignment, and background. Near-critical intensity additionally depends on the optical response and is excluded from evidence for the broad component. Relative integrated intensities are sensitive to scale, footprint, absorption, thickness, and structure-factor parameters. The staged workflow separates these effects by fixing or constraining the parameters tied to peak position before fitting profile widths, and by fixing the geometry and mosaic state before interpreting ordered intensities.
 
-These expressions give four practical consequences. First, the $2\theta$--$\phi_f$ maps and $Q_R$-selected $Q_z$ profiles are controlled projections that inherit the detector image's finite resolution and statistical information. Second, transformed-coordinate uncertainty is concentrated near the low-angle/specular region. Third, intensity variance is propagated through the same overlap weights used for caking and profile extraction. Fourth, the strongest remaining systematic coupling occurs near low $L$, where direct-beam background, bandwidth, divergence, incidence angle, and optical response overlap. That near-critical region is excluded from evidence for the broad mosaic component.
+These expressions give four practical consequences. First, the $2\theta$--$\phi_f$ maps and $Q_R$-selected $Q_z$ profiles are controlled projections that inherit the detector image's finite resolution and statistical information. Second, transformed-coordinate uncertainty is concentrated at low angles near the direct beam. Third, intensity variance is propagated through the same overlap weights used for caking and profile extraction. Fourth, the strongest remaining systematic coupling occurs near low $L$, where direct-beam background, bandwidth, divergence, incidence angle, and optical response overlap. That near-critical region is excluded from evidence for the broad mosaic component.
 
 \subsection{Numerical evaluation and convergence}
 

@@ -35,7 +35,7 @@ F_{hk\ell}(\lambda_s)=\sum_a o_a f_a(Q,\lambda_s)T_a(hk\ell)
 \exp\!\left[2\pi i(hx_a+ky_a+\ell z_a)\right].
 \label{eq:si_structure_factor_conventional}
 \end{equation}
-Here $a$ labels atomic sites, $o_a$ is site occupancy, $f_a$ is the atomic scattering factor including anomalous terms, and $(x_a,y_a,z_a)$ are fractional site coordinates. The magnitude is $Q=|\mathbf G_{hk\ell}|$, and $F_{hk\ell}(\lambda_s)=F_{hk}(\ell,\lambda_s)$ uses the main-text rod amplitude at an integer Bragg order. The displacement factor $T_a(hk\ell)$ must be interpreted in the crystallographic convention of the reported $U$ or $B$ parameters. For an isotropic mean-square displacement $U_{\mathrm{iso},a}$,
+Here $a$ labels atomic sites, $o_a$ is site occupancy, $f_a$ is the atomic scattering factor including anomalous terms, and $(x_a,y_a,z_a)$ are fractional site coordinates. The magnitude is $Q=|\mathbf G_{hk\ell}|$, and $F_{hk\ell}(\lambda_s)=F_{hk}(\ell,\lambda_s)$ uses the main-text rod amplitude at an integer Bragg order. We use atomic displacement parameter (ADP) for $U$ or $B$ and Debye--Waller factor for the dimensionless amplitude factor $T_a$.\cite{Trueblood1996} For an isotropic mean-square displacement $U_{\mathrm{iso},a}$ along any one Cartesian direction,
 \begin{equation}
 T_a(hk\ell)
 =\exp\!\left[-8\pi^2U_{\mathrm{iso},a}
@@ -43,22 +43,22 @@ T_a(hk\ell)
 =\exp\!\left(-\frac12U_{\mathrm{iso},a}Q^2\right),
 \label{eq:si_isotropic_displacement_factor}
 \end{equation}
-with $B_{\mathrm{iso},a}=8\pi^2U_{\mathrm{iso},a}$ and $Q=4\pi\sin\theta/\lambda_s$. Here $\theta$ is half the scattering angle.
+with $B_{\mathrm{iso},a}=8\pi^2U_{\mathrm{iso},a}$ and $Q=4\pi\sin\theta/\lambda_s$. Here $\theta$ is half the scattering angle. Both $U$ and $B$ have units of length squared. The total isotropic mean-square displacement is $3U_{\mathrm{iso},a}$.
 
-The executable CIF interface accepts isotropic $U_{\mathrm{iso}}$ or $B_{\mathrm{iso}}$ values and stores their equivalent isotropic mean-square displacement. The current CIF import is restricted to isotropic displacement metadata. When directional damping is released in the ordered-film parameterization, one shared uniaxial tensor is defined in the film frame,
+The CIF interface accepts isotropic $U_{\mathrm{iso}}$ or $B_{\mathrm{iso}}$ values and stores their equivalent isotropic mean-square displacement. The shared directional model uses one uniaxial displacement tensor for all sites, expressed in Cartesian coordinates relative to the mean film normal,
 \begin{equation}
 \mathbf U_{\mathrm{film}}
 =U_R\left(\mathbf I-\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T}\right)
 +U_z\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T},
 \label{eq:si_shared_uniaxial_u}
 \end{equation}
-Here $\mathbf I$ is the three-dimensional identity matrix, and $U_R$ and $U_z$ are the mean-square displacements within the film plane and along its normal $\hat{\mathbf n}$. The resulting directional displacement factor is
+Here $\mathbf I$ is the three-dimensional identity matrix. The parameter $U_R$ is the mean-square displacement along either in-plane direction, and $U_z$ is the mean-square displacement along the film normal $\hat{\mathbf n}$. The total in-plane value is $2U_R$. Both parameters are nonnegative and have units of length squared. With $Q_z=\mathbf Q\cdot\hat{\mathbf n}$ and $Q_R^2=|\mathbf Q|^2-Q_z^2$, the resulting Debye--Waller factor is
 \begin{equation}
 T_{\mathrm{dir}}(\mathbf Q)
 =\exp\!\left[-\frac12\left(U_RQ_R^2+U_zQ_z^2\right)\right].
 \label{eq:si_shared_uniaxial_factor}
 \end{equation}
-This pair describes a shared directional displacement model for the selected ordered structure. A general site-resolved $U_{ij}$ model would additionally require the CIF tensor convention and its transformation into the calculation basis.
+This shared factor replaces the site isotropic factors within this parameterization. It multiplies the amplitude, so its intensity factor is $|T_{\mathrm{dir}}|^2$. The tensor is fixed relative to the mean film normal and describes effective directional damping. A displacement tensor tied to an individual crystallite instead rotates with that crystallite, as $\mathbf U=\mathbf R\mathbf U_{\mathrm{cryst}}\mathbf R^{\mathsf T}$, where $\mathbf R$ is its orientation matrix. General site-specific CIF tensors also require conversion from the stated crystallographic convention to a Cartesian basis.\cite{Trueblood1996}
 
 \subsection{Rod coverage and radial families}
 

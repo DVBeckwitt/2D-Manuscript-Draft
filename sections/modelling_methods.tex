@@ -27,7 +27,7 @@ where $\mathbf a^{*}$, $\mathbf b^{*}$, and $\mathbf c^{*}$ include the factor $
 \end{equation}
 Equations~\eqref{eq:bragg_matching} and~\eqref{eq:exit_wavevector} define the ideal integer Bragg-point limit. Replacing the integer order $\ell$ by a continuous coordinate $L$ generalizes the same construction to a reciprocal rod, with the Bragg orders lying at $L=\ell$.
 
-Figure~\ref{fig:waxs_geometry_system} shows how an accepted exit direction reaches the area detector. In the laboratory frame, $y$ follows the nominal incident beam, $z$ is vertical, and $x$ is transverse. The scattering angle $2\theta$ is the angle between $\mathbf{k}_i$ and $\mathbf{k}_f$. The outgoing-ray azimuth $\phi_f$ is measured about the incident direction, with zero toward $+z$ in the reference geometry.
+Figure~\ref{fig:waxs_geometry_system} shows how an accepted exit direction reaches the area detector. In the laboratory frame, $y$ follows the nominal incident beam, $z$ is vertical, and $x$ is transverse. For each ray, the scattering angle $2\theta$ is the angle between $\mathbf{k}_i$ and $\mathbf{k}_f$. The outgoing-ray azimuth $\phi_f$ is measured about the incident direction, with zero toward $+z$ in the reference geometry. Displayed detector angles use the nominal incident beam as their common reference.
 
 The detector axes $x'$ and $z'$ lie in its plane, and $\hat{\mathbf n}_{\mathrm{det}}$ points out of its active face toward the sample. The nominal sample-to-detector distance $D$ is measured along the beam axis in the untilted reference geometry. Detector tilts $\beta_D$ and $\gamma_D$ change the plane orientation. Supporting Information Sec.~S1 gives the corresponding detector-frame coordinates, signed angular convention, and ray--plane intersection equations.
 
@@ -52,7 +52,7 @@ For the hexagonal basal plane, every integer in-plane pair $(h,k)$ belongs to th
   Q_R(r)=\frac{4\pi}{\sqrt{3}\,a}\sqrt r.
   \label{eq:hexagonal_family_index}
 \end{equation}
-Members with the same $r$ have the same in-plane radius. Their amplitudes are evaluated individually, and their intensity contributions are summed to represent scattering from the radial family. The family label is distinct from crystallographic multiplicity, and the explicit sum accounts for multiplicity.
+Members with the same $r$ have the same in-plane radius $Q_R(r)$ before mosaic tilt. Their amplitudes are evaluated individually, and their intensity contributions are summed to represent scattering from the radial family. The family label is distinct from crystallographic multiplicity, and the explicit sum accounts for multiplicity.
 
 For one $(h,k)$ member, the crystallite-frame reciprocal rod is
 \begin{equation}
@@ -67,7 +67,7 @@ The indices $h$ and $k$ are integers, while $L$ is continuous. An integer Bragg 
   \exp\!\left[i\mathbf G_{hk}(L)\cdot\mathbf r_a\right].
   \label{eq:continuous_structure_factor}
 \end{equation}
-Here $o_a$, $f_a$, $T_a$, and $\mathbf r_a$ are the occupancy, atomic scattering factor, atomic displacement (Debye--Waller) factor, and Cartesian site position.
+Here $o_a$, $f_a$, $T_a$, and $\mathbf r_a$ are the occupancy, atomic scattering factor, Debye--Waller factor, and Cartesian site position. The factor $T_a$ accounts for atomic displacements and multiplies the scattering amplitude. Supporting Information Sec.~S2 defines the displacement parameters and their directional dependence.
 
 The complex amplitude $F_{hk}$ is the structural input evaluated along the reference rod. The remaining calculation uses the continuous rod intensity $S_{hk}(L,\lambda_s)$. For an ordered finite film, $S_{hk}$ is constructed from $|F_{hk}|^2$. $S_{hk}(L,\lambda_s)\,dL$ is the integrated structural intensity carried by a small segment of the unrotated $(h,k)$ rod. Supporting Information Sec.~S2 gives the finite-stack construction, displacement conventions, and conversion between densities per $dL$ and per dimensional rod length.
 

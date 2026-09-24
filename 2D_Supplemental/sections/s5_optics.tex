@@ -122,7 +122,7 @@ role is expected to be strongest when an incident or exit angle approaches the
 critical-angle regime. This optical treatment supplies a propagation correction. Assessing experimental intensity agreement requires measured/calculated comparisons.
 
 
-\subsection{Parratt-to-kinematic crossover for the specular profile}
+\subsection{Parratt-to-kinematic crossover for the axial profile}
 \label{subsec:si_parratt_structure_crossover}
 
 The detector-derived $r=0$ profile spans two limiting regimes. The low-$Q_{\mathrm{loc}}$ response is described by standard Parratt reflectivity, while the higher-$Q_{\mathrm{loc}}$ Bragg response is described by a finite-stack kinematic term. The two branches are matched smoothly over a declared overlap interval. We refer to this matching as the Parratt-to-kinematic crossover. It is a practical connection between two established limiting calculations. The main-text reflectivity figure shows measured Bi$_2$Se$_3$ intensities versus detector $2\theta$.
@@ -134,8 +134,8 @@ For the physical crossover diagnostic, the dimensionless coordinate is
   L_{\mathrm{loc}}=\frac{Q_{\mathrm{loc}} c}{2\pi}=x\frac{Q_c c}{2\pi}.
   \label{eq:si_crossover_x_l}
 \end{equation}
-Here $Q_c$ is the film critical wavevector and $c$ is the out-of-plane lattice
-constant. The transfer $Q_{\mathrm{loc}}=|\mathbf k_{f,s}-\mathbf k_{i,s}|$ is the local-lamella axial transfer magnitude, with the lamella normal parallel to that transfer. It generally differs from its mean-film projection $Q_z$. The $L_{\mathrm{loc}}$ value in Eq.~\eqref{eq:si_crossover_x_l} is an external local optical coordinate. Finite-stack scattering uses the separate intrinsic phase coordinate. The diagnostic crossover coordinate uses $Q_{\mathrm{loc}}/Q_c$ and the
+Here $Q_c$ is the film critical momentum transfer for total external reflection at wavelength $\lambda_s$, and $c$ is the out-of-plane lattice
+constant. The transfer $Q_{\mathrm{loc}}=|\mathbf k_{f,s}-\mathbf k_{i,s}|$ is the local momentum-transfer magnitude for specular reflection from a crystallite, whose normal is parallel to that transfer. It generally differs from its mean-film projection $Q_z$. At nominal incidence $\theta_i$, the mean-film specular direction is $2\theta=2\theta_i$. Tilted crystallites can contribute axial scattering away from that direction. The $L_{\mathrm{loc}}$ value in Eq.~\eqref{eq:si_crossover_x_l} is an external local optical coordinate. Finite-stack scattering uses the separate intrinsic phase coordinate. The diagnostic crossover coordinate uses $Q_{\mathrm{loc}}/Q_c$ and the
 corresponding $L_{\mathrm{loc}}$ value defined above.
 
 The low-$Q_{\mathrm{loc}}$ branch is the Parratt reflectivity.\cite{Parratt1954} For a layer
@@ -180,7 +180,7 @@ The optical branch in this diagnostic is
   R_{\mathrm P}(Q_{\mathrm{loc}})=\left|R_0^{\mathrm{amp}}(Q_{\mathrm{loc}})\right|^2.
   \label{eq:si_parratt_reflectivity}
 \end{equation}
-This branch retains total-reflection behavior, refraction, evanescence, finite
+This branch retains total external reflection, refraction, evanescence, finite
 penetration depth, roughness damping, and multiple reflection between the film
 interfaces.
 
@@ -204,7 +204,7 @@ absorption. The superscript $(0)$ on the kinematic branch below labels its unsca
   R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc}})=\frac{\widehat S_{00}(L_{\mathrm{film}})}{Q_{\mathrm{loc}}^2}.
   \label{eq:si_crossover_unscaled_structure}
 \end{equation}
-The $Q_{\mathrm{loc}}^{-2}$ factor gives the high-$Q_{\mathrm{loc}}$ structural envelope, while the
+Since $\widehat S_{00}$ is dimensionless, $R_{\mathrm{kin}}^{(0)}$ has units of length squared. It is an unscaled intensity shape. The $Q_{\mathrm{loc}}^{-2}$ factor gives the high-$Q_{\mathrm{loc}}$ structural envelope, while the
 internal coordinate $L_{\mathrm{film}}$ keeps the finite-stack fringe phase consistent with
 the optical film phase.
 
@@ -213,17 +213,17 @@ scale. The scale is fit in a high-$Q_{\mathrm{loc}}$ overlap window, excluding t
 $00L$ neighborhoods used in the diagnostic. With fit-point index $i$ and retained fit set $\mathcal F$, the
 log-median estimate is
 \begin{equation}
-  A_{\mathrm{opt}}=
+  A_{\mathrm{opt}}=Q_c^2
   \exp\!\left[
   \operatorname{median}_{i\in\mathcal F}
-  \left(
-  \ln R_{\mathrm P}(Q_{\mathrm{loc},i})-
-  \ln R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc},i})
+  \ln\!\left(
+  \frac{R_{\mathrm P}(Q_{\mathrm{loc},i})}
+       {Q_c^2R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc},i})}
   \right)
   \right],
   \label{eq:si_crossover_scale}
 \end{equation}
-with the default overlap window $5<Q_{\mathrm{loc}}/Q_c<10$. The scaled kinematic branch is
+with the default overlap window $5<Q_{\mathrm{loc}}/Q_c<10$. The factors of $Q_c^2$ make the logarithm's argument dimensionless and give $A_{\mathrm{opt}}$ units of inverse length squared. The scaled kinematic branch is therefore dimensionless, like $R_{\mathrm P}$:
 \begin{equation}
   R_{\mathrm{kin}}(Q_{\mathrm{loc}})=A_{\mathrm{opt}} R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc}}).
   \label{eq:si_crossover_scaled_structure}
