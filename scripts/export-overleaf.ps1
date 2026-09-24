@@ -6,8 +6,8 @@ Creates a dependency-only, graphics-cached Overleaf package and ZIP.
 Copies the main manuscript and Supporting Information dependency closure into
 build_overleaf/overleaf. Referenced TikZ and raster graphics are losslessly
 pre-rendered as cached PDFs, so Overleaf does not rebuild or decode them on
-each LaTeX pass. The supplied supplemental note is built incrementally before
-dependency collection. Referenced PDFs are included, while review outputs,
+each LaTeX pass. The archived supplemental note is built only if the active SI
+still references it. Referenced PDFs are included, while review outputs,
 Git metadata, scripts, and LaTeX auxiliaries are excluded. Both entry points are compile-checked
 before build_overleaf/overleaf.zip is created.
 
@@ -114,6 +114,10 @@ function Resolve-TeXReference {
         [System.IO.Path]::GetFullPath((Join-Path $sourceDirectory $platformReference)),
         [System.IO.Path]::GetFullPath((Join-Path $repoRoot $platformReference))
     )
+    $supplementRoot = Join-Path $repoRoot '2D_Supplemental'
+    if ($SourceFile.StartsWith($supplementRoot + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+        $candidates += [System.IO.Path]::GetFullPath((Join-Path $supplementRoot $platformReference))
+    }
 
     foreach ($candidate in $candidates | Select-Object -Unique) {
         if (Test-Path -LiteralPath $candidate -PathType Leaf) {
@@ -367,20 +371,19 @@ function Invoke-PackageCompileCheck {
         throw 'The staged main manuscript did not produce main.pdf.'
     }
 
-    $siDirectory = Join-Path $validationRoot '2D_Supplemental'
     $siTimer = [System.Diagnostics.Stopwatch]::StartNew()
     Invoke-CommandChecked -Command 'latexmk' -Arguments @(
         '-pdf',
         '-interaction=nonstopmode',
         '-halt-on-error',
         '-file-line-error',
-        'SI_failure_modes.tex'
-    ) -WorkingDirectory $siDirectory
+        'Supporting_info.tex'
+    ) -WorkingDirectory $validationRoot
     $siTimer.Stop()
 
-    $siPdf = Join-Path $siDirectory 'SI_failure_modes.pdf'
+    $siPdf = Join-Path $validationRoot 'Supporting_info.pdf'
     if (-not (Test-Path -LiteralPath $siPdf -PathType Leaf)) {
-        throw 'The staged Supporting Information did not produce SI_failure_modes.pdf.'
+        throw 'The staged Supporting Information did not produce Supporting_info.pdf.'
     }
 
     $script:mainCompileSeconds = $mainTimer.Elapsed.TotalSeconds
@@ -400,9 +403,11 @@ if (-not (Get-Command latexmk -ErrorAction SilentlyContinue)) {
     throw 'latexmk is required to build the supplemental note and check the package.'
 }
 
-# The SI includes this generated PDF. Build it before resolving dependencies,
-# including package-only exports, and retain its incremental cache locally.
-& (Join-Path $PSScriptRoot 'build-supplement.ps1') -NoteOnly
+# Build the archived note only when the active SI explicitly includes it.
+if (Select-String -LiteralPath (Join-Path $repoRoot '2D_Supplemental/SI_failure_modes.tex') `
+    -Pattern 'verbatim_supplemental_note\.pdf' -Quiet) {
+    & (Join-Path $PSScriptRoot 'build-supplement.ps1') -NoteOnly
+}
 
 $script:cacheHits = 0
 $script:cacheMisses = 0
@@ -433,6 +438,8 @@ $sourceFiles += Get-ChildItem -LiteralPath (Join-Path $repoRoot 'sections') -Fil
     ForEach-Object { 'sections/' + $_.Name }
 $sourceFiles += Get-ChildItem -LiteralPath (Join-Path $repoRoot '2D_Supplemental') -Filter '*.tex' -File |
     ForEach-Object { '2D_Supplemental/' + $_.Name }
+$sourceFiles += Get-ChildItem -LiteralPath (Join-Path $repoRoot '2D_Supplemental/sections') -Filter '*.tex' -File |
+    ForEach-Object { '2D_Supplemental/sections/' + $_.Name }
 $sourceFiles = @($sourceFiles | Sort-Object -Unique)
 
 foreach ($relativePath in $sourceFiles) {
@@ -504,6 +511,34 @@ foreach ($stagedTexFile in $stagedTexFiles) {
 $liveFigureInputs = Select-String -Path ($stagedTexFiles.FullName) -Pattern '\\input\{(?:\.\./)?figures/' -AllMatches
 if ($liveFigureInputs) {
     throw 'The staged package still contains live figure inputs after rewriting.'
+}
+
+# Keep exactly three editable files at the project root. The wrapper lets
+# Overleaf use main.tex while the complete manuscript lives in Manuscript.tex.
+$manuscriptPath = Join-Path $PackageDirectory 'Manuscript.tex'
+Move-Item -LiteralPath (Join-Path $PackageDirectory 'main.tex') -Destination $manuscriptPath
+Set-Content -LiteralPath (Join-Path $PackageDirectory 'main.tex') -Value '\input{Manuscript.tex}' -Encoding utf8
+
+$supplementPath = Join-Path $PackageDirectory '2D_Supplemental/SI_failure_modes.tex'
+$supplementText = Get-Content -Raw -LiteralPath $supplementPath
+$supplementText = $supplementText.Replace('\input{sections/', '\input{2D_Supplemental/sections/')
+$supplementText = $supplementText.Replace('\bibliography{../bibliography/references}', '\bibliography{bibliography/references}')
+$supplementText = $supplementText.Replace('\graphicspath{{figures/}{../figures/}{./}}', '\graphicspath{{2D_Supplemental/}{figures/}{./}}')
+Set-Content -LiteralPath (Join-Path $PackageDirectory 'Supporting_info.tex') -Value $supplementText -Encoding utf8
+Remove-Item -LiteralPath $supplementPath
+
+# The preliminary table is outside the active supplement. The repository's
+# latexmkrc redirects auxiliary files and is unnecessary for an Overleaf ZIP.
+$unusedTable = Join-Path $PackageDirectory '2D_Supplemental/SI_ordered_structure_parameters.tex'
+if (Test-Path -LiteralPath $unusedTable -PathType Leaf) {
+    Remove-Item -LiteralPath $unusedTable
+}
+Remove-Item -LiteralPath (Join-Path $PackageDirectory 'latexmkrc')
+
+$rootFiles = @(Get-ChildItem -LiteralPath $PackageDirectory -File | ForEach-Object Name | Sort-Object)
+$expectedRootFiles = @('main.tex', 'Manuscript.tex', 'Supporting_info.tex') | Sort-Object
+if (($rootFiles -join '|') -ne ($expectedRootFiles -join '|')) {
+    throw "Unexpected Overleaf root files: $($rootFiles -join ', ')"
 }
 
 if (-not $SkipCompileCheck) {

@@ -2,23 +2,22 @@
 \label{sec:mosaicity}
 A two-dimensional powder is already random in in-plane azimuth. Mosaicity adds a distribution of crystallite tilts about the mean film normal. Its role is visible in the measured detector image in Fig.~\ref{fig:hk0_low_l_star}, where it explains features that are otherwise incompatible with a single incident vector and one perfectly aligned crystallite.
 
-Figure~\ref{fig:hk0_low_l_star} shows the $r=0$ region of a Bi$_2$Se$_3$ image collected at the nominal incident angle $\theta_i=5^\circ$. That incident condition places the Ewald intersection near the $003$ condition. Surprisingly, intensity is also visible near the $006$ location, at approximately twice the radial $2\theta$ coordinate of $003$. The $003$ feature is also strongly anisotropic: its long extension follows the radial $2\theta$ direction, whereas its transverse width follows the outgoing-ray azimuth $\phi$.
+Figure~\ref{fig:hk0_low_l_star} shows the $r=0$ region of a Bi$_2$Se$_3$ image collected at the nominal incident angle $\theta_i=5^\circ$. That incident condition places the Ewald intersection near the $003$ condition. Surprisingly, intensity is also visible near the $006$ location, at approximately twice the radial $2\theta$ coordinate of $003$. The $003$ feature is also strongly anisotropic: its long extension follows the radial $2\theta$ direction, whereas its transverse width follows the outgoing-ray azimuth $\phi_f$.
 
-For the $003$ peak, the transverse $\phi$ width is primarily due to mosaicity, while the radial spread is better explained by wavelength dispersion. As discussed below, the unexpected $006$ intensity motivates testing a broad component in the mosaic distribution. The bright feature near $L=0$ is specular reflectivity, discussed separately in Sec.~\ref{sec:reflectivity}.
+For the $003$ peak, the transverse $\phi_f$ width constrains mosaicity. The radial extension is a separate observable whose interpretation must account for finite-stack scattering and instrumental broadening. The unexpected $006$ intensity motivates testing a broad component in the mosaic distribution. The bright feature near $L=0$ is specular reflectivity, discussed separately in Sec.~\ref{sec:reflectivity}.
 
 
 \begin{figure}[H]
   \centering
-  \textbf{Radial and transverse structure of the Bi$_2$Se$_3$ $r=0$ region}
   \begin{minipage}{0.92\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/results_ordered/00L_region_wavelength_mosaic_axes.png}
+    \includegraphics[width=\linewidth]{figures/results_ordered/00L_region_compact.pdf}
   \end{minipage}
-  \caption{Measured $r=0$ detector region from the $5^\circ$ Bi$_2$Se$_3$ image. The nominal incident condition lies near $003$, while intensity is also observed near the $006$ location at approximately twice its radial $2\theta$ coordinate. The $003$ feature has a long radial extension along $2\theta$, whereas its transverse $\phi$ width is the cleaner constraint on crystallite tilt. The bright near-origin feature is near-critical specular reflectivity discussed in Sec.~\ref{sec:reflectivity}.}
+  \caption{Measured axial ($r=0$) scattering from Bi$_2$Se$_3$ at nominal incidence $\theta_i=5^\circ$. The bracket identifies the extended radial streak beside $003$ along $2\theta$. The double-headed arrow marks its transverse mosaic width along the outgoing-ray azimuth $\phi_f$, which is sensitive to the spread of crystallite tilts. In the retained model, finite-stack axial scattering between Bragg positions is concentrated near the mean specular direction by crystallite-orientation weighting and detector projection, producing the radial streak. Intensity is also visible near $006$. The bright left-hand feature is near-critical specular reflectivity (Sec.~\ref{sec:reflectivity}). The image retains its original color mapping.}
   \label{fig:hk0_low_l_star}
 \end{figure}
 
-As shown below, off-specular rod-family arcs and the transverse $\phi$ width of off-condition $r=0$ intensity probe different parts of the same orientation distribution. Strong off-specular arcs mainly constrain crystallites whose normals are close to the mean film normal. Weak $r=0$ intensity farther from the specular direction is more sensitive to the small population at larger tilt.
+Off-specular detector arcs and the transverse $\phi_f$ width of off-condition axial intensity probe different parts of the same orientation distribution. Strong off-specular arcs mainly constrain crystallites whose normals are close to the mean film normal. Weak $r=0$ intensity farther from the specular direction is more sensitive to the small population at larger tilt.
 
 To apply the crystallite mosaic tilt, we rotate each point on the powder cylinder through $\alpha$ about its local in-plane tilt axis,
 \begin{equation}
@@ -35,7 +34,7 @@ where $\alpha$ is the crystallite-tilt magnitude and $\beta$ is the cylinder azi
 \]
 where $\widehat{\mathbf b}_t^{\,0}$ is the reference in-plane unit axis. Thus, the tilt axis rotates with the cylinder azimuth $\beta$. At $\alpha=0$, Eq.~\eqref{eq:mosaic_orientation_map} reduces to the powder cylinder in Eq.~\eqref{eq:powder_cylinder}.
 
-The data were reproduced by a distribution with long tails,
+We parameterize the tilt profile with a narrow core and a broad component,
 \begin{equation}
   \omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)
   =p_{\mathrm{tail}}L_{\mathrm w}(\alpha;\Gamma)
@@ -45,47 +44,18 @@ The data were reproduced by a distribution with long tails,
 \end{equation}
 with the normalized orientation density
 \begin{equation}
-  p_m(\alpha,\beta)=\frac{\omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)}{2\pi},
+  p_m(\alpha,\beta)=\frac{2\omega_{\mathrm w}(\alpha;p_{\mathrm{tail}},\Gamma,\sigma)}{2\pi},
   \qquad
   \int_0^\pi\!\int_0^{2\pi}p_m(\alpha,\beta)\,d\beta\,d\alpha=1.
   \label{eq:mosaic_orientation_density}
 \end{equation}
-Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, and $p_{\mathrm{tail}}$ is its weight. The two components share one center but have independent widths. The Lorentzian-like form is not a claim that the physical distribution is uniquely Lorentzian.
+Here $G_{\mathrm w}$ is the Gaussian-like narrow core, $L_{\mathrm w}$ is the Lorentzian-like broad component, and $p_{\mathrm{tail}}$ is its weight. Both wrapped components are normalized on the signed angular domain. The factor two folds their even density onto the nonnegative tilt magnitude $\alpha$ (Supporting Information Sec.~S3). The two components share one center but have independent widths. The Lorentzian-like form provides a phenomenological description of the broad component.
 
-Figure~\ref{fig:mosaic_combo} explains the geometric sensitivity to a broad component. For $r\neq0$, the strong detector arcs sample the orientation range near the nominal reciprocal vector. The transverse extent of off-condition $r=0$ intensity probes larger tilts. Establishing that the broad component is necessary still requires a same-fit no-tail comparison and a fairly re-optimized Gaussian-only model, with residuals and uncertainty across the measured incident angles.
+Figure~\ref{fig:mosaic_combo} explains the geometric sensitivity to a broad component. For $r\neq0$, the strong detector arcs sample the orientation range near the nominal reciprocal vector. The transverse extent of off-condition axial intensity probes larger tilts. Establishing that the broad component is necessary still requires a same-fit no-tail comparison and a fairly re-optimized Gaussian-only model, with residuals and uncertainty across the measured incident angles.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
-  \captionsetup[subfigure]{list=false,labelsep=none}
-
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \paneltagged{(a)}{\input{figures/mosaic/mosaic_bragg_inplane}}
-    \phantomcaption
-    \label{fig:mosaic_combo:schem_inplane}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \paneltagged{(b)}{\input{figures/mosaic/mosaic_bragg_specular}}
-    \phantomcaption
-    \label{fig:mosaic_combo:schem_specular}
-  \end{subfigure}
-
-  \vspace{0.6em}
-
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \paneltagged{(c)}{\includegraphics[width=\linewidth]{figures/mosaic/inplane_detector_band.png}}
-    \phantomcaption
-    \label{fig:mosaic_combo:img_inplane}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.48\linewidth}
-    \centering
-    \paneltagged{(d)}{\includegraphics[width=\linewidth]{figures/mosaic/specular_detector_cap.png}}
-    \phantomcaption
-    \label{fig:mosaic_combo:img_specular}
-  \end{subfigure}
-
-  \caption{Geometric sensitivity to the narrow and broad crystallite-tilt components. (a) For $r\neq0$, the reciprocal vector has radial and film-normal components $Q_R$ and $Q_z$. The purple segment identifies the narrow core that predominantly controls the strong off-specular arc width, while the dashed orange extension identifies the broad, low-probability component. (b) For $r=0$, the same orientation distribution begins on the film-normal axis. Intensity displaced in the transverse $\phi$ direction samples larger crystallite tilts and is therefore more sensitive to the broad component. This transverse mosaic effect is distinct from the radial $2\theta$ streak through $003$, which is assigned primarily to wavelength dispersion in Fig.~\ref{fig:hk0_low_l_star}. Opposite tilts fold onto the same $Q_R\ge0$ locus. (c,d) Three-dimensional views place the corresponding orientation distributions relative to the Ewald-sphere intersection. The schematic illustrates sensitivity and does not replace a controlled mosaic-component comparison.}
+  \includegraphics[width=\linewidth]{figures/mosaic/mosaic_integrated_journal.pdf}
+  \caption{Azimuthal averaging, mosaic tilt, and Ewald selection for off-axis (a) and axial (b) reflections. The upper insets look along the film-normal reciprocal axis $Q_z$. Random in-plane azimuth distributes off-axis Bragg points with the same radial-family label $r$ and the same $Q_z$ around a common ring, where their intensity contributions add. An axial point ($r=0$) is unchanged by this rotation. Mosaic tilt then broadens the ring into a band and the axial point into a cap, with narrow (purple) and broad (orange) contributions. The lower views show these distributions on a gray constant-$|Q|$ sphere intersected by the blue Ewald sphere. Thin teal curves show the full intersection, with thicker segments emphasizing the illustrated mosaic region. The purple ring or point marks zero tilt, and rear curve segments are dashed.}
   \label{fig:mosaic_combo}
 \end{figure}

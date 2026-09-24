@@ -22,6 +22,10 @@ These rules translate the advisor's philosophy. The implementation-specific veri
 8. State accomplishments plainly but only at the strength justified by displayed overlays, uncertainty analysis, and the stated structural model.
 9. Draft enough to make the logic teachable, then cut repetition and move implementation-heavy material to the Supporting Information.
 
+## Author writing preference
+
+Always prefer direct, affirmative wording to litotes or indirect negative formulations when the meaning is equivalent. State the physical fact, operation, or limitation explicitly. Preserve scientific qualifications, uncertainty, and evidence boundaries when rewriting. Apply this preference to manuscript and Supporting Information prose, captions, and future revisions.
+
 ## Handling advisor comments
 
 - Preserve the advisor's intent, but do not rubber-stamp a proposed response. Use `AGREE`, `AGREE WITH MODIFICATION`, `DISAGREE`, or `CHECK`, with a reason and an acceptance criterion.

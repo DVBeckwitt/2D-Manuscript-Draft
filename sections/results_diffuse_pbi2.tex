@@ -1,7 +1,7 @@
 \section{Results: diffuse scattering and stacking disorder in PbI\texorpdfstring{$_2$}{2}}
 \label{sec:results_pbi2}
 
-Figure~\ref{fig:pbi2_diffuse_cylinders} shows a CVD-grown PbI$_2$ film and a crop spanning the $r=0$ and $r=1$ reciprocal rods. The $r=1$ rod contains measurable intensity between the integer Bragg maxima, whereas the $r=0$ rod is dominated by sharp peaks and finite-thickness oscillations. This rod-dependent redistribution is the experimental motivation for the stacking-disorder model. In a two-dimensional powder, random in-plane orientation maps each $(h,k)$ rod onto a reciprocal-space cylinder at fixed $Q_R$. An infinite ordered crystal gives intensity at discrete crystallite-frame $L$ values, while a finite ordered stack already produces a continuous $S_{hk}(L)$ with finite widths and fringes. Stacking faults do not create these rods. They change the correlations among trilayers and redistribute intensity within the existing continuous rod profile.
+Figure~\ref{fig:pbi2_diffuse_cylinders} shows a CVD-grown PbI$_2$ film and a crop spanning the $r=0$ and $r=1$ reciprocal rods. The $r=1$ rod contains measurable intensity between the integer Bragg maxima, whereas the $r=0$ rod is dominated by sharp peaks and finite-thickness oscillations. This rod-dependent redistribution is the experimental motivation for the stacking-disorder model. The cylinder construction in Fig.~\ref{fig:continuous_rod_bridge} applies to both ordered and faulted stacks. Stacking faults change the correlations among trilayers and redistribute intensity within the existing continuous rod profile.
 
 \begin{figure}[H]
   \centering
@@ -19,7 +19,7 @@ The contrast between the two rods identifies the structural information carried 
   =\exp\!\left[\frac{2\pi i}{3}(h+2k)\right].
   \label{eq:pbi2_registry_phase}
 \end{equation}
-For $h=k=0$, $\omega_{00}=1$, and the two trilayer orientations have the same $00L$ amplitude in the present model. The $r=0$ rod is therefore insensitive to the included basal-plane shifts and orientation changes: faults can be present, but they are contrast-matched on that rod. Off-specular rods retain the lateral phase contrast, so the same faults change their pair interference and transfer intensity from ordered maxima into the diffuse regions between them.
+For $h=k=0$, $\omega_{00}=1$, and the two trilayer orientations have the same $00L$ amplitude in the present model. The $r=0$ rod is therefore insensitive to the included basal-plane shifts and orientation changes: faults can be present, but they are contrast-matched on that rod. Off-axis rods retain the lateral phase contrast, so the same faults change their pair interference and transfer intensity from ordered maxima into the diffuse regions between them.
 
 \subsection{From stacking faults to rod intensity}
 \label{sec:pbi2_transition_model}
@@ -28,10 +28,8 @@ The structural unit is one I--Pb--I trilayer. Its state is described by a basal-
 
 \begin{figure}[H]
   \centering
-  \resizebox{0.88\linewidth}{!}{%
-    \input{figures/results_pbi2/transition_matrix/pbi2_polytype_stacks}%
-  }
-  \caption{Deterministic PbI$_2$ parent cycles used in the transition model. (a) 2H repeats $0F_+$. (b) The isolated $F_+$ trilayer defines the local orientation. (c) 4H alternates $0F_+$ and $1F_-$. (d) 6H advances $0F_+\rightarrow1F_+\rightarrow2F_+\rightarrow0F_+$. In a state label $\rho F_\sigma$, $\rho$ is the basal-plane position and $\sigma$ is the trilayer orientation.}
+  \includegraphics[width=\linewidth]{figures/results_pbi2/transition_matrix/pbi2_parent_stacking_redesigned.pdf}
+  \caption{Ordered PbI$_2$ parent stacks: (a) 2H, (b) 4H, and (c) 6H. Each shows six I--Pb--I trilayers, read upward along $c$. Gray and purple circles denote Pb and I, and solid segments connect projected Pb--I neighbors. In $\rho F_\sigma$, $\rho=0,1,2$ denotes fractional basal translations $(0,0)$, $(1/3,2/3)$, and $(2/3,1/3)$, respectively. The upper key compares orientations $F_+$ and $F_-$, which exchange the upper and lower iodine-plane positions at fixed Pb registry. Labels $a$, $d_+$, and $b_+$ identify one parent interface event in each panel, as defined in the text. Brackets enclose repeats of one, two, and three trilayers, respectively.}
   \label{fig:pbi2_transition_states}
 \end{figure}
 
@@ -44,7 +42,7 @@ A stacking fault is represented as a local departure from the selected parent ev
   p_j(\text{each alternative})=\frac{\epsilon_j}{4}.
   \label{eq:pbi2_fault_parameterization}
 \end{equation}
-Thus $\epsilon_j$ is the effective per-interface probability of departing from the selected parent event under this template. It is not a universal PbI$_2$ fault density. The transition matrix propagates these events over multiple layer separations and calculates the phase-weighted pair correlation for each $(h,k)$ rod. The complete six-state construction, its exact rod-dependent reduction, and the finite-stack derivation are given in the Supporting Information.\cite{HendricksTeller1942,KakinokiKomura1954,KakinokiKomura1965,Hart2018}
+Thus $\epsilon_j$ is the effective per-interface probability of departing from the selected parent event under this template. Its interpretation depends on the selected transition template. The transition matrix propagates these events over multiple layer separations and calculates the phase-weighted pair correlation for each $(h,k)$ rod. The complete six-state construction, its exact rod-dependent reduction, and the finite-stack derivation are given in Supporting Information Sec.~S7.\cite{HendricksTeller1942,KakinokiKomura1954,KakinokiKomura1965,Hart2018}
 
 The main physical quantity is the correlation between trilayers separated by $\Delta$ interfaces. Let $C_{hk}^{(j)}(\Delta;L,\lambda_s)$ be the disorder-averaged scattering correlation, averaged over all layer pairs at that separation, for population $j$. Let $N$ be the number of trilayers, $d$ their normal separation, and $q_z=2\pi L/c$ the crystallite-frame momentum-transfer component along the rod. The corresponding finite-stack rod intensity can be written as
 \begin{equation}
@@ -63,59 +61,35 @@ The 2H-, 4H-, and 6H-rich populations are treated as mutually incoherent, so the
   \qquad w_{2H}+w_{4H}+w_{6H}=1.
   \label{eq:pbi2_population_sum}
 \end{equation}
-This population-weighted $S_{hk}(L,\lambda_s)$ replaces the ordered finite-stack rod intensity introduced in Sec.~\ref{sec:structure_factor}. The subsequent powder-cylinder formation, mosaic broadening, Ewald selection, optical weighting, detector mapping, and finite-region integration are unchanged. The stacking model is therefore a structural module within the same detector-space forward calculation rather than a separate diffraction framework.
+This population-weighted $S_{hk}(L,\lambda_s)$ replaces the ordered finite-stack rod intensity introduced in Sec.~\ref{sec:structure_factor}. The subsequent powder-cylinder formation, mosaic broadening, Ewald selection, optical weighting, detector mapping, and finite-region integration are unchanged.
 
-\subsection{Hierarchy of stacking-disorder models}
+\subsection{Selected PbI$_2$ cases}
 \label{sec:pbi2_model_hierarchy}
 
-The selected comparisons should be organized as a nested model hierarchy rather than as a generic low-to-high disorder series. The first stage establishes a nearly ordered 2H baseline. The second asks whether faults within a 2H-rich population alone reproduce the diffuse redistribution. The third adds a 6H-rich population, and the fourth adds a 4H-rich population. Each stage must use the same detector geometry, background treatment, integration regions, and ordered baseline, and added complexity is retained only when it improves the fault-sensitive rod profiles without degrading the ordered maxima.
+Figure~\ref{fig:pbi2_disorder_hierarchy} compares the 2H specimens GD1 with little mosaic disorder and SiD1 with stronger mosaic spread. Figure~\ref{fig:pbi2_polytype_cases} groups B4 with 2H and 6H contributions and Clean1 with a description including 4H. Each case pairs measured-minus-background and simulated detector images with rod profiles. The cases distinguish changes in angular spread from changes in the sequence of off-axis maxima associated with stacking.
+
+The off-axis rows show both detector sides of the $r=1$, $r=3$, and $r=4$ families against projected $L_{\mathrm{proj}}$. The axial row uses detector $2\theta$. Dark points and connecting lines denote data minus background. Gray bands show the source-labeled data uncertainty, while pale gray regions lie outside the comparison interval. Dashed vertical lines mark the ideal Bragg positions of the indicated parent polytypes.
 
 \begin{figure}[H]
   \centering
-  {\large\bfseries Hierarchy of PbI$_2$ stacking-disorder models\par}
-  \vspace{0.7em}
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering\textbf{(a) 2H with little disorder}\par\vspace{0.4em}
-    \fbox{\begin{minipage}[c][0.18\textheight][c]{0.92\linewidth}\centering
-      Direct detector image and matched rod profile\\[0.5em]
-      $\epsilon_{2H}\approx0$, $w_{2H}=1$\\[0.5em]
-      Placeholder for retained arrays
-    \end{minipage}}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering\textbf{(b) 2H with general stacking disorder}\par\vspace{0.4em}
-    \fbox{\begin{minipage}[c][0.18\textheight][c]{0.92\linewidth}\centering
-      Direct detector image and matched rod profile\\[0.5em]
-      $\epsilon_{2H}$ released, $w_{2H}=1$\\[0.5em]
-      Placeholder for retained arrays
-    \end{minipage}}
-  \end{minipage}
-
-  \vspace{1.0em}
-
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering\textbf{(c) 2H + 6H disorder}\par\vspace{0.4em}
-    \fbox{\begin{minipage}[c][0.18\textheight][c]{0.92\linewidth}\centering
-      Direct detector image and matched rod profile\\[0.5em]
-      $w_{2H}+w_{6H}=1$\\[0.5em]
-      Placeholder for retained arrays
-    \end{minipage}}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering\textbf{(d) 2H + 6H + 4H disorder}\par\vspace{0.4em}
-    \fbox{\begin{minipage}[c][0.18\textheight][c]{0.92\linewidth}\centering
-      Direct detector image and matched rod profile\\[0.5em]
-      $w_{2H}+w_{6H}+w_{4H}=1$\\[0.5em]
-      Placeholder for retained arrays
-    \end{minipage}}
-  \end{minipage}
-  \caption{Planned matched comparisons for a nested hierarchy of PbI$_2$ stacking-disorder models. (a) Nearly ordered 2H establishes the finite-stack baseline. (b) Faulted 2H tests whether one parent-rich population accounts for the diffuse redistribution. (c) A 6H-rich population is added to the 2H model. (d) A 4H-rich population is then added to the 2H+6H model. Every stage will use the same detector projection, background treatment, and intensity normalization. The panels remain placeholders until the direct measured and calculated arrays are inserted.}
+  \captionsetup{font=footnotesize}
+  \begin{subfigure}{\linewidth}
+    \phantomsubcaption\label{fig:pbi2_case_a}
+    \phantomsubcaption\label{fig:pbi2_case_b}
+    \includegraphics[width=\linewidth]{figures/results_pbi2/pbi2_2h_compact.pdf}
+  \end{subfigure}
+  \caption{Mosaic-disorder comparison for 2H PbI$_2$: (a) GD1 with little mosaic disorder and (b) SiD1 with strong mosaic disorder. The upper pairs show measured intensity minus background and simulated detector intensity, with a separate asinh color scale for each specimen. SiD1 shows more extended angular arcs. Below, $-$ and $+$ distinguish detector branches. Each row shares one intensity scale across both specimens. Dark curves show data minus background, gray bands show conditional $\pm1\sigma$ uncertainty, and gray regions are excluded. Blue dashed guides mark ideal 2H positions. Off-axis profiles use projected $L$, and $r=0$ uses detector $2\theta$. All profile ordinates use signed asinh scaling with width 1 count per pixel area, retaining the original intensity units.}
   \label{fig:pbi2_disorder_hierarchy}
 \end{figure}
 
-\subsection{Connection to the detector calculation}
-\label{sec:pbi2_detector_connection}
-
-The stacking parameters are introduced only after detector geometry, sample alignment, mosaicity, lattice constants, and the ordered PbI$_2$ rod intensity have been fixed by the ordered-film analysis. The core parameters are the departure probabilities $\epsilon_{2H}$, $\epsilon_{4H}$, and $\epsilon_{6H}$, the normalized population weights $w_{2H}$, $w_{4H}$, and $w_{6H}$, and the finite stack length $N$. Measured and calculated detector images are projected through identical constant-$Q_R$ masks and reported versus $Q_z$ or $L_{\mathrm{proj}}=Q_zc/(2\pi)$. Independent peak areas are not introduced before the stacking calculation because they would absorb the between-peak intensity that constrains the layer correlations.
-
-The hierarchy in Fig.~\ref{fig:pbi2_disorder_hierarchy} is intended to identify the minimum structural complexity required by the fault-sensitive rods. The nearly ordered 2H model establishes the baseline. Releasing $\epsilon_{2H}$ tests general disorder within that parent. The 6H- and 4H-rich populations are then introduced sequentially rather than simultaneously. Numerical transition parameters and population weights should be reported only after the direct experimental profiles have been refit with this hierarchy. The absence of comparable diffuse contrast on $r=0$ does not imply that those scattering volumes contain no faults. It follows from the phase-insensitive condition described above.
+\begin{figure}[H]
+  \centering
+  \captionsetup{font=footnotesize}
+  \begin{subfigure}{\linewidth}
+    \phantomsubcaption\label{fig:pbi2_case_c}
+    \phantomsubcaption\label{fig:pbi2_case_d}
+    \includegraphics[width=\linewidth]{figures/results_pbi2/pbi2_polytypes_compact.pdf}
+  \end{subfigure}
+  \caption{PbI$_2$ cases with additional polytype contributions: (a) B4 and (b) Clean1. Conventions follow Fig.~\ref{fig:pbi2_disorder_hierarchy}, with shared profile axes and a separate detector color scale for each specimen. The $r=1$ row is logarithmic, and the other rows use signed asinh scaling. Blue, teal, and purple dashed guides identify ideal 2H, 6H, and 4H positions. Coincident positions use interleaved colors. Additional off-axis maxima motivate stacking descriptions beyond a single ordered 2H parent.}
+  \label{fig:pbi2_polytype_cases}
+\end{figure}

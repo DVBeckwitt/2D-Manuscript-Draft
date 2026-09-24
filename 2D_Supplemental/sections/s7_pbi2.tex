@@ -1,0 +1,255 @@
+\section{PbI\texorpdfstring{$_2$}{2} stacking-disorder model}
+\label{sec:si_pbi2_transition}
+
+This section gives the PbI$_2$-specific state construction and the finite-stack
+intensity used in the main text.  The general strategy--propagating layer-pair
+probabilities with a transition matrix--follows the established theory of
+one-dimensionally disordered crystals.\cite{HendricksTeller1942,KakinokiKomura1954,KakinokiKomura1965,Hart2018}
+The particular six states, allowed interface events, and fault templates below
+are the model assumptions introduced for the present PbI$_2$ analysis.
+
+\subsection{Trilayer amplitudes and six-state basis}
+
+As in the main text, $\rho\in\{0,1,2\}$ labels the basal registry and $\sigma\in\{+,-\}$ labels trilayer orientation. Here $\sigma$ is a discrete state label; the mosaic width $\sigma$ in Sec.~\ref{sec:si_mosaic} is a separate, continuous parameter. The basal registries are
+\begin{equation}
+  0=(0,0),\qquad
+  1=\left(\frac13,\frac23\right),\qquad
+  2=\left(\frac23,\frac13\right).
+  \label{eq:si_pbi2_registries}
+\end{equation}
+Taking the Pb plane as the local origin and writing the Pb--I vertical offset
+as $\eta=\Delta z_{\mathrm{I-Pb}}/c$, the two orientation-dependent trilayer
+amplitudes are
+\begin{align}
+ F_+(h,k,L)={}&f_{\mathrm{Pb}}+
+ f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{2h+k}{3}+L\eta\right]\right\}
+ +f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{h+2k}{3}-L\eta\right]\right\},
+ \label{eq:si_pbi2_Fplus}\\
+ F_-(h,k,L)={}&f_{\mathrm{Pb}}+
+ f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{2h+k}{3}-L\eta\right]\right\}
+ +f_{\mathrm I}\exp\!\left\{2\pi i\left[\frac{h+2k}{3}+L\eta\right]\right\}.
+ \label{eq:si_pbi2_Fminus}
+\end{align}
+Atomic form factors retain their dependence on $Q=|\mathbf G_{hk}(L)|$ and source wavelength $\lambda_s$. These arguments are suppressed in the matrix expressions below.  The two amplitudes
+satisfy $F_-(h,k,L)=F_+(h,k,-L)$.
+
+For the forward registry step $\mathbf{s}=(1/3,2/3)$, define
+\begin{equation}
+  \omega_{hk}=\exp\!\left[2\pi i(hs_x+ks_y)\right]
+  =\exp\!\left[\frac{2\pi i}{3}(h+2k)\right].
+  \label{eq:si_pbi2_omega}
+\end{equation}
+The ordered state basis and its scattering-amplitude vector are
+\begin{equation}
+ \mathcal{S}=[0F_+,1F_+,2F_+,0F_-,1F_-,2F_-],\qquad
+ \mathbf{g}=\begin{pmatrix}
+ F_+&\omega_{hk} F_+&\omega_{hk}^2F_+&F_-&\omega_{hk} F_-&\omega_{hk}^2F_-
+ \end{pmatrix}^{\mathsf T}.
+ \label{eq:si_pbi2_state_amplitudes}
+\end{equation}
+Because $\omega_{hk}^3=1$, registry 2 is also one backward step from registry 0.
+
+\subsection{Direction-resolved interface law}
+
+The five mutually exclusive interface events are
+\begin{equation}
+ \boldsymbol{\theta}=(a,b_+,b_-,d_+,d_-),\qquad
+ a+b_++b_-+d_++d_-=1.
+ \label{eq:si_pbi2_interface_law}
+\end{equation}
+The entries of $\boldsymbol{\theta}$ are event probabilities. Here $a$ is the probability of retaining both registry and orientation; the basal lattice constant denoted by $a$ in Sec.~\ref{sec:si_structure_factor_conventions} is a different quantity. The $a$ event preserves registry and orientation. The $b_+$ and $b_-$ events shift the
+registry by $+1$ and $-1$ while preserving orientation. The $d_+$ and $d_-$ events
+combine an orientation change with the two handed shift rules.  Every allowed orientation flip includes a registry shift.  For a $d_+$ event, an $F_+\rightarrow F_-$ step
+advances the registry and the corresponding $F_-\rightarrow F_+$ step returns
+it.  The directions are interchanged for $d_-$.  This reversal is what makes a
+pure $d_+$ or $d_-$ process a deterministic two-layer 4H repeat.
+
+Let
+\begin{equation}
+ S_+=\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix},\qquad
+ S_-=S_+^{-1}=S_+^{\mathsf T}.
+ \label{eq:si_pbi2_shift_matrices}
+\end{equation}
+The matrices $S_+$ and $S_-$ shift the registry forward and backward, respectively. Let $I_m$ denote the $m$-dimensional identity matrix. With rows denoting the current state and columns the next state, define
+\begin{align}
+ A&=aI_3+b_+S_+ +b_-S_-,\\
+ B&=d_+S_+ +d_-S_-,\\
+ C&=d_+S_- +d_-S_+.
+\end{align}
+Here $A$ is the orientation-preserving block, and $B$ and $C$ are the two orientation-changing blocks. The full six-state transition matrix is
+\begin{equation}
+ T_6=\begin{pmatrix}A&B\\C&A\end{pmatrix}.
+ \label{eq:si_pbi2_T6}
+\end{equation}
+For example, the row for the state $0F_+$ is
+$(a,b_+,b_-,0,d_+,d_-)$.  Every row of $T_6$ sums to one.
+
+The deterministic parent-event vectors, in the order
+$(a,b_+,b_-,d_+,d_-)$, are
+\begin{equation}
+ \mathbf e_{2H}=(1,0,0,0,0),\qquad
+ \mathbf e_{4H}=(0,0,0,1,0),\qquad
+ \mathbf e_{6H}=(0,1,0,0,0).
+ \label{eq:si_pbi2_parent_vectors}
+\end{equation}
+The opposite-handed 4H and 6H parents are obtained by selecting $d_-$ and
+$b_-$ instead.
+
+\subsection{Exact rod-dependent reduction}
+
+The three registry-shift matrices are diagonal in the discrete Fourier basis.
+In the sector selected by the scattering phase $\omega_{hk}$, the $6\times6$
+transition reduces exactly to
+\begin{equation}
+ M(\omega_{hk})=
+ \begin{pmatrix}
+ a+b_+\omega_{hk}+b_-\omega_{hk}^{-1} & d_+\omega_{hk}+d_-\omega_{hk}^{-1}\\
+ d_+\omega_{hk}^{-1}+d_-\omega_{hk} & a+b_+\omega_{hk}+b_-\omega_{hk}^{-1}
+ \end{pmatrix}.
+ \label{eq:si_pbi2_Momega}
+\end{equation}
+All registry states are retained. Equation~\eqref{eq:si_pbi2_Momega} is one Fourier
+block of Eq.~\eqref{eq:si_pbi2_T6}.  Setting the registry phase to unity gives
+the orientation-population matrix
+\begin{equation}
+ P=M(1)=
+ \begin{pmatrix}
+ a+b_++b_- & d_++d_-\\
+ d_++d_- & a+b_++b_-
+ \end{pmatrix}.
+ \label{eq:si_pbi2_P}
+\end{equation}
+The matrix $M(\omega_{hk})$ carries complex scattering phases, while $P$ is a row-stochastic probability matrix.
+
+\subsection{Finite-stack intensity}
+
+Let $d$ be the separation between neighboring trilayer centers and
+$\xi=\exp(iq_zd)$ the corresponding vertical phase, with $q_z=2\pi L/c$.  Define
+\begin{equation}
+ \mathbf f=\begin{pmatrix}F_+\\F_-\end{pmatrix},\qquad
+ D_{F^*}=\operatorname{diag}(F_+^*,F_-^*).
+ \label{eq:si_pbi2_form_vector}
+\end{equation}
+If $\boldsymbol{\pi}^{\mathrm{ori}}_0$ is the initial orientation row vector,
+then the orientation population at trilayer $n$ is
+\begin{equation}
+ \boldsymbol{\pi}^{\mathrm{ori}}_n
+ =\boldsymbol{\pi}^{\mathrm{ori}}_0P^n.
+ \label{eq:si_pbi2_orientation_population}
+\end{equation}
+The vector $\mathbf f$ collects the two orientation amplitudes, and $D_{F^*}$ is their diagonal complex-conjugate matrix. The superscript $\mathrm{ori}$ labels orientation probabilities; each row vector $\boldsymbol{\pi}^{\mathrm{ori}}_n$ sums to one. For integer layer separation $1\leq\Delta<N$, the phase-weighted correlation between trilayers $n$ and $n+\Delta$ is
+\begin{equation}
+ K_{n,\Delta}=\boldsymbol{\pi}^{\mathrm{ori}}_n
+ D_{F^*}M(\omega_{hk})^\Delta\mathbf f.
+ \label{eq:si_pbi2_pair_kernel}
+\end{equation}
+For one fixed parent-rich population $j\in\{2H,4H,6H\}$, the main-text rod intensity uses the per-trilayer convention $S_{hk}^{(j)}=\langle I_N^{(j)}\rangle/N$, where $I_N^{(j)}$ is the intensity of the complete $N$-trilayer stack before the disorder average. Population labels on $F_\pm$, the matrices, and $K_{n,\Delta}$ are suppressed in this single-population derivation. For a finite stack of $N$ trilayers,
+\begin{align}
+ S_{hk}^{(j)}(L,\lambda_s)={}&
+ \frac{1}{N}\sum_{n=0}^{N-1}
+ \boldsymbol{\pi}^{\mathrm{ori}}_n
+ \begin{pmatrix}|F_+|^2\\|F_-|^2\end{pmatrix}
+ \nonumber\\
+ &+\frac{2}{N}\operatorname{Re}\!\left[
+ \sum_{\Delta=1}^{N-1}\xi^\Delta
+ \sum_{n=0}^{N-1-\Delta}K_{n,\Delta}\right].
+ \label{eq:si_pbi2_finite_intensity}
+\end{align}
+The connection to the main-text pair-correlation notation is
+\begin{equation}
+ C_{hk}^{(j)}(\Delta;L,\lambda_s)
+ =\frac{1}{N-\Delta}\sum_{n=0}^{N-1-\Delta}K_{n,\Delta},
+ \qquad 1\leq\Delta<N.
+ \label{eq:si_pbi2_main_correlation}
+\end{equation}
+The first term in Eq.~\eqref{eq:si_pbi2_finite_intensity} is $S_{\mathrm{self},hk}^{(j)}(L,\lambda_s)$. Since $\xi^\Delta=e^{iq_zd\Delta}$, grouping the pair sum with this definition gives the main-text finite-stack expression directly.
+
+The first term contains the $N$ self contributions and the second contains all
+distinct trilayer pairs.  The calculation evaluates these finite sums
+directly, retaining end effects and avoiding singular closed forms when an
+eigenvalue approaches unity.  Equivalent matrix-power and recursive
+formulations are standard for planar-fault diffraction.\cite{Treacy1991}
+
+\subsection{Polytype-rich fault templates and population mixture}
+
+For each parent-rich population,
+\begin{equation}
+ \boldsymbol{\theta}_j(\epsilon_j)
+ =(1-\epsilon_j)\mathbf e_j+\epsilon_j\mathbf q_j,
+ \qquad j\in\{2H,4H,6H\}.
+ \label{eq:si_pbi2_fault_parameterization}
+\end{equation}
+Here $\mathbf e_j$ is the deterministic parent-event vector, $\mathbf q_j$ is the probability vector for a fault event, and $0\leq\epsilon_j\leq1$ is its probability. The equal-alternative templates used in the present implementation are
+\begin{align}
+ \mathbf q_{2H}&=\left(0,\frac14,\frac14,\frac14,\frac14\right),\\
+ \mathbf q_{4H}&=\left(\frac14,\frac14,\frac14,0,\frac14\right),\\
+ \mathbf q_{6H}&=\left(\frac14,0,\frac14,\frac14,\frac14\right).
+ \label{eq:si_pbi2_fault_templates}
+\end{align}
+Consequently, $\epsilon_j$ is exactly the probability that an interface in
+population $j$ follows one of the four alternative events. Its numerical value is conditional on the chosen $\mathbf q_j$ and is interpreted together with that template.
+
+The parent-rich populations are mutually incoherent, with nonnegative weights $w_j$ that sum to one. Their structural intensities combine using the main-text notation:
+\begin{equation}
+ S_{hk}(L,\lambda_s)=\sum_{j\in\{2H,4H,6H\}}
+ w_jS_{hk}^{(j)}(L,\lambda_s),\qquad
+ w_{2H}+w_{4H}+w_{6H}=1.
+ \label{eq:si_pbi2_total_intensity}
+\end{equation}
+The detector/profile prediction, background, scale and optional finite-profile kernel are specified separately in Sec.~\ref{subsec:si_detector_derived_objectives}.
+The core parameterization has three disorder magnitudes and two independent
+population weights.  The stack length $N$, scale, and any fixed or refined
+finite-profile and instrumental broadening terms are separate.  When three independent disorder magnitudes remain underconstrained, the constrained starting model is
+$\epsilon_{2H}=\epsilon_{4H}=\epsilon_{6H}$.
+
+\subsection{Deterministic and phase-insensitive checks}
+
+Table~\ref{tab:si_parent_cycles} gives the zero-disorder cycles.
+\begin{table}[!htbp]
+\centering\small
+\caption{Deterministic PbI$_2$ parent cycles from the initial state $0F_+$. Each row specifies the unit-probability interface event, its registry/orientation cycle, and the corresponding reduced transfer matrix. The phase $\omega_{hk}$ is defined in Eq.~\eqref{eq:si_pbi2_omega}; $I_2$ is the two-dimensional identity matrix.}
+\label{tab:si_parent_cycles}
+\begin{tabular}{llll}
+\toprule
+Parent & Nonzero event & State cycle from $0F_+$ & Reduced matrix\\
+\midrule
+2H & $a=1$ & $0F_+\rightarrow0F_+$ & $I_2$\\
+4H & $d_+=1$ & $0F_+\rightarrow1F_-\rightarrow0F_+$ &
+$\left(\begin{smallmatrix}0&\omega_{hk}\\\omega_{hk}^{-1}&0\end{smallmatrix}\right)$\\
+6H & $b_+=1$ & $0F_+\rightarrow1F_+\rightarrow2F_+\rightarrow0F_+$ &
+$\omega_{hk} I_2$\\
+\bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+For 4H, $M(\omega_{hk})^2=I_2$. For 6H, $M(\omega_{hk})^3=I_2$ because
+$\omega_{hk}^3=1$.  The $d_-=1$ and $b_-=1$ limits generate the opposite-handed
+cycles.
+
+For $h=k=0$, $\omega_{hk}=1$ and $F_+=F_-=F$.  Because $P^\Delta\mathbf 1=\mathbf 1$, where $\mathbf 1=(1,1)^{\mathsf T}$, Eq.~\eqref{eq:si_pbi2_pair_kernel} becomes
+$K_{n,\Delta}=|F|^2$ for every allowed transition law.  Equation
+\eqref{eq:si_pbi2_finite_intensity} then reduces to the normalized Laue factor
+\begin{equation}
+ S_{00}^{(j)}(L,\lambda_s)
+ =\frac{|F|^2}{N}\left|\sum_{n=0}^{N-1}\xi^n\right|^2
+ =\frac{|F|^2}{N}\frac{\sin^2(N\vartheta/2)}{\sin^2(\vartheta/2)},
+ \qquad \vartheta=q_zd,\quad \xi=e^{i\vartheta}.
+ \label{eq:si_pbi2_r0_laue}
+\end{equation}
+Thus the strong $r=0$ oscillations are finite-thickness fringes. The included registry and orientation paths are contrast-matched on this rod, so faults can remain present with the same axial intensity. Figure~\ref{fig:si_pbi2_transition_validation} reserves the direct numerical checks of these limits. Figure~\ref{fig:si_pbi2_sensitivity} separates the effects of faults within a stack from changes in population weights.
+
+
+\begin{figure}[!htbp]
+  \centering
+  \siplaceholder{PbI$_2$ model verification}{(a) Full six-state and reduced calculations.\\(b) Deterministic 2H, 4H, and 6H limits.\\(c) Axial invariance across transition laws.}
+  \caption{Placeholder for verification of the PbI$_2$ model. Direct arrays will compare the full and reduced expressions, independent deterministic-parent sums, and the phase-insensitive axial limit.}
+  \label{fig:si_pbi2_transition_validation}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering
+  \siplaceholder{PbI$_2$ disorder and population sensitivity}{(a) One fault probability varied at fixed population weights.\\(b) Population weights varied at fixed transition laws.\\Shared axes and declared structural assumptions.}
+  \caption{Placeholder for direct PbI$_2$ sensitivity calculations. Separate controlled panels distinguish within-stack fault probabilities from incoherent population weights.}
+  \label{fig:si_pbi2_sensitivity}
+\end{figure}

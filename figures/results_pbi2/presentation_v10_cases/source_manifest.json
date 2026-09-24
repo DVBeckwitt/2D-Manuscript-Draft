@@ -1,0 +1,63 @@
+{
+  "source": "output\\presentations\\Oriented_Powder_8min_Animated_v10.pptx",
+  "source_sha256": "5e33125dbdaba9f8baea2ab7f1e6df9a850473cbba33282f82f855bb16f41cd0",
+  "note": "Slide 29 headings conflict with the embedded specimen/profile legends. Manuscript order follows the embedded legends: B4 is the 2H/6H case, Clean1 includes 4H. Original image bytes are unchanged. Illustrative targets and visual-edit labels are retained. Slide 28 notes describe an older B4 trial and are not used as provenance for its GD1/SiD1 pictures.",
+  "assets": [
+    {
+      "slide": 28,
+      "part": "ppt/media/image36.png",
+      "file": "a_2h_profiles.png",
+      "specimen": "GD1",
+      "sha256": "c5768f008a80c0f5a2b6e0acb785b9ab34ce3141176c8100de195fdade8d4589"
+    },
+    {
+      "slide": 28,
+      "part": "ppt/media/image38.png",
+      "file": "a_2h_detector.png",
+      "specimen": "GD1",
+      "sha256": "0f644820f9d37072ee6f7cd4c2b361e54cb50765029c1c0ba1311844d90c8589"
+    },
+    {
+      "slide": 28,
+      "part": "ppt/media/image37.png",
+      "file": "b_2h_strong_mosaic_profiles.png",
+      "specimen": "SiD1",
+      "sha256": "3fdc63e2e74a467fadde441e3edc03f026f592a1f952705551bdff7d2c36672b"
+    },
+    {
+      "slide": 28,
+      "part": "ppt/media/image39.png",
+      "file": "b_2h_strong_mosaic_detector.png",
+      "specimen": "SiD1",
+      "sha256": "40483ddf70bb238ec6ce113d2f7305d8fb1138d9e1fce8e8e50628aca1dcf6e9"
+    },
+    {
+      "slide": 29,
+      "part": "ppt/media/image42.png",
+      "file": "c_2h_6h_profiles.png",
+      "specimen": "B4",
+      "sha256": "3f7be5b2533a771bc474a6f2cdfa19ea21b58ab07b99fd60f17ac53c2957baf5"
+    },
+    {
+      "slide": 29,
+      "part": "ppt/media/image43.png",
+      "file": "c_2h_6h_detector.png",
+      "specimen": "B4",
+      "sha256": "92f464662cbc07ce4db5459e67cb4f19a3595e0228a958781a0fc5263c6ef668"
+    },
+    {
+      "slide": 29,
+      "part": "ppt/media/image41.png",
+      "file": "d_2h_6h_4h_profiles.png",
+      "specimen": "Clean1",
+      "sha256": "a46a7d52b7aca1a6e3ea26ddd0f8fe1b57f4f0d0b3e844d58f810a9c7b986723"
+    },
+    {
+      "slide": 29,
+      "part": "ppt/media/image40.png",
+      "file": "d_2h_6h_4h_detector.png",
+      "specimen": "Clean1",
+      "sha256": "3550b9b13ec8894a3139d0c30ef3accdd51695daf452c7655f5f823b39694c11"
+    }
+  ]
+}

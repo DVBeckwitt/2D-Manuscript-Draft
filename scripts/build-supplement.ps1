@@ -1,12 +1,12 @@
 <#
 .SYNOPSIS
-Builds the supplied supplemental note and then the complete Supporting Information.
+Builds the complete Supporting Information, or the archived note on request.
 
 .DESCRIPTION
-Keeps incremental LaTeX build state under build_codex/supplement and publishes
-the note PDF beside SI_failure_modes.tex before compiling the SI. The supplied
-note is assembled from its retained PDF pages and editable replacement page.
-Figure-regeneration scripts are optional and are not run by this helper.
+Keeps incremental LaTeX build state under build_codex/supplement. The active SI
+uses eight editable sections and no longer appends the historical note PDF.
+Use -NoteOnly to rebuild that preserved archive separately. Figure-regeneration
+scripts are optional and are not run by this helper.
 
 .EXAMPLE
 .\scripts\build-supplement.ps1
@@ -77,11 +77,12 @@ function Build-Document {
     Write-Output "Built document: $Destination"
 }
 
-Build-Document -SourceDirectory $noteSource -EntryPoint 'main.tex' `
-    -JobName 'verbatim_supplemental_note' -BuildDirectory (Join-Path $buildRoot 'note') `
-    -Destination (Join-Path $siDirectory 'verbatim_supplemental_note.pdf')
-
-if (-not $NoteOnly) {
+if ($NoteOnly) {
+    Build-Document -SourceDirectory $noteSource -EntryPoint 'main.tex' `
+        -JobName 'verbatim_supplemental_note' -BuildDirectory (Join-Path $buildRoot 'note') `
+        -Destination (Join-Path $siDirectory 'verbatim_supplemental_note.pdf')
+}
+else {
     Build-Document -SourceDirectory $siDirectory -EntryPoint 'SI_failure_modes.tex' `
         -JobName 'SI_failure_modes' -BuildDirectory (Join-Path $buildRoot 'si') `
         -Destination (Join-Path $siDirectory 'SI_failure_modes.pdf')

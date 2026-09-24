@@ -31,6 +31,25 @@ __pycache__/
 !2D_Supplemental/verbatim_supplemental_note_source/base/bragg_rods_comments_refined_round15.pdf
 !2D_Supplemental/verbatim_supplemental_note_source/figures/fig_specular_detector_visible_round16.pdf
 !figures/correlated_effects/fig_specular_parratt_kinematic_003_joint_fit.pdf
+!figures/intro/area_detector_overview_v2.pdf
+!figures/geometry/ewald_intensity_to_detector_mapping_v2.pdf
+!figures/mosaic/mosaic_integrated_journal.pdf
+!figures/intro/area_detector_overview_classic.pdf
+!figures/intro/orientational_limits_journal.pdf
+!figures/intro/orientational_limits_compact.pdf
+!figures/intro/orientational_limits_reference_journal.pdf
+!figures/results_pbi2/transition_matrix/pbi2_parent_stacking_redesigned.pdf
+!figures/results_pbi2/pbi2_2h_compact.pdf
+!figures/results_pbi2/pbi2_polytypes_compact.pdf
+!figures/results_ordered/bi2x3_compact.pdf
+!figures/results_ordered/00L_region_compact.pdf
+!figures/results_ordered/presentation_v10_cases/bi2se3_profiles.pdf
+!figures/results_ordered/presentation_v10_cases/bi2te3_profiles.pdf
+!2D_Supplemental/figures/mosaic_measure_guide.pdf
+!2D_Supplemental/figures/profile_construction_guide.pdf
+!figures/correlated_effects/fig_bi2se3_reflectivity_profile.pdf
+!figures/geometry/cylinder_bridge_journal.pdf
+!figures/intro/area_detector_overview_journal.pdf
 
 # Editor / OS temporary files.
 .DS_Store

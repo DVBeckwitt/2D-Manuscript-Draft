@@ -1,0 +1,147 @@
+\section{Incident beam and scattering geometry}
+\label{sec:si_geometric_ray_acceptance}
+
+This section supports the main-text scattering geometry. An incident ray first reaches the sample, and an accepted scattered ray then reaches the active detector. The coordinate definitions below keep those two restrictions separate.
+
+The notation follows the main manuscript. Bold symbols denote vectors or explicitly identified matrices; a hat on a vector denotes unit magnitude, and $\mathsf T$ denotes transpose. The imaginary unit is $i$, and a superscript $*$ denotes complex conjugation except on the reciprocal basis vectors $\mathbf a^*,\mathbf b^*,\mathbf c^*$. Descriptive subscripts such as $\mathrm{det}$, $\mathrm{vol}$ and $\mathrm{proj}$ identify a quantity or coordinate convention. The superscripts $E$, $\mathrm{pre}$, $\mathrm{ROI}$, $\mathrm{meas}$ and $\mathrm{calc}$ label an Ewald-selected quantity, a pre-selection quantity, a region-of-interest average, a measurement and a calculation, respectively. These superscripts identify the role of each quantity.
+
+The laboratory axes are $y$ along the nominal incident beam, $z$ vertical and $x$ transverse. The reciprocal basis vectors include $2\pi$; for the hexagonal setting used here, the basal lattice constant is $a$, the normal repeat is $c$, and $|\mathbf c^*|=2\pi/c$. The source-state index is $s$ throughout. The index $j$ follows the main text: it labels an Ewald-intersection branch in Sec.~\ref{sec:si_detector_profiles} and a parent-rich population in Sec.~\ref{sec:si_pbi2_transition}. Parentheses in $S_{hk}^{(j)}$ identify that population. Subscripts are suppressed only where a fixed rod, source state or population is stated explicitly.
+
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Coordinates used in the main text and Supporting Information. Reciprocal basis vectors include $2\pi$.}
+\label{tab:si_coordinates}
+\begin{tabularx}{\linewidth}{@{}p{0.22\linewidth}X@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$(h,k,\ell)$ & Integer Miller indices; Bragg orders along a rod occur at $L=\ell$. \\
+$L$ & Intrinsic dimensionless coordinate along a crystallite-frame reciprocal rod. \\
+$q_z=|\mathbf c^*|L$ & Crystallite-frame film-normal momentum component, as in the main-text stacking model. \\
+$Q_z$, $L_{\mathrm{proj}}$ & Projection along the mean film normal, with $L_{\mathrm{proj}}=Q_z/|\mathbf c^*|$. \\
+$Q_R$, $r$ & In-plane momentum magnitude and discrete radial-family label $r=h^2+hk+k^2$. \\
+$\alpha$, $\beta$ & Crystallite tilt magnitude and azimuth in the two-angle orientation map. \\
+$2\theta$, $\phi_f$ & Scattering angle and outgoing-ray azimuth in the declared detector display frame. \\
+$x',z'$; $x_D,y_D$ & Main-text in-plane detector axes and SI column/row axes, with $x_D=x'$ and $y_D=-z'$ in the reference pose. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\subsection{Source state and sample intersection}
+
+An incident state $s$ supplies a ray origin $\mathbf r_{0,s}$ and an external incident vector
+\begin{equation}
+  \mathbf k_{i,s}=\mathbf k_i\!\left(|\mathbf k_{i,s}|,\theta_{i,s},\phi_{i,s}\right),
+  \qquad |\mathbf k_{i,s}|=\frac{2\pi}{\lambda_s}.
+  \label{eq:si_source_state_vector}
+\end{equation}
+Here $\lambda_s$ is the source wavelength, $\theta_{i,s}$ is the grazing incidence angle and $\phi_{i,s}$ is the incident azimuth in the declared laboratory frame. The subscripts $i$ and $f$ denote incident and exit quantities. The source-position and angular variables are sampled from the measured Gaussian beam distributions, while $\lambda_s$ is sampled from the specified wavelength spectrum. Writing $\hat{\mathbf s}_{i,s}=\mathbf k_{i,s}/|\mathbf k_{i,s}|$, the incident line, parameterized by path length $\tau$, is
+\begin{equation}
+\mathbf r_s(\tau)=\mathbf r_{0,s}+\tau\hat{\mathbf s}_{i,s},
+\qquad \tau\geq0.
+\label{eq:si_incident_ray}
+\end{equation}
+For the following single-ray geometry equations, the source-state subscript $s$ is suppressed.
+Let the sample entrance plane pass through $\mathbf r_{\mathrm S}$ and have outward unit normal $\hat{\mathbf n}$. Solving $(\mathbf r-\mathbf r_{\mathrm S})\cdot\hat{\mathbf n}=0$ gives
+\begin{equation}
+\tau_{\mathrm{hit}}
+=\frac{(\mathbf r_{\mathrm S}-\mathbf r_0)\cdot\hat{\mathbf n}}
+       {\hat{\mathbf s}_i\cdot\hat{\mathbf n}},
+\qquad
+\mathbf r_{\mathrm{hit}}
+=\mathbf r_0+\tau_{\mathrm{hit}}\hat{\mathbf s}_i.
+\label{eq:si_sample_plane_intersection}
+\end{equation}
+The sample-intersection test rejects parallel rays and solutions with $\tau_{\mathrm{hit}}\leq0$. For orthonormal in-plane sample directions $\hat{\mathbf e}_1$ and $\hat{\mathbf e}_2$, define
+\begin{equation}
+\xi_1=(\mathbf r_{\mathrm{hit}}-\mathbf r_{\mathrm S})\cdot\hat{\mathbf e}_1,
+\qquad
+\xi_2=(\mathbf r_{\mathrm{hit}}-\mathbf r_{\mathrm S})\cdot\hat{\mathbf e}_2.
+\label{eq:si_sample_coordinates}
+\end{equation}
+A rectangular support with width $W$ along $\hat{\mathbf e}_1$ and height $H$ along $\hat{\mathbf e}_2$ accepts the state only if
+\begin{equation}
+|\xi_1|\leq \frac{W}{2},
+\qquad
+|\xi_2|\leq \frac{H}{2}.
+\label{eq:si_sample_bounds}
+\end{equation}
+The illuminated footprint is the weighted distribution of the accepted $(\xi_1,\xi_2)$ values. The source distribution and intersection test determine the footprint directly. For the convention in which $\hat{\mathbf n}$ points out of the film, the state-specific grazing angle is
+\begin{equation}
+\theta_{i,s}
+=\sin^{-1}\!\left(-\hat{\mathbf s}_i\cdot\hat{\mathbf n}\right).
+\label{eq:si_local_incidence_angle}
+\end{equation}
+The ordered-film configurations used for the displayed Bi$_2$Se$_3$ and Bi$_2$Te$_3$ calculations specify an unbounded in-plane sample plane. Equation~\eqref{eq:si_sample_bounds} documents the available finite-support model. The retained unbounded-plane geometry excludes sample-edge clipping from the fitted broadening mechanisms.
+
+\subsection{Detector frame and accepted rays}
+
+The detector mapping is most transparent in its own rigid coordinate frame. Its $x_D$ and $y_D$ coordinates increase with detector column and row, respectively, and its plane is $z_D=0$. In the untilted main-text geometry, $x_D$ follows $+x'$ and $y_D$ follows $-z'$, so $+z_D$ is opposite the outward normal $\hat{\mathbf n}_{\mathrm{det}}$. Thus, the main-text $z'$ axis lies in the detector plane, whereas the SI $z_D$ axis is normal to it. Let $\mathbf R_D$ and $\mathbf t_D$ map detector-frame vectors and points into the laboratory frame. For an exit ray that begins at $\mathbf r_{\mathrm{hit}}$ and has unit laboratory direction $\hat{\mathbf s}_f$, the detector-frame origin and direction are
+\begin{equation}
+\mathbf o_D=\mathbf R_D^{\mathsf T}(\mathbf r_{\mathrm{hit}}-\mathbf t_D),
+\qquad
+\mathbf s_D=\mathbf R_D^{\mathsf T}\hat{\mathbf s}_f.
+\label{eq:si_detector_frame_ray}
+\end{equation}
+The detector plane is $z_D=0$. Its forward intersection is
+\begin{equation}
+v_D=-\frac{o_{D,z}}{s_{D,z}},
+\qquad
+\mathbf p_D=\mathbf o_D+v_D\mathbf s_D,
+\label{eq:si_detector_plane_intersection}
+\end{equation}
+provided $s_{D,z}$ is nonzero and $v_D>0$. The front-face convention additionally requires the exit direction to approach the active face. If $(x_0,y_0)$ is the calibrated reference coordinate and $p_c,p_r$ are the column and row pitches, the dimensionless column and row coordinates are
+\begin{equation}
+c_D=x_0+\frac{p_{D,x}}{p_c},
+\qquad
+r_D=y_0+\frac{p_{D,y}}{p_r}.
+\label{eq:si_detector_pixel_coordinates}
+\end{equation}
+For a detector with $N_c$ columns and $N_r$ rows, the active-area condition is
+\begin{equation}
+-\frac12\leq c_D\leq N_c-\frac12,
+\qquad
+-\frac12\leq r_D\leq N_r-\frac12.
+\label{eq:si_detector_active_bounds}
+\end{equation}
+The subscripts in $(c_D,r_D)$ distinguish detector coordinates from the lattice repeat $c$ and radial-family label $r$. The beam-center pair $(x_0,y_0)$ follows the main-text calibration convention, in pixel units. The nominal sample-to-detector distance $D$, detector tilts $(\beta_D,\gamma_D)$, and beam center are contained in $\mathbf R_D$, $\mathbf t_D$, and the reference coordinate. Here $D$ denotes the separation along the nominal beam axis in the untilted reference pose. A tilted detector is treated through the full rigid transform. Native pixel masses or finite angular-bin quantities are obtained by integrating the continuous detector-coordinate density over the corresponding region. The coordinate Jacobian that defines the density includes the detector solid-angle factor exactly once.
+
+\subsection{Angular display convention}
+
+For the angular display, $2\theta$ is measured from the declared incident reference direction. The outgoing-ray azimuth $\phi_f$ is measured in the plane perpendicular to that direction, from the upward reference toward the negative column direction. In the untilted laboratory geometry this is from $+z$ toward $-x$. Equivalently, for components in that geometry, $\phi_f=\operatorname{atan2}(-s_{f,x},s_{f,z})$, wrapped to $[-\pi,\pi)$. The same fixed nominal reference is used to remap measured and calculated detector images. This display coordinate is distinct from the incident azimuth $\phi_i$ and crystallite azimuth $\beta$.
+
+\subsection{Source sampling and wavelength dependence}
+\label{sec:si_bandwidth_mosaic_scaling}
+
+The source representation samples two transverse positions, two propagation angles, and wavelength. Seeded equal-mass antithetic Latin-hypercube states carry weights $w_s=1/N_s$, where $N_s$ is the source-state count. The position and angular distributions specify the incident beam, whereas the continuous mosaic distribution specifies crystallite orientation. They enter different parts of the calculation. Numerical convergence is discussed in Sec.~\ref{sec:si_workflow}.
+
+For source-state wavelength $\lambda_s$ and incident direction
+$\hat{\mathbf s}_{i,s}$, define
+\begin{equation}
+  k_s=\frac{2\pi}{\lambda_s},
+  \qquad
+  \mathbf k_{i,s}=k_s\hat{\mathbf s}_{i,s}.
+  \label{eq:si_wavelength_sample}
+\end{equation}
+In reciprocal-space coordinates centered on the origin, the corresponding
+Ewald sphere is centered at $-\mathbf k_{i,s}$ and has radius $k_s$.
+The integer Bragg vector is $\mathbf G_{hk\ell}=h\mathbf a^*+k\mathbf b^*+\ell\mathbf c^*$. An allowed reciprocal vector contributes only when
+\begin{equation}
+  \left|\mathbf k_{i,s}+\mathbf G_{hk\ell}\right|=k_s
+  \label{eq:si_moving_ewald_condition}
+\end{equation}
+within the declared instrumental and numerical resolution.\cite{AlsNielsenMcMorrow2001}
+The incident direction is resampled as well when beam divergence is included.
+Changing wavelength therefore moves the Ewald-sphere center and changes its
+radius. The calculation reconstructs and tests Eq.~\eqref{eq:si_moving_ewald_condition}
+for every wavelength and direction state. Each wavelength therefore requires its own sphere center as well as its own radius.
+
+For one lattice-plane spacing $d$ at fixed orientation and Bragg angle $\theta_B$, Bragg's law gives a useful
+limiting check,
+\begin{equation}
+  2d\sin\theta_B=\lambda,
+  \qquad
+  d\theta_B=\frac{d\lambda}{\lambda}\tan\theta_B.
+  \label{eq:si_bragg_bandwidth_check}
+\end{equation}
+This scalar derivative provides a local check on the radial direction in which wavelength changes the detector position. The full detector-space condition retains the coupling among sample orientation, incident direction, mosaicity, refraction, and detector acceptance.

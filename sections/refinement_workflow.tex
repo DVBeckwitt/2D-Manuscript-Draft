@@ -1,13 +1,13 @@
 \section{Refinement workflow}
 \label{sec:refinement_workflow}
 
-The refinement is staged rather than fully global from the beginning. Many parameters affect similar detector-space observables: detector distance shifts peak positions, sample alignment changes the apparent incident condition, mosaicity changes profile widths and off-condition intensity, and structure factors change relative peak heights. A simultaneous fit can therefore hide physical errors by compensating one parameter group with another. The staged workflow fixes the instrumental quantities first, then introduces sample orientation, mosaicity, ordered intensity, and finally stacking disorder where needed.
+Several parameter groups affect the same detector features. Detector distance changes their positions, sample alignment changes the incident condition, and mosaicity and source spread can both change widths. Refinement is staged to reduce compensation between parameter groups. Beam and detector quantities are established first, followed by sample alignment and orientation. Intensity differences are interpreted structurally after these geometric and angular constraints are established.
 
-The first distinction is between instrumental parameters and sample parameters. Instrumental parameters describe the beam and detector and should be shared across samples collected under the same experimental configuration. Sample parameters describe the film: incidence condition, sample offset, mosaic distribution, structural intensity, and, for PbI$_2$, stacking disorder. The refinement sequence in Table~\ref{tab:refinement_workflow} uses the detector-space observable most sensitive to each group before that group is used in the final image projection.
+Table~\ref{tab:refinement_workflow} identifies the data and observables used at each stage. Instrumental parameters can be shared by measurements made in the same configuration. Sample-dependent parameters describe the film orientation, structural intensity, and, for PbI$_2$, stacking correlations.
 
 \begin{table}[!ht]
   \centering
-  \caption{Staged refinement workflow. Steps 1--5 are used for the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ test cases. Step 6 is the added PbI$_2$ extension for stacking-fault diffuse scattering. All sample images are dark-subtracted before the listed observables are formed. The final measured and calculated profiles use the same calibrated coordinate map, finite integration limits, and normalization.}
+  \caption{Staged refinement workflow. Steps 1--5 describe the ordered Bi$_2$Se$_3$ and Bi$_2$Te$_3$ test cases. Step 6 is the added PbI$_2$ extension for stacking-fault diffuse scattering. All sample images are dark-subtracted before the listed observables are formed. A quantitative comparison requires measured and directly calculated profiles to use the same calibrated coordinate map, finite integration limits, and normalization.}
   \label{tab:refinement_workflow}
   \scriptsize
   \setlength{\tabcolsep}{3pt}
@@ -24,7 +24,7 @@ The first distinction is between instrumental parameters and sample parameters. 
     2 &
     Detector geometry calibration &
     Powder calibrant image &
-    Detector distance $D$, detector tilts $(\beta,\gamma)$, and beam center $(x_0,y_0)$ &
+    Detector distance $D$, detector tilts $(\beta_D,\gamma_D)$, and beam center $(x_0,y_0)$ &
     Detector mapping \\
     3 &
     Sample alignment and goniometer misalignment &
@@ -33,9 +33,9 @@ The first distinction is between instrumental parameters and sample parameters. 
     Detector-space peak positions \\
     4 &
     Mosaicity/profile refinement &
-    Selected off-specular ROIs, transverse $\phi$ profiles, and off-condition $r=0$ regions &
+    Selected off-specular ROIs, transverse $\phi_f$ profiles, and off-condition $r=0$ regions &
     Narrow-core plus broad-component mosaic parameters &
-    Off-specular arc widths, transverse $\phi$ widths, and off-condition specular intensity \\
+    Off-specular arc widths, transverse $\phi_f$ widths, and off-condition axial intensity \\
     5 &
     Ordered-film comparison &
     Selected detector-space Bragg regions and $Q_z$ projections from fixed-$r$ trajectories &
@@ -50,12 +50,8 @@ The first distinction is between instrumental parameters and sample parameters. 
   \end{tabularx}
 \end{table}
 
-The instrumental stages fix where an ideal reflection should appear before any sample-specific physics is refined. Direct-beam images define the incident phase space, including beam width and angular divergence. A powder calibrant fixes the detector mapping: distance, beam center, and detector tilts. These two stages are intentionally separated from sample fitting because an incorrect detector geometry can otherwise be absorbed into apparent sample tilt, mosaic broadening, or shifted reciprocal-space trajectories.
+Direct-beam measurements constrain the beam distributions, and a powder calibrant establishes the detector mapping. Indexed sample reflections then constrain the sample pose. This geometric stage is related to detector-space indexing: it establishes where the scattering should appear before profile widths are interpreted.\cite{SmilgiesLi2026IndexGIXS}
 
-The alignment stage is the part of the workflow most similar to detector-space indexing. Indexed sample reflections are used to determine how the film sits in the beam, fixing the nominal incident angle, sample offsets, in-plane rotation, and goniometer misalignment well enough that calculated Bragg-rod trajectories can be overlaid on the detector. This establishes where allowed reflections should appear, analogous to detector-space indexing tools such as indexGIXS.\cite{SmilgiesLi2026IndexGIXS} Only after this geometric step does it make sense to refine the mosaic distribution, because mosaicity should explain profile shape and off-condition intensity rather than compensate for a misplaced trajectory.
+With geometry established, off-specular and transverse axial profiles constrain the orientation distribution. Radial axial intensity depends on finite-stack scattering, orientation selection, the source distribution, and the optical response. In the model controls described in Supporting Information Sec.~S3, the radial extension persists when the source is reduced to a single monochromatic incident ray. This result does not support assigning that extension to wavelength dispersion alone.
 
-The mosaicity stage constrains the shared narrow-core plus broad-component angular distribution. Local off-specular profiles constrain the narrow core. Within the $r=0$ family, transverse $\phi$ profiles constrain crystallite tilt, while the radial $2\theta$ profile is held out of the mosaic interpretation until the wavelength distribution is fixed. With geometry and mosaicity held fixed, the full-spectrum and mean-wavelength calculations are then compared directly. The successful control assigns the radial $003$ streak to wavelength dispersion rather than to the broad mosaic component. The ordered-film comparison applies the same calibrated coordinate map and finite profile integration to the measured and calculated detector quantities. The present main-text figures use this stage to compare feature locations and apparent profile shapes. Quantitative relative-intensity refinement requires a documented common normalization and retained direct arrays.
-
-For PbI$_2$, the ordered workflow is not discarded. It provides the geometry, projection, and mosaic baseline needed before diffuse scattering can be interpreted. The additional stacking-disorder stage asks whether a physically defined layer-correlation model accounts for the remaining diffuse intensity along fixed-$Q_R$ cylinders. This keeps the PbI$_2$ result tied to the same detector-space framework while making clear which extra parameters belong specifically to stacking faults.
-
-Implementation details, including weighted source-state quadrature, analytic Ewald restriction, detector-coordinate integration, parameter-correlation plots, and propagated uncertainty from the $2\theta$--$\phi$ and $Q$ transformations, are documented in the Supporting Information. The main-text role of the workflow is to make the logic of the refinement reproducible. Instrumental geometry is determined first, sample orientation second, mosaic and profile effects third, and ordered or diffuse intensity differences are interpreted as structural information only after those stages are fixed.
+A quantitative test of the ordered-film model requires directly calculated profiles integrated over the same finite regions as the measurements (Supporting Information Secs.~S4 and S6). For PbI$_2$, stacking variables are introduced after establishing each specimen's geometry and orientation. The added variables describe layer correlations and their effect on intensity along the rods. Source sampling is defined in Sec.~S1, finite integration in Sec.~S4, and refinement objectives, numerical convergence, and uncertainty propagation in Sec.~S8 of the Supporting Information.

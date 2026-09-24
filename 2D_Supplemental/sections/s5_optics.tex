@@ -1,0 +1,292 @@
+\section{Refraction, absorption, and reflectivity}
+\label{sec:si_optics}
+
+The main-text reflectivity discussion separates the low-angle optical response from finite-stack diffraction. The equations below specify the propagation factors and the practical crossover used in the physical diagnostic.
+
+\subsection{Wave propagation, refraction, and absorption}
+\label{subsec:si_refraction_absorption}
+
+Let $\zeta\geq0$ denote normal depth into the film and use the field convention
+$\exp[i(\widetilde{\mathbf k}\cdot\mathbf r-\omega_{\mathrm{em}}t_{\mathrm{time}})]$. For wavelength sample
+$\lambda_s$ with source weight $w_s$,
+\begin{equation}
+  k_s=\frac{2\pi}{\lambda_s},
+  \qquad
+  \tilde n_q(\lambda_s)=1-\delta_q(\lambda_s)+i\beta_q(\lambda_s),
+  \label{eq:si_complex_n_lambda}
+\end{equation}
+Here $\widetilde{\mathbf k}$ is the complex optical wavevector, $\mathbf r$ is position and $\tilde n_q$ is the complex refractive index. The prime on an optical wavevector identifies propagation inside the film, as in the main text. The index $s$ is the source-state index, $q$ identifies the optical layer, $\omega_{\mathrm{em}}$ is angular frequency, and $t_{\mathrm{time}}$ is time. The real internal phase vectors used in the main text and Sec.~\ref{sec:si_detector_profiles} are $\mathbf k'_{i,s}=\operatorname{Re}\widetilde{\mathbf k}'_{i,s}$ and $\mathbf k'_{f,s}=\operatorname{Re}\widetilde{\mathbf k}'_{f,s}$. The symbol $\widetilde k_\perp$ below denotes the complex component along the local inward normal. The laboratory $z$ axis is defined separately in Sec.~\ref{sec:si_geometric_ray_acceptance}. The decrement $\delta_q$ controls refraction
+and critical-angle behavior, whereas $\beta_q$ controls absorption and
+penetration depth. Both are wavelength-dependent material inputs. Their
+source, interpolation, and association with the sampled spectrum are recorded
+with the calculation configuration.
+
+\paragraph{Tangential matching and the complex normal component.}
+Translational invariance along a flat interface conserves the tangential
+wavevector. For a field entering layer $q$ from the ambient medium (index $0$), let $\mathbf k_{\parallel,q}$ denote the conserved tangential component. The superscript $(+)$ selects the inward, decaying normal root:
+\begin{equation}
+  \mathbf k_{\parallel,q}(\lambda_s)
+  =\mathbf k_{\parallel,0}(\lambda_s),
+  \qquad
+  \widetilde k_{\perp,q}^{(+)}(\lambda_s)
+  =
+  \sqrt{
+  \left[\tilde n_q(\lambda_s)k_s\right]^2
+  -\left|\mathbf k_{\parallel,0}(\lambda_s)\right|^2}.
+  \label{eq:si_boundary_ktz_lambda}
+\end{equation}
+The root is chosen so that the field decays in its propagation direction. For
+the inward solution and the depth convention above,
+$\operatorname{Im}\widetilde k_{\perp,q}^{(+)}\geq0$.\cite{Renaud2009} The reciprocal exit
+field is obtained from the same boundary condition with its own conserved
+tangential component and propagation direction. Real transmitted angles may be reported after this complex-vector calculation. Their evaluation retains both the real and imaginary parts of $\tilde n_q$.
+
+\paragraph{Interface amplitudes and normal flux.}
+For a scalar field at an interface from medium $p$ to medium $q$, the field
+transmission amplitude is
+\begin{equation}
+  t_{pq}=\frac{2\widetilde k_{\perp,p}}{\widetilde k_{\perp,p}+\widetilde k_{\perp,q}}.
+  \label{eq:si_scalar_transmission}
+\end{equation}
+Equation~\eqref{eq:si_scalar_transmission} specifies the field-amplitude coefficient. Converting it to a transmitted-flux fraction requires the appropriate flux normalization. In the nonabsorbing scalar limit, the associated
+normal-flux ratio includes the factor
+$\operatorname{Re}\widetilde k_{\perp,q}/\operatorname{Re}\widetilde k_{\perp,p}$ in addition to
+$|t_{pq}|^2$. Absorbing or polarization-resolved layers require the
+corresponding Poynting-flux or Fresnel normalization. The calculation must
+therefore declare whether each interface weight is a field amplitude, an
+intensity, or a normal flux. The transmitted-flux fraction combines $|t_{pq}|^2$ with that normalization.
+
+\paragraph{Normal-depth attenuation.}
+Let $\kappa_i(\lambda_s)$ and $\kappa_f(\lambda_s)$ be the nonnegative
+imaginary normal components for propagation from the surface to a scattering
+depth and from that depth back to the surface, respectively:
+\begin{equation}
+  \kappa_i(\lambda_s)=\operatorname{Im}\widetilde k_{\perp,i}^{(+)}(\lambda_s),
+  \qquad
+  \kappa_f(\lambda_s)=\operatorname{Im}\widetilde k_{\perp,f}^{(+)}(\lambda_s),
+  \qquad
+  \kappa_i,\kappa_f\geq0.
+  \label{eq:si_kappa_if_lambda}
+\end{equation}
+Here \(\widetilde k_{\perp,f}^{(+)}\) is the inward reciprocal exit-channel root used by
+reciprocity. Thus \(\kappa_f\) is the positive attenuation constant for the
+physical path from depth back to the surface. Equivalently,
+\(\kappa_f=-\operatorname{Im}\widetilde k_{\perp,f}^{(\mathrm{out})}\) if an outward
+wavevector is stored explicitly.
+For a normalized scattering-depth distribution $\rho_{\mathrm{depth}}(\zeta)$ over a film of
+thickness $t$, the propagation weight is
+\begin{equation}
+  W_{\mathrm{depth}}(\lambda_s)=
+  \int_0^t \rho_{\mathrm{depth}}(\zeta)
+  \exp\!\left[-2\left(\kappa_i(\lambda_s)+\kappa_f(\lambda_s)\right)\zeta\right]d\zeta,
+  \qquad
+  \int_0^t\rho_{\mathrm{depth}}(\zeta)\,d\zeta=1.
+  \label{eq:si_depth_weight_general}
+\end{equation}
+For uniform scattering density, this becomes
+\begin{align}
+  W_{\mathrm{depth}}(\lambda_s)
+  &=
+  \frac{1}{t}\int_0^t
+  \exp\!\left[-2\left(\kappa_i(\lambda_s)+\kappa_f(\lambda_s)\right)\zeta\right] d\zeta\\
+  &=
+  \frac{
+  1-\exp\!\left[-2\left(\kappa_i(\lambda_s)+\kappa_f(\lambda_s)\right)t\right]
+  }
+  {2\left(\kappa_i(\lambda_s)+\kappa_f(\lambda_s)\right)t}.
+  \label{eq:si_abs_complex_kz}
+\end{align}
+Equations~\eqref{eq:si_depth_weight_general} and
+\eqref{eq:si_abs_complex_kz} use normal depth. Multiplying
+$\operatorname{Im}\widetilde k_\perp$ by an oblique ray-path length would count the angular
+projection a second time. The depth weight is combined with consistently
+normalized entrance and exit interface factors before it multiplies the
+structure-factor and mosaic weights.
+
+\paragraph{Detector accumulation over the bandwidth.}
+For each accepted source-state and rod contribution, the wavelength-resolved detector density is formed with
+the same geometry, structure-factor, mosaic, detector, and optical interfaces.
+The detector images are then added incoherently,
+\begin{equation}
+  I_{\mathrm{det}}(c_D,r_D)
+  =
+  \sum_s
+  w_s\,
+  I_{\mathrm{det},s}\!\left[c_D,r_D;\lambda_s,\{\tilde n_q(\lambda_s)\}\right].
+  \label{eq:si_detector_bandwidth_sum}
+\end{equation}
+Changing $\lambda_s$ changes the moving Ewald construction, the layer optical
+constants, the complex normal components, and the interface and depth weights.
+The planar-interface correction is retained for every wavelength state. Its
+role is expected to be strongest when an incident or exit angle approaches the
+critical-angle regime. This optical treatment supplies a propagation correction. Assessing experimental intensity agreement requires measured/calculated comparisons.
+
+
+\subsection{Parratt-to-kinematic crossover for the specular profile}
+\label{subsec:si_parratt_structure_crossover}
+
+The detector-derived $r=0$ profile spans two limiting regimes. The low-$Q_{\mathrm{loc}}$ response is described by standard Parratt reflectivity, while the higher-$Q_{\mathrm{loc}}$ Bragg response is described by a finite-stack kinematic term. The two branches are matched smoothly over a declared overlap interval. We refer to this matching as the Parratt-to-kinematic crossover. It is a practical connection between two established limiting calculations. The main-text reflectivity figure shows measured Bi$_2$Se$_3$ intensities versus detector $2\theta$.
+
+For the physical crossover diagnostic, the dimensionless coordinate is
+\begin{equation}
+  x=\frac{Q_{\mathrm{loc}}}{Q_c},
+  \qquad
+  L_{\mathrm{loc}}=\frac{Q_{\mathrm{loc}} c}{2\pi}=x\frac{Q_c c}{2\pi}.
+  \label{eq:si_crossover_x_l}
+\end{equation}
+Here $Q_c$ is the film critical wavevector and $c$ is the out-of-plane lattice
+constant. The transfer $Q_{\mathrm{loc}}=|\mathbf k_{f,s}-\mathbf k_{i,s}|$ is the local-lamella axial transfer magnitude, with the lamella normal parallel to that transfer. It generally differs from its mean-film projection $Q_z$. The $L_{\mathrm{loc}}$ value in Eq.~\eqref{eq:si_crossover_x_l} is an external local optical coordinate. Finite-stack scattering uses the separate intrinsic phase coordinate. The diagnostic crossover coordinate uses $Q_{\mathrm{loc}}/Q_c$ and the
+corresponding $L_{\mathrm{loc}}$ value defined above.
+
+The low-$Q_{\mathrm{loc}}$ branch is the Parratt reflectivity.\cite{Parratt1954} For a layer
+$q$ with complex refractive index $\tilde n_q=1-\delta_q+i\beta_q$, the conserved
+in-plane wavevector fixes the layer-normal component
+\begin{equation}
+  \widetilde k_{\perp,q}=\sqrt{(\tilde n_q k_s)^2-\left|\mathbf k_{\parallel}\right|^2},
+  \qquad
+  k_s=\frac{2\pi}{\lambda_s}.
+  \label{eq:si_parratt_kz}
+\end{equation}
+The fixed source-state label $s$ is suppressed on the layer amplitudes below. For the depth and field convention used above, the square-root branch is chosen
+to give decay in the relevant propagation direction.
+The superscript $(0)$ labels the smooth-interface coefficient. The Fresnel amplitude at the interface between layers $q$ and $q+1$ is
+\begin{equation}
+  r_q^{(0)}=\frac{\widetilde k_{\perp,q}-\widetilde k_{\perp,q+1}}{\widetilde k_{\perp,q}+\widetilde k_{\perp,q+1}}.
+  \label{eq:si_parratt_interface}
+\end{equation}
+If the lower interface has RMS roughness $\sigma_{\mathrm{rough},q}$, this coefficient is damped
+by
+\begin{equation}
+  r_q=r_q^{(0)}\exp\!\left[-2\widetilde k_{\perp,q}\widetilde k_{\perp,q+1}\sigma_{\mathrm{rough},q}^2\right].
+  \label{eq:si_parratt_roughness}
+\end{equation}
+For a finite layer of thickness $d_{q+1}$ below the interface, the round-trip
+phase factor $P_{\mathrm{opt},q+1}$ is
+\begin{equation}
+  P_{\mathrm{opt},q+1}=\exp\!\left(2i\widetilde k_{\perp,q+1}d_{q+1}\right).
+  \label{eq:si_parratt_phase}
+\end{equation}
+Starting from the semi-infinite substrate and recursing upward, the effective
+reflection amplitude $R_q^{\mathrm{amp}}$ at interface $q$ is
+\begin{equation}
+  R_q^{\mathrm{amp}}
+  =
+  \frac{r_q+R_{q+1}^{\mathrm{amp}}P_{\mathrm{opt},q+1}}
+       {1+r_qR_{q+1}^{\mathrm{amp}}P_{\mathrm{opt},q+1}}.
+  \label{eq:si_parratt_recursion}
+\end{equation}
+The optical branch in this diagnostic is
+\begin{equation}
+  R_{\mathrm P}(Q_{\mathrm{loc}})=\left|R_0^{\mathrm{amp}}(Q_{\mathrm{loc}})\right|^2.
+  \label{eq:si_parratt_reflectivity}
+\end{equation}
+This branch retains total-reflection behavior, refraction, evanescence, finite
+penetration depth, roughness damping, and multiple reflection between the film
+interfaces.
+
+The high-$Q_{\mathrm{loc}}$ branch is built from the normalized finite-stack kinematic term
+\begin{equation}
+  \widehat S_{00}(L)=
+  \frac{S_{q,00}(|\mathbf c^*|L)}{S_{q,00}(0)}.
+  \label{eq:si_ht_normalized_structure}
+\end{equation}
+The hat denotes normalization to the zero-transfer strength, so $\widehat S_{00}(0)=1$. The fixed wavelength $\lambda_s$ is suppressed in these axial structure terms. Here $S_{q,00}$ is the ordered axial structural strength per dimensional rod coordinate from Sec.~\ref{subsec:si_rod_measure}. Near the critical edge, the structure term uses the internal film phase. To match the Parratt film phase, the finite-stack coordinate is computed from the real propagating part of the film wavevector,
+\begin{equation}
+  Q_{\mathrm{film}}=\operatorname{Re}\!\left(2\widetilde k_{\perp,\mathrm{film}}\right),
+  \qquad
+  L_{\mathrm{film}}=\frac{Q_{\mathrm{film}}c}{2\pi}.
+  \label{eq:si_internal_phase_coordinate}
+\end{equation}
+Below the critical edge this real part may approach zero in the weak-absorption
+limit, while a complex internal wavevector still describes evanescence and
+absorption. The superscript $(0)$ on the kinematic branch below labels its unscaled value:
+\begin{equation}
+  R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc}})=\frac{\widehat S_{00}(L_{\mathrm{film}})}{Q_{\mathrm{loc}}^2}.
+  \label{eq:si_crossover_unscaled_structure}
+\end{equation}
+The $Q_{\mathrm{loc}}^{-2}$ factor gives the high-$Q_{\mathrm{loc}}$ structural envelope, while the
+internal coordinate $L_{\mathrm{film}}$ keeps the finite-stack fringe phase consistent with
+the optical film phase.
+
+A multiplicative scale places this kinematic branch on the Parratt intensity
+scale. The scale is fit in a high-$Q_{\mathrm{loc}}$ overlap window, excluding the selected
+$00L$ neighborhoods used in the diagnostic. With fit-point index $i$ and retained fit set $\mathcal F$, the
+log-median estimate is
+\begin{equation}
+  A_{\mathrm{opt}}=
+  \exp\!\left[
+  \operatorname{median}_{i\in\mathcal F}
+  \left(
+  \ln R_{\mathrm P}(Q_{\mathrm{loc},i})-
+  \ln R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc},i})
+  \right)
+  \right],
+  \label{eq:si_crossover_scale}
+\end{equation}
+with the default overlap window $5<Q_{\mathrm{loc}}/Q_c<10$. The scaled kinematic branch is
+\begin{equation}
+  R_{\mathrm{kin}}(Q_{\mathrm{loc}})=A_{\mathrm{opt}} R_{\mathrm{kin}}^{(0)}(Q_{\mathrm{loc}}).
+  \label{eq:si_crossover_scaled_structure}
+\end{equation}
+
+The crossover window is selected by comparing the two positive finite branches in
+log intensity. Both branches are evaluated at the same dimensional transfer $Q_{\mathrm{loc}}=Q_c x$:
+\begin{equation}
+  \delta_{\log}(x)=\log_{10}\!\left[\frac{R_{\mathrm{kin}}(Q_c x)}{R_{\mathrm P}(Q_c x)}\right].
+  \label{eq:si_crossover_log_ratio}
+\end{equation}
+Candidate points must lie in the search range $3\le x\le10$ and satisfy
+$|\delta_{\log}(x)|\le0.10$. The selected window $[x_1,x_2]$ is the widest contiguous
+eligible region with width at least $1.0$ in $Q_{\mathrm{loc}}/Q_c$. Ties are broken by the
+smaller median $|\delta_{\log}|$. If the search rejects every candidate region, the fallback window
+is $x_1=3$ and $x_2=6$.
+
+Inside the selected window, the interpolation coordinate and weight are
+\begin{equation}
+  \eta_{\mathrm{blend}}=\frac{x-x_1}{x_2-x_1},
+  \qquad
+  w_{\mathrm{blend}}(\eta_{\mathrm{blend}})=6\eta_{\mathrm{blend}}^5-15\eta_{\mathrm{blend}}^4+10\eta_{\mathrm{blend}}^3,
+  \label{eq:si_crossover_smoothstep}
+\end{equation}
+with $\eta_{\mathrm{blend}}$ clipped to the interval $[0,1]$. The final branch is blended in log
+reflectivity,
+\begin{equation}
+R_{\mathrm{blend}}(x)=
+\begin{cases}
+R_{\mathrm P}(Q_c x), & x\le x_1,\\[3pt]
+10^{(1-w_{\mathrm{blend}})\log_{10}R_{\mathrm P}(Q_c x)+w_{\mathrm{blend}}\log_{10}R_{\mathrm{kin}}(Q_c x)},
+  & x_1<x<x_2,\\[3pt]
+R_{\mathrm{kin}}(Q_c x), & x\ge x_2.
+\end{cases}
+\label{eq:si_crossover_blend}
+\end{equation}
+A small positive numerical floor is used only to avoid logarithms of nonpositive
+roundoff values inside the blend window. The resulting dimensionless reflectivity is exactly
+Parratt below the selected window, exactly the scaled structure branch above the
+window, and smooth through the crossover.
+
+
+The subscript $\mathrm{stitch}$ labels the replacement axial strength after this crossover. The dimensionless blend is converted to the axial structural strength before detector weighting. In the per-$dq_z$ convention of the optical calculation,
+\begin{equation}
+S_{q,\mathrm{stitch}}(Q_{\mathrm{loc}})
+=\frac{Q_{\mathrm{loc}}^2 S_{q,00}(0)}{A_{\mathrm{opt}}}R_{\mathrm{blend}}(Q_{\mathrm{loc}}/Q_c).
+\label{eq:si_reflectivity_strength_conversion}
+\end{equation}
+Above the crossover this recovers the finite-stack strength evaluated at $L_{\mathrm{film}}$. The stitch supplies the replacement axial structural strength and enters the detector weighting once. Equation~\eqref{eq:si_rod_measure_conversion} supplies the conversion to the per-$dL$ density used in Sec.~\ref{sec:si_detector_profiles}.
+
+For the joint comparison, the low-$Q_{\mathrm{loc}}$ interval and the $003$ neighborhood share one normalization. The measured detector profile, the Parratt
+branch, the finite-stack branch, and the combined curve must share one declared
+background treatment and one intensity scale. The $003$ peak serves as the
+higher-$Q_{\mathrm{loc}}$ structural reference. Its sensitivity to wavelength spread can be examined
+with Eqs.~\eqref{eq:si_full_spectrum_control} and
+\eqref{eq:si_mean_wavelength_control}. The model controls described above
+retain the radial extension for a monochromatic source. The contribution of wavelength broadening to the measured feature remains to be established.
+Figure~\ref{fig:si_optical_comparison} reserves the physical comparison on that common scale.
+
+
+\begin{figure}[!htbp]
+  \centering
+  \siplaceholder{Physical axial reflectivity comparison}{Measured axial profile, direct Parratt and finite-stack branches, combined prediction, and residual.\\Common coordinate map, background, and intensity scale.}
+  \caption{Placeholder for the physical axial comparison. The low-angle interval and diffraction region are to be calculated from one declared structural and optical state with uncertainty analysis.}
+  \label{fig:si_optical_comparison}
+\end{figure}

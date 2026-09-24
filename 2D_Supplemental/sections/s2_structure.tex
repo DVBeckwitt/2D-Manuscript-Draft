@@ -1,0 +1,95 @@
+\section{Structural intensity along reciprocal rods}
+\label{sec:si_structure_factor_conventions}
+
+The main-text structure factor defines the scattering amplitude of an atomic motif. Finite coherence along the stacking direction converts that amplitude into continuous intensity along a rod. Random in-plane orientation then distributes the rod intensity around a cylinder.
+
+\subsection{Atomic amplitudes and finite stacking}
+
+For in-plane indices $(h,k)$, the unrotated rod is
+\begin{equation}
+\mathbf G_{hk}(L)=h\mathbf a^*+k\mathbf b^*+L\mathbf c^*.
+\label{eq:si_reference_rod}
+\end{equation}
+The atomic motif amplitude has the phase convention $\exp(i\mathbf G\cdot\mathbf r_a)$, where $\mathbf G$ is the reciprocal vector and $\mathbf r_a$ is the Cartesian position of site $a$. Atomic form factors include their wavelength-dependent anomalous terms. For a sequence of $N$ layers with motif amplitudes $F_{hk,n}$ and reference-position translations $\mathbf t_n$, the coherent amplitude is
+\begin{equation}
+A_{N,hk}(L,\lambda_s)=\sum_{n=0}^{N-1}F_{hk,n}(L,\lambda_s)
+\exp[i\mathbf G_{hk}(L)\cdot\mathbf t_n].
+\label{eq:si_finite_stack_amplitude}
+\end{equation}
+Here $n$ labels layers from $0$ to $N-1$, and $\mathbf t_n$ locates their motif origins in the reference crystallite frame. For fixed $(h,k,L,\lambda_s)$, write $A_N=A_{N,hk}(L,\lambda_s)$. The total finite-stack strength is proportional to $|A_N|^2$. An ensemble of stacking sequences instead gives $\langle|A_N|^2\rangle$, where angle brackets denote the ensemble average. The total-stack and per-layer conventions differ by $N$ and must remain consistent with the population and intensity scale. Section~\ref{sec:si_pbi2_transition} uses an explicitly stated per-trilayer convention.
+
+For identical motifs of amplitude $F$ at one registry, separated by $d$ along the stacking direction, Eq.~\eqref{eq:si_finite_stack_amplitude} reduces to
+\begin{equation}
+|A_N|^2=|F|^2\left|\sum_{n=0}^{N-1}e^{inq_zd}\right|^2
+=|F|^2\frac{\sin^2(Nq_zd/2)}{\sin^2(q_zd/2)},
+\qquad q_z=|\mathbf c^*|L.
+\label{eq:si_same_registry_laue}
+\end{equation}
+The removable limit at $q_zd=2\pi m$, for integer $m$, is $N^2|F|^2$. This same-registry example explains finite-width peaks and fringes. A material-specific ordered stack also includes the basal translations of its crystallographic repeat. The native R-centered off-axis Bi$_2$Se$_3$ sequence requires the spacing $d=c/3$ together with its basal translations and crystallographic centering phases in Eq.~\eqref{eq:si_finite_stack_amplitude}.
+
+\subsection{Displacement conventions}
+
+The main text uses Cartesian atomic positions in the phase factor. At an integer Bragg order, the same structure factor can be written in fractional coordinates as
+\begin{equation}
+F_{hk\ell}(\lambda_s)=\sum_a o_a f_a(Q,\lambda_s)T_a(hk\ell)
+\exp\!\left[2\pi i(hx_a+ky_a+\ell z_a)\right].
+\label{eq:si_structure_factor_conventional}
+\end{equation}
+Here $a$ labels atomic sites, $o_a$ is site occupancy, $f_a$ is the atomic scattering factor including anomalous terms, and $(x_a,y_a,z_a)$ are fractional site coordinates. The magnitude is $Q=|\mathbf G_{hk\ell}|$, and $F_{hk\ell}(\lambda_s)=F_{hk}(\ell,\lambda_s)$ uses the main-text rod amplitude at an integer Bragg order. The displacement factor $T_a(hk\ell)$ must be interpreted in the crystallographic convention of the reported $U$ or $B$ parameters. For an isotropic mean-square displacement $U_{\mathrm{iso},a}$,
+\begin{equation}
+T_a(hk\ell)
+=\exp\!\left[-8\pi^2U_{\mathrm{iso},a}
+\left(\frac{\sin\theta}{\lambda_s}\right)^2\right]
+=\exp\!\left(-\frac12U_{\mathrm{iso},a}Q^2\right),
+\label{eq:si_isotropic_displacement_factor}
+\end{equation}
+with $B_{\mathrm{iso},a}=8\pi^2U_{\mathrm{iso},a}$ and $Q=4\pi\sin\theta/\lambda_s$. Here $\theta$ is half the scattering angle.
+
+The executable CIF interface accepts isotropic $U_{\mathrm{iso}}$ or $B_{\mathrm{iso}}$ values and stores their equivalent isotropic mean-square displacement. The current CIF import is restricted to isotropic displacement metadata. When directional damping is released in the ordered-film parameterization, one shared uniaxial tensor is defined in the film frame,
+\begin{equation}
+\mathbf U_{\mathrm{film}}
+=U_R\left(\mathbf I-\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T}\right)
++U_z\hat{\mathbf n}\hat{\mathbf n}^{\mathsf T},
+\label{eq:si_shared_uniaxial_u}
+\end{equation}
+Here $\mathbf I$ is the three-dimensional identity matrix, and $U_R$ and $U_z$ are the mean-square displacements within the film plane and along its normal $\hat{\mathbf n}$. The resulting directional displacement factor is
+\begin{equation}
+T_{\mathrm{dir}}(\mathbf Q)
+=\exp\!\left[-\frac12\left(U_RQ_R^2+U_zQ_z^2\right)\right].
+\label{eq:si_shared_uniaxial_factor}
+\end{equation}
+This pair describes a shared directional displacement model for the selected ordered structure. A general site-resolved $U_{ij}$ model would additionally require the CIF tensor convention and its transformation into the calculation basis.
+
+\subsection{Rod coverage and radial families}
+
+Reflection identities are constructed before source integration. If $Q_{\max}$ is the largest momentum transfer subtended by the active detector over the wavelength interval and $\Delta Q$ is a declared coverage margin, the symbolic candidate set is
+\begin{equation}
+\mathcal R=
+\left\{(h,k,\ell)\in\mathbb Z^3:
+\operatorname{allowed}(h,k,\ell),\;
+|\mathbf G_{hk\ell}|\leq Q_{\max}+\Delta Q
+\right\}.
+\label{eq:si_reflection_candidate_set}
+\end{equation}
+Here $\operatorname{allowed}$ imposes the reflection conditions of the structural model. For the rod representation, integer $(h,k)$ identities are enumerated by the same detector-coverage rule and the coordinate along each rod remains continuous.
+
+In vacuum, an orientation-independent necessary reach condition is $Q_{R,hk}\leq2k_s$, with $k_s=2\pi/\lambda_s$. The shortest sampled wavelength gives the largest such bound. This bound supplies candidates, while the orientation distribution, optical propagation and active detector impose further restrictions. For a hexagonal basal plane, $Q_R=4\pi\sqrt{r}/(\sqrt{3}a)$ with $r=h^2+hk+k^2$. Each allowed $(h,k)$ member is evaluated individually. The explicit sum accounts for crystallographic multiplicity.
+
+\subsection{Rod measure and powder-cylinder normalization}
+\label{subsec:si_rod_measure}
+
+The main text uses a structural density $S_{hk}(L,\lambda_s)$ per unit $L$. Let $S_{q,hk}$ denote the corresponding density per dimensional crystallite-frame coordinate $q_z$. Conservation of intensity requires
+\begin{equation}
+q_z=|\mathbf c^*|L,\qquad
+S_{hk}(L,\lambda_s)\,dL=S_{q,hk}(q_z,\lambda_s)\,dq_z,\qquad
+S_{hk}=|\mathbf c^*|S_{q,hk}.
+\label{eq:si_rod_measure_conversion}
+\end{equation}
+Let $P_{hk}$ denote an optional relative population weight of an individual rod. It is separate from the structural density $S_{hk}$ and is included in the combined weight $W_{hk,j,s}$ when the detector density is formed in Sec.~\ref{sec:si_detector_profiles}, following the main-text convention. Uniform azimuth assigns the fraction $d\beta/(2\pi)$ to each azimuth interval. For $Q_R>0$, the physical cylinder area and its intensity density are
+\begin{equation}
+dA_{\mathrm{cyl}}=Q_R|\mathbf c^*|\,d\beta\,dL,\qquad
+\rho_{\mathrm{cyl},hk}=\frac{P_{hk}S_{hk}}{2\pi Q_R|\mathbf c^*|}
+=\frac{P_{hk}S_{q,hk}}{2\pi Q_R}.
+\label{eq:si_cylinder_density}
+\end{equation}
+Integration around the circumference recovers the original rod strength. The axial rod has $Q_R=0$ and requires the separate axial treatment because its cylinder circumference vanishes. The full orientation-map determinant in Sec.~\ref{subsec:si_ewald_surface_chart} already contains the azimuthal metric factor.

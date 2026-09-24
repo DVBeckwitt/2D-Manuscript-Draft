@@ -1,0 +1,142 @@
+\section{Calibration, refinement, and uncertainty}
+\label{sec:si_workflow}
+
+The main-text workflow separates parameter groups because several effects can change the same peak position, width, or intensity. This section defines the stage-specific observables and the propagation of uncertainty through the shared detector integration.
+
+\subsection{Parameter groups and calibration}
+
+\begin{enumerate}
+  \item \textbf{Beam characterization (direct beam).}
+  Direct-beam spot positions and shapes at several detector distances constrain the incident-beam widths $(w_x,w_z)$ and Gaussian divergences $(\Delta\theta_x,\Delta\theta_z)$ that set the instrument-limited broadening.
+
+  \item \textbf{Detector geometry calibration (3D powder standard).}
+  Dark-subtracted Debye--Scherrer rings from a polycrystalline hBN calibrant constrain detector distance, detector tilts $(\beta_D,\gamma_D)$, in-plane detector rotation $\chi_D$, and beam center $(x_0,y_0)$.
+
+  \item \textbf{Sample alignment and goniometer misalignment.}
+  Indexed Bragg-peak centers constrain sample alignment with the detector parameters fixed. The positional objective minimizes detector-space residuals between measured and calculated peak positions spanning both specular and off-specular regions. Here $\theta_i$ is grazing incidence, $\chi$ is the in-plane sample rotation, and $z_B$ and $z_S$ are the beam and sample height coordinates in the laboratory frame. The adjustable quantities are $(\theta_i,\chi,z_B,z_S)$ and the goniometer-axis misalignment rotations $(\alpha_{\mathrm{gon}},\psi)$. Here $\alpha_{\mathrm{gon}}$ denotes the alignment angle labeled $\alpha$ in the main-text workflow table; the subscript distinguishes it from the crystallite tilt $\alpha$ in Sec.~\ref{sec:si_mosaic}. Finite film dimensions $(W,H)$ enter only when finite support is selected, while thickness $t$ enters the absorption model. The retained ordered-film geometry uses the unbounded in-plane support described in Sec.~\ref{sec:si_geometric_ray_acceptance}.
+
+  \Needspace{4\baselineskip}
+  \item \textbf{Mosaicity/profile refinement.}
+  With geometry fixed, selected local detector regions or local $I(\phi_f)$ profiles after center alignment constrain mosaicity. The shared profile model is a wrapped two-component angular distribution with a Gaussian-like core and a Lorentzian-like broad component. The two components have independent widths. Off-specular arcs mainly inform the narrow core, while off-condition axial intensity is sensitive to the broad component together with bandwidth, divergence, alignment, and background. The parameterization yields component widths and a broad-component weight, but attribution and necessity require the controlled no-tail and re-optimized Gaussian-only comparisons at fixed remaining parameters and after refitting, respectively.
+
+  \item \textbf{Ordered-structure refinement.}
+  With geometry and mosaicity fixed, the ordered intensity objective compares the model with background-subtracted integrated counts in selected detector-space Bragg regions of interest (ROIs) from multiple dark-subtracted images. The corresponding prediction integrates the calculated detector density over those same ROIs. The objective permits one nuisance scale per image and physically constrained ordered-structure parameters.
+
+  \item \textbf{Disorder refinement.}
+  After the ordered baseline is established, stacking-disorder parameters enter through fixed-in-plane-momentum rod profiles reported versus the film-normal momentum. The measured profile is formed from caked signal and normalization fields by summing signal and normalization over the selected rod mask before division. Geometry, detector calibration, beam terms, mosaicity, lattice constants, and the ordered baseline remain fixed. Only stacking-disorder parameters and declared scale/background terms are refined.
+\end{enumerate}
+
+All detector images are dark-subtracted before fitting. Any additional flat-field, polarization, or detector-efficiency correction enters the common intensity convention for the compared images. The calculated detector density already includes the pixel solid-angle factor. Applying that factor again would duplicate the correction. Stage-specific uncertainty could be estimated by repeated constrained refits, resampling calibrant points for detector geometry, indexed peak lists for sample alignment, local reflection regions for mosaicity, accepted Bragg regions for ordered intensity, and selected rod bins for disorder. The spread of the accepted solutions would then quantify uncertainty within each stage and contribute to uncertainty in subsequent stages.
+
+The hBN calibration requires a reproducible record of the selected rings, masks, fitted geometry, positional residuals, and uncertainty. Likewise, a final parameter table must distinguish fixed structural inputs from refined values and link each value to the calculation state used for the comparisons in Sec.~\ref{sec:si_ordered_comparisons}.
+
+\subsection{Ordered-intensity and disorder objectives}
+\label{subsec:si_detector_derived_objectives}
+
+The detector-space forward model predicts a continuous detector-coordinate density and its finite-region integrals, while the inverse problems use stage-specific observables. In the ordered-structure stage, the measured quantity for ROI $i$ in exposure $e$ is the background-subtracted detector count
+\[
+  y_{ei}=\sum_{(c_D,r_D)\in\Omega_{ei}}\left[I_e^{\mathrm{meas}}(c_D,r_D)-b_{ei}(c_D,r_D)\right],
+\]
+Here $I_e^{\mathrm{meas}}$ is the native pixel count in exposure $e$, $\Omega_{ei}$ is the selected detector-space Bragg ROI and $b_{ei}$ is its local background count model. The sum runs over pixel centers within that ROI. The corresponding prediction is the detector-coordinate density integrated over the same region,
+\[
+  \mu_{ei}=\int_{\Omega_{ei}} I_{\mathrm{det},e}^{\mathrm{calc}}(c_D,r_D)\,dc_D\,dr_D,
+\]
+or the equivalent deterministic sum of native pixel masses. Geometry, source terms, and mosaicity are fixed before this stage. One nuisance scale per image accounts for exposure and flux differences. This defines a multi-image ordered-intensity objective restricted to the selected Bragg ROIs.
+
+The PbI$_2$ disorder refinement is restricted to the final-stage selected profiles. The upstream beam, detector, sample alignment, mosaic/profile parameters, lattice constants, and ordered PbI$_2$ baseline are fixed before this stage starts. The measured selected-rod profile is the signal-to-normalization ratio in Eq.~\eqref{eq:si_profile_average}. Its reciprocal-space mask and detector-side selection remain fixed during this stage.
+
+The parameter vector $\boldsymbol{\Theta}_{\mathrm{dis}}$ contains the released fault probabilities and independent population weights, together with $N$ if stack length is refined. The model profile is evaluated along the same selected branch. A scalar convolution approximates the detector response when its variation along that branch can be represented by a fixed kernel. In the common intrinsic-$L$ coordinate used for that approximation,
+\begin{equation}
+ I_\nu^{\mathrm{calc}}(\boldsymbol{\Theta}_{\mathrm{dis}})
+ =B_{\mathrm{bg}}(x_\nu)+a_{\mathrm{sc}}
+ \left[K_{\mathrm{prof}}*\sum_{j\in\{2H,4H,6H\}}
+ w_jS_{hk}^{(j)}(L,\lambda_s;\epsilon_j,N)\right]_\nu.
+ \label{eq:si_disorder_profile_model}
+\end{equation}
+Here $\nu$ labels a retained profile bin, $x_\nu$ is its displayed coordinate, $B_{\mathrm{bg}}$ is the low-order background, $a_{\mathrm{sc}}$ is a common intensity scale, and $K_{\mathrm{prof}}$ is the fixed finite-profile kernel. The binary $*$ denotes convolution in intrinsic $L$. The bracket denotes evaluation and integration over the same selected bin as the measurement. The source wavelength and other upstream inputs are fixed in this compact single-state expression; a source ensemble is accumulated with the weights $w_s$ before the same profile extraction. The structural functions $S_{hk}^{(j)}$ are those of Sec.~\ref{sec:si_pbi2_transition}. Kernel widths are fixed by the upstream resolution and mosaic state or declared before the fit; peak areas remain governed by the structural model.
+
+The scale and background arguments are suppressed in $I_\nu^{\mathrm{calc}}$; they remain explicit in the objective. The disorder objective uses only the retained profile-bin set $\mathcal V$:
+\begin{equation}
+ \Phi_{\mathrm{dis}}(\boldsymbol{\Theta}_{\mathrm{dis}},a_{\mathrm{sc}},B_{\mathrm{bg}})
+ =\sum_{\nu\in\mathcal V}\mathcal L\!\left(
+ \frac{I_\nu^{\mathrm{ROI}}-I_\nu^{\mathrm{calc}}(\boldsymbol{\Theta}_{\mathrm{dis}})}{\sigma_{I,\nu}}
+ \right).
+ \label{eq:si_disorder_objective}
+\end{equation}
+Here $I_\nu^{\mathrm{ROI}}$ is the measured ratio defined in Eq.~\eqref{eq:si_profile_average}, $\sigma_{I,\nu}^2=\mathrm{Var}(I_\nu^{\mathrm{ROI}})$ is its intensity variance, and $\mathcal L$ is the declared loss function. For standardized residual $v$, the choice $\mathcal L(v)=v^2$ gives the usual pointwise least-squares objective; a robust loss defines a different objective. Correlated profile bins require the covariance treatment below. The fixed detector geometry and ordered model determine the known Bragg locations. Fitting independent peak amplitudes before the stacking model would absorb the diffuse between-peak intensity into preprocessing.
+
+\subsection{Coordinate and intensity uncertainty}
+\label{subsec:si_uncertainty}
+
+The transformed-coordinate uncertainty has two parts: uncertainty in the coordinate label and uncertainty in the rebinned intensity. The coordinate-label uncertainty follows from the finite detector-pixel footprint and from uncertainty in the detector calibration. For square detector pixels with pitch $p_{\mathrm{pix}}$ and reference detector distance $D$, the leading flat-detector terms are
+\begin{equation}
+\sigma_{2\theta,\mathrm{pix}}(2\theta)=
+\frac{p_{\mathrm{pix}}\cos^{2}(2\theta)}{\sqrt{12}\,D},
+\qquad
+\sigma_{\phi_f,\mathrm{pix}}(2\theta)=
+\frac{p_{\mathrm{pix}}}{\sqrt{12}\,D\tan(2\theta)}.
+\end{equation}
+The radial term is finite and largest near the direct beam. The azimuthal term scales as $1/\tan(2\theta)$, so the problematic regime is confined to the near-specular, low-$2\theta$ region where azimuth is poorly conditioned.
+
+For the $D=75$ mm and $p_{\mathrm{pix}}=300\,\mu\mathrm{m}$ geometry used in the uncertainty calculation, the maximum radial coordinate uncertainty is approximately $0.066^{\circ}$. The azimuthal coordinate uncertainty falls below $1^{\circ}$ above $2\theta\approx3.8^{\circ}$, below $0.5^{\circ}$ above $2\theta\approx7.5^{\circ}$, and below $0.25^{\circ}$ above $2\theta\approx14.9^{\circ}$. More generally, the threshold for a target azimuthal width $w_{\phi_f}$ is
+\begin{equation}
+2\theta_{\mathrm{crit}}=\arctan\!\left(\frac{p_{\mathrm{pix}}}{\sqrt{12}\,D\,w_{\phi_f}}\right),
+\end{equation}
+with $w_{\phi_f}$ expressed in radians.
+
+Additional calibration uncertainty can be propagated with the usual Jacobian form. If the uncertain geometry parameters are collected in $\mathbf g_{\mathrm{cal}}$ with covariance matrix $\Sigma_{\mathrm{cal}}$, the row Jacobians are $J_{2\theta}=\partial(2\theta)/\partial\mathbf g_{\mathrm{cal}}$ and $J_{\phi_f}=\partial\phi_f/\partial\mathbf g_{\mathrm{cal}}$. The propagated variances are
+\begin{equation}
+\sigma^2_{2\theta,\mathrm{cal}}=
+J_{2\theta}\Sigma_{\mathrm{cal}}J_{2\theta}^{\mathsf T},
+\qquad
+\sigma^2_{\phi_f,\mathrm{cal}}=
+J_{\phi_f}\Sigma_{\mathrm{cal}}J_{\phi_f}^{\mathsf T}.
+\end{equation}
+If the displayed bin-center label is also treated as uncertain, the bin widths $\Delta(2\theta)$ and $\Delta\phi_f$ contribute
+\begin{equation}
+\sigma^2_{2\theta,\mathrm{bin}}=\frac{[\Delta(2\theta)]^2}{12},
+\qquad
+\sigma^2_{\phi_f,\mathrm{bin}}=\frac{(\Delta\phi_f)^2}{12}.
+\end{equation}
+These coordinate terms describe the uncertainty of the transformed axis value. They are separate from intensity uncertainty.
+
+The intensity uncertainty is inherited from the detector through the same overlap weights used to construct the caked image and the projected profile. If $v_p$ is the detector-pixel variance and the detector-pixel variances are independent, then
+\begin{equation}
+\mathrm{Var}\!\left(I_{\nu}^{\mathrm{ROI}}\right)=
+\frac{\sum_p a_{\nu p}^{2}v_p}
+     {\left(\sum_p a_{\nu p}n_p\right)^2}.
+\end{equation}
+If overlapping interpolation weights are used, neighboring profile points can be statistically correlated. For profile bins $\nu$ and $\nu'$, the corresponding covariance is
+\begin{equation}
+\mathrm{Cov}\!\left(I_{\nu}^{\mathrm{ROI}},I_{\nu'}^{\mathrm{ROI}}\right)=
+\frac{\sum_p a_{\nu p}a_{\nu'p}v_p}
+     {\left(\sum_p a_{\nu p}n_p\right)
+      \left(\sum_p a_{\nu'p}n_p\right)}.
+\end{equation}
+Thus the same weights that define the projected profile also propagate the detector-pixel variance. This expression assumes fixed normalization and masks and independent input-pixel variances. Correlated background or calibration errors require additional covariance terms. Off-diagonal covariance terms describe correlations between neighboring projected points.
+
+The displayed coordinate for a projected point can be represented by the same finite-band weighting. For example,
+\begin{equation}
+\bar L_{\mathrm{proj},\nu}=\frac{\sum_b \mu_{\nu b}N_bL_{\mathrm{proj},b}}{\sum_b \mu_{\nu b}N_b},
+\qquad
+\sigma^2_{L_{\mathrm{proj}},\nu}=\frac{\sum_b \mu_{\nu b}N_b(L_{\mathrm{proj},b}-\bar L_{\mathrm{proj},\nu})^2}{\sum_b \mu_{\nu b}N_b},
+\end{equation}
+Here $\bar L_{\mathrm{proj},\nu}$ is the weighted coordinate mean, $\sigma^2_{L_{\mathrm{proj}},\nu}$ is its finite-band variance, and $L_{\mathrm{proj},b}$ is the coordinate at caked bin $b$. These terms precede the addition of calibration, incidence-angle, wavelength, divergence, and mosaic contributions. This width describes the finite-bin projection. Counting-statistical intensity uncertainty is propagated separately through the detector-pixel variances.
+
+These projection uncertainties are coupled to model-parameter correlations. Peak positions are sensitive to detector distance, beam center, detector tilt, sample height, and incidence angle. Profile widths are sensitive to both beam divergence and the Gaussian mosaic core. Off-condition profiles are sensitive to the broad mosaic component together with bandwidth, divergence, alignment, and background. Near-critical intensity additionally depends on the optical response and is excluded from evidence for the broad component. Relative integrated intensities are sensitive to scale, footprint, absorption, thickness, and structure-factor parameters. The staged workflow separates these effects by fixing or constraining the parameters tied to peak position before fitting profile widths, and by fixing the geometry and mosaic state before interpreting ordered intensities.
+
+These expressions give four practical consequences. First, the $2\theta$--$\phi_f$ maps and $Q_R$-selected $Q_z$ profiles are controlled projections that inherit the detector image's finite resolution and statistical information. Second, transformed-coordinate uncertainty is concentrated near the low-angle/specular region. Third, intensity variance is propagated through the same overlap weights used for caking and profile extraction. Fourth, the strongest remaining systematic coupling occurs near low $L$, where direct-beam background, bandwidth, divergence, incidence angle, and optical response overlap. That near-critical region is excluded from evidence for the broad mosaic component.
+
+\subsection{Numerical evaluation and convergence}
+
+The physical sequence is source sampling, sample acceptance, internal propagation, orientation-weighted Ewald selection, exit propagation, detector mapping, and finite-region integration. The forward roots in Sec.~\ref{subsec:si_ewald_surface_chart} and inverse detector evaluation describe the same compatible scattering states. Numerical source sampling integrates the incident-beam distribution, while the separate mosaic law specifies crystallite orientations.
+
+Source-state count and detector integration order control different approximations. A convergence comparison holds the physical parameters, masks, background and count scale fixed while changing one numerical setting at a time. Agreement is assessed for the actual detector regions and profiles used in the manuscript, including narrow peaks and low-angle regions. Establishing convergence requires quantitative agreement under these changes in numerical settings. Figure~\ref{fig:si_convergence} reserves the corresponding numerical comparison.
+
+
+\begin{figure}[!htbp]
+  \centering
+  \siplaceholder{Numerical convergence}{(a) Source-state count at fixed integration order.\\(b) Integration order at fixed source ensemble.\\Profile differences and integrated-intensity changes in declared regions.}
+  \caption{Placeholder for numerical convergence of the detector observables. The intended comparison reports source sampling and finite-area quadrature separately, with fixed physical inputs and explicit tolerances.}
+  \label{fig:si_convergence}
+\end{figure}

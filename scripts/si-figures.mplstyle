@@ -1,0 +1,25 @@
+# Shared SI artwork style. Render at the intended physical insertion size.
+# APS style-basics and AIP author-instructions: readable final-size lettering,
+# >=0.5 pt lines, embedded fonts, consistent panels, grayscale-safe encoding.
+font.family: DejaVu Sans
+font.size: 9
+mathtext.fontset: dejavusans
+axes.labelsize: 9
+axes.titlesize: 9
+axes.linewidth: 0.65
+axes.spines.top: False
+axes.spines.right: False
+xtick.labelsize: 8.5
+ytick.labelsize: 8.5
+xtick.major.width: 0.65
+ytick.major.width: 0.65
+xtick.minor.width: 0.5
+ytick.minor.width: 0.5
+lines.linewidth: 1.1
+legend.fontsize: 8.5
+legend.frameon: False
+pdf.fonttype: 42
+svg.fonttype: none
+figure.facecolor: white
+savefig.facecolor: white
+savefig.dpi: 600

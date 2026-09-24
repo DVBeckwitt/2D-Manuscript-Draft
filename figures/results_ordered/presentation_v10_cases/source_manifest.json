@@ -1,0 +1,45 @@
+{
+  "source_presentation": "output\\presentations\\Oriented_Powder_8min_Animated_v10.pptx",
+  "source_presentation_sha256": "5e33125dbdaba9f8baea2ab7f1e6df9a850473cbba33282f82f855bb16f41cd0",
+  "profile_source_manifest": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\all_six_illustrative_targets_20260911.ra_diag.json",
+  "assets": [
+    {
+      "file": "bi2se3_detector.png",
+      "slide": 13,
+      "part": "ppt/media/image18.png",
+      "sha256": "a21404359372cee26397b688064c4db2beddbe50ad38e204e4fe200579bb316e"
+    },
+    {
+      "file": "bi2te3_detector.png",
+      "slide": 14,
+      "part": "ppt/media/image19.png",
+      "sha256": "65b5075e1e42c0248cc3df52aa99521c178aeca6b7c53aacf54560aedd9a051e"
+    },
+    {
+      "file": "bi2se3_profiles.pdf",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2se3_illustrative_target.pdf",
+      "sha256": "6c5cc216efdf3574aabf0e0dca82a4c457d72ebe9b94703f8addb9070a682ec4"
+    },
+    {
+      "file": "bi2se3_profiles.png",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2se3_illustrative_target.png",
+      "sha256": "4dd935b55c04a5bda83e730a0b7d9acb6f1aedf8d41b47ec701b1c88947e6eae"
+    },
+    {
+      "file": "bi2te3_profiles.pdf",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_illustrative_target.pdf",
+      "sha256": "b4bb12384c500be09a697b54d9f2ea6d7cbef882d8ae7d5da7945bb9f3d43002"
+    },
+    {
+      "file": "bi2te3_profiles.png",
+      "source": "C:\\Users\\Kenpo\\.codex\\visualizations\\2026\\09\\06\\01a0790a-e521-7951-8cf8-97659242b079\\bi2te3_illustrative_target.png",
+      "sha256": "168e7e55b81da4dd620bc92a4977be5dae66071a0a8300e8125aff9f1200e9c1"
+    }
+  ],
+  "slide15_reference": {
+    "part": "ppt/media/image22.png",
+    "sha256": "60b550a87e5bb8602fb4d0d5bcd352e3ea48b611417c366dd80752dfe7e99581",
+    "note": "Reduced Bi2Te3 profile picture. Use full-resolution original profile PDF from the six-material figure set."
+  },
+  "profile_kind": "Illustrative net targets from archived measured profiles, not physical-model fits. Original source labels retained. No numerical arrays changed."
+}
